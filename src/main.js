@@ -870,7 +870,7 @@ const cardTemplate = (row) => {
   const name = escapeHtml(compactValue(row.name, 'Unbekanntes Modell'));
   const manufacturer = escapeHtml(compactValue(row.manufacturer, 'Unbekannt'));
   const category = escapeHtml(compactValue(row.xr_category, 'AR'));
-  const image = getModelImageUrl(row);
+  const image = safeExternalUrl(row.image_url) || getModelImageUrl(row);
   const shop = getShopInfo(row);
   const shopButtonClasses = shop.official
     ? 'chip-btn border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'

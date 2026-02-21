@@ -79,11 +79,13 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
 
 Die Datengrundlage ist ein kuratierter lokaler Datensatz:
 - Generator: `scripts/generate-ar-csv.mjs`
+- Herstellerbild-Enrichment: `scripts/enrich-manufacturer-images.mjs`
 - Ausgabe:
   - `public/data/ar_glasses.csv`
   - `public/data/ar_glasses.metadata.json`
 - Bilddarstellung:
-  - Modelle verwenden in der UI generierte lokale SVG-Visuals (keine externen Bildhoster).
+  - Primar werden `image_url`-Eintraege aus offiziellen Herstellerseiten genutzt.
+  - Falls kein valides Herstellerbild gefunden wird, zeigt die UI eine lokale SVG-Fallback-Visualisierung.
 
 ## SEO & LLM Discovery
 
@@ -141,6 +143,12 @@ Datensatz neu generieren:
 node scripts/generate-ar-csv.mjs
 ```
 
+Herstellerbilder aus offiziellen Seiten neu anreichern:
+
+```bash
+npm run images:enrich
+```
+
 ## Projektstruktur
 
 ```text
@@ -150,7 +158,8 @@ node scripts/generate-ar-csv.mjs
 │     ├─ ar_glasses.csv
 │     └─ ar_glasses.metadata.json
 ├─ scripts/
-│  └─ generate-ar-csv.mjs
+│  ├─ generate-ar-csv.mjs
+│  └─ enrich-manufacturer-images.mjs
 ├─ src/
 │  ├─ main.js
 │  └─ style.css

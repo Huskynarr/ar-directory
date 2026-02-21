@@ -7,11 +7,16 @@ const OUTPUT_METADATA_PATH = 'public/data/ar_glasses.metadata.json';
 const SOURCE_DATASET = 'curated_ar_xr_directory_v2';
 const SOURCE_PAGE = 'https://huskynarr.de/';
 
+const CONTROL_CHAR_REGEX = /[\u0000-\u001F\u007F]+/g;
+
 const sanitize = (value) => {
   if (value === null || value === undefined) {
     return '';
   }
-  return String(value).replace(/\s+/g, ' ').trim();
+  return String(value)
+    .replace(CONTROL_CHAR_REGEX, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 };
 
 const safeHttpUrl = (value) => {
@@ -75,7 +80,7 @@ const main = async () => {
       short_name: sanitize(row.short_name),
       name: sanitize(row.name),
       manufacturer: sanitize(row.manufacturer),
-      image_url: '',
+      image_url: safeHttpUrl(row.image_url),
       official_url: safeHttpUrl(row.official_url),
       announced_date: sanitize(row.announced_date),
       release_date: sanitize(row.release_date),
@@ -157,13 +162,13 @@ const main = async () => {
     ar_records: normalizedRows.filter((row) => row.xr_category === 'AR').length,
     xr_records: normalizedRows.filter((row) => row.xr_category === 'XR').length,
     official_shop_links: normalizedRows.filter((row) => row.official_url).length,
-    note: 'Curated local dataset without external comparison-provider links or hosted images.',
+    note: 'Curated local dataset without external comparison-provider links; image_url can be enriched from official manufacturer pages.',
   };
 
   await writeFile(OUTPUT_METADATA_PATH, `${JSON.stringify(metadata, null, 2)}\n`, 'utf8');
 
   console.log(
-    `Generated ${normalizedRows.length} curated AR/XR records at ${retrievedAt} (no external comparison-provider links, no external images).`,
+    `Generated ${normalizedRows.length} curated AR/XR records at ${retrievedAt} (no external comparison-provider links; manufacturer image enrichment optional).`,
   );
 };
 

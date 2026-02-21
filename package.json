@@ -1,12 +1,13 @@
 {
   "name": "ar-directory",
   "private": true,
-  "version": "0.3.11",
+  "version": "0.3.12",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "images:enrich": "node scripts/enrich-manufacturer-images.mjs"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.0",
