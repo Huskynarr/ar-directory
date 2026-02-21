@@ -1716,6 +1716,12 @@ const render = () => {
           </div>
         </div>
       </section>
+
+      <footer class="mt-4">
+        <div class="panel p-4 text-sm text-[#a8a29e]">
+          <a href="https://huskynarr.de/impressum" class="font-semibold text-[#84cc16] hover:underline">Impressum / Legal Notice</a>
+        </div>
+      </footer>
     </main>
   `;
 
