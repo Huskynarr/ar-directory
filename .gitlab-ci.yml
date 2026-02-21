@@ -1,6 +1,7 @@
 stages:
   - verify
   - build
+  - deploy
 
 default:
   image: node:20-alpine
@@ -28,3 +29,34 @@ build:app:
     paths:
       - dist/
     expire_in: 1 week
+
+deploy:plesk:
+  stage: deploy
+  image: alpine:3.20
+  needs:
+    - job: build:app
+      artifacts: true
+  before_script: []
+  script:
+    - apk add --no-cache openssh-client rsync
+    - test -n "${PLESK_HOST:-}"
+    - test -n "${PLESK_USER:-}"
+    - test -n "${PLESK_SSH_PRIVATE_KEY:-}"
+    - export PLESK_TARGET_DIR="${PLESK_TARGET_DIR:-httpdocs}"
+    - export PLESK_PORT="${PLESK_PORT:-22}"
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - printf '%s\n' "$PLESK_SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_ed25519
+    - chmod 600 ~/.ssh/id_ed25519
+    - |
+      if [ -n "${PLESK_SSH_KNOWN_HOSTS:-}" ]; then
+        printf '%s\n' "$PLESK_SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+      else
+        ssh-keyscan -p "$PLESK_PORT" -H "$PLESK_HOST" > ~/.ssh/known_hosts
+      fi
+    - chmod 644 ~/.ssh/known_hosts
+    - rsync -az --delete -e "ssh -p $PLESK_PORT" dist/ "$PLESK_USER@$PLESK_HOST:$PLESK_TARGET_DIR/"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      when: manual
+    - when: never

@@ -145,11 +145,12 @@ node scripts/generate-ar-csv.mjs
 
 ## CI / GitLab Pipeline
 
-Die `.gitlab-ci.yml` enthaelt zwei schlanke Jobs:
+Die `.gitlab-ci.yml` enthaelt drei Jobs:
 - `verify:data`: prueft, ob Daten generiert werden koennen und die Exportdateien existieren
 - `build:app`: baut die App mit Vite und speichert `dist/` als Artefakt
+- `deploy:plesk`: optionaler manueller Deploy-Job (Default-Branch), der `dist/` via SSH/rsync auf Plesk synchronisiert
 
-Damit sind Datenvalidierung und Build in CI abgedeckt. Deployment erfolgt separat (siehe Plesk-Abschnitt).
+Damit sind Datenvalidierung, Build und optionales Deployment ueber CI abgedeckt.
 
 ## Deployment (Plesk)
 
@@ -172,6 +173,21 @@ Pragmatischer Ablauf fuer statisches Hosting auf Plesk:
   RewriteRule . /index.html [L]
 </IfModule>
 ```
+
+### Optional: CI Deploy-Job `deploy:plesk`
+
+Fuer den manuellen Deploy aus GitLab CI folgende CI/CD-Variablen setzen:
+- `PLESK_HOST` (z. B. `example.com`)
+- `PLESK_USER` (SSH-User)
+- `PLESK_SSH_PRIVATE_KEY` (Private Key fuer den SSH-User, als masked/protected Variable)
+- Optional `PLESK_TARGET_DIR` (Default: `httpdocs`)
+- Optional `PLESK_PORT` (Default: `22`)
+- Optional `PLESK_SSH_KNOWN_HOSTS` (falls gesetzt, wird kein `ssh-keyscan` verwendet)
+
+Ablauf:
+- Pipeline auf Default-Branch laufen lassen
+- Im Job-Tab den manuellen Job `deploy:plesk` starten
+- Job synchronisiert den Inhalt von `dist/` per `rsync --delete` in den Zielordner
 
 ## Contributing
 
