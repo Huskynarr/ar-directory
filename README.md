@@ -27,6 +27,7 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
   - Passthrough
   - aktiver Vertrieb
   - Preset `Nur aktiv im Vertrieb` fuer schnellen Fokus auf verfuegbare Modelle
+  - explizite `AR-Flag` und `XR-Flag` Toggle
   - EOL/Update-Status
   - minimaler horizontaler Winkel (FOV)
   - minimale Refresh-Rate

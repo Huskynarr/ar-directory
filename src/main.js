@@ -53,6 +53,8 @@ const state = {
   onlyPrice: false,
   onlyShop: false,
   onlyAvailable: false,
+  flagAr: false,
+  flagXr: false,
   showEur: false,
   hideUnknown: false,
   sort: 'name_asc',
@@ -278,6 +280,8 @@ const isEol = (row) => {
 const isLikelyActive = (row) => normalizeText(row.active_distribution).includes('ja');
 
 const getHorizontalFov = (row) => toNumber(row.fov_horizontal_deg);
+const isXrRow = (row) => normalizeText(row.xr_category) === 'xr';
+const isArRow = (row) => !isXrRow(row);
 
 const getTrackingScore = (row) => {
   const tracking = normalizeText(row.tracking);
@@ -405,6 +409,8 @@ const applyStateFromUrl = () => {
   state.onlyPrice = parseBooleanParam(params.get('onlyPrice'), false);
   state.onlyShop = parseBooleanParam(params.get('onlyShop'), false);
   state.onlyAvailable = parseBooleanParam(params.get('onlyAvailable'), false);
+  state.flagAr = parseBooleanParam(params.get('flagAr'), false);
+  state.flagXr = parseBooleanParam(params.get('flagXr'), false);
   state.showEur = parseBooleanParam(params.get('showEur'), false);
   state.hideUnknown = parseBooleanParam(params.get('hideUnknown'), false);
 
@@ -462,6 +468,8 @@ const syncUrlWithState = () => {
   setBoolean('onlyPrice', state.onlyPrice, false);
   setBoolean('onlyShop', state.onlyShop, false);
   setBoolean('onlyAvailable', state.onlyAvailable, false);
+  setBoolean('flagAr', state.flagAr, false);
+  setBoolean('flagXr', state.flagXr, false);
   setBoolean('showEur', state.showEur, false);
   setBoolean('hideUnknown', state.hideUnknown, false);
   setText('sort', state.sort, 'name_asc');
@@ -618,6 +626,13 @@ const matchesFilters = (row) => {
     return false;
   }
   if (state.onlyAvailable && !isLikelyActive(row)) {
+    return false;
+  }
+  if (state.flagAr && state.flagXr) {
+    // both selected means no additional category restriction
+  } else if (state.flagAr && !isArRow(row)) {
+    return false;
+  } else if (state.flagXr && !isXrRow(row)) {
     return false;
   }
 
@@ -1353,6 +1368,14 @@ const render = () => {
             Nur aktiv im Vertrieb
           </label>
           <label class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">
+            <input id="flag-ar" type="checkbox" class="mr-2 size-4 accent-[#9d491c]" ${state.flagAr ? 'checked' : ''} />
+            AR-Flag
+          </label>
+          <label class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">
+            <input id="flag-xr" type="checkbox" class="mr-2 size-4 accent-[#9d491c]" ${state.flagXr ? 'checked' : ''} />
+            XR-Flag
+          </label>
+          <label class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">
             <input id="show-eur" type="checkbox" class="mr-2 size-4 accent-[#9d491c]" ${state.showEur ? 'checked' : ''} />
             EUR-Zusatz
           </label>
@@ -1435,6 +1458,8 @@ const render = () => {
   document
     .querySelector('#only-available')
     ?.addEventListener('change', (event) => setAndRender('onlyAvailable', event.target.checked));
+  document.querySelector('#flag-ar')?.addEventListener('change', (event) => setAndRender('flagAr', event.target.checked));
+  document.querySelector('#flag-xr')?.addEventListener('change', (event) => setAndRender('flagXr', event.target.checked));
   document
     .querySelector('#show-eur')
     ?.addEventListener('change', (event) => setAndRender('showEur', event.target.checked, { resetCardsPage: false }));
@@ -1529,6 +1554,8 @@ const render = () => {
     state.onlyPrice = false;
     state.onlyShop = false;
     state.onlyAvailable = false;
+    state.flagAr = false;
+    state.flagXr = false;
     state.showEur = false;
     state.hideUnknown = false;
     state.sort = 'name_asc';
