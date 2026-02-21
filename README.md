@@ -45,8 +45,6 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
   - Multi-Select mit bis zu 6 Modellen
   - Compare-Modus mit direkter Merkmalsmatrix
   - Radar-Chart fuer schnellen visuellen Modellvergleich
-- Datenexport:
-  - `CSV Export` fuer aktuell gefilterte Ergebnisse
 - Ansichtsoptionen:
   - `EUR-Zusatz` nutzt einen Live-EUR-Kurs zur USD-Umrechnung
   - `Unbekannte Werte ausblenden` reduziert Rauschen in Listen und Compare-Ansicht

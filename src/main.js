@@ -1497,36 +1497,6 @@ const compareBarTemplate = (selectedRows) => {
   `;
 };
 
-const exportRowsAsCsv = (rows) => {
-  if (!rows.length) {
-    return;
-  }
-
-  const fields = state.csvFields.length
-    ? state.csvFields
-    : Object.keys(rows[0] ?? {}).filter((key) => !key.startsWith('__'));
-
-  const normalizedRows = rows.map((row) => {
-    const output = {};
-    for (const field of fields) {
-      output[field] = row[field] ?? '';
-    }
-    return output;
-  });
-
-  const csv = Papa.unparse(normalizedRows, { columns: fields });
-  const blob = new Blob([`\uFEFF${csv}`], { type: 'text/csv;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
-  const anchor = document.createElement('a');
-  anchor.href = url;
-  const stamp = new Date().toISOString().slice(0, 19).replace(/[T:]/g, '-');
-  anchor.download = `ar_glasses_filtered_${stamp}.csv`;
-  document.body.append(anchor);
-  anchor.click();
-  anchor.remove();
-  URL.revokeObjectURL(url);
-};
-
 const render = () => {
   const queryFocusState = captureQueryFocusState();
   const filterOptions = getFilterOptions();
@@ -1550,7 +1520,6 @@ const render = () => {
   }
   const visibleCards = filtered.slice(0, state.cardsPage * state.cardsPageSize);
   const hasMoreCards = visibleCards.length < filtered.length;
-  const exportDisabled = filtered.length === 0;
   updateDocumentSeoSignals(filtered.length);
   syncUrlWithState();
 
@@ -1667,12 +1636,6 @@ const render = () => {
               ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
               : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
           }">${state.focusMode ? t('Standardansicht', 'Standard view') : t('Fokusansicht', 'Focus view')}</button>
-
-          <button id="export-csv" class="chip-btn ${
-            exportDisabled
-              ? 'cursor-not-allowed border-[#44403c] bg-[#292524] text-[#a8a29e]'
-              : 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
-          }" ${exportDisabled ? 'disabled' : ''}>CSV Export</button>
 
           <button id="clear-filters" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(
             'Filter zuruecksetzen',
@@ -1985,8 +1948,6 @@ const render = () => {
     ?.addEventListener('click', () =>
       setAndRender('showAdvancedFilters', !state.showAdvancedFilters, { resetCardsPage: false }),
     );
-
-  document.querySelector('#export-csv')?.addEventListener('click', () => exportRowsAsCsv(filtered));
 
   document.querySelector('#load-more-cards')?.addEventListener('click', () => {
     state.cardsPage += 1;
