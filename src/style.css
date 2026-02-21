@@ -229,6 +229,37 @@
       0 6px 16px rgba(7, 16, 30, 0.26);
   }
 
+  .theme-icon-btn {
+    @apply inline-flex h-9 w-9 items-center justify-center rounded-full border outline-none transition;
+    color: var(--chip-text);
+    border-color: color-mix(in srgb, var(--chip-border) 92%, transparent);
+    background: var(--chip-bg);
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      0 10px 20px rgba(7, 16, 30, 0.28);
+  }
+
+  .theme-icon-btn svg {
+    width: 1.05rem;
+    height: 1.05rem;
+    stroke-width: 1.8;
+  }
+
+  .theme-icon-btn:hover {
+    border-color: var(--chip-border-hover);
+    background: var(--chip-bg-hover);
+    transform: translateY(-1px);
+  }
+
+  .theme-icon-btn:focus-visible {
+    box-shadow:
+      0 0 0 3px color-mix(in srgb, var(--field-border-focus) 32%, transparent),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      0 10px 20px rgba(7, 16, 30, 0.28);
+  }
+
   .compact-details summary {
     list-style: none;
   }

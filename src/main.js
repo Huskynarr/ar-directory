@@ -1506,6 +1506,27 @@ const render = () => {
   const activeCount = filtered.filter((row) => isLikelyActive(row)).length;
   const eolCount = filtered.filter((row) => isEol(row)).length;
   const retrievedAt = compactValue(filtered[0]?.dataset_retrieved_at || state.rows[0]?.dataset_retrieved_at, '');
+  const themeToggleLabel =
+    state.theme === 'light' ? t('Dunkelmodus aktivieren', 'Enable dark mode') : t('Hellmodus aktivieren', 'Enable light mode');
+  const themeToggleIcon =
+    state.theme === 'light'
+      ? `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path
+            d="M21 12.79A9 9 0 1 1 11.21 3c0 .29 0 .57.01.86A7.5 7.5 0 0 0 18.75 11.36c.29 0 .57 0 .86-.01"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>`
+      : `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" stroke="currentColor" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>`;
   const selectedRows = getSelectedRows();
   applyLanguageToDocument();
   applyThemeToDocument();
@@ -1527,6 +1548,15 @@ const render = () => {
     <main class="mx-auto w-full max-w-[1320px] px-4 py-6 sm:px-6 lg:px-8">
       <header class="panel relative overflow-hidden p-5 sm:p-6">
         <div class="theme-hero-surface absolute inset-0 -z-10"></div>
+        <button
+          id="theme-toggle"
+          type="button"
+          class="theme-icon-btn absolute right-4 top-4 sm:right-5 sm:top-5"
+          aria-label="${escapeHtml(themeToggleLabel)}"
+          title="${escapeHtml(themeToggleLabel)}"
+        >
+          ${themeToggleIcon}
+        </button>
         <p class="text-xs font-semibold uppercase tracking-[0.22em] text-lime-500">AR / XR DIRECTORY</p>
         <h1 class="mt-2 text-3xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-lime-600 sm:text-4xl">${t(
           'Vergleich fuer AR-Brillen und XR-Glasses',
@@ -1626,11 +1656,6 @@ const render = () => {
           <button id="toggle-language" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
             ${state.language === 'de' ? 'Sprache: DE' : 'Language: EN'}
           </button>
-          <button id="theme-toggle" class="chip-btn ${
-            state.theme === 'light'
-              ? 'border-[#2f6fb5] bg-[#2f6fb5] text-white hover:bg-[#25588f]'
-              : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
-          }">${state.theme === 'light' ? t('Dunkelmodus', 'Dark mode') : t('Hellmodus', 'Light mode')}</button>
           <button id="toggle-focus-mode" class="chip-btn ${
             state.focusMode
               ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
