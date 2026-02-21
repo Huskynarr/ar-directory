@@ -972,9 +972,18 @@ const lifecycleTone = (row) => {
   return 'border-lime-500/40 bg-lime-500/10 text-lime-200';
 };
 
-const selectionLabelTemplate = (rowId, selected) => `
+const selectionLabelTemplate = (rowId, selected, rowName = '') => `
   <label class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-[#44403c] bg-[#1c1917] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#a8a29e]">
-    <input data-compare-toggle data-model-id="${escapeHtml(rowId)}" type="checkbox" class="size-4 accent-[#84cc16]" ${selected ? 'checked' : ''} />
+    <input
+      data-compare-toggle
+      data-model-id="${escapeHtml(rowId)}"
+      type="checkbox"
+      class="size-4 accent-[#84cc16]"
+      aria-label="${escapeHtml(
+        rowName ? t(`Vergleich: ${rowName}`, `Compare: ${rowName}`) : t('Vergleich', 'Compare'),
+      )}"
+      ${selected ? 'checked' : ''}
+    />
     ${t('Vergleich', 'Compare')}
   </label>
 `;
@@ -1030,7 +1039,11 @@ const cardTemplate = (row) => {
             ? `<img src="${escapeHtml(image)}" alt="${name}" loading="lazy" class="h-full w-full object-contain p-4" />`
             : `<div class="grid h-full place-items-center text-sm text-[#a8a29e]">${t('Kein Bild verfuegbar', 'No image available')}</div>`
         }
-        <div class="absolute left-3 top-3">${selectionLabelTemplate(row.__rowId, isSelected)}</div>
+        <div class="absolute left-3 top-3">${selectionLabelTemplate(
+          row.__rowId,
+          isSelected,
+          compactValue(row.name, t('Unbekannt', 'Unknown')),
+        )}</div>
         <span class="absolute right-3 top-3 rounded-full border px-2.5 py-1 text-xs font-bold ${categoryTone(row.xr_category)}">${category}</span>
       </div>
       <div class="space-y-4 p-4">
@@ -1140,7 +1153,11 @@ const tableTemplate = (rows) => {
   return `
     <div class="panel overflow-hidden">
       <div class="overflow-x-auto">
-        <table class="min-w-[1650px] border-collapse text-sm">
+        <table class="min-w-[1650px] border-collapse text-sm" aria-describedby="results-status">
+          <caption class="visually-hidden">${t(
+            'Tabellarische Ansicht aller gefilterten AR- und XR-Modelle.',
+            'Table view of all filtered AR and XR models.',
+          )}</caption>
           <thead class="bg-[#1c1917] text-left text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">
             <tr>
               <th class="px-3 py-3">${t('Vergleich', 'Compare')}</th>
@@ -1169,12 +1186,17 @@ const tableTemplate = (rows) => {
                 const infoUrl = safeExternalUrl(row.lifecycle_source || row.source_page);
                 const selected = state.selectedIds.includes(row.__rowId);
                 const lifecycleNotes = formatLifecycleNotes(row.lifecycle_notes, t('Keine Angaben.', 'No details.'));
+                const modelName = compactValue(row.name, t('Unbekannt', 'Unknown'));
 
                 return `
                   <tr class="${index % 2 === 0 ? 'bg-[#171412]' : 'bg-[#1c1917]'} align-top text-[#f5f5f4]">
-                    <td class="px-3 py-3">${selectionLabelTemplate(row.__rowId, selected)}</td>
+                    <td class="px-3 py-3">${selectionLabelTemplate(
+                      row.__rowId,
+                      selected,
+                      modelName,
+                    )}</td>
                     <td class="px-3 py-3">
-                      <p class="font-semibold">${escapeHtml(compactValue(row.name, t('Unbekannt', 'Unknown')))}</p>
+                      <p class="font-semibold">${escapeHtml(modelName)}</p>
                       <p class="mt-1 text-xs text-[#a8a29e]">${escapeHtml(
                         maybeHiddenText(row.resolution_per_eye, t('k. A.', 'n/a')) || t('k. A.', 'n/a'),
                       )}</p>
@@ -1204,12 +1226,24 @@ const tableTemplate = (rows) => {
                       <div class="flex flex-col gap-2">
                         ${
                           shop.url
-                            ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" class="text-xs font-semibold text-[#84cc16] hover:underline">${escapeHtml(shop.label)}</a>`
+                            ? `<a
+                                href="${escapeHtml(shop.url)}"
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label="${escapeHtml(`${shop.label}: ${modelName}`)}"
+                                class="text-xs font-semibold text-[#84cc16] hover:underline"
+                              >${escapeHtml(shop.label)}</a>`
                             : `<span class="text-xs text-[#a8a29e]">${t('Kein Shop-Link', 'No shop link')}</span>`
                         }
                         ${
                           infoUrl
-                            ? `<a href="${escapeHtml(infoUrl)}" target="_blank" rel="noreferrer" class="text-xs font-semibold text-[#84cc16] hover:underline">${t(
+                            ? `<a
+                                href="${escapeHtml(infoUrl)}"
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label="${escapeHtml(`${t('Quelle', 'Source')}: ${modelName}`)}"
+                                class="text-xs font-semibold text-[#84cc16] hover:underline"
+                              >${t(
                                 'Quelle',
                                 'Source',
                               )}</a>`
@@ -1430,7 +1464,11 @@ const compareModeTemplate = (selectedRows) => {
       </div>
       ${compareRadarTemplate(selectedRows)}
       <div class="overflow-x-auto">
-        <table class="min-w-[980px] border-collapse text-sm">
+        <table class="min-w-[980px] border-collapse text-sm" aria-describedby="results-status">
+          <caption class="visually-hidden">${t(
+            'Direkter Modellvergleich der aktuell ausgewaehlten Brillen.',
+            'Direct model comparison of the currently selected glasses.',
+          )}</caption>
           <thead class="bg-[#1c1917] text-left text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">
             <tr>
               <th class="px-3 py-3">${t('Merkmal', 'Feature')}</th>
@@ -1485,10 +1523,16 @@ const compareBarTemplate = (selectedRows) => {
         <p class="rounded-full border border-[#44403c] bg-[#1c1917] px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">
           ${t('Vergleich', 'Compare')}: ${count}/${COMPARE_LIMIT}
         </p>
-        <button id="toggle-compare-mode" class="${compareToggleClasses}" ${count === 0 ? 'disabled' : ''}>${
+        <button
+          id="toggle-compare-mode"
+          type="button"
+          aria-pressed="${state.compareMode ? 'true' : 'false'}"
+          class="${compareToggleClasses}"
+          ${count === 0 ? 'disabled' : ''}
+        >${
           state.compareMode ? t('Liste anzeigen', 'Show list') : t('Compare-Modus', 'Compare mode')
         }</button>
-        <button id="clear-compare" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]" ${
+        <button id="clear-compare" type="button" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]" ${
           count === 0 ? 'disabled' : ''
         }>${t('Auswahl leeren', 'Clear selection')}</button>
       </div>
@@ -1502,7 +1546,17 @@ const compareBarTemplate = (selectedRows) => {
                     <span class="inline-flex items-center gap-2 rounded-full border border-[#44403c] bg-[#1c1917] px-3 py-1.5 text-xs text-[#a8a29e]">
                       <span class="font-semibold">${escapeHtml(compactValue(row.name, t('Unbekannt', 'Unknown')))}</span>
                       <span class="text-[#a8a29e]">${escapeHtml(compactValue(row.manufacturer, ''))}</span>
-                      <button data-remove-compare="${escapeHtml(row.__rowId)}" class="rounded-full border border-[#44403c] px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#84cc16] hover:bg-[#292524]">x</button>
+                      <button
+                        data-remove-compare="${escapeHtml(row.__rowId)}"
+                        type="button"
+                        aria-label="${escapeHtml(
+                          t(
+                            `Aus Vergleich entfernen: ${compactValue(row.name, t('Unbekannt', 'Unknown'))}`,
+                            `Remove from comparison: ${compactValue(row.name, t('Unbekannt', 'Unknown'))}`,
+                          ),
+                        )}"
+                        class="rounded-full border border-[#44403c] px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#84cc16] hover:bg-[#292524]"
+                      >x</button>
                     </span>
                   `,
                 )
@@ -1587,9 +1641,14 @@ const render = () => {
   const hasMoreCards = visibleCards.length < filtered.length;
   updateDocumentSeoSignals(filtered.length);
   syncUrlWithState();
+  const resultsStatusLabel = t(
+    `${filtered.length} Modelle nach den aktuellen Filtern sichtbar. Ansicht: ${state.compareMode ? 'Direktvergleich' : state.viewMode === 'cards' ? 'Karten' : 'Tabelle'}.`,
+    `${filtered.length} models visible with current filters. View: ${state.compareMode ? 'direct comparison' : state.viewMode === 'cards' ? 'cards' : 'table'}.`,
+  );
 
   app.innerHTML = `
-    <main class="mx-auto w-full max-w-[1320px] px-4 py-6 sm:px-6 lg:px-8">
+    <a href="#main-content" class="skip-link">${t('Zum Inhalt springen', 'Skip to content')}</a>
+    <main id="main-content" tabindex="-1" class="mx-auto w-full max-w-[1320px] px-4 py-6 sm:px-6 lg:px-8">
       <header class="panel relative overflow-hidden p-5 sm:p-6">
         <div class="theme-hero-surface absolute inset-0 -z-10"></div>
         <div class="absolute right-4 top-4 flex items-center gap-2 sm:right-5 sm:top-5">
@@ -1606,6 +1665,7 @@ const render = () => {
             id="theme-toggle"
             type="button"
             class="theme-icon-btn"
+            aria-pressed="${state.theme === 'dark' ? 'true' : 'false'}"
             aria-label="${escapeHtml(themeToggleLabel)}"
             title="${escapeHtml(themeToggleLabel)}"
           >
@@ -1624,6 +1684,7 @@ const render = () => {
           )}
         </p>
       </header>
+      <p id="results-status" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true">${escapeHtml(resultsStatusLabel)}</p>
 
       ${!state.focusMode || selectedRows.length ? compareBarTemplate(selectedRows) : ''}
 
@@ -1636,33 +1697,40 @@ const render = () => {
               : t('Schnellfilter fuer Suche, Kategorie und Sortierung.', 'Quick filters for search, category and sorting.')}</p>
           </div>
           <div class="flex flex-wrap items-center gap-2 xl:justify-end">
-            <button id="view-cards" class="chip-btn ${
+            <button id="view-cards" type="button" aria-pressed="${state.viewMode === 'cards' ? 'true' : 'false'}" class="chip-btn ${
               state.viewMode === 'cards'
                 ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
                 : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
             }">${t('Karten', 'Cards')}</button>
-            <button id="view-table" class="chip-btn ${
+            <button id="view-table" type="button" aria-pressed="${state.viewMode === 'table' ? 'true' : 'false'}" class="chip-btn ${
               state.viewMode === 'table'
                 ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
                 : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
             }">${t('Tabelle', 'Table')}</button>
-            <button id="toggle-focus-mode" class="chip-btn ${
+            <button id="toggle-focus-mode" type="button" aria-pressed="${state.focusMode ? 'true' : 'false'}" class="chip-btn ${
               state.focusMode
                 ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
                 : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
             }">${state.focusMode ? t('Standardansicht', 'Standard view') : t('Fokusansicht', 'Focus view')}</button>
-            <button id="clear-filters" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(
+            <button id="clear-filters" type="button" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(
               'Filter zuruecksetzen',
               'Reset filters',
             )}</button>
             ${
               state.focusMode
                 ? ''
-                : `<button id="toggle-advanced-filters" class="chip-btn ${
+                : `<button
+                    id="toggle-advanced-filters"
+                    type="button"
+                    aria-pressed="${state.showAdvancedFilters ? 'true' : 'false'}"
+                    aria-expanded="${state.showAdvancedFilters ? 'true' : 'false'}"
+                    aria-controls="advanced-filters-region"
+                    class="chip-btn ${
                     state.showAdvancedFilters
                       ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
                       : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
-                  }">${state.showAdvancedFilters ? t('Weniger Filter', 'Fewer filters') : t('Mehr Filter', 'More filters')}</button>`
+                  }"
+                  >${state.showAdvancedFilters ? t('Weniger Filter', 'Fewer filters') : t('Mehr Filter', 'More filters')}</button>`
             }
           </div>
         </div>
@@ -1718,7 +1786,13 @@ const render = () => {
           </label>
         </div>
 
-        <div id="advanced-filters-region" class="mt-4 space-y-3 ${state.showAdvancedFilters && !state.focusMode ? '' : 'hidden'}">
+        <div
+          id="advanced-filters-region"
+          role="region"
+          aria-label="${t('Erweiterte Filter', 'Advanced filters')}"
+          aria-hidden="${state.showAdvancedFilters && !state.focusMode ? 'false' : 'true'}"
+          class="mt-4 space-y-3 ${state.showAdvancedFilters && !state.focusMode ? '' : 'hidden'}"
+        >
           <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Erweiterte Filter', 'Advanced filters')}</p>
           <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             <label class="space-y-1">
@@ -1846,7 +1920,7 @@ const render = () => {
                       )}</p>
                       ${
                         hasMoreCards
-                          ? `<button id="load-more-cards" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(
+                          ? `<button id="load-more-cards" type="button" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(
                               'Mehr laden',
                               'Load more',
                             )}</button>`
@@ -2148,7 +2222,10 @@ const init = async () => {
   applyLanguageToDocument();
   applyThemeToDocument();
   setFallbackUsdRate();
-  app.innerHTML = `<main class="mx-auto max-w-[1320px] px-4 py-8"><p class="panel p-6 text-sm text-[#a8a29e]">${t(
+  app.innerHTML = `<a href="#main-content" class="skip-link">${t(
+    'Zum Inhalt springen',
+    'Skip to content',
+  )}</a><main id="main-content" tabindex="-1" class="mx-auto max-w-[1320px] px-4 py-8"><p class="panel p-6 text-sm text-[#a8a29e]">${t(
     'Lade Brillendaten...',
     'Loading glasses data...',
   )}</p></main>`;
@@ -2175,7 +2252,8 @@ const init = async () => {
   } catch (error) {
     const message = error instanceof Error ? error.message : t('Unbekannter Fehler', 'Unknown error');
     app.innerHTML = `
-      <main class="mx-auto max-w-[1320px] px-4 py-8">
+      <a href="#main-content" class="skip-link">${t('Zum Inhalt springen', 'Skip to content')}</a>
+      <main id="main-content" tabindex="-1" class="mx-auto max-w-[1320px] px-4 py-8">
         <p class="panel border-red-700/60 bg-red-950/40 p-6 text-sm font-semibold text-red-200">${t(
           'Daten konnten nicht geladen werden.',
           'Data could not be loaded.',

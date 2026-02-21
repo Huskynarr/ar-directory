@@ -41,6 +41,7 @@
     --chip-border: rgba(174, 197, 234, 0.3);
     --chip-border-hover: rgba(196, 216, 245, 0.5);
     --chip-text: #f2f6ff;
+    --focus-ring: #84cc16;
     background:
       radial-gradient(circle at 12% 8%, rgba(101, 163, 13, 0.2) 0%, transparent 38%),
       radial-gradient(circle at 90% 10%, rgba(47, 111, 181, 0.2) 0%, transparent 42%),
@@ -112,6 +113,7 @@
     --chip-border: rgba(119, 151, 198, 0.36);
     --chip-border-hover: rgba(82, 122, 180, 0.54);
     --chip-text: #10203b;
+    --focus-ring: #2f6fb5;
     background:
       radial-gradient(circle at 8% 2%, rgba(106, 169, 255, 0.2) 0%, transparent 42%),
       radial-gradient(circle at 92% 8%, rgba(132, 204, 22, 0.18) 0%, transparent 36%),
@@ -229,8 +231,13 @@
       0 6px 16px rgba(7, 16, 30, 0.26);
   }
 
+  .chip-btn:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--focus-ring) 68%, #ffffff 32%);
+    outline-offset: 2px;
+  }
+
   .theme-icon-btn {
-    @apply inline-flex h-9 w-9 items-center justify-center rounded-full border outline-none transition;
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-full border outline-none transition;
     color: var(--chip-text);
     border-color: color-mix(in srgb, var(--chip-border) 92%, transparent);
     background: var(--chip-bg);
@@ -265,6 +272,39 @@
       0 0 0 3px color-mix(in srgb, var(--field-border-focus) 32%, transparent),
       inset 0 1px 0 rgba(255, 255, 255, 0.2),
       0 10px 20px rgba(7, 16, 30, 0.28);
+  }
+
+  .visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 0.75rem;
+    top: 0.75rem;
+    z-index: 50;
+    transform: translateY(-160%);
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--chip-border-hover);
+    color: var(--chip-text);
+    background: var(--chip-bg);
+    box-shadow: 0 8px 20px rgba(7, 16, 30, 0.25);
+    transition: transform 120ms ease;
+  }
+
+  .skip-link:focus-visible {
+    transform: translateY(0);
+    outline: 3px solid color-mix(in srgb, var(--focus-ring) 68%, #ffffff 32%);
+    outline-offset: 2px;
   }
 
   .compact-details summary {
@@ -317,6 +357,18 @@ body.theme-light [class*='text-[#f5f5f4]'] {
 
 body.theme-light [class*='text-[#a8a29e]'] {
   color: #4f6181;
+}
+
+body.theme-dark [class*='text-[#a8a29e]'] {
+  color: #bdc9dd;
+}
+
+body.theme-light [class*='text-[#84cc16]'] {
+  color: #1f6b2b;
+}
+
+body.theme-light .text-lime-500 {
+  color: #2a6a20;
 }
 
 body.theme-light [class*='bg-[#1c1917]'] {
@@ -377,10 +429,34 @@ body.theme-light input[type='checkbox'] {
   accent-color: #2f6fb5;
 }
 
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input[type='checkbox']:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--focus-ring) 68%, #ffffff 32%);
+  outline-offset: 2px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .panel,
   .soft-panel {
     animation: glass-fade-in 260ms ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .chip-btn:hover:not(:disabled),
+  .theme-icon-btn:hover {
+    transform: none;
   }
 }
 
