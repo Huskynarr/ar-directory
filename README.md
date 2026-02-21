@@ -85,6 +85,7 @@ Die Datengrundlage ist ein kuratierter lokaler Datensatz:
   - `public/data/ar_glasses.metadata.json`
 - Bilddarstellung:
   - Primar werden `image_url`-Eintraege aus offiziellen Herstellerseiten genutzt.
+  - Das Enrichment nutzt zusaetzlich kuratierte Modell-Overrides und markeninterne Fallbacks, falls einzelne Produktseiten technisch nicht mehr erreichbar sind.
   - Falls kein valides Herstellerbild gefunden wird, zeigt die UI eine lokale SVG-Fallback-Visualisierung.
 
 ## SEO & LLM Discovery

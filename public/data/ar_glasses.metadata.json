@@ -7,7 +7,9 @@
   "xr_records": 8,
   "official_shop_links": 100,
   "note": "Curated local dataset without external comparison-provider links; image_url values are enriched from official manufacturer pages when available.",
-  "manufacturer_image_enriched_at": "2026-02-21T11:28:40.896Z",
-  "manufacturer_image_links": 65,
-  "manufacturer_image_note": "Image links derived from official manufacturer pages."
+  "manufacturer_image_enriched_at": "2026-02-21T11:45:36.309Z",
+  "manufacturer_image_links": 81,
+  "manufacturer_image_note": "Image links are derived from official manufacturer pages with curated per-model overrides and same-manufacturer fallback when needed.",
+  "manufacturer_image_curated_overrides": 6,
+  "manufacturer_image_manufacturer_fallbacks": 5
 }
