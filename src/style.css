@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Spectral:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    color: #221b15;
+    font-family: 'Instrument Sans', 'Segoe UI', sans-serif;
+    background:
+      radial-gradient(circle at 12% 8%, #efe4d5 0%, transparent 42%),
+      radial-gradient(circle at 88% 4%, #e8dac8 0%, transparent 44%),
+      linear-gradient(180deg, #f9f6f1 0%, #f4efe8 100%);
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-3xl border border-[#dbc9b5] bg-[#fffdf8] shadow-[0_10px_24px_rgba(34,27,21,0.08)];
+  }
+
+  .soft-panel {
+    @apply rounded-2xl border border-[#dbc9b5] bg-[#f8f1e7];
+  }
+
+  .field {
+    @apply h-11 w-full rounded-xl border border-[#d9c7b2] bg-[#fffdf8] px-3 text-sm text-[#281f16] outline-none ring-0 transition focus:border-[#a04d1f] focus:shadow-[0_0_0_3px_rgba(160,77,31,0.15)];
+  }
+
+  .chip-btn {
+    @apply inline-flex h-10 items-center justify-center rounded-full border px-4 text-sm font-semibold transition;
+  }
+}
