@@ -76,11 +76,6 @@ const escapeHtml = (value) =>
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#39;');
 
-const isBlockedProviderHost = (hostname) => {
-  const host = String(hostname ?? '').toLowerCase();
-  return host.includes('vr-compare.com');
-};
-
 const safeExternalUrl = (url) => {
   if (!url) {
     return '';
@@ -88,9 +83,6 @@ const safeExternalUrl = (url) => {
   try {
     const parsed = new URL(url);
     if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
-      return '';
-    }
-    if (isBlockedProviderHost(parsed.hostname)) {
       return '';
     }
     return parsed.toString();
@@ -1605,7 +1597,7 @@ const render = () => {
           <article class="soft-panel p-3">
             <h3 class="text-sm font-semibold text-[#f5f5f4]">Wie aktuell sind die Infos?</h3>
             <p class="mt-1 text-sm text-[#a8a29e]">
-              Quelle ist VR-Compare plus manuelle Legacy-Ergaenzungen. Zu jedem Modell gibt es Lifecycle-/EOL-Kontext
+              Quelle sind kuratierte Datensaetze plus manuelle Legacy-Ergaenzungen. Zu jedem Modell gibt es Lifecycle-/EOL-Kontext
               und Datenquellen-Links.
             </p>
           </article>

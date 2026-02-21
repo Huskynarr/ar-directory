@@ -6,18 +6,12 @@ const OUTPUT_CSV_PATH = 'public/data/ar_glasses.csv';
 const OUTPUT_METADATA_PATH = 'public/data/ar_glasses.metadata.json';
 const SOURCE_DATASET = 'curated_ar_xr_directory_v2';
 const SOURCE_PAGE = 'https://huskynarr.de/';
-const BLOCKED_HOST_MARKERS = ['vr-compare.com'];
 
 const sanitize = (value) => {
   if (value === null || value === undefined) {
     return '';
   }
   return String(value).replace(/\s+/g, ' ').trim();
-};
-
-const isBlockedHost = (hostname) => {
-  const host = String(hostname ?? '').toLowerCase();
-  return BLOCKED_HOST_MARKERS.some((marker) => host.includes(marker));
 };
 
 const safeHttpUrl = (value) => {
@@ -29,9 +23,6 @@ const safeHttpUrl = (value) => {
   try {
     const parsed = new URL(input);
     if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
-      return '';
-    }
-    if (isBlockedHost(parsed.hostname)) {
       return '';
     }
     return parsed.toString();
