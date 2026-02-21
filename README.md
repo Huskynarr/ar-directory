@@ -159,6 +159,7 @@ node scripts/generate-ar-csv.mjs
 │  └─ screenshots/
 │     └─ startseite.png
 ├─ .gitlab-ci.yml
+├─ .node-version
 ├─ CONTRIBUTING.md
 ├─ LICENSE
 ├─ vite.config.js
@@ -177,10 +178,33 @@ Damit sind Datenvalidierung und Build in CI abgedeckt.
 
 Wenn Plesk das Repository direkt zieht, ist der uebliche Ablauf:
 - Repository in Plesk verbinden und Auto-Deployment aktivieren
-- Als Deployment Action auf dem Plesk-Host konfigurieren:
-  - `npm ci`
-  - `npm run build`
-  - Inhalt von `dist/` in den Docroot (z. B. `httpdocs/`) deployen
+- Node-Version festlegen:
+  - Im Repo liegt `.node-version` mit `24` fuer `nodenv`.
+- Als Deployment Action auf dem Plesk-Host ein robustes Script verwenden (non-interactive shell + nodenv):
+
+```bash
+set -euo pipefail
+
+export NODENV_ROOT="$HOME/.nodenv"
+export PATH="$NODENV_ROOT/bin:$NODENV_ROOT/shims:$PATH"
+if command -v nodenv >/dev/null 2>&1; then
+  eval "$(nodenv init -)"
+fi
+
+# sicherstellen, dass im Repo gearbeitet wird
+cd /var/www/vhosts/huskynarr.de/ardirectory.huskynarr.de
+
+node -v
+npm -v
+npm ci
+npm run build
+
+# Dist in Docroot kopieren (Pfad bei Bedarf anpassen)
+rsync -a --delete dist/ /var/www/vhosts/huskynarr.de/ardirectory.huskynarr.de/httpdocs/
+```
+
+- Falls `nodenv` nicht verwendet wird, alternativ absolute Node/NPM-Binaries aus einer installierten Version nutzen
+  (z. B. `$HOME/.nodenv/versions/24/bin/node` und `$HOME/.nodenv/versions/24/bin/npm`).
 - Optional fuer SPA-Routing (nur falls direkte Unterseiten-URLs 404 liefern) `.htaccess` im Docroot hinterlegen:
 
 ```apacheconf
