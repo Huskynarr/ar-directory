@@ -3,9 +3,15 @@ import './style.css';
 
 const app = document.querySelector('#app');
 
-const COMPARE_LIMIT = 4;
+const COMPARE_LIMIT = 6;
 const CARDS_PER_PAGE = 12;
-const USD_TO_EUR = 0.92;
+const USD_TO_EUR_FALLBACK = 0.92;
+const RATE_SOURCE_URL = 'https://api.frankfurter.app/latest?from=USD&to=EUR';
+const VIEW_MODES = new Set(['cards', 'table']);
+const SORT_MODES = new Set(['name_asc', 'manufacturer_asc', 'release_desc', 'price_desc', 'price_asc', 'fov_desc']);
+const TRUE_VALUES = new Set(['1', 'true', 'yes', 'on']);
+const FALSE_VALUES = new Set(['0', 'false', 'no', 'off']);
+const RADAR_COLORS = ['#9d491c', '#2f6fb5', '#2d8f60', '#9b3db6', '#b1731f', '#a73452'];
 
 const UNKNOWN_EXACT_VALUES = new Set([
   '',
@@ -46,11 +52,15 @@ const state = {
   maxPrice: '',
   onlyPrice: false,
   onlyShop: false,
+  onlyAvailable: false,
   showEur: false,
   hideUnknown: false,
   sort: 'name_asc',
   cardsPage: 1,
   cardsPageSize: CARDS_PER_PAGE,
+  usdToEurRate: USD_TO_EUR_FALLBACK,
+  usdToEurFetchedAt: '',
+  usdToEurSource: `fallback:${USD_TO_EUR_FALLBACK}`,
 };
 
 const escapeHtml = (value) =>
@@ -107,7 +117,7 @@ const formatPrice = (value) => {
   if (!state.showEur) {
     return usd;
   }
-  const eur = formatCurrency(price * USD_TO_EUR, 'EUR');
+  const eur = formatCurrency(price * state.usdToEurRate, 'EUR');
   return `${usd} (~${eur})`;
 };
 
@@ -137,6 +147,73 @@ const formatNumber = (value, suffix = '') => {
 };
 
 const normalizeText = (value) => String(value ?? '').toLowerCase().trim();
+
+const parseBooleanParam = (value, fallback = false) => {
+  const normalized = normalizeText(value);
+  if (!normalized) {
+    return fallback;
+  }
+  if (TRUE_VALUES.has(normalized)) {
+    return true;
+  }
+  if (FALSE_VALUES.has(normalized)) {
+    return false;
+  }
+  return fallback;
+};
+
+const parseSelectedIdsParam = (value) =>
+  [...new Set(String(value ?? '').split(',').map((entry) => entry.trim()).filter(Boolean))].slice(0, COMPARE_LIMIT);
+
+const parseCardsPage = (value, fallback = 1) => {
+  const parsed = Number.parseInt(String(value ?? ''), 10);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+};
+
+const setFallbackUsdRate = () => {
+  state.usdToEurRate = USD_TO_EUR_FALLBACK;
+  state.usdToEurFetchedAt = new Date().toISOString();
+  state.usdToEurSource = `fallback:${USD_TO_EUR_FALLBACK}`;
+};
+
+const fetchUsdToEurRate = async () => {
+  try {
+    const response = await fetch(RATE_SOURCE_URL, { cache: 'no-store' });
+    if (!response.ok) {
+      throw new Error(`FX request failed with status ${response.status}`);
+    }
+    const payload = await response.json();
+    const rate = toNumber(payload?.rates?.EUR);
+    if (!rate || rate <= 0) {
+      throw new Error('FX payload missing EUR rate');
+    }
+    state.usdToEurRate = rate;
+    state.usdToEurFetchedAt = String(payload?.date ?? new Date().toISOString());
+    state.usdToEurSource = RATE_SOURCE_URL;
+  } catch {
+    setFallbackUsdRate();
+  }
+};
+
+const formatRateSourceLabel = () =>
+  state.usdToEurSource.startsWith('fallback:') ? `Fallback ${USD_TO_EUR_FALLBACK}` : 'Frankfurter API';
+
+const formatSafeDateLabel = (value) => {
+  const isoMatch = String(value ?? '').trim().match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (isoMatch) {
+    return `${isoMatch[3]}.${isoMatch[2]}.${isoMatch[1]}`;
+  }
+  return formatDate(value);
+};
+
+const formatRateHint = () => {
+  const rate = new Intl.NumberFormat('de-DE', {
+    minimumFractionDigits: 3,
+    maximumFractionDigits: 4,
+  }).format(state.usdToEurRate);
+  const fetchedAt = state.usdToEurFetchedAt ? formatSafeDateLabel(state.usdToEurFetchedAt) : 'k. A.';
+  return `Kurs: 1 USD = ${rate} EUR (${formatRateSourceLabel()}, Stand: ${fetchedAt})`;
+};
 
 const compactValue = (value, fallback = 'k. A.') => {
   const text = String(value ?? '').trim();
@@ -202,11 +279,210 @@ const isLikelyActive = (row) => normalizeText(row.active_distribution).includes(
 
 const getHorizontalFov = (row) => toNumber(row.fov_horizontal_deg);
 
+const getTrackingScore = (row) => {
+  const tracking = normalizeText(row.tracking);
+  if (!tracking) {
+    return 0.5;
+  }
+  if (tracking.includes('inside-out') || tracking.includes('inside out')) {
+    return 1.0;
+  }
+  if (tracking.includes('outside-in') || tracking.includes('outside in')) {
+    return 0.85;
+  }
+  if (tracking.includes('6dof') || tracking.includes('6 dof')) {
+    return 0.75;
+  }
+  if (
+    tracking.includes('3dof') ||
+    tracking.includes('3 dof') ||
+    tracking.includes('non-positional') ||
+    tracking.includes('non positional')
+  ) {
+    return 0.35;
+  }
+  return 0.5;
+};
+
 const getRowId = (row, index = 0) => {
-  const source = [row.id, row.short_name, row.name, row.manufacturer]
+  const strongId = String(row.id ?? '').trim() || String(row.short_name ?? '').trim();
+  if (strongId) {
+    return strongId;
+  }
+
+  const weakId = [row.name, row.manufacturer]
     .map((entry) => String(entry ?? '').trim())
-    .find(Boolean);
-  return source ? `${source}-${index}` : `row-${index}`;
+    .filter(Boolean)
+    .join('-')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
+  return weakId ? `${weakId}-${index}` : `row-${index}`;
+};
+
+const applyStateFromUrl = () => {
+  const params = new URLSearchParams(window.location.search);
+
+  const query = params.get('query');
+  if (query !== null) {
+    state.query = query;
+  }
+
+  const viewMode = params.get('viewMode');
+  if (viewMode && VIEW_MODES.has(viewMode)) {
+    state.viewMode = viewMode;
+  }
+
+  state.compareMode = parseBooleanParam(params.get('compareMode'), false);
+  state.selectedIds = parseSelectedIdsParam(params.get('selectedIds'));
+
+  const category = params.get('category');
+  if (category !== null) {
+    state.category = category.trim() || 'all';
+  }
+
+  const manufacturer = params.get('manufacturer');
+  if (manufacturer !== null) {
+    state.manufacturer = manufacturer.trim() || 'all';
+  }
+
+  const displayType = params.get('displayType');
+  if (displayType !== null) {
+    state.displayType = displayType.trim() || 'all';
+  }
+
+  const optics = params.get('optics');
+  if (optics !== null) {
+    state.optics = optics.trim() || 'all';
+  }
+
+  const tracking = params.get('tracking');
+  if (tracking !== null) {
+    state.tracking = tracking.trim() || 'all';
+  }
+
+  const eye = params.get('eye');
+  if (eye !== null) {
+    state.eyeTracking = eye.trim() || 'all';
+  }
+
+  const hand = params.get('hand');
+  if (hand !== null) {
+    state.handTracking = hand.trim() || 'all';
+  }
+
+  const passthrough = params.get('passthrough');
+  if (passthrough !== null) {
+    state.passthrough = passthrough.trim() || 'all';
+  }
+
+  const active = params.get('active');
+  if (active !== null) {
+    state.active = active.trim() || 'all';
+  }
+
+  const eol = params.get('eol');
+  if (eol !== null) {
+    state.eol = eol.trim() || 'all';
+  }
+
+  const minFov = params.get('minFov');
+  if (minFov !== null) {
+    state.minFov = minFov.trim();
+  }
+
+  const minRefresh = params.get('minRefresh');
+  if (minRefresh !== null) {
+    state.minRefresh = minRefresh.trim();
+  }
+
+  const maxPrice = params.get('maxPrice');
+  if (maxPrice !== null) {
+    state.maxPrice = maxPrice.trim();
+  }
+
+  state.onlyPrice = parseBooleanParam(params.get('onlyPrice'), false);
+  state.onlyShop = parseBooleanParam(params.get('onlyShop'), false);
+  state.onlyAvailable = parseBooleanParam(params.get('onlyAvailable'), false);
+  state.showEur = parseBooleanParam(params.get('showEur'), false);
+  state.hideUnknown = parseBooleanParam(params.get('hideUnknown'), false);
+
+  const sort = params.get('sort');
+  if (sort && SORT_MODES.has(sort)) {
+    state.sort = sort;
+  }
+
+  state.cardsPage = parseCardsPage(params.get('cardsPage'), 1);
+};
+
+const syncUrlWithState = () => {
+  const params = new URLSearchParams();
+  const setText = (key, value, defaultValue = '') => {
+    const text = String(value ?? '').trim();
+    const fallback = String(defaultValue ?? '').trim();
+    if (text && text !== fallback) {
+      params.set(key, text);
+    }
+  };
+  const setBoolean = (key, value, defaultValue = false) => {
+    if (Boolean(value) !== Boolean(defaultValue)) {
+      params.set(key, value ? '1' : '0');
+    }
+  };
+  const setSelect = (key, value) => {
+    const text = String(value ?? '').trim();
+    if (text && text !== 'all') {
+      params.set(key, text);
+    }
+  };
+
+  setText('query', state.query, '');
+  setText('viewMode', state.viewMode, 'cards');
+  setBoolean('compareMode', state.compareMode, false);
+  if (state.selectedIds.length) {
+    params.set('selectedIds', state.selectedIds.join(','));
+  }
+
+  setSelect('category', state.category);
+  setSelect('manufacturer', state.manufacturer);
+  setSelect('displayType', state.displayType);
+  setSelect('optics', state.optics);
+  setSelect('tracking', state.tracking);
+  setSelect('eye', state.eyeTracking);
+  setSelect('hand', state.handTracking);
+  setSelect('passthrough', state.passthrough);
+  setSelect('active', state.active);
+  setSelect('eol', state.eol);
+
+  setText('minFov', state.minFov, '');
+  setText('minRefresh', state.minRefresh, '');
+  setText('maxPrice', state.maxPrice, '');
+
+  setBoolean('onlyPrice', state.onlyPrice, false);
+  setBoolean('onlyShop', state.onlyShop, false);
+  setBoolean('onlyAvailable', state.onlyAvailable, false);
+  setBoolean('showEur', state.showEur, false);
+  setBoolean('hideUnknown', state.hideUnknown, false);
+  setText('sort', state.sort, 'name_asc');
+  if (state.cardsPage > 1) {
+    params.set('cardsPage', String(state.cardsPage));
+  }
+
+  const nextSearch = params.toString();
+  const nextUrl = `${window.location.pathname}${nextSearch ? `?${nextSearch}` : ''}${window.location.hash}`;
+  const currentUrl = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+  if (nextUrl !== currentUrl) {
+    history.replaceState(null, '', nextUrl);
+  }
+};
+
+const pruneSelectedIdsToKnownRows = () => {
+  const known = new Set(state.rows.map((row) => row.__rowId));
+  state.selectedIds = [...new Set(state.selectedIds)].filter((id) => known.has(id)).slice(0, COMPARE_LIMIT);
+  if (!state.selectedIds.length) {
+    state.compareMode = false;
+  }
 };
 
 const getFilterOptions = () => ({
@@ -339,6 +615,9 @@ const matchesFilters = (row) => {
     return false;
   }
   if (state.onlyShop && !getShopInfo(row).url) {
+    return false;
+  }
+  if (state.onlyAvailable && !isLikelyActive(row)) {
     return false;
   }
 
@@ -638,9 +917,140 @@ const getCompareFields = () => [
   compareField('Lifecycle Notes', (row) => row.lifecycle_notes, (row) => compactValue(row.lifecycle_notes, 'Keine Angaben.')),
 ];
 
+const getRadarAxes = () => [
+  { label: 'FOV H', inverted: false, getValue: (row) => getHorizontalFov(row) },
+  { label: 'Refresh', inverted: false, getValue: (row) => toNumber(row.refresh_hz) },
+  { label: 'Gewicht (inv.)', inverted: true, getValue: (row) => toNumber(row.weight_g) },
+  { label: 'Preis (inv.)', inverted: true, getValue: (row) => parsePrice(row.price_usd) },
+  { label: 'Tracking-Score', inverted: false, getValue: (row) => getTrackingScore(row) },
+];
+
+const normalizeRadarValue = (value, min, max, inverted = false) => {
+  if (!Number.isFinite(value)) {
+    return 0.5;
+  }
+  const range = max - min;
+  if (!Number.isFinite(range) || Math.abs(range) < 1e-9) {
+    return 0.5;
+  }
+  const normalized = Math.max(0, Math.min(1, (value - min) / range));
+  return inverted ? 1 - normalized : normalized;
+};
+
+const compareRadarTemplate = (selectedRows) => {
+  if (!selectedRows.length) {
+    return '';
+  }
+
+  const axes = getRadarAxes();
+  const ranges = axes.map((axis) => {
+    const values = selectedRows.map((row) => axis.getValue(row)).filter((value) => Number.isFinite(value));
+    if (!values.length) {
+      return { min: 0, max: 0 };
+    }
+    return {
+      min: Math.min(...values),
+      max: Math.max(...values),
+    };
+  });
+
+  const size = 360;
+  const center = size / 2;
+  const maxRadius = 130;
+  const ringCount = 5;
+  const axisCount = axes.length;
+  const startAngle = -Math.PI / 2;
+  const angleStep = (Math.PI * 2) / axisCount;
+  const pointFor = (axisIndex, value) => {
+    const angle = startAngle + axisIndex * angleStep;
+    const radius = maxRadius * value;
+    return {
+      x: center + Math.cos(angle) * radius,
+      y: center + Math.sin(angle) * radius,
+    };
+  };
+
+  const gridPolygons = Array.from({ length: ringCount }, (_, index) => {
+    const level = (index + 1) / ringCount;
+    const points = axes
+      .map((_, axisIndex) => {
+        const point = pointFor(axisIndex, level);
+        return `${point.x.toFixed(2)},${point.y.toFixed(2)}`;
+      })
+      .join(' ');
+    return `<polygon points="${points}" fill="none" stroke="#d9c8b5" stroke-width="1" />`;
+  }).join('');
+
+  const axisLines = axes
+    .map((axis, axisIndex) => {
+      const outer = pointFor(axisIndex, 1);
+      const labelPoint = pointFor(axisIndex, 1.12);
+      const anchor = labelPoint.x > center + 6 ? 'start' : labelPoint.x < center - 6 ? 'end' : 'middle';
+      const labelY = labelPoint.y > center ? labelPoint.y + 11 : labelPoint.y - 7;
+      return `
+        <line x1="${center}" y1="${center}" x2="${outer.x.toFixed(2)}" y2="${outer.y.toFixed(2)}" stroke="#ccb8a2" stroke-width="1" />
+        <text x="${labelPoint.x.toFixed(2)}" y="${labelY.toFixed(2)}" text-anchor="${anchor}" font-size="11" fill="#5f4d3b">${escapeHtml(axis.label)}</text>
+      `;
+    })
+    .join('');
+
+  const series = selectedRows.map((row, rowIndex) => {
+    const color = RADAR_COLORS[rowIndex % RADAR_COLORS.length];
+    const normalizedValues = axes.map((axis, axisIndex) =>
+      normalizeRadarValue(axis.getValue(row), ranges[axisIndex].min, ranges[axisIndex].max, axis.inverted),
+    );
+    const polygonPoints = normalizedValues
+      .map((value, axisIndex) => {
+        const point = pointFor(axisIndex, value);
+        return `${point.x.toFixed(2)},${point.y.toFixed(2)}`;
+      })
+      .join(' ');
+    const points = normalizedValues
+      .map((value, axisIndex) => {
+        const point = pointFor(axisIndex, value);
+        return `<circle cx="${point.x.toFixed(2)}" cy="${point.y.toFixed(2)}" r="3" fill="${color}" />`;
+      })
+      .join('');
+    return {
+      row,
+      color,
+      polygon: `<polygon points="${polygonPoints}" fill="${color}29" stroke="${color}" stroke-width="2" />`,
+      points,
+    };
+  });
+
+  return `
+    <div class="border-b border-[#e3d6c7] bg-[#fffaf2] px-4 py-4">
+      <p class="text-xs font-semibold uppercase tracking-[0.12em] text-[#6a5946]">Spider Chart (normalisiert auf Auswahl)</p>
+      <div class="mt-3 overflow-x-auto">
+        <svg viewBox="0 0 ${size} ${size}" role="img" aria-label="Radarvergleich der ausgewaehlten Modelle" class="mx-auto block h-[360px] min-w-[320px]">
+          ${gridPolygons}
+          ${axisLines}
+          ${series.map((entry) => entry.polygon).join('')}
+          ${series.map((entry) => entry.points).join('')}
+        </svg>
+      </div>
+      <p class="mt-2 text-xs text-[#6d5c49]">Achsen: FOV H, Refresh, Gewicht (invertiert), Preis (invertiert), Tracking-Score.</p>
+      <div class="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+        ${series
+          .map(
+            (entry) => `
+              <div class="inline-flex items-center gap-2 rounded-lg border border-[#dbc8b3] bg-[#fffdf8] px-2.5 py-1.5 text-xs text-[#3e2f22]">
+                <span class="inline-block h-2.5 w-2.5 rounded-full" style="background:${entry.color};"></span>
+                <span class="font-semibold">${escapeHtml(compactValue(entry.row.name, 'Unbekannt'))}</span>
+                <span class="text-[#6d5c49]">${escapeHtml(compactValue(entry.row.manufacturer, ''))}</span>
+              </div>
+            `,
+          )
+          .join('')}
+      </div>
+    </div>
+  `;
+};
+
 const compareModeTemplate = (selectedRows) => {
   if (!selectedRows.length) {
-    return '<p class="panel p-8 text-sm text-[#6f5f4c]">Keine Modelle ausgewaehlt. Waehle bis zu 4 Modelle fuer den Direktvergleich.</p>';
+    return `<p class="panel p-8 text-sm text-[#6f5f4c]">Keine Modelle ausgewaehlt. Waehle bis zu ${COMPARE_LIMIT} Modelle fuer den Direktvergleich.</p>`;
   }
 
   const fields = getCompareFields();
@@ -654,6 +1064,7 @@ const compareModeTemplate = (selectedRows) => {
         <h2 class="font-['Spectral'] text-2xl text-[#231c15]">Direktvergleich</h2>
         <p class="mt-1 text-sm text-[#6d5c49]">${selectedRows.length} ausgewaehlte Modelle, max. ${COMPARE_LIMIT} gleichzeitig.</p>
       </div>
+      ${compareRadarTemplate(selectedRows)}
       <div class="overflow-x-auto">
         <table class="min-w-[980px] border-collapse text-sm">
           <thead class="bg-[#f4e9dc] text-left text-[11px] uppercase tracking-[0.12em] text-[#6b5a48]">
@@ -786,6 +1197,7 @@ const render = () => {
   const visibleCards = filtered.slice(0, state.cardsPage * state.cardsPageSize);
   const hasMoreCards = visibleCards.length < filtered.length;
   const exportDisabled = filtered.length === 0;
+  syncUrlWithState();
 
   app.innerHTML = `
     <main class="mx-auto w-full max-w-[1320px] px-4 py-6 sm:px-6 lg:px-8">
@@ -937,6 +1349,10 @@ const render = () => {
             Nur mit Shop-Link
           </label>
           <label class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">
+            <input id="only-available" type="checkbox" class="mr-2 size-4 accent-[#9d491c]" ${state.onlyAvailable ? 'checked' : ''} />
+            Nur aktiv im Vertrieb
+          </label>
+          <label class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">
             <input id="show-eur" type="checkbox" class="mr-2 size-4 accent-[#9d491c]" ${state.showEur ? 'checked' : ''} />
             EUR-Zusatz
           </label>
@@ -953,6 +1369,7 @@ const render = () => {
 
           <button id="clear-filters" class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">Filter zuruecksetzen</button>
         </div>
+        ${state.showEur ? `<p class="mt-2 text-xs text-[#6d5c49]">${escapeHtml(formatRateHint())}</p>` : ''}
       </section>
 
       <section class="mt-4">
@@ -1015,6 +1432,9 @@ const render = () => {
 
   document.querySelector('#only-price')?.addEventListener('change', (event) => setAndRender('onlyPrice', event.target.checked));
   document.querySelector('#only-shop')?.addEventListener('change', (event) => setAndRender('onlyShop', event.target.checked));
+  document
+    .querySelector('#only-available')
+    ?.addEventListener('change', (event) => setAndRender('onlyAvailable', event.target.checked));
   document
     .querySelector('#show-eur')
     ?.addEventListener('change', (event) => setAndRender('showEur', event.target.checked, { resetCardsPage: false }));
@@ -1108,6 +1528,7 @@ const render = () => {
     state.maxPrice = '';
     state.onlyPrice = false;
     state.onlyShop = false;
+    state.onlyAvailable = false;
     state.showEur = false;
     state.hideUnknown = false;
     state.sort = 'name_asc';
@@ -1132,7 +1553,11 @@ const parseCsv = (text) =>
   });
 
 const init = async () => {
+  applyStateFromUrl();
+  setFallbackUsdRate();
   app.innerHTML = '<main class="mx-auto max-w-[1320px] px-4 py-8"><p class="panel p-6 text-sm text-[#6d5c49]">Lade Brillendaten...</p></main>';
+
+  const ratePromise = fetchUsdToEurRate();
 
   try {
     const response = await fetch('/data/ar_glasses.csv', { cache: 'no-store' });
@@ -1143,10 +1568,14 @@ const init = async () => {
     const { data, fields } = await parseCsv(csv);
     state.rows = data.map((row, index) => ({ ...row, __rowId: getRowId(row, index) }));
     state.csvFields = fields.filter((field) => !field.startsWith('__'));
-    state.selectedIds = [];
-    state.compareMode = false;
+    pruneSelectedIdsToKnownRows();
     state.compareNotice = '';
     render();
+    ratePromise.then(() => {
+      if (state.rows.length) {
+        render();
+      }
+    });
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Unbekannter Fehler';
     app.innerHTML = `

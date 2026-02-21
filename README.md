@@ -26,6 +26,7 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
   - Hand Tracking
   - Passthrough
   - aktiver Vertrieb
+  - Preset `Nur aktiv im Vertrieb` fuer schnellen Fokus auf verfuegbare Modelle
   - EOL/Update-Status
   - minimaler horizontaler Winkel (FOV)
   - minimale Refresh-Rate
@@ -34,13 +35,16 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
   - nur mit Shop-Link
 - Sortierung:
   - Name, Hersteller, Neueste, Preis, FOV
+- Teilen:
+  - URL-sharebar (Filter, Sortierung und Compare-Auswahl koennen direkt geteilt werden)
 - Vergleich:
-  - Multi-Select mit bis zu 4 Modellen
+  - Multi-Select mit bis zu 6 Modellen
   - Compare-Modus mit direkter Merkmalsmatrix
+  - Radar-Chart fuer schnellen visuellen Modellvergleich
 - Datenexport:
   - `CSV Export` fuer aktuell gefilterte Ergebnisse
 - Ansichtsoptionen:
-  - `EUR-Zusatz` zeigt eine EUR-Naeherung zum USD-Preis
+  - `EUR-Zusatz` nutzt einen Live-EUR-Kurs zur USD-Umrechnung
   - `Unbekannte Werte ausblenden` reduziert Rauschen in Listen und Compare-Ansicht
 - Kartenansicht:
   - initial 12 Cards und `Mehr laden` Pagination
@@ -141,23 +145,33 @@ node scripts/generate-ar-csv.mjs
 
 ## CI / GitLab Pipeline
 
-Die `.gitlab-ci.yml` enthaelt die benoetigten Basis-Jobs:
+Die `.gitlab-ci.yml` enthaelt zwei schlanke Jobs:
 - `verify:data`: prueft, ob Daten generiert werden koennen und die Exportdateien existieren
 - `build:app`: baut die App mit Vite und speichert `dist/` als Artefakt
-- `pages`: uebernimmt das Build-Artefakt, kopiert `dist/` nach `public/` und deployed auf GitLab Pages (nur Default-Branch)
 
-Damit sind Datenvalidierung, Build und Deployment ueber die Pipeline abgedeckt.
+Damit sind Datenvalidierung und Build in CI abgedeckt. Deployment erfolgt separat (siehe Plesk-Abschnitt).
 
-## Deployment (GitLab Pages)
+## Deployment (Plesk)
 
-- Lokal pruefen:
+Pragmatischer Ablauf fuer statisches Hosting auf Plesk:
+- Build erzeugen:
+  - `npm ci`
   - `npm run build`
-  - optional `npm run preview`
-- In CI:
-  - `build:app` erzeugt `dist/`
-  - `pages` kopiert `dist/.` nach `public/` und publiziert das als Pages-Artefakt
-- Ergebnis:
-  - GitLab Pages stellt die Seite anschliessend unter der Projekt-URL bereit (Schema: `https://<group>.gitlab.io/<project>/`).
+- Output deployen:
+  - Inhalt von `dist/` in den Plesk-Docroot (z. B. `httpdocs/`) hochladen oder synchronisieren
+- Optional fuer SPA-Routing (nur falls direkte Unterseiten-URLs 404 liefern):
+  - `.htaccess` im Docroot hinterlegen, z. B.:
+
+```apacheconf
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+```
 
 ## Contributing
 

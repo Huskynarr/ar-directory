@@ -1,7 +1,6 @@
 stages:
   - verify
   - build
-  - pages
 
 default:
   image: node:20-alpine
@@ -29,18 +28,3 @@ build:app:
     paths:
       - dist/
     expire_in: 1 week
-
-pages:
-  stage: pages
-  needs:
-    - job: build:app
-      artifacts: true
-  script:
-    - rm -rf public
-    - mkdir -p public
-    - cp -r dist/. public/
-  artifacts:
-    paths:
-      - public
-  rules:
-    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
