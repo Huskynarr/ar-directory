@@ -43,6 +43,14 @@
     @apply inline-flex h-10 items-center justify-center rounded-full border px-4 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-60;
   }
 
+  .compact-details summary {
+    list-style: none;
+  }
+
+  .compact-details summary::-webkit-details-marker {
+    display: none;
+  }
+
   .theme-hero-surface {
     background: linear-gradient(135deg, #0f0d0b 0%, #1a1714 50%, #0f0d0b 100%);
   }

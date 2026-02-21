@@ -60,6 +60,7 @@ const state = {
   flagXr: false,
   showEur: false,
   hideUnknown: false,
+  showAdvancedFilters: false,
   sort: 'name_asc',
   cardsPage: 1,
   cardsPageSize: CARDS_PER_PAGE,
@@ -555,6 +556,7 @@ const applyStateFromUrl = () => {
   state.flagXr = parseBooleanParam(params.get('flagXr'), false);
   state.showEur = parseBooleanParam(params.get('showEur'), false);
   state.hideUnknown = parseBooleanParam(params.get('hideUnknown'), false);
+  state.showAdvancedFilters = parseBooleanParam(params.get('advanced'), false);
 
   const sort = params.get('sort');
   if (sort && SORT_MODES.has(sort)) {
@@ -615,6 +617,7 @@ const syncUrlWithState = () => {
   setBoolean('flagXr', state.flagXr, false);
   setBoolean('showEur', state.showEur, false);
   setBoolean('hideUnknown', state.hideUnknown, false);
+  setBoolean('advanced', state.showAdvancedFilters, false);
   setText('sort', state.sort, 'name_asc');
   if (state.cardsPage > 1) {
     params.set('cardsPage', String(state.cardsPage));
@@ -875,6 +878,8 @@ const cardTemplate = (row) => {
   const infoUrl = safeExternalUrl(row.lifecycle_source || row.source_page);
   const isSelected = state.selectedIds.includes(row.__rowId);
   const facts = buildCardFacts(row);
+  const primaryFacts = facts.slice(0, 6);
+  const secondaryFacts = facts.slice(6);
   const lifecycleNotes = maybeHiddenText(row.lifecycle_notes, 'Keine Angaben.');
   const lifecycleSource = maybeHiddenText(row.lifecycle_source, '');
 
@@ -908,9 +913,9 @@ const cardTemplate = (row) => {
         </div>
 
         ${
-          facts.length
+          primaryFacts.length
             ? `<dl class="grid grid-cols-2 gap-x-3 gap-y-2 text-sm text-[#f5f5f4]">
-                ${facts
+                ${primaryFacts
                   .map(
                     (fact) => `
                       <div>
@@ -922,6 +927,25 @@ const cardTemplate = (row) => {
                   .join('')}
               </dl>`
             : '<p class="soft-panel p-3 text-xs text-[#a8a29e]">Keine bekannten Spezifikationen sichtbar (Toggle "Unbekannte Werte ausblenden" aktiv).</p>'
+        }
+        ${
+          secondaryFacts.length
+            ? `<details class="compact-details rounded-xl border border-[#44403c] bg-[#1c1917] p-2.5 text-sm text-[#a8a29e]">
+                <summary class="cursor-pointer text-xs font-semibold uppercase tracking-[0.12em]">Mehr Spezifikationen</summary>
+                <dl class="mt-2 grid grid-cols-2 gap-x-3 gap-y-2 text-sm text-[#f5f5f4]">
+                  ${secondaryFacts
+                    .map(
+                      (fact) => `
+                        <div>
+                          <dt class="text-xs text-[#a8a29e]">${escapeHtml(fact.label)}</dt>
+                          <dd class="font-medium">${escapeHtml(fact.value)}</dd>
+                        </div>
+                      `,
+                    )
+                    .join('')}
+                </dl>
+              </details>`
+            : ''
         }
 
         <div class="rounded-2xl border p-3 text-sm ${lifecycleClasses}">
@@ -1371,18 +1395,28 @@ const render = () => {
         <p class="mt-2 text-xs text-[#a8a29e]">Datenstand: ${escapeHtml(retrievedAt ? formatDate(retrievedAt) : 'k. A.')}</p>
       </header>
 
-      <section class="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
+      <section class="mt-4 grid gap-3 sm:grid-cols-3">
         <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${filtered.length}</strong> sichtbare Modelle</p>
-        <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${withPrice}</strong> mit Preis</p>
-        <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${withShop}</strong> mit Shop-Link</p>
-        <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${activeCount}</strong> aktiv / unklar aktiv</p>
-        <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${eolCount}</strong> EOL / discontinued</p>
+        <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${withPrice}</strong> mit Preis / <strong class="text-[#f5f5f4]">${withShop}</strong> mit Shop-Link</p>
+        <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${activeCount}</strong> aktiv / <strong class="text-[#f5f5f4]">${eolCount}</strong> EOL</p>
       </section>
 
       ${compareBarTemplate(selectedRows)}
 
       <section class="panel mt-4 p-4 sm:p-5">
-        <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <h2 class="text-lg font-semibold text-[#f5f5f4]">Filter</h2>
+            <p class="mt-1 text-xs text-[#a8a29e]">Schnellfilter fuer Suche, Kategorie und Sortierung.</p>
+          </div>
+          <button id="toggle-advanced-filters" class="chip-btn ${
+            state.showAdvancedFilters
+              ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
+              : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
+          }">${state.showAdvancedFilters ? 'Weniger Filter' : 'Mehr Filter'}</button>
+        </div>
+
+        <div class="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
           <label class="space-y-1 xl:col-span-2">
             <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Suche</span>
             <input id="query-input" type="search" class="field" placeholder="Modell, Hersteller, Software, Tracking, Lifecycle" value="${escapeHtml(state.query)}" />
@@ -1402,77 +1436,6 @@ const render = () => {
             <select id="manufacturer-filter" class="field">
               ${optionList(filterOptions.manufacturers, state.manufacturer, 'Alle Hersteller')}
             </select>
-          </label>
-
-          <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Display-Typ</span>
-            <select id="display-filter" class="field">
-              ${optionList(filterOptions.displayTypes, state.displayType, 'Alle Display-Arten')}
-            </select>
-          </label>
-
-          <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Optik</span>
-            <select id="optics-filter" class="field">
-              ${optionList(filterOptions.optics, state.optics, 'Alle Optik-Typen')}
-            </select>
-          </label>
-
-          <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Tracking</span>
-            <select id="tracking-filter" class="field">
-              ${optionList(filterOptions.tracking, state.tracking, 'Alle Tracking-Typen')}
-            </select>
-          </label>
-
-          <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Eye Tracking</span>
-            <select id="eye-tracking-filter" class="field">
-              ${optionList(filterOptions.eyeTracking, state.eyeTracking, 'Alle Eye-Tracking-Werte')}
-            </select>
-          </label>
-
-          <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Hand Tracking</span>
-            <select id="hand-tracking-filter" class="field">
-              ${optionList(filterOptions.handTracking, state.handTracking, 'Alle Hand-Tracking-Werte')}
-            </select>
-          </label>
-
-          <label class="space-y-1 xl:col-span-2">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Passthrough</span>
-            <select id="passthrough-filter" class="field">
-              ${optionList(filterOptions.passthrough, state.passthrough, 'Alle Passthrough-Werte')}
-            </select>
-          </label>
-
-          <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Aktiver Vertrieb</span>
-            <select id="active-filter" class="field">
-              ${optionList(filterOptions.activeStatuses, state.active, 'Alle Vertrieb-Status')}
-            </select>
-          </label>
-
-          <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">EOL / Update-Status</span>
-            <select id="eol-filter" class="field">
-              ${optionList(filterOptions.eolStatuses, state.eol, 'Alle Lifecycle-Status')}
-            </select>
-          </label>
-
-          <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Min. FOV horizontal (deg)</span>
-            <input id="fov-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.minFov)}" placeholder="z. B. 40" />
-          </label>
-
-          <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Min. Refresh (Hz)</span>
-            <input id="refresh-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.minRefresh)}" placeholder="z. B. 60" />
-          </label>
-
-          <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Max. Preis (USD)</span>
-            <input id="price-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.maxPrice)}" placeholder="z. B. 1500" />
           </label>
 
           <label class="space-y-1">
@@ -1505,35 +1468,6 @@ const render = () => {
               : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
           }">${state.theme === 'light' ? 'Dunkelmodus' : 'Hellmodus'}</button>
 
-          <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
-            <input id="only-price" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyPrice ? 'checked' : ''} />
-            Nur mit Preis
-          </label>
-          <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
-            <input id="only-shop" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyShop ? 'checked' : ''} />
-            Nur mit Shop-Link
-          </label>
-          <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
-            <input id="only-available" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyAvailable ? 'checked' : ''} />
-            Nur aktiv im Vertrieb
-          </label>
-          <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
-            <input id="flag-ar" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.flagAr ? 'checked' : ''} />
-            AR-Flag
-          </label>
-          <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
-            <input id="flag-xr" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.flagXr ? 'checked' : ''} />
-            XR-Flag
-          </label>
-          <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
-            <input id="show-eur" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.showEur ? 'checked' : ''} />
-            EUR-Zusatz
-          </label>
-          <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
-            <input id="hide-unknown" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.hideUnknown ? 'checked' : ''} />
-            Unbekannte Werte ausblenden
-          </label>
-
           <button id="export-csv" class="chip-btn ${
             exportDisabled
               ? 'cursor-not-allowed border-[#44403c] bg-[#292524] text-[#a8a29e]'
@@ -1541,6 +1475,113 @@ const render = () => {
           }" ${exportDisabled ? 'disabled' : ''}>CSV Export</button>
 
           <button id="clear-filters" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">Filter zuruecksetzen</button>
+        </div>
+
+        <div id="advanced-filters-region" class="mt-4 space-y-3 ${state.showAdvancedFilters ? '' : 'hidden'}">
+          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Erweiterte Filter</p>
+          <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+            <label class="space-y-1">
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Display-Typ</span>
+              <select id="display-filter" class="field">
+                ${optionList(filterOptions.displayTypes, state.displayType, 'Alle Display-Arten')}
+              </select>
+            </label>
+
+            <label class="space-y-1">
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Optik</span>
+              <select id="optics-filter" class="field">
+                ${optionList(filterOptions.optics, state.optics, 'Alle Optik-Typen')}
+              </select>
+            </label>
+
+            <label class="space-y-1">
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Tracking</span>
+              <select id="tracking-filter" class="field">
+                ${optionList(filterOptions.tracking, state.tracking, 'Alle Tracking-Typen')}
+              </select>
+            </label>
+
+            <label class="space-y-1">
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Eye Tracking</span>
+              <select id="eye-tracking-filter" class="field">
+                ${optionList(filterOptions.eyeTracking, state.eyeTracking, 'Alle Eye-Tracking-Werte')}
+              </select>
+            </label>
+
+            <label class="space-y-1">
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Hand Tracking</span>
+              <select id="hand-tracking-filter" class="field">
+                ${optionList(filterOptions.handTracking, state.handTracking, 'Alle Hand-Tracking-Werte')}
+              </select>
+            </label>
+
+            <label class="space-y-1">
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Passthrough</span>
+              <select id="passthrough-filter" class="field">
+                ${optionList(filterOptions.passthrough, state.passthrough, 'Alle Passthrough-Werte')}
+              </select>
+            </label>
+
+            <label class="space-y-1">
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Aktiver Vertrieb</span>
+              <select id="active-filter" class="field">
+                ${optionList(filterOptions.activeStatuses, state.active, 'Alle Vertrieb-Status')}
+              </select>
+            </label>
+
+            <label class="space-y-1">
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">EOL / Update-Status</span>
+              <select id="eol-filter" class="field">
+                ${optionList(filterOptions.eolStatuses, state.eol, 'Alle Lifecycle-Status')}
+              </select>
+            </label>
+
+            <label class="space-y-1">
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Min. FOV horizontal (deg)</span>
+              <input id="fov-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.minFov)}" placeholder="z. B. 40" />
+            </label>
+
+            <label class="space-y-1">
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Min. Refresh (Hz)</span>
+              <input id="refresh-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.minRefresh)}" placeholder="z. B. 60" />
+            </label>
+
+            <label class="space-y-1">
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Max. Preis (USD)</span>
+              <input id="price-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.maxPrice)}" placeholder="z. B. 1500" />
+            </label>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
+              <input id="only-price" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyPrice ? 'checked' : ''} />
+              Nur mit Preis
+            </label>
+            <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
+              <input id="only-shop" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyShop ? 'checked' : ''} />
+              Nur mit Shop-Link
+            </label>
+            <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
+              <input id="only-available" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyAvailable ? 'checked' : ''} />
+              Nur aktiv im Vertrieb
+            </label>
+            <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
+              <input id="flag-ar" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.flagAr ? 'checked' : ''} />
+              AR-Flag
+            </label>
+            <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
+              <input id="flag-xr" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.flagXr ? 'checked' : ''} />
+              XR-Flag
+            </label>
+            <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
+              <input id="show-eur" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.showEur ? 'checked' : ''} />
+              EUR-Zusatz
+            </label>
+            <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
+              <input id="hide-unknown" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.hideUnknown ? 'checked' : ''} />
+              Unbekannte Werte ausblenden
+            </label>
+          </div>
         </div>
         ${state.showEur ? `<p class="mt-2 text-xs text-[#a8a29e]">${escapeHtml(formatRateHint())}</p>` : ''}
       </section>
@@ -1661,6 +1702,11 @@ const render = () => {
     writeThemeToStorage(state.theme);
     render();
   });
+  document
+    .querySelector('#toggle-advanced-filters')
+    ?.addEventListener('click', () =>
+      setAndRender('showAdvancedFilters', !state.showAdvancedFilters, { resetCardsPage: false }),
+    );
 
   document.querySelector('#export-csv')?.addEventListener('click', () => exportRowsAsCsv(filtered));
 
@@ -1750,6 +1796,7 @@ const render = () => {
     state.flagXr = false;
     state.showEur = false;
     state.hideUnknown = false;
+    state.showAdvancedFilters = false;
     state.sort = 'name_asc';
     state.cardsPage = 1;
     state.compareMode = false;
