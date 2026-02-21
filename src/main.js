@@ -8,7 +8,15 @@ const CARDS_PER_PAGE = 12;
 const USD_TO_EUR_FALLBACK = 0.92;
 const RATE_SOURCE_URL = 'https://api.frankfurter.app/latest?from=USD&to=EUR';
 const VIEW_MODES = new Set(['cards', 'table']);
-const SORT_MODES = new Set(['name_asc', 'manufacturer_asc', 'release_desc', 'price_desc', 'price_asc', 'fov_desc']);
+const SORT_MODES = new Set([
+  'priority_default',
+  'name_asc',
+  'manufacturer_asc',
+  'release_desc',
+  'price_desc',
+  'price_asc',
+  'fov_desc',
+]);
 const THEME_MODES = new Set(['dark', 'light']);
 const THEME_STORAGE_KEY = 'ar_directory_theme';
 const TRUE_VALUES = new Set(['1', 'true', 'yes', 'on']);
@@ -62,7 +70,7 @@ const state = {
   hideUnknown: false,
   showAdvancedFilters: false,
   focusMode: false,
-  sort: 'name_asc',
+  sort: 'priority_default',
   cardsPage: 1,
   cardsPageSize: CARDS_PER_PAGE,
   usdToEurRate: USD_TO_EUR_FALLBACK,
@@ -621,7 +629,7 @@ const syncUrlWithState = () => {
   setBoolean('hideUnknown', state.hideUnknown, false);
   setBoolean('advanced', state.showAdvancedFilters, false);
   setBoolean('focus', state.focusMode, false);
-  setText('sort', state.sort, 'name_asc');
+  setText('sort', state.sort, 'priority_default');
   if (state.cardsPage > 1) {
     params.set('cardsPage', String(state.cardsPage));
   }
@@ -678,9 +686,32 @@ const compareDates = (left, right) => {
   return safeLeft - safeRight;
 };
 
+const compareDefaultPriority = (left, right) => {
+  const leftEol = isEol(left);
+  const rightEol = isEol(right);
+  if (leftEol !== rightEol) {
+    return leftEol ? 1 : -1;
+  }
+
+  const releaseOrder = compareDates(right.release_date || right.announced_date, left.release_date || left.announced_date);
+  if (releaseOrder !== 0) {
+    return releaseOrder;
+  }
+
+  const activeOrder = compareNumbers(isLikelyActive(right) ? 1 : 0, isLikelyActive(left) ? 1 : 0);
+  if (activeOrder !== 0) {
+    return activeOrder;
+  }
+
+  return compareText(left.name, right.name);
+};
+
 const sortRows = (rows) => {
   const sorted = [...rows];
   switch (state.sort) {
+    case 'priority_default':
+      sorted.sort((left, right) => compareDefaultPriority(left, right));
+      return sorted;
     case 'price_desc':
       sorted.sort((left, right) => compareNumbers(parsePrice(right.price_usd), parsePrice(left.price_usd)));
       return sorted;
@@ -1462,6 +1493,9 @@ const render = () => {
           <label class="space-y-1">
             <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Sortierung</span>
             <select id="sort-filter" class="field">
+              <option value="priority_default"${
+                state.sort === 'priority_default' ? ' selected' : ''
+              }>Priorität (Neueste, EOL unten)</option>
               <option value="name_asc"${state.sort === 'name_asc' ? ' selected' : ''}>Name A-Z</option>
               <option value="manufacturer_asc"${state.sort === 'manufacturer_asc' ? ' selected' : ''}>Hersteller A-Z</option>
               <option value="release_desc"${state.sort === 'release_desc' ? ' selected' : ''}>Neueste zuerst</option>
@@ -1834,7 +1868,7 @@ const render = () => {
     state.showEur = false;
     state.hideUnknown = false;
     state.showAdvancedFilters = false;
-    state.sort = 'name_asc';
+    state.sort = 'priority_default';
     state.cardsPage = 1;
     state.compareMode = false;
     state.compareNotice = '';
