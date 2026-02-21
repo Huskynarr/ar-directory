@@ -15,11 +15,16 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
 
 - Startseite zeigt alle verfuegbaren Brillen als Cards
 - Umschaltbar zwischen `Cards` und `Tabelle`
-- Volltextsuche (Modell, Hersteller, Software, Tracking, Display)
+- Volltextsuche (Modell, Hersteller, Software, Tracking, Display, Lifecycle-Notizen)
 - Filter:
   - Kategorie (`AR` / `XR`)
   - Hersteller
   - Display-Typ
+  - Optik
+  - Tracking
+  - Eye Tracking
+  - Hand Tracking
+  - Passthrough
   - aktiver Vertrieb
   - EOL/Update-Status
   - minimaler horizontaler Winkel (FOV)
@@ -29,11 +34,21 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
   - nur mit Shop-Link
 - Sortierung:
   - Name, Hersteller, Neueste, Preis, FOV
+- Vergleich:
+  - Multi-Select mit bis zu 4 Modellen
+  - Compare-Modus mit direkter Merkmalsmatrix
+- Datenexport:
+  - `CSV Export` fuer aktuell gefilterte Ergebnisse
+- Ansichtsoptionen:
+  - `EUR-Zusatz` zeigt eine EUR-Naeherung zum USD-Preis
+  - `Unbekannte Werte ausblenden` reduziert Rauschen in Listen und Compare-Ansicht
+- Kartenansicht:
+  - initial 12 Cards und `Mehr laden` Pagination
 - Karten enthalten:
   - Bild, Name, Hersteller, Kategorie
   - Preis, Vertrieb, Lifecycle/EOL
   - Display, Optik, FOV, Refresh, Aufloesung
-  - Software, Compute Unit, Tracking
+  - Software, Compute Unit, Tracking, Eye/Hand/Passthrough
   - Shop-Link + Datenquelle
 
 ## Datenabdeckung
@@ -129,8 +144,20 @@ node scripts/generate-ar-csv.mjs
 Die `.gitlab-ci.yml` enthaelt die benoetigten Basis-Jobs:
 - `verify:data`: prueft, ob Daten generiert werden koennen und die Exportdateien existieren
 - `build:app`: baut die App mit Vite und speichert `dist/` als Artefakt
+- `pages`: uebernimmt das Build-Artefakt, kopiert `dist/` nach `public/` und deployed auf GitLab Pages (nur Default-Branch)
 
-Damit sind die zentralen Qualitaetschecks (Daten + Build) fuer Merge Requests und Branches abgedeckt.
+Damit sind Datenvalidierung, Build und Deployment ueber die Pipeline abgedeckt.
+
+## Deployment (GitLab Pages)
+
+- Lokal pruefen:
+  - `npm run build`
+  - optional `npm run preview`
+- In CI:
+  - `build:app` erzeugt `dist/`
+  - `pages` kopiert `dist/.` nach `public/` und publiziert das als Pages-Artefakt
+- Ergebnis:
+  - GitLab Pages stellt die Seite anschliessend unter der Projekt-URL bereit (Schema: `https://<group>.gitlab.io/<project>/`).
 
 ## Contributing
 

@@ -3,13 +3,42 @@ import './style.css';
 
 const app = document.querySelector('#app');
 
+const COMPARE_LIMIT = 4;
+const CARDS_PER_PAGE = 12;
+const USD_TO_EUR = 0.92;
+
+const UNKNOWN_EXACT_VALUES = new Set([
+  '',
+  'k. a.',
+  'k.a.',
+  'n/a',
+  'na',
+  'unknown',
+  'unbekannt',
+  '-',
+  'none',
+  'null',
+  'unklar',
+]);
+
+const UNKNOWN_PARTIAL_MARKERS = ['keine eindeutige eol-angabe', 'keine angaben', 'keine daten', 'nicht bekannt'];
+
 const state = {
   rows: [],
+  csvFields: [],
   query: '',
   viewMode: 'cards',
+  compareMode: false,
+  selectedIds: [],
+  compareNotice: '',
   category: 'all',
   manufacturer: 'all',
   displayType: 'all',
+  optics: 'all',
+  tracking: 'all',
+  eyeTracking: 'all',
+  handTracking: 'all',
+  passthrough: 'all',
   active: 'all',
   eol: 'all',
   minFov: '',
@@ -17,7 +46,11 @@ const state = {
   maxPrice: '',
   onlyPrice: false,
   onlyShop: false,
+  showEur: false,
+  hideUnknown: false,
   sort: 'name_asc',
+  cardsPage: 1,
+  cardsPageSize: CARDS_PER_PAGE,
 };
 
 const escapeHtml = (value) =>
@@ -48,7 +81,8 @@ const toNumber = (value) => {
   if (!raw) {
     return null;
   }
-  const numeric = Number(raw);
+  const normalized = raw.replace(',', '.');
+  const numeric = Number(normalized);
   return Number.isFinite(numeric) ? numeric : null;
 };
 
@@ -57,16 +91,24 @@ const parsePrice = (value) => {
   return numeric && numeric > 0 ? numeric : null;
 };
 
+const formatCurrency = (amount, currency) =>
+  new Intl.NumberFormat('de-DE', {
+    style: 'currency',
+    currency,
+    maximumFractionDigits: 0,
+  }).format(amount);
+
 const formatPrice = (value) => {
   const price = parsePrice(value);
   if (!price) {
     return 'Preis auf Anfrage';
   }
-  return new Intl.NumberFormat('de-DE', {
-    style: 'currency',
-    currency: 'USD',
-    maximumFractionDigits: 0,
-  }).format(price);
+  const usd = formatCurrency(price, 'USD');
+  if (!state.showEur) {
+    return usd;
+  }
+  const eur = formatCurrency(price * USD_TO_EUR, 'EUR');
+  return `${usd} (~${eur})`;
 };
 
 const formatDate = (value) => {
@@ -99,6 +141,24 @@ const normalizeText = (value) => String(value ?? '').toLowerCase().trim();
 const compactValue = (value, fallback = 'k. A.') => {
   const text = String(value ?? '').trim();
   return text ? text : fallback;
+};
+
+const isUnknownValue = (value) => {
+  const text = normalizeText(value);
+  if (!text) {
+    return true;
+  }
+  if (UNKNOWN_EXACT_VALUES.has(text)) {
+    return true;
+  }
+  return UNKNOWN_PARTIAL_MARKERS.some((marker) => text.includes(marker));
+};
+
+const maybeHiddenText = (value, fallback = 'k. A.') => {
+  if (state.hideUnknown && isUnknownValue(value)) {
+    return '';
+  }
+  return compactValue(value, fallback);
 };
 
 const uniqueSorted = (values) =>
@@ -142,9 +202,21 @@ const isLikelyActive = (row) => normalizeText(row.active_distribution).includes(
 
 const getHorizontalFov = (row) => toNumber(row.fov_horizontal_deg);
 
+const getRowId = (row, index = 0) => {
+  const source = [row.id, row.short_name, row.name, row.manufacturer]
+    .map((entry) => String(entry ?? '').trim())
+    .find(Boolean);
+  return source ? `${source}-${index}` : `row-${index}`;
+};
+
 const getFilterOptions = () => ({
   manufacturers: uniqueSorted(state.rows.map((row) => row.manufacturer)),
   displayTypes: uniqueSorted(state.rows.map((row) => row.display_type)),
+  optics: uniqueSorted(state.rows.map((row) => row.optics)),
+  tracking: uniqueSorted(state.rows.map((row) => row.tracking)),
+  eyeTracking: uniqueSorted(state.rows.map((row) => row.eye_tracking)),
+  handTracking: uniqueSorted(state.rows.map((row) => row.hand_tracking)),
+  passthrough: uniqueSorted(state.rows.map((row) => row.passthrough)),
   activeStatuses: uniqueSorted(state.rows.map((row) => row.active_distribution)),
   eolStatuses: uniqueSorted(state.rows.map((row) => row.eol_status)),
 });
@@ -200,6 +272,13 @@ const sortRows = (rows) => {
   }
 };
 
+const matchesSelectFilter = (value, selected) => {
+  if (selected === 'all') {
+    return true;
+  }
+  return normalizeText(value) === normalizeText(selected);
+};
+
 const matchesFilters = (row) => {
   const query = normalizeText(state.query);
   if (query) {
@@ -212,7 +291,12 @@ const matchesFilters = (row) => {
         row.optics,
         row.compute_unit,
         row.tracking,
+        row.eye_tracking,
+        row.hand_tracking,
+        row.passthrough,
         row.xr_category,
+        row.lifecycle_notes,
+        row.lifecycle_source,
       ].join(' '),
     );
     const tokens = query.split(/\s+/).filter(Boolean);
@@ -221,19 +305,34 @@ const matchesFilters = (row) => {
     }
   }
 
-  if (state.category !== 'all' && normalizeText(row.xr_category) !== normalizeText(state.category)) {
+  if (!matchesSelectFilter(row.xr_category, state.category)) {
     return false;
   }
-  if (state.manufacturer !== 'all' && row.manufacturer !== state.manufacturer) {
+  if (!matchesSelectFilter(row.manufacturer, state.manufacturer)) {
     return false;
   }
-  if (state.displayType !== 'all' && row.display_type !== state.displayType) {
+  if (!matchesSelectFilter(row.display_type, state.displayType)) {
     return false;
   }
-  if (state.active !== 'all' && row.active_distribution !== state.active) {
+  if (!matchesSelectFilter(row.optics, state.optics)) {
     return false;
   }
-  if (state.eol !== 'all' && row.eol_status !== state.eol) {
+  if (!matchesSelectFilter(row.tracking, state.tracking)) {
+    return false;
+  }
+  if (!matchesSelectFilter(row.eye_tracking, state.eyeTracking)) {
+    return false;
+  }
+  if (!matchesSelectFilter(row.hand_tracking, state.handTracking)) {
+    return false;
+  }
+  if (!matchesSelectFilter(row.passthrough, state.passthrough)) {
+    return false;
+  }
+  if (!matchesSelectFilter(row.active_distribution, state.active)) {
+    return false;
+  }
+  if (!matchesSelectFilter(row.eol_status, state.eol)) {
     return false;
   }
   if (state.onlyPrice && !parsePrice(row.price_usd)) {
@@ -296,6 +395,34 @@ const lifecycleTone = (row) => {
   return 'border-[#9fbc8c] bg-[#eef8e9] text-[#2e5824]';
 };
 
+const selectionLabelTemplate = (rowId, selected) => `
+  <label class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-[#ceb99f] bg-[#fffdf8] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#3f301f]">
+    <input data-compare-toggle data-model-id="${escapeHtml(rowId)}" type="checkbox" class="size-4 accent-[#9d491c]" ${selected ? 'checked' : ''} />
+    Compare
+  </label>
+`;
+
+const buildCardFacts = (row) => {
+  const entries = [
+    { label: 'Display', raw: row.display_type, value: compactValue(row.display_type) },
+    { label: 'Optik', raw: row.optics, value: compactValue(row.optics) },
+    { label: 'Tracking', raw: row.tracking, value: compactValue(row.tracking) },
+    { label: 'Eye Tracking', raw: row.eye_tracking, value: compactValue(row.eye_tracking) },
+    { label: 'Hand Tracking', raw: row.hand_tracking, value: compactValue(row.hand_tracking) },
+    { label: 'Passthrough', raw: row.passthrough, value: compactValue(row.passthrough) },
+    { label: 'FOV H', raw: row.fov_horizontal_deg, value: formatNumber(row.fov_horizontal_deg, ' deg') },
+    { label: 'Refresh', raw: row.refresh_hz, value: formatNumber(row.refresh_hz, ' Hz') },
+    { label: 'Software', raw: row.software, value: compactValue(row.software) },
+    { label: 'Aufloesung', raw: row.resolution_per_eye, value: compactValue(row.resolution_per_eye) },
+    { label: 'Compute', raw: row.compute_unit, value: compactValue(row.compute_unit) },
+  ];
+
+  if (!state.hideUnknown) {
+    return entries;
+  }
+  return entries.filter((entry) => !isUnknownValue(entry.raw));
+};
+
 const cardTemplate = (row) => {
   const name = escapeHtml(compactValue(row.name, 'Unbekanntes Modell'));
   const manufacturer = escapeHtml(compactValue(row.manufacturer, 'Unbekannt'));
@@ -309,6 +436,10 @@ const cardTemplate = (row) => {
   const eolDate = row.eol_date ? formatDate(row.eol_date) : 'k. A.';
   const releaseDate = formatDate(row.release_date || row.announced_date);
   const infoUrl = safeExternalUrl(row.source_page || row.vrcompare_url);
+  const isSelected = state.selectedIds.includes(row.__rowId);
+  const facts = buildCardFacts(row);
+  const lifecycleNotes = maybeHiddenText(row.lifecycle_notes, 'Keine Angaben.');
+  const lifecycleSource = maybeHiddenText(row.lifecycle_source, '');
 
   return `
     <article class="panel overflow-hidden">
@@ -318,6 +449,7 @@ const cardTemplate = (row) => {
             ? `<img src="${escapeHtml(image)}" alt="${name}" loading="lazy" class="h-full w-full object-contain p-4" />`
             : '<div class="grid h-full place-items-center text-sm text-[#6b5a4a]">Kein Bild verfuegbar</div>'
         }
+        <div class="absolute left-3 top-3">${selectionLabelTemplate(row.__rowId, isSelected)}</div>
         <span class="absolute right-3 top-3 rounded-full border px-2.5 py-1 text-xs font-bold ${categoryTone(row.xr_category)}">${category}</span>
       </div>
       <div class="space-y-4 p-4">
@@ -338,46 +470,29 @@ const cardTemplate = (row) => {
           </div>
         </div>
 
-        <dl class="grid grid-cols-2 gap-x-3 gap-y-2 text-sm text-[#2f2419]">
-          <div>
-            <dt class="text-xs text-[#6d5c49]">Display</dt>
-            <dd class="font-medium">${escapeHtml(compactValue(row.display_type))}</dd>
-          </div>
-          <div>
-            <dt class="text-xs text-[#6d5c49]">Optik</dt>
-            <dd class="font-medium">${escapeHtml(compactValue(row.optics))}</dd>
-          </div>
-          <div>
-            <dt class="text-xs text-[#6d5c49]">FOV H</dt>
-            <dd class="font-medium">${escapeHtml(formatNumber(row.fov_horizontal_deg, ' deg'))}</dd>
-          </div>
-          <div>
-            <dt class="text-xs text-[#6d5c49]">Refresh</dt>
-            <dd class="font-medium">${escapeHtml(formatNumber(row.refresh_hz, ' Hz'))}</dd>
-          </div>
-          <div>
-            <dt class="text-xs text-[#6d5c49]">Software</dt>
-            <dd class="font-medium">${escapeHtml(compactValue(row.software))}</dd>
-          </div>
-          <div>
-            <dt class="text-xs text-[#6d5c49]">Tracking</dt>
-            <dd class="font-medium">${escapeHtml(compactValue(row.tracking))}</dd>
-          </div>
-          <div>
-            <dt class="text-xs text-[#6d5c49]">Aufloesung</dt>
-            <dd class="font-medium">${escapeHtml(compactValue(row.resolution_per_eye))}</dd>
-          </div>
-          <div>
-            <dt class="text-xs text-[#6d5c49]">Compute</dt>
-            <dd class="font-medium">${escapeHtml(compactValue(row.compute_unit))}</dd>
-          </div>
-        </dl>
+        ${
+          facts.length
+            ? `<dl class="grid grid-cols-2 gap-x-3 gap-y-2 text-sm text-[#2f2419]">
+                ${facts
+                  .map(
+                    (fact) => `
+                      <div>
+                        <dt class="text-xs text-[#6d5c49]">${escapeHtml(fact.label)}</dt>
+                        <dd class="font-medium">${escapeHtml(fact.value)}</dd>
+                      </div>
+                    `,
+                  )
+                  .join('')}
+              </dl>`
+            : '<p class="soft-panel p-3 text-xs text-[#6d5c49]">Keine bekannten Spezifikationen sichtbar (Toggle "Unbekannte Werte ausblenden" aktiv).</p>'
+        }
 
         <div class="rounded-2xl border p-3 text-sm ${lifecycleClasses}">
           <p class="text-[11px] font-semibold uppercase tracking-[0.12em]">Updates / EOL</p>
           <p class="mt-1 font-semibold">${escapeHtml(compactValue(row.eol_status))}</p>
           <p class="mt-1 text-xs">EOL-Datum: ${escapeHtml(eolDate)}</p>
-          <p class="mt-2 text-xs leading-relaxed">${escapeHtml(compactValue(row.lifecycle_notes, 'Keine Angaben.'))}</p>
+          ${lifecycleNotes ? `<p class="mt-2 text-xs leading-relaxed">${escapeHtml(lifecycleNotes)}</p>` : ''}
+          ${lifecycleSource ? `<p class="mt-2 text-[11px] leading-relaxed">Quelle: ${escapeHtml(lifecycleSource)}</p>` : ''}
         </div>
 
         <div class="flex flex-wrap gap-2">
@@ -406,13 +521,19 @@ const tableTemplate = (rows) => {
   return `
     <div class="panel overflow-hidden">
       <div class="overflow-x-auto">
-        <table class="min-w-[1200px] border-collapse text-sm">
+        <table class="min-w-[1650px] border-collapse text-sm">
           <thead class="bg-[#f4e9dc] text-left text-[11px] uppercase tracking-[0.12em] text-[#6b5a48]">
             <tr>
+              <th class="px-3 py-3">Compare</th>
               <th class="px-3 py-3">Brille</th>
               <th class="px-3 py-3">Hersteller</th>
               <th class="px-3 py-3">Kat.</th>
               <th class="px-3 py-3">Display</th>
+              <th class="px-3 py-3">Optik</th>
+              <th class="px-3 py-3">Tracking</th>
+              <th class="px-3 py-3">Eye</th>
+              <th class="px-3 py-3">Hand</th>
+              <th class="px-3 py-3">Passthrough</th>
               <th class="px-3 py-3">FOV H</th>
               <th class="px-3 py-3">Refresh</th>
               <th class="px-3 py-3">Preis</th>
@@ -427,11 +548,15 @@ const tableTemplate = (rows) => {
               .map((row, index) => {
                 const shop = getShopInfo(row);
                 const infoUrl = safeExternalUrl(row.source_page || row.vrcompare_url);
+                const selected = state.selectedIds.includes(row.__rowId);
+                const lifecycleNotes = maybeHiddenText(row.lifecycle_notes, 'Keine Angaben.');
+
                 return `
                   <tr class="${index % 2 === 0 ? 'bg-white' : 'bg-[#fffbf4]'} align-top text-[#2a2017]">
+                    <td class="px-3 py-3">${selectionLabelTemplate(row.__rowId, selected)}</td>
                     <td class="px-3 py-3">
                       <p class="font-semibold">${escapeHtml(compactValue(row.name, 'Unbekannt'))}</p>
-                      <p class="mt-1 text-xs text-[#6d5c49]">${escapeHtml(compactValue(row.resolution_per_eye))}</p>
+                      <p class="mt-1 text-xs text-[#6d5c49]">${escapeHtml(maybeHiddenText(row.resolution_per_eye, 'k. A.') || 'k. A.')}</p>
                     </td>
                     <td class="px-3 py-3">${escapeHtml(compactValue(row.manufacturer))}</td>
                     <td class="px-3 py-3">
@@ -439,16 +564,21 @@ const tableTemplate = (rows) => {
                         compactValue(row.xr_category, 'AR'),
                       )}</span>
                     </td>
-                    <td class="px-3 py-3">${escapeHtml(compactValue(row.display_type))}</td>
+                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.display_type) || 'k. A.')}</td>
+                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.optics) || 'k. A.')}</td>
+                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.tracking) || 'k. A.')}</td>
+                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.eye_tracking) || 'k. A.')}</td>
+                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.hand_tracking) || 'k. A.')}</td>
+                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.passthrough) || 'k. A.')}</td>
                     <td class="px-3 py-3">${escapeHtml(formatNumber(row.fov_horizontal_deg, ' deg'))}</td>
                     <td class="px-3 py-3">${escapeHtml(formatNumber(row.refresh_hz, ' Hz'))}</td>
                     <td class="px-3 py-3">${escapeHtml(formatPrice(row.price_usd))}</td>
                     <td class="px-3 py-3">${escapeHtml(compactValue(row.active_distribution, 'k. A.'))}</td>
                     <td class="px-3 py-3">
                       <p class="font-semibold">${escapeHtml(compactValue(row.eol_status))}</p>
-                      <p class="mt-1 text-xs text-[#6d5c49]">${escapeHtml(compactValue(row.lifecycle_notes, 'Keine Angaben.'))}</p>
+                      ${lifecycleNotes ? `<p class="mt-1 text-xs text-[#6d5c49]">${escapeHtml(lifecycleNotes)}</p>` : ''}
                     </td>
-                    <td class="px-3 py-3">${escapeHtml(compactValue(row.software))}</td>
+                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.software) || 'k. A.')}</td>
                     <td class="px-3 py-3">
                       <div class="flex flex-col gap-2">
                         ${
@@ -474,6 +604,167 @@ const tableTemplate = (rows) => {
   `;
 };
 
+const getSelectedRows = () => {
+  const byId = new Map(state.rows.map((row) => [row.__rowId, row]));
+  return state.selectedIds.map((id) => byId.get(id)).filter(Boolean);
+};
+
+const compareField = (label, getRaw, formatValue = (row) => compactValue(getRaw(row)), isUnknown = (row) => isUnknownValue(getRaw(row))) => ({
+  label,
+  formatValue,
+  isUnknown,
+});
+
+const getCompareFields = () => [
+  compareField('Hersteller', (row) => row.manufacturer),
+  compareField('Kategorie', (row) => row.xr_category, (row) => compactValue(row.xr_category, 'AR')),
+  compareField('Release', (row) => row.release_date || row.announced_date, (row) => formatDate(row.release_date || row.announced_date)),
+  compareField('Preis', (row) => row.price_usd, (row) => formatPrice(row.price_usd), (row) => !parsePrice(row.price_usd)),
+  compareField('Display', (row) => row.display_type),
+  compareField('Optik', (row) => row.optics),
+  compareField('Tracking', (row) => row.tracking),
+  compareField('Eye Tracking', (row) => row.eye_tracking),
+  compareField('Hand Tracking', (row) => row.hand_tracking),
+  compareField('Passthrough', (row) => row.passthrough),
+  compareField('FOV horizontal', (row) => row.fov_horizontal_deg, (row) => formatNumber(row.fov_horizontal_deg, ' deg'), (row) => toNumber(row.fov_horizontal_deg) === null),
+  compareField('FOV vertikal', (row) => row.fov_vertical_deg, (row) => formatNumber(row.fov_vertical_deg, ' deg'), (row) => toNumber(row.fov_vertical_deg) === null),
+  compareField('Refresh', (row) => row.refresh_hz, (row) => formatNumber(row.refresh_hz, ' Hz'), (row) => toNumber(row.refresh_hz) === null),
+  compareField('Aufloesung', (row) => row.resolution_per_eye),
+  compareField('Gewicht', (row) => row.weight_g, (row) => formatNumber(row.weight_g, ' g'), (row) => toNumber(row.weight_g) === null),
+  compareField('Compute Unit', (row) => row.compute_unit),
+  compareField('Software', (row) => row.software),
+  compareField('Vertrieb', (row) => row.active_distribution),
+  compareField('EOL / Lifecycle', (row) => row.eol_status),
+  compareField('Lifecycle Notes', (row) => row.lifecycle_notes, (row) => compactValue(row.lifecycle_notes, 'Keine Angaben.')),
+];
+
+const compareModeTemplate = (selectedRows) => {
+  if (!selectedRows.length) {
+    return '<p class="panel p-8 text-sm text-[#6f5f4c]">Keine Modelle ausgewaehlt. Waehle bis zu 4 Modelle fuer den Direktvergleich.</p>';
+  }
+
+  const fields = getCompareFields();
+  const visibleFields = state.hideUnknown
+    ? fields.filter((field) => selectedRows.some((row) => !field.isUnknown(row)))
+    : fields;
+
+  return `
+    <div class="panel overflow-hidden">
+      <div class="border-b border-[#e3d6c7] bg-[#fbf4ea] px-4 py-3">
+        <h2 class="font-['Spectral'] text-2xl text-[#231c15]">Direktvergleich</h2>
+        <p class="mt-1 text-sm text-[#6d5c49]">${selectedRows.length} ausgewaehlte Modelle, max. ${COMPARE_LIMIT} gleichzeitig.</p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="min-w-[980px] border-collapse text-sm">
+          <thead class="bg-[#f4e9dc] text-left text-[11px] uppercase tracking-[0.12em] text-[#6b5a48]">
+            <tr>
+              <th class="px-3 py-3">Merkmal</th>
+              ${selectedRows
+                .map(
+                  (row) => `
+                    <th class="px-3 py-3 align-top">
+                      <p class="font-semibold text-[#231c15]">${escapeHtml(compactValue(row.name, 'Unbekannt'))}</p>
+                      <p class="mt-1 text-[11px] font-medium normal-case tracking-normal text-[#6d5c49]">${escapeHtml(compactValue(row.manufacturer, 'Unbekannt'))}</p>
+                    </th>
+                  `,
+                )
+                .join('')}
+            </tr>
+          </thead>
+          <tbody>
+            ${visibleFields
+              .map((field, rowIndex) => {
+                const rowClass = rowIndex % 2 === 0 ? 'bg-white' : 'bg-[#fffbf4]';
+                return `
+                  <tr class="${rowClass} align-top text-[#2a2017]">
+                    <td class="px-3 py-3 font-semibold text-[#3d2e1f]">${escapeHtml(field.label)}</td>
+                    ${selectedRows
+                      .map((row) => {
+                        const hidden = state.hideUnknown && field.isUnknown(row);
+                        const rawText = hidden ? '' : field.formatValue(row);
+                        return `<td class="px-3 py-3">${escapeHtml(rawText || (state.hideUnknown ? '' : 'k. A.'))}</td>`;
+                      })
+                      .join('')}
+                  </tr>
+                `;
+              })
+              .join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  `;
+};
+
+const compareBarTemplate = (selectedRows) => {
+  const count = selectedRows.length;
+  const compareToggleClasses = state.compareMode
+    ? 'chip-btn border-[#9d491c] bg-[#9d491c] text-[#fff8f0] hover:bg-[#8d4017]'
+    : 'chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]';
+
+  return `
+    <section class="panel mt-4 p-4 sm:p-5">
+      <div class="flex flex-wrap items-center gap-2">
+        <p class="rounded-full border border-[#ceb99f] bg-[#fff8ee] px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#5b4838]">
+          Vergleich: ${count}/${COMPARE_LIMIT}
+        </p>
+        <button id="toggle-compare-mode" class="${compareToggleClasses}" ${count === 0 ? 'disabled' : ''}>${state.compareMode ? 'Liste anzeigen' : 'Compare-Modus'}</button>
+        <button id="clear-compare" class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]" ${count === 0 ? 'disabled' : ''}>Auswahl leeren</button>
+      </div>
+
+      <div class="mt-3 flex flex-wrap gap-2">
+        ${
+          count
+            ? selectedRows
+                .map(
+                  (row) => `
+                    <span class="inline-flex items-center gap-2 rounded-full border border-[#d8c3ab] bg-[#fffdf8] px-3 py-1.5 text-xs text-[#3d2f22]">
+                      <span class="font-semibold">${escapeHtml(compactValue(row.name, 'Unbekannt'))}</span>
+                      <span class="text-[#6d5c49]">${escapeHtml(compactValue(row.manufacturer, ''))}</span>
+                      <button data-remove-compare="${escapeHtml(row.__rowId)}" class="rounded-full border border-[#d3bca2] px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#7b3a16] hover:bg-[#f5e9db]">x</button>
+                    </span>
+                  `,
+                )
+                .join('')
+            : '<p class="text-sm text-[#6d5c49]">Noch nichts ausgewaehlt. Nutze "Compare" in Card oder Tabelle.</p>'
+        }
+      </div>
+
+      ${state.compareNotice ? `<p class="mt-3 text-xs font-semibold text-[#8a3a14]">${escapeHtml(state.compareNotice)}</p>` : ''}
+    </section>
+  `;
+};
+
+const exportRowsAsCsv = (rows) => {
+  if (!rows.length) {
+    return;
+  }
+
+  const fields = state.csvFields.length
+    ? state.csvFields
+    : Object.keys(rows[0] ?? {}).filter((key) => !key.startsWith('__'));
+
+  const normalizedRows = rows.map((row) => {
+    const output = {};
+    for (const field of fields) {
+      output[field] = row[field] ?? '';
+    }
+    return output;
+  });
+
+  const csv = Papa.unparse(normalizedRows, { columns: fields });
+  const blob = new Blob([`\uFEFF${csv}`], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const anchor = document.createElement('a');
+  anchor.href = url;
+  const stamp = new Date().toISOString().slice(0, 19).replace(/[T:]/g, '-');
+  anchor.download = `ar_glasses_filtered_${stamp}.csv`;
+  document.body.append(anchor);
+  anchor.click();
+  anchor.remove();
+  URL.revokeObjectURL(url);
+};
+
 const render = () => {
   const filterOptions = getFilterOptions();
   const filtered = sortRows(state.rows.filter(matchesFilters));
@@ -482,6 +773,19 @@ const render = () => {
   const activeCount = filtered.filter((row) => isLikelyActive(row)).length;
   const eolCount = filtered.filter((row) => isEol(row)).length;
   const retrievedAt = compactValue(filtered[0]?.dataset_retrieved_at || state.rows[0]?.dataset_retrieved_at, '');
+  const selectedRows = getSelectedRows();
+
+  if (state.compareMode && !selectedRows.length) {
+    state.compareMode = false;
+  }
+
+  const maxPage = Math.max(1, Math.ceil((filtered.length || 1) / state.cardsPageSize));
+  if (state.cardsPage > maxPage) {
+    state.cardsPage = maxPage;
+  }
+  const visibleCards = filtered.slice(0, state.cardsPage * state.cardsPageSize);
+  const hasMoreCards = visibleCards.length < filtered.length;
+  const exportDisabled = filtered.length === 0;
 
   app.innerHTML = `
     <main class="mx-auto w-full max-w-[1320px] px-4 py-6 sm:px-6 lg:px-8">
@@ -503,11 +807,13 @@ const render = () => {
         <p class="soft-panel p-3 text-sm text-[#6a5947]"><strong class="text-[#231c15]">${eolCount}</strong> EOL / discontinued</p>
       </section>
 
+      ${compareBarTemplate(selectedRows)}
+
       <section class="panel mt-4 p-4 sm:p-5">
-        <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-          <label class="space-y-1">
+        <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          <label class="space-y-1 xl:col-span-2">
             <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Suche</span>
-            <input id="query-input" type="search" class="field" placeholder="Modell, Hersteller, Software, Tracking" value="${escapeHtml(state.query)}" />
+            <input id="query-input" type="search" class="field" placeholder="Modell, Hersteller, Software, Tracking, Lifecycle" value="${escapeHtml(state.query)}" />
           </label>
 
           <label class="space-y-1">
@@ -530,6 +836,41 @@ const render = () => {
             <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Display-Typ</span>
             <select id="display-filter" class="field">
               ${optionList(filterOptions.displayTypes, state.displayType, 'Alle Display-Arten')}
+            </select>
+          </label>
+
+          <label class="space-y-1">
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Optik</span>
+            <select id="optics-filter" class="field">
+              ${optionList(filterOptions.optics, state.optics, 'Alle Optik-Typen')}
+            </select>
+          </label>
+
+          <label class="space-y-1">
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Tracking</span>
+            <select id="tracking-filter" class="field">
+              ${optionList(filterOptions.tracking, state.tracking, 'Alle Tracking-Typen')}
+            </select>
+          </label>
+
+          <label class="space-y-1">
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Eye Tracking</span>
+            <select id="eye-tracking-filter" class="field">
+              ${optionList(filterOptions.eyeTracking, state.eyeTracking, 'Alle Eye-Tracking-Werte')}
+            </select>
+          </label>
+
+          <label class="space-y-1">
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Hand Tracking</span>
+            <select id="hand-tracking-filter" class="field">
+              ${optionList(filterOptions.handTracking, state.handTracking, 'Alle Hand-Tracking-Werte')}
+            </select>
+          </label>
+
+          <label class="space-y-1 xl:col-span-2">
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Passthrough</span>
+            <select id="passthrough-filter" class="field">
+              ${optionList(filterOptions.passthrough, state.passthrough, 'Alle Passthrough-Werte')}
             </select>
           </label>
 
@@ -586,6 +927,7 @@ const render = () => {
               ? 'border-[#9d491c] bg-[#9d491c] text-[#fff8f0] hover:bg-[#8d4017]'
               : 'border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]'
           }">Tabelle</button>
+
           <label class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">
             <input id="only-price" type="checkbox" class="mr-2 size-4 accent-[#9d491c]" ${state.onlyPrice ? 'checked' : ''} />
             Nur mit Preis
@@ -594,58 +936,171 @@ const render = () => {
             <input id="only-shop" type="checkbox" class="mr-2 size-4 accent-[#9d491c]" ${state.onlyShop ? 'checked' : ''} />
             Nur mit Shop-Link
           </label>
+          <label class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">
+            <input id="show-eur" type="checkbox" class="mr-2 size-4 accent-[#9d491c]" ${state.showEur ? 'checked' : ''} />
+            EUR-Zusatz
+          </label>
+          <label class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">
+            <input id="hide-unknown" type="checkbox" class="mr-2 size-4 accent-[#9d491c]" ${state.hideUnknown ? 'checked' : ''} />
+            Unbekannte Werte ausblenden
+          </label>
+
+          <button id="export-csv" class="chip-btn ${
+            exportDisabled
+              ? 'cursor-not-allowed border-[#d4c3af] bg-[#f2e8db] text-[#8a7764]'
+              : 'border-[#9d491c] bg-[#9d491c] text-[#fff8f0] hover:bg-[#8d4017]'
+          }" ${exportDisabled ? 'disabled' : ''}>CSV Export</button>
+
           <button id="clear-filters" class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">Filter zuruecksetzen</button>
         </div>
       </section>
 
       <section class="mt-4">
         ${
-          filtered.length === 0
-            ? '<p class="panel p-10 text-center text-sm text-[#6f5f4c]">Keine Treffer fuer die gewaehlten Filter.</p>'
-            : state.viewMode === 'cards'
-              ? `<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">${filtered.map(cardTemplate).join('')}</div>`
-              : tableTemplate(filtered)
+          state.compareMode
+            ? compareModeTemplate(selectedRows)
+            : filtered.length === 0
+              ? '<p class="panel p-10 text-center text-sm text-[#6f5f4c]">Keine Treffer fuer die gewaehlten Filter.</p>'
+              : state.viewMode === 'cards'
+                ? `
+                    <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">${visibleCards.map(cardTemplate).join('')}</div>
+                    <div class="mt-4 flex flex-wrap items-center gap-2">
+                      <p class="text-sm text-[#6d5c49]">${visibleCards.length} von ${filtered.length} Modellen angezeigt</p>
+                      ${
+                        hasMoreCards
+                          ? '<button id="load-more-cards" class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">Mehr laden</button>'
+                          : ''
+                      }
+                    </div>
+                  `
+                : tableTemplate(filtered)
         }
       </section>
     </main>
   `;
 
-  const setAndRender = (key, value) => {
+  const setAndRender = (key, value, options = {}) => {
+    const { resetCardsPage = true } = options;
     state[key] = value;
+    if (resetCardsPage) {
+      state.cardsPage = 1;
+    }
     render();
   };
 
   document.querySelector('#query-input')?.addEventListener('input', (event) => setAndRender('query', event.target.value));
-  document
-    .querySelector('#category-filter')
-    ?.addEventListener('change', (event) => setAndRender('category', event.target.value));
+  document.querySelector('#category-filter')?.addEventListener('change', (event) => setAndRender('category', event.target.value));
   document
     .querySelector('#manufacturer-filter')
     ?.addEventListener('change', (event) => setAndRender('manufacturer', event.target.value));
+  document.querySelector('#display-filter')?.addEventListener('change', (event) => setAndRender('displayType', event.target.value));
+  document.querySelector('#optics-filter')?.addEventListener('change', (event) => setAndRender('optics', event.target.value));
+  document.querySelector('#tracking-filter')?.addEventListener('change', (event) => setAndRender('tracking', event.target.value));
   document
-    .querySelector('#display-filter')
-    ?.addEventListener('change', (event) => setAndRender('displayType', event.target.value));
+    .querySelector('#eye-tracking-filter')
+    ?.addEventListener('change', (event) => setAndRender('eyeTracking', event.target.value));
   document
-    .querySelector('#active-filter')
-    ?.addEventListener('change', (event) => setAndRender('active', event.target.value));
+    .querySelector('#hand-tracking-filter')
+    ?.addEventListener('change', (event) => setAndRender('handTracking', event.target.value));
+  document
+    .querySelector('#passthrough-filter')
+    ?.addEventListener('change', (event) => setAndRender('passthrough', event.target.value));
+
+  document.querySelector('#active-filter')?.addEventListener('change', (event) => setAndRender('active', event.target.value));
   document.querySelector('#eol-filter')?.addEventListener('change', (event) => setAndRender('eol', event.target.value));
   document.querySelector('#fov-filter')?.addEventListener('input', (event) => setAndRender('minFov', event.target.value));
-  document
-    .querySelector('#refresh-filter')
-    ?.addEventListener('input', (event) => setAndRender('minRefresh', event.target.value));
-  document
-    .querySelector('#price-filter')
-    ?.addEventListener('input', (event) => setAndRender('maxPrice', event.target.value));
+  document.querySelector('#refresh-filter')?.addEventListener('input', (event) => setAndRender('minRefresh', event.target.value));
+  document.querySelector('#price-filter')?.addEventListener('input', (event) => setAndRender('maxPrice', event.target.value));
   document.querySelector('#sort-filter')?.addEventListener('change', (event) => setAndRender('sort', event.target.value));
+
   document.querySelector('#only-price')?.addEventListener('change', (event) => setAndRender('onlyPrice', event.target.checked));
   document.querySelector('#only-shop')?.addEventListener('change', (event) => setAndRender('onlyShop', event.target.checked));
-  document.querySelector('#view-cards')?.addEventListener('click', () => setAndRender('viewMode', 'cards'));
-  document.querySelector('#view-table')?.addEventListener('click', () => setAndRender('viewMode', 'table'));
+  document
+    .querySelector('#show-eur')
+    ?.addEventListener('change', (event) => setAndRender('showEur', event.target.checked, { resetCardsPage: false }));
+  document
+    .querySelector('#hide-unknown')
+    ?.addEventListener('change', (event) => setAndRender('hideUnknown', event.target.checked, { resetCardsPage: false }));
+
+  document.querySelector('#view-cards')?.addEventListener('click', () => setAndRender('viewMode', 'cards', { resetCardsPage: false }));
+  document.querySelector('#view-table')?.addEventListener('click', () => setAndRender('viewMode', 'table', { resetCardsPage: false }));
+
+  document.querySelector('#export-csv')?.addEventListener('click', () => exportRowsAsCsv(filtered));
+
+  document.querySelector('#load-more-cards')?.addEventListener('click', () => {
+    state.cardsPage += 1;
+    render();
+  });
+
+  document.querySelector('#toggle-compare-mode')?.addEventListener('click', () => {
+    if (!state.selectedIds.length) {
+      return;
+    }
+    state.compareMode = !state.compareMode;
+    render();
+  });
+
+  document.querySelector('#clear-compare')?.addEventListener('click', () => {
+    state.selectedIds = [];
+    state.compareMode = false;
+    state.compareNotice = '';
+    render();
+  });
+
+  document.querySelectorAll('[data-remove-compare]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const modelId = button.getAttribute('data-remove-compare');
+      if (!modelId) {
+        return;
+      }
+      state.selectedIds = state.selectedIds.filter((id) => id !== modelId);
+      state.compareNotice = '';
+      if (!state.selectedIds.length) {
+        state.compareMode = false;
+      }
+      render();
+    });
+  });
+
+  document.querySelectorAll('[data-compare-toggle]').forEach((input) => {
+    input.addEventListener('change', (event) => {
+      const modelId = event.target.getAttribute('data-model-id');
+      if (!modelId) {
+        return;
+      }
+
+      const isChecked = Boolean(event.target.checked);
+      if (isChecked) {
+        if (!state.selectedIds.includes(modelId)) {
+          if (state.selectedIds.length >= COMPARE_LIMIT) {
+            state.compareNotice = `Maximal ${COMPARE_LIMIT} Modelle gleichzeitig im Vergleich.`;
+          } else {
+            state.selectedIds = [...state.selectedIds, modelId];
+            state.compareNotice = '';
+          }
+        }
+      } else {
+        state.selectedIds = state.selectedIds.filter((id) => id !== modelId);
+        state.compareNotice = '';
+        if (!state.selectedIds.length) {
+          state.compareMode = false;
+        }
+      }
+
+      render();
+    });
+  });
+
   document.querySelector('#clear-filters')?.addEventListener('click', () => {
     state.query = '';
     state.category = 'all';
     state.manufacturer = 'all';
     state.displayType = 'all';
+    state.optics = 'all';
+    state.tracking = 'all';
+    state.eyeTracking = 'all';
+    state.handTracking = 'all';
+    state.passthrough = 'all';
     state.active = 'all';
     state.eol = 'all';
     state.minFov = '';
@@ -653,7 +1108,12 @@ const render = () => {
     state.maxPrice = '';
     state.onlyPrice = false;
     state.onlyShop = false;
+    state.showEur = false;
+    state.hideUnknown = false;
     state.sort = 'name_asc';
+    state.cardsPage = 1;
+    state.compareMode = false;
+    state.compareNotice = '';
     render();
   });
 };
@@ -663,7 +1123,10 @@ const parseCsv = (text) =>
     Papa.parse(text, {
       header: true,
       skipEmptyLines: true,
-      complete: ({ data }) => resolve(data),
+      complete: ({ data, meta }) => {
+        const fields = Array.isArray(meta?.fields) ? meta.fields : [];
+        resolve({ data, fields });
+      },
       error: reject,
     });
   });
@@ -677,7 +1140,12 @@ const init = async () => {
       throw new Error(`CSV request failed with status ${response.status}`);
     }
     const csv = await response.text();
-    state.rows = await parseCsv(csv);
+    const { data, fields } = await parseCsv(csv);
+    state.rows = data.map((row, index) => ({ ...row, __rowId: getRowId(row, index) }));
+    state.csvFields = fields.filter((field) => !field.startsWith('__'));
+    state.selectedIds = [];
+    state.compareMode = false;
+    state.compareNotice = '';
     render();
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Unbekannter Fehler';
