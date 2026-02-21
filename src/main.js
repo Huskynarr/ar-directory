@@ -9,6 +9,8 @@ const USD_TO_EUR_FALLBACK = 0.92;
 const RATE_SOURCE_URL = 'https://api.frankfurter.app/latest?from=USD&to=EUR';
 const VIEW_MODES = new Set(['cards', 'table']);
 const SORT_MODES = new Set(['name_asc', 'manufacturer_asc', 'release_desc', 'price_desc', 'price_asc', 'fov_desc']);
+const THEME_MODES = new Set(['dark', 'light']);
+const THEME_STORAGE_KEY = 'ar_directory_theme';
 const TRUE_VALUES = new Set(['1', 'true', 'yes', 'on']);
 const FALSE_VALUES = new Set(['0', 'false', 'no', 'off']);
 const RADAR_COLORS = ['#84cc16', '#2f6fb5', '#2d8f60', '#9b3db6', '#b1731f', '#a73452'];
@@ -32,6 +34,7 @@ const UNKNOWN_PARTIAL_MARKERS = ['keine eindeutige eol-angabe', 'keine angaben',
 const state = {
   rows: [],
   csvFields: [],
+  theme: 'dark',
   query: '',
   viewMode: 'cards',
   compareMode: false,
@@ -149,6 +152,43 @@ const formatNumber = (value, suffix = '') => {
 };
 
 const normalizeText = (value) => String(value ?? '').toLowerCase().trim();
+
+const normalizeTheme = (value, fallback = 'dark') => {
+  const normalized = normalizeText(value);
+  return THEME_MODES.has(normalized) ? normalized : fallback;
+};
+
+const readThemeFromStorage = () => {
+  if (typeof window === 'undefined') {
+    return 'dark';
+  }
+  try {
+    return normalizeTheme(window.localStorage.getItem(THEME_STORAGE_KEY), 'dark');
+  } catch {
+    return 'dark';
+  }
+};
+
+const writeThemeToStorage = (theme) => {
+  if (typeof window === 'undefined') {
+    return;
+  }
+  try {
+    window.localStorage.setItem(THEME_STORAGE_KEY, normalizeTheme(theme, 'dark'));
+  } catch {
+    // ignore storage failures (private mode / blocked storage)
+  }
+};
+
+const applyThemeToDocument = () => {
+  if (typeof document === 'undefined' || !document.body) {
+    return;
+  }
+  const theme = normalizeTheme(state.theme, 'dark');
+  state.theme = theme;
+  document.body.classList.toggle('theme-dark', theme === 'dark');
+  document.body.classList.toggle('theme-light', theme === 'light');
+};
 
 const parseBooleanParam = (value, fallback = false) => {
   const normalized = normalizeText(value);
@@ -338,6 +378,11 @@ const applyStateFromUrl = () => {
     state.viewMode = viewMode;
   }
 
+  const theme = params.get('theme');
+  if (theme !== null) {
+    state.theme = normalizeTheme(theme, state.theme);
+  }
+
   state.compareMode = parseBooleanParam(params.get('compareMode'), false);
   state.selectedIds = parseSelectedIdsParam(params.get('selectedIds'));
 
@@ -445,6 +490,7 @@ const syncUrlWithState = () => {
 
   setText('query', state.query, '');
   setText('viewMode', state.viewMode, 'cards');
+  setText('theme', state.theme, 'dark');
   setBoolean('compareMode', state.compareMode, false);
   if (state.selectedIds.length) {
     params.set('selectedIds', state.selectedIds.join(','));
@@ -1200,6 +1246,7 @@ const render = () => {
   const eolCount = filtered.filter((row) => isEol(row)).length;
   const retrievedAt = compactValue(filtered[0]?.dataset_retrieved_at || state.rows[0]?.dataset_retrieved_at, '');
   const selectedRows = getSelectedRows();
+  applyThemeToDocument();
 
   if (state.compareMode && !selectedRows.length) {
     state.compareMode = false;
@@ -1217,7 +1264,7 @@ const render = () => {
   app.innerHTML = `
     <main class="mx-auto w-full max-w-[1320px] px-4 py-6 sm:px-6 lg:px-8">
       <header class="panel relative overflow-hidden p-5 sm:p-6">
-        <div class="absolute inset-0 -z-10 bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950"></div>
+        <div class="theme-hero-surface absolute inset-0 -z-10"></div>
         <p class="text-xs font-semibold uppercase tracking-[0.22em] text-lime-500">AR / XR DIRECTORY</p>
         <h1 class="mt-2 text-3xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-lime-600 sm:text-4xl">Vergleich fuer AR-Brillen und XR-Glasses</h1>
         <p class="mt-3 max-w-4xl text-sm text-[#a8a29e] sm:text-base">
@@ -1354,6 +1401,11 @@ const render = () => {
               ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
               : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
           }">Tabelle</button>
+          <button id="theme-toggle" class="chip-btn ${
+            state.theme === 'light'
+              ? 'border-[#2f6fb5] bg-[#2f6fb5] text-white hover:bg-[#25588f]'
+              : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
+          }">${state.theme === 'light' ? 'Dunkelmodus' : 'Hellmodus'}</button>
 
           <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
             <input id="only-price" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyPrice ? 'checked' : ''} />
@@ -1469,6 +1521,11 @@ const render = () => {
 
   document.querySelector('#view-cards')?.addEventListener('click', () => setAndRender('viewMode', 'cards', { resetCardsPage: false }));
   document.querySelector('#view-table')?.addEventListener('click', () => setAndRender('viewMode', 'table', { resetCardsPage: false }));
+  document.querySelector('#theme-toggle')?.addEventListener('click', () => {
+    state.theme = state.theme === 'light' ? 'dark' : 'light';
+    writeThemeToStorage(state.theme);
+    render();
+  });
 
   document.querySelector('#export-csv')?.addEventListener('click', () => exportRowsAsCsv(filtered));
 
@@ -1580,7 +1637,11 @@ const parseCsv = (text) =>
   });
 
 const init = async () => {
+  state.theme = readThemeFromStorage();
   applyStateFromUrl();
+  state.theme = normalizeTheme(state.theme, 'dark');
+  writeThemeToStorage(state.theme);
+  applyThemeToDocument();
   setFallbackUsdRate();
   app.innerHTML = '<main class="mx-auto max-w-[1320px] px-4 py-8"><p class="panel p-6 text-sm text-[#a8a29e]">Lade Brillendaten...</p></main>';
 

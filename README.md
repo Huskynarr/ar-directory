@@ -47,6 +47,7 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
 - Ansichtsoptionen:
   - `EUR-Zusatz` nutzt einen Live-EUR-Kurs zur USD-Umrechnung
   - `Unbekannte Werte ausblenden` reduziert Rauschen in Listen und Compare-Ansicht
+  - `Hellmodus`/`Dunkelmodus` (huskynarr-inspiriert), persistent per LocalStorage und URL-Parameter `theme`
 - Kartenansicht:
   - initial 12 Cards und `Mehr laden` Pagination
 - Karten enthalten:
