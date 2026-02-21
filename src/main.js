@@ -40,6 +40,7 @@ const UNKNOWN_EXACT_VALUES = new Set([
 ]);
 
 const UNKNOWN_PARTIAL_MARKERS = ['keine eindeutige eol-angabe', 'keine angaben', 'keine daten', 'nicht bekannt'];
+const LIFECYCLE_NOTE_SUPPRESS_MARKERS = ['keine eindeutige eol-angabe', 'no clear eol', 'no explicit eol'];
 
 const state = {
   rows: [],
@@ -372,6 +373,21 @@ const maybeHiddenText = (value, fallback = t('k. A.', 'n/a')) => {
     return '';
   }
   return compactValue(value, fallback);
+};
+
+const shouldSuppressLifecycleNote = (value) => {
+  const text = normalizeText(value);
+  if (!text) {
+    return false;
+  }
+  return LIFECYCLE_NOTE_SUPPRESS_MARKERS.some((marker) => text.includes(marker));
+};
+
+const formatLifecycleNotes = (value, fallback = t('Keine Angaben.', 'No details.')) => {
+  if (shouldSuppressLifecycleNote(value)) {
+    return '';
+  }
+  return maybeHiddenText(value, fallback);
 };
 
 const uniqueSorted = (values) =>
@@ -1002,7 +1018,7 @@ const cardTemplate = (row) => {
   const facts = buildCardFacts(row);
   const primaryFacts = facts.slice(0, 6);
   const secondaryFacts = facts.slice(6);
-  const lifecycleNotes = maybeHiddenText(row.lifecycle_notes, t('Keine Angaben.', 'No details.'));
+  const lifecycleNotes = formatLifecycleNotes(row.lifecycle_notes, t('Keine Angaben.', 'No details.'));
   const lifecycleSource = maybeHiddenText(row.lifecycle_source, '');
   const showLifecycleSourceInInfo = Boolean(lifecycleSource && !lifecycleSourceUrl);
 
@@ -1152,7 +1168,7 @@ const tableTemplate = (rows) => {
                 const shop = getShopInfo(row);
                 const infoUrl = safeExternalUrl(row.lifecycle_source || row.source_page);
                 const selected = state.selectedIds.includes(row.__rowId);
-                const lifecycleNotes = maybeHiddenText(row.lifecycle_notes, t('Keine Angaben.', 'No details.'));
+                const lifecycleNotes = formatLifecycleNotes(row.lifecycle_notes, t('Keine Angaben.', 'No details.'));
 
                 return `
                   <tr class="${index % 2 === 0 ? 'bg-[#171412]' : 'bg-[#1c1917]'} align-top text-[#f5f5f4]">
@@ -1246,7 +1262,7 @@ const getCompareFields = () => [
   compareField(
     t('Lifecycle Notes', 'Lifecycle notes'),
     (row) => row.lifecycle_notes,
-    (row) => compactValue(row.lifecycle_notes, t('Keine Angaben.', 'No details.')),
+    (row) => formatLifecycleNotes(row.lifecycle_notes, t('Keine Angaben.', 'No details.')),
   ),
 ];
 
