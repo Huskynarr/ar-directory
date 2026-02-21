@@ -241,10 +241,17 @@
       0 10px 20px rgba(7, 16, 30, 0.28);
   }
 
-  .theme-icon-btn svg {
+  .theme-icon-btn .theme-icon {
     width: 1.05rem;
     height: 1.05rem;
     stroke-width: 1.8;
+  }
+
+  .theme-icon-btn .flag-icon {
+    width: 1.15rem;
+    height: 0.86rem;
+    border-radius: 0.14rem;
+    overflow: hidden;
   }
 
   .theme-icon-btn:hover {

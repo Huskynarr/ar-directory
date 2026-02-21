@@ -1506,11 +1506,33 @@ const render = () => {
   const activeCount = filtered.filter((row) => isLikelyActive(row)).length;
   const eolCount = filtered.filter((row) => isEol(row)).length;
   const retrievedAt = compactValue(filtered[0]?.dataset_retrieved_at || state.rows[0]?.dataset_retrieved_at, '');
+  const languageToggleLabel =
+    state.language === 'de'
+      ? t('Sprache wechseln: Englisch', 'Switch language: English')
+      : t('Sprache wechseln: Deutsch', 'Switch language: German');
+  const languageToggleIcon =
+    state.language === 'de'
+      ? `<svg class="flag-icon" viewBox="0 0 24 16" fill="none" aria-hidden="true">
+          <rect x="0.75" y="0.75" width="22.5" height="14.5" rx="2.5" fill="#111827" stroke="rgba(255,255,255,0.35)" />
+          <rect x="2.2" y="2.2" width="19.6" height="3.9" fill="#1f1f1f" />
+          <rect x="2.2" y="6.1" width="19.6" height="3.9" fill="#c81e1e" />
+          <rect x="2.2" y="10" width="19.6" height="3.9" fill="#facc15" />
+        </svg>`
+      : `<svg class="flag-icon" viewBox="0 0 24 16" fill="none" aria-hidden="true">
+          <rect x="0.75" y="0.75" width="22.5" height="14.5" rx="2.5" fill="#ffffff" stroke="rgba(255,255,255,0.35)" />
+          <rect x="2.2" y="2.2" width="19.6" height="1.45" fill="#be123c" />
+          <rect x="2.2" y="4.35" width="19.6" height="1.45" fill="#be123c" />
+          <rect x="2.2" y="6.5" width="19.6" height="1.45" fill="#be123c" />
+          <rect x="2.2" y="8.65" width="19.6" height="1.45" fill="#be123c" />
+          <rect x="2.2" y="10.8" width="19.6" height="1.45" fill="#be123c" />
+          <rect x="2.2" y="12.95" width="19.6" height="0.95" fill="#be123c" />
+          <rect x="2.2" y="2.2" width="8.8" height="6.85" fill="#1d4ed8" />
+        </svg>`;
   const themeToggleLabel =
     state.theme === 'light' ? t('Dunkelmodus aktivieren', 'Enable dark mode') : t('Hellmodus aktivieren', 'Enable light mode');
   const themeToggleIcon =
     state.theme === 'light'
-      ? `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      ? `<svg class="theme-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path
             d="M21 12.79A9 9 0 1 1 11.21 3c0 .29 0 .57.01.86A7.5 7.5 0 0 0 18.75 11.36c.29 0 .57 0 .86-.01"
             stroke="currentColor"
@@ -1518,7 +1540,7 @@ const render = () => {
             stroke-linejoin="round"
           />
         </svg>`
-      : `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      : `<svg class="theme-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <circle cx="12" cy="12" r="4" stroke="currentColor" />
           <path
             d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
@@ -1548,15 +1570,26 @@ const render = () => {
     <main class="mx-auto w-full max-w-[1320px] px-4 py-6 sm:px-6 lg:px-8">
       <header class="panel relative overflow-hidden p-5 sm:p-6">
         <div class="theme-hero-surface absolute inset-0 -z-10"></div>
-        <button
-          id="theme-toggle"
-          type="button"
-          class="theme-icon-btn absolute right-4 top-4 sm:right-5 sm:top-5"
-          aria-label="${escapeHtml(themeToggleLabel)}"
-          title="${escapeHtml(themeToggleLabel)}"
-        >
-          ${themeToggleIcon}
-        </button>
+        <div class="absolute right-4 top-4 flex items-center gap-2 sm:right-5 sm:top-5">
+          <button
+            id="toggle-language"
+            type="button"
+            class="theme-icon-btn"
+            aria-label="${escapeHtml(languageToggleLabel)}"
+            title="${escapeHtml(languageToggleLabel)}"
+          >
+            ${languageToggleIcon}
+          </button>
+          <button
+            id="theme-toggle"
+            type="button"
+            class="theme-icon-btn"
+            aria-label="${escapeHtml(themeToggleLabel)}"
+            title="${escapeHtml(themeToggleLabel)}"
+          >
+            ${themeToggleIcon}
+          </button>
+        </div>
         <p class="text-xs font-semibold uppercase tracking-[0.22em] text-lime-500">AR / XR DIRECTORY</p>
         <h1 class="mt-2 text-3xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-lime-600 sm:text-4xl">${t(
           'Vergleich fuer AR-Brillen und XR-Glasses',
@@ -1573,25 +1606,46 @@ const render = () => {
       ${!state.focusMode || selectedRows.length ? compareBarTemplate(selectedRows) : ''}
 
       <section class="panel mt-4 p-4 sm:p-5">
-        <div class="flex flex-wrap items-center justify-between gap-2">
+        <div class="flex flex-col gap-3 xl:flex-row xl:items-start xl:justify-between">
           <div>
             <h2 class="text-lg font-semibold text-[#f5f5f4]">${t('Filter', 'Filters')}</h2>
             <p class="mt-1 text-xs text-[#a8a29e]">${state.focusMode
               ? t('Fokusansicht: nur Kernfilter sichtbar.', 'Focus view: only core filters visible.')
               : t('Schnellfilter fuer Suche, Kategorie und Sortierung.', 'Quick filters for search, category and sorting.')}</p>
           </div>
-          ${
-            state.focusMode
-              ? ''
-              : `<button id="toggle-advanced-filters" class="chip-btn ${
-                  state.showAdvancedFilters
-                    ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
-                    : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
-                }">${state.showAdvancedFilters ? t('Weniger Filter', 'Fewer filters') : t('Mehr Filter', 'More filters')}</button>`
-          }
+          <div class="flex flex-wrap items-center gap-2 xl:justify-end">
+            <button id="view-cards" class="chip-btn ${
+              state.viewMode === 'cards'
+                ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
+                : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
+            }">${t('Karten', 'Cards')}</button>
+            <button id="view-table" class="chip-btn ${
+              state.viewMode === 'table'
+                ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
+                : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
+            }">${t('Tabelle', 'Table')}</button>
+            <button id="toggle-focus-mode" class="chip-btn ${
+              state.focusMode
+                ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
+                : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
+            }">${state.focusMode ? t('Standardansicht', 'Standard view') : t('Fokusansicht', 'Focus view')}</button>
+            <button id="clear-filters" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(
+              'Filter zuruecksetzen',
+              'Reset filters',
+            )}</button>
+            ${
+              state.focusMode
+                ? ''
+                : `<button id="toggle-advanced-filters" class="chip-btn ${
+                    state.showAdvancedFilters
+                      ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
+                      : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
+                  }">${state.showAdvancedFilters ? t('Weniger Filter', 'Fewer filters') : t('Mehr Filter', 'More filters')}</button>`
+            }
+          </div>
         </div>
 
-        <div class="mt-3 grid gap-3 md:grid-cols-2 ${state.focusMode ? 'xl:grid-cols-4' : 'xl:grid-cols-5'}">
+        <div class="mt-4 grid gap-3 md:grid-cols-2 ${state.focusMode ? 'xl:grid-cols-4' : 'xl:grid-cols-5'}">
           <label class="space-y-1 xl:col-span-2">
             <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Suche', 'Search')}</span>
             <input id="query-input" type="search" class="field" placeholder="${t(
@@ -1640,32 +1694,6 @@ const render = () => {
               )}</option>
             </select>
           </label>
-        </div>
-
-        <div class="mt-4 flex flex-wrap items-center gap-2">
-          <button id="view-cards" class="chip-btn ${
-            state.viewMode === 'cards'
-              ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
-              : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
-          }">${t('Karten', 'Cards')}</button>
-          <button id="view-table" class="chip-btn ${
-            state.viewMode === 'table'
-              ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
-              : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
-          }">${t('Tabelle', 'Table')}</button>
-          <button id="toggle-language" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
-            ${state.language === 'de' ? 'Sprache: DE' : 'Language: EN'}
-          </button>
-          <button id="toggle-focus-mode" class="chip-btn ${
-            state.focusMode
-              ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
-              : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
-          }">${state.focusMode ? t('Standardansicht', 'Standard view') : t('Fokusansicht', 'Focus view')}</button>
-
-          <button id="clear-filters" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(
-            'Filter zuruecksetzen',
-            'Reset filters',
-          )}</button>
         </div>
 
         <div id="advanced-filters-region" class="mt-4 space-y-3 ${state.showAdvancedFilters && !state.focusMode ? '' : 'hidden'}">
