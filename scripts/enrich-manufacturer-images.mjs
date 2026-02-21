@@ -31,6 +31,15 @@ const DISALLOWED_SOURCE_HOST_HINTS = ['wikipedia.org', 'wikimedia.org', 'kicksta
 const IMAGE_EXTENSION_REGEX = /\.(jpg|jpeg|png|webp|avif)(\?|$)/i;
 
 const CURATED_IMAGE_OVERRIDES_BY_ID = {
+  CgySYMXLq: '/images/manufacturers/3glasses-d2.png',
+  yBcFHrYN0: '/images/manufacturers/asus-airvision-m1.webp',
+  MNTNWLDu4: '/images/manufacturers/dreamworld-dream-glass.jpg',
+  sCAIQq45W: '/images/manufacturers/madgaze-glow-plus.jpg',
+  'FauT-Oibf': '/images/manufacturers/realmax-qian.jpeg',
+  'legacy-reconjet': '/images/manufacturers/recon-jet.jpg',
+  nzYmv8egK: '/images/manufacturers/shadow-creator-halomini.jpg',
+  'legacy-sonysmarteyeglassde': '/images/manufacturers/sony-smarteyeglass.jpg',
+  Dp6TLH4Gv: '/images/manufacturers/xiaomi-smart-glasses.jpg',
   vH20M2KPj: 'https://www.ajnalens.com/_next/static/media/Rec3467860.81d5d5c9.svg',
   UR8rXYX7t:
     'https://static.wixstatic.com/media/86f41c_ff8e1bdf90e1402b98efcb9c7dc5e98c~mv2.png/v1/fit/w_1920,h_1440,q_90,enc_avif,quality_auto/86f41c_ff8e1bdf90e1402b98efcb9c7dc5e98c~mv2.png',
@@ -94,6 +103,18 @@ const safeHttpUrl = (value) => {
   } catch {
     return '';
   }
+};
+
+const safeImageUrl = (value) => {
+  const httpUrl = safeHttpUrl(value);
+  if (httpUrl) {
+    return httpUrl;
+  }
+  const text = sanitize(value);
+  if (text.startsWith('/')) {
+    return text;
+  }
+  return '';
 };
 
 const withTimeout = async (fn, ms = REQUEST_TIMEOUT_MS) => {
@@ -612,11 +633,11 @@ const updateMetadata = async (rows, stats = {}) => {
     metadata = {};
   }
   metadata.manufacturer_image_enriched_at = new Date().toISOString();
-  metadata.manufacturer_image_links = rows.filter((row) => safeHttpUrl(row.image_url)).length;
+  metadata.manufacturer_image_links = rows.filter((row) => safeImageUrl(row.image_url)).length;
   metadata.manufacturer_image_curated_overrides = Number(stats.curatedCount ?? 0);
   metadata.manufacturer_image_manufacturer_fallbacks = Number(stats.manufacturerFallbackCount ?? 0);
   metadata.manufacturer_image_note =
-    'Image links are derived from official manufacturer pages with curated per-model overrides and same-manufacturer fallback when needed.';
+    'Image links are derived from official manufacturer pages with curated per-model overrides (including local mirrored manufacturer originals) and same-manufacturer fallback when needed.';
   await writeFile(METADATA_PATH, `${JSON.stringify(metadata, null, 2)}\n`, 'utf8');
 };
 
@@ -637,7 +658,7 @@ const main = async () => {
     candidates,
     async (row, index) => {
       const label = `${index + 1}/${candidates.length} ${sanitize(row.name) || sanitize(row.short_name) || row.id}`;
-      const curatedOverride = safeHttpUrl(CURATED_IMAGE_OVERRIDES_BY_ID[String(row.id ?? '').trim()]);
+      const curatedOverride = safeImageUrl(CURATED_IMAGE_OVERRIDES_BY_ID[String(row.id ?? '').trim()]);
       if (curatedOverride) {
         row.image_url = curatedOverride;
         updatedCount += 1;
@@ -676,13 +697,13 @@ const main = async () => {
   const manufacturerFallbacks = new Map();
   for (const row of workRows) {
     const manufacturerKey = sanitize(row.manufacturer).toLowerCase();
-    const imageUrl = safeHttpUrl(row.image_url);
+    const imageUrl = safeImageUrl(row.image_url);
     if (manufacturerKey && imageUrl && !manufacturerFallbacks.has(manufacturerKey)) {
       manufacturerFallbacks.set(manufacturerKey, imageUrl);
     }
   }
   for (const row of workRows) {
-    if (safeHttpUrl(row.image_url)) {
+    if (safeImageUrl(row.image_url)) {
       continue;
     }
     const manufacturerKey = sanitize(row.manufacturer).toLowerCase();
