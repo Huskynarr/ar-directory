@@ -287,8 +287,8 @@ const updateDocumentSeoSignals = (visibleCount) => {
         `Filtered search result for "${queryLabel}" in the AR/XR glasses comparison with specs, pricing, lifecycle and shop links.`,
       )
     : t(
-        'Vergleich fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Shop-Links, aktivem Vertrieb, Software, Updates und EOL-Status.',
-        'Comparison for AR and XR glasses with specifications, pricing, shop links, active distribution, software, updates and EOL status.',
+        'Vergleichsseite fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Shop-Links, aktivem Vertrieb, Software, Updates und EOL-Status.',
+        'Comparison page for AR and XR glasses with specifications, pricing, shop links, active distribution, software, updates and EOL status.',
       );
 
   const descriptionTag = document.querySelector('meta[name="description"]');
@@ -1597,8 +1597,8 @@ const render = () => {
         )}</h1>
         <p class="mt-3 max-w-4xl text-sm text-[#a8a29e] sm:text-base">
           ${t(
-            'Karten- und Tabellenansicht fuer aktuelle und historische Brillen mit Spezifikationen, Preisen, Lifecycle, EOL und Shop-Links.',
-            'Cards and table view for current and historical glasses with specifications, pricing, lifecycle, EOL and shop links.',
+            'Vergleichsseite fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Lifecycle, EOL und Shop-Links. Legacy-Modelle sind fuer einen vollstaendigeren Datenbestand enthalten.',
+            'Comparison page for AR and XR glasses with specifications, pricing, lifecycle, EOL and shop links. Legacy models are included for a fuller dataset.',
           )}
         </p>
       </header>
@@ -1846,8 +1846,8 @@ const render = () => {
               )}</h2>
               <p class="mt-2 text-sm text-[#a8a29e]">
                 ${t(
-                  'Diese Vergleichsseite deckt aktuelle und historische AR- und XR-Brillen inklusive Shop-Links, Preisstatus, FOV, Refresh, Tracking, Software sowie Updates/EOL ab.',
-                  'This comparison page covers current and historical AR and XR glasses including shop links, pricing status, FOV, refresh, tracking, software and updates/EOL.',
+                  'Diese Vergleichsseite fokussiert AR- und XR-Brillen mit Shop-Links, Preisstatus, FOV, Refresh, Tracking, Software sowie Updates/EOL. Legacy-Modelle sind zur Vervollstaendigung des Datenbestands enthalten.',
+                  'This comparison page focuses on AR and XR glasses with shop links, pricing status, FOV, refresh, tracking, software and updates/EOL. Legacy models are included to complete the dataset.',
                 )}
               </p>
               <div class="mt-4 grid gap-3 md:grid-cols-2">
