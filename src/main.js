@@ -996,13 +996,15 @@ const cardTemplate = (row) => {
   const lifecycleClasses = lifecycleTone(row);
   const eolDate = row.eol_date ? formatDate(row.eol_date) : t('k. A.', 'n/a');
   const releaseDate = formatDate(row.release_date || row.announced_date);
-  const infoUrl = safeExternalUrl(row.lifecycle_source || row.source_page);
+  const lifecycleSourceUrl = safeExternalUrl(row.lifecycle_source);
+  const infoUrl = lifecycleSourceUrl || safeExternalUrl(row.source_page);
   const isSelected = state.selectedIds.includes(row.__rowId);
   const facts = buildCardFacts(row);
   const primaryFacts = facts.slice(0, 6);
   const secondaryFacts = facts.slice(6);
   const lifecycleNotes = maybeHiddenText(row.lifecycle_notes, t('Keine Angaben.', 'No details.'));
   const lifecycleSource = maybeHiddenText(row.lifecycle_source, '');
+  const showLifecycleSourceInInfo = Boolean(lifecycleSource && !lifecycleSourceUrl);
 
   return `
     <article class="panel overflow-hidden">
@@ -1080,7 +1082,11 @@ const cardTemplate = (row) => {
           <p class="mt-1 font-semibold">${escapeHtml(compactValue(row.eol_status))}</p>
           <p class="mt-1 text-xs">${t('EOL-Datum', 'EOL date')}: ${escapeHtml(eolDate)}</p>
           ${lifecycleNotes ? `<p class="mt-2 text-xs leading-relaxed">${escapeHtml(lifecycleNotes)}</p>` : ''}
-          ${lifecycleSource ? `<p class="mt-2 text-[11px] leading-relaxed">${t('Quelle', 'Source')}: ${escapeHtml(lifecycleSource)}</p>` : ''}
+          ${
+            showLifecycleSourceInInfo
+              ? `<p class="mt-2 text-[11px] leading-relaxed">${t('Quelle', 'Source')}: ${escapeHtml(lifecycleSource)}</p>`
+              : ''
+          }
         </div>
 
         <div class="flex flex-wrap gap-2">
