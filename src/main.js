@@ -11,7 +11,7 @@ const VIEW_MODES = new Set(['cards', 'table']);
 const SORT_MODES = new Set(['name_asc', 'manufacturer_asc', 'release_desc', 'price_desc', 'price_asc', 'fov_desc']);
 const TRUE_VALUES = new Set(['1', 'true', 'yes', 'on']);
 const FALSE_VALUES = new Set(['0', 'false', 'no', 'off']);
-const RADAR_COLORS = ['#9d491c', '#2f6fb5', '#2d8f60', '#9b3db6', '#b1731f', '#a73452'];
+const RADAR_COLORS = ['#84cc16', '#2f6fb5', '#2d8f60', '#9b3db6', '#b1731f', '#a73452'];
 
 const UNKNOWN_EXACT_VALUES = new Set([
   '',
@@ -676,22 +676,22 @@ const optionList = (values, selectedValue, allLabel = 'Alle') => {
 
 const categoryTone = (value) =>
   normalizeText(value) === 'xr'
-    ? 'border-[#c58f48] bg-[#fff2de] text-[#7c4e15]'
-    : 'border-[#8fa977] bg-[#eef6e5] text-[#36521f]';
+    ? 'border-cyan-500/40 bg-cyan-500/15 text-cyan-200'
+    : 'border-lime-500/40 bg-lime-500/15 text-lime-200';
 
 const lifecycleTone = (row) => {
   if (isEol(row)) {
-    return 'border-[#d39e87] bg-[#fdeee6] text-[#7f2f0f]';
+    return 'border-red-500/40 bg-red-500/10 text-red-200';
   }
   if (normalizeText(row.eol_status).includes('angekuendigt')) {
-    return 'border-[#d3b37d] bg-[#fff6e3] text-[#6f4a0d]';
+    return 'border-amber-500/40 bg-amber-500/10 text-amber-200';
   }
-  return 'border-[#9fbc8c] bg-[#eef8e9] text-[#2e5824]';
+  return 'border-lime-500/40 bg-lime-500/10 text-lime-200';
 };
 
 const selectionLabelTemplate = (rowId, selected) => `
-  <label class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-[#ceb99f] bg-[#fffdf8] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#3f301f]">
-    <input data-compare-toggle data-model-id="${escapeHtml(rowId)}" type="checkbox" class="size-4 accent-[#9d491c]" ${selected ? 'checked' : ''} />
+  <label class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-[#44403c] bg-[#1c1917] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#a8a29e]">
+    <input data-compare-toggle data-model-id="${escapeHtml(rowId)}" type="checkbox" class="size-4 accent-[#84cc16]" ${selected ? 'checked' : ''} />
     Compare
   </label>
 `;
@@ -724,8 +724,8 @@ const cardTemplate = (row) => {
   const image = safeExternalUrl(row.image_url);
   const shop = getShopInfo(row);
   const shopButtonClasses = shop.official
-    ? 'chip-btn border-[#a24d20] bg-[#a24d20] text-[#fff8f0] hover:bg-[#8f4118]'
-    : 'chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]';
+    ? 'chip-btn border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
+    : 'chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]';
   const lifecycleClasses = lifecycleTone(row);
   const eolDate = row.eol_date ? formatDate(row.eol_date) : 'k. A.';
   const releaseDate = formatDate(row.release_date || row.announced_date);
@@ -737,48 +737,48 @@ const cardTemplate = (row) => {
 
   return `
     <article class="panel overflow-hidden">
-      <div class="relative h-48 border-b border-[#e0d1c1] bg-gradient-to-br from-[#f7ecdf] to-[#efe1d1]">
+      <div class="relative h-48 border-b border-[#44403c] bg-gradient-to-br from-[#1c1917] to-[#1c1917]">
         ${
           image
             ? `<img src="${escapeHtml(image)}" alt="${name}" loading="lazy" class="h-full w-full object-contain p-4" />`
-            : '<div class="grid h-full place-items-center text-sm text-[#6b5a4a]">Kein Bild verfuegbar</div>'
+            : '<div class="grid h-full place-items-center text-sm text-[#a8a29e]">Kein Bild verfuegbar</div>'
         }
         <div class="absolute left-3 top-3">${selectionLabelTemplate(row.__rowId, isSelected)}</div>
         <span class="absolute right-3 top-3 rounded-full border px-2.5 py-1 text-xs font-bold ${categoryTone(row.xr_category)}">${category}</span>
       </div>
       <div class="space-y-4 p-4">
         <div class="space-y-1">
-          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#6c5b49]">${manufacturer}</p>
-          <h2 class="font-['Spectral'] text-2xl leading-tight text-[#231c15]">${name}</h2>
-          <p class="text-sm text-[#6d5c49]">Release: ${escapeHtml(releaseDate)}</p>
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#a8a29e]">${manufacturer}</p>
+          <h2 class="font-semibold text-2xl leading-tight text-[#f5f5f4]">${name}</h2>
+          <p class="text-sm text-[#a8a29e]">Release: ${escapeHtml(releaseDate)}</p>
         </div>
 
         <div class="grid grid-cols-2 gap-2 text-sm">
           <div class="soft-panel p-2.5">
-            <p class="text-[11px] uppercase tracking-[0.12em] text-[#6d5c49]">Preis</p>
-            <p class="mt-1 font-semibold text-[#281f16]">${escapeHtml(formatPrice(row.price_usd))}</p>
+            <p class="text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">Preis</p>
+            <p class="mt-1 font-semibold text-[#f5f5f4]">${escapeHtml(formatPrice(row.price_usd))}</p>
           </div>
           <div class="soft-panel p-2.5">
-            <p class="text-[11px] uppercase tracking-[0.12em] text-[#6d5c49]">Vertrieb</p>
-            <p class="mt-1 font-semibold text-[#281f16]">${escapeHtml(compactValue(row.active_distribution, 'k. A.'))}</p>
+            <p class="text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">Vertrieb</p>
+            <p class="mt-1 font-semibold text-[#f5f5f4]">${escapeHtml(compactValue(row.active_distribution, 'k. A.'))}</p>
           </div>
         </div>
 
         ${
           facts.length
-            ? `<dl class="grid grid-cols-2 gap-x-3 gap-y-2 text-sm text-[#2f2419]">
+            ? `<dl class="grid grid-cols-2 gap-x-3 gap-y-2 text-sm text-[#f5f5f4]">
                 ${facts
                   .map(
                     (fact) => `
                       <div>
-                        <dt class="text-xs text-[#6d5c49]">${escapeHtml(fact.label)}</dt>
+                        <dt class="text-xs text-[#a8a29e]">${escapeHtml(fact.label)}</dt>
                         <dd class="font-medium">${escapeHtml(fact.value)}</dd>
                       </div>
                     `,
                   )
                   .join('')}
               </dl>`
-            : '<p class="soft-panel p-3 text-xs text-[#6d5c49]">Keine bekannten Spezifikationen sichtbar (Toggle "Unbekannte Werte ausblenden" aktiv).</p>'
+            : '<p class="soft-panel p-3 text-xs text-[#a8a29e]">Keine bekannten Spezifikationen sichtbar (Toggle "Unbekannte Werte ausblenden" aktiv).</p>'
         }
 
         <div class="rounded-2xl border p-3 text-sm ${lifecycleClasses}">
@@ -793,15 +793,15 @@ const cardTemplate = (row) => {
           ${
             shop.url
               ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" class="${shopButtonClasses}">${escapeHtml(shop.label)}</a>`
-              : '<span class="chip-btn cursor-not-allowed border-[#d4c3af] bg-[#f2e8db] text-[#8a7764]">Shop-Link fehlt</span>'
+              : '<span class="chip-btn cursor-not-allowed border-[#44403c] bg-[#292524] text-[#a8a29e]">Shop-Link fehlt</span>'
           }
           ${
             infoUrl
-              ? `<a href="${escapeHtml(infoUrl)}" target="_blank" rel="noreferrer" class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">Datenquelle</a>`
+              ? `<a href="${escapeHtml(infoUrl)}" target="_blank" rel="noreferrer" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">Datenquelle</a>`
               : ''
           }
         </div>
-        <p class="text-xs text-[#6f5f4c]">${escapeHtml(shop.source)}</p>
+        <p class="text-xs text-[#a8a29e]">${escapeHtml(shop.source)}</p>
       </div>
     </article>
   `;
@@ -809,14 +809,14 @@ const cardTemplate = (row) => {
 
 const tableTemplate = (rows) => {
   if (!rows.length) {
-    return '<p class="panel p-8 text-center text-sm text-[#6f5f4c]">Keine Ergebnisse fuer diese Filter.</p>';
+    return '<p class="panel p-8 text-center text-sm text-[#a8a29e]">Keine Ergebnisse fuer diese Filter.</p>';
   }
 
   return `
     <div class="panel overflow-hidden">
       <div class="overflow-x-auto">
         <table class="min-w-[1650px] border-collapse text-sm">
-          <thead class="bg-[#f4e9dc] text-left text-[11px] uppercase tracking-[0.12em] text-[#6b5a48]">
+          <thead class="bg-[#1c1917] text-left text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">
             <tr>
               <th class="px-3 py-3">Compare</th>
               <th class="px-3 py-3">Brille</th>
@@ -846,11 +846,11 @@ const tableTemplate = (rows) => {
                 const lifecycleNotes = maybeHiddenText(row.lifecycle_notes, 'Keine Angaben.');
 
                 return `
-                  <tr class="${index % 2 === 0 ? 'bg-white' : 'bg-[#fffbf4]'} align-top text-[#2a2017]">
+                  <tr class="${index % 2 === 0 ? 'bg-[#171412]' : 'bg-[#1c1917]'} align-top text-[#f5f5f4]">
                     <td class="px-3 py-3">${selectionLabelTemplate(row.__rowId, selected)}</td>
                     <td class="px-3 py-3">
                       <p class="font-semibold">${escapeHtml(compactValue(row.name, 'Unbekannt'))}</p>
-                      <p class="mt-1 text-xs text-[#6d5c49]">${escapeHtml(maybeHiddenText(row.resolution_per_eye, 'k. A.') || 'k. A.')}</p>
+                      <p class="mt-1 text-xs text-[#a8a29e]">${escapeHtml(maybeHiddenText(row.resolution_per_eye, 'k. A.') || 'k. A.')}</p>
                     </td>
                     <td class="px-3 py-3">${escapeHtml(compactValue(row.manufacturer))}</td>
                     <td class="px-3 py-3">
@@ -870,19 +870,19 @@ const tableTemplate = (rows) => {
                     <td class="px-3 py-3">${escapeHtml(compactValue(row.active_distribution, 'k. A.'))}</td>
                     <td class="px-3 py-3">
                       <p class="font-semibold">${escapeHtml(compactValue(row.eol_status))}</p>
-                      ${lifecycleNotes ? `<p class="mt-1 text-xs text-[#6d5c49]">${escapeHtml(lifecycleNotes)}</p>` : ''}
+                      ${lifecycleNotes ? `<p class="mt-1 text-xs text-[#a8a29e]">${escapeHtml(lifecycleNotes)}</p>` : ''}
                     </td>
                     <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.software) || 'k. A.')}</td>
                     <td class="px-3 py-3">
                       <div class="flex flex-col gap-2">
                         ${
                           shop.url
-                            ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" class="text-xs font-semibold text-[#8c3f14] hover:underline">${escapeHtml(shop.label)}</a>`
-                            : '<span class="text-xs text-[#8e7a66]">Kein Shop-Link</span>'
+                            ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" class="text-xs font-semibold text-[#84cc16] hover:underline">${escapeHtml(shop.label)}</a>`
+                            : '<span class="text-xs text-[#a8a29e]">Kein Shop-Link</span>'
                         }
                         ${
                           infoUrl
-                            ? `<a href="${escapeHtml(infoUrl)}" target="_blank" rel="noreferrer" class="text-xs font-semibold text-[#8c3f14] hover:underline">Quelle</a>`
+                            ? `<a href="${escapeHtml(infoUrl)}" target="_blank" rel="noreferrer" class="text-xs font-semibold text-[#84cc16] hover:underline">Quelle</a>`
                             : ''
                         }
                       </div>
@@ -993,7 +993,7 @@ const compareRadarTemplate = (selectedRows) => {
         return `${point.x.toFixed(2)},${point.y.toFixed(2)}`;
       })
       .join(' ');
-    return `<polygon points="${points}" fill="none" stroke="#d9c8b5" stroke-width="1" />`;
+    return `<polygon points="${points}" fill="none" stroke="#44403c" stroke-width="1" />`;
   }).join('');
 
   const axisLines = axes
@@ -1003,8 +1003,8 @@ const compareRadarTemplate = (selectedRows) => {
       const anchor = labelPoint.x > center + 6 ? 'start' : labelPoint.x < center - 6 ? 'end' : 'middle';
       const labelY = labelPoint.y > center ? labelPoint.y + 11 : labelPoint.y - 7;
       return `
-        <line x1="${center}" y1="${center}" x2="${outer.x.toFixed(2)}" y2="${outer.y.toFixed(2)}" stroke="#ccb8a2" stroke-width="1" />
-        <text x="${labelPoint.x.toFixed(2)}" y="${labelY.toFixed(2)}" text-anchor="${anchor}" font-size="11" fill="#5f4d3b">${escapeHtml(axis.label)}</text>
+        <line x1="${center}" y1="${center}" x2="${outer.x.toFixed(2)}" y2="${outer.y.toFixed(2)}" stroke="#44403c" stroke-width="1" />
+        <text x="${labelPoint.x.toFixed(2)}" y="${labelY.toFixed(2)}" text-anchor="${anchor}" font-size="11" fill="#a8a29e">${escapeHtml(axis.label)}</text>
       `;
     })
     .join('');
@@ -1035,8 +1035,8 @@ const compareRadarTemplate = (selectedRows) => {
   });
 
   return `
-    <div class="border-b border-[#e3d6c7] bg-[#fffaf2] px-4 py-4">
-      <p class="text-xs font-semibold uppercase tracking-[0.12em] text-[#6a5946]">Spider Chart (normalisiert auf Auswahl)</p>
+    <div class="border-b border-[#44403c] bg-[#1c1917] px-4 py-4">
+      <p class="text-xs font-semibold uppercase tracking-[0.12em] text-[#a8a29e]">Spider Chart (normalisiert auf Auswahl)</p>
       <div class="mt-3 overflow-x-auto">
         <svg viewBox="0 0 ${size} ${size}" role="img" aria-label="Radarvergleich der ausgewaehlten Modelle" class="mx-auto block h-[360px] min-w-[320px]">
           ${gridPolygons}
@@ -1045,15 +1045,15 @@ const compareRadarTemplate = (selectedRows) => {
           ${series.map((entry) => entry.points).join('')}
         </svg>
       </div>
-      <p class="mt-2 text-xs text-[#6d5c49]">Achsen: FOV H, Refresh, Gewicht (invertiert), Preis (invertiert), Tracking-Score.</p>
+      <p class="mt-2 text-xs text-[#a8a29e]">Achsen: FOV H, Refresh, Gewicht (invertiert), Preis (invertiert), Tracking-Score.</p>
       <div class="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
         ${series
           .map(
             (entry) => `
-              <div class="inline-flex items-center gap-2 rounded-lg border border-[#dbc8b3] bg-[#fffdf8] px-2.5 py-1.5 text-xs text-[#3e2f22]">
+              <div class="inline-flex items-center gap-2 rounded-lg border border-[#44403c] bg-[#1c1917] px-2.5 py-1.5 text-xs text-[#a8a29e]">
                 <span class="inline-block h-2.5 w-2.5 rounded-full" style="background:${entry.color};"></span>
                 <span class="font-semibold">${escapeHtml(compactValue(entry.row.name, 'Unbekannt'))}</span>
-                <span class="text-[#6d5c49]">${escapeHtml(compactValue(entry.row.manufacturer, ''))}</span>
+                <span class="text-[#a8a29e]">${escapeHtml(compactValue(entry.row.manufacturer, ''))}</span>
               </div>
             `,
           )
@@ -1065,7 +1065,7 @@ const compareRadarTemplate = (selectedRows) => {
 
 const compareModeTemplate = (selectedRows) => {
   if (!selectedRows.length) {
-    return `<p class="panel p-8 text-sm text-[#6f5f4c]">Keine Modelle ausgewaehlt. Waehle bis zu ${COMPARE_LIMIT} Modelle fuer den Direktvergleich.</p>`;
+    return `<p class="panel p-8 text-sm text-[#a8a29e]">Keine Modelle ausgewaehlt. Waehle bis zu ${COMPARE_LIMIT} Modelle fuer den Direktvergleich.</p>`;
   }
 
   const fields = getCompareFields();
@@ -1075,22 +1075,22 @@ const compareModeTemplate = (selectedRows) => {
 
   return `
     <div class="panel overflow-hidden">
-      <div class="border-b border-[#e3d6c7] bg-[#fbf4ea] px-4 py-3">
-        <h2 class="font-['Spectral'] text-2xl text-[#231c15]">Direktvergleich</h2>
-        <p class="mt-1 text-sm text-[#6d5c49]">${selectedRows.length} ausgewaehlte Modelle, max. ${COMPARE_LIMIT} gleichzeitig.</p>
+      <div class="border-b border-[#44403c] bg-[#1c1917] px-4 py-3">
+        <h2 class="font-semibold text-2xl text-[#f5f5f4]">Direktvergleich</h2>
+        <p class="mt-1 text-sm text-[#a8a29e]">${selectedRows.length} ausgewaehlte Modelle, max. ${COMPARE_LIMIT} gleichzeitig.</p>
       </div>
       ${compareRadarTemplate(selectedRows)}
       <div class="overflow-x-auto">
         <table class="min-w-[980px] border-collapse text-sm">
-          <thead class="bg-[#f4e9dc] text-left text-[11px] uppercase tracking-[0.12em] text-[#6b5a48]">
+          <thead class="bg-[#1c1917] text-left text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">
             <tr>
               <th class="px-3 py-3">Merkmal</th>
               ${selectedRows
                 .map(
                   (row) => `
                     <th class="px-3 py-3 align-top">
-                      <p class="font-semibold text-[#231c15]">${escapeHtml(compactValue(row.name, 'Unbekannt'))}</p>
-                      <p class="mt-1 text-[11px] font-medium normal-case tracking-normal text-[#6d5c49]">${escapeHtml(compactValue(row.manufacturer, 'Unbekannt'))}</p>
+                      <p class="font-semibold text-[#f5f5f4]">${escapeHtml(compactValue(row.name, 'Unbekannt'))}</p>
+                      <p class="mt-1 text-[11px] font-medium normal-case tracking-normal text-[#a8a29e]">${escapeHtml(compactValue(row.manufacturer, 'Unbekannt'))}</p>
                     </th>
                   `,
                 )
@@ -1100,10 +1100,10 @@ const compareModeTemplate = (selectedRows) => {
           <tbody>
             ${visibleFields
               .map((field, rowIndex) => {
-                const rowClass = rowIndex % 2 === 0 ? 'bg-white' : 'bg-[#fffbf4]';
+                const rowClass = rowIndex % 2 === 0 ? 'bg-[#171412]' : 'bg-[#1c1917]';
                 return `
-                  <tr class="${rowClass} align-top text-[#2a2017]">
-                    <td class="px-3 py-3 font-semibold text-[#3d2e1f]">${escapeHtml(field.label)}</td>
+                  <tr class="${rowClass} align-top text-[#f5f5f4]">
+                    <td class="px-3 py-3 font-semibold text-[#a8a29e]">${escapeHtml(field.label)}</td>
                     ${selectedRows
                       .map((row) => {
                         const hidden = state.hideUnknown && field.isUnknown(row);
@@ -1125,17 +1125,17 @@ const compareModeTemplate = (selectedRows) => {
 const compareBarTemplate = (selectedRows) => {
   const count = selectedRows.length;
   const compareToggleClasses = state.compareMode
-    ? 'chip-btn border-[#9d491c] bg-[#9d491c] text-[#fff8f0] hover:bg-[#8d4017]'
-    : 'chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]';
+    ? 'chip-btn border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
+    : 'chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]';
 
   return `
     <section class="panel mt-4 p-4 sm:p-5">
       <div class="flex flex-wrap items-center gap-2">
-        <p class="rounded-full border border-[#ceb99f] bg-[#fff8ee] px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#5b4838]">
+        <p class="rounded-full border border-[#44403c] bg-[#1c1917] px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">
           Vergleich: ${count}/${COMPARE_LIMIT}
         </p>
         <button id="toggle-compare-mode" class="${compareToggleClasses}" ${count === 0 ? 'disabled' : ''}>${state.compareMode ? 'Liste anzeigen' : 'Compare-Modus'}</button>
-        <button id="clear-compare" class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]" ${count === 0 ? 'disabled' : ''}>Auswahl leeren</button>
+        <button id="clear-compare" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]" ${count === 0 ? 'disabled' : ''}>Auswahl leeren</button>
       </div>
 
       <div class="mt-3 flex flex-wrap gap-2">
@@ -1144,19 +1144,19 @@ const compareBarTemplate = (selectedRows) => {
             ? selectedRows
                 .map(
                   (row) => `
-                    <span class="inline-flex items-center gap-2 rounded-full border border-[#d8c3ab] bg-[#fffdf8] px-3 py-1.5 text-xs text-[#3d2f22]">
+                    <span class="inline-flex items-center gap-2 rounded-full border border-[#44403c] bg-[#1c1917] px-3 py-1.5 text-xs text-[#a8a29e]">
                       <span class="font-semibold">${escapeHtml(compactValue(row.name, 'Unbekannt'))}</span>
-                      <span class="text-[#6d5c49]">${escapeHtml(compactValue(row.manufacturer, ''))}</span>
-                      <button data-remove-compare="${escapeHtml(row.__rowId)}" class="rounded-full border border-[#d3bca2] px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#7b3a16] hover:bg-[#f5e9db]">x</button>
+                      <span class="text-[#a8a29e]">${escapeHtml(compactValue(row.manufacturer, ''))}</span>
+                      <button data-remove-compare="${escapeHtml(row.__rowId)}" class="rounded-full border border-[#44403c] px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#84cc16] hover:bg-[#292524]">x</button>
                     </span>
                   `,
                 )
                 .join('')
-            : '<p class="text-sm text-[#6d5c49]">Noch nichts ausgewaehlt. Nutze "Compare" in Card oder Tabelle.</p>'
+            : '<p class="text-sm text-[#a8a29e]">Noch nichts ausgewaehlt. Nutze "Compare" in Card oder Tabelle.</p>'
         }
       </div>
 
-      ${state.compareNotice ? `<p class="mt-3 text-xs font-semibold text-[#8a3a14]">${escapeHtml(state.compareNotice)}</p>` : ''}
+      ${state.compareNotice ? `<p class="mt-3 text-xs font-semibold text-[#84cc16]">${escapeHtml(state.compareNotice)}</p>` : ''}
     </section>
   `;
 };
@@ -1217,21 +1217,21 @@ const render = () => {
   app.innerHTML = `
     <main class="mx-auto w-full max-w-[1320px] px-4 py-6 sm:px-6 lg:px-8">
       <header class="panel relative overflow-hidden p-5 sm:p-6">
-        <div class="absolute inset-0 -z-10 bg-gradient-to-br from-[#fbf5ed] via-[#f5e8d7] to-[#efdfcc]"></div>
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[#6a5946]">AR / XR DIRECTORY</p>
-        <h1 class="mt-2 font-['Spectral'] text-3xl leading-tight text-[#231c15] sm:text-4xl">Vergleich fuer AR-Brillen und XR-Glasses</h1>
-        <p class="mt-3 max-w-4xl text-sm text-[#655543] sm:text-base">
+        <div class="absolute inset-0 -z-10 bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950"></div>
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-lime-500">AR / XR DIRECTORY</p>
+        <h1 class="mt-2 text-3xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-lime-600 sm:text-4xl">Vergleich fuer AR-Brillen und XR-Glasses</h1>
+        <p class="mt-3 max-w-4xl text-sm text-[#a8a29e] sm:text-base">
           Karten- und Tabellenansicht fuer aktuelle und historische Brillen mit Spezifikationen, Preisen, Lifecycle, EOL und Shop-Links.
         </p>
-        <p class="mt-2 text-xs text-[#72614f]">Datenstand: ${escapeHtml(retrievedAt ? formatDate(retrievedAt) : 'k. A.')}</p>
+        <p class="mt-2 text-xs text-[#a8a29e]">Datenstand: ${escapeHtml(retrievedAt ? formatDate(retrievedAt) : 'k. A.')}</p>
       </header>
 
       <section class="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
-        <p class="soft-panel p-3 text-sm text-[#6a5947]"><strong class="text-[#231c15]">${filtered.length}</strong> sichtbare Modelle</p>
-        <p class="soft-panel p-3 text-sm text-[#6a5947]"><strong class="text-[#231c15]">${withPrice}</strong> mit Preis</p>
-        <p class="soft-panel p-3 text-sm text-[#6a5947]"><strong class="text-[#231c15]">${withShop}</strong> mit Shop-Link</p>
-        <p class="soft-panel p-3 text-sm text-[#6a5947]"><strong class="text-[#231c15]">${activeCount}</strong> aktiv / unklar aktiv</p>
-        <p class="soft-panel p-3 text-sm text-[#6a5947]"><strong class="text-[#231c15]">${eolCount}</strong> EOL / discontinued</p>
+        <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${filtered.length}</strong> sichtbare Modelle</p>
+        <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${withPrice}</strong> mit Preis</p>
+        <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${withShop}</strong> mit Shop-Link</p>
+        <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${activeCount}</strong> aktiv / unklar aktiv</p>
+        <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${eolCount}</strong> EOL / discontinued</p>
       </section>
 
       ${compareBarTemplate(selectedRows)}
@@ -1239,12 +1239,12 @@ const render = () => {
       <section class="panel mt-4 p-4 sm:p-5">
         <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
           <label class="space-y-1 xl:col-span-2">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Suche</span>
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Suche</span>
             <input id="query-input" type="search" class="field" placeholder="Modell, Hersteller, Software, Tracking, Lifecycle" value="${escapeHtml(state.query)}" />
           </label>
 
           <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Kategorie</span>
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Kategorie</span>
             <select id="category-filter" class="field">
               <option value="all"${state.category === 'all' ? ' selected' : ''}>Alle Kategorien</option>
               <option value="AR"${state.category === 'AR' ? ' selected' : ''}>AR</option>
@@ -1253,85 +1253,85 @@ const render = () => {
           </label>
 
           <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Hersteller</span>
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Hersteller</span>
             <select id="manufacturer-filter" class="field">
               ${optionList(filterOptions.manufacturers, state.manufacturer, 'Alle Hersteller')}
             </select>
           </label>
 
           <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Display-Typ</span>
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Display-Typ</span>
             <select id="display-filter" class="field">
               ${optionList(filterOptions.displayTypes, state.displayType, 'Alle Display-Arten')}
             </select>
           </label>
 
           <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Optik</span>
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Optik</span>
             <select id="optics-filter" class="field">
               ${optionList(filterOptions.optics, state.optics, 'Alle Optik-Typen')}
             </select>
           </label>
 
           <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Tracking</span>
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Tracking</span>
             <select id="tracking-filter" class="field">
               ${optionList(filterOptions.tracking, state.tracking, 'Alle Tracking-Typen')}
             </select>
           </label>
 
           <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Eye Tracking</span>
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Eye Tracking</span>
             <select id="eye-tracking-filter" class="field">
               ${optionList(filterOptions.eyeTracking, state.eyeTracking, 'Alle Eye-Tracking-Werte')}
             </select>
           </label>
 
           <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Hand Tracking</span>
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Hand Tracking</span>
             <select id="hand-tracking-filter" class="field">
               ${optionList(filterOptions.handTracking, state.handTracking, 'Alle Hand-Tracking-Werte')}
             </select>
           </label>
 
           <label class="space-y-1 xl:col-span-2">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Passthrough</span>
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Passthrough</span>
             <select id="passthrough-filter" class="field">
               ${optionList(filterOptions.passthrough, state.passthrough, 'Alle Passthrough-Werte')}
             </select>
           </label>
 
           <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Aktiver Vertrieb</span>
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Aktiver Vertrieb</span>
             <select id="active-filter" class="field">
               ${optionList(filterOptions.activeStatuses, state.active, 'Alle Vertrieb-Status')}
             </select>
           </label>
 
           <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">EOL / Update-Status</span>
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">EOL / Update-Status</span>
             <select id="eol-filter" class="field">
               ${optionList(filterOptions.eolStatuses, state.eol, 'Alle Lifecycle-Status')}
             </select>
           </label>
 
           <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Min. FOV horizontal (deg)</span>
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Min. FOV horizontal (deg)</span>
             <input id="fov-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.minFov)}" placeholder="z. B. 40" />
           </label>
 
           <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Min. Refresh (Hz)</span>
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Min. Refresh (Hz)</span>
             <input id="refresh-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.minRefresh)}" placeholder="z. B. 60" />
           </label>
 
           <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Max. Preis (USD)</span>
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Max. Preis (USD)</span>
             <input id="price-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.maxPrice)}" placeholder="z. B. 1500" />
           </label>
 
           <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#6a5946]">Sortierung</span>
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Sortierung</span>
             <select id="sort-filter" class="field">
               <option value="name_asc"${state.sort === 'name_asc' ? ' selected' : ''}>Name A-Z</option>
               <option value="manufacturer_asc"${state.sort === 'manufacturer_asc' ? ' selected' : ''}>Hersteller A-Z</option>
@@ -1346,53 +1346,53 @@ const render = () => {
         <div class="mt-4 flex flex-wrap items-center gap-2">
           <button id="view-cards" class="chip-btn ${
             state.viewMode === 'cards'
-              ? 'border-[#9d491c] bg-[#9d491c] text-[#fff8f0] hover:bg-[#8d4017]'
-              : 'border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]'
+              ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
+              : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
           }">Cards</button>
           <button id="view-table" class="chip-btn ${
             state.viewMode === 'table'
-              ? 'border-[#9d491c] bg-[#9d491c] text-[#fff8f0] hover:bg-[#8d4017]'
-              : 'border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]'
+              ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
+              : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
           }">Tabelle</button>
 
-          <label class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">
-            <input id="only-price" type="checkbox" class="mr-2 size-4 accent-[#9d491c]" ${state.onlyPrice ? 'checked' : ''} />
+          <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
+            <input id="only-price" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyPrice ? 'checked' : ''} />
             Nur mit Preis
           </label>
-          <label class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">
-            <input id="only-shop" type="checkbox" class="mr-2 size-4 accent-[#9d491c]" ${state.onlyShop ? 'checked' : ''} />
+          <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
+            <input id="only-shop" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyShop ? 'checked' : ''} />
             Nur mit Shop-Link
           </label>
-          <label class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">
-            <input id="only-available" type="checkbox" class="mr-2 size-4 accent-[#9d491c]" ${state.onlyAvailable ? 'checked' : ''} />
+          <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
+            <input id="only-available" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyAvailable ? 'checked' : ''} />
             Nur aktiv im Vertrieb
           </label>
-          <label class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">
-            <input id="flag-ar" type="checkbox" class="mr-2 size-4 accent-[#9d491c]" ${state.flagAr ? 'checked' : ''} />
+          <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
+            <input id="flag-ar" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.flagAr ? 'checked' : ''} />
             AR-Flag
           </label>
-          <label class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">
-            <input id="flag-xr" type="checkbox" class="mr-2 size-4 accent-[#9d491c]" ${state.flagXr ? 'checked' : ''} />
+          <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
+            <input id="flag-xr" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.flagXr ? 'checked' : ''} />
             XR-Flag
           </label>
-          <label class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">
-            <input id="show-eur" type="checkbox" class="mr-2 size-4 accent-[#9d491c]" ${state.showEur ? 'checked' : ''} />
+          <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
+            <input id="show-eur" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.showEur ? 'checked' : ''} />
             EUR-Zusatz
           </label>
-          <label class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">
-            <input id="hide-unknown" type="checkbox" class="mr-2 size-4 accent-[#9d491c]" ${state.hideUnknown ? 'checked' : ''} />
+          <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
+            <input id="hide-unknown" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.hideUnknown ? 'checked' : ''} />
             Unbekannte Werte ausblenden
           </label>
 
           <button id="export-csv" class="chip-btn ${
             exportDisabled
-              ? 'cursor-not-allowed border-[#d4c3af] bg-[#f2e8db] text-[#8a7764]'
-              : 'border-[#9d491c] bg-[#9d491c] text-[#fff8f0] hover:bg-[#8d4017]'
+              ? 'cursor-not-allowed border-[#44403c] bg-[#292524] text-[#a8a29e]'
+              : 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
           }" ${exportDisabled ? 'disabled' : ''}>CSV Export</button>
 
-          <button id="clear-filters" class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">Filter zuruecksetzen</button>
+          <button id="clear-filters" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">Filter zuruecksetzen</button>
         </div>
-        ${state.showEur ? `<p class="mt-2 text-xs text-[#6d5c49]">${escapeHtml(formatRateHint())}</p>` : ''}
+        ${state.showEur ? `<p class="mt-2 text-xs text-[#a8a29e]">${escapeHtml(formatRateHint())}</p>` : ''}
       </section>
 
       <section class="mt-4">
@@ -1400,15 +1400,15 @@ const render = () => {
           state.compareMode
             ? compareModeTemplate(selectedRows)
             : filtered.length === 0
-              ? '<p class="panel p-10 text-center text-sm text-[#6f5f4c]">Keine Treffer fuer die gewaehlten Filter.</p>'
+              ? '<p class="panel p-10 text-center text-sm text-[#a8a29e]">Keine Treffer fuer die gewaehlten Filter.</p>'
               : state.viewMode === 'cards'
                 ? `
                     <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">${visibleCards.map(cardTemplate).join('')}</div>
                     <div class="mt-4 flex flex-wrap items-center gap-2">
-                      <p class="text-sm text-[#6d5c49]">${visibleCards.length} von ${filtered.length} Modellen angezeigt</p>
+                      <p class="text-sm text-[#a8a29e]">${visibleCards.length} von ${filtered.length} Modellen angezeigt</p>
                       ${
                         hasMoreCards
-                          ? '<button id="load-more-cards" class="chip-btn border-[#ceb99f] bg-white text-[#2b2118] hover:bg-[#f5ece0]">Mehr laden</button>'
+                          ? '<button id="load-more-cards" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">Mehr laden</button>'
                           : ''
                       }
                     </div>
@@ -1582,7 +1582,7 @@ const parseCsv = (text) =>
 const init = async () => {
   applyStateFromUrl();
   setFallbackUsdRate();
-  app.innerHTML = '<main class="mx-auto max-w-[1320px] px-4 py-8"><p class="panel p-6 text-sm text-[#6d5c49]">Lade Brillendaten...</p></main>';
+  app.innerHTML = '<main class="mx-auto max-w-[1320px] px-4 py-8"><p class="panel p-6 text-sm text-[#a8a29e]">Lade Brillendaten...</p></main>';
 
   const ratePromise = fetchUsdToEurRate();
 
@@ -1607,8 +1607,8 @@ const init = async () => {
     const message = error instanceof Error ? error.message : 'Unbekannter Fehler';
     app.innerHTML = `
       <main class="mx-auto max-w-[1320px] px-4 py-8">
-        <p class="panel border-[#d8b6a2] bg-[#fdeee6] p-6 text-sm font-semibold text-[#7b2d0b]">Daten konnten nicht geladen werden.</p>
-        <p class="mt-3 text-sm text-[#6d5c49]">${escapeHtml(message)}</p>
+        <p class="panel border-red-700/60 bg-red-950/40 p-6 text-sm font-semibold text-red-200">Daten konnten nicht geladen werden.</p>
+        <p class="mt-3 text-sm text-[#a8a29e]">${escapeHtml(message)}</p>
       </main>
     `;
   }

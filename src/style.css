@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Spectral:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @layer base {
@@ -9,29 +9,29 @@
   body {
     margin: 0;
     min-width: 320px;
-    color: #221b15;
-    font-family: 'Instrument Sans', 'Segoe UI', sans-serif;
+    color: #f5f5f4;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
     background:
-      radial-gradient(circle at 12% 8%, #efe4d5 0%, transparent 42%),
-      radial-gradient(circle at 88% 4%, #e8dac8 0%, transparent 44%),
-      linear-gradient(180deg, #f9f6f1 0%, #f4efe8 100%);
+      radial-gradient(circle at 12% 8%, rgba(101, 163, 13, 0.14) 0%, transparent 42%),
+      radial-gradient(circle at 88% 4%, rgba(132, 204, 22, 0.1) 0%, transparent 44%),
+      linear-gradient(180deg, #0c0a09 0%, #171412 100%);
   }
 }
 
 @layer components {
   .panel {
-    @apply rounded-3xl border border-[#dbc9b5] bg-[#fffdf8] shadow-[0_10px_24px_rgba(34,27,21,0.08)];
+    @apply rounded-xl border border-stone-800 bg-stone-900/70 backdrop-blur-sm shadow-lg;
   }
 
   .soft-panel {
-    @apply rounded-2xl border border-[#dbc9b5] bg-[#f8f1e7];
+    @apply rounded-xl border border-stone-800 bg-stone-900/60;
   }
 
   .field {
-    @apply h-11 w-full rounded-xl border border-[#d9c7b2] bg-[#fffdf8] px-3 text-sm text-[#281f16] outline-none ring-0 transition focus:border-[#a04d1f] focus:shadow-[0_0_0_3px_rgba(160,77,31,0.15)];
+    @apply h-11 w-full rounded-xl border border-stone-700 bg-stone-900/80 px-3 text-sm text-stone-100 outline-none ring-0 transition placeholder:text-stone-500 focus:border-lime-500 focus:shadow-[0_0_0_3px_rgba(132,204,22,0.2)];
   }
 
   .chip-btn {
-    @apply inline-flex h-10 items-center justify-center rounded-full border px-4 text-sm font-semibold transition;
+    @apply inline-flex h-10 items-center justify-center rounded-full border px-4 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-60;
   }
 }
