@@ -26,7 +26,6 @@ Sie eignet sich fuer Recherchen zu Kauf, Historie, Produktstatus (aktiv/EOL) und
 - name
 - manufacturer
 - image_url
-- vrcompare_url
 - official_url
 - announced_date
 - release_date
@@ -76,13 +75,13 @@ Sie eignet sich fuer Recherchen zu Kauf, Historie, Produktstatus (aktiv/EOL) und
 
 ## Data Origin
 
-- Hauptquelle: VR-Compare API
-- URL: https://vr-compare.com/api/headsets?hidden=false&detailLevel=summary
-- Erweiterung: Legacy-Seed-Daten fuer alte Modelle
+- Kuratierter lokaler Datensatz (`curated_ar_xr_directory_v2`)
+- Datendatei: https://huskynarr.de/data/ar_glasses.csv
+- Keine extern gehosteten Modellbilder oder Vergleichs-Provider-Links
 
 ## Freshness
 
-- Stand laut Metadaten-Datei: 2026-02-21T00:40:18.222Z
+- Stand laut Metadaten-Datei: siehe `https://huskynarr.de/data/ar_glasses.metadata.json`
 - Gesamtmodelle: 105
 
 ## Citation Guidance

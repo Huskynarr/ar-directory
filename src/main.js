@@ -76,13 +76,24 @@ const escapeHtml = (value) =>
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#39;');
 
+const isBlockedProviderHost = (hostname) => {
+  const host = String(hostname ?? '').toLowerCase();
+  return host.includes('vr-compare.com');
+};
+
 const safeExternalUrl = (url) => {
   if (!url) {
     return '';
   }
   try {
     const parsed = new URL(url);
-    return parsed.protocol === 'http:' || parsed.protocol === 'https:' ? parsed.toString() : '';
+    if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+      return '';
+    }
+    if (isBlockedProviderHost(parsed.hostname)) {
+      return '';
+    }
+    return parsed.toString();
   } catch {
     return '';
   }
@@ -315,9 +326,72 @@ const uniqueSorted = (values) =>
     left.localeCompare(right, 'de', { sensitivity: 'base' }),
   );
 
+const toInitials = (value) => {
+  const parts = String(value ?? '')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+  if (!parts.length) {
+    return 'AR';
+  }
+  return parts
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase() ?? '')
+    .join('');
+};
+
+const createModelImageDataUrl = (row) => {
+  const isXr = normalizeText(row.xr_category) === 'xr';
+  const gradientA = isXr ? '#0e7490' : '#84cc16';
+  const gradientB = isXr ? '#1d4ed8' : '#365314';
+  const label = String(row.name ?? 'AR/XR Glasses').trim().slice(0, 30) || 'AR/XR Glasses';
+  const manufacturer = String(row.manufacturer ?? 'Unbekannt').trim().slice(0, 24) || 'Unbekannt';
+  const initials = toInitials(manufacturer);
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="${escapeHtml(label)}">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="${gradientA}"/>
+      <stop offset="100%" stop-color="${gradientB}"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <rect x="28" y="28" width="584" height="304" rx="26" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.28)"/>
+  <text x="320" y="166" fill="#ffffff" text-anchor="middle" font-size="76" font-family="Inter,Segoe UI,sans-serif" font-weight="800">${escapeHtml(
+    initials,
+  )}</text>
+  <text x="320" y="220" fill="#ffffff" text-anchor="middle" font-size="26" font-family="Inter,Segoe UI,sans-serif" font-weight="700">${escapeHtml(
+    label,
+  )}</text>
+  <text x="320" y="254" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-size="18" font-family="Inter,Segoe UI,sans-serif">${escapeHtml(
+    manufacturer,
+  )}</text>
+</svg>`;
+
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+};
+
+const getModelImageUrl = (row) => {
+  if (row.__localImageUrl) {
+    return row.__localImageUrl;
+  }
+  row.__localImageUrl = createModelImageDataUrl(row);
+  return row.__localImageUrl;
+};
+
+const buildShopSearchUrl = (row) => {
+  const query = [row.name, row.manufacturer, 'official shop']
+    .map((entry) => String(entry ?? '').trim())
+    .filter(Boolean)
+    .join(' ');
+  if (!query) {
+    return '';
+  }
+  return `https://duckduckgo.com/?q=${encodeURIComponent(query)}`;
+};
+
 const getShopInfo = (row) => {
   const officialUrl = safeExternalUrl(row.official_url);
-  const fallbackUrl = safeExternalUrl(row.vrcompare_url);
   if (officialUrl) {
     return {
       url: officialUrl,
@@ -326,11 +400,12 @@ const getShopInfo = (row) => {
       official: true,
     };
   }
-  if (fallbackUrl) {
+  const searchUrl = safeExternalUrl(buildShopSearchUrl(row));
+  if (searchUrl) {
     return {
-      url: fallbackUrl,
-      label: 'Info / Haendler',
-      source: 'Fallback ueber VR-Compare',
+      url: searchUrl,
+      label: 'Websuche',
+      source: 'Kein offizieller Shop-Link (Fallback Websuche)',
       official: false,
     };
   }
@@ -797,7 +872,7 @@ const cardTemplate = (row) => {
   const name = escapeHtml(compactValue(row.name, 'Unbekanntes Modell'));
   const manufacturer = escapeHtml(compactValue(row.manufacturer, 'Unbekannt'));
   const category = escapeHtml(compactValue(row.xr_category, 'AR'));
-  const image = safeExternalUrl(row.image_url);
+  const image = getModelImageUrl(row);
   const shop = getShopInfo(row);
   const shopButtonClasses = shop.official
     ? 'chip-btn border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
@@ -805,7 +880,7 @@ const cardTemplate = (row) => {
   const lifecycleClasses = lifecycleTone(row);
   const eolDate = row.eol_date ? formatDate(row.eol_date) : 'k. A.';
   const releaseDate = formatDate(row.release_date || row.announced_date);
-  const infoUrl = safeExternalUrl(row.source_page || row.vrcompare_url);
+  const infoUrl = safeExternalUrl(row.lifecycle_source || row.source_page);
   const isSelected = state.selectedIds.includes(row.__rowId);
   const facts = buildCardFacts(row);
   const lifecycleNotes = maybeHiddenText(row.lifecycle_notes, 'Keine Angaben.');
@@ -917,7 +992,7 @@ const tableTemplate = (rows) => {
             ${rows
               .map((row, index) => {
                 const shop = getShopInfo(row);
-                const infoUrl = safeExternalUrl(row.source_page || row.vrcompare_url);
+                const infoUrl = safeExternalUrl(row.lifecycle_source || row.source_page);
                 const selected = state.selectedIds.includes(row.__rowId);
                 const lifecycleNotes = maybeHiddenText(row.lifecycle_notes, 'Keine Angaben.');
 

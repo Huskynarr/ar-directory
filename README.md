@@ -77,14 +77,13 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
 
 ## Datenquelle
 
-Die Datengrundlage wird aus der VR-Compare API erzeugt und um Legacy-Seeds erweitert:
-- API: `https://vr-compare.com/api/headsets?hidden=false&detailLevel=summary`
+Die Datengrundlage ist ein kuratierter lokaler Datensatz:
 - Generator: `scripts/generate-ar-csv.mjs`
 - Ausgabe:
   - `public/data/ar_glasses.csv`
   - `public/data/ar_glasses.metadata.json`
-
-Hinweis: Die API liefert kein offizielles, separates `XR`-Flag. XR-Brillen werden daher ueber eine nachvollziehbare Namens-/Keyword-Heuristik in den Datensatz aufgenommen.
+- Bilddarstellung:
+  - Modelle verwenden in der UI generierte lokale SVG-Visuals (keine externen Bildhoster).
 
 ## SEO & LLM Discovery
 

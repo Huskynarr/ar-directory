@@ -1,11 +1,10 @@
 {
-  "generated_at": "2026-02-21T00:40:18.222Z",
-  "source_dataset": "https://vr-compare.com/api/headsets?hidden=false&detailLevel=summary",
-  "source_page": "https://vr-compare.com/",
+  "generated_at": "2026-02-21T10:59:07.062Z",
+  "source_dataset": "curated_ar_xr_directory_v2",
+  "source_page": "https://huskynarr.de/",
   "records": 105,
-  "api_records": 101,
-  "api_ar_records": 93,
-  "api_xr_glasses_records": 8,
-  "legacy_seed_total": 5,
-  "legacy_seed_added": 4
+  "ar_records": 97,
+  "xr_records": 8,
+  "official_shop_links": 100,
+  "note": "Curated local dataset without external comparison-provider links or hosted images."
 }
