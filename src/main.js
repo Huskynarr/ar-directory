@@ -212,6 +212,36 @@ const parseCardsPage = (value, fallback = 1) => {
   return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
 };
 
+const updateDocumentSeoSignals = (visibleCount) => {
+  if (typeof document === 'undefined') {
+    return;
+  }
+  const countLabel = Number.isFinite(visibleCount) ? `${visibleCount} Modelle` : 'AR/XR Modelle';
+  const queryLabel = String(state.query ?? '').trim();
+  document.title = queryLabel
+    ? `${queryLabel} | AR/XR Brillen Vergleich (${countLabel})`
+    : `AR/XR Brillen Vergleich 2026: ${countLabel}, Preise, Shop-Links, EOL`;
+
+  const description = queryLabel
+    ? `Filter- und Suchergebnis fuer "${queryLabel}" im AR/XR Brillen Vergleich mit Spezifikationen, Preisen, Lifecycle und Shop-Links.`
+    : 'Vergleich fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Shop-Links, aktivem Vertrieb, Software, Updates und EOL-Status.';
+
+  const descriptionTag = document.querySelector('meta[name="description"]');
+  if (descriptionTag) {
+    descriptionTag.setAttribute('content', description);
+  }
+
+  const canonicalTag = document.querySelector('link[rel="canonical"]');
+  if (canonicalTag && typeof window !== 'undefined') {
+    canonicalTag.setAttribute('href', `${window.location.origin}${window.location.pathname}`);
+  }
+
+  const ogUrlTag = document.querySelector('meta[property="og:url"]');
+  if (ogUrlTag && typeof window !== 'undefined') {
+    ogUrlTag.setAttribute('content', `${window.location.origin}${window.location.pathname}`);
+  }
+};
+
 const setFallbackUsdRate = () => {
   state.usdToEurRate = USD_TO_EUR_FALLBACK;
   state.usdToEurFetchedAt = new Date().toISOString();
@@ -1259,6 +1289,7 @@ const render = () => {
   const visibleCards = filtered.slice(0, state.cardsPage * state.cardsPageSize);
   const hasMoreCards = visibleCards.length < filtered.length;
   const exportDisabled = filtered.length === 0;
+  updateDocumentSeoSignals(filtered.length);
   syncUrlWithState();
 
   app.innerHTML = `
@@ -1467,6 +1498,43 @@ const render = () => {
                   `
                 : tableTemplate(filtered)
         }
+      </section>
+
+      <section class="panel mt-4 p-4 sm:p-5">
+        <h2 class="text-lg font-semibold text-[#f5f5f4] sm:text-xl">AR/XR Brillen FAQ und Suchkontext</h2>
+        <p class="mt-2 text-sm text-[#a8a29e]">
+          Diese Vergleichsseite deckt aktuelle und historische AR- und XR-Brillen inklusive Shop-Links, Preisstatus,
+          FOV, Refresh, Tracking, Software sowie Updates/EOL ab.
+        </p>
+        <div class="mt-4 grid gap-3 md:grid-cols-2">
+          <article class="soft-panel p-3">
+            <h3 class="text-sm font-semibold text-[#f5f5f4]">Welche Modelle sind enthalten?</h3>
+            <p class="mt-1 text-sm text-[#a8a29e]">
+              Moderne AR/XR-Modelle plus Legacy-Geraete wie HoloLens 1, Epson Moverio, Sony SmartEyeglass und weitere.
+            </p>
+          </article>
+          <article class="soft-panel p-3">
+            <h3 class="text-sm font-semibold text-[#f5f5f4]">Welche Daten kann ich filtern?</h3>
+            <p class="mt-1 text-sm text-[#a8a29e]">
+              Kategorie (AR/XR), Hersteller, Display, Optik, Tracking, Eye/Hand, Passthrough, FOV, Refresh, Preis,
+              Vertriebsstatus und EOL.
+            </p>
+          </article>
+          <article class="soft-panel p-3">
+            <h3 class="text-sm font-semibold text-[#f5f5f4]">Gibt es exportierbare Daten?</h3>
+            <p class="mt-1 text-sm text-[#a8a29e]">
+              Ja, die gefilterten Ergebnisse lassen sich direkt als CSV exportieren. Der komplette Datensatz ist auch
+              unter <code>/data/ar_glasses.csv</code> abrufbar.
+            </p>
+          </article>
+          <article class="soft-panel p-3">
+            <h3 class="text-sm font-semibold text-[#f5f5f4]">Wie aktuell sind die Infos?</h3>
+            <p class="mt-1 text-sm text-[#a8a29e]">
+              Quelle ist VR-Compare plus manuelle Legacy-Ergaenzungen. Zu jedem Modell gibt es Lifecycle-/EOL-Kontext
+              und Datenquellen-Links.
+            </p>
+          </article>
+        </div>
       </section>
     </main>
   `;

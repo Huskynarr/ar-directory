@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://huskynarr.de/sitemap.xml
+
+# Helpful machine-readable entrypoints
+# https://huskynarr.de/llms.txt
+# https://huskynarr.de/llms-full.txt

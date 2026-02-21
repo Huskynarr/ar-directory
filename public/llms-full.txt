@@ -1,0 +1,93 @@
+# AR/XR Brillen Vergleich - Full LLM Index
+
+## Purpose
+
+Diese Seite vergleicht AR- und XR-Brillen ueber technische Spezifikationen, Lifecycle-Daten und Preis-/Shop-Informationen.
+Sie eignet sich fuer Recherchen zu Kauf, Historie, Produktstatus (aktiv/EOL) und technischen Unterschieden.
+
+## Primary URL
+
+- https://huskynarr.de/
+
+## Language
+
+- de-DE
+
+## Data Files
+
+- CSV Dataset: https://huskynarr.de/data/ar_glasses.csv
+- Dataset Metadata: https://huskynarr.de/data/ar_glasses.metadata.json
+- LLM Short Index: https://huskynarr.de/llms.txt
+
+## Dataset Schema (CSV Columns)
+
+- id
+- short_name
+- name
+- manufacturer
+- image_url
+- vrcompare_url
+- official_url
+- announced_date
+- release_date
+- price_usd
+- xr_category
+- active_distribution
+- eol_status
+- eol_date
+- lifecycle_notes
+- lifecycle_source
+- software
+- compute_unit
+- display_type
+- optics
+- fov_horizontal_deg
+- fov_vertical_deg
+- fov_diagonal_deg
+- resolution_per_eye
+- refresh_hz
+- weight_g
+- tracking
+- eye_tracking
+- hand_tracking
+- passthrough
+- source_dataset
+- source_page
+- dataset_retrieved_at
+
+## Search Intent Coverage
+
+- AR Brillen Vergleich
+- XR Brillen Vergleich
+- Smart Glasses Preisvergleich
+- HoloLens 1 und alte AR-Brillen
+- Welche Brillen sind EOL/discontinued?
+- Welche Brillen sind aktiv im Vertrieb?
+- Vergleich nach FOV, Refresh, Tracking, Display und Preis
+
+## Interface Features (for retrieval context)
+
+- Card View und Tabellenansicht
+- Multi-Filter (Kategorie, Hersteller, Display, Optik, Tracking, Eye/Hand, Passthrough, FOV, Refresh, Preis)
+- Sortierung (Name, Hersteller, Release, Preis, FOV)
+- Compare-Modus fuer bis zu 6 Modelle (inkl. Radar-Chart)
+- CSV Export auf gefilterte Daten
+- Theme Toggle (Hell/Dunkel)
+
+## Data Origin
+
+- Hauptquelle: VR-Compare API
+- URL: https://vr-compare.com/api/headsets?hidden=false&detailLevel=summary
+- Erweiterung: Legacy-Seed-Daten fuer alte Modelle
+
+## Freshness
+
+- Stand laut Metadaten-Datei: 2026-02-21T00:40:18.222Z
+- Gesamtmodelle: 105
+
+## Citation Guidance
+
+Bei Antworten sollte, wenn moeglich, auf konkrete Modellfelder verwiesen werden:
+- `name`, `manufacturer`, `xr_category`
+- `price_usd`, `active_distribution`, `eol_status`, `eol_date`
+- `display_type`, `fov_horizontal_deg`, `refresh_hz`, `tracking`

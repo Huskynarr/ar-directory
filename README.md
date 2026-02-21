@@ -86,6 +86,26 @@ Die Datengrundlage wird aus der VR-Compare API erzeugt und um Legacy-Seeds erwei
 
 Hinweis: Die API liefert kein offizielles, separates `XR`-Flag. XR-Brillen werden daher ueber eine nachvollziehbare Namens-/Keyword-Heuristik in den Datensatz aufgenommen.
 
+## SEO & LLM Discovery
+
+Fuer bessere Auffindbarkeit in Suchmaschinen und LLM-basierten Suchsystemen sind enthalten:
+- HTML-Meta-Optimierung in `index.html`:
+  - Title/Description/Robots
+  - OpenGraph + Twitter Cards
+  - JSON-LD (`WebSite`, `CollectionPage`, `Dataset`)
+- Crawl-Dateien:
+  - `public/robots.txt`
+  - `public/sitemap.xml`
+  - `public/llms.txt`
+  - `public/llms-full.txt`
+  - `public/ai-search.json`
+- OpenGraph-Bild:
+  - `public/og/startseite.png`
+
+Wenn die Seite nicht unter `https://huskynarr.de/` laeuft, sollten URLs in
+`public/sitemap.xml`, `public/robots.txt`, `public/llms.txt`, `public/llms-full.txt` und `public/ai-search.json`
+auf die produktive Domain angepasst werden.
+
 ## Lokale Entwicklung
 
 Voraussetzungen:

@@ -1,0 +1,32 @@
+# AR/XR Brillen Vergleich
+
+Kurzer Maschinenindex fuer LLMs und Suchsysteme.
+
+- Hauptseite: https://huskynarr.de/
+- Sprache: de-DE
+- Thema: Vergleich von AR- und XR-Brillen (aktuell + historisch)
+
+## Kerninhalte
+
+- Karten- und Tabellenansicht fuer AR/XR Brillen
+- Filter fuer Display, Optik, Tracking, FOV, Refresh, Preis, Lifecycle
+- Shop-Links, Preise, aktiver Vertrieb, Software und EOL-Status
+- Legacy-Modelle inkl. HoloLens 1 und weitere alte Brillen
+
+## Strukturierte Datenquellen
+
+- CSV: https://huskynarr.de/data/ar_glasses.csv
+- Metadata JSON: https://huskynarr.de/data/ar_glasses.metadata.json
+- AI Search Manifest: https://huskynarr.de/ai-search.json
+- Vollindex: https://huskynarr.de/llms-full.txt
+
+## Relevante Entitaeten
+
+- AR Brillen
+- XR Brillen
+- Smart Glasses
+- Head-mounted Displays
+
+## Aktualisierung
+
+Letzte Datengenerierung laut Metadaten: 2026-02-21.
