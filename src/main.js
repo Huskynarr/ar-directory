@@ -523,6 +523,36 @@ const getRowId = (row, index = 0) => {
   return weakId ? `${weakId}-${index}` : `row-${index}`;
 };
 
+const captureQueryFocusState = () => {
+  if (typeof document === 'undefined') {
+    return null;
+  }
+  const active = document.activeElement;
+  if (!(active instanceof HTMLInputElement) || active.id !== 'query-input') {
+    return null;
+  }
+  return {
+    start: active.selectionStart,
+    end: active.selectionEnd,
+    direction: active.selectionDirection,
+  };
+};
+
+const restoreQueryFocusState = (focusState) => {
+  if (!focusState || typeof document === 'undefined') {
+    return;
+  }
+  const input = document.querySelector('#query-input');
+  if (!(input instanceof HTMLInputElement)) {
+    return;
+  }
+  input.focus({ preventScroll: true });
+  const valueLength = input.value.length;
+  const start = Number.isFinite(focusState.start) ? Math.max(0, Math.min(valueLength, focusState.start)) : valueLength;
+  const end = Number.isFinite(focusState.end) ? Math.max(0, Math.min(valueLength, focusState.end)) : valueLength;
+  input.setSelectionRange(start, end, focusState.direction || 'none');
+};
+
 const applyStateFromUrl = () => {
   const params = new URLSearchParams(window.location.search);
 
@@ -1498,6 +1528,7 @@ const exportRowsAsCsv = (rows) => {
 };
 
 const render = () => {
+  const queryFocusState = captureQueryFocusState();
   const filterOptions = getFilterOptions();
   const filtered = sortRows(state.rows.filter(matchesFilters));
   const withPrice = filtered.filter((row) => parsePrice(row.price_usd)).length;
@@ -2053,6 +2084,8 @@ const render = () => {
     state.compareNotice = '';
     render();
   });
+
+  restoreQueryFocusState(queryFocusState);
 };
 
 const parseCsv = (text) =>
