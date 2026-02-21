@@ -1426,24 +1426,7 @@ const render = () => {
         <p class="mt-3 max-w-4xl text-sm text-[#a8a29e] sm:text-base">
           Karten- und Tabellenansicht fuer aktuelle und historische Brillen mit Spezifikationen, Preisen, Lifecycle, EOL und Shop-Links.
         </p>
-        <p class="mt-2 text-xs text-[#a8a29e]">Datenstand: ${escapeHtml(retrievedAt ? formatDate(retrievedAt) : 'k. A.')}</p>
       </header>
-
-      ${
-        state.focusMode
-          ? `<section class="mt-4">
-              <p class="soft-panel p-3 text-sm text-[#a8a29e]">
-                <strong class="text-[#f5f5f4]">${filtered.length}</strong> sichtbare Modelle,
-                <strong class="text-[#f5f5f4]"> ${withPrice}</strong> mit Preis,
-                <strong class="text-[#f5f5f4]"> ${withShop}</strong> mit Shop-Link
-              </p>
-            </section>`
-          : `<section class="mt-4 grid gap-3 sm:grid-cols-3">
-              <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${filtered.length}</strong> sichtbare Modelle</p>
-              <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${withPrice}</strong> mit Preis / <strong class="text-[#f5f5f4]">${withShop}</strong> mit Shop-Link</p>
-              <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${activeCount}</strong> aktiv / <strong class="text-[#f5f5f4]">${eolCount}</strong> EOL</p>
-            </section>`
-      }
 
       ${!state.focusMode || selectedRows.length ? compareBarTemplate(selectedRows) : ''}
 
@@ -1708,6 +1691,31 @@ const render = () => {
               </div>
             </section>`
       }
+
+      <section class="mt-4">
+        <div class="panel p-4 sm:p-5">
+          <h2 class="text-sm font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Statistik</h2>
+          <div class="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+            <p class="soft-panel p-3 text-sm text-[#a8a29e]">
+              Datenbestand: <strong class="text-[#f5f5f4]">${state.rows.length}</strong>
+            </p>
+            <p class="soft-panel p-3 text-sm text-[#a8a29e]">
+              Sichtbare Modelle: <strong class="text-[#f5f5f4]">${filtered.length}</strong>
+            </p>
+            <p class="soft-panel p-3 text-sm text-[#a8a29e]">
+              Shop-Links: <strong class="text-[#f5f5f4]">${withShop}</strong> /
+              <strong class="text-[#f5f5f4]">${withPrice}</strong> mit Preis
+            </p>
+            <p class="soft-panel p-3 text-sm text-[#a8a29e]">
+              Aktiv: <strong class="text-[#f5f5f4]">${activeCount}</strong> /
+              EOL: <strong class="text-[#f5f5f4]">${eolCount}</strong>
+            </p>
+            <p class="soft-panel p-3 text-sm text-[#a8a29e]">
+              Datenstand: <strong class="text-[#f5f5f4]">${escapeHtml(retrievedAt ? formatDate(retrievedAt) : 'k. A.')}</strong>
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   `;
 
