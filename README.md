@@ -36,6 +36,9 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
   - nur mit Shop-Link
 - Sortierung:
   - Name, Hersteller, Neueste, Preis, FOV
+- Sprache:
+  - DE/EN Umschaltung per UI-Button
+  - persistiert in LocalStorage und URL-Parameter `lang`
 - Teilen:
   - URL-sharebar (Filter, Sortierung und Compare-Auswahl koennen direkt geteilt werden)
 - Vergleich:

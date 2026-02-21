@@ -8,6 +8,7 @@ const CARDS_PER_PAGE = 12;
 const USD_TO_EUR_FALLBACK = 0.92;
 const RATE_SOURCE_URL = 'https://api.frankfurter.app/latest?from=USD&to=EUR';
 const VIEW_MODES = new Set(['cards', 'table']);
+const LANGUAGE_MODES = new Set(['de', 'en']);
 const SORT_MODES = new Set([
   'priority_default',
   'name_asc',
@@ -19,6 +20,7 @@ const SORT_MODES = new Set([
 ]);
 const THEME_MODES = new Set(['dark', 'light']);
 const THEME_STORAGE_KEY = 'ar_directory_theme';
+const LANGUAGE_STORAGE_KEY = 'ar_directory_language';
 const TRUE_VALUES = new Set(['1', 'true', 'yes', 'on']);
 const FALSE_VALUES = new Set(['0', 'false', 'no', 'off']);
 const RADAR_COLORS = ['#84cc16', '#2f6fb5', '#2d8f60', '#9b3db6', '#b1731f', '#a73452'];
@@ -42,6 +44,7 @@ const UNKNOWN_PARTIAL_MARKERS = ['keine eindeutige eol-angabe', 'keine angaben',
 const state = {
   rows: [],
   csvFields: [],
+  language: 'de',
   theme: 'dark',
   query: '',
   viewMode: 'cards',
@@ -77,6 +80,10 @@ const state = {
   usdToEurFetchedAt: '',
   usdToEurSource: `fallback:${USD_TO_EUR_FALLBACK}`,
 };
+
+const isEnglish = () => state.language === 'en';
+const t = (de, en) => (isEnglish() ? en : de);
+const locale = () => (isEnglish() ? 'en-US' : 'de-DE');
 
 const escapeHtml = (value) =>
   String(value ?? '')
@@ -120,7 +127,7 @@ const parsePrice = (value) => {
 };
 
 const formatCurrency = (amount, currency) =>
-  new Intl.NumberFormat('de-DE', {
+  new Intl.NumberFormat(locale(), {
     style: 'currency',
     currency,
     maximumFractionDigits: 0,
@@ -129,7 +136,7 @@ const formatCurrency = (amount, currency) =>
 const formatPrice = (value) => {
   const price = parsePrice(value);
   if (!price) {
-    return 'Preis auf Anfrage';
+    return t('Preis auf Anfrage', 'Price on request');
   }
   const usd = formatCurrency(price, 'USD');
   if (!state.showEur) {
@@ -141,13 +148,13 @@ const formatPrice = (value) => {
 
 const formatDate = (value) => {
   if (!value) {
-    return 'k. A.';
+    return t('k. A.', 'n/a');
   }
   const parsed = new Date(value);
   if (Number.isNaN(parsed.getTime())) {
-    return 'k. A.';
+    return t('k. A.', 'n/a');
   }
-  return new Intl.DateTimeFormat('de-DE', {
+  return new Intl.DateTimeFormat(locale(), {
     day: '2-digit',
     month: 'short',
     year: 'numeric',
@@ -157,9 +164,9 @@ const formatDate = (value) => {
 const formatNumber = (value, suffix = '') => {
   const numeric = toNumber(value);
   if (numeric === null) {
-    return 'k. A.';
+    return t('k. A.', 'n/a');
   }
-  return `${new Intl.NumberFormat('de-DE', {
+  return `${new Intl.NumberFormat(locale(), {
     maximumFractionDigits: 1,
   }).format(numeric)}${suffix}`;
 };
@@ -171,6 +178,11 @@ const normalizeTheme = (value, fallback = 'dark') => {
   return THEME_MODES.has(normalized) ? normalized : fallback;
 };
 
+const normalizeLanguage = (value, fallback = 'de') => {
+  const normalized = normalizeText(value);
+  return LANGUAGE_MODES.has(normalized) ? normalized : fallback;
+};
+
 const readThemeFromStorage = () => {
   if (typeof window === 'undefined') {
     return 'dark';
@@ -179,6 +191,17 @@ const readThemeFromStorage = () => {
     return normalizeTheme(window.localStorage.getItem(THEME_STORAGE_KEY), 'dark');
   } catch {
     return 'dark';
+  }
+};
+
+const readLanguageFromStorage = () => {
+  if (typeof window === 'undefined') {
+    return 'de';
+  }
+  try {
+    return normalizeLanguage(window.localStorage.getItem(LANGUAGE_STORAGE_KEY), 'de');
+  } catch {
+    return 'de';
   }
 };
 
@@ -193,6 +216,17 @@ const writeThemeToStorage = (theme) => {
   }
 };
 
+const writeLanguageToStorage = (language) => {
+  if (typeof window === 'undefined') {
+    return;
+  }
+  try {
+    window.localStorage.setItem(LANGUAGE_STORAGE_KEY, normalizeLanguage(language, 'de'));
+  } catch {
+    // ignore storage failures
+  }
+};
+
 const applyThemeToDocument = () => {
   if (typeof document === 'undefined' || !document.body) {
     return;
@@ -201,6 +235,15 @@ const applyThemeToDocument = () => {
   state.theme = theme;
   document.body.classList.toggle('theme-dark', theme === 'dark');
   document.body.classList.toggle('theme-light', theme === 'light');
+};
+
+const applyLanguageToDocument = () => {
+  if (typeof document === 'undefined') {
+    return;
+  }
+  const language = normalizeLanguage(state.language, 'de');
+  state.language = language;
+  document.documentElement.lang = language;
 };
 
 const parseBooleanParam = (value, fallback = false) => {
@@ -229,15 +272,24 @@ const updateDocumentSeoSignals = (visibleCount) => {
   if (typeof document === 'undefined') {
     return;
   }
-  const countLabel = Number.isFinite(visibleCount) ? `${visibleCount} Modelle` : 'AR/XR Modelle';
+  const countLabel = Number.isFinite(visibleCount) ? `${visibleCount} ${t('Modelle', 'models')}` : t('AR/XR Modelle', 'AR/XR models');
   const queryLabel = String(state.query ?? '').trim();
   document.title = queryLabel
-    ? `${queryLabel} | AR/XR Brillen Vergleich (${countLabel})`
-    : `AR/XR Brillen Vergleich 2026: ${countLabel}, Preise, Shop-Links, EOL`;
+    ? `${queryLabel} | ${t('AR/XR Brillen Vergleich', 'AR/XR Glasses Comparison')} (${countLabel})`
+    : t(
+        `AR/XR Brillen Vergleich 2026: ${countLabel}, Preise, Shop-Links, EOL`,
+        `AR/XR Glasses Comparison 2026: ${countLabel}, pricing, shop links, EOL`,
+      );
 
   const description = queryLabel
-    ? `Filter- und Suchergebnis fuer "${queryLabel}" im AR/XR Brillen Vergleich mit Spezifikationen, Preisen, Lifecycle und Shop-Links.`
-    : 'Vergleich fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Shop-Links, aktivem Vertrieb, Software, Updates und EOL-Status.';
+    ? t(
+        `Filter- und Suchergebnis fuer "${queryLabel}" im AR/XR Brillen Vergleich mit Spezifikationen, Preisen, Lifecycle und Shop-Links.`,
+        `Filtered search result for "${queryLabel}" in the AR/XR glasses comparison with specs, pricing, lifecycle and shop links.`,
+      )
+    : t(
+        'Vergleich fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Shop-Links, aktivem Vertrieb, Software, Updates und EOL-Status.',
+        'Comparison for AR and XR glasses with specifications, pricing, shop links, active distribution, software, updates and EOL status.',
+      );
 
   const descriptionTag = document.querySelector('meta[name="description"]');
   if (descriptionTag) {
@@ -281,26 +333,25 @@ const fetchUsdToEurRate = async () => {
 };
 
 const formatRateSourceLabel = () =>
-  state.usdToEurSource.startsWith('fallback:') ? `Fallback ${USD_TO_EUR_FALLBACK}` : 'Frankfurter API';
+  state.usdToEurSource.startsWith('fallback:') ? `${t('Fallback', 'Fallback')} ${USD_TO_EUR_FALLBACK}` : 'Frankfurter API';
 
 const formatSafeDateLabel = (value) => {
-  const isoMatch = String(value ?? '').trim().match(/^(\d{4})-(\d{2})-(\d{2})$/);
-  if (isoMatch) {
-    return `${isoMatch[3]}.${isoMatch[2]}.${isoMatch[1]}`;
-  }
   return formatDate(value);
 };
 
 const formatRateHint = () => {
-  const rate = new Intl.NumberFormat('de-DE', {
+  const rate = new Intl.NumberFormat(locale(), {
     minimumFractionDigits: 3,
     maximumFractionDigits: 4,
   }).format(state.usdToEurRate);
-  const fetchedAt = state.usdToEurFetchedAt ? formatSafeDateLabel(state.usdToEurFetchedAt) : 'k. A.';
-  return `Kurs: 1 USD = ${rate} EUR (${formatRateSourceLabel()}, Stand: ${fetchedAt})`;
+  const fetchedAt = state.usdToEurFetchedAt ? formatSafeDateLabel(state.usdToEurFetchedAt) : t('k. A.', 'n/a');
+  return t(
+    `Kurs: 1 USD = ${rate} EUR (${formatRateSourceLabel()}, Stand: ${fetchedAt})`,
+    `Rate: 1 USD = ${rate} EUR (${formatRateSourceLabel()}, date: ${fetchedAt})`,
+  );
 };
 
-const compactValue = (value, fallback = 'k. A.') => {
+const compactValue = (value, fallback = t('k. A.', 'n/a')) => {
   const text = String(value ?? '').trim();
   return text ? text : fallback;
 };
@@ -316,7 +367,7 @@ const isUnknownValue = (value) => {
   return UNKNOWN_PARTIAL_MARKERS.some((marker) => text.includes(marker));
 };
 
-const maybeHiddenText = (value, fallback = 'k. A.') => {
+const maybeHiddenText = (value, fallback = t('k. A.', 'n/a')) => {
   if (state.hideUnknown && isUnknownValue(value)) {
     return '';
   }
@@ -325,7 +376,7 @@ const maybeHiddenText = (value, fallback = 'k. A.') => {
 
 const uniqueSorted = (values) =>
   [...new Set(values.map((value) => String(value ?? '').trim()).filter(Boolean))].sort((left, right) =>
-    left.localeCompare(right, 'de', { sensitivity: 'base' }),
+    left.localeCompare(right, locale(), { sensitivity: 'base' }),
   );
 
 const toInitials = (value) => {
@@ -347,7 +398,7 @@ const createModelImageDataUrl = (row) => {
   const gradientA = isXr ? '#0e7490' : '#84cc16';
   const gradientB = isXr ? '#1d4ed8' : '#365314';
   const label = String(row.name ?? 'AR/XR Glasses').trim().slice(0, 30) || 'AR/XR Glasses';
-  const manufacturer = String(row.manufacturer ?? 'Unbekannt').trim().slice(0, 24) || 'Unbekannt';
+  const manufacturer = String(row.manufacturer ?? t('Unbekannt', 'Unknown')).trim().slice(0, 24) || t('Unbekannt', 'Unknown');
   const initials = toInitials(manufacturer);
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="${escapeHtml(label)}">
@@ -397,8 +448,8 @@ const getShopInfo = (row) => {
   if (officialUrl) {
     return {
       url: officialUrl,
-      label: 'Zum Shop',
-      source: 'Offizieller Shop-Link',
+      label: t('Zum Shop', 'Shop'),
+      source: t('Offizieller Shop-Link', 'Official shop link'),
       official: true,
     };
   }
@@ -406,15 +457,15 @@ const getShopInfo = (row) => {
   if (searchUrl) {
     return {
       url: searchUrl,
-      label: 'Websuche',
-      source: 'Kein offizieller Shop-Link (Fallback Websuche)',
+      label: t('Websuche', 'Web search'),
+      source: t('Kein offizieller Shop-Link (Fallback Websuche)', 'No official shop link (web search fallback)'),
       official: false,
     };
   }
   return {
     url: '',
-    label: 'Kein Link',
-    source: 'Kein Shop-Link',
+    label: t('Kein Link', 'No link'),
+    source: t('Kein Shop-Link', 'No shop link'),
     official: false,
   };
 };
@@ -483,6 +534,11 @@ const applyStateFromUrl = () => {
   const viewMode = params.get('viewMode');
   if (viewMode && VIEW_MODES.has(viewMode)) {
     state.viewMode = viewMode;
+  }
+
+  const language = params.get('lang');
+  if (language !== null) {
+    state.language = normalizeLanguage(language, state.language);
   }
 
   const theme = params.get('theme');
@@ -599,6 +655,7 @@ const syncUrlWithState = () => {
 
   setText('query', state.query, '');
   setText('viewMode', state.viewMode, 'cards');
+  setText('lang', state.language, 'de');
   setText('theme', state.theme, 'dark');
   setBoolean('compareMode', state.compareMode, false);
   if (state.selectedIds.length) {
@@ -663,7 +720,7 @@ const getFilterOptions = () => ({
 });
 
 const compareText = (left, right) =>
-  String(left ?? '').localeCompare(String(right ?? ''), 'de', { sensitivity: 'base' });
+  String(left ?? '').localeCompare(String(right ?? ''), locale(), { sensitivity: 'base' });
 
 const compareNumbers = (left, right) => {
   if (left === null && right === null) {
@@ -843,7 +900,7 @@ const matchesFilters = (row) => {
   return true;
 };
 
-const optionList = (values, selectedValue, allLabel = 'Alle') => {
+const optionList = (values, selectedValue, allLabel = t('Alle', 'All')) => {
   const head = `<option value="all"${selectedValue === 'all' ? ' selected' : ''}>${escapeHtml(allLabel)}</option>`;
   const options = values
     .map(
@@ -872,23 +929,23 @@ const lifecycleTone = (row) => {
 const selectionLabelTemplate = (rowId, selected) => `
   <label class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-[#44403c] bg-[#1c1917] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#a8a29e]">
     <input data-compare-toggle data-model-id="${escapeHtml(rowId)}" type="checkbox" class="size-4 accent-[#84cc16]" ${selected ? 'checked' : ''} />
-    Compare
+    ${t('Vergleich', 'Compare')}
   </label>
 `;
 
 const buildCardFacts = (row) => {
   const entries = [
-    { label: 'Display', raw: row.display_type, value: compactValue(row.display_type) },
-    { label: 'Optik', raw: row.optics, value: compactValue(row.optics) },
-    { label: 'Tracking', raw: row.tracking, value: compactValue(row.tracking) },
-    { label: 'Eye Tracking', raw: row.eye_tracking, value: compactValue(row.eye_tracking) },
-    { label: 'Hand Tracking', raw: row.hand_tracking, value: compactValue(row.hand_tracking) },
-    { label: 'Passthrough', raw: row.passthrough, value: compactValue(row.passthrough) },
+    { label: t('Display', 'Display'), raw: row.display_type, value: compactValue(row.display_type) },
+    { label: t('Optik', 'Optics'), raw: row.optics, value: compactValue(row.optics) },
+    { label: t('Tracking', 'Tracking'), raw: row.tracking, value: compactValue(row.tracking) },
+    { label: t('Eye Tracking', 'Eye Tracking'), raw: row.eye_tracking, value: compactValue(row.eye_tracking) },
+    { label: t('Hand Tracking', 'Hand Tracking'), raw: row.hand_tracking, value: compactValue(row.hand_tracking) },
+    { label: t('Passthrough', 'Passthrough'), raw: row.passthrough, value: compactValue(row.passthrough) },
     { label: 'FOV H', raw: row.fov_horizontal_deg, value: formatNumber(row.fov_horizontal_deg, ' deg') },
-    { label: 'Refresh', raw: row.refresh_hz, value: formatNumber(row.refresh_hz, ' Hz') },
-    { label: 'Software', raw: row.software, value: compactValue(row.software) },
-    { label: 'Aufloesung', raw: row.resolution_per_eye, value: compactValue(row.resolution_per_eye) },
-    { label: 'Compute', raw: row.compute_unit, value: compactValue(row.compute_unit) },
+    { label: t('Refresh', 'Refresh'), raw: row.refresh_hz, value: formatNumber(row.refresh_hz, ' Hz') },
+    { label: t('Software', 'Software'), raw: row.software, value: compactValue(row.software) },
+    { label: t('Aufloesung', 'Resolution'), raw: row.resolution_per_eye, value: compactValue(row.resolution_per_eye) },
+    { label: t('Compute', 'Compute'), raw: row.compute_unit, value: compactValue(row.compute_unit) },
   ];
 
   if (!state.hideUnknown) {
@@ -898,8 +955,8 @@ const buildCardFacts = (row) => {
 };
 
 const cardTemplate = (row) => {
-  const name = escapeHtml(compactValue(row.name, 'Unbekanntes Modell'));
-  const manufacturer = escapeHtml(compactValue(row.manufacturer, 'Unbekannt'));
+  const name = escapeHtml(compactValue(row.name, t('Unbekanntes Modell', 'Unknown model')));
+  const manufacturer = escapeHtml(compactValue(row.manufacturer, t('Unbekannt', 'Unknown')));
   const category = escapeHtml(compactValue(row.xr_category, 'AR'));
   const image = safeExternalUrl(row.image_url) || getModelImageUrl(row);
   const shop = getShopInfo(row);
@@ -907,14 +964,14 @@ const cardTemplate = (row) => {
     ? 'chip-btn border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
     : 'chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]';
   const lifecycleClasses = lifecycleTone(row);
-  const eolDate = row.eol_date ? formatDate(row.eol_date) : 'k. A.';
+  const eolDate = row.eol_date ? formatDate(row.eol_date) : t('k. A.', 'n/a');
   const releaseDate = formatDate(row.release_date || row.announced_date);
   const infoUrl = safeExternalUrl(row.lifecycle_source || row.source_page);
   const isSelected = state.selectedIds.includes(row.__rowId);
   const facts = buildCardFacts(row);
   const primaryFacts = facts.slice(0, 6);
   const secondaryFacts = facts.slice(6);
-  const lifecycleNotes = maybeHiddenText(row.lifecycle_notes, 'Keine Angaben.');
+  const lifecycleNotes = maybeHiddenText(row.lifecycle_notes, t('Keine Angaben.', 'No details.'));
   const lifecycleSource = maybeHiddenText(row.lifecycle_source, '');
 
   return `
@@ -923,7 +980,7 @@ const cardTemplate = (row) => {
         ${
           image
             ? `<img src="${escapeHtml(image)}" alt="${name}" loading="lazy" class="h-full w-full object-contain p-4" />`
-            : '<div class="grid h-full place-items-center text-sm text-[#a8a29e]">Kein Bild verfuegbar</div>'
+            : `<div class="grid h-full place-items-center text-sm text-[#a8a29e]">${t('Kein Bild verfuegbar', 'No image available')}</div>`
         }
         <div class="absolute left-3 top-3">${selectionLabelTemplate(row.__rowId, isSelected)}</div>
         <span class="absolute right-3 top-3 rounded-full border px-2.5 py-1 text-xs font-bold ${categoryTone(row.xr_category)}">${category}</span>
@@ -932,17 +989,17 @@ const cardTemplate = (row) => {
         <div class="space-y-1">
           <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#a8a29e]">${manufacturer}</p>
           <h2 class="font-semibold text-2xl leading-tight text-[#f5f5f4]">${name}</h2>
-          <p class="text-sm text-[#a8a29e]">Release: ${escapeHtml(releaseDate)}</p>
+          <p class="text-sm text-[#a8a29e]">${t('Release', 'Release')}: ${escapeHtml(releaseDate)}</p>
         </div>
 
         <div class="grid grid-cols-2 gap-2 text-sm">
           <div class="soft-panel p-2.5">
-            <p class="text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">Preis</p>
+            <p class="text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">${t('Preis', 'Price')}</p>
             <p class="mt-1 font-semibold text-[#f5f5f4]">${escapeHtml(formatPrice(row.price_usd))}</p>
           </div>
           <div class="soft-panel p-2.5">
-            <p class="text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">Vertrieb</p>
-            <p class="mt-1 font-semibold text-[#f5f5f4]">${escapeHtml(compactValue(row.active_distribution, 'k. A.'))}</p>
+            <p class="text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">${t('Vertrieb', 'Distribution')}</p>
+            <p class="mt-1 font-semibold text-[#f5f5f4]">${escapeHtml(compactValue(row.active_distribution, t('k. A.', 'n/a')))}</p>
           </div>
         </div>
 
@@ -960,12 +1017,18 @@ const cardTemplate = (row) => {
                   )
                   .join('')}
               </dl>`
-            : '<p class="soft-panel p-3 text-xs text-[#a8a29e]">Keine bekannten Spezifikationen sichtbar (Toggle "Unbekannte Werte ausblenden" aktiv).</p>'
+            : `<p class="soft-panel p-3 text-xs text-[#a8a29e]">${t(
+                'Keine bekannten Spezifikationen sichtbar (Toggle "Unbekannte Werte ausblenden" aktiv).',
+                'No known specifications visible (toggle "Hide unknown values" is active).',
+              )}</p>`
         }
         ${
           secondaryFacts.length
             ? `<details class="compact-details rounded-xl border border-[#44403c] bg-[#1c1917] p-2.5 text-sm text-[#a8a29e]">
-                <summary class="cursor-pointer text-xs font-semibold uppercase tracking-[0.12em]">Mehr Spezifikationen</summary>
+                <summary class="cursor-pointer text-xs font-semibold uppercase tracking-[0.12em]">${t(
+                  'Mehr Spezifikationen',
+                  'More specifications',
+                )}</summary>
                 <dl class="mt-2 grid grid-cols-2 gap-x-3 gap-y-2 text-sm text-[#f5f5f4]">
                   ${secondaryFacts
                     .map(
@@ -983,22 +1046,28 @@ const cardTemplate = (row) => {
         }
 
         <div class="rounded-2xl border p-3 text-sm ${lifecycleClasses}">
-          <p class="text-[11px] font-semibold uppercase tracking-[0.12em]">Updates / EOL</p>
+          <p class="text-[11px] font-semibold uppercase tracking-[0.12em]">${t('Updates / EOL', 'Updates / EOL')}</p>
           <p class="mt-1 font-semibold">${escapeHtml(compactValue(row.eol_status))}</p>
-          <p class="mt-1 text-xs">EOL-Datum: ${escapeHtml(eolDate)}</p>
+          <p class="mt-1 text-xs">${t('EOL-Datum', 'EOL date')}: ${escapeHtml(eolDate)}</p>
           ${lifecycleNotes ? `<p class="mt-2 text-xs leading-relaxed">${escapeHtml(lifecycleNotes)}</p>` : ''}
-          ${lifecycleSource ? `<p class="mt-2 text-[11px] leading-relaxed">Quelle: ${escapeHtml(lifecycleSource)}</p>` : ''}
+          ${lifecycleSource ? `<p class="mt-2 text-[11px] leading-relaxed">${t('Quelle', 'Source')}: ${escapeHtml(lifecycleSource)}</p>` : ''}
         </div>
 
         <div class="flex flex-wrap gap-2">
           ${
             shop.url
               ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" class="${shopButtonClasses}">${escapeHtml(shop.label)}</a>`
-              : '<span class="chip-btn cursor-not-allowed border-[#44403c] bg-[#292524] text-[#a8a29e]">Shop-Link fehlt</span>'
+              : `<span class="chip-btn cursor-not-allowed border-[#44403c] bg-[#292524] text-[#a8a29e]">${t(
+                  'Shop-Link fehlt',
+                  'No shop link',
+                )}</span>`
           }
           ${
             infoUrl
-              ? `<a href="${escapeHtml(infoUrl)}" target="_blank" rel="noreferrer" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">Datenquelle</a>`
+              ? `<a href="${escapeHtml(infoUrl)}" target="_blank" rel="noreferrer" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(
+                  'Datenquelle',
+                  'Data source',
+                )}</a>`
               : ''
           }
         </div>
@@ -1010,7 +1079,10 @@ const cardTemplate = (row) => {
 
 const tableTemplate = (rows) => {
   if (!rows.length) {
-    return '<p class="panel p-8 text-center text-sm text-[#a8a29e]">Keine Ergebnisse fuer diese Filter.</p>';
+    return `<p class="panel p-8 text-center text-sm text-[#a8a29e]">${t(
+      'Keine Ergebnisse fuer diese Filter.',
+      'No results for these filters.',
+    )}</p>`;
   }
 
   return `
@@ -1019,23 +1091,23 @@ const tableTemplate = (rows) => {
         <table class="min-w-[1650px] border-collapse text-sm">
           <thead class="bg-[#1c1917] text-left text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">
             <tr>
-              <th class="px-3 py-3">Compare</th>
-              <th class="px-3 py-3">Brille</th>
-              <th class="px-3 py-3">Hersteller</th>
-              <th class="px-3 py-3">Kat.</th>
+              <th class="px-3 py-3">${t('Vergleich', 'Compare')}</th>
+              <th class="px-3 py-3">${t('Brille', 'Glasses')}</th>
+              <th class="px-3 py-3">${t('Hersteller', 'Manufacturer')}</th>
+              <th class="px-3 py-3">${t('Kat.', 'Cat.')}</th>
               <th class="px-3 py-3">Display</th>
-              <th class="px-3 py-3">Optik</th>
-              <th class="px-3 py-3">Tracking</th>
+              <th class="px-3 py-3">${t('Optik', 'Optics')}</th>
+              <th class="px-3 py-3">${t('Tracking', 'Tracking')}</th>
               <th class="px-3 py-3">Eye</th>
               <th class="px-3 py-3">Hand</th>
               <th class="px-3 py-3">Passthrough</th>
               <th class="px-3 py-3">FOV H</th>
-              <th class="px-3 py-3">Refresh</th>
-              <th class="px-3 py-3">Preis</th>
-              <th class="px-3 py-3">Vertrieb</th>
-              <th class="px-3 py-3">EOL / Updates</th>
-              <th class="px-3 py-3">Software</th>
-              <th class="px-3 py-3">Links</th>
+              <th class="px-3 py-3">${t('Refresh', 'Refresh')}</th>
+              <th class="px-3 py-3">${t('Preis', 'Price')}</th>
+              <th class="px-3 py-3">${t('Vertrieb', 'Distribution')}</th>
+              <th class="px-3 py-3">${t('EOL / Updates', 'EOL / Updates')}</th>
+              <th class="px-3 py-3">${t('Software', 'Software')}</th>
+              <th class="px-3 py-3">${t('Links', 'Links')}</th>
             </tr>
           </thead>
           <tbody>
@@ -1044,14 +1116,16 @@ const tableTemplate = (rows) => {
                 const shop = getShopInfo(row);
                 const infoUrl = safeExternalUrl(row.lifecycle_source || row.source_page);
                 const selected = state.selectedIds.includes(row.__rowId);
-                const lifecycleNotes = maybeHiddenText(row.lifecycle_notes, 'Keine Angaben.');
+                const lifecycleNotes = maybeHiddenText(row.lifecycle_notes, t('Keine Angaben.', 'No details.'));
 
                 return `
                   <tr class="${index % 2 === 0 ? 'bg-[#171412]' : 'bg-[#1c1917]'} align-top text-[#f5f5f4]">
                     <td class="px-3 py-3">${selectionLabelTemplate(row.__rowId, selected)}</td>
                     <td class="px-3 py-3">
-                      <p class="font-semibold">${escapeHtml(compactValue(row.name, 'Unbekannt'))}</p>
-                      <p class="mt-1 text-xs text-[#a8a29e]">${escapeHtml(maybeHiddenText(row.resolution_per_eye, 'k. A.') || 'k. A.')}</p>
+                      <p class="font-semibold">${escapeHtml(compactValue(row.name, t('Unbekannt', 'Unknown')))}</p>
+                      <p class="mt-1 text-xs text-[#a8a29e]">${escapeHtml(
+                        maybeHiddenText(row.resolution_per_eye, t('k. A.', 'n/a')) || t('k. A.', 'n/a'),
+                      )}</p>
                     </td>
                     <td class="px-3 py-3">${escapeHtml(compactValue(row.manufacturer))}</td>
                     <td class="px-3 py-3">
@@ -1059,31 +1133,34 @@ const tableTemplate = (rows) => {
                         compactValue(row.xr_category, 'AR'),
                       )}</span>
                     </td>
-                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.display_type) || 'k. A.')}</td>
-                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.optics) || 'k. A.')}</td>
-                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.tracking) || 'k. A.')}</td>
-                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.eye_tracking) || 'k. A.')}</td>
-                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.hand_tracking) || 'k. A.')}</td>
-                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.passthrough) || 'k. A.')}</td>
+                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.display_type) || t('k. A.', 'n/a'))}</td>
+                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.optics) || t('k. A.', 'n/a'))}</td>
+                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.tracking) || t('k. A.', 'n/a'))}</td>
+                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.eye_tracking) || t('k. A.', 'n/a'))}</td>
+                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.hand_tracking) || t('k. A.', 'n/a'))}</td>
+                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.passthrough) || t('k. A.', 'n/a'))}</td>
                     <td class="px-3 py-3">${escapeHtml(formatNumber(row.fov_horizontal_deg, ' deg'))}</td>
                     <td class="px-3 py-3">${escapeHtml(formatNumber(row.refresh_hz, ' Hz'))}</td>
                     <td class="px-3 py-3">${escapeHtml(formatPrice(row.price_usd))}</td>
-                    <td class="px-3 py-3">${escapeHtml(compactValue(row.active_distribution, 'k. A.'))}</td>
+                    <td class="px-3 py-3">${escapeHtml(compactValue(row.active_distribution, t('k. A.', 'n/a')))}</td>
                     <td class="px-3 py-3">
                       <p class="font-semibold">${escapeHtml(compactValue(row.eol_status))}</p>
                       ${lifecycleNotes ? `<p class="mt-1 text-xs text-[#a8a29e]">${escapeHtml(lifecycleNotes)}</p>` : ''}
                     </td>
-                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.software) || 'k. A.')}</td>
+                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.software) || t('k. A.', 'n/a'))}</td>
                     <td class="px-3 py-3">
                       <div class="flex flex-col gap-2">
                         ${
                           shop.url
                             ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" class="text-xs font-semibold text-[#84cc16] hover:underline">${escapeHtml(shop.label)}</a>`
-                            : '<span class="text-xs text-[#a8a29e]">Kein Shop-Link</span>'
+                            : `<span class="text-xs text-[#a8a29e]">${t('Kein Shop-Link', 'No shop link')}</span>`
                         }
                         ${
                           infoUrl
-                            ? `<a href="${escapeHtml(infoUrl)}" target="_blank" rel="noreferrer" class="text-xs font-semibold text-[#84cc16] hover:underline">Quelle</a>`
+                            ? `<a href="${escapeHtml(infoUrl)}" target="_blank" rel="noreferrer" class="text-xs font-semibold text-[#84cc16] hover:underline">${t(
+                                'Quelle',
+                                'Source',
+                              )}</a>`
                             : ''
                         }
                       </div>
@@ -1111,34 +1188,38 @@ const compareField = (label, getRaw, formatValue = (row) => compactValue(getRaw(
 });
 
 const getCompareFields = () => [
-  compareField('Hersteller', (row) => row.manufacturer),
-  compareField('Kategorie', (row) => row.xr_category, (row) => compactValue(row.xr_category, 'AR')),
-  compareField('Release', (row) => row.release_date || row.announced_date, (row) => formatDate(row.release_date || row.announced_date)),
-  compareField('Preis', (row) => row.price_usd, (row) => formatPrice(row.price_usd), (row) => !parsePrice(row.price_usd)),
+  compareField(t('Hersteller', 'Manufacturer'), (row) => row.manufacturer),
+  compareField(t('Kategorie', 'Category'), (row) => row.xr_category, (row) => compactValue(row.xr_category, 'AR')),
+  compareField(t('Release', 'Release'), (row) => row.release_date || row.announced_date, (row) => formatDate(row.release_date || row.announced_date)),
+  compareField(t('Preis', 'Price'), (row) => row.price_usd, (row) => formatPrice(row.price_usd), (row) => !parsePrice(row.price_usd)),
   compareField('Display', (row) => row.display_type),
-  compareField('Optik', (row) => row.optics),
-  compareField('Tracking', (row) => row.tracking),
+  compareField(t('Optik', 'Optics'), (row) => row.optics),
+  compareField(t('Tracking', 'Tracking'), (row) => row.tracking),
   compareField('Eye Tracking', (row) => row.eye_tracking),
   compareField('Hand Tracking', (row) => row.hand_tracking),
   compareField('Passthrough', (row) => row.passthrough),
-  compareField('FOV horizontal', (row) => row.fov_horizontal_deg, (row) => formatNumber(row.fov_horizontal_deg, ' deg'), (row) => toNumber(row.fov_horizontal_deg) === null),
-  compareField('FOV vertikal', (row) => row.fov_vertical_deg, (row) => formatNumber(row.fov_vertical_deg, ' deg'), (row) => toNumber(row.fov_vertical_deg) === null),
-  compareField('Refresh', (row) => row.refresh_hz, (row) => formatNumber(row.refresh_hz, ' Hz'), (row) => toNumber(row.refresh_hz) === null),
-  compareField('Aufloesung', (row) => row.resolution_per_eye),
-  compareField('Gewicht', (row) => row.weight_g, (row) => formatNumber(row.weight_g, ' g'), (row) => toNumber(row.weight_g) === null),
+  compareField(t('FOV horizontal', 'FOV horizontal'), (row) => row.fov_horizontal_deg, (row) => formatNumber(row.fov_horizontal_deg, ' deg'), (row) => toNumber(row.fov_horizontal_deg) === null),
+  compareField(t('FOV vertikal', 'FOV vertical'), (row) => row.fov_vertical_deg, (row) => formatNumber(row.fov_vertical_deg, ' deg'), (row) => toNumber(row.fov_vertical_deg) === null),
+  compareField(t('Refresh', 'Refresh'), (row) => row.refresh_hz, (row) => formatNumber(row.refresh_hz, ' Hz'), (row) => toNumber(row.refresh_hz) === null),
+  compareField(t('Aufloesung', 'Resolution'), (row) => row.resolution_per_eye),
+  compareField(t('Gewicht', 'Weight'), (row) => row.weight_g, (row) => formatNumber(row.weight_g, ' g'), (row) => toNumber(row.weight_g) === null),
   compareField('Compute Unit', (row) => row.compute_unit),
-  compareField('Software', (row) => row.software),
-  compareField('Vertrieb', (row) => row.active_distribution),
-  compareField('EOL / Lifecycle', (row) => row.eol_status),
-  compareField('Lifecycle Notes', (row) => row.lifecycle_notes, (row) => compactValue(row.lifecycle_notes, 'Keine Angaben.')),
+  compareField(t('Software', 'Software'), (row) => row.software),
+  compareField(t('Vertrieb', 'Distribution'), (row) => row.active_distribution),
+  compareField(t('EOL / Lifecycle', 'EOL / Lifecycle'), (row) => row.eol_status),
+  compareField(
+    t('Lifecycle Notes', 'Lifecycle notes'),
+    (row) => row.lifecycle_notes,
+    (row) => compactValue(row.lifecycle_notes, t('Keine Angaben.', 'No details.')),
+  ),
 ];
 
 const getRadarAxes = () => [
   { label: 'FOV H', inverted: false, getValue: (row) => getHorizontalFov(row) },
-  { label: 'Refresh', inverted: false, getValue: (row) => toNumber(row.refresh_hz) },
-  { label: 'Gewicht (inv.)', inverted: true, getValue: (row) => toNumber(row.weight_g) },
-  { label: 'Preis (inv.)', inverted: true, getValue: (row) => parsePrice(row.price_usd) },
-  { label: 'Tracking-Score', inverted: false, getValue: (row) => getTrackingScore(row) },
+  { label: t('Refresh', 'Refresh'), inverted: false, getValue: (row) => toNumber(row.refresh_hz) },
+  { label: t('Gewicht (inv.)', 'Weight (inv.)'), inverted: true, getValue: (row) => toNumber(row.weight_g) },
+  { label: t('Preis (inv.)', 'Price (inv.)'), inverted: true, getValue: (row) => parsePrice(row.price_usd) },
+  { label: t('Tracking-Score', 'Tracking score'), inverted: false, getValue: (row) => getTrackingScore(row) },
 ];
 
 const normalizeRadarValue = (value, min, max, inverted = false) => {
@@ -1237,23 +1318,32 @@ const compareRadarTemplate = (selectedRows) => {
 
   return `
     <div class="border-b border-[#44403c] bg-[#1c1917] px-4 py-4">
-      <p class="text-xs font-semibold uppercase tracking-[0.12em] text-[#a8a29e]">Spider Chart (normalisiert auf Auswahl)</p>
+      <p class="text-xs font-semibold uppercase tracking-[0.12em] text-[#a8a29e]">${t(
+        'Spider Chart (normalisiert auf Auswahl)',
+        'Spider chart (normalized to current selection)',
+      )}</p>
       <div class="mt-3 overflow-x-auto">
-        <svg viewBox="0 0 ${size} ${size}" role="img" aria-label="Radarvergleich der ausgewaehlten Modelle" class="mx-auto block h-[360px] min-w-[320px]">
+        <svg viewBox="0 0 ${size} ${size}" role="img" aria-label="${t(
+          'Radarvergleich der ausgewaehlten Modelle',
+          'Radar comparison of selected models',
+        )}" class="mx-auto block h-[360px] min-w-[320px]">
           ${gridPolygons}
           ${axisLines}
           ${series.map((entry) => entry.polygon).join('')}
           ${series.map((entry) => entry.points).join('')}
         </svg>
       </div>
-      <p class="mt-2 text-xs text-[#a8a29e]">Achsen: FOV H, Refresh, Gewicht (invertiert), Preis (invertiert), Tracking-Score.</p>
+      <p class="mt-2 text-xs text-[#a8a29e]">${t(
+        'Achsen: FOV H, Refresh, Gewicht (invertiert), Preis (invertiert), Tracking-Score.',
+        'Axes: FOV H, refresh, weight (inverted), price (inverted), tracking score.',
+      )}</p>
       <div class="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
         ${series
           .map(
             (entry) => `
               <div class="inline-flex items-center gap-2 rounded-lg border border-[#44403c] bg-[#1c1917] px-2.5 py-1.5 text-xs text-[#a8a29e]">
                 <span class="inline-block h-2.5 w-2.5 rounded-full" style="background:${entry.color};"></span>
-                <span class="font-semibold">${escapeHtml(compactValue(entry.row.name, 'Unbekannt'))}</span>
+                <span class="font-semibold">${escapeHtml(compactValue(entry.row.name, t('Unbekannt', 'Unknown')))}</span>
                 <span class="text-[#a8a29e]">${escapeHtml(compactValue(entry.row.manufacturer, ''))}</span>
               </div>
             `,
@@ -1266,7 +1356,10 @@ const compareRadarTemplate = (selectedRows) => {
 
 const compareModeTemplate = (selectedRows) => {
   if (!selectedRows.length) {
-    return `<p class="panel p-8 text-sm text-[#a8a29e]">Keine Modelle ausgewaehlt. Waehle bis zu ${COMPARE_LIMIT} Modelle fuer den Direktvergleich.</p>`;
+    return `<p class="panel p-8 text-sm text-[#a8a29e]">${t(
+      `Keine Modelle ausgewaehlt. Waehle bis zu ${COMPARE_LIMIT} Modelle fuer den Direktvergleich.`,
+      `No models selected. Choose up to ${COMPARE_LIMIT} models for direct comparison.`,
+    )}</p>`;
   }
 
   const fields = getCompareFields();
@@ -1277,21 +1370,26 @@ const compareModeTemplate = (selectedRows) => {
   return `
     <div class="panel overflow-hidden">
       <div class="border-b border-[#44403c] bg-[#1c1917] px-4 py-3">
-        <h2 class="font-semibold text-2xl text-[#f5f5f4]">Direktvergleich</h2>
-        <p class="mt-1 text-sm text-[#a8a29e]">${selectedRows.length} ausgewaehlte Modelle, max. ${COMPARE_LIMIT} gleichzeitig.</p>
+        <h2 class="font-semibold text-2xl text-[#f5f5f4]">${t('Direktvergleich', 'Direct comparison')}</h2>
+        <p class="mt-1 text-sm text-[#a8a29e]">${t(
+          `${selectedRows.length} ausgewaehlte Modelle, max. ${COMPARE_LIMIT} gleichzeitig.`,
+          `${selectedRows.length} selected models, max ${COMPARE_LIMIT} at once.`,
+        )}</p>
       </div>
       ${compareRadarTemplate(selectedRows)}
       <div class="overflow-x-auto">
         <table class="min-w-[980px] border-collapse text-sm">
           <thead class="bg-[#1c1917] text-left text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">
             <tr>
-              <th class="px-3 py-3">Merkmal</th>
+              <th class="px-3 py-3">${t('Merkmal', 'Feature')}</th>
               ${selectedRows
                 .map(
                   (row) => `
                     <th class="px-3 py-3 align-top">
-                      <p class="font-semibold text-[#f5f5f4]">${escapeHtml(compactValue(row.name, 'Unbekannt'))}</p>
-                      <p class="mt-1 text-[11px] font-medium normal-case tracking-normal text-[#a8a29e]">${escapeHtml(compactValue(row.manufacturer, 'Unbekannt'))}</p>
+                      <p class="font-semibold text-[#f5f5f4]">${escapeHtml(compactValue(row.name, t('Unbekannt', 'Unknown')))}</p>
+                      <p class="mt-1 text-[11px] font-medium normal-case tracking-normal text-[#a8a29e]">${escapeHtml(
+                        compactValue(row.manufacturer, t('Unbekannt', 'Unknown')),
+                      )}</p>
                     </th>
                   `,
                 )
@@ -1309,7 +1407,7 @@ const compareModeTemplate = (selectedRows) => {
                       .map((row) => {
                         const hidden = state.hideUnknown && field.isUnknown(row);
                         const rawText = hidden ? '' : field.formatValue(row);
-                        return `<td class="px-3 py-3">${escapeHtml(rawText || (state.hideUnknown ? '' : 'k. A.'))}</td>`;
+                        return `<td class="px-3 py-3">${escapeHtml(rawText || (state.hideUnknown ? '' : t('k. A.', 'n/a')))}</td>`;
                       })
                       .join('')}
                   </tr>
@@ -1333,10 +1431,14 @@ const compareBarTemplate = (selectedRows) => {
     <section class="panel mt-4 p-4 sm:p-5">
       <div class="flex flex-wrap items-center gap-2">
         <p class="rounded-full border border-[#44403c] bg-[#1c1917] px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">
-          Vergleich: ${count}/${COMPARE_LIMIT}
+          ${t('Vergleich', 'Compare')}: ${count}/${COMPARE_LIMIT}
         </p>
-        <button id="toggle-compare-mode" class="${compareToggleClasses}" ${count === 0 ? 'disabled' : ''}>${state.compareMode ? 'Liste anzeigen' : 'Compare-Modus'}</button>
-        <button id="clear-compare" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]" ${count === 0 ? 'disabled' : ''}>Auswahl leeren</button>
+        <button id="toggle-compare-mode" class="${compareToggleClasses}" ${count === 0 ? 'disabled' : ''}>${
+          state.compareMode ? t('Liste anzeigen', 'Show list') : t('Compare-Modus', 'Compare mode')
+        }</button>
+        <button id="clear-compare" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]" ${
+          count === 0 ? 'disabled' : ''
+        }>${t('Auswahl leeren', 'Clear selection')}</button>
       </div>
 
       <div class="mt-3 flex flex-wrap gap-2">
@@ -1346,14 +1448,17 @@ const compareBarTemplate = (selectedRows) => {
                 .map(
                   (row) => `
                     <span class="inline-flex items-center gap-2 rounded-full border border-[#44403c] bg-[#1c1917] px-3 py-1.5 text-xs text-[#a8a29e]">
-                      <span class="font-semibold">${escapeHtml(compactValue(row.name, 'Unbekannt'))}</span>
+                      <span class="font-semibold">${escapeHtml(compactValue(row.name, t('Unbekannt', 'Unknown')))}</span>
                       <span class="text-[#a8a29e]">${escapeHtml(compactValue(row.manufacturer, ''))}</span>
                       <button data-remove-compare="${escapeHtml(row.__rowId)}" class="rounded-full border border-[#44403c] px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#84cc16] hover:bg-[#292524]">x</button>
                     </span>
                   `,
                 )
                 .join('')
-            : '<p class="text-sm text-[#a8a29e]">Noch nichts ausgewaehlt. Nutze "Compare" in Card oder Tabelle.</p>'
+            : `<p class="text-sm text-[#a8a29e]">${t(
+                'Noch nichts ausgewaehlt. Nutze "Compare" in Card oder Tabelle.',
+                'Nothing selected yet. Use "Compare" in cards or table.',
+              )}</p>`
         }
       </div>
 
@@ -1401,6 +1506,7 @@ const render = () => {
   const eolCount = filtered.filter((row) => isEol(row)).length;
   const retrievedAt = compactValue(filtered[0]?.dataset_retrieved_at || state.rows[0]?.dataset_retrieved_at, '');
   const selectedRows = getSelectedRows();
+  applyLanguageToDocument();
   applyThemeToDocument();
 
   if (state.compareMode && !selectedRows.length) {
@@ -1422,9 +1528,15 @@ const render = () => {
       <header class="panel relative overflow-hidden p-5 sm:p-6">
         <div class="theme-hero-surface absolute inset-0 -z-10"></div>
         <p class="text-xs font-semibold uppercase tracking-[0.22em] text-lime-500">AR / XR DIRECTORY</p>
-        <h1 class="mt-2 text-3xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-lime-600 sm:text-4xl">Vergleich fuer AR-Brillen und XR-Glasses</h1>
+        <h1 class="mt-2 text-3xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-lime-600 sm:text-4xl">${t(
+          'Vergleich fuer AR-Brillen und XR-Glasses',
+          'Comparison for AR Glasses and XR Glasses',
+        )}</h1>
         <p class="mt-3 max-w-4xl text-sm text-[#a8a29e] sm:text-base">
-          Karten- und Tabellenansicht fuer aktuelle und historische Brillen mit Spezifikationen, Preisen, Lifecycle, EOL und Shop-Links.
+          ${t(
+            'Karten- und Tabellenansicht fuer aktuelle und historische Brillen mit Spezifikationen, Preisen, Lifecycle, EOL und Shop-Links.',
+            'Cards and table view for current and historical glasses with specifications, pricing, lifecycle, EOL and shop links.',
+          )}
         </p>
       </header>
 
@@ -1433,8 +1545,10 @@ const render = () => {
       <section class="panel mt-4 p-4 sm:p-5">
         <div class="flex flex-wrap items-center justify-between gap-2">
           <div>
-            <h2 class="text-lg font-semibold text-[#f5f5f4]">Filter</h2>
-            <p class="mt-1 text-xs text-[#a8a29e]">${state.focusMode ? 'Fokusansicht: nur Kernfilter sichtbar.' : 'Schnellfilter fuer Suche, Kategorie und Sortierung.'}</p>
+            <h2 class="text-lg font-semibold text-[#f5f5f4]">${t('Filter', 'Filters')}</h2>
+            <p class="mt-1 text-xs text-[#a8a29e]">${state.focusMode
+              ? t('Fokusansicht: nur Kernfilter sichtbar.', 'Focus view: only core filters visible.')
+              : t('Schnellfilter fuer Suche, Kategorie und Sortierung.', 'Quick filters for search, category and sorting.')}</p>
           </div>
           ${
             state.focusMode
@@ -1443,20 +1557,23 @@ const render = () => {
                   state.showAdvancedFilters
                     ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
                     : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
-                }">${state.showAdvancedFilters ? 'Weniger Filter' : 'Mehr Filter'}</button>`
+                }">${state.showAdvancedFilters ? t('Weniger Filter', 'Fewer filters') : t('Mehr Filter', 'More filters')}</button>`
           }
         </div>
 
         <div class="mt-3 grid gap-3 md:grid-cols-2 ${state.focusMode ? 'xl:grid-cols-4' : 'xl:grid-cols-5'}">
           <label class="space-y-1 xl:col-span-2">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Suche</span>
-            <input id="query-input" type="search" class="field" placeholder="Modell, Hersteller, Software, Tracking, Lifecycle" value="${escapeHtml(state.query)}" />
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Suche', 'Search')}</span>
+            <input id="query-input" type="search" class="field" placeholder="${t(
+              'Modell, Hersteller, Software, Tracking, Lifecycle',
+              'Model, manufacturer, software, tracking, lifecycle',
+            )}" value="${escapeHtml(state.query)}" />
           </label>
 
           <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Kategorie</span>
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Kategorie', 'Category')}</span>
             <select id="category-filter" class="field">
-              <option value="all"${state.category === 'all' ? ' selected' : ''}>Alle Kategorien</option>
+              <option value="all"${state.category === 'all' ? ' selected' : ''}>${t('Alle Kategorien', 'All categories')}</option>
               <option value="AR"${state.category === 'AR' ? ' selected' : ''}>AR</option>
               <option value="XR"${state.category === 'XR' ? ' selected' : ''}>XR</option>
             </select>
@@ -1466,25 +1583,31 @@ const render = () => {
             state.focusMode
               ? ''
               : `<label class="space-y-1">
-                  <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Hersteller</span>
+                  <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Hersteller', 'Manufacturer')}</span>
                   <select id="manufacturer-filter" class="field">
-                    ${optionList(filterOptions.manufacturers, state.manufacturer, 'Alle Hersteller')}
+                    ${optionList(filterOptions.manufacturers, state.manufacturer, t('Alle Hersteller', 'All manufacturers'))}
                   </select>
                 </label>`
           }
 
           <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Sortierung</span>
+            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Sortierung', 'Sorting')}</span>
             <select id="sort-filter" class="field">
               <option value="priority_default"${
                 state.sort === 'priority_default' ? ' selected' : ''
-              }>Priorität (Neueste, EOL unten)</option>
-              <option value="name_asc"${state.sort === 'name_asc' ? ' selected' : ''}>Name A-Z</option>
-              <option value="manufacturer_asc"${state.sort === 'manufacturer_asc' ? ' selected' : ''}>Hersteller A-Z</option>
-              <option value="release_desc"${state.sort === 'release_desc' ? ' selected' : ''}>Neueste zuerst</option>
-              <option value="price_desc"${state.sort === 'price_desc' ? ' selected' : ''}>Preis absteigend</option>
-              <option value="price_asc"${state.sort === 'price_asc' ? ' selected' : ''}>Preis aufsteigend</option>
-              <option value="fov_desc"${state.sort === 'fov_desc' ? ' selected' : ''}>FOV horizontal absteigend</option>
+              }>${t('Priorität (Neueste, EOL unten)', 'Priority (newest first, EOL last)')}</option>
+              <option value="name_asc"${state.sort === 'name_asc' ? ' selected' : ''}>${t('Name A-Z', 'Name A-Z')}</option>
+              <option value="manufacturer_asc"${state.sort === 'manufacturer_asc' ? ' selected' : ''}>${t(
+                'Hersteller A-Z',
+                'Manufacturer A-Z',
+              )}</option>
+              <option value="release_desc"${state.sort === 'release_desc' ? ' selected' : ''}>${t('Neueste zuerst', 'Newest first')}</option>
+              <option value="price_desc"${state.sort === 'price_desc' ? ' selected' : ''}>${t('Preis absteigend', 'Price descending')}</option>
+              <option value="price_asc"${state.sort === 'price_asc' ? ' selected' : ''}>${t('Preis aufsteigend', 'Price ascending')}</option>
+              <option value="fov_desc"${state.sort === 'fov_desc' ? ' selected' : ''}>${t(
+                'FOV horizontal absteigend',
+                'FOV horizontal descending',
+              )}</option>
             </select>
           </label>
         </div>
@@ -1494,22 +1617,25 @@ const render = () => {
             state.viewMode === 'cards'
               ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
               : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
-          }">Cards</button>
+          }">${t('Karten', 'Cards')}</button>
           <button id="view-table" class="chip-btn ${
             state.viewMode === 'table'
               ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
               : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
-          }">Tabelle</button>
+          }">${t('Tabelle', 'Table')}</button>
+          <button id="toggle-language" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
+            ${state.language === 'de' ? 'Sprache: DE' : 'Language: EN'}
+          </button>
           <button id="theme-toggle" class="chip-btn ${
             state.theme === 'light'
               ? 'border-[#2f6fb5] bg-[#2f6fb5] text-white hover:bg-[#25588f]'
               : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
-          }">${state.theme === 'light' ? 'Dunkelmodus' : 'Hellmodus'}</button>
+          }">${state.theme === 'light' ? t('Dunkelmodus', 'Dark mode') : t('Hellmodus', 'Light mode')}</button>
           <button id="toggle-focus-mode" class="chip-btn ${
             state.focusMode
               ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
               : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
-          }">${state.focusMode ? 'Standard View' : 'Focus View'}</button>
+          }">${state.focusMode ? t('Standardansicht', 'Standard view') : t('Fokusansicht', 'Focus view')}</button>
 
           <button id="export-csv" class="chip-btn ${
             exportDisabled
@@ -1517,96 +1643,99 @@ const render = () => {
               : 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
           }" ${exportDisabled ? 'disabled' : ''}>CSV Export</button>
 
-          <button id="clear-filters" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">Filter zuruecksetzen</button>
+          <button id="clear-filters" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(
+            'Filter zuruecksetzen',
+            'Reset filters',
+          )}</button>
         </div>
 
         <div id="advanced-filters-region" class="mt-4 space-y-3 ${state.showAdvancedFilters && !state.focusMode ? '' : 'hidden'}">
-          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Erweiterte Filter</p>
+          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Erweiterte Filter', 'Advanced filters')}</p>
           <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Display-Typ</span>
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Display-Typ', 'Display type')}</span>
               <select id="display-filter" class="field">
-                ${optionList(filterOptions.displayTypes, state.displayType, 'Alle Display-Arten')}
+                ${optionList(filterOptions.displayTypes, state.displayType, t('Alle Display-Arten', 'All display types'))}
               </select>
             </label>
 
             <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Optik</span>
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Optik', 'Optics')}</span>
               <select id="optics-filter" class="field">
-                ${optionList(filterOptions.optics, state.optics, 'Alle Optik-Typen')}
+                ${optionList(filterOptions.optics, state.optics, t('Alle Optik-Typen', 'All optics types'))}
               </select>
             </label>
 
             <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Tracking</span>
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Tracking', 'Tracking')}</span>
               <select id="tracking-filter" class="field">
-                ${optionList(filterOptions.tracking, state.tracking, 'Alle Tracking-Typen')}
+                ${optionList(filterOptions.tracking, state.tracking, t('Alle Tracking-Typen', 'All tracking types'))}
               </select>
             </label>
 
             <label class="space-y-1">
               <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Eye Tracking</span>
               <select id="eye-tracking-filter" class="field">
-                ${optionList(filterOptions.eyeTracking, state.eyeTracking, 'Alle Eye-Tracking-Werte')}
+                ${optionList(filterOptions.eyeTracking, state.eyeTracking, t('Alle Eye-Tracking-Werte', 'All eye-tracking values'))}
               </select>
             </label>
 
             <label class="space-y-1">
               <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Hand Tracking</span>
               <select id="hand-tracking-filter" class="field">
-                ${optionList(filterOptions.handTracking, state.handTracking, 'Alle Hand-Tracking-Werte')}
+                ${optionList(filterOptions.handTracking, state.handTracking, t('Alle Hand-Tracking-Werte', 'All hand-tracking values'))}
               </select>
             </label>
 
             <label class="space-y-1">
               <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Passthrough</span>
               <select id="passthrough-filter" class="field">
-                ${optionList(filterOptions.passthrough, state.passthrough, 'Alle Passthrough-Werte')}
+                ${optionList(filterOptions.passthrough, state.passthrough, t('Alle Passthrough-Werte', 'All passthrough values'))}
               </select>
             </label>
 
             <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Aktiver Vertrieb</span>
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Aktiver Vertrieb', 'Active distribution')}</span>
               <select id="active-filter" class="field">
-                ${optionList(filterOptions.activeStatuses, state.active, 'Alle Vertrieb-Status')}
+                ${optionList(filterOptions.activeStatuses, state.active, t('Alle Vertrieb-Status', 'All distribution statuses'))}
               </select>
             </label>
 
             <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">EOL / Update-Status</span>
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('EOL / Update-Status', 'EOL / update status')}</span>
               <select id="eol-filter" class="field">
-                ${optionList(filterOptions.eolStatuses, state.eol, 'Alle Lifecycle-Status')}
+                ${optionList(filterOptions.eolStatuses, state.eol, t('Alle Lifecycle-Status', 'All lifecycle statuses'))}
               </select>
             </label>
 
             <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Min. FOV horizontal (deg)</span>
-              <input id="fov-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.minFov)}" placeholder="z. B. 40" />
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Min. FOV horizontal (deg)', 'Min. horizontal FOV (deg)')}</span>
+              <input id="fov-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.minFov)}" placeholder="${t('z. B. 40', 'e.g. 40')}" />
             </label>
 
             <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Min. Refresh (Hz)</span>
-              <input id="refresh-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.minRefresh)}" placeholder="z. B. 60" />
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Min. Refresh (Hz)', 'Min. refresh (Hz)')}</span>
+              <input id="refresh-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.minRefresh)}" placeholder="${t('z. B. 60', 'e.g. 60')}" />
             </label>
 
             <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Max. Preis (USD)</span>
-              <input id="price-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.maxPrice)}" placeholder="z. B. 1500" />
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Max. Preis (USD)', 'Max. price (USD)')}</span>
+              <input id="price-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.maxPrice)}" placeholder="${t('z. B. 1500', 'e.g. 1500')}" />
             </label>
           </div>
 
           <div class="flex flex-wrap items-center gap-2">
             <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
               <input id="only-price" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyPrice ? 'checked' : ''} />
-              Nur mit Preis
+              ${t('Nur mit Preis', 'Only with price')}
             </label>
             <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
               <input id="only-shop" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyShop ? 'checked' : ''} />
-              Nur mit Shop-Link
+              ${t('Nur mit Shop-Link', 'Only with shop link')}
             </label>
             <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
               <input id="only-available" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyAvailable ? 'checked' : ''} />
-              Nur aktiv im Vertrieb
+              ${t('Nur aktiv im Vertrieb', 'Only actively distributed')}
             </label>
             <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
               <input id="flag-ar" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.flagAr ? 'checked' : ''} />
@@ -1618,11 +1747,11 @@ const render = () => {
             </label>
             <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
               <input id="show-eur" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.showEur ? 'checked' : ''} />
-              EUR-Zusatz
+              ${t('EUR-Zusatz', 'EUR addition')}
             </label>
             <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
               <input id="hide-unknown" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.hideUnknown ? 'checked' : ''} />
-              Unbekannte Werte ausblenden
+              ${t('Unbekannte Werte ausblenden', 'Hide unknown values')}
             </label>
           </div>
         </div>
@@ -1634,15 +1763,24 @@ const render = () => {
           state.compareMode
             ? compareModeTemplate(selectedRows)
             : filtered.length === 0
-              ? '<p class="panel p-10 text-center text-sm text-[#a8a29e]">Keine Treffer fuer die gewaehlten Filter.</p>'
+              ? `<p class="panel p-10 text-center text-sm text-[#a8a29e]">${t(
+                  'Keine Treffer fuer die gewaehlten Filter.',
+                  'No matches for the selected filters.',
+                )}</p>`
               : state.viewMode === 'cards'
                 ? `
                     <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">${visibleCards.map(cardTemplate).join('')}</div>
                     <div class="mt-4 flex flex-wrap items-center gap-2">
-                      <p class="text-sm text-[#a8a29e]">${visibleCards.length} von ${filtered.length} Modellen angezeigt</p>
+                      <p class="text-sm text-[#a8a29e]">${t(
+                        `${visibleCards.length} von ${filtered.length} Modellen angezeigt`,
+                        `${visibleCards.length} of ${filtered.length} models shown`,
+                      )}</p>
                       ${
                         hasMoreCards
-                          ? '<button id="load-more-cards" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">Mehr laden</button>'
+                          ? `<button id="load-more-cards" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(
+                              'Mehr laden',
+                              'Load more',
+                            )}</button>`
                           : ''
                       }
                     </div>
@@ -1655,37 +1793,51 @@ const render = () => {
         state.focusMode
           ? ''
           : `<section class="panel mt-4 p-4 sm:p-5">
-              <h2 class="text-lg font-semibold text-[#f5f5f4] sm:text-xl">AR/XR Brillen FAQ und Suchkontext</h2>
+              <h2 class="text-lg font-semibold text-[#f5f5f4] sm:text-xl">${t(
+                'AR/XR Brillen FAQ und Suchkontext',
+                'AR/XR Glasses FAQ and search context',
+              )}</h2>
               <p class="mt-2 text-sm text-[#a8a29e]">
-                Diese Vergleichsseite deckt aktuelle und historische AR- und XR-Brillen inklusive Shop-Links, Preisstatus,
-                FOV, Refresh, Tracking, Software sowie Updates/EOL ab.
+                ${t(
+                  'Diese Vergleichsseite deckt aktuelle und historische AR- und XR-Brillen inklusive Shop-Links, Preisstatus, FOV, Refresh, Tracking, Software sowie Updates/EOL ab.',
+                  'This comparison page covers current and historical AR and XR glasses including shop links, pricing status, FOV, refresh, tracking, software and updates/EOL.',
+                )}
               </p>
               <div class="mt-4 grid gap-3 md:grid-cols-2">
                 <article class="soft-panel p-3">
-                  <h3 class="text-sm font-semibold text-[#f5f5f4]">Welche Modelle sind enthalten?</h3>
+                  <h3 class="text-sm font-semibold text-[#f5f5f4]">${t('Welche Modelle sind enthalten?', 'Which models are included?')}</h3>
                   <p class="mt-1 text-sm text-[#a8a29e]">
-                    Moderne AR/XR-Modelle plus Legacy-Geraete wie HoloLens 1, Epson Moverio, Sony SmartEyeglass und weitere.
+                    ${t(
+                      'Moderne AR/XR-Modelle plus Legacy-Geraete wie HoloLens 1, Epson Moverio, Sony SmartEyeglass und weitere.',
+                      'Modern AR/XR models plus legacy devices such as HoloLens 1, Epson Moverio, Sony SmartEyeglass and others.',
+                    )}
                   </p>
                 </article>
                 <article class="soft-panel p-3">
-                  <h3 class="text-sm font-semibold text-[#f5f5f4]">Welche Daten kann ich filtern?</h3>
+                  <h3 class="text-sm font-semibold text-[#f5f5f4]">${t('Welche Daten kann ich filtern?', 'Which data can I filter?')}</h3>
                   <p class="mt-1 text-sm text-[#a8a29e]">
-                    Kategorie (AR/XR), Hersteller, Display, Optik, Tracking, Eye/Hand, Passthrough, FOV, Refresh, Preis,
-                    Vertriebsstatus und EOL.
+                    ${t(
+                      'Kategorie (AR/XR), Hersteller, Display, Optik, Tracking, Eye/Hand, Passthrough, FOV, Refresh, Preis, Vertriebsstatus und EOL.',
+                      'Category (AR/XR), manufacturer, display, optics, tracking, eye/hand, passthrough, FOV, refresh, price, distribution status and EOL.',
+                    )}
                   </p>
                 </article>
                 <article class="soft-panel p-3">
-                  <h3 class="text-sm font-semibold text-[#f5f5f4]">Gibt es exportierbare Daten?</h3>
+                  <h3 class="text-sm font-semibold text-[#f5f5f4]">${t('Gibt es exportierbare Daten?', 'Is data export available?')}</h3>
                   <p class="mt-1 text-sm text-[#a8a29e]">
-                    Ja, die gefilterten Ergebnisse lassen sich direkt als CSV exportieren. Der komplette Datensatz ist auch
-                    unter <code>/data/ar_glasses.csv</code> abrufbar.
+                    ${t(
+                      'Ja, die gefilterten Ergebnisse lassen sich direkt als CSV exportieren. Der komplette Datensatz ist auch unter',
+                      'Yes, filtered results can be exported directly as CSV. The full dataset is also available at',
+                    )} <code>/data/ar_glasses.csv</code>.
                   </p>
                 </article>
                 <article class="soft-panel p-3">
-                  <h3 class="text-sm font-semibold text-[#f5f5f4]">Wie aktuell sind die Infos?</h3>
+                  <h3 class="text-sm font-semibold text-[#f5f5f4]">${t('Wie aktuell sind die Infos?', 'How current is the information?')}</h3>
                   <p class="mt-1 text-sm text-[#a8a29e]">
-                    Quelle sind kuratierte Datensaetze plus manuelle Legacy-Ergaenzungen. Zu jedem Modell gibt es Lifecycle-/EOL-Kontext
-                    und Datenquellen-Links.
+                    ${t(
+                      'Quelle sind kuratierte Datensaetze plus manuelle Legacy-Ergaenzungen. Zu jedem Modell gibt es Lifecycle-/EOL-Kontext und Datenquellen-Links.',
+                      'Sources are curated datasets plus manual legacy additions. Each model includes lifecycle/EOL context and source links.',
+                    )}
                   </p>
                 </article>
               </div>
@@ -1694,24 +1846,26 @@ const render = () => {
 
       <section class="mt-4">
         <div class="panel p-4 sm:p-5">
-          <h2 class="text-sm font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Statistik</h2>
+          <h2 class="text-sm font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Statistik', 'Statistics')}</h2>
           <div class="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
             <p class="soft-panel p-3 text-sm text-[#a8a29e]">
-              Datenbestand: <strong class="text-[#f5f5f4]">${state.rows.length}</strong>
+              ${t('Datenbestand', 'Dataset size')}: <strong class="text-[#f5f5f4]">${state.rows.length}</strong>
             </p>
             <p class="soft-panel p-3 text-sm text-[#a8a29e]">
-              Sichtbare Modelle: <strong class="text-[#f5f5f4]">${filtered.length}</strong>
+              ${t('Sichtbare Modelle', 'Visible models')}: <strong class="text-[#f5f5f4]">${filtered.length}</strong>
             </p>
             <p class="soft-panel p-3 text-sm text-[#a8a29e]">
-              Shop-Links: <strong class="text-[#f5f5f4]">${withShop}</strong> /
-              <strong class="text-[#f5f5f4]">${withPrice}</strong> mit Preis
+              ${t('Shop-Links', 'Shop links')}: <strong class="text-[#f5f5f4]">${withShop}</strong> /
+              <strong class="text-[#f5f5f4]">${withPrice}</strong> ${t('mit Preis', 'with price')}
             </p>
             <p class="soft-panel p-3 text-sm text-[#a8a29e]">
-              Aktiv: <strong class="text-[#f5f5f4]">${activeCount}</strong> /
+              ${t('Aktiv', 'Active')}: <strong class="text-[#f5f5f4]">${activeCount}</strong> /
               EOL: <strong class="text-[#f5f5f4]">${eolCount}</strong>
             </p>
             <p class="soft-panel p-3 text-sm text-[#a8a29e]">
-              Datenstand: <strong class="text-[#f5f5f4]">${escapeHtml(retrievedAt ? formatDate(retrievedAt) : 'k. A.')}</strong>
+              ${t('Datenstand', 'Data updated')}: <strong class="text-[#f5f5f4]">${escapeHtml(
+                retrievedAt ? formatDate(retrievedAt) : t('k. A.', 'n/a'),
+              )}</strong>
             </p>
           </div>
         </div>
@@ -1719,7 +1873,10 @@ const render = () => {
 
       <footer class="mt-4">
         <div class="panel p-4 text-sm text-[#a8a29e]">
-          <a href="https://huskynarr.de/impressum" class="font-semibold text-[#84cc16] hover:underline">Impressum / Legal Notice</a>
+          <a href="https://huskynarr.de/impressum" class="font-semibold text-[#84cc16] hover:underline">${t(
+            'Impressum / Legal Notice',
+            'Legal Notice / Impressum',
+          )}</a>
         </div>
       </footer>
     </main>
@@ -1775,6 +1932,11 @@ const render = () => {
 
   document.querySelector('#view-cards')?.addEventListener('click', () => setAndRender('viewMode', 'cards', { resetCardsPage: false }));
   document.querySelector('#view-table')?.addEventListener('click', () => setAndRender('viewMode', 'table', { resetCardsPage: false }));
+  document.querySelector('#toggle-language')?.addEventListener('click', () => {
+    state.language = state.language === 'de' ? 'en' : 'de';
+    writeLanguageToStorage(state.language);
+    render();
+  });
   document.querySelector('#theme-toggle')?.addEventListener('click', () => {
     state.theme = state.theme === 'light' ? 'dark' : 'light';
     writeThemeToStorage(state.theme);
@@ -1841,7 +2003,10 @@ const render = () => {
       if (isChecked) {
         if (!state.selectedIds.includes(modelId)) {
           if (state.selectedIds.length >= COMPARE_LIMIT) {
-            state.compareNotice = `Maximal ${COMPARE_LIMIT} Modelle gleichzeitig im Vergleich.`;
+            state.compareNotice = t(
+              `Maximal ${COMPARE_LIMIT} Modelle gleichzeitig im Vergleich.`,
+              `Maximum ${COMPARE_LIMIT} models in compare at the same time.`,
+            );
           } else {
             state.selectedIds = [...state.selectedIds, modelId];
             state.compareNotice = '';
@@ -1904,13 +2069,20 @@ const parseCsv = (text) =>
   });
 
 const init = async () => {
+  state.language = readLanguageFromStorage();
   state.theme = readThemeFromStorage();
   applyStateFromUrl();
+  state.language = normalizeLanguage(state.language, 'de');
   state.theme = normalizeTheme(state.theme, 'dark');
+  writeLanguageToStorage(state.language);
   writeThemeToStorage(state.theme);
+  applyLanguageToDocument();
   applyThemeToDocument();
   setFallbackUsdRate();
-  app.innerHTML = '<main class="mx-auto max-w-[1320px] px-4 py-8"><p class="panel p-6 text-sm text-[#a8a29e]">Lade Brillendaten...</p></main>';
+  app.innerHTML = `<main class="mx-auto max-w-[1320px] px-4 py-8"><p class="panel p-6 text-sm text-[#a8a29e]">${t(
+    'Lade Brillendaten...',
+    'Loading glasses data...',
+  )}</p></main>`;
 
   const ratePromise = fetchUsdToEurRate();
 
@@ -1932,10 +2104,13 @@ const init = async () => {
       }
     });
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Unbekannter Fehler';
+    const message = error instanceof Error ? error.message : t('Unbekannter Fehler', 'Unknown error');
     app.innerHTML = `
       <main class="mx-auto max-w-[1320px] px-4 py-8">
-        <p class="panel border-red-700/60 bg-red-950/40 p-6 text-sm font-semibold text-red-200">Daten konnten nicht geladen werden.</p>
+        <p class="panel border-red-700/60 bg-red-950/40 p-6 text-sm font-semibold text-red-200">${t(
+          'Daten konnten nicht geladen werden.',
+          'Data could not be loaded.',
+        )}</p>
         <p class="mt-3 text-sm text-[#a8a29e]">${escapeHtml(message)}</p>
       </main>
     `;
