@@ -61,6 +61,7 @@ const state = {
   showEur: false,
   hideUnknown: false,
   showAdvancedFilters: false,
+  focusMode: false,
   sort: 'name_asc',
   cardsPage: 1,
   cardsPageSize: CARDS_PER_PAGE,
@@ -557,6 +558,7 @@ const applyStateFromUrl = () => {
   state.showEur = parseBooleanParam(params.get('showEur'), false);
   state.hideUnknown = parseBooleanParam(params.get('hideUnknown'), false);
   state.showAdvancedFilters = parseBooleanParam(params.get('advanced'), false);
+  state.focusMode = parseBooleanParam(params.get('focus'), false);
 
   const sort = params.get('sort');
   if (sort && SORT_MODES.has(sort)) {
@@ -618,6 +620,7 @@ const syncUrlWithState = () => {
   setBoolean('showEur', state.showEur, false);
   setBoolean('hideUnknown', state.hideUnknown, false);
   setBoolean('advanced', state.showAdvancedFilters, false);
+  setBoolean('focus', state.focusMode, false);
   setText('sort', state.sort, 'name_asc');
   if (state.cardsPage > 1) {
     params.set('cardsPage', String(state.cardsPage));
@@ -1395,28 +1398,42 @@ const render = () => {
         <p class="mt-2 text-xs text-[#a8a29e]">Datenstand: ${escapeHtml(retrievedAt ? formatDate(retrievedAt) : 'k. A.')}</p>
       </header>
 
-      <section class="mt-4 grid gap-3 sm:grid-cols-3">
-        <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${filtered.length}</strong> sichtbare Modelle</p>
-        <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${withPrice}</strong> mit Preis / <strong class="text-[#f5f5f4]">${withShop}</strong> mit Shop-Link</p>
-        <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${activeCount}</strong> aktiv / <strong class="text-[#f5f5f4]">${eolCount}</strong> EOL</p>
-      </section>
+      ${
+        state.focusMode
+          ? `<section class="mt-4">
+              <p class="soft-panel p-3 text-sm text-[#a8a29e]">
+                <strong class="text-[#f5f5f4]">${filtered.length}</strong> sichtbare Modelle,
+                <strong class="text-[#f5f5f4]"> ${withPrice}</strong> mit Preis,
+                <strong class="text-[#f5f5f4]"> ${withShop}</strong> mit Shop-Link
+              </p>
+            </section>`
+          : `<section class="mt-4 grid gap-3 sm:grid-cols-3">
+              <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${filtered.length}</strong> sichtbare Modelle</p>
+              <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${withPrice}</strong> mit Preis / <strong class="text-[#f5f5f4]">${withShop}</strong> mit Shop-Link</p>
+              <p class="soft-panel p-3 text-sm text-[#a8a29e]"><strong class="text-[#f5f5f4]">${activeCount}</strong> aktiv / <strong class="text-[#f5f5f4]">${eolCount}</strong> EOL</p>
+            </section>`
+      }
 
-      ${compareBarTemplate(selectedRows)}
+      ${!state.focusMode || selectedRows.length ? compareBarTemplate(selectedRows) : ''}
 
       <section class="panel mt-4 p-4 sm:p-5">
         <div class="flex flex-wrap items-center justify-between gap-2">
           <div>
             <h2 class="text-lg font-semibold text-[#f5f5f4]">Filter</h2>
-            <p class="mt-1 text-xs text-[#a8a29e]">Schnellfilter fuer Suche, Kategorie und Sortierung.</p>
+            <p class="mt-1 text-xs text-[#a8a29e]">${state.focusMode ? 'Fokusansicht: nur Kernfilter sichtbar.' : 'Schnellfilter fuer Suche, Kategorie und Sortierung.'}</p>
           </div>
-          <button id="toggle-advanced-filters" class="chip-btn ${
-            state.showAdvancedFilters
-              ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
-              : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
-          }">${state.showAdvancedFilters ? 'Weniger Filter' : 'Mehr Filter'}</button>
+          ${
+            state.focusMode
+              ? ''
+              : `<button id="toggle-advanced-filters" class="chip-btn ${
+                  state.showAdvancedFilters
+                    ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
+                    : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
+                }">${state.showAdvancedFilters ? 'Weniger Filter' : 'Mehr Filter'}</button>`
+          }
         </div>
 
-        <div class="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+        <div class="mt-3 grid gap-3 md:grid-cols-2 ${state.focusMode ? 'xl:grid-cols-4' : 'xl:grid-cols-5'}">
           <label class="space-y-1 xl:col-span-2">
             <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Suche</span>
             <input id="query-input" type="search" class="field" placeholder="Modell, Hersteller, Software, Tracking, Lifecycle" value="${escapeHtml(state.query)}" />
@@ -1431,12 +1448,16 @@ const render = () => {
             </select>
           </label>
 
-          <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Hersteller</span>
-            <select id="manufacturer-filter" class="field">
-              ${optionList(filterOptions.manufacturers, state.manufacturer, 'Alle Hersteller')}
-            </select>
-          </label>
+          ${
+            state.focusMode
+              ? ''
+              : `<label class="space-y-1">
+                  <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Hersteller</span>
+                  <select id="manufacturer-filter" class="field">
+                    ${optionList(filterOptions.manufacturers, state.manufacturer, 'Alle Hersteller')}
+                  </select>
+                </label>`
+          }
 
           <label class="space-y-1">
             <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Sortierung</span>
@@ -1467,6 +1488,11 @@ const render = () => {
               ? 'border-[#2f6fb5] bg-[#2f6fb5] text-white hover:bg-[#25588f]'
               : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
           }">${state.theme === 'light' ? 'Dunkelmodus' : 'Hellmodus'}</button>
+          <button id="toggle-focus-mode" class="chip-btn ${
+            state.focusMode
+              ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
+              : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
+          }">${state.focusMode ? 'Standard View' : 'Focus View'}</button>
 
           <button id="export-csv" class="chip-btn ${
             exportDisabled
@@ -1477,7 +1503,7 @@ const render = () => {
           <button id="clear-filters" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">Filter zuruecksetzen</button>
         </div>
 
-        <div id="advanced-filters-region" class="mt-4 space-y-3 ${state.showAdvancedFilters ? '' : 'hidden'}">
+        <div id="advanced-filters-region" class="mt-4 space-y-3 ${state.showAdvancedFilters && !state.focusMode ? '' : 'hidden'}">
           <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Erweiterte Filter</p>
           <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             <label class="space-y-1">
@@ -1608,42 +1634,46 @@ const render = () => {
         }
       </section>
 
-      <section class="panel mt-4 p-4 sm:p-5">
-        <h2 class="text-lg font-semibold text-[#f5f5f4] sm:text-xl">AR/XR Brillen FAQ und Suchkontext</h2>
-        <p class="mt-2 text-sm text-[#a8a29e]">
-          Diese Vergleichsseite deckt aktuelle und historische AR- und XR-Brillen inklusive Shop-Links, Preisstatus,
-          FOV, Refresh, Tracking, Software sowie Updates/EOL ab.
-        </p>
-        <div class="mt-4 grid gap-3 md:grid-cols-2">
-          <article class="soft-panel p-3">
-            <h3 class="text-sm font-semibold text-[#f5f5f4]">Welche Modelle sind enthalten?</h3>
-            <p class="mt-1 text-sm text-[#a8a29e]">
-              Moderne AR/XR-Modelle plus Legacy-Geraete wie HoloLens 1, Epson Moverio, Sony SmartEyeglass und weitere.
-            </p>
-          </article>
-          <article class="soft-panel p-3">
-            <h3 class="text-sm font-semibold text-[#f5f5f4]">Welche Daten kann ich filtern?</h3>
-            <p class="mt-1 text-sm text-[#a8a29e]">
-              Kategorie (AR/XR), Hersteller, Display, Optik, Tracking, Eye/Hand, Passthrough, FOV, Refresh, Preis,
-              Vertriebsstatus und EOL.
-            </p>
-          </article>
-          <article class="soft-panel p-3">
-            <h3 class="text-sm font-semibold text-[#f5f5f4]">Gibt es exportierbare Daten?</h3>
-            <p class="mt-1 text-sm text-[#a8a29e]">
-              Ja, die gefilterten Ergebnisse lassen sich direkt als CSV exportieren. Der komplette Datensatz ist auch
-              unter <code>/data/ar_glasses.csv</code> abrufbar.
-            </p>
-          </article>
-          <article class="soft-panel p-3">
-            <h3 class="text-sm font-semibold text-[#f5f5f4]">Wie aktuell sind die Infos?</h3>
-            <p class="mt-1 text-sm text-[#a8a29e]">
-              Quelle sind kuratierte Datensaetze plus manuelle Legacy-Ergaenzungen. Zu jedem Modell gibt es Lifecycle-/EOL-Kontext
-              und Datenquellen-Links.
-            </p>
-          </article>
-        </div>
-      </section>
+      ${
+        state.focusMode
+          ? ''
+          : `<section class="panel mt-4 p-4 sm:p-5">
+              <h2 class="text-lg font-semibold text-[#f5f5f4] sm:text-xl">AR/XR Brillen FAQ und Suchkontext</h2>
+              <p class="mt-2 text-sm text-[#a8a29e]">
+                Diese Vergleichsseite deckt aktuelle und historische AR- und XR-Brillen inklusive Shop-Links, Preisstatus,
+                FOV, Refresh, Tracking, Software sowie Updates/EOL ab.
+              </p>
+              <div class="mt-4 grid gap-3 md:grid-cols-2">
+                <article class="soft-panel p-3">
+                  <h3 class="text-sm font-semibold text-[#f5f5f4]">Welche Modelle sind enthalten?</h3>
+                  <p class="mt-1 text-sm text-[#a8a29e]">
+                    Moderne AR/XR-Modelle plus Legacy-Geraete wie HoloLens 1, Epson Moverio, Sony SmartEyeglass und weitere.
+                  </p>
+                </article>
+                <article class="soft-panel p-3">
+                  <h3 class="text-sm font-semibold text-[#f5f5f4]">Welche Daten kann ich filtern?</h3>
+                  <p class="mt-1 text-sm text-[#a8a29e]">
+                    Kategorie (AR/XR), Hersteller, Display, Optik, Tracking, Eye/Hand, Passthrough, FOV, Refresh, Preis,
+                    Vertriebsstatus und EOL.
+                  </p>
+                </article>
+                <article class="soft-panel p-3">
+                  <h3 class="text-sm font-semibold text-[#f5f5f4]">Gibt es exportierbare Daten?</h3>
+                  <p class="mt-1 text-sm text-[#a8a29e]">
+                    Ja, die gefilterten Ergebnisse lassen sich direkt als CSV exportieren. Der komplette Datensatz ist auch
+                    unter <code>/data/ar_glasses.csv</code> abrufbar.
+                  </p>
+                </article>
+                <article class="soft-panel p-3">
+                  <h3 class="text-sm font-semibold text-[#f5f5f4]">Wie aktuell sind die Infos?</h3>
+                  <p class="mt-1 text-sm text-[#a8a29e]">
+                    Quelle sind kuratierte Datensaetze plus manuelle Legacy-Ergaenzungen. Zu jedem Modell gibt es Lifecycle-/EOL-Kontext
+                    und Datenquellen-Links.
+                  </p>
+                </article>
+              </div>
+            </section>`
+      }
     </main>
   `;
 
@@ -1700,6 +1730,13 @@ const render = () => {
   document.querySelector('#theme-toggle')?.addEventListener('click', () => {
     state.theme = state.theme === 'light' ? 'dark' : 'light';
     writeThemeToStorage(state.theme);
+    render();
+  });
+  document.querySelector('#toggle-focus-mode')?.addEventListener('click', () => {
+    state.focusMode = !state.focusMode;
+    if (state.focusMode) {
+      state.showAdvancedFilters = false;
+    }
     render();
   });
   document
