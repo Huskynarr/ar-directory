@@ -17,6 +17,7 @@
     <meta name="theme-color" content="#0c0a09" />
     <link rel="canonical" href="https://huskynarr.de/" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="manifest" href="/manifest.json" />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="de_DE" />
@@ -106,6 +107,11 @@
       </main>
     </div>
     <noscript>Diese Seite nutzt JavaScript fuer interaktive Filter-, Vergleichs- und Tabellenfunktionen.</noscript>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
+    </script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

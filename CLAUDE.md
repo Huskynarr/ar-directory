@@ -12,20 +12,20 @@ AR Directory — a curated AR/XR glasses comparison web application. Single-page
 npm run dev              # Start Vite dev server
 npm run build            # Production build → dist/
 npm run preview          # Preview production build
+npm test                 # Run Vitest unit tests
+npm run test:watch       # Run tests in watch mode
 npm run images:enrich    # Fetch/cache manufacturer product images
 node scripts/generate-ar-csv.mjs  # Regenerate CSV + metadata from curated data
 ```
 
-No test framework is configured. CI validates data generation and build success.
-
 ## Architecture
 
-**Monolithic SPA**: `index.html` → `src/main.js` (single ~2200-line file containing all application logic).
+**Modular SPA**: `index.html` → `src/main.js` (core app logic) + `src/utils.js` (pure utility functions).
 
 **Data flow**:
-1. `init()` loads CSV from `/data/ar_glasses.csv` via Papa Parse, fetches USD→EUR rate from Frankfurter API
-2. Centralized `state` object holds all filters, view mode, language, theme, selections, pagination
-3. `render()` is the core loop: filters rows → sorts → extracts filter options → builds DOM via template literals → attaches event listeners
+1. `init()` loads CSV from `/data/ar_glasses.csv` via Papa Parse, fetches USD→EUR rate from Frankfurter API, loads favorites/theme/language from localStorage
+2. Centralized `state` object holds all filters, view mode, language, theme, selections, pagination, favorites
+3. `render()` is the core loop: filters rows → sorts → extracts filter options → builds DOM via template literals → attaches event listeners + IntersectionObserver
 4. URL params and localStorage keep state persistent across sessions
 
 **Key patterns**:
@@ -33,12 +33,25 @@ No test framework is configured. CI validates data generation and build success.
 - Rendering: string template literals building full DOM sections (no virtual DOM)
 - Localization: `t(de, en)` helper function, `normalizeText()` for value matching
 - Compare mode: up to 6 models side-by-side with SVG radar chart
+- Detail modal: click card image to open fullscreen detail view
+- Favorites: localStorage-persisted, filterable via "Only favorites" toggle
 - Image fallback: generated SVG data URLs with model initials
-- Theme: dark (default) / light via CSS custom properties and body classes
+- Theme: auto-detects `prefers-color-scheme`, then dark/light via CSS custom properties
+- Keyboard shortcuts: `/` focuses search, `Esc` clears search or closes modal
+- Infinite scroll: IntersectionObserver auto-loads next page of cards
+- Performance: debounced search (150ms) and numeric inputs (200ms)
 
 **Data pipeline** (`scripts/`):
 - `generate-ar-csv.mjs` — normalizes, validates, and outputs CSV + JSON metadata
 - `enrich-manufacturer-images.mjs` — fetches official product images with per-model URL overrides, caches under `public/images/manufacturers/`
+
+**Testing** (`src/__tests__/`):
+- Vitest for unit tests on pure utility functions in `src/utils.js`
+- 105 tests covering escapeHtml, safeExternalUrl, toNumber, parsePrice, normalizeText, parseResolutionWidth, parseBooleanParam, isUnknownValue, toInitials, debounce, uniqueSorted
+
+**PWA**:
+- `public/manifest.json` — web app manifest for installation
+- `public/sw.js` — service worker with cache-first for static assets, network-first for data
 
 ## CSV Dataset
 

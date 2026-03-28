@@ -1,5 +1,6 @@
 import Papa from 'papaparse';
 import './style.css';
+import { escapeHtml, safeExternalUrl, toNumber, parsePrice, normalizeText, parseResolutionWidth, parseBooleanParam, isUnknownValue, toInitials, debounce, uniqueSorted } from './utils.js';
 
 const app = document.querySelector('#app');
 
@@ -23,6 +24,8 @@ const SORT_MODES = new Set([
 const THEME_MODES = new Set(['dark', 'light']);
 const THEME_STORAGE_KEY = 'ar_directory_theme';
 const LANGUAGE_STORAGE_KEY = 'ar_directory_language';
+const FAVORITES_STORAGE_KEY = 'ar_directory_favorites';
+const APP_VERSION = '0.5.0';
 const TRUE_VALUES = new Set(['1', 'true', 'yes', 'on']);
 const FALSE_VALUES = new Set(['0', 'false', 'no', 'off']);
 const RADAR_COLORS = ['#84cc16', '#2f6fb5', '#2d8f60', '#9b3db6', '#b1731f', '#a73452'];
@@ -75,6 +78,8 @@ const state = {
   onlyShop: false,
   onlyAvailable: false,
   onlyWithImage: false,
+  onlyFavorites: false,
+  favorites: [],
   flagAr: false,
   flagXr: false,
   showEur: false,
@@ -92,47 +97,6 @@ const state = {
 const isEnglish = () => state.language === 'en';
 const t = (de, en) => (isEnglish() ? en : de);
 const locale = () => (isEnglish() ? 'en-US' : 'de-DE');
-
-const escapeHtml = (value) =>
-  String(value ?? '')
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#39;');
-
-const safeExternalUrl = (url) => {
-  if (!url) {
-    return '';
-  }
-  try {
-    const parsed = new URL(url);
-    if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
-      return '';
-    }
-    return parsed.toString();
-  } catch {
-    return '';
-  }
-};
-
-const toNumber = (value) => {
-  if (value === null || value === undefined) {
-    return null;
-  }
-  const raw = String(value).trim();
-  if (!raw) {
-    return null;
-  }
-  const normalized = raw.replace(',', '.');
-  const numeric = Number(normalized);
-  return Number.isFinite(numeric) ? numeric : null;
-};
-
-const parsePrice = (value) => {
-  const numeric = toNumber(value);
-  return numeric && numeric > 0 ? numeric : null;
-};
 
 const formatCurrency = (amount, currency) =>
   new Intl.NumberFormat(locale(), {
@@ -179,25 +143,6 @@ const formatNumber = (value, suffix = '') => {
   }).format(numeric)}${suffix}`;
 };
 
-const normalizeText = (value) => String(value ?? '').toLowerCase().trim();
-
-const debounce = (fn, delay = 200) => {
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => fn(...args), delay);
-  };
-};
-
-const parseResolutionWidth = (value) => {
-  const text = String(value ?? '').trim();
-  const match = text.match(/(\d+)\s*[xX×]\s*(\d+)/);
-  if (match) {
-    return Math.max(Number(match[1]), Number(match[2]));
-  }
-  return null;
-};
-
 const normalizeTheme = (value, fallback = 'dark') => {
   const normalized = normalizeText(value);
   return THEME_MODES.has(normalized) ? normalized : fallback;
@@ -213,9 +158,11 @@ const readThemeFromStorage = () => {
     return 'dark';
   }
   try {
-    return normalizeTheme(window.localStorage.getItem(THEME_STORAGE_KEY), 'dark');
+    const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
+    if (stored) return normalizeTheme(stored, 'dark');
+    return getSystemThemePreference();
   } catch {
-    return 'dark';
+    return getSystemThemePreference();
   }
 };
 
@@ -252,6 +199,40 @@ const writeLanguageToStorage = (language) => {
   }
 };
 
+const readFavoritesFromStorage = () => {
+  try {
+    const raw = window.localStorage.getItem(FAVORITES_STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed.filter((id) => typeof id === 'string') : [];
+  } catch {
+    return [];
+  }
+};
+
+const writeFavoritesToStorage = (favorites) => {
+  try {
+    window.localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(favorites));
+  } catch {}
+};
+
+const toggleFavorite = (rowId) => {
+  if (state.favorites.includes(rowId)) {
+    state.favorites = state.favorites.filter((id) => id !== rowId);
+  } else {
+    state.favorites = [...state.favorites, rowId];
+  }
+  writeFavoritesToStorage(state.favorites);
+};
+
+const getSystemThemePreference = () => {
+  if (typeof window === 'undefined') return 'dark';
+  try {
+    if (window.matchMedia('(prefers-color-scheme: light)').matches) return 'light';
+  } catch {}
+  return 'dark';
+};
+
 const applyThemeToDocument = () => {
   if (typeof document === 'undefined' || !document.body) {
     return;
@@ -269,20 +250,6 @@ const applyLanguageToDocument = () => {
   const language = normalizeLanguage(state.language, 'de');
   state.language = language;
   document.documentElement.lang = language;
-};
-
-const parseBooleanParam = (value, fallback = false) => {
-  const normalized = normalizeText(value);
-  if (!normalized) {
-    return fallback;
-  }
-  if (TRUE_VALUES.has(normalized)) {
-    return true;
-  }
-  if (FALSE_VALUES.has(normalized)) {
-    return false;
-  }
-  return fallback;
 };
 
 const parseSelectedIdsParam = (value) =>
@@ -388,17 +355,6 @@ const compactValue = (value, fallback = t('k. A.', 'n/a')) => {
   return text ? text : fallback;
 };
 
-const isUnknownValue = (value) => {
-  const text = normalizeText(value);
-  if (!text) {
-    return true;
-  }
-  if (UNKNOWN_EXACT_VALUES.has(text)) {
-    return true;
-  }
-  return UNKNOWN_PARTIAL_MARKERS.some((marker) => text.includes(marker));
-};
-
 const maybeHiddenText = (value, fallback = t('k. A.', 'n/a')) => {
   if (state.hideUnknown && isUnknownValue(value)) {
     return '';
@@ -419,25 +375,6 @@ const formatLifecycleNotes = (value, fallback = t('Keine Angaben.', 'No details.
     return '';
   }
   return maybeHiddenText(value, fallback);
-};
-
-const uniqueSorted = (values) =>
-  [...new Set(values.map((value) => String(value ?? '').trim()).filter(Boolean))].sort((left, right) =>
-    left.localeCompare(right, locale(), { sensitivity: 'base' }),
-  );
-
-const toInitials = (value) => {
-  const parts = String(value ?? '')
-    .trim()
-    .split(/\s+/)
-    .filter(Boolean);
-  if (!parts.length) {
-    return 'AR';
-  }
-  return parts
-    .slice(0, 2)
-    .map((part) => part[0]?.toUpperCase() ?? '')
-    .join('');
 };
 
 const createModelImageDataUrl = (row) => {
@@ -715,6 +652,7 @@ const applyStateFromUrl = () => {
   state.onlyShop = parseBooleanParam(params.get('onlyShop'), false);
   state.onlyAvailable = parseBooleanParam(params.get('onlyAvailable'), false);
   state.onlyWithImage = parseBooleanParam(params.get('onlyImage'), false);
+  state.onlyFavorites = parseBooleanParam(params.get('onlyFav'), false);
   state.flagAr = parseBooleanParam(params.get('flagAr'), false);
   state.flagXr = parseBooleanParam(params.get('flagXr'), false);
   state.showEur = parseBooleanParam(params.get('showEur'), false);
@@ -783,6 +721,7 @@ const syncUrlWithState = () => {
   setBoolean('onlyShop', state.onlyShop, false);
   setBoolean('onlyAvailable', state.onlyAvailable, false);
   setBoolean('onlyImage', state.onlyWithImage, false);
+  setBoolean('onlyFav', state.onlyFavorites, false);
   setBoolean('flagAr', state.flagAr, false);
   setBoolean('flagXr', state.flagXr, false);
   setBoolean('showEur', state.showEur, false);
@@ -811,17 +750,17 @@ const pruneSelectedIdsToKnownRows = () => {
 };
 
 const getFilterOptions = () => ({
-  manufacturers: uniqueSorted(state.rows.map((row) => row.manufacturer)),
-  displayTypes: uniqueSorted(state.rows.map((row) => row.display_type)),
-  optics: uniqueSorted(state.rows.map((row) => row.optics)),
-  tracking: uniqueSorted(state.rows.map((row) => row.tracking)),
-  eyeTracking: uniqueSorted(state.rows.map((row) => row.eye_tracking)),
-  handTracking: uniqueSorted(state.rows.map((row) => row.hand_tracking)),
-  passthrough: uniqueSorted(state.rows.map((row) => row.passthrough)),
-  activeStatuses: uniqueSorted(state.rows.map((row) => row.active_distribution)),
-  eolStatuses: uniqueSorted(state.rows.map((row) => row.eol_status)),
-  software: uniqueSorted(state.rows.map((row) => row.software)),
-  computeUnits: uniqueSorted(state.rows.map((row) => row.compute_unit)),
+  manufacturers: uniqueSorted(state.rows.map((row) => row.manufacturer), locale()),
+  displayTypes: uniqueSorted(state.rows.map((row) => row.display_type), locale()),
+  optics: uniqueSorted(state.rows.map((row) => row.optics), locale()),
+  tracking: uniqueSorted(state.rows.map((row) => row.tracking), locale()),
+  eyeTracking: uniqueSorted(state.rows.map((row) => row.eye_tracking), locale()),
+  handTracking: uniqueSorted(state.rows.map((row) => row.hand_tracking), locale()),
+  passthrough: uniqueSorted(state.rows.map((row) => row.passthrough), locale()),
+  activeStatuses: uniqueSorted(state.rows.map((row) => row.active_distribution), locale()),
+  eolStatuses: uniqueSorted(state.rows.map((row) => row.eol_status), locale()),
+  software: uniqueSorted(state.rows.map((row) => row.software), locale()),
+  computeUnits: uniqueSorted(state.rows.map((row) => row.compute_unit), locale()),
 });
 
 const compareText = (left, right) =>
@@ -985,6 +924,9 @@ const matchesFilters = (row) => {
   if (state.onlyWithImage && !safeExternalUrl(row.image_url)) {
     return false;
   }
+  if (state.onlyFavorites && !state.favorites.includes(row.__rowId)) {
+    return false;
+  }
   if (state.flagAr && state.flagXr) {
     // both selected means no additional category restriction
   } else if (state.flagAr && !isArRow(row)) {
@@ -1116,6 +1058,7 @@ const cardTemplate = (row) => {
   const lifecycleSourceUrl = safeExternalUrl(row.lifecycle_source);
   const infoUrl = lifecycleSourceUrl || safeExternalUrl(row.source_page);
   const isSelected = state.selectedIds.includes(row.__rowId);
+  const isFavorite = state.favorites.includes(row.__rowId);
   const facts = buildCardFacts(row);
   const primaryFacts = facts.slice(0, 6);
   const secondaryFacts = facts.slice(6);
@@ -1124,18 +1067,25 @@ const cardTemplate = (row) => {
   const showLifecycleSourceInInfo = Boolean(lifecycleSource && !lifecycleSourceUrl);
 
   return `
-    <article class="panel overflow-hidden">
-      <div class="relative h-48 border-b border-[#44403c] bg-gradient-to-br from-[#1c1917] to-[#1c1917]">
+    <article class="panel overflow-hidden" data-model-card="${escapeHtml(row.__rowId)}">
+      <div class="relative h-48 border-b border-[#44403c] bg-gradient-to-br from-[#1c1917] to-[#1c1917] cursor-pointer" data-detail-open="${escapeHtml(row.__rowId)}">
         ${
           image
             ? `<img src="${escapeHtml(image)}" alt="${name}" loading="lazy" class="h-full w-full object-contain p-4" />`
             : `<div class="grid h-full place-items-center text-sm text-[#a8a29e]">${t('Kein Bild verfuegbar', 'No image available')}</div>`
         }
-        <div class="absolute left-3 top-3">${selectionLabelTemplate(
+        <div class="absolute left-3 top-3 flex items-center gap-1.5" onclick="event.stopPropagation()">${selectionLabelTemplate(
           row.__rowId,
           isSelected,
           compactValue(row.name, t('Unbekannt', 'Unknown')),
-        )}</div>
+        )}
+        <button
+          data-favorite-toggle="${escapeHtml(row.__rowId)}"
+          type="button"
+          class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-[#44403c] bg-[#1c1917] text-lg transition hover:border-amber-400/60 ${isFavorite ? 'text-amber-400' : 'text-[#a8a29e]'}"
+          aria-label="${escapeHtml(isFavorite ? t('Favorit entfernen', 'Remove favorite') : t('Als Favorit merken', 'Add to favorites'))}"
+        >${isFavorite ? '&#9733;' : '&#9734;'}</button>
+        </div>
         <span class="absolute right-3 top-3 rounded-full border px-2.5 py-1 text-xs font-bold ${categoryTone(row.xr_category)}">${category}</span>
       </div>
       <div class="space-y-4 p-4">
@@ -1671,6 +1621,84 @@ const compareBarTemplate = (selectedRows) => {
   `;
 };
 
+const detailModalTemplate = (row) => {
+  if (!row) return '';
+  const name = escapeHtml(compactValue(row.name, t('Unbekanntes Modell', 'Unknown model')));
+  const manufacturer = escapeHtml(compactValue(row.manufacturer, t('Unbekannt', 'Unknown')));
+  const image = safeExternalUrl(row.image_url) || getModelImageUrl(row);
+  const shop = getShopInfo(row);
+  const isFavorite = state.favorites.includes(row.__rowId);
+  const allFacts = buildCardFacts(row);
+  const lifecycleNotes = formatLifecycleNotes(row.lifecycle_notes, t('Keine Angaben.', 'No details.'));
+  const infoUrl = safeExternalUrl(row.lifecycle_source) || safeExternalUrl(row.source_page);
+  return `
+    <div id="detail-modal" class="detail-modal-overlay" role="dialog" aria-modal="true" aria-label="${name}">
+      <div class="detail-modal-content panel p-0 overflow-hidden">
+        <div class="flex items-center justify-between border-b border-[#44403c] bg-[#1c1917] px-5 py-4">
+          <div><p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#a8a29e]">${manufacturer}</p><h2 class="mt-1 text-xl font-bold text-[#f5f5f4]">${name}</h2></div>
+          <div class="flex items-center gap-2">
+            <button data-favorite-toggle="${escapeHtml(row.__rowId)}" type="button" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#44403c] bg-[#1c1917] text-xl transition hover:border-amber-400/60 ${isFavorite ? 'text-amber-400' : 'text-[#a8a29e]'}">${isFavorite ? '&#9733;' : '&#9734;'}</button>
+            <button id="close-detail-modal" type="button" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#44403c] bg-[#1c1917] text-lg text-[#a8a29e] hover:bg-[#292524]" aria-label="${t('Schliessen', 'Close')}">&#10005;</button>
+          </div>
+        </div>
+        <div class="max-h-[75vh] overflow-y-auto">
+          ${image ? `<div class="flex items-center justify-center border-b border-[#44403c] bg-[#171412] p-6"><img src="${escapeHtml(image)}" alt="${name}" class="max-h-64 object-contain" /></div>` : ''}
+          <div class="space-y-4 p-5">
+            <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              <div class="soft-panel p-3"><p class="text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">${t('Preis', 'Price')}</p><p class="mt-1 font-semibold text-[#f5f5f4]">${escapeHtml(formatPrice(row.price_usd))}</p></div>
+              <div class="soft-panel p-3"><p class="text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">${t('Release', 'Release')}</p><p class="mt-1 font-semibold text-[#f5f5f4]">${escapeHtml(formatDate(row.release_date || row.announced_date))}</p></div>
+              <div class="soft-panel p-3"><p class="text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">${t('Kategorie', 'Category')}</p><p class="mt-1 font-semibold text-[#f5f5f4]">${escapeHtml(compactValue(row.xr_category, 'AR'))}</p></div>
+            </div>
+            <dl class="grid grid-cols-2 gap-x-4 gap-y-3 text-sm sm:grid-cols-3">
+              ${allFacts.map((f) => `<div><dt class="text-xs text-[#a8a29e]">${escapeHtml(f.label)}</dt><dd class="mt-0.5 font-medium text-[#f5f5f4]">${escapeHtml(f.value)}</dd></div>`).join('')}
+            </dl>
+            <div class="rounded-2xl border p-3 text-sm ${lifecycleTone(row)}">
+              <p class="text-[11px] font-semibold uppercase tracking-[0.12em]">${t('Updates / EOL', 'Updates / EOL')}</p>
+              <p class="mt-1 font-semibold">${escapeHtml(compactValue(row.eol_status))}</p>
+              ${lifecycleNotes ? `<p class="mt-2 text-xs leading-relaxed">${escapeHtml(lifecycleNotes)}</p>` : ''}
+            </div>
+            <div class="flex flex-wrap gap-2">
+              ${shop.url ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" class="chip-btn ${shop.official ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09]' : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4]'}">${escapeHtml(shop.label)}</a>` : ''}
+              ${infoUrl ? `<a href="${escapeHtml(infoUrl)}" target="_blank" rel="noreferrer" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4]">${t('Datenquelle', 'Data source')}</a>` : ''}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+};
+
+const openDetailModal = (rowId) => {
+  const row = state.rows.find((r) => r.__rowId === rowId);
+  if (!row) return;
+  document.querySelector('#detail-modal')?.remove();
+  const wrapper = document.createElement('div');
+  wrapper.innerHTML = detailModalTemplate(row);
+  document.body.appendChild(wrapper.firstElementChild);
+  const modal = document.querySelector('#detail-modal');
+  modal?.querySelector('#close-detail-modal')?.addEventListener('click', () => modal.remove());
+  modal?.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+  modal?.querySelectorAll('[data-favorite-toggle]').forEach((btn) => {
+    btn.addEventListener('click', () => { toggleFavorite(btn.getAttribute('data-favorite-toggle')); modal.remove(); render(); });
+  });
+  const escHandler = (e) => { if (e.key === 'Escape') { modal?.remove(); document.removeEventListener('keydown', escHandler); } };
+  document.addEventListener('keydown', escHandler);
+};
+
+const buildStatsChartSvg = (arCount, xrCount) => {
+  const total = arCount + xrCount;
+  if (total === 0) return '';
+  const w = 200;
+  const h = 24;
+  const arW = Math.round((arCount / total) * w);
+  const arPct = ((arCount / total) * 100).toFixed(0);
+  return `<svg viewBox="0 0 ${w} ${h}" class="inline-block h-6 w-full max-w-[200px] rounded-full overflow-hidden" aria-label="AR ${arCount} / XR ${xrCount}">
+    <rect x="0" y="0" width="${arW}" height="${h}" fill="#84cc16" />
+    <rect x="${arW}" y="0" width="${w - arW}" height="${h}" fill="#0e7490" />
+    <text x="${arW / 2}" y="${h / 2 + 1}" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#0c0a09" font-weight="700">AR ${arPct}%</text>
+    <text x="${arW + (w - arW) / 2}" y="${h / 2 + 1}" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#fff" font-weight="700">XR ${100 - Number(arPct)}%</text>
+  </svg>`;
+};
+
 const exportFilteredCsv = (rows) => {
   if (!rows.length) {
     return;
@@ -2064,6 +2092,10 @@ const render = () => {
               <input id="only-image" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyWithImage ? 'checked' : ''} />
               ${t('Nur mit Bild', 'Only with image')}
             </label>
+            <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524] ${state.favorites.length ? '' : 'opacity-50'}">
+              <input id="only-favorites" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyFavorites ? 'checked' : ''} ${state.favorites.length ? '' : 'disabled'} />
+              ${t('Nur Favoriten', 'Only favorites')} (${state.favorites.length})
+            </label>
           </div>
         </div>
         ${state.showEur ? `<p class="mt-2 text-xs text-[#a8a29e]">${escapeHtml(formatRateHint())}</p>` : ''}
@@ -2168,7 +2200,10 @@ const render = () => {
 
       <section class="mt-4">
         <div class="panel p-4 sm:p-5">
-          <h2 class="text-sm font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Statistik', 'Statistics')}</h2>
+          <div class="flex items-center justify-between">
+            <h2 class="text-sm font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Statistik', 'Statistics')}</h2>
+            <div class="flex items-center gap-2">${buildStatsChartSvg(arCount, xrCount)}</div>
+          </div>
           <div class="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             <p class="soft-panel p-3 text-sm text-[#a8a29e]">
               ${t('Datenbestand', 'Dataset size')}: <strong class="text-[#f5f5f4]">${state.rows.length}</strong>
@@ -2195,11 +2230,15 @@ const render = () => {
       </section>
 
       <footer class="mt-4">
-        <div class="panel p-4 text-sm text-[#a8a29e]">
+        <div class="panel flex items-center justify-between p-4 text-sm text-[#a8a29e]">
           <a href="https://huskynarr.de/impressum" class="font-semibold text-[#84cc16] hover:underline">${t(
             'Impressum / Legal Notice',
             'Legal Notice / Impressum',
           )}</a>
+          <div class="flex items-center gap-3">
+            <span class="text-xs">${t('Tastenkuerzel', 'Shortcuts')}: <kbd class="rounded border border-[#44403c] px-1.5 py-0.5 text-[10px]">/</kbd> ${t('Suche', 'Search')} &middot; <kbd class="rounded border border-[#44403c] px-1.5 py-0.5 text-[10px]">Esc</kbd> ${t('Leeren', 'Clear')}</span>
+            <span class="rounded-full border border-[#44403c] bg-[#1c1917] px-2 py-0.5 text-[10px] font-semibold">v${APP_VERSION}</span>
+          </div>
         </div>
       </footer>
     </main>
@@ -2277,6 +2316,38 @@ const render = () => {
   document
     .querySelector('#only-image')
     ?.addEventListener('change', (event) => setAndRender('onlyWithImage', event.target.checked));
+  document
+    .querySelector('#only-favorites')
+    ?.addEventListener('change', (event) => setAndRender('onlyFavorites', event.target.checked));
+
+  // Favorite toggle buttons
+  document.querySelectorAll('[data-favorite-toggle]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleFavorite(btn.getAttribute('data-favorite-toggle'));
+      render();
+    });
+  });
+
+  // Detail modal on card image click
+  document.querySelectorAll('[data-detail-open]').forEach((el) => {
+    el.addEventListener('click', () => openDetailModal(el.getAttribute('data-detail-open')));
+  });
+
+  // Intersection Observer for infinite scroll (cards view)
+  if (hasMoreCards && state.viewMode === 'cards' && !state.compareMode) {
+    const sentinel = document.querySelector('#load-more-cards');
+    if (sentinel) {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0]?.isIntersecting) {
+          observer.disconnect();
+          state.cardsPage += 1;
+          render();
+        }
+      }, { rootMargin: '200px' });
+      observer.observe(sentinel);
+    }
+  }
 
   document.querySelector('#export-csv')?.addEventListener('click', () => exportFilteredCsv(filtered));
   document.querySelector('#share-url')?.addEventListener('click', (event) => {
@@ -2405,6 +2476,7 @@ const render = () => {
     state.onlyShop = false;
     state.onlyAvailable = false;
     state.onlyWithImage = false;
+    state.onlyFavorites = false;
     state.flagAr = false;
     state.flagXr = false;
     state.showEur = false;
@@ -2436,6 +2508,7 @@ const parseCsv = (text) =>
 const init = async () => {
   state.language = readLanguageFromStorage();
   state.theme = readThemeFromStorage();
+  state.favorites = readFavoritesFromStorage();
   applyStateFromUrl();
   state.language = normalizeLanguage(state.language, 'de');
   state.theme = normalizeTheme(state.theme, 'dark');
@@ -2444,6 +2517,26 @@ const init = async () => {
   applyLanguageToDocument();
   applyThemeToDocument();
   setFallbackUsdRate();
+
+  // Global keyboard shortcuts
+  document.addEventListener('keydown', (e) => {
+    if (document.querySelector('#detail-modal')) return;
+    const active = document.activeElement;
+    const isInput = active instanceof HTMLInputElement || active instanceof HTMLTextAreaElement || active instanceof HTMLSelectElement;
+    if (e.key === '/' && !isInput) {
+      e.preventDefault();
+      document.querySelector('#query-input')?.focus();
+    }
+    if (e.key === 'Escape' && isInput) {
+      if (state.query) {
+        state.query = '';
+        state.cardsPage = 1;
+        render();
+      } else {
+        active.blur();
+      }
+    }
+  });
   app.innerHTML = `<a href="#main-content" class="skip-link">${t(
     'Zum Inhalt springen',
     'Skip to content',
