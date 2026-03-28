@@ -17,6 +17,8 @@ const SORT_MODES = new Set([
   'price_desc',
   'price_asc',
   'fov_desc',
+  'weight_asc',
+  'refresh_desc',
 ]);
 const THEME_MODES = new Set(['dark', 'light']);
 const THEME_STORAGE_KEY = 'ar_directory_theme';
@@ -62,12 +64,17 @@ const state = {
   passthrough: 'all',
   active: 'all',
   eol: 'all',
+  software: 'all',
+  computeUnit: 'all',
   minFov: '',
   minRefresh: '',
   maxPrice: '',
+  maxWeight: '',
+  minResolutionWidth: '',
   onlyPrice: false,
   onlyShop: false,
   onlyAvailable: false,
+  onlyWithImage: false,
   flagAr: false,
   flagXr: false,
   showEur: false,
@@ -173,6 +180,23 @@ const formatNumber = (value, suffix = '') => {
 };
 
 const normalizeText = (value) => String(value ?? '').toLowerCase().trim();
+
+const debounce = (fn, delay = 200) => {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), delay);
+  };
+};
+
+const parseResolutionWidth = (value) => {
+  const text = String(value ?? '').trim();
+  const match = text.match(/(\d+)\s*[xX×]\s*(\d+)/);
+  if (match) {
+    return Math.max(Number(match[1]), Number(match[2]));
+  }
+  return null;
+};
 
 const normalizeTheme = (value, fallback = 'dark') => {
   const normalized = normalizeText(value);
@@ -305,6 +329,13 @@ const updateDocumentSeoSignals = (visibleCount) => {
   const ogUrlTag = document.querySelector('meta[property="og:url"]');
   if (ogUrlTag && typeof window !== 'undefined') {
     ogUrlTag.setAttribute('content', `${window.location.origin}${window.location.pathname}`);
+  }
+
+  const keywordsTag = document.querySelector('meta[name="keywords"]');
+  if (keywordsTag) {
+    const baseKeywords = 'AR Brillen Vergleich, XR Brillen Vergleich, Smart Glasses, FOV, Refresh Rate, Preisvergleich, EOL, Shop Links';
+    const queryExtra = queryLabel ? `, ${queryLabel}` : '';
+    keywordsTag.setAttribute('content', `${baseKeywords}${queryExtra}`);
   }
 };
 
@@ -645,6 +676,16 @@ const applyStateFromUrl = () => {
     state.eol = eol.trim() || 'all';
   }
 
+  const softwareParam = params.get('software');
+  if (softwareParam !== null) {
+    state.software = softwareParam.trim() || 'all';
+  }
+
+  const computeUnit = params.get('computeUnit');
+  if (computeUnit !== null) {
+    state.computeUnit = computeUnit.trim() || 'all';
+  }
+
   const minFov = params.get('minFov');
   if (minFov !== null) {
     state.minFov = minFov.trim();
@@ -660,9 +701,20 @@ const applyStateFromUrl = () => {
     state.maxPrice = maxPrice.trim();
   }
 
+  const maxWeight = params.get('maxWeight');
+  if (maxWeight !== null) {
+    state.maxWeight = maxWeight.trim();
+  }
+
+  const minResWidth = params.get('minRes');
+  if (minResWidth !== null) {
+    state.minResolutionWidth = minResWidth.trim();
+  }
+
   state.onlyPrice = parseBooleanParam(params.get('onlyPrice'), false);
   state.onlyShop = parseBooleanParam(params.get('onlyShop'), false);
   state.onlyAvailable = parseBooleanParam(params.get('onlyAvailable'), false);
+  state.onlyWithImage = parseBooleanParam(params.get('onlyImage'), false);
   state.flagAr = parseBooleanParam(params.get('flagAr'), false);
   state.flagXr = parseBooleanParam(params.get('flagXr'), false);
   state.showEur = parseBooleanParam(params.get('showEur'), false);
@@ -718,14 +770,19 @@ const syncUrlWithState = () => {
   setSelect('passthrough', state.passthrough);
   setSelect('active', state.active);
   setSelect('eol', state.eol);
+  setSelect('software', state.software);
+  setSelect('computeUnit', state.computeUnit);
 
   setText('minFov', state.minFov, '');
   setText('minRefresh', state.minRefresh, '');
   setText('maxPrice', state.maxPrice, '');
+  setText('maxWeight', state.maxWeight, '');
+  setText('minRes', state.minResolutionWidth, '');
 
   setBoolean('onlyPrice', state.onlyPrice, false);
   setBoolean('onlyShop', state.onlyShop, false);
   setBoolean('onlyAvailable', state.onlyAvailable, false);
+  setBoolean('onlyImage', state.onlyWithImage, false);
   setBoolean('flagAr', state.flagAr, false);
   setBoolean('flagXr', state.flagXr, false);
   setBoolean('showEur', state.showEur, false);
@@ -763,6 +820,8 @@ const getFilterOptions = () => ({
   passthrough: uniqueSorted(state.rows.map((row) => row.passthrough)),
   activeStatuses: uniqueSorted(state.rows.map((row) => row.active_distribution)),
   eolStatuses: uniqueSorted(state.rows.map((row) => row.eol_status)),
+  software: uniqueSorted(state.rows.map((row) => row.software)),
+  computeUnits: uniqueSorted(state.rows.map((row) => row.compute_unit)),
 });
 
 const compareText = (left, right) =>
@@ -828,6 +887,12 @@ const sortRows = (rows) => {
       return sorted;
     case 'fov_desc':
       sorted.sort((left, right) => compareNumbers(getHorizontalFov(right), getHorizontalFov(left)));
+      return sorted;
+    case 'weight_asc':
+      sorted.sort((left, right) => compareNumbers(toNumber(left.weight_g), toNumber(right.weight_g)));
+      return sorted;
+    case 'refresh_desc':
+      sorted.sort((left, right) => compareNumbers(toNumber(right.refresh_hz), toNumber(left.refresh_hz)));
       return sorted;
     case 'manufacturer_asc':
       sorted.sort((left, right) => compareText(left.manufacturer, right.manufacturer));
@@ -902,6 +967,12 @@ const matchesFilters = (row) => {
   if (!matchesSelectFilter(row.eol_status, state.eol)) {
     return false;
   }
+  if (!matchesSelectFilter(row.software, state.software)) {
+    return false;
+  }
+  if (!matchesSelectFilter(row.compute_unit, state.computeUnit)) {
+    return false;
+  }
   if (state.onlyPrice && !parsePrice(row.price_usd)) {
     return false;
   }
@@ -909,6 +980,9 @@ const matchesFilters = (row) => {
     return false;
   }
   if (state.onlyAvailable && !isLikelyActive(row)) {
+    return false;
+  }
+  if (state.onlyWithImage && !safeExternalUrl(row.image_url)) {
     return false;
   }
   if (state.flagAr && state.flagXr) {
@@ -939,6 +1013,22 @@ const matchesFilters = (row) => {
   if (maxPrice !== null) {
     const price = parsePrice(row.price_usd);
     if (!price || price > maxPrice) {
+      return false;
+    }
+  }
+
+  const maxWeight = toNumber(state.maxWeight);
+  if (maxWeight !== null) {
+    const weight = toNumber(row.weight_g);
+    if (weight === null || weight > maxWeight) {
+      return false;
+    }
+  }
+
+  const minRes = toNumber(state.minResolutionWidth);
+  if (minRes !== null) {
+    const res = parseResolutionWidth(row.resolution_per_eye);
+    if (res === null || res < minRes) {
       return false;
     }
   }
@@ -1001,6 +1091,8 @@ const buildCardFacts = (row) => {
     { label: t('Software', 'Software'), raw: row.software, value: compactValue(row.software) },
     { label: t('Aufloesung', 'Resolution'), raw: row.resolution_per_eye, value: compactValue(row.resolution_per_eye) },
     { label: t('Compute', 'Compute'), raw: row.compute_unit, value: compactValue(row.compute_unit) },
+    { label: t('Gewicht', 'Weight'), raw: row.weight_g, value: formatNumber(row.weight_g, ' g') },
+    { label: 'FOV V', raw: row.fov_vertical_deg, value: formatNumber(row.fov_vertical_deg, ' deg') },
   ];
 
   if (!state.hideUnknown) {
@@ -1153,7 +1245,7 @@ const tableTemplate = (rows) => {
   return `
     <div class="panel overflow-hidden">
       <div class="overflow-x-auto">
-        <table class="min-w-[1650px] border-collapse text-sm" aria-describedby="results-status">
+        <table class="min-w-[1950px] border-collapse text-sm" aria-describedby="results-status">
           <caption class="visually-hidden">${t(
             'Tabellarische Ansicht aller gefilterten AR- und XR-Modelle.',
             'Table view of all filtered AR and XR models.',
@@ -1172,10 +1264,13 @@ const tableTemplate = (rows) => {
               <th class="px-3 py-3">Passthrough</th>
               <th class="px-3 py-3">FOV H</th>
               <th class="px-3 py-3">${t('Refresh', 'Refresh')}</th>
+              <th class="px-3 py-3">${t('Aufloesung', 'Resolution')}</th>
+              <th class="px-3 py-3">${t('Gewicht', 'Weight')}</th>
               <th class="px-3 py-3">${t('Preis', 'Price')}</th>
               <th class="px-3 py-3">${t('Vertrieb', 'Distribution')}</th>
               <th class="px-3 py-3">${t('EOL / Updates', 'EOL / Updates')}</th>
               <th class="px-3 py-3">${t('Software', 'Software')}</th>
+              <th class="px-3 py-3">${t('Compute', 'Compute')}</th>
               <th class="px-3 py-3">${t('Links', 'Links')}</th>
             </tr>
           </thead>
@@ -1215,6 +1310,8 @@ const tableTemplate = (rows) => {
                     <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.passthrough) || t('k. A.', 'n/a'))}</td>
                     <td class="px-3 py-3">${escapeHtml(formatNumber(row.fov_horizontal_deg, ' deg'))}</td>
                     <td class="px-3 py-3">${escapeHtml(formatNumber(row.refresh_hz, ' Hz'))}</td>
+                    <td class="px-3 py-3">${escapeHtml(compactValue(row.resolution_per_eye, t('k. A.', 'n/a')))}</td>
+                    <td class="px-3 py-3">${escapeHtml(formatNumber(row.weight_g, ' g'))}</td>
                     <td class="px-3 py-3">${escapeHtml(formatPrice(row.price_usd))}</td>
                     <td class="px-3 py-3">${escapeHtml(compactValue(row.active_distribution, t('k. A.', 'n/a')))}</td>
                     <td class="px-3 py-3">
@@ -1222,6 +1319,7 @@ const tableTemplate = (rows) => {
                       ${lifecycleNotes ? `<p class="mt-1 text-xs text-[#a8a29e]">${escapeHtml(lifecycleNotes)}</p>` : ''}
                     </td>
                     <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.software) || t('k. A.', 'n/a'))}</td>
+                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.compute_unit) || t('k. A.', 'n/a'))}</td>
                     <td class="px-3 py-3">
                       <div class="flex flex-col gap-2">
                         ${
@@ -1573,6 +1671,36 @@ const compareBarTemplate = (selectedRows) => {
   `;
 };
 
+const exportFilteredCsv = (rows) => {
+  if (!rows.length) {
+    return;
+  }
+  const fields = state.csvFields.length ? state.csvFields : Object.keys(rows[0]).filter((k) => !k.startsWith('__'));
+  const escapeCsvField = (val) => {
+    const text = String(val ?? '');
+    if (text.includes(',') || text.includes('"') || text.includes('\n')) {
+      return `"${text.replace(/"/g, '""')}"`;
+    }
+    return text;
+  };
+  const header = fields.map(escapeCsvField).join(',');
+  const body = rows.map((row) => fields.map((f) => escapeCsvField(row[f])).join(',')).join('\n');
+  const csv = `${header}\n${body}`;
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = `ar_xr_glasses_filtered_${new Date().toISOString().slice(0, 10)}.csv`;
+  link.click();
+  URL.revokeObjectURL(url);
+};
+
+const copyShareUrl = () => {
+  if (typeof navigator !== 'undefined' && navigator.clipboard) {
+    navigator.clipboard.writeText(window.location.href).catch(() => {});
+  }
+};
+
 const render = () => {
   const queryFocusState = captureQueryFocusState();
   const filterOptions = getFilterOptions();
@@ -1581,6 +1709,10 @@ const render = () => {
   const withShop = filtered.filter((row) => getShopInfo(row).url).length;
   const activeCount = filtered.filter((row) => isLikelyActive(row)).length;
   const eolCount = filtered.filter((row) => isEol(row)).length;
+  const arCount = filtered.filter((row) => isArRow(row)).length;
+  const xrCount = filtered.filter((row) => isXrRow(row)).length;
+  const avgPrice = withPrice > 0 ? Math.round(filtered.reduce((sum, row) => sum + (parsePrice(row.price_usd) || 0), 0) / withPrice) : 0;
+  const manufacturerCount = new Set(filtered.map((row) => normalizeText(row.manufacturer)).filter(Boolean)).size;
   const retrievedAt = compactValue(filtered[0]?.dataset_retrieved_at || state.rows[0]?.dataset_retrieved_at, '');
   const languageToggleLabel =
     state.language === 'de'
@@ -1782,6 +1914,14 @@ const render = () => {
                 'FOV horizontal absteigend',
                 'FOV horizontal descending',
               )}</option>
+              <option value="weight_asc"${state.sort === 'weight_asc' ? ' selected' : ''}>${t(
+                'Gewicht aufsteigend',
+                'Weight ascending',
+              )}</option>
+              <option value="refresh_desc"${state.sort === 'refresh_desc' ? ' selected' : ''}>${t(
+                'Refresh absteigend',
+                'Refresh descending',
+              )}</option>
             </select>
           </label>
         </div>
@@ -1852,6 +1992,20 @@ const render = () => {
             </label>
 
             <label class="space-y-1">
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Software', 'Software')}</span>
+              <select id="software-filter" class="field">
+                ${optionList(filterOptions.software, state.software, t('Alle Software', 'All software'))}
+              </select>
+            </label>
+
+            <label class="space-y-1">
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Compute Unit', 'Compute unit')}</span>
+              <select id="compute-filter" class="field">
+                ${optionList(filterOptions.computeUnits, state.computeUnit, t('Alle Compute-Typen', 'All compute types'))}
+              </select>
+            </label>
+
+            <label class="space-y-1">
               <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Min. FOV horizontal (deg)', 'Min. horizontal FOV (deg)')}</span>
               <input id="fov-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.minFov)}" placeholder="${t('z. B. 40', 'e.g. 40')}" />
             </label>
@@ -1864,6 +2018,16 @@ const render = () => {
             <label class="space-y-1">
               <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Max. Preis (USD)', 'Max. price (USD)')}</span>
               <input id="price-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.maxPrice)}" placeholder="${t('z. B. 1500', 'e.g. 1500')}" />
+            </label>
+
+            <label class="space-y-1">
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Max. Gewicht (g)', 'Max. weight (g)')}</span>
+              <input id="weight-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.maxWeight)}" placeholder="${t('z. B. 500', 'e.g. 500')}" />
+            </label>
+
+            <label class="space-y-1">
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Min. Aufloesung (px Breite)', 'Min. resolution (px width)')}</span>
+              <input id="resolution-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.minResolutionWidth)}" placeholder="${t('z. B. 1440', 'e.g. 1440')}" />
             </label>
           </div>
 
@@ -1896,9 +2060,24 @@ const render = () => {
               <input id="hide-unknown" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.hideUnknown ? 'checked' : ''} />
               ${t('Unbekannte Werte ausblenden', 'Hide unknown values')}
             </label>
+            <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
+              <input id="only-image" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyWithImage ? 'checked' : ''} />
+              ${t('Nur mit Bild', 'Only with image')}
+            </label>
           </div>
         </div>
         ${state.showEur ? `<p class="mt-2 text-xs text-[#a8a29e]">${escapeHtml(formatRateHint())}</p>` : ''}
+      </section>
+
+      <section class="mt-2 flex flex-wrap items-center gap-2">
+        <button id="export-csv" type="button" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]" ${filtered.length === 0 ? 'disabled' : ''}>${t(
+          'CSV exportieren',
+          'Export CSV',
+        )} (${filtered.length})</button>
+        <button id="share-url" type="button" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(
+          'Link kopieren',
+          'Copy link',
+        )}</button>
       </section>
 
       <section class="mt-4">
@@ -1990,22 +2169,23 @@ const render = () => {
       <section class="mt-4">
         <div class="panel p-4 sm:p-5">
           <h2 class="text-sm font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Statistik', 'Statistics')}</h2>
-          <div class="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          <div class="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             <p class="soft-panel p-3 text-sm text-[#a8a29e]">
               ${t('Datenbestand', 'Dataset size')}: <strong class="text-[#f5f5f4]">${state.rows.length}</strong>
+              &middot; ${t('Sichtbar', 'Visible')}: <strong class="text-[#f5f5f4]">${filtered.length}</strong>
             </p>
             <p class="soft-panel p-3 text-sm text-[#a8a29e]">
-              ${t('Sichtbare Modelle', 'Visible models')}: <strong class="text-[#f5f5f4]">${filtered.length}</strong>
+              AR: <strong class="text-[#f5f5f4]">${arCount}</strong> &middot;
+              XR: <strong class="text-[#f5f5f4]">${xrCount}</strong> &middot;
+              ${t('Hersteller', 'Manufacturers')}: <strong class="text-[#f5f5f4]">${manufacturerCount}</strong>
             </p>
             <p class="soft-panel p-3 text-sm text-[#a8a29e]">
-              ${t('Shop-Links', 'Shop links')}: <strong class="text-[#f5f5f4]">${withShop}</strong> /
-              <strong class="text-[#f5f5f4]">${withPrice}</strong> ${t('mit Preis', 'with price')}
+              ${t('Aktiv', 'Active')}: <strong class="text-[#f5f5f4]">${activeCount}</strong> &middot;
+              EOL: <strong class="text-[#f5f5f4]">${eolCount}</strong> &middot;
+              ${t('Shop-Links', 'Shop links')}: <strong class="text-[#f5f5f4]">${withShop}</strong>
             </p>
             <p class="soft-panel p-3 text-sm text-[#a8a29e]">
-              ${t('Aktiv', 'Active')}: <strong class="text-[#f5f5f4]">${activeCount}</strong> /
-              EOL: <strong class="text-[#f5f5f4]">${eolCount}</strong>
-            </p>
-            <p class="soft-panel p-3 text-sm text-[#a8a29e]">
+              ${withPrice > 0 ? `${t('Durchschnittspreis', 'Avg. price')}: <strong class="text-[#f5f5f4]">${formatCurrency(avgPrice, 'USD')}</strong> &middot; ` : ''}
               ${t('Datenstand', 'Data updated')}: <strong class="text-[#f5f5f4]">${escapeHtml(
                 retrievedAt ? formatDate(retrievedAt) : t('k. A.', 'n/a'),
               )}</strong>
@@ -2023,6 +2203,13 @@ const render = () => {
         </div>
       </footer>
     </main>
+    <button
+      id="back-to-top"
+      type="button"
+      class="back-to-top chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]"
+      aria-label="${t('Nach oben scrollen', 'Scroll to top')}"
+      title="${t('Nach oben', 'Back to top')}"
+    >&#8593;</button>
   `;
 
   const setAndRender = (key, value, options = {}) => {
@@ -2034,7 +2221,11 @@ const render = () => {
     render();
   };
 
-  document.querySelector('#query-input')?.addEventListener('input', (event) => setAndRender('query', event.target.value));
+  const debouncedQuery = debounce((val) => setAndRender('query', val), 150);
+  document.querySelector('#query-input')?.addEventListener('input', (event) => {
+    state.query = event.target.value;
+    debouncedQuery(event.target.value);
+  });
   document.querySelector('#category-filter')?.addEventListener('change', (event) => setAndRender('category', event.target.value));
   document
     .querySelector('#manufacturer-filter')
@@ -2054,9 +2245,20 @@ const render = () => {
 
   document.querySelector('#active-filter')?.addEventListener('change', (event) => setAndRender('active', event.target.value));
   document.querySelector('#eol-filter')?.addEventListener('change', (event) => setAndRender('eol', event.target.value));
-  document.querySelector('#fov-filter')?.addEventListener('input', (event) => setAndRender('minFov', event.target.value));
-  document.querySelector('#refresh-filter')?.addEventListener('input', (event) => setAndRender('minRefresh', event.target.value));
-  document.querySelector('#price-filter')?.addEventListener('input', (event) => setAndRender('maxPrice', event.target.value));
+  document.querySelector('#software-filter')?.addEventListener('change', (event) => setAndRender('software', event.target.value));
+  document.querySelector('#compute-filter')?.addEventListener('change', (event) => setAndRender('computeUnit', event.target.value));
+
+  const debouncedFov = debounce((val) => setAndRender('minFov', val));
+  const debouncedRefresh = debounce((val) => setAndRender('minRefresh', val));
+  const debouncedPrice = debounce((val) => setAndRender('maxPrice', val));
+  const debouncedWeight = debounce((val) => setAndRender('maxWeight', val));
+  const debouncedResolution = debounce((val) => setAndRender('minResolutionWidth', val));
+
+  document.querySelector('#fov-filter')?.addEventListener('input', (event) => debouncedFov(event.target.value));
+  document.querySelector('#refresh-filter')?.addEventListener('input', (event) => debouncedRefresh(event.target.value));
+  document.querySelector('#price-filter')?.addEventListener('input', (event) => debouncedPrice(event.target.value));
+  document.querySelector('#weight-filter')?.addEventListener('input', (event) => debouncedWeight(event.target.value));
+  document.querySelector('#resolution-filter')?.addEventListener('input', (event) => debouncedResolution(event.target.value));
   document.querySelector('#sort-filter')?.addEventListener('change', (event) => setAndRender('sort', event.target.value));
 
   document.querySelector('#only-price')?.addEventListener('change', (event) => setAndRender('onlyPrice', event.target.checked));
@@ -2072,6 +2274,21 @@ const render = () => {
   document
     .querySelector('#hide-unknown')
     ?.addEventListener('change', (event) => setAndRender('hideUnknown', event.target.checked, { resetCardsPage: false }));
+  document
+    .querySelector('#only-image')
+    ?.addEventListener('change', (event) => setAndRender('onlyWithImage', event.target.checked));
+
+  document.querySelector('#export-csv')?.addEventListener('click', () => exportFilteredCsv(filtered));
+  document.querySelector('#share-url')?.addEventListener('click', (event) => {
+    copyShareUrl();
+    const btn = event.currentTarget;
+    const originalText = btn.textContent;
+    btn.textContent = t('Kopiert!', 'Copied!');
+    setTimeout(() => { btn.textContent = originalText; }, 1500);
+  });
+  document.querySelector('#back-to-top')?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
   document.querySelector('#view-cards')?.addEventListener('click', () => setAndRender('viewMode', 'cards', { resetCardsPage: false }));
   document.querySelector('#view-table')?.addEventListener('click', () => setAndRender('viewMode', 'table', { resetCardsPage: false }));
@@ -2177,12 +2394,17 @@ const render = () => {
     state.passthrough = 'all';
     state.active = 'all';
     state.eol = 'all';
+    state.software = 'all';
+    state.computeUnit = 'all';
     state.minFov = '';
     state.minRefresh = '';
     state.maxPrice = '';
+    state.maxWeight = '';
+    state.minResolutionWidth = '';
     state.onlyPrice = false;
     state.onlyShop = false;
     state.onlyAvailable = false;
+    state.onlyWithImage = false;
     state.flagAr = false;
     state.flagXr = false;
     state.showEur = false;

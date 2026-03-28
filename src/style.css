@@ -8,6 +8,7 @@
 
   :root {
     color-scheme: dark;
+    scroll-behavior: smooth;
   }
 
   body {
@@ -468,5 +469,49 @@ input[type='checkbox']:focus-visible {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 40;
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0;
+  border-radius: 9999px;
+  opacity: 0.85;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.back-to-top:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+@media print {
+  .back-to-top,
+  .skip-link,
+  #toggle-language,
+  #theme-toggle,
+  #export-csv,
+  #share-url {
+    display: none !important;
+  }
+
+  .panel,
+  .soft-panel {
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: 1px solid #ccc;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
   }
 }
