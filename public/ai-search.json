@@ -1,9 +1,16 @@
 {
   "name": "AR/XR Brillen Vergleich",
-  "version": "1.0",
+  "version": "1.1",
   "language": "de-DE",
   "primary_url": "https://huskynarr.de/",
   "description": "Vergleich fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Shop-Links, Lifecycle und EOL-Status.",
+  "dataset_summary": {
+    "records": 148,
+    "ar_records": 119,
+    "xr_records": 29,
+    "manufacturers": 66,
+    "newest_release": "2026-03-01"
+  },
   "resources": [
     {
       "type": "web",
@@ -23,6 +30,12 @@
       "title": "AR/XR Dataset Metadata"
     },
     {
+      "type": "structured_data",
+      "format": "application/ld+json",
+      "url": "https://huskynarr.de/data/structured-data.json",
+      "title": "AR/XR JSON-LD Strukturdaten"
+    },
+    {
       "type": "llm_index",
       "format": "text/plain",
       "url": "https://huskynarr.de/llms.txt",
@@ -39,11 +52,12 @@
     "AR Brillen",
     "XR Brillen",
     "Smart Glasses",
+    "AI Glasses",
     "Preisvergleich",
     "EOL",
     "Tracking",
     "FOV",
     "Refresh Rate"
   ],
-  "updated_at": "2026-02-21"
+  "updated_at": "2026-06-01"
 }

@@ -1,0 +1,3148 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://huskynarr.de/#website",
+      "url": "https://huskynarr.de/",
+      "name": "AR/XR Brillen Vergleich",
+      "inLanguage": "de-DE",
+      "description": "Vergleichsseite fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Shop-Links und Lifecycle-Status."
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://huskynarr.de/#collection",
+      "url": "https://huskynarr.de/",
+      "name": "AR/XR Brillen Modelle",
+      "isPartOf": {
+        "@id": "https://huskynarr.de/#website"
+      },
+      "about": [
+        "AR Brillen",
+        "XR Brillen",
+        "Smart Glasses",
+        "Headsets"
+      ],
+      "dateModified": "2026-06-01T22:04:47.841Z"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://huskynarr.de/data/ar_glasses.csv#dataset",
+      "name": "AR/XR Glasses Directory Dataset",
+      "url": "https://huskynarr.de/data/ar_glasses.csv",
+      "description": "Kuratierter Datensatz mit 148 AR/XR-Brillen inkl. Spezifikationen, Preisen und Lifecycle-Status.",
+      "isAccessibleForFree": true,
+      "inLanguage": "de-DE",
+      "dateModified": "2026-06-01T22:04:47.841Z",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "text/csv",
+          "contentUrl": "https://huskynarr.de/data/ar_glasses.csv"
+        },
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://huskynarr.de/data/ar_glasses.metadata.json"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://huskynarr.de/#modelliste",
+      "name": "AR/XR Brillen Modelle",
+      "numberOfItems": 148,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Product",
+            "name": "3Glasses Blubur S1",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "3Glasses"
+            },
+            "url": "https://www.3glasses.com/en/product/productS1.html#page1",
+            "releaseDate": "2016-11-19",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "530",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Product",
+            "name": "3Glasses Blubur S2",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "3Glasses"
+            },
+            "url": "https://www.3glasses.com/en/product/productS2.html",
+            "releaseDate": "2018-02-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "549",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Product",
+            "name": "3Glasses D2",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "3Glasses"
+            },
+            "url": "https://www.3glasses.com/en/product/productD2.html",
+            "releaseDate": "2015-06-29",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "400",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Product",
+            "name": "3Glasses X1",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "3Glasses"
+            },
+            "url": "https://www.3glasses.com/en/product/x1.html",
+            "releaseDate": "2019-05-17",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "550",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Product",
+            "name": "AjnaLens AjnaX",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "AjnaLens"
+            },
+            "image": "https://www.ajnalens.com/_next/static/media/Rec3467860.81d5d5c9.svg",
+            "url": "https://www.ajnalens.com/ajnax/",
+            "releaseDate": "2021-08-15"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Product",
+            "name": "Alibaba Quark AI Glasses S1",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Alibaba"
+            },
+            "url": "https://www.alibabacloud.com/blog/alibaba-launches-new-quark-ai-glasses-series-in-china-deeply-integrated-with-qwen_602717",
+            "releaseDate": "2025-11-27",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "536",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Product",
+            "name": "Almer Arc 2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Almer"
+            },
+            "url": "https://almer.com/almer-arc2/",
+            "releaseDate": "2024-01-15",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "176",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Product",
+            "name": "Apple Vision Pro",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Apple"
+            },
+            "image": "https://www.apple.com/v/apple-vision-pro/j/images/meta/apple-vision-pro-us__f28gp8ey4vam_og.png?202512120852",
+            "url": "https://www.apple.com/apple-vision-pro/",
+            "releaseDate": "2024-02-02",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "3499",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "Product",
+            "name": "Apple Vision Pro (M5)",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Apple"
+            },
+            "url": "https://www.apple.com/apple-vision-pro/",
+            "releaseDate": "2025-10-22",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "3499",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "item": {
+            "@type": "Product",
+            "name": "Asus AirVision M1",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Asus"
+            },
+            "url": "https://www.asus.com/us/displays-desktops/glasses/airvision/asus-airvision-m1/",
+            "releaseDate": "2025-01-15",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "699",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "item": {
+            "@type": "Product",
+            "name": "Bigscreen Beyond 2",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Bigscreen"
+            },
+            "url": "https://store.bigscreenvr.com/products/bigscreen-beyond-2",
+            "releaseDate": "2025-04-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "1019",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "item": {
+            "@type": "Product",
+            "name": "Bigscreen Beyond 2e",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Bigscreen"
+            },
+            "url": "https://store.bigscreenvr.com/blogs/beyond/introducing-the-bigscreen-beyond-2e-vrchat-edition",
+            "releaseDate": "2025-04-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "1219",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "item": {
+            "@type": "Product",
+            "name": "Brilliant Labs Frame",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Brilliant Labs"
+            },
+            "image": "https://brilliant.xyz/cdn/shop/files/Halo_16_9e6dbe16-f264-4d22-bca1-175227d4ade6.png?v=1753981531",
+            "url": "https://brilliant.xyz/products/frame",
+            "releaseDate": "2024-08-12",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "349",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "item": {
+            "@type": "Product",
+            "name": "Brilliant Labs Halo",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Brilliant Labs"
+            },
+            "url": "https://brilliant.xyz/products/halo",
+            "releaseDate": "2025-11-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "299",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "item": {
+            "@type": "Product",
+            "name": "Brilliant Monocle",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Brilliant Labs"
+            },
+            "image": "https://brilliant.xyz/cdn/shop/files/Halo_16_9e6dbe16-f264-4d22-bca1-175227d4ade6.png?v=1753981531",
+            "url": "https://www.brilliantmonocle.com/monocle",
+            "releaseDate": "2023-02-08",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "349",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "item": {
+            "@type": "Product",
+            "name": "Campfire Headset",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Campfire"
+            },
+            "image": "https://framerusercontent.com/images/15WJqiYucxkzAHccmcY2E2pcAnc.png",
+            "url": "https://www.campfire3d.com/",
+            "releaseDate": "2023-05-16",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "7500",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "item": {
+            "@type": "Product",
+            "name": "Cosmo Vision",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Cosmo Connected"
+            },
+            "image": "https://cosmoconnected.com/cdn/shop/files/1200x2700_banner_image_3_1.jpg?v=1716544008",
+            "url": "https://cosmoconnected.com/en/products-bike-scooter/cosmo-vision",
+            "releaseDate": "2022-01-21",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "550",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "item": {
+            "@type": "Product",
+            "name": "DigiLens Argo",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "DigiLens"
+            },
+            "image": "https://www.digilens.com/wp-content/uploads/2025/04/dgl-argo-loggo-white.png",
+            "url": "https://www.digilens.com/argo/",
+            "releaseDate": "2024-07-10"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "item": {
+            "@type": "Product",
+            "name": "Dream Glass",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "DreamWorld"
+            },
+            "url": "https://www.dreamworldvision.com/dream-glass-developer-kit",
+            "releaseDate": "2018-06-17",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "399",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "item": {
+            "@type": "Product",
+            "name": "Dream Glass 4K",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "DreamWorld"
+            },
+            "url": "https://www.dreamworldvision.com/dream-glass-4k-4k-plus",
+            "releaseDate": "2020-07-14",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "599",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "item": {
+            "@type": "Product",
+            "name": "Dream Glass 4K Plus",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "DreamWorld"
+            },
+            "url": "https://www.dreamworldvision.com/dream-glass-4k-4k-plus",
+            "releaseDate": "2020-07-14",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "799",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "item": {
+            "@type": "Product",
+            "name": "Dream Glass Flow",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "DreamWorld"
+            },
+            "url": "https://www.dreamworldvision.com/",
+            "releaseDate": "2022-10-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "799",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "item": {
+            "@type": "Product",
+            "name": "Dream Glass Lead Plus",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "DreamWorld"
+            },
+            "url": "https://www.dreamworldvision.com/lead-lead-pro",
+            "releaseDate": "2022-01-24",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "799",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 24,
+          "item": {
+            "@type": "Product",
+            "name": "Dream Glass Lead Pro",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "DreamWorld"
+            },
+            "url": "https://www.dreamworldvision.com/lead-lead-pro",
+            "releaseDate": "2022-01-24",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "1199",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 25,
+          "item": {
+            "@type": "Product",
+            "name": "Engo 2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Engo Eyewear"
+            },
+            "image": "https://engoeyewear.com/cdn/shop/files/Noir_-_Standard_-_1.png?v=1761012727&width=2048",
+            "url": "https://engoeyewear.com/products/engo-2",
+            "releaseDate": "2022-09-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "340",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 26,
+          "item": {
+            "@type": "Product",
+            "name": "Engo Eyewear",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Engo Eyewear"
+            },
+            "image": "https://engoeyewear.com/cdn/shop/files/Screen-Recording-2022-11-09-at-3.46.gif?v=1668027611&width=2048",
+            "url": "https://us.engoeyewear.com/products/engo-eyewear",
+            "releaseDate": "2021-11-02",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "397",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 27,
+          "item": {
+            "@type": "Product",
+            "name": "Epson Moverio BT-200",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Epson"
+            },
+            "image": "https://mediaserver.goepson.com/ImConvServlet/imconv/fc3fedb2e17c1ef9d6643d16ebdef8e0e36c1537/300Wx300H?use=productpictures&hybrisId=B2C&assetDescr=BT-45C_headon_headset_690x460",
+            "url": "https://epson.com/For-Work/Wearables/Smart-Glasses/c/w420",
+            "releaseDate": "2014-05-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "699",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 28,
+          "item": {
+            "@type": "Product",
+            "name": "Epson Moverio BT-40",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Epson"
+            },
+            "image": "https://mediaserver.goepson.com/ImConvServlet/imconv/82a0dca6d987e385f33da92f109c4caf4e53db4b/300Wx300H?use=productpictures&hybrisId=B2C&assetDescr=BT-40_left_690x460",
+            "url": "https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-40-Smart-Glasses-with-USB-Type-C-Connectivity-/p/V11H969020",
+            "releaseDate": "2021-03-03",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "579",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 29,
+          "item": {
+            "@type": "Product",
+            "name": "Epson Moverio BT-40S",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Epson"
+            },
+            "image": "https://mediaserver.goepson.com/ImConvServlet/imconv/fc3fedb2e17c1ef9d6643d16ebdef8e0e36c1537/300Wx300H?use=productpictures&hybrisId=B2C&assetDescr=BT-45C_headon_headset_690x460",
+            "url": "https://epson.com/For-Work/Wearables/Smart-Glasses/c/w420",
+            "releaseDate": "2021-03-03",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "940",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 30,
+          "item": {
+            "@type": "Product",
+            "name": "Even Realities G1",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Even Realities"
+            },
+            "url": "https://www.evenrealities.com/g1",
+            "releaseDate": "2024-06-30",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "599",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 31,
+          "item": {
+            "@type": "Product",
+            "name": "Even Realities G2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Even Realities"
+            },
+            "url": "https://www.evenrealities.com/g2",
+            "releaseDate": "2025-11-12",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "599",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 32,
+          "item": {
+            "@type": "Product",
+            "name": "Everysight Raptor",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Everysight"
+            },
+            "image": "https://static.wixstatic.com/media/86f41c_ff8e1bdf90e1402b98efcb9c7dc5e98c~mv2.png/v1/fit/w_1920,h_1440,q_90,enc_avif,quality_auto/86f41c_ff8e1bdf90e1402b98efcb9c7dc5e98c~mv2.png",
+            "url": "https://everysight.com/about-raptor/",
+            "releaseDate": "2017-02-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "599",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 33,
+          "item": {
+            "@type": "Product",
+            "name": "Google Glass Enterprise Edition 2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Google"
+            },
+            "image": "https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png",
+            "url": "https://www.google.com/glass/start/",
+            "releaseDate": "2019-05-20",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "999",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 34,
+          "item": {
+            "@type": "Product",
+            "name": "Google Glass Explorer Edition",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Google"
+            },
+            "image": "https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png",
+            "url": "https://www.google.com/glass/start/",
+            "releaseDate": "2013-03-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "1500",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 35,
+          "item": {
+            "@type": "Product",
+            "name": "Guangli Holoswim",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Guangli"
+            },
+            "image": "https://www.holoswim.com/cdn/shop/files/holoswim-ar-smart-swim-goggles-2s-438350_1200x1200.png?v=1741749365",
+            "url": "https://holoswim.com/products/holoswim-smart-swim-goggles",
+            "releaseDate": "2021-12-29",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "179",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 36,
+          "item": {
+            "@type": "Product",
+            "name": "Guangli Holoswim 2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Guangli"
+            },
+            "image": "https://www.holoswim.com/cdn/shop/files/holoswim-ar-smart-swim-goggles-2s-438350_1200x1200.png?v=1741749365",
+            "url": "https://www.kickstarter.com/projects/holoswim/holoswim-2-ar-smart-swim-goggles/",
+            "releaseDate": "2022-08-23",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "99",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 37,
+          "item": {
+            "@type": "Product",
+            "name": "Halliday",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Halliday"
+            },
+            "url": "https://hallidayglobal.com/",
+            "releaseDate": "2025-03-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "489",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 38,
+          "item": {
+            "@type": "Product",
+            "name": "HTC Vive Focus Vision",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "HTC"
+            },
+            "url": "https://www.vive.com/us/product/vive-focus-vision/overview/",
+            "releaseDate": "2024-11-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "999",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 39,
+          "item": {
+            "@type": "Product",
+            "name": "HTC Vive XR Elite",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "HTC"
+            },
+            "image": "https://www.vive.com/media/filer_public/fed-assets/vive-xr-elite/images/meta/vive-xr-elite-full-kit-1200.jpeg",
+            "url": "https://www.vive.com/us/product/vive-xr-elite/overview/",
+            "releaseDate": "2023-03-25",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "1099",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 40,
+          "item": {
+            "@type": "Product",
+            "name": "Huawei Vision Glass",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Huawei"
+            },
+            "image": "https://consumer.huawei.com/content/dam/huawei-cbg-site/cn/mkt/pdp/wearables/vision-glass/list/list.png",
+            "url": "https://consumer.huawei.com/cn/wearables/vision-glass/",
+            "releaseDate": "2022-12-09",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "430",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 41,
+          "item": {
+            "@type": "Product",
+            "name": "Huawei VR Glass",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Huawei"
+            },
+            "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/homepage-x/new/1211-2025-huawei-flagship-product-launch/herobanner/mate-x7-mob.jpg",
+            "url": "https://consumer.huawei.com/cn/wearables/vr-glass/",
+            "releaseDate": "2019-12-19",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "430",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 42,
+          "item": {
+            "@type": "Product",
+            "name": "Huawei VR Glass 6DoF",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Huawei"
+            },
+            "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/homepage-x/new/1211-2025-huawei-flagship-product-launch/herobanner/mate-x7-mob.jpg",
+            "url": "https://consumer.huawei.com/cn/wearables/vr-glass-6dof-gaming-kit/",
+            "releaseDate": "2021-11-17",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "310",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 43,
+          "item": {
+            "@type": "Product",
+            "name": "INMO Air",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "INMO"
+            },
+            "image": "https://www.inmoxr.com/cdn/shop/files/inmo-air3-800x400.png?v=1753841171&amp;width=800",
+            "url": "https://www.inmoglass.com/",
+            "releaseDate": "2022-06-09",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "349",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 44,
+          "item": {
+            "@type": "Product",
+            "name": "INMO Air2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "INMO"
+            },
+            "image": "https://www.inmoxr.com/cdn/shop/files/inmo-air2-built-in-apps-v2.png?v=1742190356&width=1000",
+            "url": "https://inmoglass.com/pages/inmo-ar",
+            "releaseDate": "2023-04-20",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "550",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 45,
+          "item": {
+            "@type": "Product",
+            "name": "INMO GO2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "INMO"
+            },
+            "url": "https://www.inmoxr.com/products/inmo-go2",
+            "releaseDate": "2025-01-31",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "448",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 46,
+          "item": {
+            "@type": "Product",
+            "name": "Iristick G2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Iristick"
+            },
+            "image": "https://iristick.com/_app/immutable/assets/10.B2KXxPzh.png",
+            "url": "https://iristick.com/products/iristick-g2",
+            "releaseDate": "2021-12-10",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "2099",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 47,
+          "item": {
+            "@type": "Product",
+            "name": "Iristick G3",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Iristick"
+            },
+            "url": "https://shop.iristick.com/products/iristick-g3",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "2275",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 48,
+          "item": {
+            "@type": "Product",
+            "name": "Julbo EVAD-1",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Julbo"
+            },
+            "image": "https://images.prismic.io/julbo/Zw5sh4F3NbkBXduo_adilheadermobile.jpg?auto=format,compress&rect=0,375,1748,1748&w=580&h=580&fit=crop",
+            "url": "https://www.julbo.com/en_us/evad-1",
+            "releaseDate": "2020-09-21",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "550",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 49,
+          "item": {
+            "@type": "Product",
+            "name": "Lenovo Glasses T1",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Lenovo"
+            },
+            "image": "https://news.lenovo.com/wp-content/uploads/2022/08/Lenovo-Glasses-T1-scaled.jpg",
+            "url": "https://news.lenovo.com/pressroom/press-releases/glasses-t1-wearable-display-for-gaming-streaming-privacy-on-the-go/",
+            "releaseDate": "2022-12-15"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 50,
+          "item": {
+            "@type": "Product",
+            "name": "Lenovo ThinkReality A3",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Lenovo"
+            },
+            "image": "https://www.lenovo.com/content/dam/lenovo/site-design/lenovo-helix/ftv/hero-discover-ai-solutions.png",
+            "url": "https://www.lenovo.com/us/en/thinkrealitya3",
+            "releaseDate": "2021-12-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "1499",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 51,
+          "item": {
+            "@type": "Product",
+            "name": "Lynx R-1",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Lynx"
+            },
+            "image": "https://www.lynx-r.com/images/hero-headset.webp",
+            "url": "https://www.lynx-r.com/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 52,
+          "item": {
+            "@type": "Product",
+            "name": "MAD Gaze Glow Plus",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "MAD Gaze"
+            },
+            "url": "https://www.madgaze.com/glow-plus/",
+            "releaseDate": "2020-04-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "599",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 53,
+          "item": {
+            "@type": "Product",
+            "name": "MAD Gaze Vader",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "MAD Gaze"
+            },
+            "url": "https://www.madgaze.com/vader/",
+            "releaseDate": "2017-12-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "769",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 54,
+          "item": {
+            "@type": "Product",
+            "name": "MAD Gaze Wave",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "MAD Gaze"
+            },
+            "url": "https://mall.madgaze.com/wave",
+            "releaseDate": "2022-05-22",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "399",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 55,
+          "item": {
+            "@type": "Product",
+            "name": "Magic Leap 1",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Magic Leap"
+            },
+            "image": "https://cdn.prod.website-files.com/67083eaf123e93296073a9a1/68fff97227ea884ec422d41a_6cda6f9643c1ad40ca42d94654904653_ml-opengraph-2025.jpg",
+            "url": "https://www.magicleap.com/en-us/magic-leap-1",
+            "releaseDate": "2018-08-08",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "2295",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 56,
+          "item": {
+            "@type": "Product",
+            "name": "Magic Leap 2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Magic Leap"
+            },
+            "image": "https://cdn.prod.website-files.com/67083eaf123e93296073a9a1/68fff97227ea884ec422d41a_6cda6f9643c1ad40ca42d94654904653_ml-opengraph-2025.jpg",
+            "url": "https://www.magicleap.com/en-us/magic-leap-2",
+            "releaseDate": "2022-09-30",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "3299",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 57,
+          "item": {
+            "@type": "Product",
+            "name": "Meta 2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Meta (2016)"
+            },
+            "url": "https://vrarwiki.com/wiki/Meta_2",
+            "releaseDate": "2016-04-12",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "1495",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 58,
+          "item": {
+            "@type": "Product",
+            "name": "Meta Quest 3",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Meta"
+            },
+            "image": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=157327897433582&version=1770262799&transcode_extension=webp",
+            "url": "https://www.meta.com/quest/quest-3/",
+            "releaseDate": "2023-10-10",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "499",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 59,
+          "item": {
+            "@type": "Product",
+            "name": "Meta Quest 3S",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Meta"
+            },
+            "image": "https://lookaside.fbsbx.com/elementpath/media/?media_id=1608140463383971&version=1768796649&transcode_extension=webp",
+            "url": "https://www.meta.com/quest/quest-3s/",
+            "releaseDate": "2024-10-15",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "299",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 60,
+          "item": {
+            "@type": "Product",
+            "name": "Meta Quest Pro",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Meta"
+            },
+            "image": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=1457447194666503&version=1762771876&transcode_extension=webp",
+            "url": "https://www.meta.com/quest/quest-pro/",
+            "releaseDate": "2022-10-25",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "999",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 61,
+          "item": {
+            "@type": "Product",
+            "name": "Meta Ray-Ban Display",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Meta"
+            },
+            "image": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=2061368471315981&version=1765379917&transcode_extension=webp",
+            "url": "https://www.meta.com/ai-glasses/meta-ray-ban-display/",
+            "releaseDate": "2025-09-30",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "799",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 62,
+          "item": {
+            "@type": "Product",
+            "name": "Microsoft HoloLens 1",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Microsoft"
+            },
+            "image": "https://learn.microsoft.com/en-us/media/open-graph-image.png",
+            "url": "https://docs.microsoft.com/en-us/hololens/hololens1-hardware",
+            "releaseDate": "2016-03-30",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "3000",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 63,
+          "item": {
+            "@type": "Product",
+            "name": "Microsoft HoloLens 2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Microsoft"
+            },
+            "image": "https://learn.microsoft.com/en-us/media/open-graph-image.png",
+            "url": "https://www.microsoft.com/en-us/hololens",
+            "releaseDate": "2019-11-07",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "3500",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 64,
+          "item": {
+            "@type": "Product",
+            "name": "Nimo",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Nimo Planet"
+            },
+            "image": "https://cdn.prod.website-files.com/64d9a2acbec48c791090668e/653a71d4e7bf9cbe24804559_nimo_1.webp",
+            "url": "https://www.nimoplanet.com/",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "1299",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 65,
+          "item": {
+            "@type": "Product",
+            "name": "Nolo VR Glass",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Nolo"
+            },
+            "image": "https://www.nolovr.com/UploadFiles/images/nolo_ring.jpg?bm9sb19yaW5nLmpwZw==",
+            "url": "https://www.nolovr.com/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 66,
+          "item": {
+            "@type": "Product",
+            "name": "Nreal Air",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Nreal"
+            },
+            "image": "https://resource.xreal.com/www-xreal-com/images/home/home_herosection_1S_Desktop.webp",
+            "url": "https://www.nreal.ai/",
+            "releaseDate": "2022-03-04",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "400",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 67,
+          "item": {
+            "@type": "Product",
+            "name": "Nreal Light",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Nreal"
+            },
+            "image": "https://resource.xreal.com/www-xreal-com/images/home/home_herosection_1S_Desktop.webp",
+            "url": "https://www.nreal.ai/light/",
+            "releaseDate": "2020-08-21",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "499",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 68,
+          "item": {
+            "@type": "Product",
+            "name": "Nubia Neovision Glass",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Nubia"
+            },
+            "image": "https://ztedevices.com/content/dam/zte-devices/global/products/accessories/wearable/nubia-neovision-glass/nubia%20Neovision%20Glass.png",
+            "url": "https://ztedevices.com/en-gl/nubia-neovision-glasses/",
+            "releaseDate": "2023-06-19",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "529",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 69,
+          "item": {
+            "@type": "Product",
+            "name": "NuEyes Pro 3e",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "NuEyes"
+            },
+            "image": "https://lirp.cdn-website.com/2f06bfe7/dms3rep/multi/opt/nueyes-pro4-1920w.png",
+            "url": "https://www.nueyes.com/pro3e",
+            "releaseDate": "2022-01-31",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "499",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 70,
+          "item": {
+            "@type": "Product",
+            "name": "Oppo Air Glass",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Oppo"
+            },
+            "image": "https://www.oppo.com/content/dam/oppo/en/mkt/newsroom/press/oppo-air-glass/main.jpg",
+            "url": "https://www.oppo.com/en/newsroom/press/oppo-air-glass/",
+            "releaseDate": "2022-03-03",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "800",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 71,
+          "item": {
+            "@type": "Product",
+            "name": "P&C Solution METALENSE",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "P&C Solution"
+            },
+            "releaseDate": "2022-10-04"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 72,
+          "item": {
+            "@type": "Product",
+            "name": "Pimax Crystal",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Pimax"
+            },
+            "image": "https://pimax.com/cdn/shop/files/product_pimaxcrystal_2404_1.webp?v=1714661941",
+            "url": "https://pimax.com/products/pimax-crystal",
+            "releaseDate": "2023-05-31",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "1599",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 73,
+          "item": {
+            "@type": "Product",
+            "name": "Pimax Crystal Light",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Pimax"
+            },
+            "url": "https://pimax.com/products/pimax-crystal-light",
+            "releaseDate": "2024-05-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "599",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 74,
+          "item": {
+            "@type": "Product",
+            "name": "Pimax Crystal Super",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Pimax"
+            },
+            "url": "https://pimax.com/products/pimax-crystal-super",
+            "releaseDate": "2025-04-01"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 75,
+          "item": {
+            "@type": "Product",
+            "name": "Pimax Dream Air",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Pimax"
+            },
+            "url": "https://pimax.com/products/pimax-dream-air",
+            "releaseDate": "2025-02-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "1999",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 76,
+          "item": {
+            "@type": "Product",
+            "name": "Play For Dream MR",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Play For Dream"
+            },
+            "url": "https://pfdm.ai/",
+            "releaseDate": "2026-03-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "2000",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 77,
+          "item": {
+            "@type": "Product",
+            "name": "PlayStation VR2",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Sony Interactive Entertainment"
+            },
+            "image": "https://gmedia.playstation.com/is/image/SIEPDC/PSVR2-thumbnail-01-en-22feb22?$facebook$",
+            "url": "https://www.playstation.com/en-us/ps-vr2/",
+            "releaseDate": "2023-02-22",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "399",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 78,
+          "item": {
+            "@type": "Product",
+            "name": "RayNeo Air 3s",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "TCL"
+            },
+            "url": "https://www.rayneo.com/products/rayneo-air-3s-xr-glasses",
+            "releaseDate": "2025-02-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "299",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 79,
+          "item": {
+            "@type": "Product",
+            "name": "RayNeo X3 Pro",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "TCL"
+            },
+            "url": "https://www.rayneo.com/products/x3-pro-ai-display-glasses",
+            "releaseDate": "2025-12-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "1099",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 80,
+          "item": {
+            "@type": "Product",
+            "name": "Realmax Qian",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Realmax"
+            },
+            "url": "http://realmaxinc.com/",
+            "releaseDate": "2020-09-13",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "999",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 81,
+          "item": {
+            "@type": "Product",
+            "name": "RealWear HMT-1",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "RealWear"
+            },
+            "image": "https://framerusercontent.com/assets/xPxgIGeBms3NXxDt3tU5Hg6Zg.png",
+            "url": "https://www.realwear.com/hmt-1/",
+            "releaseDate": "2017-09-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "2100",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 82,
+          "item": {
+            "@type": "Product",
+            "name": "RealWear HMT-1Z1",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "RealWear"
+            },
+            "image": "https://framerusercontent.com/assets/5qYqrA6rT7gaNUAxVKqiY5Fuc70.jpg",
+            "url": "https://www.realwear.com/hmt-1z1/",
+            "releaseDate": "2018-06-15",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "6000",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 83,
+          "item": {
+            "@type": "Product",
+            "name": "RealWear Navigator 500",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "RealWear"
+            },
+            "image": "https://framerusercontent.com/assets/xPxgIGeBms3NXxDt3tU5Hg6Zg.png",
+            "url": "https://www.realwear.com/navigator/",
+            "releaseDate": "2021-12-30",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "3200",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 84,
+          "item": {
+            "@type": "Product",
+            "name": "RealWear Navigator 520",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "RealWear"
+            },
+            "image": "https://framerusercontent.com/assets/dQ8adYVqC4LjzfYNDaeWRVEwvtE.png",
+            "url": "https://www.realwear.com/hyperdisplay/",
+            "releaseDate": "2023-01-03",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "2900",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 85,
+          "item": {
+            "@type": "Product",
+            "name": "RealWear Navigator Z1",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "RealWear"
+            },
+            "image": "https://framerusercontent.com/assets/5qYqrA6rT7gaNUAxVKqiY5Fuc70.jpg",
+            "url": "https://www.realwear.com/devices/navigator-Z1",
+            "releaseDate": "2023-11-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "5450",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 86,
+          "item": {
+            "@type": "Product",
+            "name": "Recon Jet",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Recon Instruments"
+            },
+            "url": "https://en.wikipedia.org/wiki/Recon_Jet",
+            "releaseDate": "2015-04-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "699",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 87,
+          "item": {
+            "@type": "Product",
+            "name": "Rokid AI Glasses Style",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Rokid"
+            },
+            "url": "https://global.rokid.com/products/rokid-ai-glasses-style",
+            "releaseDate": "2026-01-19",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "299",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 88,
+          "item": {
+            "@type": "Product",
+            "name": "Rokid Air",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Rokid"
+            },
+            "image": "https://global.rokid.com/cdn/shop/files/Rokid_social_sharing_image.jpg?v=1689303583",
+            "url": "https://air.rokid.com/",
+            "releaseDate": "2021-12-26",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "499",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 89,
+          "item": {
+            "@type": "Product",
+            "name": "Rokid Air Pro",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Rokid"
+            },
+            "image": "https://global.rokid.com/cdn/shop/files/Rokid_social_sharing_image.jpg?v=1689303583",
+            "url": "https://www.rokid.ai/rokid-air-pro/",
+            "releaseDate": "2022-03-04",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "599",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 90,
+          "item": {
+            "@type": "Product",
+            "name": "Rokid AR Lite",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Rokid"
+            },
+            "url": "https://global.rokid.com/products/rokid-glasses",
+            "releaseDate": "2025-10-10",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "499",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 91,
+          "item": {
+            "@type": "Product",
+            "name": "Rokid AR Spatial",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Rokid"
+            },
+            "url": "https://global.rokid.com/products/rokid-ar-spatial",
+            "releaseDate": "2025-01-08",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "648",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 92,
+          "item": {
+            "@type": "Product",
+            "name": "Rokid Glass 2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Rokid"
+            },
+            "image": "https://global.rokid.com/cdn/shop/files/Rokid_social_sharing_image.jpg?v=1689303583",
+            "url": "https://www.rokid.com/en/rokid-glass-2/",
+            "releaseDate": "2020-07-10",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "3000",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 93,
+          "item": {
+            "@type": "Product",
+            "name": "Rokid Glasses",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Rokid"
+            },
+            "url": "https://global.rokid.com/products/rokid-glasses",
+            "releaseDate": "2025-10-31",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "599",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 94,
+          "item": {
+            "@type": "Product",
+            "name": "Rokid Max",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Rokid"
+            },
+            "image": "https://global.rokid.com/cdn/shop/files/Rokid_social_sharing_image.jpg?v=1689303583",
+            "url": "https://global.rokid.com/products/rokid-max",
+            "releaseDate": "2023-05-31",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "439",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 95,
+          "item": {
+            "@type": "Product",
+            "name": "Rokid Max 2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Rokid"
+            },
+            "url": "https://global.rokid.com/products/rokid-max-2-ar-glasses",
+            "releaseDate": "2025-01-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "399",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 96,
+          "item": {
+            "@type": "Product",
+            "name": "Rokid Max Pro",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Rokid"
+            },
+            "image": "https://global.rokid.com/cdn/shop/files/Rokid_social_sharing_image.jpg?v=1689303583",
+            "url": "https://global.rokid.com/products/rokid-max",
+            "releaseDate": "2024-03-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "685",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 97,
+          "item": {
+            "@type": "Product",
+            "name": "Rokid Vision 2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Rokid"
+            },
+            "image": "https://global.rokid.com/cdn/shop/files/Rokid_social_sharing_image.jpg?v=1689303583"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 98,
+          "item": {
+            "@type": "Product",
+            "name": "Rokid X-Craft",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Rokid"
+            },
+            "image": "https://global.rokid.com/cdn/shop/files/Rokid_social_sharing_image.jpg?v=1689303583",
+            "url": "https://www.rokid.com/en/rokid-x-craft/",
+            "releaseDate": "2020-11-29"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 99,
+          "item": {
+            "@type": "Product",
+            "name": "Samsung Galaxy XR",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Samsung"
+            },
+            "url": "https://www.samsung.com/us/business/electronics/wearables/virtual-reality-mixed-reality/samsung-galaxy-xr/",
+            "releaseDate": "2025-10-21",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "1799",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 100,
+          "item": {
+            "@type": "Product",
+            "name": "Shadow Creator Action One",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Shadow Creator"
+            },
+            "image": "https://www.shadowcreator.com/resource/upload/newspic/2026-02-18/20260386841301_1.jpg",
+            "url": "https://www.shadowcreator.com/actionone/actionone.html",
+            "releaseDate": "2019-03-28",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "2599",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 101,
+          "item": {
+            "@type": "Product",
+            "name": "Shadow Creator Halomini",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Shadow Creator"
+            },
+            "url": "https://www.shadowcreator.com/halomini/halomini.html",
+            "releaseDate": "2018-05-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "1150",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 102,
+          "item": {
+            "@type": "Product",
+            "name": "Sharge Loomos",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Sharge"
+            },
+            "url": "https://loomos.ai/",
+            "releaseDate": "2025-01-28",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "199",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 103,
+          "item": {
+            "@type": "Product",
+            "name": "Shiftall MeganeX superlight 8K",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Shiftall"
+            },
+            "url": "https://en.shiftall.net/products/meganex8k",
+            "releaseDate": "2025-02-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "1900",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 104,
+          "item": {
+            "@type": "Product",
+            "name": "Snap Spectacles (2021)",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Snap Inc"
+            },
+            "image": "https://images.ctfassets.net/kp51zybwznx4/3P1Fux2xcYmf0t3sD7fk6d/784622597e41b813f543bb17acfcc27f/Snapchat_Highlight_Image.png",
+            "url": "https://www.spectacles.com/",
+            "releaseDate": "2021-05-21"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 105,
+          "item": {
+            "@type": "Product",
+            "name": "Solos AirGo Vision",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Solos"
+            },
+            "url": "https://solosglasses.com/products/solos-airgo-vision",
+            "releaseDate": "2024-12-10",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "299",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 106,
+          "item": {
+            "@type": "Product",
+            "name": "Somnium VR1",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Somnium Space"
+            },
+            "url": "https://vrgineers.com/somnium-vr1-vr/",
+            "releaseDate": "2024-07-12",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "2600",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 107,
+          "item": {
+            "@type": "Product",
+            "name": "Sony SmartEyeglass (SED-E1)",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Sony"
+            },
+            "url": "https://developer.sony.com/develop/smarteyeglass-sed-e1/",
+            "releaseDate": "2015-03-10",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "840",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 108,
+          "item": {
+            "@type": "Product",
+            "name": "Spacetop",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Sightful"
+            },
+            "image": "https://cdn.prod.website-files.com/67d3f3c8636ba1042f4dbe5f/6808bc768a78ba8c43ec64a6_Graph%20image_Spacetop1.min.jpg",
+            "url": "https://www.sightful.com/",
+            "releaseDate": "2023-05-18",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "2000",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 109,
+          "item": {
+            "@type": "Product",
+            "name": "Spacetop G1",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Sightful"
+            },
+            "image": "https://cdn.prod.website-files.com/67d3f3c8636ba1042f4dbe5f/6808bc768a78ba8c43ec64a6_Graph%20image_Spacetop1.min.jpg",
+            "url": "https://www.sightful.com/",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "1700",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 110,
+          "item": {
+            "@type": "Product",
+            "name": "TCL NXTWEAR G",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "TCL"
+            },
+            "image": "https://static-obg.tcl.com/content/dam/brandsite/it-resources/third-party/tcl-share.jpg",
+            "url": "https://www.tcl.com/global/en/glasses/tcl-nxtwear-g",
+            "releaseDate": "2021-07-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "199",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 111,
+          "item": {
+            "@type": "Product",
+            "name": "TCL NXTWEAR S",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "TCL"
+            },
+            "image": "https://www.rayneo.com/cdn/shop/files/02_1e676fb1-fdad-44c7-ac64-e78a66b529a2.png?v=1752223320",
+            "url": "https://www.rayneo.com/products/nxtwear-s",
+            "releaseDate": "2023-02-18",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "449",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 112,
+          "item": {
+            "@type": "Product",
+            "name": "TCL NXTWEAR V",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "TCL"
+            },
+            "image": "https://aws-obg-image-lb-1.tcl.com/content/dam/brandsite/region/de/product/tv/kv/1152x1152_115C7K,.jpg?t=1763618139175&amp;w=576",
+            "url": "https://www.tcl.com/uk/en"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 113,
+          "item": {
+            "@type": "Product",
+            "name": "TCL RayNeo X2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "TCL"
+            },
+            "image": "https://www.rayneo.com/cdn/shop/files/X2.png?v=1754545207",
+            "url": "https://www.rayneo.com/products/tcl-rayneo-x2",
+            "releaseDate": "2024-03-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "899",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 114,
+          "item": {
+            "@type": "Product",
+            "name": "TCL RayNeo X2 Lite",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "TCL"
+            },
+            "image": "https://www.rayneo.com/cdn/shop/files/02_1e676fb1-fdad-44c7-ac64-e78a66b529a2.png?v=1752223320",
+            "url": "https://www.rayneo.com/",
+            "releaseDate": "2024-09-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "899",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 115,
+          "item": {
+            "@type": "Product",
+            "name": "ThirdEye Razor MR Glasses",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "ThirdEye"
+            },
+            "image": "https://www.thirdeyegen.com/assets/images/realeye_bg_1-1920w.webp",
+            "url": "https://www.thirdeyegen.com/",
+            "releaseDate": "2022-12-31",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "699",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 116,
+          "item": {
+            "@type": "Product",
+            "name": "ThirdEye X2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "ThirdEye"
+            },
+            "image": "https://thirdeyegen.com/assets/images/realeye_bg_1-1920w.webp",
+            "url": "https://thirdeyegen.com/x2-smart-glasses",
+            "releaseDate": "2018-10-04",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "1950",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 117,
+          "item": {
+            "@type": "Product",
+            "name": "Thunderbird Air Plus",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Thunderbird"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "2499",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 118,
+          "item": {
+            "@type": "Product",
+            "name": "Thunderbird V3",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Thunderbird"
+            },
+            "url": "https://www.thunderbird.net/",
+            "releaseDate": "2025-01-10",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "245",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 119,
+          "item": {
+            "@type": "Product",
+            "name": "Tilt Five",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Tilt Five"
+            },
+            "image": "https://cdn.prod.website-files.com/64c014cfbff33f53d39bd26f/64dd126493fec362e82b2fd7_AR-Glasses-Tilt-Five-Augmented-Reality-Gaming.jpg",
+            "url": "https://www.tiltfive.com/",
+            "releaseDate": "2021-12-22",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "359",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 120,
+          "item": {
+            "@type": "Product",
+            "name": "TQSKY T1",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "TQSKY"
+            },
+            "image": "https://store.tqsky.com/cdn/shop/files/795f1d6f37fc8fa00e9fc4991014c2d5.png?v=1746525616",
+            "url": "https://store.tqsky.com/products/tqsky-t1",
+            "releaseDate": "2022-12-08",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "699",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 121,
+          "item": {
+            "@type": "Product",
+            "name": "Varjo XR-4",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Varjo"
+            },
+            "image": "https://varjo.com/hubfs/Hero%20XR-4.jpg",
+            "url": "https://varjo.com/products/xr-4/",
+            "releaseDate": "2023-12-12",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "3990",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 122,
+          "item": {
+            "@type": "Product",
+            "name": "Viture Beast",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Viture"
+            },
+            "url": "https://www.viture.com/product/viture-beast-xr-glasses",
+            "releaseDate": "2025-12-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "549",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 123,
+          "item": {
+            "@type": "Product",
+            "name": "Viture Luma",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Viture"
+            },
+            "image": "https://www.viture.com/opengraph-image?376fa9d8052ebb8e",
+            "url": "https://www.viture.com/product/viture-luma-xr-glasses",
+            "releaseDate": "2025-08-31",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "399",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 124,
+          "item": {
+            "@type": "Product",
+            "name": "Viture Luma Pro",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Viture"
+            },
+            "image": "https://www.viture.com/opengraph-image?376fa9d8052ebb8e",
+            "url": "https://www.viture.com/product/viture-luma-pro-xr-glasses",
+            "releaseDate": "2025-08-31",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "499",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 125,
+          "item": {
+            "@type": "Product",
+            "name": "Viture Luma Ultra",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Viture"
+            },
+            "image": "https://www.viture.com/opengraph-image?376fa9d8052ebb8e",
+            "url": "https://www.viture.com/product/viture-luma-ultra-xr-glasses",
+            "releaseDate": "2025-08-31",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "599",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 126,
+          "item": {
+            "@type": "Product",
+            "name": "Viture One",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Viture"
+            },
+            "image": "https://www.viture.com/opengraph-image?376fa9d8052ebb8e",
+            "url": "https://www.viture.com/",
+            "releaseDate": "2022-12-22",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "479",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 127,
+          "item": {
+            "@type": "Product",
+            "name": "Viture One Lite",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Viture"
+            },
+            "image": "https://www.viture.com/opengraph-image?376fa9d8052ebb8e",
+            "url": "https://store.viture.com/products/viture-one-lite-xr-glasses?Color=Marshmallow",
+            "releaseDate": "2024-01-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "349",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 128,
+          "item": {
+            "@type": "Product",
+            "name": "Viture Pro",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Viture"
+            },
+            "image": "https://www.viture.com/opengraph-image?376fa9d8052ebb8e",
+            "url": "https://www.viture.com/",
+            "releaseDate": "2024-06-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "459",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 129,
+          "item": {
+            "@type": "Product",
+            "name": "Vuzix Blade 2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Vuzix"
+            },
+            "image": "https://www.vuzix.com/cdn/shop/products/Blade-ALpng-Front_074b128a-99e2-429c-a858-47c4f84354bb.png?v=1657898574",
+            "url": "https://www.vuzix.com/products/vuzix-blade-2-smart-glasses",
+            "releaseDate": "2022-09-30",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "799",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 130,
+          "item": {
+            "@type": "Product",
+            "name": "Vuzix Blade Upgraded",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Vuzix"
+            },
+            "image": "https://www.vuzix.com/cdn/shop/files/Artboard_1.png?v=1635345615",
+            "url": "https://www.vuzix.com/products/vuzix-blade-smart-glasses-upgraded",
+            "releaseDate": "2020-10-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "799",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 131,
+          "item": {
+            "@type": "Product",
+            "name": "Vuzix LX1",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Vuzix"
+            },
+            "url": "https://www.vuzix.com/products/vuzix-lx1-smart-glasses",
+            "releaseDate": "2025-12-31"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 132,
+          "item": {
+            "@type": "Product",
+            "name": "Vuzix M100",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Vuzix"
+            },
+            "image": "https://www.vuzix.com/cdn/shop/files/Artboard_1.png?v=1635345615",
+            "url": "https://www.vuzix.com/pages/vuzix-m100",
+            "releaseDate": "2013-08-15",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "999",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 133,
+          "item": {
+            "@type": "Product",
+            "name": "Vuzix M400",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Vuzix"
+            },
+            "image": "https://www.vuzix.com/cdn/shop/files/M400_Xtreme_Kit1048-color_bca05364-14f8-4941-ba31-0dec3f104c19.jpg?v=1723565839",
+            "url": "https://www.vuzix.com/products/m400-smart-glasses",
+            "releaseDate": "2020-01-11",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "1799",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 134,
+          "item": {
+            "@type": "Product",
+            "name": "Vuzix M4000",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Vuzix"
+            },
+            "image": "https://www.vuzix.com/cdn/shop/files/Vuzix_M4000_Safety_Glasses-003_49ec7738-5cf3-4b1d-9e29-fbf57a281ddc.jpg?v=1723566638",
+            "url": "https://www.vuzix.com/products/m4000-smart-glasses",
+            "releaseDate": "2020-11-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "2500",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 135,
+          "item": {
+            "@type": "Product",
+            "name": "Vuzix M400C",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Vuzix"
+            },
+            "image": "https://www.vuzix.com/cdn/shop/files/Artboard_1.png?v=1635345615",
+            "url": "https://www.vuzix.com/pages/vuzix-m400c",
+            "releaseDate": "2022-11-04",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "1299",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 136,
+          "item": {
+            "@type": "Product",
+            "name": "Vuzix Shield",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Vuzix"
+            },
+            "image": "https://www.vuzix.com/cdn/shop/files/Artboard_1.png?v=1635345615",
+            "url": "https://www.vuzix.com/pages/vuzix-shield",
+            "releaseDate": "2022-09-30"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 137,
+          "item": {
+            "@type": "Product",
+            "name": "Xiaomi Mijia",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Xiaomi"
+            },
+            "releaseDate": "2023-07-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "400",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 138,
+          "item": {
+            "@type": "Product",
+            "name": "Xiaomi Smart Glasses",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Xiaomi"
+            },
+            "url": "https://blog.mi.com/en/2021/09/14/xiaomi-unveils-xiaomi-smart-glasses/",
+            "releaseDate": "2022-12-31"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 139,
+          "item": {
+            "@type": "Product",
+            "name": "Ximmerse Rhino X Pro",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Ximmerse"
+            },
+            "url": "https://www.ximmerse.com/RhinoXPro",
+            "releaseDate": "2022-11-14",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "799",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 140,
+          "item": {
+            "@type": "Product",
+            "name": "Xreal 1S",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Xreal"
+            },
+            "url": "https://www.xreal.com/",
+            "releaseDate": "2026-01-04",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "449",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 141,
+          "item": {
+            "@type": "Product",
+            "name": "Xreal Air 2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Xreal"
+            },
+            "image": "https://resource.xreal.com/www-xreal-com/images/home/home_herosection_1S_Desktop.webp",
+            "url": "https://www.xreal.com/",
+            "releaseDate": "2023-11-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "340",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 142,
+          "item": {
+            "@type": "Product",
+            "name": "Xreal Air 2 Pro",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Xreal"
+            },
+            "image": "https://resource.xreal.com/www-xreal-com/images/home/OnePro_Group_Desktop.webp",
+            "url": "https://www.xreal.com/",
+            "releaseDate": "2023-11-16",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "410",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 143,
+          "item": {
+            "@type": "Product",
+            "name": "Xreal Air 2 Ultra",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Xreal"
+            },
+            "image": "https://resource.xreal.com/www-xreal-com/images/home/home_herosection_1S_Desktop.webp",
+            "url": "https://www.xreal.com/",
+            "releaseDate": "2024-07-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "699",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 144,
+          "item": {
+            "@type": "Product",
+            "name": "Xreal Eye",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Xreal"
+            },
+            "url": "https://www.xreal.com/one-pro",
+            "releaseDate": "2025-07-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "99",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 145,
+          "item": {
+            "@type": "Product",
+            "name": "Xreal One",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Xreal"
+            },
+            "image": "https://resource.xreal.com/www-xreal-com/images/home/OnePro_Group_Desktop.webp",
+            "url": "https://www.xreal.com/one",
+            "releaseDate": "2024-12-15",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "499",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 146,
+          "item": {
+            "@type": "Product",
+            "name": "Xreal One Pro",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Xreal"
+            },
+            "image": "https://resource.xreal.com/www-xreal-com/images/home/OnePro_Group_Desktop.webp",
+            "url": "https://www.xreal.com/one-pro",
+            "releaseDate": "2025-04-30",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "599",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 147,
+          "item": {
+            "@type": "Product",
+            "name": "Xreal Project Aura",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Xreal"
+            },
+            "url": "https://www.xreal.com/us/aura"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 148,
+          "item": {
+            "@type": "Product",
+            "name": "XYZ Atom",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "XYZ Reality"
+            },
+            "image": "https://xyz-reality.transforms.svdcdn.com/production/assets/Page-Images/Onsite-deployment/Ontime-delivery-3.jpg?w=1200&h=630&q=82&auto=format&fit=crop&dm=1738945418&s=9a14dac00700f9b0f5a72140d5d5c816",
+            "url": "https://www.xyzreality.com/",
+            "releaseDate": "2021-11-23"
+          }
+        }
+      ]
+    }
+  ]
+}

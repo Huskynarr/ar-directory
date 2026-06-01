@@ -1,0 +1,2706 @@
+{
+  "enriched": [
+    {
+      "id": "CgySYMXLq",
+      "name": "3Glasses Blubur S1",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "lifecycle_notes": "VR-Headset von 2016, längst aus dem Handel."
+      },
+      "confidence": "high",
+      "note": "Current data already accurate; confirmed discontinued 2016 release.",
+      "sources": [
+        "https://vr-compare.com/headset/3glassesbluburs1",
+        "https://www.3glasses.com/en/product/s1.html"
+      ]
+    },
+    {
+      "id": "MFKzu5lwb",
+      "name": "3Glasses Blubur S2",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "lifecycle_notes": "PC-VR-Headset von 2018, aus dem Handel."
+      },
+      "confidence": "high",
+      "note": "Current data already accurate; confirmed discontinued.",
+      "sources": [
+        "https://vr-compare.com/headset/3glassesbluburs2",
+        "https://vrlitic.com/3glasses-blubur-s2/"
+      ]
+    },
+    {
+      "id": "FUmJdcmqg",
+      "name": "3Glasses D2",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "resolution_per_eye": "2560x1440",
+        "display_type": "LCD",
+        "weight_g": "246",
+        "optics": "Non-spherical lenses",
+        "fov_horizontal_deg": "110",
+        "lifecycle_notes": "Frühes VR-Headset von 2015, längst eingestellt."
+      },
+      "confidence": "high",
+      "note": "Corrected resolution from 1280x1440 to 2560x1440 (2K); added weight and optics info.",
+      "sources": [
+        "https://vr-compare.com/headset/3glassesd2",
+        "https://vrlitic.com/3glasses-d2/",
+        "https://digitaltrends.com/virtual-reality/3glasses-d2-vanguard-edition-review/"
+      ]
+    },
+    {
+      "id": "scBhMmwQy",
+      "name": "3Glasses X1",
+      "changes": {
+        "optics": "Short TTL lens",
+        "active_distribution": "Unklar",
+        "eol_status": "Aktiv oder ohne EOL-Angabe",
+        "lifecycle_notes": "Standalone-VR von 2019; Verfügbarkeit 2026 unklar."
+      },
+      "confidence": "medium",
+      "note": "Added optics info (short TTL lens technology per BOE partnership); weight ~150g matches. Status in 2026 unclear from manufacturer.",
+      "sources": [
+        "https://vr-compare.com/headset/3glassesx1",
+        "https://www.topfoison.net/lcd/the-worlds-first-ultra-thin-vr-head-mounted-3glasses-x1-released-with-boe-fast-lcd-screen/"
+      ]
+    },
+    {
+      "id": "vH20M2KPj",
+      "name": "AjnaLens AjnaX",
+      "changes": {
+        "active_distribution": "Unklar",
+        "eol_status": "Aktiv oder ohne EOL-Angabe",
+        "lifecycle_notes": "Enterprise AR von 2021; neuere Modelle (AjnaXR) verfügbar."
+      },
+      "confidence": "medium",
+      "note": "Price still not available in public sources. Confirmed 3 DoF tracking, 50° FOV. Original AjnaX less prominent than newer AjnaXR line.",
+      "sources": [
+        "https://vr-compare.com/headset/ajnalensajnax",
+        "https://www.ajnalens.com/",
+        "https://tracxn.com/d/companies/ajnalens/__y2MG7vePXK2Ecl1pTL3FAbXfgB5W7oPIgSaMV043rMA"
+      ]
+    },
+    {
+      "id": "NwAppleVPr",
+      "name": "Apple Vision Pro",
+      "changes": {
+        "active_distribution": "Ja/Unklar",
+        "eol_status": "Aktiv oder ohne EOL-Angabe",
+        "weight_g": "775",
+        "lifecycle_notes": "2026 noch verfügbar; schwache Verkäufe, Nachfolger erst 2028+."
+      },
+      "confidence": "high",
+      "note": "Verified still sold in 2026 at $3,499; weight 750-800g (average 775g); FOV not officially published by Apple (estimates ~100 horiz/77 vert not in CSV).",
+      "sources": [
+        "https://www.apple.com/shop/buy-vision/apple-vision-pro",
+        "https://www.apple.com/apple-vision-pro/specs/",
+        "https://www.macobserver.com/tips/is-apple-vision-pro-discontinued-in-2026-sales-updates/"
+      ]
+    },
+    {
+      "id": "yBcFHrYN0",
+      "name": "Asus AirVision M1",
+      "changes": {
+        "software": "Windows 11 64-bit",
+        "fov_horizontal_deg": "38",
+        "fov_vertical_deg": "57"
+      },
+      "confidence": "high",
+      "note": "3DoF head tracking confirmed; FOV specs from ASUS official techspecs and reviews",
+      "sources": [
+        "https://www.asus.com/us/displays-desktops/glasses/airvision/asus-airvision-m1/techspec/",
+        "https://vr-compare.com/headset/asusairvisionm1",
+        "https://ovrdoz.com/en/asus-airvision-m1/"
+      ]
+    },
+    {
+      "id": "BE0kbfi2T",
+      "name": "Brilliant Labs Frame",
+      "changes": {
+        "weight_g": "40"
+      },
+      "confidence": "high",
+      "note": "Weight verified from hardware manual and multiple reviews; refresh rate not published; no eye/hand tracking",
+      "sources": [
+        "https://docs.brilliant.xyz/frame/hardware/",
+        "https://vr-compare.com/headset/brilliantlabsframe",
+        "https://brilliant.xyz/products/frame"
+      ]
+    },
+    {
+      "id": "Q9zkHODZI",
+      "name": "Brilliant Labs Monocle",
+      "changes": {
+        "passthrough": "Native passthrough, 720p camera"
+      },
+      "confidence": "high",
+      "note": "Fixed typo in passthrough field ('camear' -> 'camera'); refresh rate not documented; no eye/hand tracking",
+      "sources": [
+        "https://docs.brilliant.xyz/monocle/hardware/",
+        "https://vr-compare.com/headset/brilliantmonocle",
+        "https://brilliant.xyz/products/monocle"
+      ]
+    },
+    {
+      "id": "eANw0hTFv",
+      "name": "Campfire Headset",
+      "changes": {
+        "display_type": "LCD",
+        "fov_horizontal_deg": "92",
+        "fov_diagonal_deg": "92",
+        "tracking": "6DoF inside-out"
+      },
+      "confidence": "medium",
+      "note": "Campfire is a software platform; hardware specs from Moor Insights hands-on review. Field-of-view is 92° diagonal. Resolution/weight specs unavailable from manufacturer.",
+      "sources": [
+        "https://moorinsightsstrategy.com/hands-on-with-campfires-new-holographic-computing-enterprise-headset-and-platform/",
+        "https://skarredghost.com/2023/07/03/hands-on-with-campfire-ar-haptx-gloves/",
+        "https://campfire3d.com/"
+      ]
+    },
+    {
+      "id": "YR7b7p4DU",
+      "name": "Cosmo Vision",
+      "changes": {
+        "weight_g": "40"
+      },
+      "confidence": "high",
+      "note": "Weight updated to 40g; cyclist-focused display with 12-hour battery; ActiveLook AMOLED micro-display; still actively sold in 2026",
+      "sources": [
+        "https://vrlitic.com/cosmo-vision-/",
+        "https://cosmoconnected.com/en/products-bike-scooter/cosmo-vision",
+        "https://cosmoconnected.com/products/cosmo-vision"
+      ]
+    },
+    {
+      "id": "suVKDU_0P",
+      "name": "DigiLens Argo",
+      "changes": {
+        "software": "Qualcomm Snapdragon XR2 OS",
+        "active_distribution": "Ja",
+        "eol_status": "Aktiv oder ohne EOL-Angabe",
+        "lifecycle_notes": "Enterprise AR headset; actively sold 2026 with Google Cloud partnership"
+      },
+      "confidence": "high",
+      "note": "Enterprise/industrial focus; price not publicly available; weight 185g confirmed; 48MP camera; HD LCoS display; 6DoF tracking",
+      "sources": [
+        "https://www.digilens.com/argo/",
+        "https://vr-compare.com/headset/digilensargo",
+        "https://www.prnewswire.com/news-releases/future-proof-your-xr-strategy-launch-of-argo-next-program-by-digilens-enables-the-shift-from-any-xr-device-to-the-argo-platform-302576342.html"
+      ]
+    },
+    {
+      "id": "MNTNWLDu4",
+      "name": "Dream Glass",
+      "changes": {
+        "fov_horizontal_deg": "90",
+        "fov_diagonal_deg": "90"
+      },
+      "confidence": "high",
+      "note": "Original 2018 dev kit specs confirmed: 1280x880 res, 60Hz, 240g weight, PC-powered with USB/HDMI tether.",
+      "sources": [
+        "https://skarredghost.com/2018/06/14/dreamglass-is-an-interesting-augmented-reality-glass-that-costs-only-399/",
+        "https://www.tomshardware.com/news/dreamworld-399-dreamglass-ar-headset-dev-kit,37220.html",
+        "https://vr-compare.com/headset/dreamglass"
+      ]
+    },
+    {
+      "id": "GlONfBjEP",
+      "name": "Dream Glass 4K",
+      "changes": {
+        "fov_horizontal_deg": "90",
+        "fov_diagonal_deg": "90"
+      },
+      "confidence": "high",
+      "note": "2020 standalone model with 1920x1080 per eye, 90 FOV, 5h battery, 185g. Display uses semi-reflective angled lenses (birdbath optics).",
+      "sources": [
+        "https://vr-compare.com/headset/dreamglass4k",
+        "https://displaydaily.com/the-dream-glass-4k-ar-headset-has-started-to-ship/",
+        "https://vrlitic.com/dream-glass-4k/"
+      ]
+    },
+    {
+      "id": "GgaK5c41-",
+      "name": "Dream Glass 4K Plus",
+      "changes": {
+        "fov_horizontal_deg": "90",
+        "fov_diagonal_deg": "90"
+      },
+      "confidence": "high",
+      "note": "2020 standalone, same as 4K but with 4GB RAM (vs 2GB). Uses birdbath optics, 1920x1080 per eye.",
+      "sources": [
+        "https://vr-compare.com/headset/dreamglass4kplus",
+        "https://vrlitic.com/dream-glass-4k/",
+        "https://www.geekbuying.com/item/Dream-Glass-4K-Portable-AR-Virtual-Smart-Glasses-Black-426745.html"
+      ]
+    },
+    {
+      "id": "hPA8JixLI",
+      "name": "Dream Glass Flow",
+      "changes": {
+        "fov_diagonal_deg": "43"
+      },
+      "confidence": "medium",
+      "note": "2022 standalone Micro-OLED model. 43-degree diagonal FOV confirmed; binocular resolution 3840x1080 (combined). Weight 59g is accurate.",
+      "sources": [
+        "https://vr-compare.com/headset/dreamglassflow",
+        "https://vrlitic.com/dream-glass-flow/",
+        "https://www.dreamworldvision.com/products/dream-glass-flow"
+      ]
+    },
+    {
+      "id": "EV601vi66",
+      "name": "Dream Glass Lead Plus",
+      "changes": {
+        "fov_horizontal_deg": "90",
+        "fov_diagonal_deg": "90"
+      },
+      "confidence": "high",
+      "note": "2022 standalone with Snapdragon 670, 1920x1080 per eye, 3GB RAM. 200-inch display equivalent. 320g weight confirmed.",
+      "sources": [
+        "https://vr-compare.com/headset/dreamglassleadplus",
+        "https://vrlitic.com/dreamworld-dream-glass-lead/",
+        "https://www.dreamworldvision.com/products/dream-glass-lead"
+      ]
+    },
+    {
+      "id": "-yaNtlMz9",
+      "name": "Dream Glass Lead Pro",
+      "changes": {
+        "fov_horizontal_deg": "90",
+        "fov_diagonal_deg": "90"
+      },
+      "confidence": "high",
+      "note": "2022 standalone with Snapdragon 670, 1920x1080 per eye, 4GB RAM (vs 3GB Plus). Adds 6DOF tracking, Unity SDK, enterprise features. 330g weight confirmed.",
+      "sources": [
+        "https://vr-compare.com/headset/dreamglassleadpro",
+        "https://vrlitic.com/dreamworld-dream-glass-lead-pro/",
+        "https://www.dreamworldvision.com/products/dream-glass-lead"
+      ]
+    },
+    {
+      "id": "Z1gjavg5l",
+      "name": "Engo 2",
+      "changes": {
+        "active_distribution": "Ja/Unklar",
+        "eol_status": "Aktiv oder ohne EOL-Angabe",
+        "lifecycle_notes": "Engo 2 weiterhin verfügbar. Engo 3 2026 eingeführt, zeigt laufende Entwicklung."
+      },
+      "confidence": "high",
+      "sources": [
+        "https://engoeyewear.com/products/engo-2",
+        "https://us.engoeyewear.com/",
+        "https://www.twice.com/product/accessories/engo-debuts-engo3-smart-glasses-for-runners"
+      ],
+      "note": "Engo 2 bleibt aktiv mit Preis von $349.95 USD."
+    },
+    {
+      "id": "hMIl1sAzP",
+      "name": "Engo Eyewear",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "lifecycle_notes": "Erste Generation durch Engo 2 (2022) ersetzt; nicht mehr zum Verkauf verfügbar."
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://us.engoeyewear.com/",
+        "https://us.engoeyewear.com/collections/all",
+        "https://engoeyewear.com/blogs/news/the-origin-of-engo"
+      ],
+      "note": "Original-Modell von 2021; durch Engo 2 und Engo 3 ersetzt."
+    },
+    {
+      "id": "legacy-epsonmoveriobt-200",
+      "name": "Epson Moverio BT-200",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "eol_date": "2019-06-30",
+        "lifecycle_notes": "Juni 2019 eingestellt. Nur noch Refurbished-Versionen verfügbar.",
+        "lifecycle_source": "https://epson.eu/en_EU/products/smart-glasses/see-through-mobile-viewer/moverio-bt-200/p/12411"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.niora.net/en/p/epson_moverio_bt_200",
+        "https://epson.eu/en_EU/products/smart-glasses/see-through-mobile-viewer/moverio-bt-200/p/12411",
+        "https://www.manualslib.com/manual/717366/Epson-Moverio-Bt-200.html?page=34"
+      ],
+      "note": "Discontinued since 2019; technical specs: 88g, 23° FOV."
+    },
+    {
+      "id": "Wmqx-AT6q",
+      "name": "Epson Moverio BT-40",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "lifecycle_notes": "BT-40 auf europäischer Epson-Website als eingestellt aufgeführt."
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://www.epson.eu/en_EU/products/smart-glasses/see-through-mobile-viewer/moverio-bt-40/p/31095",
+        "https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-40-Smart-Glasses-with-USB-Type-C-Connectivity-/p/V11H969020"
+      ],
+      "note": "Modell wird als eingestellt angezeigt; exaktes EOL-Datum nicht verfügbar."
+    },
+    {
+      "id": "c46yfe7il",
+      "name": "Epson Moverio BT-40S",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "lifecycle_notes": "BT-40S auf US und EU Epson-Websites als eingestellt aufgeführt."
+      },
+      "confidence": "high",
+      "sources": [
+        "https://epson.com/c/Moverio-BT-40S-Smart-Glasses-with-Intelligent-Touch-Controller/p/V11H969120",
+        "https://www.epson.eu/en_EU/products/smart-glasses/see-through-mobile-viewer/moverio-bt-40s/p/31096"
+      ],
+      "note": "Discontinued auf beiden Regionen; technisch: 1920x1080, 60Hz, 34° FOV."
+    },
+    {
+      "id": "UR8rXYX7t",
+      "name": "Everysight Raptor",
+      "changes": {
+        "fov_horizontal_deg": "110",
+        "resolution_per_eye": "1200x1080",
+        "weight_g": "98",
+        "refresh_hz": "90",
+        "display_type": "OLED",
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "lifecycle_notes": "Durch Maverick AR-Brille (Kickstarter Q4 2026) ersetzt; Raptor nicht mehr beworben."
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://www.niora.net/en/p/everysight_raptor",
+        "https://www.everysight.com/",
+        "https://www.everysight.com/maverick"
+      ],
+      "note": "Raptor-Spezifikationen verifiziert; wird durch Maverick (47g, 1280x720) ersetzt."
+    },
+    {
+      "id": "EnqtMtA05",
+      "name": "Google Glass Enterprise Edition 2",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Support beendet",
+        "eol_date": "2023-09-15",
+        "lifecycle_notes": "Verkauf beendet März 2023, Support endete Sept 2023.",
+        "lifecycle_source": "https://support.google.com/glass-enterprise/customer/answer/13417888"
+      },
+      "confidence": "high",
+      "note": "Sales discontinued March 15, 2023; official support ended September 15, 2023 per Google."
+    },
+    {
+      "id": "HDAcu5kC4",
+      "name": "Google Glass Explorer Edition",
+      "changes": {},
+      "confidence": "high",
+      "note": "Already correctly marked as discontinued (2015). No changes needed."
+    },
+    {
+      "id": "ZkO_SfqaC",
+      "name": "Guangli Holoswim",
+      "changes": {
+        "weight_g": "75"
+      },
+      "confidence": "medium",
+      "note": "Original 2021 model weight confirmed at 75g. Display resolution for original model not definitively documented."
+    },
+    {
+      "id": "HfZ2Dqm1q",
+      "name": "Guangli Holoswim 2",
+      "changes": {
+        "weight_g": "70"
+      },
+      "confidence": "high",
+      "note": "Holoswim 2 weight confirmed at 70g from multiple sources. Kickstarter campaign successful, product still available 2026."
+    },
+    {
+      "id": "NwViveXREl",
+      "name": "HTC Vive XR Elite",
+      "changes": {
+        "weight_g": "625"
+      },
+      "confidence": "high",
+      "note": "Official weight specification is 625g with battery (some sources cite 614g). Display specs and FOV horizontal confirmed."
+    },
+    {
+      "id": "JWXF3ikOV",
+      "name": "Huawei Vision Glass",
+      "changes": {
+        "software": "HarmonyOS"
+      },
+      "confidence": "high",
+      "note": "Confirmed running HarmonyOS, not unspecified OS. Still receiving security updates April 2026, active support continues."
+    },
+    {
+      "id": "x3IQCew4E",
+      "name": "Huawei VR Glass",
+      "changes": {
+        "optics": "Pancake optics",
+        "passthrough": "No camera passthrough"
+      },
+      "confidence": "medium",
+      "note": "Added missing optics and passthrough data; device still sold in limited regions as of 2026."
+    },
+    {
+      "id": "eTNerb4Vg",
+      "name": "Huawei VR Glass 6DoF",
+      "changes": {
+        "optics": "Pancake optics"
+      },
+      "confidence": "medium",
+      "note": "6DoF version uses pancake optics like the original model; limited international distribution."
+    },
+    {
+      "id": "wJVRRflMf",
+      "name": "INMO Air",
+      "changes": {
+        "hand_tracking": "Nein"
+      },
+      "confidence": "medium",
+      "note": "Original INMO Air does not support hand tracking; gesture control not documented."
+    },
+    {
+      "id": "UdgWHTDXY",
+      "name": "INMO Air2",
+      "changes": {
+        "weight_g": "99"
+      },
+      "confidence": "high",
+      "note": "Weight verified at 99g; hand tracking remains unclear per sources."
+    },
+    {
+      "id": "T2HJ66fyR",
+      "name": "Iristick G2",
+      "changes": {
+        "display_type": "LCD",
+        "optics": "Prism optics",
+        "fov_diagonal_deg": "117"
+      },
+      "confidence": "high",
+      "note": "Display is WQVGA LCD with Kopin White Pearl prism optics; FOV 117° diagonal confirmed."
+    },
+    {
+      "id": "6z7r29ojZ",
+      "name": "Julbo EVAD-1",
+      "changes": {
+        "price_usd": "550"
+      },
+      "confidence": "low",
+      "note": "Euro price 499€ converts to ~$550 USD at 2019-2020 rates; no official USD MSRP found."
+    },
+    {
+      "id": "pEEE5EDVo",
+      "name": "Lenovo Glasses T1",
+      "changes": {
+        "release_date": "2022-12-15",
+        "weight_g": "96",
+        "refresh_hz": "60"
+      },
+      "confidence": "high",
+      "note": "Released in China late 2022. Weight confirmed at 96g. Specs verified from multiple sources.",
+      "sources": [
+        "https://www.notebookcheck.net/Lenovo-Glasses-T1-presented-with-Micro-OLED-displays-and-compatibility-across-popular-operating-systems.644463.0.html",
+        "https://vr-compare.com/headset/lenovoglassest1",
+        "https://digitaltrends.com/computing/lenovo-glasses-t1-hands-on-photos-specs-price/"
+      ]
+    },
+    {
+      "id": "MplTgXoYM",
+      "name": "Lenovo ThinkReality A3",
+      "changes": {
+        "display_type": "LCoS",
+        "fov_diagonal_deg": "47",
+        "refresh_hz": "120"
+      },
+      "confidence": "high",
+      "note": "Display confirmed as LCoS. FOV approximately 47 degrees diagonal. Supports up to 120Hz refresh rate. Still available 2026.",
+      "sources": [
+        "https://vr-compare.com/headset/lenovothinkrealitya3",
+        "https://www.lenovo.com/us/en/thinkrealitya3/",
+        "https://www.seriousinsights.net/lenovo-thinkreality-a3-glasses-review-an-enticing-platform-for-enterprise-ar/"
+      ]
+    },
+    {
+      "id": "NwLynxR1_",
+      "name": "Lynx R-1",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "eol_date": "2026-03-04",
+        "lifecycle_notes": "Lynx liquidated March 4 2026. Company ceased all operations.",
+        "lifecycle_source": "https://www.uploadvr.com/lynx-has-entered-liquidation-r2-headset-wont-launch/"
+      },
+      "confidence": "high",
+      "note": "Company placed in compulsory liquidation by French court on March 4, 2026. No longer available for purchase.",
+      "sources": [
+        "https://www.uploadvr.com/lynx-has-entered-liquidation-r2-headset-wont-launch/",
+        "https://www.roadtovr.com/lynx-liquidation-bankrupt-2026-r2-xr-headset/",
+        "https://www.heise.de/en/news/European-Meta-Quest-alternative-facing-closure-Lynx-faces-liquidation-11221765.html"
+      ]
+    },
+    {
+      "id": "sCAIQq45W",
+      "name": "MAD Gaze Glow Plus",
+      "changes": {},
+      "confidence": "medium",
+      "note": "Product still available 2026 with recent software updates. Refresh rate not found in authoritative sources. Status unchanged - appears still operational.",
+      "sources": [
+        "https://www.madgaze.com/glow-plus/",
+        "https://vr-compare.com/headset/madgazeglowplus/",
+        "https://gbatemp.net/review/mad-gaze-glow-plus.1621/"
+      ]
+    },
+    {
+      "id": "KdZOqV1Ev",
+      "name": "MAD Gaze Vader",
+      "changes": {},
+      "confidence": "low",
+      "note": "Limited recent information available. Device from 2017 with Android 6.0. Display type not clearly specified in modern sources.",
+      "sources": [
+        "https://vr-compare.com/headset/madgazevader",
+        "https://3dhologroup.com/mad-gaze-vader/",
+        "https://fccid.io/2AI52-VADERA100/User-Manual/Users-manual-3985177"
+      ]
+    },
+    {
+      "id": "Vg5P0BH6B",
+      "name": "MAD Gaze Wave",
+      "changes": {
+        "resolution_per_eye": "1920x1080"
+      },
+      "confidence": "high",
+      "note": "Resolution per eye confirmed as 1920x1080. Waveguide with Micro-OLED display. 80g weight verified.",
+      "sources": [
+        "https://vr-compare.com/headset/madgazewave",
+        "https://vrlitic.com/mad-gaze-wave/",
+        "https://displaydaily.com/next-gen-smart-glasses-from-mad-gaze-are-on-the-way/"
+      ]
+    },
+    {
+      "id": "1N3k3S4MN",
+      "name": "Magic Leap 1",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "eol_date": "2024-12-31",
+        "lifecycle_notes": "Support endete 31 Dezember 2024; kein Cloud Service, keine Updates mehr.",
+        "lifecycle_source": "https://www.magicleap.care/hc/en-us/articles/18878883445645-Magic-Leap-1-End-of-Life",
+        "display_type": "LCOS"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.magicleap.care/hc/en-us/articles/18878883445645-Magic-Leap-1-End-of-Life",
+        "https://techcrunch.com/2023/09-01/magic-leaps-original-headset-will-stop-working-at-the-end-of-2024/",
+        "https://www.roadtovr.com/magic-leap-1-shut-down-2024/"
+      ],
+      "note": "Magic Leap 1 ist seit 31.12.2024 nicht mehr funktional; offiziell EOL seit dieser Datumangabe."
+    },
+    {
+      "id": "mt3AEYJu5",
+      "name": "Magic Leap 2",
+      "changes": {
+        "refresh_hz": "120",
+        "official_url": "https://www.magicleap.com/en-us/magic-leap-2"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://developer-docs.magicleap.cloud/docs/device/hardware/hardware-specs/",
+        "https://channelxr.com/products/magic-leap-2-mixed-reality-headset",
+        "https://www.magicleap.care/hc/en-us/articles/7813913215373-Product-Specifications"
+      ],
+      "note": "Magic Leap 2 ist 2026 noch aktiv und im Vertrieb; 120Hz Refresh Rate bestaetigt."
+    },
+    {
+      "id": "98wLZvTJQ",
+      "name": "Meta 2",
+      "changes": {
+        "official_url": "https://vrarwiki.com/wiki/Meta_2",
+        "resolution_per_eye": "1280x1440",
+        "display_type": "LCD"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://www.roadtovr.com/meta-shuts-amidst-patent-infringement-lawsuit-asset-liquidation/",
+        "https://techcrunch.com/2019/01/17/meta-ar-caveat-emptor/",
+        "https://vr-compare.com/headset/meta2"
+      ],
+      "note": "Meta 2 Company war 2019 insolvent; Asset-Verkauf zu unbekanntem Kaeufer; kein offizieller URL verfuegbar."
+    },
+    {
+      "id": "NwMetaQ3__",
+      "name": "Meta Quest 3",
+      "changes": {
+        "resolution_per_eye": "2064x2208"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.meta.com/quest/quest-3/",
+        "https://vr-compare.com/headset/metaquest3",
+        "https://www.techtimes.com/articles/314706/20260218/meta-quest-vs-meta-quest-3-comparison-specs-performance-mixed-reality-upgrades.htm"
+      ],
+      "note": "Meta Quest 3 ist 2026 noch verfuegbar und im aktiven Vertrieb; Resolution korrekt eingegeben."
+    },
+    {
+      "id": "NwMetaQ3S_",
+      "name": "Meta Quest 3S",
+      "changes": {
+        "resolution_per_eye": "1832x1920"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.meta.com/quest/quest-3s/",
+        "https://vr-compare.com/headset/metaquest3s",
+        "https://www.androidcentral.com/gaming/virtual-reality/meta-quest-3s"
+      ],
+      "note": "Meta Quest 3S ist aktuell erhaeltlich seit Oktober 2024; Resolution bestaetigt."
+    },
+    {
+      "id": "NwMetaQPro",
+      "name": "Meta Quest Pro",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "eol_date": "2025-01-31",
+        "lifecycle_notes": "Diskontinuiert Januar 2025; keine neuen Verkaeufe mehr von Meta.",
+        "lifecycle_source": "https://roadtovr.com/meta-discontinues-quest-pro/"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://roadtovr.com/meta-discontinues-quest-pro/",
+        "https://unboundxr.com/blogs/meta-beindigt-het-zakelijke-aanbod-per-20-februari",
+        "https://www.slashgear.com/1789980/why-meta-quest-pro-discontinued-reason-explained/"
+      ],
+      "note": "Meta Quest Pro wurde Januar 2025 diskontinuiert; kein Verkauf mehr durch Meta seit dann."
+    },
+    {
+      "id": "0iz9ksGZA",
+      "name": "Meta Ray-Ban Display",
+      "changes": {
+        "display_type": "LCoS"
+      },
+      "note": "Display technology is OmniVision LCoS with Lumus waveguide, not LCD. All other specs (600x600, 90Hz, 69g, 20° FOV) verified accurate.",
+      "confidence": "high",
+      "sources": [
+        "https://kguttag.com/2025/10/30/meta-ray-ban-display-part-1-lumus-waveguide-omnivision-lcos-and-goertek-projection-engine/",
+        "https://www.oled-info.com/meta-launches-lcos-powered-ai-ar-glasses-oled-microdisplay"
+      ]
+    },
+    {
+      "id": "tSCQxsAA_",
+      "name": "Microsoft HoloLens 1",
+      "changes": {},
+      "note": "EOL status correct: support ended Dec 10 2024. Not sold new as of June 2026. All lifecycle fields verified.",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/en-us/previous-versions/mixed-reality/hololens-1/hololens1-release-notes",
+        "https://www.roadtovr.com/microsoft-hololens-2-discontinued-support-2027-hololens-3/"
+      ]
+    },
+    {
+      "id": "EkSDYv0cW",
+      "name": "Microsoft HoloLens 2",
+      "changes": {
+        "active_distribution": "Nein"
+      },
+      "note": "HoloLens 2 production ended Dec 2024, out of stock/discontinued for sale. Support continues through Dec 31 2027. LBS display type is correct.",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/en-us/hololens/hololens-release-notes",
+        "https://www.roadtovr.com/microsoft-hololens-2-discontinued-support-2027-hololens-3/",
+        "https://www.uploadvr.com/microsoft-discontinuing-hololens-2/"
+      ]
+    },
+    {
+      "id": "PRD287sFm",
+      "name": "Nimo",
+      "changes": {},
+      "note": "Announced Feb 21 2022, but product still in pre-order/enterprise phase as of June 2026 with no confirmed consumer release date. Active status acceptable as company shipping to enterprises.",
+      "confidence": "medium",
+      "sources": [
+        "https://www.nimoplanet.com/",
+        "https://tracxn.com/d/companies/nimo/__OZDxbnKxpKtXl-ziYR1tFhi2DZ1OhSdqloTOr0DrZ68",
+        "https://www.auganix.org/ar-news-nimo-planet-partners-with-rokid-to-enhance-spatial-productivity/"
+      ]
+    },
+    {
+      "id": "vktjm1mHt",
+      "name": "Nolo VR Glass",
+      "changes": {},
+      "note": "Correctly marked discontinued. Announced Jan 7 2023 for Feb 2023 launch but product was cancelled and never reached market.",
+      "confidence": "high",
+      "sources": [
+        "https://bleedingcool.com/games/nolo-reveals-new-vr-glass-during-ces-2023/",
+        "https://vr-compare.com/headset/nolovrglass"
+      ]
+    },
+    {
+      "id": "jtG3rIKIH",
+      "name": "Nreal Air",
+      "changes": {
+        "software": "Nebula"
+      },
+      "note": "Software is Nebula (runs on Android). Company rebranded from Nreal to Xreal in 2023, but product was released 2022 as Nreal Air. Status appears active/available.",
+      "confidence": "high",
+      "sources": [
+        "https://www.auganix.org/nreal-announces-us-launch-of-nreal-air-iphone-adapter-and-major-nebula-upgrade/",
+        "https://www.nreal.ai/nebula",
+        "https://play.google.com/store/apps/details/Nebula?id=ai.nreal.nebula.universal",
+        "https://www.uploadvr.com/nreal-rebrand-xreal-beam-adapter/"
+      ]
+    },
+    {
+      "id": "Y2w9aRodp",
+      "name": "Nreal Light",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "lifecycle_notes": "Rebranded to XREAL Light, marked as FINAL SALE; discontinued."
+      },
+      "confidence": "high",
+      "note": "XREAL Light in FINAL SALE status on official store; Nreal rebranded to XREAL in 2023.",
+      "sources": [
+        "https://us.shop.xreal.com/products/xreal-light",
+        "https://notebookcheck.net/Nreal-rebrands-to-XREAL-and-reveals-new-Beam-adapter.720452.0.html"
+      ]
+    },
+    {
+      "id": "vn_zQOTOV",
+      "name": "Nubia Neovision Glass",
+      "changes": {
+        "tracking": "Non-positional",
+        "fov_diagonal_deg": "43"
+      },
+      "confidence": "high",
+      "note": "Fixed tracking from 'None' to 'Non-positional' (phone-powered, no head tracking). FOV horizontal ~43°; diagonal not explicitly stated.",
+      "sources": [
+        "https://global.ztedevices.com/products/nubia-neovision-ar-glasses",
+        "https://vr-compare.com/headset/nubianeovisionglass"
+      ]
+    },
+    {
+      "id": "oqaLcHVYE",
+      "name": "NuEyes Pro 3e",
+      "changes": {},
+      "confidence": "high",
+      "note": "Pro 3e still available in 2026 alongside newer Pro 4 model; no changes needed to current specs.",
+      "sources": [
+        "https://www.nueyes.com/pro3e",
+        "https://www.nueyes.com/pro4"
+      ]
+    },
+    {
+      "id": "0Qjzt-5qf",
+      "name": "Oppo Air Glass",
+      "changes": {},
+      "confidence": "medium",
+      "note": "Original Air Glass limited release in China (March 2022); Air Glass 2 (38g) released 2023; Air Glass 3 prototype at MWC 2024. Status in 2026 unclear; no discontinuation confirmed.",
+      "sources": [
+        "https://www.oppo.com/en/newsroom/press/oppo-unveils-new-oppo-air-glass-3/",
+        "https://soyacincau.com/2024/02/29/oppo-air-glass-3-mwc-2024-lightest-ar-glasses/"
+      ]
+    },
+    {
+      "id": "3ZdVU3ZJM",
+      "name": "P&C Solution METALENSE",
+      "changes": {},
+      "confidence": "low",
+      "note": "Missing official_url and price_usd in CSV. METALENSE 2 showcased at CES 2025 as updated model; original METALENSE announced Oct 2022. Unable to locate pricing for original METALENSE.",
+      "sources": [
+        "https://www.openpr.com/news/3803320/p-c-solution-to-showcase-advanced-ar-glasses-metalense-2-at-ces",
+        "https://thearea.org/area-members/pc-solution-co-ltd/"
+      ]
+    },
+    {
+      "id": "NwPimaxCry",
+      "name": "Pimax Crystal",
+      "changes": {},
+      "confidence": "high",
+      "note": "Crystal available in 2026; company released Crystal Super Micro-OLED and Dream Air variants at CES 2026. Original specs confirmed: 115° H × 105° V × 130° diagonal.",
+      "sources": [
+        "https://pimax.com/blogs/blogs/pimax-crystal-fov/",
+        "https://pimax.com/pages/pimax-crystal-series-comparison-crystal-og-light-super"
+      ]
+    },
+    {
+      "id": "NwPSVR2Xr",
+      "name": "PlayStation VR2",
+      "changes": {
+        "price_usd": "399"
+      },
+      "confidence": "high",
+      "note": "Permanent price reduction to $399 as of March 2026; currently on sale for $299. Still actively sold and available.",
+      "sources": [
+        "https://blog.playstation.com/2025/02/27/a-great-new-price-for-playstation-vr2/",
+        "https://www.gamedeveloper.com/business/playstation-vr2-gets-its-first-and-permanent-price-drop-to-399",
+        "https://direct.playstation.com/en-us/playstation-vr2"
+      ]
+    },
+    {
+      "id": "FauT-Oibf",
+      "name": "Realmax Qian",
+      "changes": {},
+      "confidence": "low",
+      "note": "Insufficient current information to verify lifecycle status or pricing for 2026. Product page exists but no evidence of recent sales activity.",
+      "sources": [
+        "https://realmax.myshoplaza.com/",
+        "https://www.crunchbase.com/organization/realmax-technology"
+      ]
+    },
+    {
+      "id": "gJzO9KhG5",
+      "name": "RealWear HMT-1",
+      "changes": {
+        "weight_g": "380",
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Support beendet",
+        "eol_date": "2022-09-30",
+        "lifecycle_notes": "HMT-1 discontinued September 2022, no support beyond firmware v12.6.",
+        "lifecycle_source": "https://support.realwear.com/knowledge/realwear-firmware-update-and-support-policy"
+      },
+      "confidence": "high",
+      "note": "Official RealWear support confirms HMT-1 is EOL and no longer receives firmware updates beyond v12.6 as of September 2022.",
+      "sources": [
+        "https://support.realwear.com/knowledge/realwear-firmware-update-and-support-policy",
+        "https://support.realwear.com/knowledge/hmt-1-specifications-for-model-t1100g",
+        "https://vr-expert.com/news/realwear-hmt-1-reaches-end-of-life-in-september-2022/"
+      ]
+    },
+    {
+      "id": "ufFwiatGb",
+      "name": "RealWear HMT-1Z1",
+      "changes": {
+        "weight_g": "430",
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Support beendet",
+        "lifecycle_notes": "HMT-1Z1 discontinued, EOL with no updates beyond v12.6. Still available from some distributors but unsupported.",
+        "lifecycle_source": "https://support.realwear.com/knowledge/realwear-firmware-update-and-support-policy"
+      },
+      "confidence": "high",
+      "note": "RealWear HMT-1Z1 officially EOL and end of support. Still occasionally available from third-party distributors but not officially sold or supported.",
+      "sources": [
+        "https://support.realwear.com/knowledge/realwear-firmware-update-and-support-policy",
+        "https://support.realwear.com/knowledge/hmt-1z1-product-overview",
+        "https://support.realwear.com/knowledge/realwear-hmt-1-and-hmt-1z1-end-of-security-update-support-notice"
+      ]
+    },
+    {
+      "id": "zPABenwmr",
+      "name": "RealWear Navigator 500",
+      "changes": {
+        "price_usd": "3200",
+        "weight_g": "272"
+      },
+      "confidence": "high",
+      "note": "Navigator 500 actively sold at $3,200 USD with continued support through December 2030. Weight verified at 272g.",
+      "sources": [
+        "https://shop.realwear.com/products/realwear-navigator-500",
+        "https://support.realwear.com/knowledge/realwear-firmware-update-and-support-policy",
+        "https://vr-expert.com/en-us/ar-headsets/buy-realwear-navigator-500/"
+      ]
+    },
+    {
+      "id": "o9JH3GwIU",
+      "name": "RealWear Navigator 520",
+      "changes": {
+        "weight_g": "274"
+      },
+      "confidence": "high",
+      "note": "Navigator 520 actively sold at $2,900 USD with continued support through December 2030. Weight updated to 274g.",
+      "sources": [
+        "https://shop.realwear.com/products/realwear-navigator-520",
+        "https://support.realwear.com/knowledge/realwear-firmware-update-and-support-policy",
+        "https://vr-expert.com/en-us/ar-headsets/buy-realwear-navigator-520/"
+      ]
+    },
+    {
+      "id": "ElhWfkAbQ",
+      "name": "RealWear Navigator Z1",
+      "changes": {
+        "active_distribution": "Ja/Unklar",
+        "eol_status": "Aktiv oder ohne EOL-Angabe",
+        "lifecycle_notes": "RealWear Navigator Z1 aktiv, unterstützt bis mindestens 2030. Android 16 geplant 2026.",
+        "lifecycle_source": "https://support.realwear.com/knowledge/realwear-firmware-update-and-support-policy"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.realwear.com/devices/navigator-Z1",
+        "https://shop.realwear.com/products/navigator-z1",
+        "https://support.realwear.com/knowledge/realwear-navigator-z1-faqs",
+        "https://support.realwear.com/knowledge/realwear-firmware-update-and-support-policy"
+      ],
+      "note": "RealWear Navigator Z1 still actively sold and supported; firmware updates planned through 2030."
+    },
+    {
+      "id": "legacy-reconjet",
+      "name": "Recon Jet",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "eol_date": "2017-07-01",
+        "lifecycle_notes": "Intel beendete Recon Instruments Juni 2017. Produktlinie vollständig eingestellt.",
+        "lifecycle_source": "https://en.wikipedia.org/wiki/Recon_Instruments",
+        "fov_diagonal_deg": "30",
+        "resolution_per_eye": "400x240"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Recon_Instruments",
+        "https://www.bicycleretailer.com/product-tech/2017/07/21/intel-quietly-discontinues-recon-jet-smart-sunglasses",
+        "https://engadget.com/2015-07-17-recon-jet-review.html"
+      ],
+      "note": "Recon Jet discontinued by Intel in 2017; confirmed early Wearable HUD for sports/cycling."
+    },
+    {
+      "id": "kG1_Qtju3",
+      "name": "Rokid Air",
+      "changes": {
+        "active_distribution": "Ja/Unklar",
+        "eol_status": "Aktiv oder ohne EOL-Angabe",
+        "refresh_hz": "60",
+        "lifecycle_notes": "Rokid Air weiterhin erhältlich; Modell von 2021. Neuere Modelle im Katalog."
+      },
+      "confidence": "high",
+      "sources": [
+        "https://air.rokid.com/",
+        "https://global.rokid.com/blogs/articles/rokid-air-official-gbatemp-review-by-pranav",
+        "https://vr-compare.com/headset/rokidair"
+      ],
+      "note": "Rokid Air (Phone-powered) mit 1920x1080 Resolution und 43° FOV; 60Hz oder 75Hz (Quellen variieren)."
+    },
+    {
+      "id": "Owzy8dkih",
+      "name": "Rokid Air Pro",
+      "changes": {
+        "active_distribution": "Ja/Unklar",
+        "eol_status": "Aktiv oder ohne EOL-Angabe",
+        "price_usd": "599",
+        "lifecycle_notes": "Rokid Air Pro (2022) weiterhin als Produkt erwähnt; neuere Modelle verfügbar."
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/rokidairpro",
+        "https://alegerglobal.com/en/shop-en/smart-glasses-en/rokid-air-pro/",
+        "https://global.rokid.com/"
+      ],
+      "note": "Rokid Air Pro (2022) mit 1920x1080 Resolution, 75Hz, 43° FOV, 83g. Preis basierend auf erhältlichen Quellen."
+    },
+    {
+      "id": "WCyEdkzUk",
+      "name": "Rokid Glass 2",
+      "changes": {
+        "active_distribution": "Ja/Unklar",
+        "eol_status": "Aktiv oder ohne EOL-Angabe",
+        "lifecycle_notes": "Rokid Glass 2 (2020) weiterhin erhältlich; Standard-Gerät in mehreren Märkten."
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/rokidglass2",
+        "https://alegerglobal.com/en/shop-en/smart-glasses-en/rokid-glass-2/",
+        "https://ifdesign.com/en/winner-ranking/project/rokid-glass-2/309055"
+      ],
+      "note": "Rokid Glass 2 mit LCOS Display, 40° FOV, 1280x720 Resolution, 96g Gewicht, 10000 mAh Akku."
+    },
+    {
+      "id": "y-HjRHyLZ",
+      "name": "Rokid Max",
+      "changes": {
+        "active_distribution": "Ja/Unklar",
+        "eol_status": "Aktiv oder ohne EOL-Angabe",
+        "lifecycle_notes": "Rokid Max (2023) aktiv; Neuere Max 2 Version verfügbar. Beide auf Markt."
+      },
+      "confidence": "high",
+      "sources": [
+        "https://global.rokid.com/products/rokid-max",
+        "https://global.rokid.com/pages/rokid-max-specs",
+        "https://vr-compare.com/headset/rokidmax"
+      ],
+      "note": "Rokid Max mit 1920x1080 Resolution, 50° FOV, 120Hz Refresh, 75g Gewicht. Micro-OLED Display."
+    },
+    {
+      "id": "3rjj5keYC",
+      "name": "Rokid Max Pro",
+      "changes": {
+        "price_usd": "685",
+        "weight_g": "76",
+        "release_date": "2024-03-01"
+      },
+      "confidence": "high",
+      "note": "Price confirmed at $685 (4999 CNY), weight 76g, released 2024. Tracking: 6DoF with depth camera for hand tracking.",
+      "sources": [
+        "https://www.gizmochina.com/2023/08/27/rokid-ar-studio-suite-featuring-max-pro-glasses-station-pro-launched/",
+        "https://vrarwiki.com/wiki/Rokid_Max_Pro"
+      ]
+    },
+    {
+      "id": "oHsFwXqoj",
+      "name": "Rokid Vision 2",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "lifecycle_notes": "Cancelled developer concept, never commercially released.",
+        "lifecycle_source": "https://www.roadtovr.com/rokid-vision-2-ar-glasses-waveguide/"
+      },
+      "confidence": "high",
+      "note": "Rokid Vision 2 was cancelled and never released commercially. Announced Jan 2021 as exploration only.",
+      "sources": [
+        "https://www.roadtovr.com/rokid-vision-2-ar-glasses-waveguide/",
+        "https://www.auganix.org/rokid-unveils-its-rokid-vision-2-mixed-reality-glasses-with-new-a-hardware-design-and-new-xr-applications/"
+      ]
+    },
+    {
+      "id": "W1kyhxveC",
+      "name": "Rokid X-Craft",
+      "changes": {
+        "resolution_per_eye": "1280x720"
+      },
+      "confidence": "high",
+      "note": "Industrial AR headset with 1280x720 resolution confirmed. Binocular waveguide display, 40° FOV.",
+      "sources": [
+        "https://vr-compare.com/headset/rokidx-craft",
+        "https://www.rokid.ai/products/rokid-x-craft/"
+      ]
+    },
+    {
+      "id": "o1Kzyd1z_",
+      "name": "Shadow Creator Action One",
+      "changes": {},
+      "confidence": "medium",
+      "note": "Company still active as of 2025 with new products. Action One specs confirmed: 1280x720 res, Snapdragon 835, 6DoF. Company merging with PhotonLens.",
+      "sources": [
+        "https://www.roadtovr.com/shadow-creator-ar-photons-xr2-nintendo-switch/",
+        "https://vr-compare.com/headset/shadowcreatoractionone"
+      ]
+    },
+    {
+      "id": "nzYmv8egK",
+      "name": "Shadow Creator Halomini",
+      "changes": {},
+      "confidence": "medium",
+      "note": "Halomini specs verified: OLED display, 40° FOV, waveguides, 370g weight confirmed. Company still active.",
+      "sources": [
+        "https://vr-compare.com/headset/shadowcreatorhalomini",
+        "https://www.shadowcreator.com/halomini/halomini.html"
+      ]
+    },
+    {
+      "id": "Hz5LNjh9Y",
+      "name": "Snap Spectacles (2021)",
+      "changes": {
+        "price_usd": "",
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "lifecycle_notes": "Developer-only release (2021). Never sold to consumers. Discontinued for new gen.",
+        "lifecycle_source": "https://www.uploadvr.com/snap-spectacles-5-ar/"
+      },
+      "confidence": "high",
+      "note": "Fourth-gen Spectacles (2021) were dev-only, not commercial. No MSRP. Weight 134g confirmed.",
+      "sources": [
+        "https://newsroom.snap.com/introducing-the-next-generation-of-spectacles",
+        "https://www.uploadvr.com/snap-spectacles-5-ar/",
+        "https://www.roadtovr.com/snapchat-spectacles-ar-glasses-announcement/"
+      ]
+    },
+    {
+      "id": "legacy-sonysmarteyeglassde",
+      "name": "Sony SmartEyeglass (SED-E1)",
+      "changes": {
+        "weight_g": "77"
+      },
+      "confidence": "high",
+      "note": "Developer edition discontinued long ago; weight and camera specs confirmed from Sony official specs."
+    },
+    {
+      "id": "MRE_j97gq",
+      "name": "Spacetop",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "lifecycle_notes": "Hardware model eingestellt; Pivot zu Spacetop for Windows (Software-only).",
+        "lifecycle_source": "https://www.uploadvr.com/sightful-cancels-spacetop-pivots-to-windows-software-for-xreal-glasses/",
+        "price_usd": ""
+      },
+      "confidence": "high",
+      "note": "Original Spacetop hardware with Nreal Light announced May 2023; no longer sold as of 2026."
+    },
+    {
+      "id": "wrjEu415W",
+      "name": "Spacetop G1",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "release_date": "",
+        "lifecycle_notes": "Hardware storniert Oktober 2024; Praorder-Rueckzahlungen ausgegeben.",
+        "lifecycle_source": "https://www.roadtovr.com/ar-latop-spacetop-cancelled-windows-software-pivot/"
+      },
+      "confidence": "high",
+      "note": "G1 hardware cancelled October 2024 before launch; conflicting reports of 2026 model require verification."
+    },
+    {
+      "id": "UIRKkbXSO",
+      "name": "TCL NXTWEAR G",
+      "changes": {
+        "price_usd": "199"
+      },
+      "confidence": "medium",
+      "note": "Current market price reduced significantly from launch MSRP of 680; still available through retailers."
+    },
+    {
+      "id": "x7KWR1zVL",
+      "name": "TCL NXTWEAR S",
+      "changes": {
+        "price_usd": "449"
+      },
+      "confidence": "medium",
+      "note": "Original RRP $449 from 2022 launch; still available through major retailers."
+    },
+    {
+      "id": "Dnsbasmiv",
+      "name": "TCL NXTWEAR V",
+      "changes": {},
+      "confidence": "low",
+      "note": "No confirmed 2026 release date or pricing found; appears to remain unreleased/vaporware as of June 2026."
+    },
+    {
+      "id": "xo3cio_3V",
+      "name": "TCL RayNeo X2",
+      "changes": {
+        "price_usd": "899",
+        "weight_g": "120",
+        "refresh_hz": "120",
+        "fov_diagonal_deg": "25"
+      },
+      "confidence": "high",
+      "note": "Verified specifications from official RayNeo website and multiple tech reviews; weight and 120Hz refresh rate confirmed.",
+      "sources": [
+        "https://www.rayneo.com/products/tcl-rayneo-x2",
+        "https://vr-compare.com/headset/tclrayneox2",
+        "https://www.uploadvr.com/rayneo-x2-standalone-ar-glasses-review/"
+      ]
+    },
+    {
+      "id": "rNPYFiTHx",
+      "name": "TCL RayNeo X2 Lite",
+      "changes": {
+        "price_usd": "899",
+        "release_date": "2024-09-01",
+        "refresh_hz": "60",
+        "fov_diagonal_deg": "30"
+      },
+      "confidence": "medium",
+      "note": "X2 Lite announced at CES 2024 for Q3 2024 release; specs from early announcements; actual current availability status unclear.",
+      "sources": [
+        "https://www.prnewswire.com/news-releases/rayneo-demos-ultralight-x2-lite-ar-glasses-for-the-first-time-announcing-crowdfund-campaign-for-the-rayneo-x2-ar-glasses-at-ces-2024-302028818.html",
+        "https://www.microled-info.com/tcl-announces-rayneo-x2-lite-smartglasses-powered-full-color-microled"
+      ]
+    },
+    {
+      "id": "sMDYLv4VB",
+      "name": "ThirdEye Razor MR Glasses",
+      "changes": {
+        "price_usd": "699",
+        "weight_g": "85",
+        "fov_diagonal_deg": "43"
+      },
+      "confidence": "high",
+      "note": "Specifications confirmed from CES 2022 announcements and multiple tech sources; 70Hz refresh rate and phone-powered compute unit.",
+      "sources": [
+        "https://blog.thirdeyegen.com/thirdeye-announces-razor-mr-glasses-and-expands-into-consumer-metaverse",
+        "https://techaeris.com/2022/01/09/ces-2022-thirdeye-expanding-consumer-metaverse-razor-mr-glasses/",
+        "https://vr-compare.com/headset/thirdeyerazormrglasses"
+      ]
+    },
+    {
+      "id": "-pmNU-it0",
+      "name": "ThirdEye X2",
+      "changes": {
+        "price_usd": "1950",
+        "weight_g": "312",
+        "refresh_hz": "60",
+        "fov_diagonal_deg": "42"
+      },
+      "confidence": "high",
+      "note": "Standalone unit released 2018; weight in ounces (11oz) converted to ~312g; 60 fps confirmed from multiple sources.",
+      "sources": [
+        "https://www.uploadvr.com/thirdeye-x2-launched/",
+        "https://www.prnewswire.com/news-releases/thirdeye-gen-announces-shipments-of-its-x2-mixed-reality-glasses-300919487.html",
+        "https://www.thirdeyegen.com/x2-smart-glasses"
+      ]
+    },
+    {
+      "id": "Rz1MDcJer",
+      "name": "Thunderbird Air Plus",
+      "changes": {
+        "price_usd": "2499"
+      },
+      "confidence": "medium",
+      "note": "Price from VRcompare; device appears to be unreleased/pre-release status as of early 2024; active distribution unclear.",
+      "sources": [
+        "https://vr-compare.com/headset/thunderbirdairplus",
+        "https://www.gamingdeputy.com/215-inch-pocket-giant-screenthunderbird-air-plus-released-2299-yuan-for-the-first-launch-/"
+      ]
+    },
+    {
+      "id": "Yp1UjtE3P",
+      "name": "Tilt Five",
+      "changes": {
+        "weight_g": "100",
+        "fov_diagonal_deg": "110"
+      },
+      "confidence": "high",
+      "note": "Official specs from Tilt Five tech overview page; weight ~100g (3.5oz) confirmed; PC-powered system with projector optics.",
+      "sources": [
+        "https://www.tiltfive.com/make/tech-overview",
+        "https://vr-compare.com/headset/tiltfive"
+      ]
+    },
+    {
+      "id": "rAxPHOG0_",
+      "name": "TQSKY T1",
+      "changes": {
+        "tracking": "Non-positional"
+      },
+      "confidence": "medium",
+      "note": "TQSKY T1 is phone-powered display with no positional head tracking; still actively sold 2026.",
+      "sources": [
+        "https://store.tqsky.com/products/tqsky-t1",
+        "https://www.amazon.com/TQSKY-T1-Micro-OLED-Audiovisual-Compatible/dp/B0CCRWXSXR"
+      ]
+    },
+    {
+      "id": "NwVarjoXR4",
+      "name": "Varjo XR-4",
+      "changes": {
+        "weight_g": "1021"
+      },
+      "confidence": "high",
+      "note": "Varjo XR-4 total system weight is 1021g (665g headset + 356g headband); still sold in 2026 with three variants.",
+      "sources": [
+        "https://varjo.com/products/xr-4/",
+        "https://vr-compare.com/headset/varjoxr-4"
+      ]
+    },
+    {
+      "id": "ZTM2WqVqk",
+      "name": "Viture Luma",
+      "changes": {
+        "tracking": "3DoF inside-out",
+        "eye_tracking": "Nein",
+        "hand_tracking": "Nein"
+      },
+      "confidence": "high",
+      "note": "Standard Viture Luma (2025) has 3DoF tracking via SpaceWalker app; no eye or hand tracking; 77g confirmed; actively sold.",
+      "sources": [
+        "https://www.viture.com/product/viture-luma-xr-glasses",
+        "https://vr-compare.com/headset/vitureluma"
+      ]
+    },
+    {
+      "id": "dueX8NI9A",
+      "name": "Viture Luma Pro",
+      "changes": {
+        "weight_g": "79",
+        "eye_tracking": "Ja",
+        "hand_tracking": "Ja"
+      },
+      "confidence": "high",
+      "note": "Viture Luma Pro (2025) weighs 79g; has built-in eye tracking and hand tracking (6DoF); actively sold June 2026.",
+      "sources": [
+        "https://www.viture.com/product/viture-luma-pro-xr-glasses",
+        "https://www.bestbuy.com/product/viture-luma-pro-xr-glasses-152-inches-1200p-ultra-sharp-display-1000-nits-52-degrees-fov-myopia-adjustments-regular-black/J3R84H925W"
+      ]
+    },
+    {
+      "id": "1EJmfopvE",
+      "name": "Viture Luma Ultra",
+      "changes": {
+        "weight_g": "77",
+        "eye_tracking": "Ja",
+        "hand_tracking": "Ja"
+      },
+      "confidence": "high",
+      "note": "Viture Luma Ultra (2025) weighs 77g; first Viture flagship with RGB+depth cameras, 6DoF, eye & hand tracking; actively sold.",
+      "sources": [
+        "https://www.viture.com/product/viture-luma-ultra-xr-glasses",
+        "https://www.microcenter.com/product/705109/viture-luma-ultra-xr-glasses"
+      ]
+    },
+    {
+      "id": "5BNm8a3Zr",
+      "name": "Viture One",
+      "changes": {
+        "tracking": "3DoF inside-out",
+        "eye_tracking": "Nein",
+        "hand_tracking": "Nein"
+      },
+      "confidence": "high",
+      "note": "Original Viture One (2022) has 3DoF head tracking only; no native eye/hand tracking (via optional Pro Neckband); continues receiving firmware updates June 2026.",
+      "sources": [
+        "https://www.xda-developers.com/viture-one-review/",
+        "https://www.viture.com/firmware/update"
+      ]
+    },
+    {
+      "id": "jjR57q0sj",
+      "name": "Viture One Lite",
+      "changes": {
+        "price_usd": "349",
+        "weight_g": "76",
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "lifecycle_notes": "Viture One Lite wurde Januar 2026 eingestellt. Neuere Luma-Serie ersetzte sie.",
+        "lifecycle_source": "https://cybernews.com/vr-ar/viture-glasses-review/"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/vitureonelite",
+        "https://cybernews.com/vr-ar/viture-glasses-review/",
+        "https://www.viture.com/",
+        "https://www.bestbuy.com/site/viture-one-lite-xr-glasses-120-fhd-display-60hz-harman-sound-for-iphone-15-16-android-steam-gaming-consoles-switch-mac-pc-black/6607565.p?skuId=6607565"
+      ],
+      "note": "Viture One Lite wurde Januar 2026 eingestellt und durch neuere Modelle ersetzt. Gewicht aktualisiert auf 76g."
+    },
+    {
+      "id": "_IiTfLZMZ",
+      "name": "Viture Pro",
+      "changes": {
+        "price_usd": "459",
+        "weight_g": "77",
+        "active_distribution": "Ja/Unklar",
+        "eol_status": "Aktiv oder ohne EOL-Angabe",
+        "fov_vertical_deg": "Unklar",
+        "fov_horizontal_deg": "Unklar",
+        "lifecycle_notes": "Viture Pro bleibt im Katalog aktiv mit Software-Updates 2026; wird nicht eingestellt.",
+        "lifecycle_source": "https://www.viture.com/"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.viture.com/",
+        "https://www.amazon.com/VITURE-Pro-XR-Glasses-Electrochromic/dp/B0D3LRH8G4",
+        "https://www.microcenter.com/product/697381/viture-pro-xr-ar-glasses",
+        "https://vr-compare.com/headset/viturepro"
+      ],
+      "note": "Viture Pro bleibt aktiv. Preis (459 USD) und Gewicht (77g) bestätigt. Still in active support."
+    },
+    {
+      "id": "u1Gt3j4C1",
+      "name": "Vuzix Blade 2",
+      "changes": {
+        "price_usd": "799",
+        "weight_g": "90",
+        "active_distribution": "Ja/Unklar",
+        "eol_status": "Aktiv oder ohne EOL-Angabe",
+        "display_type": "LED-LCoS"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.vuzix.com/products/vuzix-blade-2-smart-glasses",
+        "https://knowledge.vr-expert.com/kb/what-is-the-weight-of-the-vuzix-blade-2/",
+        "https://vr-compare.com/headset/vuzixblade2",
+        "https://www.prnewswire.com/news-releases/vuzix-announces-general-availability-of-blade-2-smart-glasses-301635623.html"
+      ],
+      "note": "Vuzix Blade 2 aktualisiert: Preis 799 USD, Gewicht 90g. Display-Typ korrigiert zu LED-LCoS Waveguide."
+    },
+    {
+      "id": "1PE1xcEFb",
+      "name": "Vuzix Blade Upgraded",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "weight_g": "105",
+        "lifecycle_notes": "Vuzix Blade Upgraded wurde eingestellt; nicht mehr im neuen Produktkatalog verfügbar.",
+        "lifecycle_source": "https://www.vuzix.com/pages/legacy-products"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.vuzix.com/pages/legacy-products",
+        "https://vr-compare.com/headset/vuzixbladeupgraded",
+        "https://www.amazon.com/Vuzix-Blade-Upgraded-Version-Glasses/dp/B08K9D97CK"
+      ],
+      "note": "Vuzix Blade Upgraded ist diskontinuiert. Gewicht 105g bestätigt. Jetzt als Legacy Product gelistet."
+    },
+    {
+      "id": "legacy-vuzixm100",
+      "name": "Vuzix M100",
+      "changes": {
+        "weight_g": "372",
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "lifecycle_notes": "Vuzix M100 wurde eingestellt; Legacy-Modell aus früher Smart-Glasses-Generation (2013-ca.2015).",
+        "lifecycle_source": "https://www.vuzix.com/pages/legacy-products"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vrlitic.com/vuzix-m100/",
+        "https://www.vuzix.com/pages/legacy-products",
+        "https://www.bhphotovideo.com/lit_files/155666.pdf"
+      ],
+      "note": "M100 Gewicht korrekt zu 372g. Bleibt diskontinuiert und als Legacy-Modell geführt."
+    },
+    {
+      "id": "r2UX2RNAB",
+      "name": "Vuzix M400",
+      "changes": {
+        "price_usd": "1799",
+        "display_type": "OLED",
+        "fov_diagonal_deg": "16",
+        "active_distribution": "Ja/Unklar",
+        "eol_status": "Aktiv oder ohne EOL-Angabe",
+        "weight_g": "180",
+        "lifecycle_notes": "Vuzix M400 bleibt aktiv; neue Defense & Industrial Bestellungen zeigen fortlaufende Nachfrage.",
+        "lifecycle_source": "https://www.timothysykes.com/news/vuzixcorporation-vuzi-news-2026_05_23/"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.vuzix.com/products/m400-smart-glasses",
+        "https://www.timothysykes.com/news/vuzixcorporation-vuzi-news-2026_05_23/",
+        "https://vr-compare.com/headset/vuzixm400",
+        "https://vrx.vr-expert.com/vuzix-m400-review/"
+      ],
+      "note": "M400 Preis aktualisiert zu 1799 USD (Xtreme Kit). Gewicht 180g, Display-Typ OLED. Bleibt aktiv mit neuen Bestellungen 2026."
+    },
+    {
+      "id": "AS20GfYCt",
+      "name": "Vuzix M4000",
+      "changes": {
+        "weight_g": "99",
+        "refresh_hz": "60"
+      },
+      "confidence": "high",
+      "note": "M4000 remains actively distributed as of 2026; weight confirmed as less than 3.5oz (99g); DLP display confirmed",
+      "sources": [
+        "https://www.vuzix.com/products/m4000-smart-glasses",
+        "https://www.vuzix.com/collections/smart-glasses"
+      ]
+    },
+    {
+      "id": "fdx61QDyF",
+      "name": "Vuzix M400C",
+      "changes": {
+        "weight_g": "68",
+        "resolution_per_eye": "640x360"
+      },
+      "confidence": "high",
+      "note": "M400C is PC-tethered device; 68g weight without battery; nHD display = 640x360 pixels; actively sold",
+      "sources": [
+        "https://vr-expert.com/ar-headsets/buy-vuzix-m400c/",
+        "https://www.vuzix.com/products/m400-smart-glasses"
+      ]
+    },
+    {
+      "id": "PjuDk6-Sz",
+      "name": "Vuzix Shield",
+      "changes": {
+        "resolution_per_eye": "1268x720",
+        "refresh_hz": "60",
+        "fov_horizontal_deg": "30",
+        "fov_diagonal_deg": "30"
+      },
+      "confidence": "medium",
+      "note": "Shield uses micro-LED waveguide with monochrome green display; 30 deg horizontal FOV; status Ja/Unklar",
+      "sources": [
+        "https://www.vuzix.com/products/vuzix-shield-smart-glasses",
+        "https://www.trendforce.com/news/2025/03/21/news-equipped-with-micro-led-vuzix-ar-glasses-receive-largest-additional-order/"
+      ]
+    },
+    {
+      "id": "wHlIeEbab",
+      "name": "Xiaomi Mijia",
+      "changes": {
+        "weight_g": "100",
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "lifecycle_notes": "Mijia Glasses Camera (2022) discontinued; only available used on secondary markets",
+        "lifecycle_source": "https://www.oled-info.com/mijia-glasses-camera"
+      },
+      "confidence": "medium",
+      "note": "This is Mijia Glasses Camera with Sony OLED display and 50MP/8MP cameras; weight 100g confirmed; product EOL",
+      "sources": [
+        "https://www.oled-info.com/mijia-glasses-camera",
+        "https://www.roadtovr.com/xiaomi-smartglasses-mijia-price-release/"
+      ]
+    },
+    {
+      "id": "Dp6TLH4Gv",
+      "name": "Xiaomi Smart Glasses",
+      "changes": {
+        "weight_g": "51",
+        "resolution_per_eye": "640x480",
+        "refresh_hz": "50",
+        "display_type": "Micro-LED",
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "lifecycle_notes": "Xiaomi Smart Glasses (2021 concept, 2022 release) no longer actively distributed",
+        "lifecycle_source": "https://vr-compare.com/headset/xiaomismartglasses"
+      },
+      "confidence": "high",
+      "note": "51g weight, 640x480 per eye, 50Hz refresh, waveguide micro-LED display confirmed; appears discontinued as of 2026",
+      "sources": [
+        "https://vr-compare.com/headset/xiaomismartglasses",
+        "https://www.sportswearable.net/xiaomi-smart-glasses-specs-features/"
+      ]
+    },
+    {
+      "id": "rR39x5VXi",
+      "name": "Ximmerse Rhino X Pro",
+      "changes": {
+        "price_usd": "799"
+      },
+      "confidence": "medium",
+      "note": "Rhino X Pro released 2022 with Snapdragon XR2, 2160x2160 per eye, 70 FOV; appears still available for purchase",
+      "sources": [
+        "https://www.ximmerse.com/RhinoXPro",
+        "https://vr-compare.com/headset/ximmerserhinoxpro"
+      ]
+    },
+    {
+      "id": "PnnMj9eH3",
+      "name": "Xreal Air 2",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "eol_date": "2025-12-23",
+        "lifecycle_notes": "Diskontinuiert seit 23.12.2025, Bestandsabbau",
+        "lifecycle_source": "https://www.moguravr.com/xreal-air-2-discontinued-inventory-only/",
+        "fov_diagonal_deg": "46"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.moguravr.com/xreal-air-2-discontinued-inventory-only/",
+        "https://us.shop.xreal.com/products/xreal-air-2",
+        "https://docs.xreal.com/XREALDevices/XREAL%20Glasses"
+      ],
+      "note": "Air 2 discontinued late 2025; specs confirmed via official docs and reviews"
+    },
+    {
+      "id": "E7k3-VKas",
+      "name": "Xreal Air 2 Pro",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "eol_date": "2025-12-23",
+        "lifecycle_notes": "Mit Air 2 diskontinuiert; Electrochromic-Linsen",
+        "lifecycle_source": "https://www.moguravr.com/xreal-air-2-discontinued-inventory-only/",
+        "fov_diagonal_deg": "46",
+        "weight_g": "72"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.moguravr.com/xreal-air-2-discontinued-inventory-only/",
+        "https://eu.shop.xreal.com/products/xreal-air-2-pro",
+        "https://docs.xreal.com/XREALDevices/XREAL%20Glasses"
+      ],
+      "note": "Air 2 Pro discontinued with Air 2 line; adds dimming to Air 2"
+    },
+    {
+      "id": "LUx-f7dXc",
+      "name": "Xreal Air 2 Ultra",
+      "changes": {
+        "active_distribution": "Nein",
+        "eol_status": "EOL / Discontinued",
+        "lifecycle_notes": "Diskontinuiert 2025, Support laeuft weiter",
+        "lifecycle_source": "https://www.moguravr.com/xreal-air-2-ultra-discontinued/",
+        "fov_diagonal_deg": "52",
+        "eye_tracking": "Nein",
+        "hand_tracking": "Ja"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.moguravr.com/xreal-air-2-ultra-discontinued/",
+        "https://uk.shop.xreal.com/products/xreal-air-2-ultra",
+        "https://docs.xreal.com/XREALDevices/XREAL%20Glasses",
+        "https://tomsguide.com/reviews/xreal-air-2-ultra"
+      ],
+      "note": "Air 2 Ultra discontinued; adds 6DoF and hand tracking vs Air 2"
+    },
+    {
+      "id": "AhlOXFzVW",
+      "name": "Xreal One",
+      "changes": {
+        "active_distribution": "Ja/Unklar",
+        "eol_status": "Aktiv oder ohne EOL-Angabe",
+        "lifecycle_notes": "Verkaeufer seit Dezember 2024, weiterhin aktiv",
+        "lifecycle_source": "https://us.shop.xreal.com/products/xreal-one",
+        "fov_diagonal_deg": "50",
+        "tracking": "3 DoF inside-out"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://us.shop.xreal.com/products/xreal-one",
+        "https://www.uploadvr.com/xreal-one-announcement-preorders/",
+        "https://docs.xreal.com/XREALDevices/XREAL%20Glasses"
+      ],
+      "note": "One launched Dec 2024, currently available for purchase in 2026"
+    },
+    {
+      "id": "3uOUBJ6hx",
+      "name": "Xreal One Pro",
+      "changes": {
+        "active_distribution": "Ja/Unklar",
+        "eol_status": "Aktiv oder ohne EOL-Angabe",
+        "lifecycle_notes": "Verkaeufer seit April 2025, aktiv; Preis auf 599 USD",
+        "lifecycle_source": "https://us.shop.xreal.com/products/xreal-one-pro",
+        "fov_diagonal_deg": "57",
+        "tracking": "3 DoF inside-out"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://us.shop.xreal.com/products/xreal-one-pro",
+        "https://9meters.com/technology/vr/xreal-one-pro-latest-info-and-updates",
+        "https://docs.xreal.com/XREALDevices/XREAL%20Glasses"
+      ],
+      "note": "One Pro launched April 2025; 57° FOV is key differentiator vs One (50°)"
+    },
+    {
+      "id": "pOfzEGXDw",
+      "name": "XYZ Atom",
+      "changes": {
+        "active_distribution": "Ja/Unklar",
+        "eol_status": "Aktiv oder ohne EOL-Angabe",
+        "lifecycle_notes": "Enterprise AR Headset fuer Bauwesen, weiterhin aktiv 2026",
+        "lifecycle_source": "https://www.xyzreality.com/atom"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://www.xyzreality.com/atom",
+        "https://www.xrtoday.com/augmented-reality/xyz-reality-atom-review-a-leading-ar-headset/",
+        "https://aecmag.com/vr-mr/xyz-reality-launches-engineering-grade-ar-headset/"
+      ],
+      "note": "XYZ Atom is enterprise device with Intel i7, 16GB RAM, 6DoF; price not publicly disclosed"
+    }
+  ],
+  "newDevices": [
+    {
+      "name": "Alibaba Quark AI Glasses S1",
+      "manufacturer": "Alibaba",
+      "xr_category": "AR",
+      "official_url": "https://www.alibabacloud.com/blog/alibaba-launches-new-quark-ai-glasses-series-in-china-deeply-integrated-with-qwen_602717",
+      "announced_date": "2025-11-27",
+      "release_date": "2025-11-27",
+      "price_usd": "536",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Flagship Quark mit dual Micro LED display, 4000 nits. Launched November 2025.",
+      "lifecycle_source": "https://www.cnbc.com/2025/11/27/alibaba-quark-ai-glasses-go-on-sale-price-specs.html",
+      "software": "Alibaba Qwen AI",
+      "compute_unit": "Standalone",
+      "display_type": "Micro LED",
+      "optics": "Waveguide",
+      "fov_diagonal_deg": "Unklar",
+      "resolution_per_eye": "Unklar",
+      "refresh_hz": "Unklar",
+      "weight_g": "Unklar",
+      "tracking": "Inside-out",
+      "eye_tracking": "Unklar",
+      "hand_tracking": "Unklar",
+      "passthrough": "Native passthrough with integrated camera, 3K video",
+      "sources": [
+        "https://www.cnbc.com/2025/11/27/alibaba-quark-ai-glasses-go-on-sale-price-specs.html",
+        "https://www.alibabacloud.com/blog/alibaba-launches-new-quark-ai-glasses-series-in-china-deeply-integrated-with-qwen_602717",
+        "https://www.scmp.com/tech/big-tech/article/3334399/alibaba-launches-us537-quark-ai-glasses-challenge-wearables-meta-xiaomi-rokid"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Almer Arc 2",
+      "manufacturer": "Almer",
+      "xr_category": "AR",
+      "official_url": "https://almer.com/almer-arc2/",
+      "announced_date": "2024-01-15",
+      "release_date": "2024-01-15",
+      "price_usd": "176",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Verfügbar seit Januar 2024; monatliches Abonnement-Modell mit Hardware, Software und Support.",
+      "lifecycle_source": "https://almer.com/almer-arc2/",
+      "software": "Almer OS (Android-kompatibel)",
+      "compute_unit": "Standalone",
+      "display_type": "Micro-OLED",
+      "optics": "See-through holographic",
+      "fov_diagonal_deg": "22",
+      "resolution_per_eye": "1920x1080 (monocular)",
+      "weight_g": "179",
+      "tracking": "Inside-out",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "Native color passthrough, 25MP camera 4K @ 30fps",
+      "confidence": "high",
+      "sources": [
+        "https://almer.com/almer-arc2/",
+        "https://www.all-about-industries.com/almer-arc-2-ar-glasses-for-industrial-companies-a-145d6176e1f3c2570efa7a168dd7ec4a/",
+        "https://jackhiltner.medium.com/almer-teamviewer-launch-arc-2-augmented-reality-headset-3675c89685df"
+      ]
+    },
+    {
+      "name": "Apple Vision Pro (M5)",
+      "manufacturer": "Apple",
+      "xr_category": "XR",
+      "official_url": "https://www.apple.com/apple-vision-pro/",
+      "announced_date": "2025-10-21",
+      "release_date": "2025-10-22",
+      "price_usd": "3499",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "M5 Refresh mit verbesserten Specs, 120Hz moeglich, 2.5h Akkulaufzeit",
+      "lifecycle_source": "https://www.apple.com/newsroom/2025/10/apple-vision-pro-upgraded-with-the-m5-chip-and-dual-knit-band/",
+      "software": "visionOS",
+      "compute_unit": "Standalone",
+      "display_type": "Micro-OLED",
+      "optics": "Pancake optics",
+      "fov_horizontal_deg": "Unklar",
+      "fov_vertical_deg": "Unklar",
+      "fov_diagonal_deg": "Unklar",
+      "resolution_per_eye": "3660x3200",
+      "refresh_hz": "120",
+      "weight_g": "600",
+      "tracking": "Inside-out",
+      "eye_tracking": "Ja",
+      "hand_tracking": "Ja",
+      "passthrough": "Native color passthrough",
+      "sources": [
+        "https://www.apple.com/newsroom/2025/10/apple-vision-pro-upgraded-with-the-m5-chip-and-dual-knit-band/",
+        "https://www.tomsguide.com/computing/augmented-reality/apple-vision-pro-m5-2025-review",
+        "https://www.macrumors.com/2026/04/29/apple-vision-pro-m5-flop/"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Bigscreen Beyond 2",
+      "manufacturer": "Bigscreen",
+      "xr_category": "XR",
+      "official_url": "https://store.bigscreenvr.com/products/bigscreen-beyond-2",
+      "announced_date": "2025-02-01",
+      "release_date": "2025-04-01",
+      "price_usd": "1019",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Weltweit kleinste VR-Headset, 107g, neu verfuegbar April 2025",
+      "lifecycle_source": "https://roadtovr.com/pc-vr-bigscreen-beyond-2-fov-boost-release-date-price/",
+      "software": "SteamVR",
+      "compute_unit": "PC",
+      "display_type": "Micro-OLED",
+      "optics": "Pancake optics",
+      "fov_horizontal_deg": "116",
+      "fov_vertical_deg": "Unklar",
+      "fov_diagonal_deg": "116",
+      "resolution_per_eye": "2560x2560",
+      "refresh_hz": "90",
+      "weight_g": "107",
+      "tracking": "Inside-out",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "No camera passthrough",
+      "sources": [
+        "https://store.bigscreenvr.com/products/bigscreen-beyond-2",
+        "https://roadtovr.com/pc-vr-bigscreen-beyond-2-fov-boost-release-date-price/",
+        "https://www.flatpanelshd.com/news.php?subaction=showfull&id=1742549361"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Bigscreen Beyond 2e",
+      "manufacturer": "Bigscreen",
+      "xr_category": "XR",
+      "official_url": "https://store.bigscreenvr.com/blogs/beyond/introducing-the-bigscreen-beyond-2e-vrchat-edition",
+      "announced_date": "2025-02-01",
+      "release_date": "2025-04-01",
+      "price_usd": "1219",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "VRChat Edition mit integriertem Eye-Tracking, Beta-Programm Sommer 2025",
+      "lifecycle_source": "https://store.bigscreenvr.com/blogs/beyond/introducing-the-bigscreen-beyond-2e-vrchat-edition",
+      "software": "SteamVR",
+      "compute_unit": "PC",
+      "display_type": "Micro-OLED",
+      "optics": "Pancake optics",
+      "fov_horizontal_deg": "116",
+      "fov_vertical_deg": "Unklar",
+      "fov_diagonal_deg": "116",
+      "resolution_per_eye": "2560x2560",
+      "refresh_hz": "90",
+      "weight_g": "107",
+      "tracking": "Inside-out",
+      "eye_tracking": "Ja",
+      "hand_tracking": "Nein",
+      "passthrough": "No camera passthrough",
+      "sources": [
+        "https://store.bigscreenvr.com/blogs/beyond/introducing-the-bigscreen-beyond-2e-vrchat-edition",
+        "https://vr-compare.com/headset/bigscreenbeyond2e",
+        "https://mrtv.co/2025/04/bigscreen-beyond-2-review-refining-a-winning-formula/"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Brilliant Labs Halo",
+      "manufacturer": "Brilliant Labs",
+      "xr_category": "AR",
+      "official_url": "https://brilliant.xyz/products/halo",
+      "announced_date": "2025-07-31",
+      "release_date": "2025-11-01",
+      "price_usd": "299",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Next-gen from Frame, color Micro OLED display. Limited release Q4 2025.",
+      "lifecycle_source": "https://www.roadtovr.com/brilliant-labs-halo-smart-glasses-price-release-date/",
+      "software": "Noa OS",
+      "compute_unit": "Standalone",
+      "display_type": "Micro OLED",
+      "optics": "Prism optics",
+      "fov_diagonal_deg": "20",
+      "resolution_per_eye": "640x400",
+      "refresh_hz": "Unklar",
+      "weight_g": "41",
+      "tracking": "Non-positional",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "Native passthrough with integrated camera",
+      "sources": [
+        "https://brilliant.xyz/products/halo",
+        "https://www.roadtovr.com/brilliant-labs-halo-smart-glasses-price-release-date/",
+        "https://www.tomsguide.com/computing/smart-glasses/brilliant-labs-unveils-halo-the-worlds-thinnest-ai-glasses-and-it-wants-to-be-your-everyday-specs"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Even Realities G1",
+      "manufacturer": "Even Realities",
+      "xr_category": "AR",
+      "official_url": "https://www.evenrealities.com/g1",
+      "announced_date": "2024-06-26",
+      "release_date": "2024-06-30",
+      "price_usd": "599",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Launched Q2 2024, lightweight AR glasses mit Micro LED display.",
+      "lifecycle_source": "https://www.prnewswire.com/news-releases/even-realities-unveils-g1-digital-glasses-seamlessly-blending-beautiful-aesthetics-with-everyday-functionality-302182962.html",
+      "software": "Even OS",
+      "compute_unit": "Standalone",
+      "display_type": "Micro LED",
+      "optics": "Waveguide",
+      "fov_diagonal_deg": "25",
+      "resolution_per_eye": "640x200",
+      "refresh_hz": "20",
+      "weight_g": "44",
+      "tracking": "Non-positional",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "98% transparent passthrough, integrated camera",
+      "sources": [
+        "https://www.evenrealities.com/g1",
+        "https://www.prnewswire.com/news-releases/even-realities-unveils-g1-digital-glasses-seamlessly-blending-beautiful-aesthetics-with-everyday-functionality-302182962.html",
+        "https://www.tomsguide.com/computing/smart-glasses/even-realities-g1-smart-glasses-review"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Even Realities G2",
+      "manufacturer": "Even Realities",
+      "xr_category": "AR",
+      "official_url": "https://www.evenrealities.com/g2",
+      "announced_date": "2025-11-12",
+      "release_date": "2025-11-12",
+      "price_usd": "599",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Gerade angekündigt im November 2025, verbesserte Optik und AI-Fähigkeiten.",
+      "lifecycle_source": "https://www.auganix.org/ar-news-even-realities-g2-r1/",
+      "software": "Even OS",
+      "compute_unit": "Standalone",
+      "display_type": "Micro-LED",
+      "optics": "HAO (Holistic Adaptive Optics), waveguide with microLED projectors",
+      "resolution_per_eye": "640x200",
+      "tracking": "Non-positional",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "Optical passthrough",
+      "confidence": "high",
+      "sources": [
+        "https://www.auganix.org/ar-news-even-realities-g2-r1/",
+        "https://wearablexp.com/smart-glasses/even-realities-g2-smart-glasses/"
+      ]
+    },
+    {
+      "name": "Halliday",
+      "manufacturer": "Halliday",
+      "xr_category": "AR",
+      "official_url": "https://hallidayglobal.com/",
+      "announced_date": "2025-01-08",
+      "release_date": "2025-03-01",
+      "price_usd": "489",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "CES 2025 debut, invisible MicroLED display in frame. Kickstarter success.",
+      "lifecycle_source": "https://techcrunch.com/2025/01/08/hallidays-489-smart-glasses-beam-a-tiny-screen-to-your-eye/",
+      "software": "Halliday OS",
+      "compute_unit": "Standalone",
+      "display_type": "MicroLED",
+      "optics": "Mirror optics (DigiWindow)",
+      "fov_diagonal_deg": "Unklar",
+      "resolution_per_eye": "Unklar",
+      "refresh_hz": "Unklar",
+      "weight_g": "35",
+      "tracking": "Non-positional",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "Native passthrough with integrated camera",
+      "sources": [
+        "https://hallidayglobal.com/",
+        "https://techcrunch.com/2025/01/08/hallidays-489-smart-glasses-beam-a-tiny-screen-to-your-eye/",
+        "https://www.kickstarter.com/projects/halliday-ai-glasses/halliday-proactive-ai-glasses-with-invisible-display"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "HTC Vive Focus Vision",
+      "manufacturer": "HTC",
+      "xr_category": "XR",
+      "official_url": "https://www.vive.com/us/product/vive-focus-vision/overview/",
+      "announced_date": "2024-09-18",
+      "release_date": "2024-11-01",
+      "price_usd": "999",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Hybrid Standalone/PC Headset, 5K Resolution, Eye-Tracking, Enterprise-freundlich",
+      "lifecycle_source": "https://www.vive.com/us/newsroom/2024-09-18/",
+      "software": "VIVE Reality",
+      "compute_unit": "Standalone / PC",
+      "display_type": "LCD",
+      "optics": "Pancake optics",
+      "fov_horizontal_deg": "116",
+      "fov_vertical_deg": "Unklar",
+      "fov_diagonal_deg": "Unklar",
+      "resolution_per_eye": "2448x2448",
+      "refresh_hz": "90",
+      "weight_g": "Unklar",
+      "tracking": "Inside-out",
+      "eye_tracking": "Ja",
+      "hand_tracking": "Unklar",
+      "passthrough": "Native color passthrough",
+      "sources": [
+        "https://www.vive.com/us/newsroom/2024-09-18/",
+        "https://roadtovr.com/htc-vive-focus-vision-specs-price-release-date-announcement/",
+        "https://vr-compare.com/headset/htcvivefocusvision"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "INMO GO2",
+      "manufacturer": "INMO",
+      "xr_category": "AR",
+      "official_url": "https://www.inmoxr.com/products/inmo-go2",
+      "announced_date": "2024-11-29",
+      "release_date": "2025-01-31",
+      "price_usd": "448",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Angekündigt November 2024, Versand ab Ende Januar 2025.",
+      "lifecycle_source": "https://www.inmoxr.com/products/inmo-go2",
+      "software": "Android 9.0",
+      "compute_unit": "Standalone",
+      "display_type": "Micro-LED",
+      "optics": "Diffraction optical waveguide",
+      "fov_diagonal_deg": "30",
+      "resolution_per_eye": "640x480",
+      "tracking": "Non-positional",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "Native passthrough",
+      "confidence": "high",
+      "sources": [
+        "https://www.inmoxr.com/products/inmo-go2",
+        "https://www.jb-display.com/newsdetails/72.html"
+      ]
+    },
+    {
+      "name": "Iristick G3",
+      "manufacturer": "Iristick",
+      "xr_category": "AR",
+      "official_url": "https://shop.iristick.com/products/iristick-g3",
+      "price_usd": "2275",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Verfügbar; nächste Generation Safety-zertifizierten Smart Glasses mit USB-C Tethering.",
+      "lifecycle_source": "https://shop.iristick.com/products/iristick-g3",
+      "software": "Iristick proprietary",
+      "compute_unit": "Phone",
+      "display_type": "OLED",
+      "weight_g": "95",
+      "tracking": "Inside-out",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "Dual-camera system passthrough",
+      "confidence": "high",
+      "sources": [
+        "https://shop.iristick.com/products/iristick-g3",
+        "https://iristick.com/tools/Iristick.G3/",
+        "https://docs.iristick.com/smart-glasses/specifications/"
+      ]
+    },
+    {
+      "name": "Pimax Crystal Super",
+      "manufacturer": "Pimax",
+      "xr_category": "XR",
+      "official_url": "https://pimax.com/products/pimax-crystal-super",
+      "announced_date": "2024-04-01",
+      "release_date": "2025-04-01",
+      "price_usd": "Unklar",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "High-end PC VR mit 130° FOV, 3840x3840 pro Auge, Versand seit April 2025",
+      "lifecycle_source": "https://roadtovr.com/pimax-shares-development-updates-on-dream-air-and-crystal-super-headsets/",
+      "software": "SteamVR",
+      "compute_unit": "PC",
+      "display_type": "QLED",
+      "optics": "Aspheric glass lenses",
+      "fov_horizontal_deg": "130",
+      "fov_vertical_deg": "Unklar",
+      "fov_diagonal_deg": "Unklar",
+      "resolution_per_eye": "3840x3840",
+      "refresh_hz": "120",
+      "weight_g": "Unklar",
+      "tracking": "Inside-out",
+      "eye_tracking": "Ja",
+      "hand_tracking": "Optional",
+      "passthrough": "Native color passthrough",
+      "sources": [
+        "https://pimax.com/products/pimax-crystal-super",
+        "https://roadtovr.com/pimax-shares-development-updates-on-dream-air-and-crystal-super-headsets/",
+        "https://pimax.com/blogs/blogs/pimax-dream-air-crystal-super-production-shipping-update"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Pimax Crystal Light",
+      "manufacturer": "Pimax",
+      "xr_category": "XR",
+      "official_url": "https://pimax.com/products/pimax-crystal-light",
+      "announced_date": "2024-03-01",
+      "release_date": "2024-05-01",
+      "price_usd": "599",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Mid-range PC VR Headset, 35 PPD, SLAM/Lighthouse tracking moeglich",
+      "lifecycle_source": "https://roadtovr.com/pimax-crystal-light-super-announcement-release-date-price/",
+      "software": "SteamVR",
+      "compute_unit": "PC",
+      "display_type": "QLED",
+      "optics": "Aspheric glass lenses",
+      "fov_horizontal_deg": "125",
+      "fov_vertical_deg": "Unklar",
+      "fov_diagonal_deg": "Unklar",
+      "resolution_per_eye": "2880x2880",
+      "refresh_hz": "120",
+      "weight_g": "Unklar",
+      "tracking": "Inside-out",
+      "eye_tracking": "Unklar",
+      "hand_tracking": "Unklar",
+      "passthrough": "No camera passthrough",
+      "sources": [
+        "https://pimax.com/products/pimax-crystal-light",
+        "https://vr-compare.com/headset/pimaxcrystallight",
+        "https://roadtovr.com/pimax-crystal-light-super-announcement-release-date-price/"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Pimax Dream Air",
+      "manufacturer": "Pimax",
+      "xr_category": "XR",
+      "official_url": "https://pimax.com/products/pimax-dream-air",
+      "announced_date": "2024-12-01",
+      "release_date": "2025-02-01",
+      "price_usd": "1999",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Ultra-leicht 170g PC VR Headset, 8K Micro-OLED, SLAM/Lighthouse Tracking",
+      "lifecycle_source": "https://roadtovr.com/pimax-dream-air-prototype-key-questions-qa-faq/",
+      "software": "SteamVR",
+      "compute_unit": "PC",
+      "display_type": "Micro-OLED",
+      "optics": "Pancake optics",
+      "fov_horizontal_deg": "110",
+      "fov_vertical_deg": "Unklar",
+      "fov_diagonal_deg": "Unklar",
+      "resolution_per_eye": "3840x3552",
+      "refresh_hz": "90",
+      "weight_g": "170",
+      "tracking": "Inside-out",
+      "eye_tracking": "Unklar",
+      "hand_tracking": "Ja",
+      "passthrough": "No camera passthrough",
+      "sources": [
+        "https://pimax.com/products/pimax-dream-air",
+        "https://roadtovr.com/pimax-dream-air-prototype-key-questions-qa-faq/",
+        "https://vr-compare.com/headset/pimaxdreamair"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Play For Dream MR",
+      "manufacturer": "Play For Dream",
+      "xr_category": "XR",
+      "official_url": "https://pfdm.ai/",
+      "announced_date": "2024-06-01",
+      "release_date": "2026-03-01",
+      "price_usd": "2000",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Weltweit erstes Android-basiertes MR Headset, Kickstarter-Kampagne erfolgreich",
+      "lifecycle_source": "https://www.provideocoalition.com/worlds-first-android-mr-headset-at-ces-2025/",
+      "software": "Android",
+      "compute_unit": "Standalone",
+      "display_type": "Micro-OLED",
+      "optics": "Unklar",
+      "fov_horizontal_deg": "Unklar",
+      "fov_vertical_deg": "Unklar",
+      "fov_diagonal_deg": "103",
+      "resolution_per_eye": "3840x3552",
+      "refresh_hz": "90",
+      "weight_g": "Unklar",
+      "tracking": "Inside-out",
+      "eye_tracking": "Ja",
+      "hand_tracking": "Ja",
+      "passthrough": "Native color passthrough",
+      "sources": [
+        "https://pfdm.ai/",
+        "https://www.provideocoalition.com/worlds-first-android-mr-headset-at-ces-2025/",
+        "https://vr-compare.com/headset/playfordreammr"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Rokid Max 2",
+      "manufacturer": "Rokid",
+      "xr_category": "AR",
+      "official_url": "https://global.rokid.com/products/rokid-max-2-ar-glasses",
+      "announced_date": "2024-09-05",
+      "release_date": "2025-01-01",
+      "price_usd": "399",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Angekündigt IFA 2024, verfügbar Q1 2025. Micro-OLED 1080p mit 50° FOV.",
+      "lifecycle_source": "https://global.rokid.com/products/rokid-max-2-ar-glasses",
+      "software": "Android",
+      "compute_unit": "Phone",
+      "display_type": "Micro-OLED",
+      "optics": "Birdbath optics",
+      "fov_diagonal_deg": "50",
+      "resolution_per_eye": "1920x1080",
+      "refresh_hz": "120",
+      "weight_g": "75",
+      "tracking": "Non-positional",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "Native passthrough",
+      "confidence": "high",
+      "sources": [
+        "https://global.rokid.com/products/rokid-max-2-ar-glasses",
+        "https://thecanadiantechie.com/2024/09/06/rokid-max-2-ar-glasses-officially-unveiled/"
+      ]
+    },
+    {
+      "name": "Rokid AR Spatial",
+      "manufacturer": "Rokid",
+      "xr_category": "AR",
+      "official_url": "https://global.rokid.com/products/rokid-ar-spatial",
+      "announced_date": "2025-01-08",
+      "release_date": "2025-01-08",
+      "price_usd": "648",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Angekündigt CES 2025. Drei-Display-System mit 3-DOF-Tracking, 300 Zoll virtueller Display.",
+      "lifecycle_source": "https://global.rokid.com/products/rokid-ar-spatial",
+      "software": "YodaOS",
+      "compute_unit": "PC",
+      "display_type": "Micro-OLED",
+      "optics": "Advanced optics",
+      "fov_diagonal_deg": "50",
+      "resolution_per_eye": "1920x1200",
+      "refresh_hz": "120",
+      "weight_g": "75",
+      "tracking": "3DoF",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "Native passthrough",
+      "confidence": "high",
+      "sources": [
+        "https://global.rokid.com/products/rokid-ar-spatial",
+        "https://www.techlicious.com/blog/rokid-ar-spatial-at-ces-2025/"
+      ]
+    },
+    {
+      "name": "Rokid AR Lite",
+      "manufacturer": "Rokid",
+      "xr_category": "AR",
+      "official_url": "https://global.rokid.com/products/rokid-glasses",
+      "announced_date": "2025-08-26",
+      "release_date": "2025-10-10",
+      "price_usd": "499",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Kickstarter Aug-Okt 2025. Leichte AI/AR Brille mit 48g Gewicht, zwei Mikrofone.",
+      "lifecycle_source": "https://www.kickstarter.com/projects/rokid/rokid-ar-lite",
+      "software": "Android-based",
+      "compute_unit": "Standalone",
+      "display_type": "Micro-LED",
+      "optics": "Waveguides",
+      "fov_diagonal_deg": "23",
+      "resolution_per_eye": "480x398",
+      "weight_g": "48",
+      "tracking": "Inside-out",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "12MP camera passthrough",
+      "confidence": "high",
+      "sources": [
+        "https://www.kickstarter.com/projects/rokid/rokid-ar-lite",
+        "https://global.rokid.com/products/rokid-glasses"
+      ]
+    },
+    {
+      "name": "Rokid Glasses",
+      "manufacturer": "Rokid",
+      "xr_category": "AR",
+      "official_url": "https://global.rokid.com/products/rokid-glasses",
+      "announced_date": "2025-08-26",
+      "release_date": "2025-10-31",
+      "price_usd": "599",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Ultra-light 49g AR glasses mit dual Micro LED. Kickstarter success 2025.",
+      "lifecycle_source": "https://www.roadtovr.com/rokid-glasses-kickstarter-display-smart-glasses-launch-price/",
+      "software": "Rokid OS (Android-based)",
+      "compute_unit": "Standalone",
+      "display_type": "Micro LED",
+      "optics": "Waveguide",
+      "fov_diagonal_deg": "30",
+      "resolution_per_eye": "480x398",
+      "refresh_hz": "Unklar",
+      "weight_g": "49",
+      "tracking": "Inside-out",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Unklar",
+      "passthrough": "Native passthrough with 12MP camera",
+      "sources": [
+        "https://global.rokid.com/products/rokid-glasses",
+        "https://www.kickstarter.com/projects/rokid/new-rokid-glassesworlds-lighest-full-function-ai-glasses",
+        "https://www.roadtovr.com/rokid-glasses-kickstarter-display-smart-glasses-launch-price/"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Rokid AI Glasses Style",
+      "manufacturer": "Rokid",
+      "xr_category": "AR",
+      "official_url": "https://global.rokid.com/products/rokid-ai-glasses-style",
+      "announced_date": "2025-12-01",
+      "release_date": "2026-01-19",
+      "price_usd": "299",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Display-freie AI Smart Glasses; Global Launch Januar 2026, Ultraleicht 38.5g mit AI-Assistenten.",
+      "lifecycle_source": "https://global.rokid.com/products/rokid-ai-glasses-style",
+      "software": "Open AI ecosystem",
+      "compute_unit": "Standalone",
+      "weight_g": "39",
+      "tracking": "Inside-out",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "12MP Sony sensor, 4K video capable",
+      "confidence": "high",
+      "sources": [
+        "https://global.rokid.com/products/rokid-ai-glasses-style",
+        "https://www.wareable.com/wearable-tech/rokid-ai-glasses-style-officially-available-launch-global",
+        "https://www.engadget.com/wearables/rokid-introduces-display-free-ai-smartglasses-at-ces-2026-010017906.html"
+      ]
+    },
+    {
+      "name": "Samsung Galaxy XR",
+      "manufacturer": "Samsung",
+      "xr_category": "XR",
+      "official_url": "https://www.samsung.com/us/business/electronics/wearables/virtual-reality-mixed-reality/samsung-galaxy-xr/",
+      "announced_date": "2025-10-21",
+      "release_date": "2025-10-21",
+      "price_usd": "1799",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Neu veroeffentlicht Oktober 2025, Samsung erste Android XR Headset",
+      "lifecycle_source": "https://roadtovr.com/samsung-galaxy-xr-headset-price-specs-release-date/",
+      "software": "Android XR",
+      "compute_unit": "Standalone",
+      "display_type": "Micro-OLED",
+      "optics": "Pancake optics",
+      "fov_horizontal_deg": "107",
+      "fov_vertical_deg": "99",
+      "fov_diagonal_deg": "102",
+      "resolution_per_eye": "3552x3840",
+      "refresh_hz": "90",
+      "weight_g": "545",
+      "tracking": "Inside-out",
+      "eye_tracking": "Ja",
+      "hand_tracking": "Ja",
+      "passthrough": "Native color passthrough",
+      "sources": [
+        "https://roadtovr.com/samsung-galaxy-xr-headset-price-specs-release-date/",
+        "https://www.tomsguide.com/computing/vr-ar/samsung-galaxy-xr-launches-for-usd1-700-less-than-apple-vision-pro-release-date-price-specs-and-more",
+        "https://www.gsmarena.com/samsung_galaxy_xr_launches_the_1800_headset_has_27mp_displays_runs_all_android_apps-news-69992.php"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Sharge Loomos",
+      "manufacturer": "Sharge",
+      "xr_category": "AR",
+      "official_url": "https://loomos.ai/",
+      "announced_date": "2025-01-08",
+      "release_date": "2025-01-28",
+      "price_usd": "199",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Angekündigt CES 2025, Kickstarter ab 28 Januar 2025. Super Early Bird $199.99.",
+      "lifecycle_source": "https://www.accessnewswire.com/newsroom/en/consumer-and-retail-products/sharge-debuts-game-changing-new-products-at-ces-2025-loomos-ai-glasses--964078",
+      "software": "Android-based with GPT-4o",
+      "compute_unit": "Standalone",
+      "display_type": "Micro-LED",
+      "optics": "Waveguide",
+      "fov_diagonal_deg": "123",
+      "resolution_per_eye": "1920x1080",
+      "weight_g": "49",
+      "tracking": "Inside-out",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "16MP Sony sensor camera passthrough",
+      "confidence": "high",
+      "sources": [
+        "https://loomos.ai/",
+        "https://www.accessnewswire.com/newsroom/en/consumer-and-retail-products/sharge-debuts-game-changing-new-products-at-ces-2025-loomos-ai-glasses--964078"
+      ]
+    },
+    {
+      "name": "Shiftall MeganeX superlight 8K",
+      "manufacturer": "Shiftall",
+      "xr_category": "XR",
+      "official_url": "https://en.shiftall.net/products/meganex8k",
+      "announced_date": "2024-10-10",
+      "release_date": "2025-02-01",
+      "price_usd": "1900",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Ultra-leicht 179g, 4K pro Auge, OLED, Februar-Maerz 2025 Versand",
+      "lifecycle_source": "https://www.roadtovr.com/shiftall-meganex-superlight-8k-release-date-price/",
+      "software": "SteamVR",
+      "compute_unit": "PC",
+      "display_type": "Micro-OLED",
+      "optics": "Pancake optics",
+      "fov_horizontal_deg": "Unklar",
+      "fov_vertical_deg": "Unklar",
+      "fov_diagonal_deg": "Unklar",
+      "resolution_per_eye": "3552x3840",
+      "refresh_hz": "90",
+      "weight_g": "179",
+      "tracking": "Inside-out",
+      "eye_tracking": "Unklar",
+      "hand_tracking": "Unklar",
+      "passthrough": "No camera passthrough",
+      "sources": [
+        "https://en.shiftall.net/products/meganex8k",
+        "https://www.roadtovr.com/shiftall-meganex-superlight-8k-release-date-price/",
+        "https://vr-compare.com/headset/shiftallmeganexsuperlight8k"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Solos AirGo Vision",
+      "manufacturer": "Solos",
+      "xr_category": "AR",
+      "official_url": "https://solosglasses.com/products/solos-airgo-vision",
+      "announced_date": "2024-07-01",
+      "release_date": "2024-12-10",
+      "price_usd": "299",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Verfügbar seit Dezember 2024. Mit ChatGPT-4o, modularem Design, austauschbare Rahmen.",
+      "lifecycle_source": "https://www.androidcentral.com/wearables/the-solos-airgo-vision-ai-smart-glasses-are-finally-here-to-challenge-ray-ban-meta",
+      "software": "Android-based with ChatGPT-4o",
+      "compute_unit": "Standalone",
+      "display_type": "Micro-OLED",
+      "optics": "Birdbath optics",
+      "weight_g": "42",
+      "tracking": "Non-positional",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "RGB camera passthrough",
+      "confidence": "high",
+      "sources": [
+        "https://solosglasses.com/products/solos-airgo-vision",
+        "https://www.androidcentral.com/wearables/the-solos-airgo-vision-ai-smart-glasses-are-finally-here-to-challenge-ray-ban-meta"
+      ]
+    },
+    {
+      "name": "Somnium VR1",
+      "manufacturer": "Somnium Space",
+      "xr_category": "XR",
+      "official_url": "https://vrgineers.com/somnium-vr1-vr/",
+      "announced_date": "2024-06-01",
+      "release_date": "2024-07-12",
+      "price_usd": "2600",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "High-end modular PC VR mit QLED mini-LED, 2880x2880 pro Auge, Open-Source Design",
+      "lifecycle_source": "https://roadtovr.com/somnium-begins-shipping-vr1-pc-vr-headset-in-the-us-announces-incoming-price-hike/",
+      "software": "SteamVR",
+      "compute_unit": "PC",
+      "display_type": "QLED",
+      "optics": "Aspheric lenses",
+      "fov_horizontal_deg": "130",
+      "fov_vertical_deg": "105",
+      "fov_diagonal_deg": "Unklar",
+      "resolution_per_eye": "2880x2880",
+      "refresh_hz": "120",
+      "weight_g": "Unklar",
+      "tracking": "6DoF inside-out",
+      "eye_tracking": "Ja",
+      "hand_tracking": "Ja",
+      "passthrough": "Optional native passthrough",
+      "sources": [
+        "https://vrgineers.com/somnium-vr1-vr/",
+        "https://roadtovr.com/somnium-begins-shipping-vr1-pc-vr-headset-in-the-us-announces-incoming-price-hike/",
+        "https://vr-compare.com/headset/somniumvr1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "RayNeo X3 Pro",
+      "manufacturer": "TCL",
+      "xr_category": "AR",
+      "official_url": "https://www.rayneo.com/products/x3-pro-ai-display-glasses",
+      "announced_date": "2024-10-01",
+      "release_date": "2025-12-01",
+      "price_usd": "1099",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Global launch Dezember 2025 nach China-Markt. Volle Farbe Micro-LED Waveguide AR-Brille.",
+      "lifecycle_source": "https://www.rayneo.com/blogs/news/introducing-the-rayneo-x3-pro-your-next-generation-ar-smart-glasses",
+      "software": "Android (Snapdragon AR1 Gen 1)",
+      "compute_unit": "Standalone",
+      "display_type": "Micro-LED",
+      "optics": "Waveguide (Firefly Optical Engine)",
+      "fov_diagonal_deg": "43",
+      "resolution_per_eye": "640x480",
+      "weight_g": "76",
+      "tracking": "6DoF inside-out with SLAM",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "Native passthrough with 12MP RGB camera",
+      "confidence": "high",
+      "sources": [
+        "https://www.rayneo.com/products/x3-pro-ai-display-glasses",
+        "https://www.rayneo.com/blogs/news/introducing-the-rayneo-x3-pro-your-next-generation-ar-smart-glasses"
+      ]
+    },
+    {
+      "name": "RayNeo Air 3s",
+      "manufacturer": "TCL",
+      "xr_category": "AR",
+      "official_url": "https://www.rayneo.com/products/rayneo-air-3s-xr-glasses",
+      "announced_date": "2025-02-01",
+      "release_date": "2025-02-01",
+      "price_usd": "299",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Unveröffentlicht MWC 2025. Tragbares Kino mit 201 Zoll Display und hohem Kontrast.",
+      "lifecycle_source": "https://www.prnewswire.com/news-releases/rayneo-showcases-new-ar-lineup-at-ces-2025-302343690.html",
+      "software": "Android-based",
+      "compute_unit": "Phone",
+      "display_type": "Micro-OLED",
+      "optics": "Birdbath optics",
+      "fov_diagonal_deg": "52",
+      "resolution_per_eye": "1920x1080",
+      "refresh_hz": "120",
+      "tracking": "Non-positional",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "Optical passthrough",
+      "confidence": "high",
+      "sources": [
+        "https://www.rayneo.com/products/rayneo-air-3s-xr-glasses",
+        "https://www.prnewswire.com/news-releases/rayneo-unveils-next-gen-xr-glasses-rayneo-air-3s-at-mwc-2025-302389792.html"
+      ]
+    },
+    {
+      "name": "Thunderbird V3",
+      "manufacturer": "Thunderbird",
+      "xr_category": "AR",
+      "official_url": "https://www.thunderbird.net/",
+      "announced_date": "2025-01-07",
+      "release_date": "2025-01-10",
+      "price_usd": "245",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "CES 2025 launch, AI photography glasses mit Micro LED display, 39g.",
+      "lifecycle_source": "https://technode.com/2025/01/08/thunderbird-launches-ai-powered-v3-glasses-in-partnership-with-alibaba-for-ces-2025/",
+      "software": "Thunderbird OS (Android-based)",
+      "compute_unit": "Standalone",
+      "display_type": "Micro LED",
+      "optics": "Waveguide",
+      "fov_diagonal_deg": "Unklar",
+      "resolution_per_eye": "Unklar",
+      "refresh_hz": "Unklar",
+      "weight_g": "39",
+      "tracking": "Inside-out",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "Native passthrough with 4K camera (Falcon Imaging System)",
+      "sources": [
+        "https://technode.com/2025/01/08/thunderbird-launches-ai-powered-v3-glasses-in-partnership-with-alibaba-for-ces-2025/",
+        "https://news.futunn.com/en/post/51970657/hyper-thunderbird-launches-v3-ai-glasses-reconstructing-the-valuation-of",
+        "https://www.webull.com/news/12109919249646592"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Viture Beast",
+      "manufacturer": "Viture",
+      "xr_category": "AR",
+      "official_url": "https://www.viture.com/product/viture-beast-xr-glasses",
+      "announced_date": "2025-07-01",
+      "release_date": "2025-12-01",
+      "price_usd": "549",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Announced Juli 2025, begrenzte Versand ab Dezember 2025. Flagship XR-Brille mit 58° FOV.",
+      "lifecycle_source": "https://www.prnewswire.com/news-releases/viture-introduces-the-beast-its-new-flagship-xr-glasses-redefining-clarity-and-ultra-wide-immersion-302653759.html",
+      "software": "Proprietary OS",
+      "compute_unit": "Standalone / PC",
+      "display_type": "Micro-OLED",
+      "optics": "Advanced optics",
+      "fov_diagonal_deg": "58",
+      "resolution_per_eye": "1920x1200",
+      "refresh_hz": "120",
+      "tracking": "3DoF inside-out",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "Native passthrough",
+      "confidence": "high",
+      "sources": [
+        "https://www.viture.com/product/viture-beast-xr-glasses",
+        "https://www.prnewswire.com/news-releases/viture-introduces-the-beast-its-new-flagship-xr-glasses-redefining-clarity-and-ultra-wide-immersion-302653759.html"
+      ]
+    },
+    {
+      "name": "Vuzix LX1",
+      "manufacturer": "Vuzix",
+      "xr_category": "AR",
+      "official_url": "https://www.vuzix.com/products/vuzix-lx1-smart-glasses",
+      "announced_date": "2025-08-14",
+      "release_date": "2025-12-31",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Purpose-built für Warehouse-Operationen; Sampling seit Sommer 2025, Produktion Ende 2025.",
+      "lifecycle_source": "https://www.vuzix.com/products/vuzix-lx1-smart-glasses",
+      "software": "Android 15",
+      "compute_unit": "Standalone",
+      "display_type": "Sony OLED HD",
+      "weight_g": "222",
+      "tracking": "Inside-out",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "4K camera, bone conduction microphone",
+      "confidence": "high",
+      "sources": [
+        "https://www.vuzix.com/products/vuzix-lx1-smart-glasses",
+        "https://ir.vuzix.com/news-events/press-releases/detail/2143/vuzix-introduces-lx1-smart-glasses-designed-specifically",
+        "https://www.prnewswire.com/news-releases/vuzix-introduces-lx1-smart-glasses-designed-specifically-for-warehouse-operations-302527482.html"
+      ]
+    },
+    {
+      "name": "Xreal Eye",
+      "manufacturer": "Xreal",
+      "xr_category": "AR",
+      "official_url": "https://www.xreal.com/one-pro",
+      "announced_date": "2025-05-01",
+      "release_date": "2025-07-01",
+      "price_usd": "99",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Camera-Zubehör für Xreal One Series. Ermöglicht 6DoF Tracking, Fotos und Mixed Reality Video.",
+      "lifecycle_source": "https://www.uploadvr.com/xreal-one-glasses-become-6dof-with-xreal-eye-camera-xreal-beam-pro/",
+      "software": "Integrates with Xreal glasses OS",
+      "compute_unit": "Standalone",
+      "display_type": "Modular camera accessory",
+      "optics": "POGO pin connection",
+      "tracking": "6DoF inside-out",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "12MP camera with 4K60 video",
+      "confidence": "high",
+      "sources": [
+        "https://www.uploadvr.com/xreal-one-glasses-become-6dof-with-xreal-eye-camera-xreal-beam-pro/",
+        "https://www.prnewswire.com/news-releases/xreal-one-pro-begins-general-availability-as-company-expands-ar-glasses-capabilities-with-modular-camera-302484585.html"
+      ]
+    },
+    {
+      "name": "Xreal 1S",
+      "manufacturer": "Xreal",
+      "xr_category": "AR",
+      "official_url": "https://www.xreal.com/",
+      "announced_date": "2026-01-04",
+      "release_date": "2026-01-04",
+      "price_usd": "449",
+      "active_distribution": "Ja/Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Launched CES 2026. 1200p upgrade zu One mit höherem Kontrast und 52° FOV.",
+      "lifecycle_source": "https://www.prnewswire.com/news-releases/xreal-expands-its-dominant-one-series-ar-ecosystem-with-new-1s-glasses-boasting-1200p-optics-and-neo-power-hub-302651929.html",
+      "software": "Nebula OS",
+      "compute_unit": "Phone",
+      "display_type": "Micro-OLED",
+      "optics": "Birdbath optics",
+      "fov_diagonal_deg": "52",
+      "resolution_per_eye": "1920x1200",
+      "refresh_hz": "120",
+      "weight_g": "82",
+      "tracking": "3DoF inside-out",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "Native passthrough",
+      "confidence": "high",
+      "sources": [
+        "https://www.prnewswire.com/news-releases/xreal-expands-its-dominant-one-series-ar-ecosystem-with-new-1s-glasses-boasting-1200p-optics-and-neo-power-hub-302651929.html",
+        "https://siliconangle.com/2026/01/04/xreal-releases-new-ar-glasses-power-hub-transform-work-entertainment/"
+      ]
+    },
+    {
+      "name": "Xreal Project Aura",
+      "manufacturer": "Xreal",
+      "xr_category": "XR",
+      "official_url": "https://www.xreal.com/us/aura",
+      "announced_date": "2025-05-15",
+      "release_date": "",
+      "price_usd": "Unklar",
+      "active_distribution": "Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "lifecycle_notes": "Android XR-Brille. Angekündigt Google I/O 2025, Marktstart vor Ende 2026 geplant. Angekuendigt, Marktstart ausstehend.",
+      "lifecycle_source": "https://9to5google.com/2026/05/19/xreal-project-aura-android-xr-developers-2026-launch/",
+      "software": "Android XR",
+      "compute_unit": "Standalone / Tethered compute puck",
+      "display_type": "Micro-OLED",
+      "optics": "Optical see-through",
+      "fov_diagonal_deg": "70",
+      "tracking": "6DoF inside-out",
+      "eye_tracking": "Unklar",
+      "hand_tracking": "Unklar",
+      "passthrough": "Optical passthrough",
+      "confidence": "high",
+      "sources": [
+        "https://www.xreal.com/us/aura",
+        "https://roadtovr.com/first-android-xr-glasses-confirmed-for-2026-launch/"
+      ]
+    }
+  ]
+}

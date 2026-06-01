@@ -5,18 +5,21 @@ Kurzer Maschinenindex fuer LLMs und Suchsysteme.
 - Hauptseite: https://huskynarr.de/
 - Sprache: de-DE
 - Thema: Vergleich von AR- und XR-Brillen (aktuell + historisch)
+- Datensatz: 148 Modelle (119 AR, 29 XR) von 66 Herstellern
 
 ## Kerninhalte
 
 - Karten- und Tabellenansicht fuer AR/XR Brillen
 - Filter fuer Display, Optik, Tracking, FOV, Refresh, Preis, Lifecycle
 - Shop-Links, Preise, aktiver Vertrieb, Software und EOL-Status
-- Legacy-Modelle inkl. HoloLens 1 und weitere alte Brillen
+- Direktvergleich von bis zu sechs Modellen inkl. Radar-Chart
+- Legacy-Modelle inkl. HoloLens 1 und weitere historische Brillen
 
 ## Strukturierte Datenquellen
 
 - CSV: https://huskynarr.de/data/ar_glasses.csv
 - Metadata JSON: https://huskynarr.de/data/ar_glasses.metadata.json
+- JSON-LD Strukturdaten: https://huskynarr.de/data/structured-data.json
 - AI Search Manifest: https://huskynarr.de/ai-search.json
 - Vollindex: https://huskynarr.de/llms-full.txt
 
@@ -26,7 +29,8 @@ Kurzer Maschinenindex fuer LLMs und Suchsysteme.
 - XR Brillen
 - Smart Glasses
 - Head-mounted Displays
+- AI Glasses
 
 ## Aktualisierung
 
-Letzte Datengenerierung laut Metadaten: 2026-02-21.
+Letzte Datengenerierung: 2026-06-01.
