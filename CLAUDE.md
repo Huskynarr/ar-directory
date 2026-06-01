@@ -4,23 +4,30 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-AR Directory — a curated AR/XR glasses comparison web application. Single-page app built with Vite + Vanilla JavaScript + Tailwind CSS. Displays 114+ AR/XR device specifications from a local CSV dataset with filtering, sorting, comparison, and internationalization (DE/EN).
+AR Directory — a curated AR/XR glasses comparison web application. Single-page app built with Vite + Vanilla JavaScript + Tailwind CSS. Displays 148 AR/XR device specifications from a local CSV dataset with filtering, sorting, comparison, and internationalization (DE/EN).
 
 ## Commands
 
 ```bash
 npm run dev              # Start Vite dev server
-npm run build            # Production build → dist/
+npm run build            # Production build → dist/ (Vite plugin injects JSON-LD + static catalog)
 npm run preview          # Preview production build
 npm test                 # Run Vitest unit tests
 npm run test:watch       # Run tests in watch mode
+npm run data:generate    # Regenerate CSV (normalize) + metadata + all SEO/LLM artifacts
+npm run data:enrich      # Apply scripts/enrichment-2026.json (field updates + new devices) to CSV
 npm run images:enrich    # Fetch/cache manufacturer product images
-node scripts/generate-ar-csv.mjs  # Regenerate CSV + metadata from curated data
 ```
 
 ## Architecture
 
-**Modular SPA**: `index.html` → `src/main.js` (core app logic) + `src/utils.js` (pure utility functions).
+**Modular SPA**: `index.html` → `src/main.js` (thin orchestrator: `render()` loop, event wiring, IntersectionObserver, `init()`) wiring together focused ES modules:
+- `src/state.js` — central `state` object, constants, theme/language/favorites, localStorage + URL persistence
+- `src/i18n.js` — `t()`, locale/number/currency/date formatting
+- `src/seo.js` — runtime document SEO signal updates; `src/actions.js` — CSV export, share URL
+- `src/data/` — `dataset.js` (Papa Parse, FX rate), `model.js` (row-derived helpers), `filters.js` (filter/sort)
+- `src/render/` — `cards.js`, `table.js`, `compare.js` (radar), `modal.js`, `image.js`, `shared.js`, `stats.js`, `registry.js` (render-callback registry to avoid an import cycle)
+- `src/utils.js` — pure utilities (unit-tested)
 
 **Data flow**:
 1. `init()` loads CSV from `/data/ar_glasses.csv` via Papa Parse, fetches USD→EUR rate from Frankfurter API, loads favorites/theme/language from localStorage
@@ -42,8 +49,11 @@ node scripts/generate-ar-csv.mjs  # Regenerate CSV + metadata from curated data
 - Performance: debounced search (150ms) and numeric inputs (200ms)
 
 **Data pipeline** (`scripts/`):
-- `generate-ar-csv.mjs` — normalizes, validates, and outputs CSV + JSON metadata
+- `generate-ar-csv.mjs` — normalizes/validates the CSV and generates ALL derived artifacts from it (single source of truth): `ar_glasses.metadata.json`, `structured-data.json` (JSON-LD), `sitemap.xml`, `llms.txt`, `llms-full.txt`, `ai-search.json`. Tolerates recoverable CSV quote/CRLF warnings.
+- `apply-enrichment.mjs` — applies a research payload (`enrichment-2026.json`: per-field changes keyed by id + new device rows with sources) to the CSV; identity/image/provenance columns are immutable. Run `data:generate` afterwards.
 - `enrich-manufacturer-images.mjs` — fetches official product images with per-model URL overrides, caches under `public/images/manufacturers/`
+
+**Build-time SEO injection** (`vite.config.js`): a `transformIndexHtml` plugin replaces `__COUNT__/__AR__/__XR__/__MANUFACTURERS__` tokens from metadata, injects the generated JSON-LD into `<head>`, and renders a static crawlable `<section>` catalog of all models into `#app` (the SPA replaces it at runtime — so crawlers/JS-less AI agents see full content).
 
 **Testing** (`src/__tests__/`):
 - Vitest for unit tests on pure utility functions in `src/utils.js`
@@ -55,7 +65,7 @@ node scripts/generate-ar-csv.mjs  # Regenerate CSV + metadata from curated data
 
 ## CSV Dataset
 
-33 fields per record in `public/data/ar_glasses.csv`. Key fields: `id`, `name`, `manufacturer`, `xr_category` (AR/XR), `price_usd`, `fov_*_deg`, `resolution_per_eye`, `refresh_hz`, `display_type`, `optics`, `tracking`, `release_date`, `eol_status`, `active_distribution`.
+32 fields per record in `public/data/ar_glasses.csv` (148 records). Key fields: `id`, `name`, `manufacturer`, `xr_category` (AR/XR), `price_usd`, `fov_*_deg`, `resolution_per_eye`, `refresh_hz`, `display_type`, `optics`, `tracking`, `release_date`, `eol_status`, `active_distribution`.
 
 Metadata in `public/data/ar_glasses.metadata.json`.
 

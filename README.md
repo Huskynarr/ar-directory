@@ -78,12 +78,15 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
 
 ## Datenquelle
 
-Die Datengrundlage ist ein kuratierter lokaler Datensatz:
-- Generator: `scripts/generate-ar-csv.mjs`
+Die Datengrundlage ist ein kuratierter lokaler Datensatz (aktuell **148 Modelle**, 97+ AR und 17+ XR):
+- Generator: `scripts/generate-ar-csv.mjs` — normalisiert die CSV und erzeugt daraus **alle** abgeleiteten Artefakte (Metadaten, JSON-LD-Strukturdaten, Sitemap, llms.txt, llms-full.txt, ai-search.json). Die CSV ist damit die einzige Quelle der Wahrheit.
+- Recherche-Enrichment: `scripts/apply-enrichment.mjs` — spielt einen Recherche-Payload (`scripts/enrichment-2026.json`: Feld-Aenderungen + neue Geraete inkl. Quellenangaben) in die CSV ein; danach `npm run data:generate` ausfuehren.
 - Herstellerbild-Enrichment: `scripts/enrich-manufacturer-images.mjs`
-- Ausgabe:
+- Ausgabe (alle aus der CSV generiert):
   - `public/data/ar_glasses.csv`
-  - `public/data/ar_glasses.metadata.json`
+  - `public/data/ar_glasses.metadata.json` (inkl. Feld-Abdeckung, Preisspanne, Kennzahlen)
+  - `public/data/structured-data.json`
+  - `public/sitemap.xml`, `public/llms.txt`, `public/llms-full.txt`, `public/ai-search.json`
 - Bilddarstellung:
   - Primar werden `image_url`-Eintraege aus offiziellen Herstellerseiten genutzt.
   - Fuer technisch instabile Legacy-Quellen werden originale Herstellerbilder lokal gespiegelt unter `public/images/manufacturers/`.
@@ -94,15 +97,17 @@ Die Datengrundlage ist ein kuratierter lokaler Datensatz:
 
 Fuer bessere Auffindbarkeit in Suchmaschinen und LLM-basierten Suchsystemen sind enthalten:
 - HTML-Meta-Optimierung in `index.html`:
-  - Title/Description/Robots
-  - OpenGraph + Twitter Cards
-  - JSON-LD (`WebSite`, `CollectionPage`, `Dataset`)
-- Crawl-Dateien:
-  - `public/robots.txt`
-  - `public/sitemap.xml`
-  - `public/llms.txt`
-  - `public/llms-full.txt`
-  - `public/ai-search.json`
+  - Title/Description/Robots inkl. dynamischer Modellanzahl (Build-Tokens)
+  - OpenGraph (mit absoluter Bild-URL, Groesse, `site_name`, `locale:alternate`) + Twitter Cards
+  - JSON-LD (`WebSite`, `CollectionPage`, `Dataset`, **`ItemList` mit allen Produkten als `Product`**)
+- Build-Time-Injektion via Vite-Plugin (`vite.config.js`):
+  - injiziert die generierten JSON-LD-Strukturdaten in das HTML
+  - rendert einen **statischen, crawlbaren Katalog** aller Modelle in `#app` (zur Laufzeit von der SPA ersetzt) — so sehen Suchmaschinen und JS-lose AI-Crawler den vollen Datenbestand
+- Crawl-Dateien (aus der CSV generiert, siehe Datenquelle):
+  - `public/robots.txt` (inkl. expliziter Allow-Regeln fuer GPTBot, ClaudeBot, PerplexityBot, Google-Extended u. a.)
+  - `public/sitemap.xml`, `public/llms.txt`, `public/llms-full.txt`, `public/ai-search.json`, `public/data/structured-data.json`
+- PWA:
+  - `public/manifest.json` (mit Icons, Screenshots, Kategorien) und gebrandetes `public/icon.svg`
 - OpenGraph-Bild:
   - `public/og/startseite.png`
 
@@ -140,10 +145,17 @@ Build lokal pruefen:
 npm run preview
 ```
 
-Datensatz neu generieren:
+Datensatz + alle SEO/LLM-Artefakte neu generieren:
 
 ```bash
-node scripts/generate-ar-csv.mjs
+npm run data:generate
+```
+
+Recherche-Enrichment einspielen (Feld-Updates + neue Geraete) und danach regenerieren:
+
+```bash
+npm run data:enrich   # liest scripts/enrichment-2026.json
+npm run data:generate
 ```
 
 Herstellerbilder aus offiziellen Seiten neu anreichern:
@@ -157,16 +169,25 @@ npm run images:enrich
 ```text
 .
 ├─ public/
-│  └─ data/
-│     ├─ ar_glasses.csv
-│     └─ ar_glasses.metadata.json
-│  └─ images/
-│     └─ manufacturers/
+│  ├─ data/
+│  │  ├─ ar_glasses.csv            # Quelle der Wahrheit
+│  │  ├─ ar_glasses.metadata.json  # generiert
+│  │  └─ structured-data.json      # generiert (JSON-LD)
+│  ├─ images/manufacturers/
+│  ├─ icon.svg                     # PWA/Favicon
+│  ├─ manifest.json · sw.js · robots.txt
+│  └─ sitemap.xml · llms.txt · llms-full.txt · ai-search.json   # generiert
 ├─ scripts/
-│  ├─ generate-ar-csv.mjs
+│  ├─ generate-ar-csv.mjs          # CSV -> alle Artefakte
+│  ├─ apply-enrichment.mjs         # Recherche-Payload -> CSV
+│  ├─ enrichment-2026.json         # Recherche-Payload (mit Quellen)
 │  └─ enrich-manufacturer-images.mjs
 ├─ src/
-│  ├─ main.js
+│  ├─ main.js                      # Orchestrator (render-Loop, Events, init)
+│  ├─ state.js · i18n.js · seo.js · actions.js
+│  ├─ data/   (dataset.js, model.js, filters.js)
+│  ├─ render/ (cards, table, compare, modal, image, shared, stats, registry)
+│  ├─ utils.js
 │  └─ style.css
 ├─ docs/
 │  └─ screenshots/

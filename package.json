@@ -1,12 +1,14 @@
 {
   "name": "ar-directory",
   "private": true,
-  "version": "0.5.0",
+  "version": "0.6.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "data:generate": "node scripts/generate-ar-csv.mjs",
+    "data:enrich": "node scripts/apply-enrichment.mjs",
     "images:enrich": "node scripts/enrich-manufacturer-images.mjs",
     "test": "vitest run",
     "test:watch": "vitest"
