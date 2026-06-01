@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="AR/XR Brillen Vergleich">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a3e635"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="#0c0a09"/>
+  <g fill="none" stroke="url(#g)" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="74" y="196" width="148" height="120" rx="34"/>
+    <rect x="290" y="196" width="148" height="120" rx="34"/>
+    <path d="M222 248c11-10 23-10 34 0M74 232l-30 8M438 232l30 8"/>
+  </g>
+</svg>

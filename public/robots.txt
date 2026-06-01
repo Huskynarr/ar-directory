@@ -1,8 +1,41 @@
 User-agent: *
 Allow: /
 
+# Explicitly welcome major AI / LLM crawlers (content is meant to be indexed by them)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://huskynarr.de/sitemap.xml
 
-# Helpful machine-readable entrypoints
+# Machine-readable entrypoints for LLMs and AI search
 # https://huskynarr.de/llms.txt
 # https://huskynarr.de/llms-full.txt
+# https://huskynarr.de/ai-search.json
+# https://huskynarr.de/data/structured-data.json

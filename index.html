@@ -2,103 +2,71 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AR/XR Brillen Vergleich 2026: Spezifikationen, Preise, Shop-Links, EOL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>AR/XR Brillen Vergleich 2026: __COUNT__ Modelle – Specs, Preise, FOV, EOL</title>
     <meta
       name="description"
-      content="Vergleichsseite fuer AR- und XR-Brillen: Spezifikationen, Preise, Shop-Links, aktiver Vertrieb, Software, Updates und EOL-Status."
+      content="Vergleich von __COUNT__ AR- und XR-Brillen (__AR__ AR, __XR__ XR): Spezifikationen, Preise, FOV, Refresh-Rate, Display, Optik, Tracking, aktiver Vertrieb und EOL-Status. Aktuell, kuratiert, kostenlos."
     />
     <meta
       name="keywords"
-      content="AR Brillen Vergleich, XR Brillen Vergleich, Hololens 1, Smart Glasses, FOV, Refresh Rate, Preisvergleich, EOL, Shop Links"
+      content="AR Brillen Vergleich, XR Brillen Vergleich, Smart Glasses, AI Glasses, Apple Vision Pro, Meta Quest 3, Xreal One, Viture Luma, Rokid, RayNeo, Even Realities, Samsung Galaxy XR, HoloLens, FOV, Refresh Rate, Preisvergleich, EOL, Shop Links"
     />
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
     <meta name="author" content="Huskynarr" />
-    <meta name="theme-color" content="#0c0a09" />
+    <meta name="theme-color" content="#0c0a09" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f5f4" media="(prefers-color-scheme: light)" />
     <link rel="canonical" href="https://huskynarr.de/" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
+    <link rel="mask-icon" href="/icon.svg" color="#a3e635" />
     <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://api.frankfurter.app" crossorigin />
+    <link rel="alternate" type="text/csv" href="/data/ar_glasses.csv" title="AR/XR Datensatz (CSV)" />
 
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AR/XR Brillen Vergleich" />
     <meta property="og:locale" content="de_DE" />
-    <meta property="og:title" content="AR/XR Brillen Vergleich 2026" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:title" content="AR/XR Brillen Vergleich 2026 – __COUNT__ Modelle" />
     <meta
       property="og:description"
-      content="AR- und XR-Brillen mit Spezifikationen, Preisen, Lifecycle-Status und Shop-Links vergleichen."
+      content="__COUNT__ AR- und XR-Brillen mit Spezifikationen, Preisen, FOV, Lifecycle-Status und Shop-Links vergleichen."
     />
     <meta property="og:url" content="https://huskynarr.de/" />
-    <meta property="og:image" content="/og/startseite.png" />
+    <meta property="og:image" content="https://huskynarr.de/og/startseite.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Startseite des AR/XR Brillen Vergleichs als Kartenansicht" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="AR/XR Brillen Vergleich 2026" />
+    <meta name="twitter:title" content="AR/XR Brillen Vergleich 2026 – __COUNT__ Modelle" />
     <meta
       name="twitter:description"
-      content="Vergleich von AR- und XR-Brillen inklusive Preis, Spezifikationen, EOL und Shop-Links."
+      content="Vergleich von AR- und XR-Brillen inklusive Preis, Spezifikationen, FOV, EOL und Shop-Links."
     />
-    <meta name="twitter:image" content="/og/startseite.png" />
+    <meta name="twitter:image" content="https://huskynarr.de/og/startseite.png" />
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "@id": "https://huskynarr.de/#website",
-            "url": "https://huskynarr.de/",
-            "name": "AR/XR Brillen Vergleich",
-            "inLanguage": "de-DE",
-            "description": "Vergleichsseite fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Shop-Links und Lifecycle-Status."
-          },
-          {
-            "@type": "CollectionPage",
-            "@id": "https://huskynarr.de/#collection",
-            "url": "https://huskynarr.de/",
-            "name": "AR/XR Brillen Modelle",
-            "isPartOf": {
-              "@id": "https://huskynarr.de/#website"
-            },
-            "about": ["AR Brillen", "XR Brillen", "Smart Glasses", "Headsets"]
-          },
-          {
-            "@type": "Dataset",
-            "@id": "https://huskynarr.de/data/ar_glasses.csv#dataset",
-            "name": "AR/XR Glasses Directory Dataset",
-            "url": "https://huskynarr.de/data/ar_glasses.csv",
-            "isAccessibleForFree": true,
-            "inLanguage": "de-DE",
-            "distribution": [
-              {
-                "@type": "DataDownload",
-                "encodingFormat": "text/csv",
-                "contentUrl": "https://huskynarr.de/data/ar_glasses.csv"
-              },
-              {
-                "@type": "DataDownload",
-                "encodingFormat": "application/json",
-                "contentUrl": "https://huskynarr.de/data/ar_glasses.metadata.json"
-              }
-            ]
-          }
-        ]
-      }
-    </script>
+    <!-- @structured-data -->
   </head>
   <body>
     <div id="app">
-      <main>
+      <main id="main-content">
         <header>
           <h1>AR/XR Brillen Vergleich</h1>
           <p>
-            Vergleichsseite fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Shop-Links, aktivem Vertrieb,
-            Software, Updates und EOL. Legacy-Modelle sind fuer einen vollstaendigeren Datenbestand enthalten.
+            Vergleichsseite fuer __COUNT__ AR- und XR-Brillen (__AR__ AR, __XR__ XR) von __MANUFACTURERS__ Herstellern:
+            Spezifikationen, Preise, FOV, Refresh-Rate, Display, Optik, Tracking, aktiver Vertrieb, Software, Updates und
+            EOL-Status. Legacy-Modelle sind fuer einen vollstaendigeren Datenbestand enthalten.
           </p>
         </header>
+        <!-- @catalog -->
         <section>
           <h2>Direkte Datenzugriffe</h2>
           <ul>
             <li><a href="/data/ar_glasses.csv">Datensatz (CSV)</a></li>
             <li><a href="/data/ar_glasses.metadata.json">Datensatz-Metadaten (JSON)</a></li>
+            <li><a href="/data/structured-data.json">JSON-LD Strukturdaten</a></li>
             <li><a href="/ai-search.json">AI Search Manifest (JSON)</a></li>
             <li><a href="/llms.txt">LLM Index (llms.txt)</a></li>
             <li><a href="/llms-full.txt">LLM Full Index (llms-full.txt)</a></li>
@@ -106,7 +74,11 @@
         </section>
       </main>
     </div>
-    <noscript>Diese Seite nutzt JavaScript fuer interaktive Filter-, Vergleichs- und Tabellenfunktionen.</noscript>
+    <noscript>
+      Diese Seite nutzt JavaScript fuer interaktive Filter-, Vergleichs- und Tabellenfunktionen. Der vollstaendige
+      Datensatz ist auch ohne JavaScript ueber die Liste oben sowie als
+      <a href="/data/ar_glasses.csv">CSV</a> und <a href="/llms-full.txt">Volltext-Index</a> verfuegbar.
+    </noscript>
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js').catch(() => {});

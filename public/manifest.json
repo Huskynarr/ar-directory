@@ -1,18 +1,39 @@
 {
+  "id": "/",
   "name": "AR/XR Brillen Vergleich",
   "short_name": "AR Directory",
-  "description": "Vergleichsseite für AR- und XR-Brillen mit Spezifikationen, Preisen und Shop-Links.",
-  "start_url": "/",
+  "description": "Vergleichsseite fuer AR- und XR-Brillen mit Spezifikationen, Preisen, FOV, Refresh-Rate, Lifecycle/EOL-Status und Shop-Links.",
+  "start_url": "/?utm_source=pwa",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#0a1018",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "dir": "ltr",
+  "lang": "de",
+  "background_color": "#0c0a09",
   "theme_color": "#0c0a09",
   "icons": [
     {
-      "src": "/vite.svg",
+      "src": "/icon.svg",
       "sizes": "any",
-      "type": "image/svg+xml"
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
     }
   ],
-  "categories": ["shopping", "utilities"],
-  "lang": "de"
+  "screenshots": [
+    {
+      "src": "/og/startseite.png",
+      "type": "image/png",
+      "sizes": "1200x630",
+      "form_factor": "wide",
+      "label": "Kartenansicht des AR/XR Brillen Vergleichs"
+    }
+  ],
+  "categories": ["shopping", "utilities", "productivity"]
 }

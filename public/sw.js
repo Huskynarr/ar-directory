@@ -1,5 +1,5 @@
-const CACHE_NAME = 'ar-directory-v1';
-const STATIC_ASSETS = ['/', '/vite.svg', '/manifest.json'];
+const CACHE_NAME = 'ar-directory-v2';
+const STATIC_ASSETS = ['/', '/icon.svg', '/manifest.json'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -18,9 +18,10 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  if (event.request.method !== 'GET') return;
   const url = new URL(event.request.url);
 
-  // Network-first for data files and API calls
+  // Network-first for data files and cross-origin requests (fresh prices/specs).
   if (url.pathname.startsWith('/data/') || url.hostname !== location.hostname) {
     event.respondWith(
       fetch(event.request)
@@ -34,15 +35,20 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Cache-first for static assets
+  // Cache-first for same-origin static assets, with an offline navigation fallback.
   event.respondWith(
     caches.match(event.request).then((cached) => {
       if (cached) return cached;
-      return fetch(event.request).then((response) => {
-        const clone = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
-        return response;
-      });
+      return fetch(event.request)
+        .then((response) => {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+          return response;
+        })
+        .catch(() => {
+          if (event.request.mode === 'navigate') return caches.match('/');
+          return undefined;
+        });
     })
   );
 });
