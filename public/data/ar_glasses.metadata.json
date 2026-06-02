@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-01T22:04:47.841Z",
+  "generated_at": "2026-06-02T07:31:58.043Z",
   "source_dataset": "curated_ar_xr_directory_v2",
   "source_page": "https://huskynarr.de/",
   "records": 148,
@@ -7,7 +7,7 @@
   "xr_records": 29,
   "manufacturers": 66,
   "official_shop_links": 144,
-  "image_links": 90,
+  "image_links": 147,
   "active_models": 111,
   "discontinued_models": 148,
   "newest_release": "2026-03-01",
@@ -34,8 +34,8 @@
       "percent": 100
     },
     "image_url": {
-      "filled": 90,
-      "percent": 60.8
+      "filled": 147,
+      "percent": 99.3
     },
     "official_url": {
       "filled": 144,
@@ -132,6 +132,38 @@
     "passthrough": {
       "filled": 143,
       "percent": 96.6
+    },
+    "chipset": {
+      "filled": 116,
+      "percent": 78.4
+    },
+    "brightness_nits": {
+      "filled": 67,
+      "percent": 45.3
+    },
+    "connectivity": {
+      "filled": 134,
+      "percent": 90.5
+    },
+    "audio": {
+      "filled": 113,
+      "percent": 76.4
+    },
+    "battery": {
+      "filled": 134,
+      "percent": 90.5
+    },
+    "ipd_mm": {
+      "filled": 72,
+      "percent": 48.6
+    },
+    "prescription_support": {
+      "filled": 55,
+      "percent": 37.2
+    },
+    "camera": {
+      "filled": 116,
+      "percent": 78.4
     },
     "source_dataset": {
       "filled": 148,

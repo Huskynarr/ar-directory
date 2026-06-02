@@ -1,0 +1,2476 @@
+{
+  "enriched": [
+    {
+      "id": "CgySYMXLq",
+      "name": "3Glasses Blubur S1",
+      "changes": {
+        "chipset": "none / tethered",
+        "connectivity": "DisplayPort 1.2, USB 3.0"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/3glassesbluburs1",
+        "https://www.shopsmartexpress.com/item/B01MQTZ6FM/3glasses-blubur-s1-pc-virtual-reality-system-2880x1440-120hz-displayport-vr-headset"
+      ]
+    },
+    {
+      "id": "MFKzu5lwb",
+      "name": "3Glasses Blubur S2",
+      "changes": {
+        "chipset": "none / tethered",
+        "connectivity": "PC tethered"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/3glassesbluburs2",
+        "https://vrlitic.com/3glasses-blubur-s2/"
+      ]
+    },
+    {
+      "id": "FUmJdcmqg",
+      "name": "3Glasses D2",
+      "changes": {
+        "chipset": "none / tethered",
+        "connectivity": "PC tethered"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/3glassesd2",
+        "https://www.niora.net/en/p/3glasses_d2"
+      ]
+    },
+    {
+      "id": "scBhMmwQy",
+      "name": "3Glasses X1",
+      "changes": {
+        "chipset": "Snapdragon XR1",
+        "battery": "5400 mAh / ~3-4h",
+        "connectivity": "Standalone VR"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/3glassesx1",
+        "https://www.topfoison.net/lcd/the-worlds-first-ultra-thin-vr-head-mounted-3glasses-x1-released-with-boe-fast-lcd-screen/"
+      ]
+    },
+    {
+      "id": "vH20M2KPj",
+      "name": "AjnaLens AjnaX",
+      "changes": {
+        "connectivity": "WiFi 6"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/ajnalensajnax",
+        "https://www.ajnalens.com/ajnaxr-PRO"
+      ]
+    },
+    {
+      "id": "CMlHLhpbt",
+      "name": "Alibaba Quark AI Glasses S1",
+      "changes": {
+        "chipset": "Snapdragon AR1 + Bestechnic BES2800",
+        "brightness_nits": "2300",
+        "connectivity": "Wi-Fi 6, Bluetooth 5.4, USB-C",
+        "battery": "280 mAh x2 (swappable) / ~7h active, 25h standby",
+        "camera": "Sony IMX681 4K (4032x3024 photo, 3K video 30fps)"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.cnbc.com/2025/11/27/alibaba-quark-ai-glasses-go-on-sale-price-specs.html",
+        "https://www.gizmochina.com/2025/11/27/alibaba-quark-ai-glasses-s1-g1-sale-china-specifications/"
+      ]
+    },
+    {
+      "id": "rknuyNUbR",
+      "name": "Almer Arc 2",
+      "changes": {
+        "chipset": "Snapdragon XR1",
+        "brightness_nits": "3000",
+        "connectivity": "Wi-Fi 5 (802.11ac), Bluetooth, USB-C",
+        "audio": "Integrated stereo speakers, 4 microphones (beamforming)",
+        "battery": "1800 mAh / ~2-8h",
+        "camera": "25MP autofocus, 4K 30fps / 1080p 60fps",
+        "ipd_mm": "Fixed (monocular, right eye only)",
+        "prescription_support": "Compatible (glasses worn underneath)"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://almer.com/almer-arc2/",
+        "https://www.manualslib.com/manual/3496773/Almer-Arc-2.html",
+        "https://media.bechtle.com/asrc/180712/1c4b3d4ee288fc9434f5175bf56070570/c3/-/9ee8ce9e03934a4b92fc515253cb67e8/almer-arc-2-plus-tev-frontline-assist-1y-datenblatt",
+        "https://thegadgetflow.com/product/almer-arc2-ar-headset/"
+      ]
+    },
+    {
+      "id": "NwAppleVPr",
+      "name": "Apple Vision Pro",
+      "changes": {
+        "chipset": "Apple M2 + R1",
+        "brightness_nits": "2200",
+        "connectivity": "Wi-Fi 6E, Bluetooth 5.3, USB-C",
+        "battery": "Tethered (external battery pack) / ~2h general, 2.5h video",
+        "audio": "Dual-driver audio pods, spatial audio with dynamic head tracking",
+        "ipd_mm": "51-75 mm mechanical",
+        "prescription_support": "Magnetic inserts (ZEISS Optical Inserts)",
+        "camera": "6.5 stereo MP, 3D spatial photo/video capture"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.apple.com/apple-vision-pro/specs/",
+        "https://support.apple.com/en-us/117810",
+        "https://www.flatpanelshd.com/news.php?subaction=showfull&id=1686220022",
+        "https://support.apple.com/guide/apple-vision-pro/use-zeiss-optical-inserts-dev875c7f937/visionos",
+        "https://www.macrumors.com/2023/05/30/apple-ar-vr-headset-display-specs/"
+      ]
+    },
+    {
+      "id": "Fc2aRdyog",
+      "name": "Apple Vision Pro (M5)",
+      "changes": {
+        "chipset": "Apple M5 + R1",
+        "brightness_nits": "5000",
+        "connectivity": "Wi-Fi 6, Bluetooth 5.3",
+        "audio": "Dual-driver audio pods, spatial audio with dynamic head tracking",
+        "battery": "2.5-3 hours",
+        "ipd_mm": "51-75 mm mechanical",
+        "prescription_support": "Magnetic inserts (ZEISS Optical Inserts)",
+        "camera": "6.5 stereo MP, 3D spatial photo/video capture"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.apple.com/apple-vision-pro/",
+        "https://www.apple.com/newsroom/2025/10/apple-vision-pro-upgraded-with-the-m5-chip-and-dual-knit-band/",
+        "https://support.apple.com/guide/apple-vision-pro/use-zeiss-optical-inserts-dev875c7f937/visionos"
+      ]
+    },
+    {
+      "id": "yBcFHrYN0",
+      "name": "ASUS AirVision M1",
+      "changes": {
+        "chipset": "None / tethered (PC DisplayPort via USB-C)",
+        "brightness_nits": "1100",
+        "connectivity": "USB-C DisplayPort Alt mode (tethered PC)",
+        "audio": "Built-in stereo speakers, noise-canceling microphone",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Fixed (birdbath optics)",
+        "prescription_support": "Not supported",
+        "camera": "No camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.asus.com/us/displays-desktops/glasses/airvision/asus-airvision-m1/",
+        "https://www.amazon.com/ASUS-AirVision-M1-Smart-Glasses/dp/B0DRWM3ZJ7",
+        "https://www.microcenter.com/product/684534/asus-airvision-m1"
+      ]
+    },
+    {
+      "id": "VtXUSjXO3",
+      "name": "Bigscreen Beyond 2",
+      "changes": {
+        "chipset": "None / tethered (PC)",
+        "brightness_nits": "120",
+        "connectivity": "USB-C (PC tethered), SteamVR",
+        "audio": "Optional audio strap with Koss drivers, 3.5mm headphone jack, microphone",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Fixed",
+        "prescription_support": "Magnetic optical inserts",
+        "camera": "No camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://store.bigscreenvr.com/products/bigscreen-beyond-2",
+        "https://vr-compare.com/headset/bigscreenbeyond2",
+        "https://www.flatpanelshd.com/news.php?subaction=showfull&id=1742549361",
+        "https://store.bigscreenvr.com/products/prescription-lens-inserts-for-beyond"
+      ]
+    },
+    {
+      "id": "ionX4Mi0G",
+      "name": "Bigscreen Beyond 2e",
+      "changes": {
+        "chipset": "None / tethered (PC)",
+        "brightness_nits": "120",
+        "connectivity": "USB-C (PC tethered), SteamVR",
+        "audio": "Optional audio strap with Koss drivers, 3.5mm headphone jack, microphone",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Fixed",
+        "prescription_support": "Magnetic optical inserts",
+        "camera": "No camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://store.bigscreenvr.com/blogs/beyond/introducing-the-bigscreen-beyond-2e-vrchat-edition",
+        "https://vr-compare.com/headset/bigscreenbeyond2e",
+        "https://store.bigscreenvr.com/products/prescription-lens-inserts-for-beyond"
+      ]
+    },
+    {
+      "id": "BE0kbfi2T",
+      "name": "Brilliant Labs Frame",
+      "changes": {
+        "chipset": "nRF52840 (ARM Cortex-M4F 64MHz)",
+        "brightness_nits": "1800",
+        "connectivity": "Bluetooth 5.3 (wireless to phone)",
+        "audio": "Microphone only (no speakers), uses external wireless earbuds",
+        "battery": "~6-7 hours normal use",
+        "ipd_mm": "Fixed",
+        "prescription_support": "Optional (AddOptics precision bonding)",
+        "camera": "720p RGB"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://brilliant.xyz/products/frame",
+        "https://docs.brilliant.xyz/frame/hardware/",
+        "https://vr-compare.com/headset/brilliantlabsframe",
+        "https://mixed-news.com/en/brilliant-labs-ama-explains-design-goals-tradeoffs-and-future-capabilities/"
+      ]
+    },
+    {
+      "id": "e3W1mUjky",
+      "name": "Brilliant Labs Halo",
+      "changes": {
+        "chipset": "Alif B1 (Cortex-M55 + Ethos-U55 NPU)",
+        "connectivity": "Bluetooth 5.3 (wireless)",
+        "audio": "Dual bone conduction speakers, dual microphones",
+        "battery": "~14 hours",
+        "ipd_mm": "58-72 mm (adjustable via optics +2 to -6 diopters)",
+        "prescription_support": "Software (adjustable diopters built-in)",
+        "camera": "Integrated camera with optical sensor"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://brilliant.xyz/products/halo",
+        "https://alifsemi.com/powering-the-future-of-smart-glasses-how-alifs-balletto-b1-enables-halo-by-brilliant-labs/",
+        "https://skywork.ai/skypage/en/Brilliant-Labs-Halo-The-Ultimate-Guide-to-the-Future-of-AI-Wearables/1976166382197338112",
+        "https://support.apple.com/guide/apple-vision-pro/use-zeiss-optical-inserts-dev875c7f937/visionos"
+      ]
+    },
+    {
+      "id": "YR7b7p4DU",
+      "name": "Cosmo Vision",
+      "changes": {
+        "connectivity": "Bluetooth Low Energy",
+        "battery": "12 h"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/cosmovision",
+        "https://microoled.net/cosmo-connected-eyewear-launches-safe-urban-navigation-with-activelook-technology/",
+        "https://cosmoconnected.com/en/pages/faq"
+      ]
+    },
+    {
+      "id": "suVKDU_0P",
+      "name": "DigiLens Argo",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon XR2",
+        "brightness_nits": "3500",
+        "connectivity": "Wi-Fi 6E, Bluetooth 5.2, USB-C 3.1",
+        "audio": "5 beam-forming microphones, spatial audio speakers",
+        "battery": "~2 h",
+        "camera": "48MP RGB"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/digilensargo",
+        "https://moorinsightsstrategy.com/digilens-makes-waves-in-the-ar-market-with-its-argo-headset/",
+        "https://www.synergiz.com/en/produit/digilens-argo-2/"
+      ]
+    },
+    {
+      "id": "MNTNWLDu4",
+      "name": "Dream Glass",
+      "changes": {
+        "chipset": "none / tethered",
+        "connectivity": "USB-C, HDMI",
+        "camera": "1080p RGB",
+        "battery": "Tethered (no battery)"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://tomshardware.com/news/dreamworld-399-dreamglass-ar-headset-dev-kit,37220.html",
+        "https://skarredghost.com/2018/06/14/dreamglass-is-an-interesting-augmented-reality-glass-that-costs-only-399/",
+        "https://www.dreamworldvision.com/blogs/news/trying-on-dreamglass-the-headset-that-s-trying-to-make-ar-accessible"
+      ]
+    },
+    {
+      "id": "GlONfBjEP",
+      "name": "Dream Glass 4K",
+      "changes": {
+        "chipset": "1.8 GHz quad-core (Mali-T864 GPU)",
+        "connectivity": "Wi-Fi 5, Bluetooth 5.0",
+        "camera": "1080p RGB",
+        "battery": "8000 mAh / ~5 h"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/dreamglass4k",
+        "https://www.dreamworldvision.com/pages/dream-glass-4k-4k-plus-specs",
+        "https://www.nintendolife.com/news/2020/07/hands_on_using_dream_glass_4k_is_like_strapping_a_200-inch_tv_to_your_face"
+      ]
+    },
+    {
+      "id": "GgaK5c41-",
+      "name": "Dream Glass 4K Plus",
+      "changes": {
+        "chipset": "1.8 GHz quad-core (Mali-T864 GPU)",
+        "connectivity": "Wi-Fi 5, Bluetooth 5.0",
+        "battery": "8000 mAh / ~5 h"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/dreamglass4kplus",
+        "https://www.dreamworldvision.com/pages/dream-glass-4k-4k-plus-specs"
+      ]
+    },
+    {
+      "id": "hPA8JixLI",
+      "name": "Dream Glass Flow",
+      "changes": {
+        "connectivity": "Wi-Fi 6, 5G compatible",
+        "audio": "Dual private speakers in temples",
+        "battery": "~6 h"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/dreamglassflow",
+        "https://www.dreamworldvision.com/pages/dream-glass-flow-specs",
+        "https://techiglooo.com/game-anywhere-with-the-smart-wearable-augmented-reality-glasses-dream-glass-flow/"
+      ]
+    },
+    {
+      "id": "EV601vi66",
+      "name": "Dream Glass Lead Plus",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon 670",
+        "connectivity": "Wi-Fi, USB",
+        "camera": "RGB camera",
+        "battery": "5300 mAh / ~3.5h"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/dreamglassleadplus",
+        "https://www.dreamworldvision.com/products/dream-glass-lead",
+        "https://electronics360.globalspec.com/article/19146/techinsights-teardown-dream-world-dream-glass-ar-headset"
+      ]
+    },
+    {
+      "id": "-yaNtlMz9",
+      "name": "Dream Glass Lead Pro",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon 670",
+        "connectivity": "Wi-Fi, USB",
+        "camera": "13MP RGB",
+        "battery": "5300 mAh / ~3.5h"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/dreamglassleadpro",
+        "https://www.dreamworldvision.com/products/dream-glass-lead",
+        "https://vrlitic.com/dreamworld-dream-glass-lead-pro/",
+        "https://electronics360.globalspec.com/article/19146/techinsights-teardown-dream-world-dream-glass-ar-headset"
+      ]
+    },
+    {
+      "id": "Z1gjavg5l",
+      "name": "Engo 2",
+      "changes": {
+        "battery": "~12h",
+        "connectivity": "Bluetooth 4.2"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://us.engoeyewear.com/products/engo-2",
+        "https://vr-compare.com/headset/engo2"
+      ]
+    },
+    {
+      "id": "hMIl1sAzP",
+      "name": "Engo Eyewear",
+      "changes": {
+        "battery": "~10-12h"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/engoeyewear",
+        "https://engoeyewear.com/pages/technology"
+      ]
+    },
+    {
+      "id": "legacy-epsonmoveriobt-200",
+      "name": "Epson Moverio BT-200",
+      "changes": {
+        "chipset": "TI OMAP 4460 1.2 GHz dual-core",
+        "battery": "2720 mAh / ~6h",
+        "connectivity": "Wi-Fi 802.11b/g/n, Bluetooth 3.0, USB micro"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.manualslib.com/manual/717366/Epson-Moverio-Bt-200.html?page=34",
+        "https://www.hackster.io/epson/products/moverio-bt-200/specs"
+      ]
+    },
+    {
+      "id": "Wmqx-AT6q",
+      "name": "Epson Moverio BT-40",
+      "changes": {
+        "battery": "Lithium Polymer / ~5h",
+        "connectivity": "USB-C DisplayPort Alt Mode"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-40-Smart-Glasses-with-USB-Type-C-Connectivity-/p/V11H969020",
+        "https://mediaserver.goepson.com/ImConvServlet/imconv/fb2362376fe4470fc110f39ac89117d806722af5/original?assetDescr=Moverio_BT-40_Specification_Sheet_CPD-60655.pdf"
+      ]
+    },
+    {
+      "id": "c46yfe7il",
+      "name": "Epson Moverio BT-40S",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon XR1",
+        "battery": "3400 mAh Lithium Polymer",
+        "connectivity": "USB-C DisplayPort Alt Mode, USB 2.0/3.0",
+        "audio": "Built-in speaker, noise-cancelling microphone"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://epson.com/c/Moverio-BT-40S-Smart-Glasses-with-Intelligent-Touch-Controller/p/V11H969120",
+        "https://epson.com/medias/Moverio-BT-40s-Product-Specification-Sheet-CPD-60657-Final.pdf"
+      ]
+    },
+    {
+      "id": "pdUGQrVUI",
+      "name": "Even Realities G1",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon XR2",
+        "brightness_nits": "1000",
+        "battery": "160 mAh (case: 2000 mAh) / ~8h",
+        "connectivity": "Wi-Fi 6E, Bluetooth 5.3",
+        "audio": "Dual microphones, no speaker",
+        "camera": "No camera",
+        "prescription_support": "Optional (magnetic clip-in lenses)"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.evenrealities.com/g1",
+        "https://www.tomsguide.com/computing/smart-glasses/even-realities-g1-smart-glasses-review",
+        "https://support.evenrealities.com/hc/en-us/articles/13492232132879-Prescription-Lenses"
+      ]
+    },
+    {
+      "id": "UR8rXYX7t",
+      "name": "Everysight Raptor",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon 410E",
+        "connectivity": "Bluetooth, ANT+, GPS, Wi-Fi 802.11, Micro USB",
+        "audio": "Embedded arm speakers, dual MEMS microphones",
+        "battery": "~8 hours",
+        "ipd_mm": "Software",
+        "prescription_support": "Magnetic inserts",
+        "camera": "13.2 MP"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://dev.everysight.com/about-raptor/",
+        "https://www.manualslib.com/manual/1505837/Everysight-Raptor.html",
+        "https://www.cxmagazine.com/review-everysight-raptor-augmented-reality-glasses-gravel-cyclocross"
+      ]
+    },
+    {
+      "id": "EnqtMtA05",
+      "name": "Google Glass Enterprise Edition 2",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon XR1",
+        "battery": "820 mAh / ~8 hours",
+        "connectivity": "Wi-Fi 802.11a/b/g/n/ac, Bluetooth 5.0, USB-C",
+        "audio": "Embedded speaker",
+        "camera": "8 MP",
+        "prescription_support": "Optional (frame-based)"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://support.google.com/glass-enterprise/customer/answer/9220200?hl=en",
+        "https://9to5google.com/2018/11/27/google-glass-enterprise-edition-2-specs/",
+        "https://www.shi.com/product/39314856/Google-Glass-Enterprise-Edition-2"
+      ]
+    },
+    {
+      "id": "HDAcu5kC4",
+      "name": "Google Glass Explorer Edition",
+      "changes": {
+        "chipset": "Texas Instruments OMAP 4430",
+        "battery": "570 mAh / Full day",
+        "connectivity": "Wi-Fi 802.11b/g, Bluetooth, Micro USB",
+        "audio": "Bone conduction transducer",
+        "camera": "5 MP",
+        "prescription_support": "Optional (frame-based)"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://phonedb.net/index.php?m=device&id=981&c=google_glass_explorer_edition",
+        "https://www.droid-life.com/2013/04/15/google-glass-specs-finally-revealed-5mp-camera-16gb-storage-bone-conduction-audio-and-full-day-battery/",
+        "https://support.google.com/glass/answer/3063433?hl=en"
+      ]
+    },
+    {
+      "id": "ZkO_SfqaC",
+      "name": "Guangli Holoswim",
+      "changes": {
+        "battery": "~16 hours"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/guangliholoswim",
+        "https://www.holoswim.com/pages/about-us"
+      ]
+    },
+    {
+      "id": "HfZ2Dqm1q",
+      "name": "Guangli Holoswim 2",
+      "changes": {
+        "battery": "150 mAh / 4-5 hours",
+        "connectivity": "Bluetooth"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/guangliholoswim2",
+        "https://manuals.plus/holoswim/holoswim2-smart-goggles-manual",
+        "https://www.holoswim.com/products/holoswim-ar-smart-swim-goggles"
+      ]
+    },
+    {
+      "id": "QAvnJ3JzH",
+      "name": "Halliday",
+      "changes": {
+        "battery": "~12 hours",
+        "connectivity": "Bluetooth, USB-C",
+        "audio": "5-mic system, speakers",
+        "camera": "12 MP",
+        "ipd_mm": "Adjustable",
+        "prescription_support": "Ja"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://hallidayglobal.com/products/halliday-glasses",
+        "https://hallidayglobal.com/",
+        "https://techcrunch.com/2025/01/08/hallidays-489-smart-glasses-beam-a-tiny-screen-to-your-eye/",
+        "https://www.kickstarter.com/projects/halliday-ai-glasses/halliday-proactive-ai-glasses-with-invisible-display/faqs"
+      ]
+    },
+    {
+      "id": "12CKEzhzY",
+      "name": "HTC Vive Focus Vision",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon XR2 Gen 1",
+        "battery": "7000 mAh / ~2 hours",
+        "connectivity": "Wi-Fi 6E, Bluetooth 5.2, USB-C DisplayPort",
+        "audio": "Dual mics, dual directional speakers, 3.5mm jack",
+        "camera": "2 high-resolution passthrough cameras + eye-tracking",
+        "ipd_mm": "57-72 mm mechanical",
+        "prescription_support": "Optional (clip-in)"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.vive.com/us/product/vive-focus-vision/specs/",
+        "https://vr-compare.com/headset/htcvivefocusvision",
+        "https://reloptix.com/products/reloptix-htc-vive-focus-vision-lens-insert-kit-prescription"
+      ]
+    },
+    {
+      "id": "NwViveXREl",
+      "name": "HTC Vive XR Elite",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon XR2",
+        "battery": "5000 mAh / ~2 hours",
+        "connectivity": "Wi-Fi 6 + 6E, Bluetooth 5.2, USB 3.2 Type-C",
+        "audio": "Dual mics, embedded speakers",
+        "camera": "16 MP RGB + depth sensor, passthrough",
+        "ipd_mm": "54-73 mm manual",
+        "prescription_support": "Optional (clip-in)"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.vive.com/us/product/vive-xr-elite/specs/",
+        "https://vr-compare.com/headset/htcvivexrelite",
+        "https://vroptician.com/prescription-lens-inserts/htc-vive"
+      ]
+    },
+    {
+      "id": "JWXF3ikOV",
+      "name": "Huawei Vision Glass",
+      "changes": {
+        "chipset": "none / tethered",
+        "brightness_nits": "480",
+        "connectivity": "USB-C DisplayPort",
+        "audio": "Open-ear stereo speaker",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Software",
+        "camera": "No camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.notebookcheck.net/Huawei-Vision-Glass-smart-glasses-debut-in-China-with-Micro-OLED-displays.673972.0.html",
+        "https://www.huaweiupdate.com/huawei-launched-the-first-vision-glass/",
+        "https://www.huaweicentral.com/huawei-vision-glass-vr-ar-everything-you-need-to-know/"
+      ]
+    },
+    {
+      "id": "x3IQCew4E",
+      "name": "Huawei VR Glass",
+      "changes": {
+        "chipset": "none / tethered",
+        "connectivity": "USB-C",
+        "audio": "Dual speakers, 3.5mm headphone jack",
+        "battery": "Tethered (no battery)",
+        "camera": "No camera"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/huaweivrglass",
+        "https://www.4gltemall.com/huawei-vr-glass.html"
+      ]
+    },
+    {
+      "id": "eTNerb4Vg",
+      "name": "Huawei VR Glass 6DoF",
+      "changes": {
+        "chipset": "none / tethered",
+        "connectivity": "USB-C",
+        "battery": "Tethered (no battery)",
+        "camera": "No camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.uploadvr.com/huawei-vr-glass-6dof/",
+        "https://www.vopmart.com/huawei-vr-glass.html"
+      ]
+    },
+    {
+      "id": "wJVRRflMf",
+      "name": "INMO Air",
+      "changes": {
+        "chipset": "ARM Cortex-A53",
+        "connectivity": "Wi-Fi, Bluetooth",
+        "camera": "5MP 720p 30fps"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/inmoair",
+        "https://vrlitic.com/inmo-air/"
+      ]
+    },
+    {
+      "id": "UdgWHTDXY",
+      "name": "INMO Air2",
+      "changes": {
+        "chipset": "ZiGuang ZhanRui AI Quad-core 1.8GHz",
+        "connectivity": "Wi-Fi, Bluetooth 5.0, GPS",
+        "battery": "500mAh / ~2h",
+        "camera": "8MP dual camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.inmoxr.com/pages/inmo-air2",
+        "https://www.slashgear.com/1323632/inmo-air2-review-affordable-ar-glasses/",
+        "https://iksar.pro/en/inmo_air2"
+      ]
+    },
+    {
+      "id": "A5KdHFj88",
+      "name": "INMO GO2",
+      "changes": {
+        "chipset": "Quad-core UNISOC",
+        "brightness_nits": "2000",
+        "audio": "5-microphone array",
+        "battery": "440mAh dual-battery / ~2.5h",
+        "camera": "8MP 1080p 30fps"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.inmoxr.com/products/inmo-go2",
+        "https://513.toys/inmo_go2/",
+        "https://www.jb-display.com/newsdetails/72.html"
+      ]
+    },
+    {
+      "id": "T2HJ66fyR",
+      "name": "Iristick G2",
+      "changes": {
+        "chipset": "none / tethered",
+        "connectivity": "Phone tethered (USB cable)",
+        "battery": "Tethered (no battery)",
+        "camera": "16MP",
+        "audio": "Speaker",
+        "ipd_mm": "Adjustable",
+        "prescription_support": "Magnetic inserts"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://docs.iristick.com/smart-glasses/specifications/",
+        "https://unboundxr.eu/iristick-g2",
+        "https://vr-compare.com/headset/iristickg2"
+      ]
+    },
+    {
+      "id": "4j3YZdQIM",
+      "name": "Iristick G3",
+      "changes": {
+        "chipset": "none / tethered",
+        "connectivity": "USB-C",
+        "battery": "Tethered (no battery)",
+        "camera": "16MP dual-camera system",
+        "prescription_support": "Optional (magnetic inserts)",
+        "audio": "Speaker"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://docs.iristick.com/smart-glasses/specifications/",
+        "https://shop.iristick.com/products/iristick-g3"
+      ]
+    },
+    {
+      "id": "6z7r29ojZ",
+      "name": "Julbo EVAD-1",
+      "changes": {
+        "connectivity": "Bluetooth 5.0",
+        "battery": "12 hours"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/julboevad-1",
+        "https://www.julbo.com/en_gb/faq/what-is-the-extent-of-bluetooth-performances-on-evad-1-connected-glasses"
+      ]
+    },
+    {
+      "id": "pEEE5EDVo",
+      "name": "Lenovo Glasses T1",
+      "changes": {
+        "chipset": "None / tethered",
+        "connectivity": "USB-C, DisplayPort",
+        "audio": "Built-in speakers",
+        "battery": "Tethered (no battery)",
+        "prescription_support": "Optional (frame compatible)"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/lenovoglassest1",
+        "https://news.lenovo.com/pressroom/press-releases/glasses-t1-wearable-display-for-gaming-streaming-privacy-on-the-go/"
+      ]
+    },
+    {
+      "id": "MplTgXoYM",
+      "name": "Lenovo ThinkReality A3",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon XR1",
+        "brightness_nits": "200",
+        "connectivity": "USB-C 3.2 Gen 1, Wi-Fi 6, Bluetooth 5.0",
+        "audio": "Stereo speakers, 3 microphones",
+        "battery": "5 hours",
+        "ipd_mm": "50-75 mm digital",
+        "prescription_support": "Lens inserts",
+        "camera": "8 MP"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/lenovothinkrealitya3",
+        "https://techtoday.lenovo.com/sites/default/files/2022-11/ThinkReality_A3_PC_Edition_Datasheet.pdf",
+        "https://support.lenovo.com/us/en/solutions/ht512070-thinkreality-a3-lens"
+      ]
+    },
+    {
+      "id": "NwLynxR1_",
+      "name": "Lynx R-1",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon XR2 Gen 1",
+        "connectivity": "Wi-Fi 6, Wi-Fi 5, Bluetooth",
+        "audio": "2 stereo speakers, 2 microphones",
+        "battery": "~2 hours",
+        "ipd_mm": "56-72 mm mechanical",
+        "camera": "No camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/lynxr1",
+        "https://knowledge.vr-expert.com/kb/what-are-the-headset-specifications-of-the-lynx-r1/"
+      ]
+    },
+    {
+      "id": "sCAIQq45W",
+      "name": "MAD Gaze Glow Plus",
+      "changes": {
+        "chipset": "None / Phone-tethered",
+        "connectivity": "USB-C DisplayPort",
+        "audio": "Stereo speakers, microphone",
+        "battery": "Phone-powered",
+        "camera": "5 MP"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/madgazeglowplus",
+        "https://gbatemp.net/review/mad-gaze-glow-plus.1621/"
+      ]
+    },
+    {
+      "id": "KdZOqV1Ev",
+      "name": "MAD Gaze Vader",
+      "changes": {
+        "chipset": "MediaTek MT6737V",
+        "connectivity": "Wi-Fi 802.11 b/g/n/ac, Bluetooth 4.0",
+        "audio": "3.5mm stereo audio, speaker, microphone",
+        "battery": "5 hours",
+        "ipd_mm": "Lateral adjustment",
+        "camera": "8 MP"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/madgazevader",
+        "https://fccid.io/2AI52-VADERA100/User-Manual/Users-manual-3985177"
+      ]
+    },
+    {
+      "id": "1N3k3S4MN",
+      "name": "Magic Leap 1",
+      "changes": {
+        "chipset": "Nvidia Tegra TX2 (Parker GPU, Pascal)",
+        "connectivity": "Wi-Fi 802.11ac/b/g/n, Bluetooth 4.2, USB-C",
+        "audio": "Built-in speakers, 3.5mm jack, spatial audio processing",
+        "battery": "~7.5h / 3h continuous use",
+        "ipd_mm": "58-72 mm mechanical (Size 1: 60-66mm, Size 2: 66-72mm)",
+        "prescription_support": "Optional (clip-in magnetic inserts, $249)",
+        "camera": "2 MP RGB, 1080p 30fps video"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://developer.magicleap.com/en-us/learn/guides/magic-leap-one-hardware-specifications",
+        "https://www.tomshardware.com/news/magic-leap-tegra-specs-release,37443.html",
+        "https://vr-compare.com/headset/magicleap1",
+        "https://www.engadget.com/2018-12-19-magic-leap-prescription-lenses-available-249.html",
+        "https://knowledge.vr-expert.com/kb/what-is-the-resolution-of-the-camera-of-the-magic-leap-1/"
+      ]
+    },
+    {
+      "id": "mt3AEYJu5",
+      "name": "Magic Leap 2",
+      "changes": {
+        "chipset": "AMD Quad-core Zen 2 x86 (7nm), 16GB LPDDR5",
+        "connectivity": "Wi-Fi 6 (Qualcomm FastConnect 6900), Bluetooth 5.0, USB-C",
+        "audio": "2 on-device spatial audio speakers, 4 microphones",
+        "battery": "~3.5h (external Compute Pack)",
+        "ipd_mm": "54-76 mm (hardware design, no mechanical slider)",
+        "prescription_support": "Nein",
+        "camera": "12.6 MP RGB, 4K 30fps or 1080p 60fps"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/magicleap2",
+        "https://www.magicleap.care/hc/en-us/articles/7813913215373-Product-Specifications",
+        "https://developer-docs.magicleap.cloud/docs/device/hardware/hardware-specs/",
+        "https://knowledge.vr-expert.com/kb/what-is-the-camera-resolution-of-the-magic-leap-2/",
+        "https://www.magicleap.care/hc/en-us/articles/5972956758413-Battery-Life"
+      ]
+    },
+    {
+      "id": "98wLZvTJQ",
+      "name": "Meta 2",
+      "changes": {
+        "chipset": "none / tethered (PC-powered, Intel i7-6700 or AMD FX 9590 required)",
+        "connectivity": "HDMI 1.4b or DisplayPort (tethered via 9-foot cable)",
+        "audio": "Not publicly specified in detail",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Fixed",
+        "prescription_support": "Nein",
+        "camera": "720p front-facing camera"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/meta2",
+        "https://www.sizescreens.com/meta-2-specifications/",
+        "https://www.tomshardware.com/news/meta-2-augmented-reality-glasses,31314.html"
+      ]
+    },
+    {
+      "id": "NwMetaQ3__",
+      "name": "Meta Quest 3",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon XR2 Gen 2 (Octa-core Kryo, Adreno 740 GPU)",
+        "brightness_nits": "100",
+        "connectivity": "Wi-Fi 6E (ax, 6GHz, 160MHz), Bluetooth 5.2, USB-C 3.2",
+        "audio": "Built-in stereo speakers, microphone, 3.5mm jack, spatial audio",
+        "battery": "~2.2h (2h typical gaming)",
+        "ipd_mm": "58-70 mm mechanical (53-75mm software range)",
+        "prescription_support": "Nein",
+        "camera": "Dual 4MP RGB, 18 PPD passthrough resolution"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/metaquest3",
+        "https://www.meta.com/quest/quest-3/",
+        "https://www.meta.com/help/quest/261777072346131/",
+        "https://vrdb.app/device/meta-quest-3"
+      ]
+    },
+    {
+      "id": "NwMetaQ3S_",
+      "name": "Meta Quest 3S",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon XR2 Gen 2",
+        "connectivity": "Wi-Fi 6E, Bluetooth 5.2, USB-C",
+        "audio": "Built-in speakers (arms), microphone, spatial audio (no 3.5mm jack)",
+        "battery": "~2.5h (2h graphically intense games)",
+        "ipd_mm": "58-68 mm mechanical (3 presets: 58, 63, 68mm)",
+        "prescription_support": "Nein",
+        "camera": "4MP color passthrough camera, 2 IR illuminators"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/metaquest3s",
+        "https://www.meta.com/quest/quest-3s/",
+        "https://www.androidcentral.com/gaming/virtual-reality/how-adjust-eye-distance-ipd-meta-quest-3s",
+        "https://www.androidcentral.com/gaming/virtual-reality/meta-quest-3s-review"
+      ]
+    },
+    {
+      "id": "NwMetaQPro",
+      "name": "Meta Quest Pro",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon XR2+ Gen 1",
+        "brightness_nits": "100",
+        "connectivity": "Wi-Fi 6, Bluetooth 5.2, USB-C",
+        "audio": "Built-in speakers, 3 microphone array, 3.5mm jack (both sides), spatial audio",
+        "battery": "~1.5h (5348 mAh, 1-2h depending on content)",
+        "ipd_mm": "55-75 mm mechanical (59-71mm visual range)",
+        "prescription_support": "Nein",
+        "camera": "High-resolution color passthrough cameras (exact MP not specified)"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/metaquestpro",
+        "https://www.meta.com/quest/quest-pro/tech-specs/",
+        "https://knowledge.vr-expert.com/kb/how-to-change-the-ipd-on-the-meta-quest-pro/",
+        "https://www.uploadvr.com/quest-pro-specs-features-details/"
+      ]
+    },
+    {
+      "id": "0iz9ksGZA",
+      "name": "Meta Ray-Ban Display",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon AR1 Gen 1",
+        "connectivity": "Wi-Fi 6, Bluetooth 5.3",
+        "audio": "2 open-ear speakers, 6-mic system (2 left arm, 2 right arm, 1 nose pad, 1 contact mic)",
+        "battery": "~6h (glasses), 248 mAh; 24h with case",
+        "ipd_mm": "Fixed (regular eyewear frame)",
+        "prescription_support": "Optional (custom bonded, -4 to +4D total power, $200, 5-8 weeks)",
+        "camera": "12MP RGB, 3K video, 1440x1920 @ 30fps"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/metaray-bandisplay",
+        "https://www.meta.com/ai-glasses/meta-ray-ban-display/",
+        "https://www.uploadvr.com/meta-ray-ban-display-prescription-support/",
+        "https://www.ray-ban.com/usa/l/discover-ray-ban-meta-ai-glasses"
+      ]
+    },
+    {
+      "id": "tSCQxsAA_",
+      "name": "Microsoft HoloLens 1",
+      "changes": {
+        "chipset": "Intel Atom x5-Z8100 (1.04GHz) + custom Microsoft Holographic Processing Unit (HPU)",
+        "connectivity": "Wi-Fi 802.11ac, Bluetooth, USB micro",
+        "audio": "Spatial audio speakers (near ears), 4 microphones, 3.5mm jack",
+        "battery": "~2-3h active use (16500 mAh, 2 weeks standby)",
+        "ipd_mm": "Software-calibrated (6-point per-eye calibration), no mechanical adjustment",
+        "prescription_support": "Optional (clip-in inserts, stainless steel frame)",
+        "camera": "2.4 MP color camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/en-us/previous-versions/mixed-reality/hololens-1/hololens1-hardware",
+        "https://vr-compare.com/headset/microsofthololens",
+        "https://www.windowscentral.com/hololens-hardware-specs",
+        "https://www.windowscentral.com/microsoft-hololens-owners-will-be-able-see-better-custom-lens-inserts"
+      ]
+    },
+    {
+      "id": "PRD287sFm",
+      "name": "Nimo",
+      "changes": {
+        "chipset": "Snapdragon XR1",
+        "brightness_nits": "600",
+        "connectivity": "WiFi, Bluetooth",
+        "audio": "Microphone, directional speakers",
+        "battery": "~2.5h",
+        "ipd_mm": "Fixed",
+        "camera": "No camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.nimoplanet.com/",
+        "https://robbreport.com/gear/gadgets/nimo-planet-smart-glasses-1234670093/",
+        "https://www.freethink.com/consumer-tech/nimo-smart-glasses"
+      ]
+    },
+    {
+      "id": "vktjm1mHt",
+      "name": "Nolo VR Glass",
+      "changes": {
+        "chipset": "none / tethered",
+        "connectivity": "3DoF controller, no WiFi/BT in headset",
+        "audio": "Speakers in temples",
+        "battery": "Tethered (no battery)",
+        "camera": "No camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/nolovrglass",
+        "https://www.accessnewswire.com/newsroom/en/business-and-professional-services/nolo-unveils-two-game-changing-vr-headset-models-hmd-that-wears-l-733810"
+      ]
+    },
+    {
+      "id": "jtG3rIKIH",
+      "name": "Nreal Air",
+      "changes": {
+        "brightness_nits": "400",
+        "connectivity": "USB-C DisplayPort",
+        "audio": "Stereo speakers in arms",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Fixed",
+        "prescription_support": "Optional (clip-in)",
+        "camera": "No camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/nrealair",
+        "https://www.tomshardware.com/reviews/nreal-air",
+        "https://vroptician.com/prescription-lens-inserts/nreal-air"
+      ]
+    },
+    {
+      "id": "Y2w9aRodp",
+      "name": "Nreal Light",
+      "changes": {
+        "chipset": "Snapdragon 845",
+        "brightness_nits": "1000",
+        "connectivity": "USB-C DisplayPort",
+        "audio": "Dual speakers, dual microphones",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Fixed",
+        "prescription_support": "Optional (clip-in)",
+        "camera": "1920x1080 RGB"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/nreallight",
+        "https://www.tomshardware.com/reviews/nreal-light-ar-smart-glasses",
+        "https://kguttag.com/2021/06/07/nreal-teardown-part-3-pictures-through-the-lens/"
+      ]
+    },
+    {
+      "id": "vn_zQOTOV",
+      "name": "Nubia Neovision Glass",
+      "changes": {
+        "brightness_nits": "1800",
+        "connectivity": "DisplayPort / USB-C",
+        "audio": "Dual omnidirectional speakers",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Software",
+        "camera": "No camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/nubianeovisionglass",
+        "https://global.ztedevices.com/products/nubia-neovision-ar-glasses",
+        "https://www.gsmarena.com/handson_zte_nubia_z50_nubia_pad_3d_and_nubia_neovision_glass-news-57796.php"
+      ]
+    },
+    {
+      "id": "oqaLcHVYE",
+      "name": "NuEyes Pro 3e",
+      "changes": {
+        "brightness_nits": "2000",
+        "connectivity": "USB Type-C",
+        "audio": "Stereo speakers",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Fixed",
+        "camera": "No camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/nueyespro3e",
+        "https://www.nueyes.com/pro3e",
+        "https://www.worldcast.io/nueyes-pro-3e-specs"
+      ]
+    },
+    {
+      "id": "0Qjzt-5qf",
+      "name": "Oppo Air Glass",
+      "changes": {
+        "chipset": "Snapdragon Wear 4100",
+        "brightness_nits": "1400",
+        "connectivity": "WiFi, Bluetooth",
+        "audio": "Speaker, dual microphone",
+        "battery": "~3h",
+        "ipd_mm": "Fixed",
+        "prescription_support": "Ja",
+        "camera": "No camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/oppoairglass",
+        "https://www.smartprix.com/bytes/oppo-air-glass-specs-how-assisted-reality-works-availability-and-other-details/",
+        "https://www.oppo.com/en/newsroom/press/oppo-air-glass/"
+      ]
+    },
+    {
+      "id": "3ZdVU3ZJM",
+      "name": "P&C Solution METALENSE",
+      "changes": {
+        "chipset": "Snapdragon XR2",
+        "connectivity": "WiFi, Bluetooth, LTE",
+        "battery": "Replaceable battery",
+        "prescription_support": "Magnetic inserts"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/p&csolutionmetalense",
+        "https://www.prnewswire.com/news-releases/pc-solution-to-unveil-new-product-metalense-2-at-ces-2024-302021394.html",
+        "https://www.auganix.org/xr-news-pc-solution-to-unveil-its-metalense-2-xr-headset-at-ces-2024/",
+        "https://www.prnewswire.com/news-releases/pc-solution-to-participate-in-awe-usa-2024-with-xr-glasses-powered-by-snapdragon-302158850.html"
+      ]
+    },
+    {
+      "id": "NwPimaxCry",
+      "name": "Pimax Crystal",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon XR2",
+        "brightness_nits": "200",
+        "battery": "6000 mAh / ~2h",
+        "ipd_mm": "58-72 mm automatic",
+        "connectivity": "WiFi 6E, DisplayPort, USB-C",
+        "audio": "Built-in headphones, optional off-ear speakers",
+        "camera": "4 x depth cameras for tracking"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/pimaxcrystalqled",
+        "https://pimax.com/products/pimax-crystal",
+        "https://reloptix.com/products/reloptix-pimaxcrystal"
+      ]
+    },
+    {
+      "id": "itQWsK0YF",
+      "name": "Pimax Crystal Light",
+      "changes": {
+        "brightness_nits": "200",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "58-72 mm mechanical",
+        "connectivity": "DisplayPort 1.4a, USB 3.0",
+        "audio": "Integrated headphones, dual microphone",
+        "camera": "No RGB camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/pimaxcrystallight",
+        "https://pimax.com/pages/crystal-light",
+        "https://support.pimax.com/en/support/solutions/articles/60001304305-how-to-adjust-the-ipd-of-the-crystal-light-"
+      ]
+    },
+    {
+      "id": "6wtHtGTJL",
+      "name": "Pimax Crystal Super",
+      "changes": {
+        "brightness_nits": "280",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "58-72 mm automatic",
+        "connectivity": "DisplayPort 1.4a, USB 3.0",
+        "camera": "4 x tracking cameras with SLAM"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/pimaxcrystalsuper",
+        "https://pimax.com/pages/pimax-crystal-super",
+        "https://pimax.com/pages/crystal-light-vs-crystal-super"
+      ]
+    },
+    {
+      "id": "fmvzFDQnb",
+      "name": "Pimax Dream Air",
+      "changes": {
+        "brightness_nits": "1500",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Software",
+        "connectivity": "DisplayPort 1.4a, USB-C",
+        "audio": "Integrated spatial audio speakers, microphone",
+        "camera": "4 x integrated cameras for SLAM tracking"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/pimaxdreamair",
+        "https://pimax.com/pages/dream-air",
+        "https://pimax.com/blogs/blogs/pimax-chooses-tobii-eye-tracking-for-the-ultra-compact-dream-air-vr-headset"
+      ]
+    },
+    {
+      "id": "Z3yEBUJAV",
+      "name": "Play For Dream MR",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon XR2+ Gen 2",
+        "battery": "Built-in 1h + tethered external 2.5h / ~3.5h total",
+        "connectivity": "WiFi 7, BT 5.3, USB-C",
+        "audio": "Dual stereo speakers, 4x omnidirectional microphones with DTS X",
+        "camera": "Dual 32MP 3D cameras"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/playfordreammr",
+        "https://pfdm.ai/products/mr-headset",
+        "https://www.xda-developers.com/play-for-dream-mr-hands-on-snapdragon-xr2-gen-2-headset-is-a-lighter-cheaper-vision-pro-clone/"
+      ]
+    },
+    {
+      "id": "NwPSVR2Xr",
+      "name": "PlayStation VR2",
+      "changes": {
+        "battery": "Tethered (no battery)",
+        "connectivity": "USB-C DisplayPort alt-mode, BT 5.1",
+        "audio": "Stereo headphone jack, built-in microphone",
+        "camera": "4 x embedded cameras, 2 x IR eye-tracking cameras"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.playstation.com/en-us/ps-vr2/ps-vr2-tech-specs/",
+        "https://vr-compare.com/headset/playstationvr2",
+        "https://www.tomsguide.com/news/ps-vr2-will-be-powered-by-two-chips-heres-what-we-know"
+      ]
+    },
+    {
+      "id": "ms0htz68c",
+      "name": "RayNeo Air 3s",
+      "changes": {
+        "brightness_nits": "650",
+        "ipd_mm": "56-70 mm",
+        "connectivity": "USB-C DisplayPort alt-mode, HDMI adapter",
+        "audio": "Quad speakers with dual opposing acoustic chambers"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.rayneo.com/products/rayneo-air-3s-xr-glasses",
+        "https://vr-compare.com/headset/rayneoir3s",
+        "https://www.tomshardware.com/peripherals/wearable-tech/rayneo-air-3s-ar-glasses-review"
+      ]
+    },
+    {
+      "id": "xgyr4Q0iB",
+      "name": "RayNeo X3 Pro",
+      "changes": {
+        "chipset": "Snapdragon AR1 Gen 1",
+        "brightness_nits": "3500",
+        "connectivity": "Wi-Fi 6, Bluetooth 5.3, USB-C",
+        "audio": "4-speaker system, triple-microphone array",
+        "battery": "245 mAh / ~30 minutes active use",
+        "prescription_support": "Optional (snap-on custom inserts)",
+        "camera": "12MP Sony IMX681"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.rayneo.com/products/x3-pro-ai-display-glasses",
+        "https://www.rayneo.com/blogs/news/prescription-lenses-for-smart-glasses-2026-guide",
+        "https://www.tomshardware.com/peripherals/wearable-tech/rayneo-x3-pro-ar-glasses-review",
+        "https://www.notebookcheck.net/Rayneo-X3-Pro-review-Promising-AR-smart-glasses-with-one-big-limitation.1190970.0.html"
+      ]
+    },
+    {
+      "id": "FauT-Oibf",
+      "name": "Realmax Qian",
+      "changes": {
+        "chipset": "Snapdragon 835",
+        "connectivity": "Wi-Fi 802.11a/b/g/n (standalone, tethering-free)",
+        "audio": "Dual integrated speakers",
+        "battery": "6000 mAh / ~5 hours active",
+        "ipd_mm": "Fixed"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/realmaxqian",
+        "https://realmax.myshoplaza.com/products/realmax-qian-immersive-ar-glasses-with-ultra-large-fov",
+        "https://arvrtips.com/realmax-qian/",
+        "https://www.tweaktown.com/news/75078/the-realmax-qian-is-an-ar-and-vr-headset-rolled-into-one-package/"
+      ]
+    },
+    {
+      "id": "gJzO9KhG5",
+      "name": "RealWear HMT-1",
+      "changes": {
+        "chipset": "Snapdragon 625 or 626 (model dependent)",
+        "connectivity": "Bluetooth 4.1, 802.11 a/b/g/n/ac, GPS, GLONASS",
+        "audio": "4 digital microphones with active noise cancellation, 91 dB speaker",
+        "battery": "3250 mAh / 8+ hours",
+        "ipd_mm": "Fixed",
+        "camera": "16MP with OIS, 1080p @ 30fps"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://support.realwear.com/knowledge/hmt-1-specifications-for-model-t1200g",
+        "https://vr-compare.com/headset/realwearhmt-1",
+        "https://support.realwear.com/knowledge/hmt-1-device-overview"
+      ]
+    },
+    {
+      "id": "ufFwiatGb",
+      "name": "RealWear HMT-1Z1",
+      "changes": {
+        "chipset": "Snapdragon 625",
+        "audio": "Not specified in verified sources",
+        "battery": "3400 mAh / Full shift (9-10 hours)",
+        "ipd_mm": "Fixed",
+        "camera": "16MP, 1080p @ 30fps"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://support.realwear.com/knowledge/realwear-hmt-1z1-overview",
+        "https://support.realwear.com/knowledge/hmt-1z1-device-overview",
+        "https://vr-compare.com/headset/realwearhmt-1z1"
+      ]
+    },
+    {
+      "id": "zPABenwmr",
+      "name": "RealWear Navigator 500",
+      "changes": {
+        "chipset": "Snapdragon 662",
+        "connectivity": "Bluetooth 5.1, 802.11 a/b/g/n/ac, GPS, USB-C",
+        "audio": "4 digital microphones with active noise cancellation, 94 dB speaker",
+        "battery": "2600 mAh / 8 hours",
+        "ipd_mm": "Fixed",
+        "camera": "48MP, 1080p @ 60fps with 6X telephoto zoom"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/realwearnavigator500",
+        "https://www.realwear.com/devices/navigator-500",
+        "https://vr-expert.com/en-us/ar-headsets/buy-realwear-navigator-500/",
+        "https://airacom.com/devices/wearables/realwear-navigator-500/"
+      ]
+    },
+    {
+      "id": "o9JH3GwIU",
+      "name": "RealWear Navigator 520",
+      "changes": {
+        "chipset": "Snapdragon 662",
+        "audio": "4 digital microphones with active noise cancellation, 94 dB speaker",
+        "battery": "2600 mAh / 8 hours",
+        "ipd_mm": "Fixed",
+        "camera": "50MP, 1080p @ 60fps (optional FLIR thermal module)"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/realwearnavigator520",
+        "https://www.realwear.com/devices/navigator-520",
+        "https://support.realwear.com/knowledge/realwear-navigator-520-faqs",
+        "https://vr-expert.com/en-us/ar-headsets/buy-realwear-navigator-520/"
+      ]
+    },
+    {
+      "id": "ElhWfkAbQ",
+      "name": "RealWear Navigator Z1",
+      "changes": {
+        "chipset": "Qualcomm QCS6490",
+        "connectivity": "Bluetooth 5.2, Wi-Fi 6/6E, 5G optional",
+        "audio": "4 microphones with active noise cancellation, 94 dB speaker",
+        "battery": "2550 mAh / Full shift",
+        "ipd_mm": "Fixed",
+        "camera": "48MP, 1080p video"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/realwearnavigatorz1",
+        "https://www.realwear.com/devices/navigator-Z1",
+        "https://support.realwear.com/knowledge/realwear-navigator-z1-faqs",
+        "https://support.realwear.com/knowledge/device-specifications"
+      ]
+    },
+    {
+      "id": "legacy-reconjet",
+      "name": "Recon Jet",
+      "changes": {
+        "chipset": "1 GHz dual ARM Cortex-A9",
+        "connectivity": "Bluetooth 4.0, Wi-Fi 802.11 a/b/g/n, ANT+, GPS, Micro USB",
+        "audio": "Integrated speaker and microphone",
+        "battery": "490 mAh / ~4 hours",
+        "ipd_mm": "Fixed",
+        "camera": "2.1MP, 720p video (15-second max)"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Recon_Instruments",
+        "https://www.engadget.com/2015-07-17-recon-jet-review.html",
+        "https://www.virtual-reality-shop.co.uk/recon-jet-2015/",
+        "https://www.androidpolice.com/2015/06/18/intel-acquires-recon-instruments-the-makers-of-the-fitness-oriented-smart-eyewear-recon-jet/"
+      ]
+    },
+    {
+      "id": "Tyzj7UF28",
+      "name": "Rokid AI Glasses Style",
+      "changes": {
+        "chipset": "Snapdragon AR1 Gen 1 (RT600 MIMXRT685SFAWBR)",
+        "connectivity": "Wi-Fi 6, Bluetooth 5.3",
+        "audio": "4 directional microphones, 2x AAC 0920 speakers",
+        "battery": "210 mAh / ~12h (glasses only, optional 3000 mAh case)",
+        "ipd_mm": "Fixed (non-adjustable)",
+        "prescription_support": "Ja (supports myopia, astigmatism, progressive up to +15.00 D)",
+        "camera": "12MP Sony IMX681, F2.25"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://global.rokid.com/products/rokid-ai-glasses-style",
+        "https://aivisorglasses.com/latest/rokid-style-ai-glasses-launch",
+        "https://www.geeky-gadgets.com/rokid-ai-glasses-first-impressions/"
+      ]
+    },
+    {
+      "id": "kG1_Qtju3",
+      "name": "Rokid Air",
+      "changes": {
+        "chipset": "Phone-powered (no onboard SoC)",
+        "connectivity": "USB-C DisplayPort, Wi-Fi, Bluetooth",
+        "audio": "Integrated speaker",
+        "battery": "Phone-powered (no internal battery)",
+        "ipd_mm": "N/A (phone-powered passthrough)",
+        "prescription_support": "N/A",
+        "camera": "N/A (phone camera passthrough)"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/rokidair",
+        "https://air.rokid.com/",
+        "https://www.xrtoday.com/augmented-reality/rokid-max-2-review-sharp-new-ar-specs-from-rokid/"
+      ]
+    },
+    {
+      "id": "Owzy8dkih",
+      "name": "Rokid Air Pro",
+      "changes": {
+        "chipset": "Phone-powered (no onboard SoC)",
+        "connectivity": "USB-C DisplayPort, Wi-Fi, Bluetooth",
+        "audio": "360-degree speaker, integrated microphone",
+        "battery": "Phone-powered (no internal battery)",
+        "ipd_mm": "N/A (phone-powered)",
+        "prescription_support": "N/A",
+        "camera": "8MP RGB, 1080p video"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/rokidairpro",
+        "https://alegerglobal.com/en/shop-en/smart-glasses-en/rokid-air-pro/",
+        "https://gbatemp.net/review/rokid-air.2038/"
+      ]
+    },
+    {
+      "id": "Jc6hpT2dK",
+      "name": "Rokid AR Lite",
+      "changes": {
+        "chipset": "Snapdragon 6 Gen 1",
+        "brightness_nits": "1500",
+        "connectivity": "Wi-Fi 6, Bluetooth 5.3, USB-C",
+        "audio": "Directional microphones, speakers",
+        "battery": "210 mAh (glasses) + 3000 mAh case, optional 5000 mAh station battery",
+        "ipd_mm": "Adjustable",
+        "prescription_support": "Optional",
+        "camera": "12MP"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://global.rokid.com/pages/2024-rokid-ar-lite",
+        "https://www.notebookcheck.net/Rokid-AR-Lite-launches-soon-as-first-AR-glasses-with-Snapdragon-6-Gen-1.841175.0.html",
+        "https://www.techeblog.com/rokid-ar-lite-first-ar-smartglasses-snapdragon-6/",
+        "https://www.tomsguide.com/computing/smart-glasses/rokid-ar-lite-ar-glasses-review"
+      ]
+    },
+    {
+      "id": "HqqnCqpAR",
+      "name": "Rokid AR Spatial",
+      "changes": {
+        "chipset": "N/A (PC-powered, uses Station 2 with Snapdragon)",
+        "brightness_nits": "600",
+        "connectivity": "Wi-Fi 6, Bluetooth 5.2, USB-C",
+        "audio": "HiFi-level speakers, microphones",
+        "battery": "N/A (glasses tethered to Station 2), Station 2: 5000 mAh",
+        "ipd_mm": "Automatic pupillary adjustment",
+        "prescription_support": "Ja (0.00D to -6.00D myopia correction)",
+        "camera": "N/A (native passthrough only)"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://global.rokid.com/products/rokid-ar-spatial",
+        "https://xpert.digital/en/rokid-ar-spatia/",
+        "https://www.amazon.com/Rokid-AR-3-Screen-Micro-OLED-Multi-Tasking/dp/B0FQ6VT9FT"
+      ]
+    },
+    {
+      "id": "WCyEdkzUk",
+      "name": "Rokid Glass 2",
+      "changes": {
+        "chipset": "Amlogic S905D3",
+        "connectivity": "Wi-Fi, Bluetooth, microphone",
+        "audio": "Voice control speakers",
+        "battery": "10000 mAh / ~8h",
+        "ipd_mm": "N/A",
+        "prescription_support": "N/A",
+        "camera": "1080p video capable (30fps)"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/rokidglass2",
+        "https://alegerglobal.com/en/shop-en/smart-glasses-en/rokid-glass-2/",
+        "https://vrlitic.com/rokid-glass-2/"
+      ]
+    },
+    {
+      "id": "PAAgbYfc4",
+      "name": "Rokid Glasses",
+      "changes": {
+        "chipset": "Snapdragon AR1 Gen 1 (RT600 MIMXRT685SFAWBR)",
+        "brightness_nits": "1500",
+        "connectivity": "Wi-Fi 6, Bluetooth 5.3, USB-C",
+        "audio": "2x AAC 0920 speakers, 4 directional microphones",
+        "battery": "210 mAh / up to 2h (with 3000 mAh case)",
+        "ipd_mm": "Fixed",
+        "prescription_support": "Ja (myopia, astigmatism)",
+        "camera": "12MP Sony IMX681"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://global.rokid.com/products/rokid-glasses",
+        "https://global.rokid.com/blogs/news/rokid-glasses-are-lightweight-ar-smart-glasses-with-micro-led-displays-and-a-499-price-tag",
+        "https://www.kickstarter.com/projects/rokid/new-rokid-glassesworlds-lighest-full-function-ai-glasses/faqs"
+      ]
+    },
+    {
+      "id": "y-HjRHyLZ",
+      "name": "Rokid Max",
+      "changes": {
+        "chipset": "Phone-powered (no onboard SoC)",
+        "brightness_nits": "600",
+        "connectivity": "USB-C DisplayPort, Wi-Fi, Bluetooth",
+        "audio": "Integrated speaker",
+        "battery": "Phone-powered (no internal battery)",
+        "ipd_mm": "N/A (phone-powered)",
+        "prescription_support": "N/A",
+        "camera": "N/A (phone camera passthrough)"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://global.rokid.com/pages/rokid-max-specs",
+        "https://vr-compare.com/headset/rokidmax",
+        "https://www.amazon.com/Rokid-Max-AR-Glasses-Entertainment/dp/B0CML7V7FX"
+      ]
+    },
+    {
+      "id": "kQcRu82xv",
+      "name": "Rokid Max 2",
+      "changes": {
+        "chipset": "None / tethered (phone-powered display only)",
+        "brightness_nits": "600",
+        "connectivity": "USB-C DisplayPort 3.1, Wi-Fi via tethered device",
+        "audio": "Dual speakers, dual microphones",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Manual mechanical adjustment",
+        "camera": "No integrated camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.amazon.com/Rokid-Max-AR-Glasses-Entertainment/dp/B0DKX1WSQ3",
+        "https://global.rokid.com/blogs/compatibility/which-devices-can-connect-to-rokid-max-glasses-directly",
+        "https://vr-compare.com/headset/rokidmax"
+      ]
+    },
+    {
+      "id": "3rjj5keYC",
+      "name": "Rokid Max Pro",
+      "changes": {
+        "chipset": "Qualcomm XR2+ Gen 1",
+        "brightness_nits": "600",
+        "connectivity": "USB-C DisplayPort, Wi-Fi 6, Bluetooth 5.3",
+        "audio": "Dual speakers",
+        "battery": "Phone-tethered (no internal battery)",
+        "ipd_mm": "Manual mechanical adjustment",
+        "camera": "Yes, 1 depth camera for SLAM/tracking"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/rokidmaxpro",
+        "https://vrarwiki.com/wiki/Rokid_Max_Pro",
+        "https://global.rokid.com/pages/direct-connection-devices"
+      ]
+    },
+    {
+      "id": "oHsFwXqoj",
+      "name": "Rokid Vision 2",
+      "changes": {
+        "chipset": "Unknown (cancelled developer concept)"
+      },
+      "confidence": "low",
+      "sources": [
+        "https://vr-compare.com/headset/rokidvision2",
+        "https://www.roadtovr.com/rokid-vision-2-ar-glasses-waveguide/"
+      ]
+    },
+    {
+      "id": "W1kyhxveC",
+      "name": "Rokid X-Craft",
+      "changes": {
+        "chipset": "Amlogic A311D",
+        "brightness_nits": "1600",
+        "connectivity": "5G, Wi-Fi 6, Bluetooth 5.0, USB-C",
+        "audio": "Integrated speakers, 3 microphones",
+        "battery": "10000 mAh / ~8h",
+        "ipd_mm": "Manual mechanical adjustment",
+        "camera": "Yes, integrated camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/rokidx-craft",
+        "https://www.rokid.ai/products/rokid-x-craft/",
+        "https://alegerglobal.com/en/shop-en/atex-en/rokid-x-craft/"
+      ]
+    },
+    {
+      "id": "8SjwcAQOr",
+      "name": "Samsung Galaxy XR",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon XR2+ Gen 2",
+        "connectivity": "Wi-Fi 6E, Bluetooth 5.3, USB-C",
+        "audio": "2-way speakers, 6-microphone system",
+        "battery": "External battery pack / ~2-2.5h",
+        "ipd_mm": "54-70 mm automatic (eye-tracking guided)",
+        "camera": "Dual RGB cameras for passthrough"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/samsunggalaxyxr",
+        "https://www.samsung.com/us/xr/galaxy-xr/galaxy-xr/",
+        "https://www.uploadvr.com/samsung-galaxy-xr-android-xr-first-impressions-hands-on/"
+      ]
+    },
+    {
+      "id": "o1Kzyd1z_",
+      "name": "Shadow Creator Action One",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon 835",
+        "connectivity": "USB, Bluetooth, Wi-Fi",
+        "audio": "Integrated speakers, microphones",
+        "battery": "4000 mAh",
+        "camera": "13 MP RGB camera"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/shadowcreatoractionone",
+        "https://www.youtube.com/watch?v=mPp1qA0s2o0",
+        "https://www.displaydaily.com/paid-news/mdm/mdm-product-news/shadow-creator-shows-the-action-one-headset"
+      ]
+    },
+    {
+      "id": "nzYmv8egK",
+      "name": "Shadow Creator Halomini",
+      "changes": {
+        "battery": "3200 mAh",
+        "camera": "13 MP RGB camera"
+      },
+      "confidence": "low",
+      "sources": [
+        "https://vr-compare.com/headset/shadowcreatorhalomini",
+        "https://newatlas.com/shadow-creator-vive-vr-headset/57187/"
+      ]
+    },
+    {
+      "id": "oq9fGnG34",
+      "name": "Sharge Loomos",
+      "changes": {
+        "chipset": "Unisoc 4-core 2.0 GHz AI processor",
+        "connectivity": "Bluetooth 5.0, Wi-Fi",
+        "audio": "Open-ear stereo speakers, dual DSP amplifiers, 5.1 surround sound, 2 microphones",
+        "battery": "450 mAh / ~40h standby",
+        "camera": "16 MP Sony sensor, 4K photo capable"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.cnx-software.com/2025/02/24/loomos-ai-smart-glasses-integrate-gpt-4o-offer-a-16mp-camera-and-hi-fi-audio/",
+        "https://www.notebookcheck.net/Sharge-loomos-Release-date-and-cheapest-price-for-upcoming-ai-glasses-revealed.952625.0.html",
+        "https://thewearify.com/sharge-loomos-smart-glasses/"
+      ]
+    },
+    {
+      "id": "Pw1ENb4d8",
+      "name": "Shiftall MeganeX superlight 8K",
+      "changes": {
+        "chipset": "none / tethered (PC-powered)",
+        "connectivity": "USB-C DisplayPort + USB 2.0",
+        "audio": "Dual microphones (no speakers)",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "58-72 mm mechanical",
+        "prescription_support": "Optional add-on lenses",
+        "camera": "No camera passthrough"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://en.shiftall.net/products/meganex8k",
+        "https://www.roadtovr.com/shiftall-meganex-superlight-8k-release-date-price/"
+      ]
+    },
+    {
+      "id": "Hz5LNjh9Y",
+      "name": "Snap Spectacles (2021)",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon XR1",
+        "brightness_nits": "2000",
+        "connectivity": "Bluetooth, dual RGB cameras",
+        "audio": "4 microphones, 2 stereo speakers",
+        "battery": "30 minutes per charge",
+        "camera": "Dual RGB cameras"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://newsroom.snap.com/introducing-the-next-generation-of-spectacles",
+        "https://www.uploadvr.com/snap-spectacles-5-ar/",
+        "https://vr-compare.com/headset/snapspectacles(2021)"
+      ]
+    },
+    {
+      "id": "NK2ZBl7SV",
+      "name": "Solos AirGo Vision",
+      "changes": {
+        "connectivity": "Bluetooth, USB-C",
+        "audio": "Open-ear stereo speakers, directional microphone",
+        "battery": "6-10 hours",
+        "camera": "RGB camera (swappable)"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://solosglasses.com/products/solos-airgo-vision",
+        "https://www.androidcentral.com/wearables/the-solos-airgo-vision-ai-smart-glasses-are-finally-here-to-challenge-ray-ban-meta"
+      ]
+    },
+    {
+      "id": "wGtNi7Owy",
+      "name": "Somnium VR1",
+      "changes": {
+        "chipset": "none / tethered (PC-powered)",
+        "brightness_nits": "210",
+        "connectivity": "USB-C DisplayPort, USB 3 Gen 2, 3.5mm jack",
+        "audio": "3.5mm headphone jack (no built-in speakers), quality microphones",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "58-76 mm mechanical",
+        "prescription_support": "Dioptric compensation lens option",
+        "camera": "No camera passthrough"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vrgineers.com/somnium-vr1-vr/",
+        "https://www.roadtovr.com/somnium-begins-shipping-vr1-pc-vr-headset-in-the-us-announces-incoming-price-hike/"
+      ]
+    },
+    {
+      "id": "legacy-sonysmarteyeglassde",
+      "name": "Sony SmartEyeglass (SED-E1)",
+      "changes": {
+        "brightness_nits": "1000",
+        "connectivity": "Bluetooth 3.0, Wi-Fi 802.11b/g, NFC Type 3",
+        "audio": "Built-in microphone, noise suppression microphone",
+        "battery": "Lithium-ion, 150 minutes use, 80 minutes with camera, ~2 hour recharge",
+        "ipd_mm": "54.5-72.5 mm",
+        "camera": "3MP still images"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.sony.co.uk/electronics/support/wearable-devices-smarteyeglass/sed-e1/specifications",
+        "https://xinreality.com/wiki/SmartEyeglass_Developer_Edition_SED-E1"
+      ]
+    },
+    {
+      "id": "MRE_j97gq",
+      "name": "Spacetop",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon 865 + Adreno 650 GPU",
+        "connectivity": "Wi-Fi 6, Bluetooth 5.1, 5G modem, USB-C",
+        "audio": "Audio via glasses",
+        "battery": "5 hours",
+        "camera": "5MP camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.sightful.com/",
+        "https://www.uploadvr.com/spacetop-is-the-ar-productivity-software-ive-always-wanted-heres-why"
+      ]
+    },
+    {
+      "id": "wrjEu415W",
+      "name": "Spacetop G1",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon QCS8550",
+        "connectivity": "Wi-Fi 7, Bluetooth 5.3, 5G/4G, USB-C",
+        "audio": "Built-in audio",
+        "battery": "8 hours (63W USB-C, 0-85% charge in <2h)",
+        "camera": "5MP camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.roadtovr.com/ar-latop-spacetop-cancelled-windows-software-pivot/",
+        "https://www.uploadvr.com/spacetop-g1-screenless-laptop-ar-glasses/"
+      ]
+    },
+    {
+      "id": "UIRKkbXSO",
+      "name": "TCL NXTWEAR G",
+      "changes": {
+        "brightness_nits": "1200",
+        "connectivity": "USB-C with DisplayPort",
+        "audio": "Dual speaker system",
+        "battery": "Tethered (powered via USB-C connection)",
+        "prescription_support": "Magnetic lens inserts (optional)",
+        "camera": "No camera passthrough"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.tcl.com/global/en/glasses/tcl-nxtwear-g/specifications",
+        "https://vr-compare.com/headset/tclnxtwearg"
+      ]
+    },
+    {
+      "id": "x7KWR1zVL",
+      "name": "TCL NXTWEAR S",
+      "changes": {
+        "chipset": "none / tethered",
+        "brightness_nits": "400",
+        "connectivity": "USB-C DisplayPort",
+        "audio": "Dynamic stereo speakers, acoustic phase cancellation",
+        "battery": "Tethered (no battery)",
+        "camera": "No camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.makeuseof.com/tcl-nxtwear-s-review/",
+        "https://www.xda-developers.com/tcl-nxtwear-s-hands-on/",
+        "https://www.rayneo.com/pages/faq-nxtwear-s-s+"
+      ]
+    },
+    {
+      "id": "Dnsbasmiv",
+      "name": "TCL NXTWEAR V",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon XR2"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/tclnxtwearv"
+      ]
+    },
+    {
+      "id": "xo3cio_3V",
+      "name": "TCL RayNeo X2",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon XR2 Gen 1",
+        "brightness_nits": "1000",
+        "connectivity": "Wi-Fi 5.0, Bluetooth 5.2, USB-C",
+        "audio": "Dual speakers, 3 microphones",
+        "battery": "590 mAh / ~3h",
+        "camera": "16 MP RGB"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.uploadvr.com/rayneo-x2-standalone-ar-glasses-review/",
+        "https://www.rayneo.com/products/tcl-rayneo-x2",
+        "https://vr-compare.com/headset/tclrayneox2"
+      ]
+    },
+    {
+      "id": "rNPYFiTHx",
+      "name": "TCL RayNeo X2 Lite",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon AR1 Gen 1",
+        "brightness_nits": "1500",
+        "connectivity": "Wi-Fi 6E, Bluetooth 5.3, USB-C",
+        "audio": "Microphones, speakers",
+        "battery": "~3h",
+        "camera": "12 MP RGB"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.trustedreviews.com/versus/tcl-rayneo-x2-vs-tcl-rayneo-x2-lite-4407266",
+        "https://www.microled-info.com/tcl-announces-rayneo-x2-lite-smartglasses-powered-full-color-microled",
+        "https://vr-compare.com/headset/tclrayneox2lite"
+      ]
+    },
+    {
+      "id": "sMDYLv4VB",
+      "name": "ThirdEye Razor MR Glasses",
+      "changes": {
+        "connectivity": "DisplayPort, USB-C, HDMI (via adapter)",
+        "audio": "Dual noise-canceling microphones, spatial audio",
+        "battery": "8h"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.globenewswire.com/news-release/2022/01/03/2360093/0/en/ThirdEye-Announces-Razor-MR-Glasses-Expands-into-Consumer-Metaverse-with-New-Lightweight-Solution.html",
+        "https://www.auganix.org/thirdeye-announces-new-razor-mr-glasses-consumer-mixed-reality-device/",
+        "https://vr-compare.com/headset/thirdeyerazormrglasses"
+      ]
+    },
+    {
+      "id": "-pmNU-it0",
+      "name": "ThirdEye X2",
+      "changes": {
+        "chipset": "Lion's Mouth XR1",
+        "audio": "Noise-canceling microphones",
+        "battery": "1750 mAh / ~2h",
+        "camera": "13 MP RGB",
+        "prescription_support": "Optional (clip-in)"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.prnewswire.com/news-releases/thirdeye-gen-announces-shipments-of-its-x2-mixed-reality-glasses-300919487.html",
+        "https://www.thirdeyegen.com/x2-smart-glasses",
+        "https://vr-compare.com/headset/thirdeyex2"
+      ]
+    },
+    {
+      "id": "Rz1MDcJer",
+      "name": "Thunderbird Air Plus",
+      "changes": {
+        "brightness_nits": "600",
+        "battery": "Magnetic charging"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/thunderbirdairplus",
+        "https://www.smeshmega.com/products/air-plus-ar-thunderbird-air-plus-xr-glasses-pocket-sized-portable-ar-with-1080p-oled-dual-display-intelli-new-ar-glasses-by-tcl/"
+      ]
+    },
+    {
+      "id": "0WBse43zY",
+      "name": "Thunderbird V3",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon AR1",
+        "audio": "Customized 9x20mm large diaphragm speakers, bone-conduction audio",
+        "battery": "~7h",
+        "camera": "12 MP RGB (Sony IMX681, F2.3, 16mm)"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://technode.com/2025/01/08/thunderbird-launches-ai-powered-v3-glasses-in-partnership-with-alibaba-for-ces-2025/",
+        "https://www.cmoscameramodule.com/news/application-of-camera-module-in-thunderbird-v3-smart-glasses-200350.html"
+      ]
+    },
+    {
+      "id": "Yp1UjtE3P",
+      "name": "Tilt Five",
+      "changes": {
+        "chipset": "Intel Movidius",
+        "connectivity": "USB 3.0 / USB-C",
+        "audio": "Stereo speakers (one per arm), microphone"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://www.tiltfive.com/make/tech-overview",
+        "https://vr-compare.com/headset/tiltfive",
+        "https://docs.tiltfive.com"
+      ]
+    },
+    {
+      "id": "rAxPHOG0_",
+      "name": "TQSKY T1",
+      "changes": {
+        "chipset": "ARM Cortex-A7 Dual-Core 1.2GHz (T-Box)",
+        "brightness_nits": "1800",
+        "connectivity": "Type-C, USB 2.0, HDMI, Wi-Fi 5, Bluetooth",
+        "audio": "Stereo full-range speakers, frequency response 20-20,000 Hz",
+        "battery": "5000 mAh (T-Box) / ~3h",
+        "ipd_mm": "Fixed (monocular display)",
+        "prescription_support": "Software (0 to -6.0D myopia adjustment)"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://store.tqsky.com/pages/features-technical-information-of-tqsky-t1",
+        "https://www.amazon.com/TQSKY-T1-Micro-OLED-Audiovisual-Compatible/dp/B0CCRWXSXR",
+        "https://vr-compare.com/headset/tqskyt1"
+      ]
+    },
+    {
+      "id": "NwVarjoXR4",
+      "name": "Varjo XR-4",
+      "changes": {
+        "brightness_nits": "200",
+        "connectivity": "DisplayPort, USB-C, wireless tracking (SteamVR)",
+        "audio": "DTS spatial audio speakers, noise cancelling microphones",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "56-72 mm automatic",
+        "prescription_support": "Eyeglass-compatible (no prescription insert support)",
+        "camera": "Dual 20 MP RGB cameras",
+        "chipset": "none / tethered"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://varjo.com/products/xr-4/",
+        "https://support.varjo.com/hc/en-us/fitting-the-headset-xr-4-series",
+        "https://vr-compare.com/headset/varjoxr-4"
+      ]
+    },
+    {
+      "id": "RanJuGgtP",
+      "name": "Viture Beast",
+      "changes": {
+        "brightness_nits": "1250",
+        "connectivity": "USB-C (magnetic pogo pin)",
+        "audio": "HARMAN AudioEFX spatial sound, built-in microphone",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Regular 64.0±6.0mm, Large 68.0±6.0mm",
+        "prescription_support": "Optional (clip-in, included frame)",
+        "camera": "12 MP RGB",
+        "chipset": "none / tethered"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.viture.com/product/viture-beast-xr-glasses",
+        "https://www.roadtovr.com/vitures-widest-field-of-view-ar-glasses-are-now-available-at-amazon-best-buy/",
+        "https://www.bhphotovideo.com/c/product/1948551-REG/viture_bt_glas_r_beast_xr_glasses.html"
+      ]
+    },
+    {
+      "id": "ZTM2WqVqk",
+      "name": "Viture Luma",
+      "changes": {
+        "brightness_nits": "1000",
+        "connectivity": "USB-C",
+        "audio": "Built-in spatial sound speakers, 9-level adjustment",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "56-72 mm (Regular size)",
+        "prescription_support": "Software (-6.0D myopia adjustment max)",
+        "camera": "No camera",
+        "chipset": "none / tethered"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.viture.com/product/viture-luma-xr-glasses",
+        "https://www.bhphotovideo.com/c/product/1918132-REG/viture_300950_luma_pro_xr_glasses.html",
+        "https://vrarwiki.com/wiki/Viture_Luma"
+      ]
+    },
+    {
+      "id": "dueX8NI9A",
+      "name": "Viture Luma Pro",
+      "changes": {
+        "brightness_nits": "1000",
+        "connectivity": "USB-C (magnetic pogo pin)",
+        "audio": "HARMAN AudioEFX spatial sound, built-in microphone",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Regular 64.0±6.0mm, Large 68.0±6.0mm",
+        "prescription_support": "Optional (clip-in)",
+        "camera": "12 MP RGB",
+        "chipset": "none / tethered"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.viture.com/product/viture-luma-pro-xr-glasses",
+        "https://www.bhphotovideo.com/c/product/1918132-REG/viture_300950_luma_pro_xr_glasses.html",
+        "https://vrarwiki.com/wiki/Viture_Luma_Pro"
+      ]
+    },
+    {
+      "id": "1EJmfopvE",
+      "name": "Viture Luma Ultra",
+      "changes": {
+        "brightness_nits": "1500",
+        "connectivity": "USB-C (magnetic pogo pin)",
+        "audio": "HARMAN AudioEFX spatial sound, built-in microphone",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "58-70 mm mechanical",
+        "prescription_support": "Optional (clip-in)",
+        "camera": "12 MP RGB + dual grayscale depth cameras",
+        "chipset": "none / tethered"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.viture.com/product/viture-luma-ultra-xr-glasses",
+        "https://www.amazon.com/VITURE-Luma-Ultra-Gestures-Real-time/dp/B0FFT72CBX",
+        "https://vrarwiki.com/wiki/Viture_Luma_Ultra"
+      ]
+    },
+    {
+      "id": "5BNm8a3Zr",
+      "name": "Viture One",
+      "changes": {
+        "brightness_nits": "78",
+        "connectivity": "USB-C (magnetic pogo pin)",
+        "audio": "Harman Kardon tuned speakers, built-in",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Fixed",
+        "prescription_support": "Optional (clip-in magnetic inserts)",
+        "camera": "Front-facing RGB camera",
+        "chipset": "none / tethered"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://www.viture.com/",
+        "https://vr-compare.com/headset/vitureone",
+        "https://www.xda-developers.com/viture-one-review/"
+      ]
+    },
+    {
+      "id": "jjR57q0sj",
+      "name": "Viture One Lite",
+      "changes": {
+        "brightness_nits": "1800",
+        "connectivity": "USB-C",
+        "audio": "Open-ear stereo speakers with HARMAN AudioEFX, noise reduction 30dB",
+        "battery": "Tethered (no battery)",
+        "camera": "No camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/vitureonelite",
+        "https://www.slashgear.com/1553677/viture-one-lite-review-ax-glasses-with-sight-adjustment-immersion/",
+        "https://academy.viture.com/xr_glasses/pro_one_introduction"
+      ]
+    },
+    {
+      "id": "_IiTfLZMZ",
+      "name": "Viture Pro",
+      "changes": {
+        "brightness_nits": "4000",
+        "connectivity": "USB-C DisplayPort",
+        "audio": "Spatial sound with HARMAN AudioEFX, noise reduction 30dB",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Software",
+        "prescription_support": "Optional (clip-in)"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.amazon.com/VITURE-Pro-XR-Glasses-Electrochromic/dp/B0D3LRH8G4",
+        "https://academy.viture.com/xr_glasses/pro_one_introduction",
+        "https://appleinsider.com/articles/24/10/01/viture-pro-xr-glasses-review-a-good-step-for-arvr"
+      ]
+    },
+    {
+      "id": "u1Gt3j4C1",
+      "name": "Vuzix Blade 2",
+      "changes": {
+        "brightness_nits": "2000",
+        "chipset": "Qualcomm Quad Core ARM",
+        "connectivity": "Wi-Fi 5.0 2.4GHz, Bluetooth 5.0, USB 2.0 Micro-B",
+        "audio": "Integrated stereo in-temple speakers, dual noise-canceling microphones",
+        "battery": "470 mAh / ~5-6h",
+        "camera": "8 MP 720p/1080p autofocus"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.vuzix.com/products/vuzix-blade-2-smart-glasses",
+        "https://vr-compare.com/headset/vuzixblade2",
+        "https://knowledge.vr-expert.com/kb/what-is-the-battery-life-of-the-vuzix-blade-2/"
+      ]
+    },
+    {
+      "id": "1PE1xcEFb",
+      "name": "Vuzix Blade Upgraded",
+      "changes": {
+        "brightness_nits": "4000",
+        "chipset": "Quad Core ARM Processor",
+        "connectivity": "Wi-Fi 802.11b/g/n, Bluetooth",
+        "audio": "Integrated stereo in-temple speakers",
+        "battery": "470 mAh / ~8h",
+        "camera": "8 MP 1080p autofocus"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/vuzixbladeupgraded",
+        "https://vrx.vr-expert.com/the-key-differences-between-the-vuzix-blade-upgraded-and-the-vuzix-blade/",
+        "https://support.vuzix.com/docs/vuzix-blade-capabilities-features"
+      ]
+    },
+    {
+      "id": "LDF8zLQkE",
+      "name": "Vuzix LX1",
+      "changes": {
+        "brightness_nits": "2000",
+        "chipset": "Qualcomm QCS4490 octa-core 2.4GHz",
+        "connectivity": "Wi-Fi 6E, Bluetooth",
+        "audio": "Bone conduction microphone",
+        "battery": "7000 mAh / ~10h",
+        "camera": "4K"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.vuzix.com/products/vuzix-lx1-smart-glasses",
+        "https://www.prnewswire.com/news-releases/vuzix-introduces-lx1-smart-glasses-designed-specifically-for-warehouse-operations-302527482.html",
+        "https://www.stocktitan.net/news/VUZI/vuzix-introduces-lx1-smart-glasses-designed-specifically-for-f9q4sabn1nal.html"
+      ]
+    },
+    {
+      "id": "legacy-vuzixm100",
+      "name": "Vuzix M100",
+      "changes": {
+        "brightness_nits": "2000",
+        "chipset": "Texas Instruments OMAP4430 1GHz",
+        "connectivity": "microUSB, Wi-Fi 802.11b/g/n, Bluetooth 4.0",
+        "audio": "Ear speaker, noise-canceling microphone",
+        "battery": "Built-in / ~8h (with optional 3800mAh pack)",
+        "camera": "No camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "http://files.vuzix.com/Content/pdfs/Vuzix-M100-Product-Sheet-01-01-2016.pdf",
+        "https://www.manualslib.com/manual/805447/Vuzix-M100.html",
+        "https://www.engadget.com/2013-01-06-vuzix-smart-glasses-m100-hands-on.html"
+      ]
+    },
+    {
+      "id": "r2UX2RNAB",
+      "name": "Vuzix M400",
+      "changes": {
+        "brightness_nits": "2000",
+        "chipset": "Qualcomm Snapdragon XR1 8-core 2.52GHz",
+        "connectivity": "USB 3.1 Type-C, Wi-Fi 802.11a/b/g/n/ac 2.4/5GHz, Bluetooth 5.0",
+        "audio": "Integrated speaker 97dB, triple noise-canceling microphones",
+        "battery": "750 mAh external / ~12h",
+        "camera": "12.8 MP 4K 30fps"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.vuzix.com/products/m400-smart-glasses",
+        "https://vr-compare.com/headset/vuzixm400",
+        "https://knowledge.vr-expert.com/kb/what-is-the-battery-life-of-the-vuzix-m400-m4000/"
+      ]
+    },
+    {
+      "id": "AS20GfYCt",
+      "name": "Vuzix M4000",
+      "changes": {
+        "brightness_nits": "5000",
+        "chipset": "Qualcomm Snapdragon XR1 octa-core",
+        "connectivity": "USB-C, Wi-Fi 802.11 a/b/g/n",
+        "audio": "Integrated speaker 97dB",
+        "battery": "750 mAh external / 2-12h",
+        "camera": "12.8 MP 4K 30fps"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.vuzix.com/products/m4000-smart-glasses",
+        "https://vr-compare.com/headset/vuzixm4000",
+        "https://knowledge.vr-expert.com/kb/what-is-the-battery-life-of-the-vuzix-m400-m4000/"
+      ]
+    },
+    {
+      "id": "fdx61QDyF",
+      "name": "Vuzix M400C",
+      "changes": {
+        "chipset": "Qualcomm XR1 (8-core 2.52 GHz)",
+        "brightness_nits": "2000",
+        "connectivity": "5.0 GHz Wi-Fi, 2.4 GHz Wi-Fi, Bluetooth, USB-C DisplayPort",
+        "audio": "Noise-canceling microphone, voice control, speaker",
+        "battery": "750 mAh onboard (All Weather Kit) or 4800 mAh USB-C power bank (Extended Wear Kit)",
+        "ipd_mm": "Adjustable via nosepiece",
+        "prescription_support": "Ja",
+        "camera": "13 MP autofocus HD 1080p 60fps / 4K 30fps"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/vuzixm400",
+        "https://www.vuzix.com/products/m400-smart-glasses",
+        "https://device.report/manual/8612499",
+        "https://www.prnewswire.com/news-releases/vuzix-announces-general-availability-of-m400c-smart-glasses-301668124.html"
+      ]
+    },
+    {
+      "id": "PjuDk6-Sz",
+      "name": "Vuzix Shield",
+      "changes": {
+        "chipset": "8-core processor with Android 10",
+        "connectivity": "5.0 GHz Wi-Fi, 2.4 GHz Wi-Fi, Bluetooth, optional LTE",
+        "audio": "Stereo speakers with integrated acoustic chambers, multiple noise-cancelling microphones",
+        "battery": "Dual temple batteries"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/vuzixshield",
+        "https://www.vuzix.com/products/vuzix-shield-smart-glasses",
+        "https://vuzix-website.s3.amazonaws.com/files/Content/product-sheets/Vuzix-Shield-Spec-Sheet+(1).pdf"
+      ]
+    },
+    {
+      "id": "wHlIeEbab",
+      "name": "Xiaomi Mijia",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon 8",
+        "brightness_nits": "3000",
+        "connectivity": "Dual-band Wi-Fi, Bluetooth 5.0",
+        "audio": "Dual microphone noise reduction",
+        "battery": "1020 mAh / ~100 minutes video recording",
+        "camera": "50 MP main + 8 MP periscope (5x optical zoom)"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.oled-info.com/mijia-glasses-camera",
+        "https://www.gsmarena.com/xiaomi_introduces_ar_mijia_glasses_with_snapdragon_8_chipset_and_370_price-news-55251.php",
+        "https://roadtovr.com/xiaomi-smartglasses-mijia-price-release/"
+      ]
+    },
+    {
+      "id": "Dp6TLH4Gv",
+      "name": "Xiaomi Smart Glasses",
+      "changes": {
+        "camera": "5 MP"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/xiaomismartglasses",
+        "https://www.sportswearable.net/xiaomi-smart-glasses-specs-features-comes-with-5-megapixel-camera/"
+      ]
+    },
+    {
+      "id": "rR39x5VXi",
+      "name": "Ximmerse Rhino X Pro",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon XR2"
+      },
+      "confidence": "medium",
+      "sources": [
+        "https://vr-compare.com/headset/ximmerserhinoxpro",
+        "https://vrlitic.com/ximmerse-rhino-x-pro/"
+      ]
+    },
+    {
+      "id": "oRvXUswBC",
+      "name": "Xreal 1S",
+      "changes": {
+        "chipset": "Xreal X1 chip",
+        "brightness_nits": "700",
+        "connectivity": "USB-C DisplayPort",
+        "audio": "Bose stereo speakers, microphones, spatial audio",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Software adjustable",
+        "prescription_support": "Ja",
+        "camera": "No camera (optional Xreal Eye 12 MP camera)"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://us.shop.xreal.com/products/xreal-1s",
+        "https://www.prnewswire.com/news-releases/xreal-expands-its-dominant-one-series-ar-ecosystem-with-new-1s-glasses-boasting-1200p-optics-and-neo-power-hub-302651929.html",
+        "https://www.phonearena.com/reviews/xreal-1s-review-the-coolest-gadget-since-iphone_id7811"
+      ]
+    },
+    {
+      "id": "PnnMj9eH3",
+      "name": "Xreal Air 2",
+      "changes": {
+        "brightness_nits": "500",
+        "connectivity": "USB-C DisplayPort",
+        "audio": "Open-ear stereo speakers",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Software adjustable",
+        "prescription_support": "Optional (clip-in)",
+        "camera": "No camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/xrealair2",
+        "https://us.shop.xreal.com/products/xreal-air-2",
+        "https://www.gsmarena.com/xreal_air_2_review-news-60451.php",
+        "https://frameofchoice.com/products/official-prescription-insert-for-xreal-air-2"
+      ]
+    },
+    {
+      "id": "E7k3-VKas",
+      "name": "Xreal Air 2 Pro",
+      "changes": {
+        "brightness_nits": "500",
+        "connectivity": "USB-C DisplayPort",
+        "audio": "Dual open-ear stereo speakers with bass boost, dual omnidirectional microphones",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Software adjustable",
+        "prescription_support": "Optional (clip-in)",
+        "camera": "No camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/xrealair2pro",
+        "https://eu.shop.xreal.com/products/xreal-air-2-pro",
+        "https://www.gsmarena.com/xreal_air_2_review-news-60451.php",
+        "https://frameofchoice.com/products/official-prescription-insert-for-xreal-air-2"
+      ]
+    },
+    {
+      "id": "LUx-f7dXc",
+      "name": "Xreal Air 2 Ultra",
+      "changes": {
+        "chipset": "none / tethered",
+        "brightness_nits": "500",
+        "connectivity": "USB-C DisplayPort, Wi-Fi 6, Bluetooth 5.2",
+        "audio": "Stereo speakers, 2 microphones",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Fixed",
+        "prescription_support": "Magnetic inserts",
+        "camera": "Dual 3D depth cameras"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://vr-compare.com/headset/xrealair2ultra",
+        "https://www.phonearena.com/reviews/xreal-air-2-review_id5993",
+        "https://wearablexp.com/smart-glasses/xreal-air-2-ultra-review/",
+        "https://www.vr-rock.com/products/for-xreal-air-2-ultra-prescription-lens-inserts"
+      ]
+    },
+    {
+      "id": "BhXHG0n1d",
+      "name": "Xreal Eye",
+      "changes": {
+        "chipset": "none / modular accessory",
+        "connectivity": "POGO pin",
+        "camera": "12 MP RGB, 1080p 60fps video"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.amazon.com/Pairing-Experience-Spatial-Virtual-Instant-PC/dp/B0FCFFWF2X",
+        "https://www.uploadvr.com/xreal-one-glasses-become-6dof-with-xreal-eye-camera-xreal-beam-pro/",
+        "https://mixed-news.com/en/xreal-eye-launch/"
+      ]
+    },
+    {
+      "id": "AhlOXFzVW",
+      "name": "Xreal One",
+      "changes": {
+        "chipset": "Xreal X1 Chip",
+        "brightness_nits": "600",
+        "connectivity": "USB-C",
+        "audio": "Bose speakers, 4-microphone array",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "Software adjustable",
+        "prescription_support": "Optional (clip-in)",
+        "camera": "No camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://unboundxr.com/xreal-one",
+        "https://www.engadget.com/ar-vr/xreals-new-one-series-ar-glasses-use-usb-c-to-connect-with-nearly-any-device-191221387.html",
+        "https://www.svconline.com/proav-today/xreal-one-series-ar-glasses-feature-bose-speakers-and-a-new-spatial-processing-chip"
+      ]
+    },
+    {
+      "id": "3uOUBJ6hx",
+      "name": "Xreal One Pro",
+      "changes": {
+        "chipset": "Xreal X1 Chip",
+        "brightness_nits": "700",
+        "connectivity": "USB-C DisplayPort",
+        "audio": "Bose speakers, 4-microphone array",
+        "battery": "Tethered (no battery)",
+        "ipd_mm": "57-75 mm mechanical",
+        "prescription_support": "Optional (clip-in)",
+        "camera": "No camera"
+      },
+      "confidence": "high",
+      "sources": [
+        "https://www.arcompare.com/products/xreal-one-pro",
+        "https://www.amazon.com/XREAL-Pro-Glasses-X-Prism-Display/dp/B0FDPGHVCB",
+        "https://us.shop.xreal.com/products/xreal-one-pro-prescription-lens",
+        "https://www.tomshardware.com/peripherals/wearable-tech/xreal-one-pro-review"
+      ]
+    }
+  ]
+}

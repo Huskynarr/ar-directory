@@ -1,0 +1,77 @@
+{
+  "enriched": [
+    {
+      "id": "Q9zkHODZI",
+      "name": "Brilliant Monocle",
+      "changes": {
+        "chipset": "Nordic nRF52832 + Gowin FPGA",
+        "connectivity": "Bluetooth 5.2",
+        "audio": "Microphone (TDK ICS-41351); bone conduction speakers",
+        "battery": "70mAh device + 450mAh charging case",
+        "camera": "OmniVision OV5640, 5MP"
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "eANw0hTFv",
+      "name": "Campfire Headset",
+      "changes": {
+        "connectivity": "Thunderbolt 3 (PC tethered)"
+      },
+      "confidence": "medium"
+    },
+    {
+      "id": "GDAwFX5CU",
+      "name": "Even Realities G2",
+      "changes": {
+        "brightness_nits": "1200",
+        "connectivity": "Bluetooth 5.4",
+        "battery": "~2 days on charge",
+        "camera": "Integrated camera"
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "Vg5P0BH6B",
+      "name": "MAD Gaze Wave",
+      "changes": {
+        "connectivity": "USB-C DisplayPort (phone-tethered)",
+        "audio": "Built-in stereo speakers, supports external microphone",
+        "camera": "8MP"
+      },
+      "confidence": "medium"
+    },
+    {
+      "id": "EkSDYv0cW",
+      "name": "Microsoft HoloLens 2",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon 850 + custom Holographic Processing Unit",
+        "brightness_nits": "500",
+        "connectivity": "Wi-Fi 802.11ac, Bluetooth 5.0, USB-C",
+        "audio": "Built-in spatial speakers, 5-channel microphone array",
+        "battery": "2-3 hours active use",
+        "camera": "8MP, 1080p 30fps"
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "Aq7tdhseW",
+      "name": "Xreal Project Aura",
+      "changes": {
+        "chipset": "Qualcomm Snapdragon XR2+ Gen 2 (in compute puck) + Xreal X1S chip (in glasses)",
+        "connectivity": "Wired (tethered compute puck)",
+        "battery": "~4 hours (in tethered puck)"
+      },
+      "confidence": "medium"
+    },
+    {
+      "id": "pOfzEGXDw",
+      "name": "XYZ Atom",
+      "changes": {
+        "chipset": "Intel i7 (Quad-core)",
+        "battery": "All-day with hot-swappable batteries"
+      },
+      "confidence": "high"
+    }
+  ]
+}
