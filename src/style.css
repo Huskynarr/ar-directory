@@ -485,6 +485,11 @@ input[type='checkbox']:focus-visible {
   .theme-icon-btn:hover {
     transform: none;
   }
+
+  [data-model-card]:hover,
+  [data-model-card]:hover img {
+    transform: none !important;
+  }
 }
 
 @keyframes glass-fade-in {

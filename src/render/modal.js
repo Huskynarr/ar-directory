@@ -142,19 +142,62 @@ const detailModalTemplate = (row) => {
     </div>`;
 };
 
+const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
 export const openDetailModal = (rowId) => {
   const row = state.rows.find((r) => r.__rowId === rowId);
   if (!row) return;
   document.querySelector('#detail-modal')?.remove();
+  const previouslyFocused = document.activeElement;
   const wrapper = document.createElement('div');
   wrapper.innerHTML = detailModalTemplate(row);
   document.body.appendChild(wrapper.firstElementChild);
   const modal = document.querySelector('#detail-modal');
-  modal?.querySelector('#close-detail-modal')?.addEventListener('click', () => modal.remove());
-  modal?.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
-  modal?.querySelectorAll('[data-favorite-toggle]').forEach((btn) => {
-    btn.addEventListener('click', () => { toggleFavorite(btn.getAttribute('data-favorite-toggle')); modal.remove(); requestRender(); });
+  if (!modal) return;
+
+  const close = () => {
+    document.removeEventListener('keydown', keyHandler);
+    modal.remove();
+    if (previouslyFocused && typeof previouslyFocused.focus === 'function') {
+      previouslyFocused.focus();
+    }
+  };
+
+  // Esc to close + a focus trap so Tab stays within the dialog (accessibility).
+  const keyHandler = (e) => {
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      close();
+      return;
+    }
+    if (e.key === 'Tab') {
+      const focusables = [...modal.querySelectorAll(FOCUSABLE_SELECTOR)].filter((el) => el.offsetParent !== null);
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  };
+
+  modal.querySelector('#close-detail-modal')?.addEventListener('click', close);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) close();
   });
-  const escHandler = (e) => { if (e.key === 'Escape') { modal?.remove(); document.removeEventListener('keydown', escHandler); } };
-  document.addEventListener('keydown', escHandler);
+  modal.querySelectorAll('[data-favorite-toggle]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      toggleFavorite(btn.getAttribute('data-favorite-toggle'));
+      close();
+      requestRender();
+    });
+  });
+  document.addEventListener('keydown', keyHandler);
+
+  // Move keyboard focus into the dialog.
+  (modal.querySelector('#close-detail-modal') || modal).focus();
 };
