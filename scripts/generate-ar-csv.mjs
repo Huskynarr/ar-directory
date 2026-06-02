@@ -143,6 +143,7 @@ const OUTPUT_FIELDS = [
   'ipd_mm',
   'prescription_support',
   'camera',
+  'slug',
   'source_dataset',
   'source_page',
   'dataset_retrieved_at',
@@ -470,6 +471,13 @@ const main = async () => {
     .filter((row) => row.name && row.manufacturer)
     .sort((left, right) => left.name.localeCompare(right.name, 'de', { sensitivity: 'base' }));
 
+  // Stable per-device slug -> used by sitemap, structured data, static pages,
+  // and embedded in the CSV so the app can link/share the detail page reliably.
+  const slugs = assignSlugs(normalizedRows);
+  normalizedRows.forEach((row) => {
+    row.slug = slugs.get(row.id);
+  });
+
   const csv = Papa.unparse(normalizedRows, { columns: OUTPUT_FIELDS });
 
   await mkdir('public/data', { recursive: true });
@@ -477,9 +485,6 @@ const main = async () => {
 
   const metadata = buildMetadata(normalizedRows, retrievedAt);
   await writeFile(OUTPUT_METADATA_PATH, `${JSON.stringify(metadata, null, 2)}\n`, 'utf8');
-
-  // Stable per-device slug -> used by sitemap, structured data and static pages.
-  const slugs = assignSlugs(normalizedRows);
 
   // Derived SEO + LLM artifacts so the CSV stays the single source of truth.
   const structuredData = {

@@ -19,7 +19,7 @@ const OUTPUT_FIELDS = [
   'compute_unit', 'display_type', 'optics', 'fov_horizontal_deg', 'fov_vertical_deg',
   'fov_diagonal_deg', 'resolution_per_eye', 'refresh_hz', 'weight_g', 'tracking',
   'eye_tracking', 'hand_tracking', 'passthrough', 'chipset', 'brightness_nits',
-  'connectivity', 'audio', 'battery', 'ipd_mm', 'prescription_support', 'camera',
+  'connectivity', 'audio', 'battery', 'ipd_mm', 'prescription_support', 'camera', 'slug',
   'source_dataset', 'source_page', 'dataset_retrieved_at',
 ];
 

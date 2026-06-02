@@ -60,6 +60,8 @@ const detailModalTemplate = (row) => {
   const shop = getShopInfo(row);
   const buyLinks = buildBuyLinks(row, getAffiliateOverrides());
   const editorial = (state.descriptions || {})[row.id] || {};
+  const slug = compactValue(row.slug, '');
+  const shareTitle = `${compactValue(row.name, t('AR/XR Brille', 'AR/XR glasses'))} – AR/XR Brillen Vergleich`;
   const isFavorite = state.favorites.includes(row.__rowId);
   const factGroups = groupFacts(buildCardFacts(row));
   const lifecycleNotes = formatLifecycleNotes(row.lifecycle_notes, t('Keine Angaben.', 'No details.'));
@@ -133,6 +135,8 @@ const detailModalTemplate = (row) => {
               <div class="flex flex-wrap gap-2">
                 ${shop.url ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" class="chip-btn ${shop.official ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]' : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'}">${escapeHtml(shop.label)}</a>` : ''}
                 ${infoUrl ? `<a href="${escapeHtml(infoUrl)}" target="_blank" rel="noreferrer" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t('Datenquelle', 'Data source')}</a>` : ''}
+                ${slug ? `<a href="/modelle/${escapeHtml(slug)}.html" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t('Detailseite', 'Details page')}</a>` : ''}
+                <button id="detail-share" type="button" data-share-title="${escapeHtml(shareTitle)}" data-share-path="${slug ? `/modelle/${escapeHtml(slug)}.html` : '/'}" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]"><span aria-hidden="true">&#128279;</span> ${t('Teilen', 'Share')}</button>
               </div>
               ${buyLinks.length ? `<p class="text-[11px] text-[#a8a29e]">* ${escapeHtml(t('Affiliate-Links – wir koennen eine Provision erhalten, fuer dich ohne Mehrkosten.', 'Affiliate links – we may earn a commission at no extra cost to you.'))}</p>` : ''}
             </div>
@@ -195,6 +199,23 @@ export const openDetailModal = (rowId) => {
       close();
       requestRender();
     });
+  });
+  modal.querySelector('#detail-share')?.addEventListener('click', async (event) => {
+    const btn = event.currentTarget;
+    const url = new URL(btn.getAttribute('data-share-path') || '/', window.location.origin).href;
+    const title = btn.getAttribute('data-share-title') || document.title;
+    try {
+      if (navigator.share) {
+        await navigator.share({ title, url });
+        return;
+      }
+      await navigator.clipboard.writeText(url);
+      const original = btn.innerHTML;
+      btn.textContent = t('Link kopiert', 'Link copied');
+      setTimeout(() => {
+        btn.innerHTML = original;
+      }, 1500);
+    } catch {}
   });
   document.addEventListener('keydown', keyHandler);
 

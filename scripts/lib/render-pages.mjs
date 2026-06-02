@@ -68,24 +68,34 @@ const fovValue = (row) => {
   return parts.every((p) => p === '–') ? '' : parts.join(' / ');
 };
 
-const head = ({ title, description, canonical, image, jsonLd, baseUrl }) => `<!doctype html>
+const head = ({ title, description, canonical, image, imageAlt = '', ogType = 'website', extraMeta = '', jsonLd, baseUrl }) => {
+  const ogImage = image || `${baseUrl}og/startseite.png`;
+  return `<!doctype html>
 <html lang="de">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="dark light" />
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}" />
 <meta name="robots" content="index,follow,max-image-preview:large" />
 <link rel="canonical" href="${esc(canonical)}" />
 <link rel="icon" type="image/svg+xml" href="/icon.svg" />
 <meta name="theme-color" content="#0c0a09" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="${esc(ogType)}" />
+<meta property="og:site_name" content="AR/XR Brillen Vergleich" />
 <meta property="og:locale" content="de_DE" />
 <meta property="og:title" content="${esc(title)}" />
 <meta property="og:description" content="${esc(description)}" />
 <meta property="og:url" content="${esc(canonical)}" />
-<meta property="og:image" content="${esc(image || `${baseUrl}og/startseite.png`)}" />
+<meta property="og:image" content="${esc(ogImage)}" />
+<meta property="og:image:alt" content="${esc(imageAlt || title)}" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="${esc(title)}" />
+<meta name="twitter:description" content="${esc(description)}" />
+<meta name="twitter:image" content="${esc(ogImage)}" />
+<meta name="twitter:image:alt" content="${esc(imageAlt || title)}" />
+${extraMeta}
 <style>
 :root{color-scheme:dark}
 *{box-sizing:border-box}
@@ -122,9 +132,32 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid #292524;color:#7871
 .hl h2{margin:0 0 8px;font-size:16px;color:#bef264}
 .hl ul{margin:0;padding-left:18px}.hl li{margin:3px 0}
 .aud{margin:10px 0 0;color:#a8a29e;font-size:14px}
+.share{margin:24px 0 8px}.share h2{margin:0 0 8px}
+.sharerow{display:flex;flex-wrap:wrap;gap:8px}
+.cta.share{padding:7px 13px;font-size:14px}
 </style>
 ${jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, '\\u003c')}</script>` : ''}
 </head>`;
+};
+
+// Social share intent links (no APIs/keys; open in a new tab).
+const shareButtons = (title, url) => {
+  const u = encodeURIComponent(url);
+  const tt = encodeURIComponent(title);
+  const tu = encodeURIComponent(`${title} ${url}`);
+  const links = [
+    ['X', `https://twitter.com/intent/tweet?text=${tt}&url=${u}`],
+    ['Facebook', `https://www.facebook.com/sharer/sharer.php?u=${u}`],
+    ['WhatsApp', `https://wa.me/?text=${tu}`],
+    ['LinkedIn', `https://www.linkedin.com/sharing/share-offsite/?url=${u}`],
+    ['Reddit', `https://www.reddit.com/submit?url=${u}&title=${tt}`],
+    ['Telegram', `https://t.me/share/url?url=${u}&text=${tt}`],
+    ['E-Mail', `mailto:?subject=${tt}&body=${tu}`],
+  ];
+  return `<div class="share"><h2>Teilen</h2><div class="sharerow">${links
+    .map(([label, href]) => `<a class="cta share" href="${esc(href)}" target="_blank" rel="noopener nofollow">${esc(label)}</a>`)
+    .join('')}</div></div>`;
+};
 
 export const buildDevicePage = (row, rows, slugs, baseUrl, overrides = {}, descriptions = {}) => {
   const slug = slugs.get(row.id);
@@ -226,7 +259,22 @@ export const buildDevicePage = (row, rows, slugs, baseUrl, overrides = {}, descr
     ],
   };
 
-  return `${head({ title: `${row.name} – Specs, Preis & Vergleich | AR/XR Brillen Vergleich`, description, canonical, image, jsonLd, baseUrl })}
+  const pageTitle = `${row.name} – Specs, Preis & Vergleich | AR/XR Brillen Vergleich`;
+  const shareTitle = `${row.name} (${row.manufacturer}) – AR/XR Brillen Vergleich`;
+  const imageAlt = `${row.name} – ${cat} von ${row.manufacturer}`;
+  const inStock = String(row.active_distribution).toLowerCase().startsWith('ja');
+  const extraMeta = [
+    `<meta property="product:brand" content="${esc(row.manufacturer)}" />`,
+    hasValue(row.price_usd)
+      ? `<meta property="product:price:amount" content="${esc(row.price_usd)}" />\n<meta property="product:price:currency" content="USD" />\n<meta property="product:availability" content="${inStock ? 'in stock' : 'discontinued'}" />`
+      : '',
+    `<meta name="twitter:label1" content="Preis" />\n<meta name="twitter:data1" content="${esc(hasValue(row.price_usd) ? `${row.price_usd} USD` : 'k. A.')}" />`,
+    `<meta name="twitter:label2" content="Kategorie" />\n<meta name="twitter:data2" content="${esc(cat)}" />`,
+  ]
+    .filter(Boolean)
+    .join('\n');
+
+  return `${head({ title: pageTitle, description, canonical, image, imageAlt, ogType: 'product', extraMeta, jsonLd, baseUrl })}
 <body>
 <div class="wrap">
 <nav class="bc"><a href="/">Start</a> › <a href="/modelle/">Modelle</a> › ${esc(row.name)}</nav>
@@ -252,6 +300,7 @@ ${specRowsHtml}
 ${lifecycle}
 ${related ? `<h2>Weitere Modelle von ${esc(row.manufacturer)}</h2><ul class="rel">${related}</ul>` : ''}
 ${sameCat ? `<h2>Aehnliche ${esc(cat)}-Modelle</h2><ul class="rel">${sameCat}</ul>` : ''}
+${shareButtons(shareTitle, canonical)}
 <footer>
 Teil des <a href="/">AR/XR Brillen Vergleichs</a> · <a href="/modelle/">Alle Modelle</a> · <a href="/glossar.html">Glossar &amp; FAQ</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a><br>
 Angaben ohne Gewaehr; Spezifikationen und Preise koennen je nach Region/Revision/Zeitpunkt abweichen.
