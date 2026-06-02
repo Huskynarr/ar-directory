@@ -31,11 +31,11 @@ export const cardTemplate = (row) => {
   const showLifecycleSourceInInfo = Boolean(lifecycleSource && !lifecycleSourceUrl);
 
   return `
-    <article class="panel overflow-hidden" data-model-card="${escapeHtml(row.__rowId)}">
-      <div class="relative h-48 border-b border-[#44403c] bg-gradient-to-br from-[#1c1917] to-[#1c1917] cursor-pointer" data-detail-open="${escapeHtml(row.__rowId)}">
+    <article class="panel group overflow-hidden transition duration-200 ease-out hover:-translate-y-0.5 hover:border-[#84cc16]/50 hover:ring-1 hover:ring-[#84cc16]/30 hover:shadow-lg hover:shadow-black/30" data-model-card="${escapeHtml(row.__rowId)}">
+      <div class="relative h-48 cursor-pointer overflow-hidden border-b border-[#44403c] bg-gradient-to-br from-[#1c1917] to-[#1c1917]" data-detail-open="${escapeHtml(row.__rowId)}">
         ${
           image
-            ? `<img src="${escapeHtml(image)}" alt="${name}" loading="lazy" class="h-full w-full object-contain p-4" />`
+            ? `<img src="${escapeHtml(image)}" alt="${name}" loading="lazy" class="h-full w-full object-contain p-4 transition duration-300 ease-out group-hover:scale-[1.03] group-hover:brightness-105" />`
             : `<div class="grid h-full place-items-center text-sm text-[#a8a29e]">${t('Kein Bild verfuegbar', 'No image available')}</div>`
         }
         <div class="absolute left-3 top-3 flex items-center gap-1.5" onclick="event.stopPropagation()">${selectionLabelTemplate(
@@ -55,7 +55,7 @@ export const cardTemplate = (row) => {
       <div class="space-y-4 p-4">
         <div class="space-y-1">
           <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#a8a29e]">${manufacturer}</p>
-          <h2 class="font-semibold text-2xl leading-tight text-[#f5f5f4]">${name}</h2>
+          <h2 class="font-semibold text-2xl leading-tight text-[#f5f5f4]"><button type="button" data-detail-open="${escapeHtml(row.__rowId)}" class="text-left underline-offset-4 transition-colors hover:text-[#84cc16] hover:underline focus-visible:text-[#84cc16] focus-visible:underline">${name}</button></h2>
           <p class="text-sm text-[#a8a29e]">${t('Release', 'Release')}: ${escapeHtml(releaseDate)}</p>
         </div>
 

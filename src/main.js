@@ -183,6 +183,13 @@ const render = () => {
                 ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
                 : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
             }">${state.focusMode ? t('Standardansicht', 'Standard view') : t('Fokusansicht', 'Focus view')}</button>
+            <button id="toggle-favorites-view" type="button" aria-pressed="${state.onlyFavorites ? 'true' : 'false'}" ${
+              state.favorites.length ? '' : 'disabled'
+            } aria-label="${escapeHtml(t('Nur Favoriten anzeigen', 'Show only favorites'))}" class="chip-btn ${
+              state.onlyFavorites
+                ? 'border-amber-400 bg-amber-400 text-[#0c0a09] hover:bg-amber-300'
+                : `border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524] ${state.favorites.length ? '' : 'cursor-not-allowed opacity-50'}`
+            }">${state.onlyFavorites ? '&#9733;' : '&#9734;'} ${t('Favoriten', 'Favorites')} (${state.favorites.length})</button>
             <button id="clear-filters" type="button" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(
               'Filter zuruecksetzen',
               'Reset filters',
@@ -430,10 +437,32 @@ const render = () => {
           state.compareMode
             ? compareModeTemplate(selectedRows)
             : filtered.length === 0
-              ? `<p class="panel p-10 text-center text-sm text-[#a8a29e]">${t(
-                  'Keine Treffer fuer die gewaehlten Filter.',
-                  'No matches for the selected filters.',
-                )}</p>`
+              ? `<div class="panel flex flex-col items-center gap-4 p-10 text-center sm:p-14">
+                  <div class="grid h-16 w-16 place-items-center rounded-2xl border border-[#44403c] bg-[#1c1917] text-3xl text-amber-300">${
+                    state.onlyFavorites ? '&#9734;' : '&#128269;'
+                  }</div>
+                  <div class="space-y-1">
+                    <h3 class="text-lg font-semibold text-[#f5f5f4]">${
+                      state.onlyFavorites ? t('Noch keine Favoriten', 'No favorites yet') : t('Keine Treffer', 'No matches')
+                    }</h3>
+                    <p class="mx-auto max-w-md text-sm text-[#a8a29e]">${
+                      state.onlyFavorites
+                        ? t(
+                            'Markiere Modelle mit dem Stern, um sie hier zu sammeln.',
+                            'Mark models with the star to collect them here.',
+                          )
+                        : t(
+                            'Fuer die gewaehlten Filter gibt es keine Modelle. Passe die Filter an oder setze sie zurueck.',
+                            'No models match the selected filters. Adjust them or reset.',
+                          )
+                    }</p>
+                  </div>
+                  ${
+                    state.onlyFavorites
+                      ? `<button id="empty-favorites-off" type="button" class="chip-btn border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]">${t('Alle Modelle anzeigen', 'Show all models')}</button>`
+                      : `<button id="empty-reset" type="button" class="chip-btn border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]">${t('Filter zuruecksetzen', 'Reset filters')}</button>`
+                  }
+                </div>`
               : state.viewMode === 'cards'
                 ? `
                     <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">${visibleCards.map(cardTemplate).join('')}</div>
@@ -684,6 +713,7 @@ const render = () => {
 
   document.querySelector('#view-cards')?.addEventListener('click', () => setAndRender('viewMode', 'cards', { resetCardsPage: false }));
   document.querySelector('#view-table')?.addEventListener('click', () => setAndRender('viewMode', 'table', { resetCardsPage: false }));
+  document.querySelector('#toggle-favorites-view')?.addEventListener('click', () => setAndRender('onlyFavorites', !state.onlyFavorites));
   document.querySelector('#toggle-language')?.addEventListener('click', () => {
     state.language = state.language === 'de' ? 'en' : 'de';
     writeLanguageToStorage(state.language);
@@ -774,7 +804,7 @@ const render = () => {
     });
   });
 
-  document.querySelector('#clear-filters')?.addEventListener('click', () => {
+  const resetAllFilters = () => {
     state.query = '';
     state.category = 'all';
     state.manufacturer = 'all';
@@ -807,6 +837,13 @@ const render = () => {
     state.cardsPage = 1;
     state.compareMode = false;
     state.compareNotice = '';
+    render();
+  };
+  document.querySelector('#clear-filters')?.addEventListener('click', resetAllFilters);
+  document.querySelector('#empty-reset')?.addEventListener('click', resetAllFilters);
+  document.querySelector('#empty-favorites-off')?.addEventListener('click', () => {
+    state.onlyFavorites = false;
+    state.cardsPage = 1;
     render();
   });
 
@@ -848,13 +885,14 @@ const init = async () => {
       }
     }
   });
+  const skeletonCard = `<div class="panel overflow-hidden"><div class="h-48 animate-pulse bg-[#1c1917]"></div><div class="space-y-3 p-4"><div class="h-5 w-2/3 animate-pulse rounded bg-[#1c1917]"></div><div class="h-4 w-1/2 animate-pulse rounded bg-[#1c1917]"></div><div class="grid grid-cols-2 gap-2"><div class="h-12 animate-pulse rounded-lg bg-[#1c1917]"></div><div class="h-12 animate-pulse rounded-lg bg-[#1c1917]"></div></div><div class="h-16 animate-pulse rounded-xl bg-[#1c1917]"></div></div></div>`;
   app.innerHTML = `<a href="#main-content" class="skip-link">${t(
     'Zum Inhalt springen',
     'Skip to content',
-  )}</a><main id="main-content" tabindex="-1" class="mx-auto max-w-[1320px] px-4 py-8"><p class="panel p-6 text-sm text-[#a8a29e]">${t(
+  )}</a><main id="main-content" tabindex="-1" class="mx-auto w-full max-w-[1320px] px-4 py-6 sm:px-6 lg:px-8"><div class="flex items-center gap-3 text-sm text-[#a8a29e]"><span class="inline-block h-4 w-4 animate-spin rounded-full border-2 border-[#44403c] border-t-[#84cc16]" aria-hidden="true"></span>${t(
     'Lade Brillendaten...',
     'Loading glasses data...',
-  )}</p></main>`;
+  )}</div><div class="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-3">${skeletonCard.repeat(6)}</div></main>`;
 
   const ratePromise = fetchUsdToEurRate();
 
