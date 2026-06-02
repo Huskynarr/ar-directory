@@ -144,7 +144,7 @@ export const cardTemplate = (row) => {
           ${buyLinks
             .map(
               (l) =>
-                `<a href="${escapeHtml(l.url)}" target="_blank" rel="${AFFILIATE_REL}" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${escapeHtml(
+                `<a href="${escapeHtml(l.url)}" target="_blank" rel="${AFFILIATE_REL}" class="chip-btn border-amber-500/40 bg-amber-500/10 text-amber-200 hover:bg-amber-500/20">${escapeHtml(
                   l.label,
                 )}</a>`,
             )

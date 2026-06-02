@@ -13,9 +13,9 @@
 // └──────────────────────────────────────────────────────────────────────────┘
 
 export const AFFILIATE = {
-  // Master switch. Kept false so no monetized links / disclosure ship before the
-  // partner IDs and the legal pages are in place.
-  enabled: false,
+  // Master switch. Amazon.de is configured + legal pages exist (complete the
+  // remaining Impressum address/email placeholders).
+  enabled: true,
 
   // Mandatory disclosure (Amazon PartnerNet requires wording like this in DE).
   disclosureShort: 'Affiliate-Links: Als Partner verdienen wir an qualifizierten Kaeufen. Fuer dich aendert sich der Preis nicht.',

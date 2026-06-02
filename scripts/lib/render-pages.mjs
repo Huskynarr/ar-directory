@@ -115,7 +115,8 @@ ul.rel a{display:inline-block;padding:6px 12px;border:1px solid #292524;border-r
 footer{margin-top:40px;padding-top:20px;border-top:1px solid #292524;color:#78716c;font-size:14px}
 .buy{margin:8px 0 20px}.buy h2{margin:0 0 8px}
 .buyrow{display:flex;flex-wrap:wrap;gap:8px}
-.cta.buy{background:#1c1917;border-color:#44403c}
+.cta.buy{background:rgba(245,158,11,0.12);border-color:rgba(245,158,11,0.45);color:#fcd34d}
+.cta.buy:hover{background:rgba(245,158,11,0.2);text-decoration:none}
 .affnote{font-size:12px;color:#78716c;margin:8px 0 0}
 .hl{background:#1c1917;border:1px solid #292524;border-radius:14px;padding:14px 18px;margin:4px 0 20px}
 .hl h2{margin:0 0 8px;font-size:16px;color:#bef264}
@@ -398,11 +399,11 @@ export const buildImpressum = (meta, baseUrl) =>
     `<h1>Impressum</h1>
 <p class="note">Vorlage – bitte [PLATZHALTER] ausfuellen und rechtlich pruefen lassen.</p>
 <h2>Angaben gemaess § 5 DDG (ehem. TMG)</h2>
-<p>[Vorname Nachname / Firma]<br>[Strasse Hausnummer]<br>[PLZ Ort]<br>[Land]</p>
+<p>Selinger Consulting<br>Sebastian Selinger<br>[Strasse + Hausnummer]<br>[PLZ] Freiburg<br>Deutschland</p>
 <h2>Kontakt</h2>
 <p>E-Mail: [E-Mail-Adresse]<br>Telefon: [optional]</p>
 <h2>Verantwortlich i.S.d. § 18 Abs. 2 MStV</h2>
-<p>[Name, Anschrift wie oben]</p>
+<p>Sebastian Selinger (Anschrift wie oben)</p>
 <h2>Haftung fuer Inhalte &amp; Links</h2>
 <p>Die Inhalte dieser Seiten wurden mit Sorgfalt erstellt, jedoch ohne Gewaehr fuer Aktualitaet, Vollstaendigkeit und Richtigkeit der Geraete-Spezifikationen und Preise. Fuer Inhalte verlinkter externer Seiten sind deren Betreiber verantwortlich.</p>
 <h2>Affiliate-Hinweis</h2>
@@ -420,7 +421,7 @@ export const buildDatenschutz = (meta, baseUrl) =>
     `<h1>Datenschutzerklaerung</h1>
 <p class="note">Vorlage – bitte [PLATZHALTER] ausfuellen und rechtlich pruefen lassen (keine Rechtsberatung).</p>
 <h2>1. Verantwortlicher</h2>
-<p>[Vorname Nachname / Firma], [Anschrift], [E-Mail]. Siehe auch <a href="/impressum.html">Impressum</a>.</p>
+<p>Selinger Consulting, Sebastian Selinger, [Strasse + Hausnummer], [PLZ] Freiburg, [E-Mail]. Siehe auch <a href="/impressum.html">Impressum</a>.</p>
 <h2>2. Hosting &amp; Server-Logfiles</h2>
 <p>Die Seite wird bei [Hoster, z. B. Plesk-Server / Provider] gehostet. Beim Aufruf werden technisch notwendige Server-Logfiles verarbeitet (IP-Adresse, Datum/Uhrzeit, abgerufene URL, User-Agent) zur Auslieferung und Sicherheit (Art. 6 Abs. 1 lit. f DSGVO).</p>
 <h2>3. Lokale Speicherung (kein Tracking)</h2>

@@ -32,10 +32,10 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://ardirectory.huskynarr.de/sitemap.xml
+Sitemap: https://ar-directory.huskynarr.de/sitemap.xml
 
 # Machine-readable entrypoints for LLMs and AI search
-# https://ardirectory.huskynarr.de/llms.txt
-# https://ardirectory.huskynarr.de/llms-full.txt
-# https://ardirectory.huskynarr.de/ai-search.json
-# https://ardirectory.huskynarr.de/data/structured-data.json
+# https://ar-directory.huskynarr.de/llms.txt
+# https://ar-directory.huskynarr.de/llms-full.txt
+# https://ar-directory.huskynarr.de/ai-search.json
+# https://ar-directory.huskynarr.de/data/structured-data.json
