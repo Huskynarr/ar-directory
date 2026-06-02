@@ -352,8 +352,8 @@
 
   .theme-hero-surface {
     background:
-      radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.14) 0%, transparent 36%),
-      radial-gradient(circle at 82% 16%, rgba(132, 204, 22, 0.16) 0%, transparent 34%),
+      radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.08) 0%, transparent 36%),
+      radial-gradient(circle at 82% 16%, rgba(132, 204, 22, 0.09) 0%, transparent 34%),
       linear-gradient(145deg, rgba(25, 35, 50, 0.64) 0%, rgba(15, 22, 32, 0.48) 100%);
     border: 1px solid color-mix(in srgb, var(--glass-border) 88%, transparent);
     box-shadow: var(--glass-shadow);
@@ -363,9 +363,9 @@
 
   body.theme-light .theme-hero-surface {
     background:
-      radial-gradient(circle at 15% 20%, rgba(47, 111, 181, 0.16) 0%, transparent 38%),
-      radial-gradient(circle at 86% 9%, rgba(132, 204, 22, 0.16) 0%, transparent 36%),
-      linear-gradient(145deg, rgba(255, 255, 255, 0.78) 0%, rgba(234, 244, 255, 0.6) 100%);
+      radial-gradient(circle at 15% 20%, rgba(47, 111, 181, 0.09) 0%, transparent 38%),
+      radial-gradient(circle at 86% 9%, rgba(132, 204, 22, 0.08) 0%, transparent 36%),
+      linear-gradient(145deg, rgba(255, 255, 255, 0.82) 0%, rgba(238, 245, 252, 0.64) 100%);
     border-color: color-mix(in srgb, var(--glass-border) 88%, transparent);
   }
 }

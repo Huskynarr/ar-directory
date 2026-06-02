@@ -115,7 +115,7 @@ export const cardTemplate = (row) => {
         <div class="rounded-2xl border p-3 text-sm ${lifecycleClasses}">
           <p class="text-[11px] font-semibold uppercase tracking-[0.12em]">${t('Updates / EOL', 'Updates / EOL')}</p>
           <p class="mt-1 font-semibold">${escapeHtml(compactValue(row.eol_status))}</p>
-          <p class="mt-1 text-xs">${t('EOL-Datum', 'EOL date')}: ${escapeHtml(eolDate)}</p>
+          ${row.eol_date ? `<p class="mt-1 text-xs">${t('EOL-Datum', 'EOL date')}: ${escapeHtml(eolDate)}</p>` : ''}
           ${lifecycleNotes ? `<p class="mt-2 text-xs leading-relaxed">${escapeHtml(lifecycleNotes)}</p>` : ''}
           ${
             showLifecycleSourceInInfo
