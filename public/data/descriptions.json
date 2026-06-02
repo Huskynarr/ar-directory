@@ -1,0 +1,1482 @@
+{
+ "CgySYMXLq": {
+  "description": "Das 3Glasses Blubur S1 ist ein PC-gebundenes VR-Headset von 2016 mit LCD-Display und 1440x1440-Auflösung pro Auge bei 120 Hz. Die Brille war längst aus dem Handel und wird nicht mehr vertrieben.",
+  "highlights": [
+   "1440x1440 Auflösung",
+   "120 Hz",
+   "110° FOV",
+   "Diskontinuiert seit 2016"
+  ],
+  "audience": "Nicht erhältlich; historisches VR-Gerät aus der frühen Ära."
+ },
+ "MFKzu5lwb": {
+  "description": "Das 3Glasses Blubur S2 ist ein PC-VR-Headset von 2018 mit LCD-Display, 1440x1440-Auflösung pro Auge und 90 Hz Refresh-Rate. Das Modell ist diskontinuiert und nicht mehr im Handel verfügbar.",
+  "highlights": [
+   "1440x1440 Auflösung",
+   "90 Hz",
+   "Inside-out Tracking",
+   "EOL / Diskontinuiert"
+  ],
+  "audience": "Nicht mehr verfügbar; wurde durch neuere PC-VR-Headsets ersetzt."
+ },
+ "FUmJdcmqg": {
+  "description": "Das 3Glasses D2 ist ein frühes PC-VR-Headset von 2015 mit LCD-Display, 2560x1440-Auflösung und 60 Hz. Mit 246 g ist es relativ schwer; die Brille ist seit 2015 nicht mehr im Handel.",
+  "highlights": [
+   "2560x1440 Auflösung",
+   "60 Hz",
+   "110° FOV",
+   "246 g, EOL"
+  ],
+  "audience": "Nicht erhältlich; ein Sammlerstück für Enthusiasten der frühen PC-VR-Ära."
+ },
+ "scBhMmwQy": {
+  "description": "Das 3Glasses X1 ist ein Standalone-VR-Headset von 2019 mit LCD-Display, 1200x1200-Auflösung pro Auge und 90 Hz Refresh-Rate. Das Gerät wiegt nur 150 g mit etwa 3-4 Stunden Akkulaufzeit; die Verfügbarkeit 2026 ist unklar.",
+  "highlights": [
+   "1200x1200 Auflösung",
+   "90 Hz",
+   "150 g",
+   "Snapdragon XR1"
+  ],
+  "audience": "Verfügbarkeit unklar; ehemaliges Einsteiger-Standalone-VR-Headset."
+ },
+ "vbmfgIFUl": {
+  "description": "Das Acer AR Vision GR0 ist eine AR-Brille mit Micro-OLED-Display (Dual FHD), 1920x1080-Auflösung und 60 Hz. Mit 69 g extrem leicht, nutzt Birdbath-Optik und wird per USB-C mit Smartphone verbunden. Marktstart Q3-Q4 2026 bei 499 Dollar.",
+  "highlights": [
+   "Sehr leicht (69 g)",
+   "Micro-OLED Dual FHD",
+   "Birdbath-Optik",
+   "Q3-Q4 2026 Launch"
+  ],
+  "audience": "Smartphone-basierte AR für alltägliche Anwendungen und Gaming."
+ },
+ "4fhEoK1p8": {
+  "description": "Das Acer GI0 ist eine displaylose KI-Brille mit 12-MP-Kamera und Zugang zu Google Gemini AI. Mit nur 46 g ist sie minimal und wird via Wi-Fi und Bluetooth betrieben. Marktstart Q3-Q4 2026 bei 299 Dollar.",
+  "highlights": [
+   "Display-los (46 g)",
+   "Google Gemini AI",
+   "12 MP Kamera",
+   "$299, Q3-Q4 2026"
+  ],
+  "audience": "KI-Enthusiasten und Nutzer, die Hands-free AI-Zugang benötigen."
+ },
+ "vH20M2KPj": {
+  "description": "Die AjnaLens AjnaX ist eine Enterprise-AR-Brille von 2021 mit OLED-Display und Birdbath-Optik. Mit 95 g kompakt und 50° FOV, wird sie via WiFi 6 verbunden und unterstützt Hand-Tracking sowie Passthrough. Neuere Modelle (AjnaXR) sind verfügbar.",
+  "highlights": [
+   "OLED-Display",
+   "Birdbath-Optik",
+   "Hand-Tracking",
+   "95 g, Enterprise-fokussiert"
+  ],
+  "audience": "Enterprise-Nutzer in Wartung, Logistik und technischen Feldarbeiten."
+ },
+ "CMlHLhpbt": {
+  "description": "Die Alibaba Quark AI Glasses S1 ist eine Premium-AR-Brille mit dualem Micro LED-Display, 4000 Nits Helligkeit und Waveguide-Optik. Mit Snapdragon AR1, WiFi 6, Bluetooth 5.4 und einer 4K-Kamera (Sony IMX681) wurde sie November 2025 lanciert. Bis zu 7 Stunden Laufzeit.",
+  "highlights": [
+   "Dual Micro LED, 4000 Nits",
+   "Snapdragon AR1 + Bestechnic BES2800",
+   "4K-Kamera, 3K Video",
+   "7h Akkulaufzeit"
+  ],
+  "audience": "Premium-AR-Nutzer in China, die native KI und hochwertige Videofähigkeiten brauchen."
+ },
+ "rknuyNUbR": {
+  "description": "Die Almer Arc 2 ist eine Standalone-AR-Brille mit Micro-OLED-Display, 1920x1080-Auflösung (monocular) und \"See-through holographic\" Optik. Mit 179 g, Inside-out-Tracking und einer 25-MP-4K-Kamera ist sie robust konzipiert. Das Abo-Modell beinhaltet Hardware, Software und Support ab 176 Dollar/Monat.",
+  "highlights": [
+   "Micro-OLED monocular",
+   "179 g",
+   "25 MP, 4K 30fps",
+   "Abo-Modell (Hardware+Support)"
+  ],
+  "audience": "Professionelle Nutzer in Augmented Reality Anwendungen mit Abo-Präferenz."
+ },
+ "NwAppleVPr": {
+  "description": "Das Apple Vision Pro ist ein hochwertiges XR-Headset mit Micro-OLED-Displays, 3660x3200 Auflösung und 90 Hz. Mit Pancake-Optik, Eye-Tracking und Passthrough wiegt es 775 g; 2h Akkulaufzeit mit externem Battery Pack. 3499 Dollar mit schwachen Verkaufen und Nachfolger erst 2028+.",
+  "highlights": [
+   "Micro-OLED 3660x3200",
+   "Eye & Hand Tracking",
+   "Pancake-Optik",
+   "$3499, 775 g"
+  ],
+  "audience": "Premium-XR-Nutzer, Entwickler und Enthusiasten mit hohem Budget."
+ },
+ "Fc2aRdyog": {
+  "description": "Das Apple Vision Pro (M5) ist ein hochwertiges Standalone-XR-Headset mit Micro-OLED-Pancake-Optik und beeindruckender Rechenleistung. Mit einer Auflösung von 3660x3200 pro Auge, 120 Hz Bildwiederholrate und nur 600 g Gewicht bietet es ein immersives Erlebnis mit Augen- und Handerkennung. Die 2,5 bis 3 Stunden Akkulaufzeit und natürlicher Farb-Passthrough ermöglichen kreative und produktive Anwendungen, kosten aber 3.499 USD.",
+  "highlights": [
+   "3660x3200 Auflösung pro Auge, 120 Hz",
+   "Nur 600 g Gewicht",
+   "Apple M5 Chip mit R1-Coprozessor",
+   "Augen- und Handerkennung, Farb-Passthrough"
+  ],
+  "audience": "Professionelle Nutzer und Creatives mit höherem Budget für XR-Computing."
+ },
+ "yBcFHrYN0": {
+  "description": "Das Asus AirVision M1 ist eine PC-gebundene AR-Brille mit Micro-OLED-Display und Birdbath-Optik, die vollständig kabelgebunden über USB-C DisplayPort betrieben wird. Mit nur 87 g Gewicht, 1920x1080 Auflösung und 72 Hz Bildrate ist sie eine leichte PC-AR-Lösung ohne Batterie. Das Gerät bietet natürlichen Passthrough und integrierte Stereo-Lautsprecher, richtet sich aber primär an Windows-11-Desktop-Nutzer.",
+  "highlights": [
+   "Nur 87 g, leicht und tragbar",
+   "Micro-OLED 1920x1080, 72 Hz",
+   "Birdbath-Optik für kompaktes Design",
+   "Kabelgebunden über USB-C DisplayPort"
+  ],
+  "audience": "PC-Nutzer, die eine leichte AR-Brille für Windows-Desktop ohne Batterie benötigen."
+ },
+ "LMUhhwNq7": {
+  "description": "Die ASUS ROG XREAL R1 ist die weltweit erste 240-Hz-Micro-OLED-Gaming-AR-Brille, spezifisch für Computex 2026 vorgestellt. Mit Sony-0,55-Zoll-FHD-Display, Birdbath-Optik und nur 91 g Gewicht bietet sie extrem schnelle Bildwiederholung für kompetitives Gaming. Das Gerät wird kabelgebunden über USB-C betrieben und kosten, mit Xreal-X1-Chipsatz und 700 nits Helligkeit für Gaming-Anwendungen.",
+  "highlights": [
+   "Weltweit erste 240 Hz Micro-OLED Gaming-Brille",
+   "Nur 91 g, Sony 0,55\" FHD Display",
+   "700 nits Helligkeit",
+   "Plug-and-Play ROG-Integration"
+  ],
+  "audience": "Hardcore-Gamer und esports-Profis mit Hochleistungs-PCs."
+ },
+ "VtXUSjXO3": {
+  "description": "Bigscreen Beyond 2 ist das weltweit kleinste VR-Headset mit einem Gewicht von nur 107 g und einer hochauflösenden 2560x2560-Micro-OLED-Pancake-Optik. Mit 90 Hz Bildrate, 116 Grad FOV und PC-Tethering über USB-C ist es für anspruchsvolle Desktop-VR-Nutzer konzipiert. Das Gerät bietet 120 nits Helligkeit und optionale Kopfhörergurte mit Koss-Treibern, richtet sich aber primär an SteamVR-Nutzer ohne Kamera-Passthrough.",
+  "highlights": [
+   "Weltweit leichtestes VR-Headset (107 g)",
+   "2560x2560 Micro-OLED pro Auge, 90 Hz",
+   "116° Gesichtsfeld (diagonal)",
+   "Pancake-Optik, optionaler Audio-Gurt"
+  ],
+  "audience": "Desktop-VR-Enthusiasten, die maximale Mobilität mit hoher Bildqualität suchen."
+ },
+ "ionX4Mi0G": {
+  "description": "Bigscreen Beyond 2e ist die VRChat-Edition des Beyond 2 mit integriertem Eye-Tracking für Social VR und kommunikative Anwendungen. Mit identischer Hardware (2560x2560 Micro-OLED, 107 g, 90 Hz) unterscheidet sich das Modell hauptsächlich durch die Augen-verfolgung und ein Beta-Programm im Sommer 2025. Die 1.219-USD-Preisgestaltung und SteamVR-Integration richten sich an VRChat-fokussierte Communities.",
+  "highlights": [
+   "Same as Beyond 2 + Augen-Tracking",
+   "2560x2560 Micro-OLED, 107 g, 90 Hz",
+   "Speziell für VRChat optimiert",
+   "Eye-Tracking für Social Presence"
+  ],
+  "audience": "VRChat- und Social-VR-Enthusiasten mit Interesse an Augen-Tracking."
+ },
+ "BE0kbfi2T": {
+  "description": "Brilliant Labs Frame ist eine leichte Standalone-AR-Brille mit Micro-OLED-Prism-Optik und nur 40 g Gewicht. Mit 640x400 Auflösung, 20 Grad FOV und integrierten Kamera (720p) über ARM-Cortex-M4F-Chipsatz bietet sie ein minimalistisches AR-Erlebnis. Die drahtlose Bluetooth-5.3-Verbindung, 6-7 Stunden Akkulaufzeit und optionale AddOptics-Linsen richten sich an einfache mobilitäts- und Alltags-AR-Nutzer.",
+  "highlights": [
+   "Nur 40 g, extrem leicht",
+   "Micro-OLED 640x400, 20° FOV",
+   "6-7 Stunden Akkulaufzeit",
+   "Wireless zu Smartphone, Prism-Optik"
+  ],
+  "audience": "Casual AR-Nutzer, die All-in-One-Leichtheit und Alltags-Integration suchen."
+ },
+ "e3W1mUjky": {
+  "description": "Brilliant Labs Halo ist eine Next-Generation-AR-Brille mit farbigem Micro-OLED-Display und Prism-Optik, die im Q4 2025 in limitierter Version erschienen ist. Mit 641 g Gewicht, 640x400 Auflösung, 20 Grad FOV und neuer Alif-B1-Architektur (Cortex-M55 + NPU) bietet sie verbesserte KI-Fähigkeiten. Die 14 Stunden Akkulaufzeit, verstellbare IPD (58-72 mm mit Software-Diopter) und integrierte Kamera machen sie zugänglicher für längere Tragezeiten.",
+  "highlights": [
+   "Farb-Micro-OLED, Prism-Optik",
+   "Alif B1 Chipsatz mit NPU",
+   "14 Stunden Akkulaufzeit",
+   "Verstellbare Diopter (+2 bis -6)"
+  ],
+  "audience": "Nutzer, die länger tragbare, KI-fähige AR mit besserer Ergonomie benötigen."
+ },
+ "Q9zkHODZI": {
+  "description": "Brilliant Monocle ist eine ultra-kompakte Standalone-AR-Brille mit Micro-OLED-Display und nur 15 g Gewicht, die seit Februar 2023 erhältlich ist. Mit 640x400 Auflösung, 20 Grad FOV und Bluetooth-5.2-Konnektivität ist sie die leichteste Lösung auf dieser Liste. Der nRF52832-Chipsatz mit FPGA und die Kombination aus 70-mAh-Gerätebatterie plus 450-mAh-Ladecase (insgesamt 70 mAh Gerät) bieten Knochenschall-Audio und 5MP-Kamera für minimale Mobile AR.",
+  "highlights": [
+   "Nur 15 g - ultraleicht",
+   "Micro-OLED 640x400, 20° FOV",
+   "Knochenschall-Lautsprecher",
+   "5MP Kamera, tragbar als Brille"
+  ],
+  "audience": "Nutzer, die maximale Portabilität in einer echten Brille suchen, mit Fokus auf Audio-AR."
+ },
+ "eANw0hTFv": {
+  "description": "Das Campfire Headset ist ein PC-gebundenes AR-Headset mit LCD-Display und Pancake-Optik, das seit Mai 2023 erhältlich ist. Mit 92 Grad FOV diagonal und 6DoF Inside-Out-Tracking ist es für immersive AR-Anwendungen konzipiert. Der Thunderbolt-3-Anschluss und das hohe 7.500-USD-Preissegelement positionieren es als Premium-Enterprise-Lösung, obwohl die Hardwarespezifikationen (Auflösung, Bildrate) unklar sind.",
+  "highlights": [
+   "92° FOV (diagonal)",
+   "6DoF Inside-Out Tracking",
+   "Thunderbolt 3 Verbindung",
+   "Premium-AR-Headset für Enterprise"
+  ],
+  "audience": "Enterprise und professionelle AR-Entwickler mit großem Budget."
+ },
+ "YR7b7p4DU": {
+  "description": "Cosmo Vision ist eine Standalone-AR-Brille mit AMOLED-Display und ActiveLook-Software, spezialisiert auf Mobilitäts- und Sportanwendungen wie Radfahren und Roller. Mit nur 40 g Gewicht, 304x256 Auflösung und 10 Grad FOV ist sie ultra-minimalistisch für Echtzeit-Daten wie Geschwindigkeit oder Navigation. Die 12 Stunden Laufzeit über Bluetooth Low Energy und der 550-USD-Preis richten sich an spezifische Outdoor-Sportler, nicht breite AR-Nutzer.",
+  "highlights": [
+   "Nur 40 g, AMOLED 304x256",
+   "10° FOV, optimiert für Mobilität",
+   "12 Stunden Akkulaufzeit",
+   "Bluetooth Low Energy, ActiveLook-Software"
+  ],
+  "audience": "Outdoor-Sportler (Radfahrer, Roller-Nutzer) für Navigation und Live-Daten."
+ },
+ "suVKDU_0P": {
+  "description": "Die DigiLens Argo ist eine Enterprise-AR-Brille mit LED-LCoS-Wellenleitertechnologie und 48MP-Kamera. Das Standalone-Gerät wiegt 185 Gramm und bietet eine Akkulaufzeit von etwa 2 Stunden. Sie wird 2026 aktiv mit Google-Cloud-Integration vertrieben.",
+  "highlights": [
+   "LED-LCoS Wellenleitertechnologie",
+   "48MP RGB-Kamera",
+   "Snapdragon XR2 Chipset",
+   "3500 Nits Helligkeit"
+  ],
+  "audience": "Enterprise-Nutzer und Fachkräfte im Außendienst, die mit Cloud-Integration arbeiten"
+ },
+ "MNTNWLDu4": {
+  "description": "Die ursprüngliche Dream Glass ist eine PC-gebundene AR-Brille von 2018 mit 90-Grad Sichtfeld und 1280x880-Auflösung. Mit USB-C und HDMI-Anschluss bietet sie Passthrough mit 1080p-Kamera und einer Hand-Tracking-Fähigkeit.",
+  "highlights": [
+   "90-Grad Sichtfeld",
+   "1280x880 Auflösung",
+   "Hand-Tracking möglich",
+   "PC-gebunden via USB-C/HDMI"
+  ],
+  "audience": "Entwickler und Anwender mit PC-basiertem Setup, die mit Hand-Tracking experimentieren möchten"
+ },
+ "GlONfBjEP": {
+  "description": "Die Dream Glass 4K ist eine Standalone-AR-Brille von DreamWorld (2020) mit 1920x1080-Auflösung und 90-Grad Sichtfeld. Mit 8000 mAh Batterie bietet sie etwa 5 Stunden Laufzeit und nutzt einen 1,8 GHz Quad-Core-Prozessor.",
+  "highlights": [
+   "1920x1080 Auflösung (Full HD)",
+   "90-Grad Sichtfeld",
+   "185 Gramm Gewicht",
+   "8000 mAh Batterie (~5 h)"
+  ],
+  "audience": "Consumer-Nutzer und AR-Enthusiasten, die eine leichte Standalone-Lösung suchen"
+ },
+ "GgaK5c41-": {
+  "description": "Die Dream Glass 4K Plus ist die erweiterte Version der 4K mit identischen optischen Spezifikationen (1920x1080, 90° FOV) und 185 Gramm Gewicht. Sie wird durch denselben 1,8 GHz Quad-Core-Prozessor betrieben und bietet bis zu 5 Stunden Akkulaufzeit.",
+  "highlights": [
+   "1920x1080 Auflösung",
+   "90-Grad Sichtfeld",
+   "185 Gramm Gewicht",
+   "Optimierte Quad-Core-Performance"
+  ],
+  "audience": "Nutzer, die eine verfeinerte Version der Dream Glass 4K mit Premium-Features bevorzugen"
+ },
+ "hPA8JixLI": {
+  "description": "Die Dream Glass Flow ist eine leichte Standalone-AR-Brille mit Micro-OLED-Display, 1920x1080-Auflösung und 43-Grad Sichtfeld. Mit nur 59 Gramm und etwa 6 Stunden Akkulaufzeit bietet sie WiFi 6 und 5G-Kompatibilität mit integrierten Lautsprechern.",
+  "highlights": [
+   "Sehr leicht (59 g)",
+   "Micro-OLED-Display",
+   "WiFi 6 und 5G-kompatibel",
+   "~6 Stunden Akkulaufzeit"
+  ],
+  "audience": "Mobile Nutzer und Consumer, die eine kompakte und ausdauerstarke AR-Brille benötigen"
+ },
+ "EV601vi66": {
+  "description": "Die Dream Glass Lead Plus ist eine Standalone-AR-Brille mit Snapdragon 670 Chipset, 1920x1080-Auflösung und 90-Grad Sichtfeld. Mit 320 Gramm und 5300 mAh Batterie (~3,5 h Laufzeit) ist sie ein schwereres, aber leistungsstarkes Modell für professionelle Anwendungen.",
+  "highlights": [
+   "Snapdragon 670 Prozessor",
+   "1920x1080 Auflösung",
+   "90-Grad Sichtfeld",
+   "5300 mAh Batterie (~3,5 h)"
+  ],
+  "audience": "Professionelle Anwender in Industrie und Enterprise, die ein hochleistungsfähiges Standalone-Headset benötigen"
+ },
+ "-yaNtlMz9": {
+  "description": "Die Dream Glass Lead Pro ist die Premium-Version mit Snapdragon 670, 1920x1080-Auflösung und 90-Grad Sichtfeld. Mit 330 Gramm und 13MP-Kamera für natives Passthrough ist sie für anspruchsvolle Enterprise-Aufgaben konzipiert.",
+  "highlights": [
+   "Snapdragon 670 Chipset",
+   "13MP RGB-Kamera",
+   "1920x1080 Auflösung",
+   "330 Gramm Gewicht"
+  ],
+  "audience": "Enterprise-Profis und Inspektoren, die hochwertige Passthrough-Kameras und robuste Systeme benötigen"
+ },
+ "Z1gjavg5l": {
+  "description": "Die Engo 2 ist eine leichte AR-Brille mit AMOLED-Display (304x256) und ActiveLook 2.0-Plattform. Mit nur 36 Gramm und 12 Stunden Akkulaufzeit ist sie ideal für Outdoor-Aktivitäten und wurde nach der ersten Generation (2022) weiterentwickelt.",
+  "highlights": [
+   "Sehr leicht (36 g)",
+   "10-Grad Sichtfeld, 304x256 Auflösung",
+   "~12 Stunden Akkulaufzeit",
+   "AMOLED-Display"
+  ],
+  "audience": "Sportler und Outdoor-Enthusiasten, die eine ultraleichte, langlebige AR-Brille suchen"
+ },
+ "hMIl1sAzP": {
+  "description": "Die erste Generation Engo Eyewear von Engo Eyewear ist seit 2021 verfügbar, wurde aber 2022 durch Engo 2 ersetzt und ist nicht mehr zum Verkauf verfügbar. Mit AMOLED-Display (304x256), 41 Gramm und etwa 10-12 Stunden Akkulaufzeit war sie ein Pionier im leichten AR-Segment. EOL/Eingestellt.",
+  "highlights": [
+   "41 Gramm (ultraleicht)",
+   "10-12 Stunden Akkulaufzeit",
+   "AMOLED-Display 304x256",
+   "Eingestellt 2022"
+  ],
+  "audience": "Nicht mehr verfügbar; wurde durch Engo 2 ersetzt"
+ },
+ "legacy-epsonmoveriobt-200": {
+  "description": "Das Epson Moverio BT-200 ist eine ältere Standalone-AR-Brille mit Si-OLED-Anzeige und 960x540-Auflösung von 2014. Mit optischem See-through-Design und 2720 mAh Batterie (ca. 6 Stunden) ist es seit Juni 2019 eingestellt; nur noch Refurbished-Versionen verfügbar.",
+  "highlights": [
+   "Si-OLED-Display",
+   "960x540 Auflösung",
+   "Optical see-through design",
+   "Eingestellt Juni 2019"
+  ],
+  "audience": "Nicht mehr verfügbar; sammelt historisches Interest in AR-Glasentwicklung"
+ },
+ "Wmqx-AT6q": {
+  "description": "Die Epson Moverio BT-40 ist eine kabelgebundene PC-AR-Brille mit Si-OLED-Display und Waveguide-Optik für stationäre Arbeit. Mit 1920x1080 Auflösung, 60 Hz Bildwiederholfrequenz und ca. 5 Stunden Akkulaufzeit richtet sie sich an Profis in industriellen und technischen Anwendungen. Das Modell ist mittlerweile eingestellt und wird nicht mehr neu angeboten.",
+  "highlights": [
+   "1920x1080 Si-OLED Display",
+   "Waveguide-Optik",
+   "USB-C DisplayPort-Verbindung",
+   "Eingestellt (EOL)"
+  ],
+  "audience": "Techniker und Profis in Industrie und Wartung (Legacy-Modell)"
+ },
+ "c46yfe7il": {
+  "description": "Die Epson Moverio BT-40S ist eine Standalone-AR-Brille mit Si-OLED-Display und Snapdragon XR1 Prozessor für mobile Einsätze. Sie bietet 1920x1080 Auflösung bei 60 Hz, wiegt nur 96 g und läuft ohne externe Verbindung. Mit integrierten Lautsprechern und Mikrofon sowie USB-C-Konnektivität war sie für Feldarbeiter konzipiert. Das Modell ist mittlerweile diskontinuiert.",
+  "highlights": [
+   "1920x1080 Si-OLED, 60 Hz",
+   "Standalone mit Snapdragon XR1",
+   "Nur 96 g Gewicht",
+   "Eingestellt (EOL)"
+  ],
+  "audience": "Feldarbeiter und mobile Profis (diskontinuiertes Modell)"
+ },
+ "pdUGQrVUI": {
+  "description": "Die Even Realities G1 ist eine leichte Standalone-AR-Brille mit Micro-LED-Display und Waveguide-Optik, entwickelt für alltägliche Nutzung. Mit nur 44 g Gewicht, 640x200 Auflösung, 20 Hz Refresh-Rate und 98% transparentem Durchblick bietet sie ein dezentes Design. Die bis zu 8 Stunden Akkulaufzeit und Snapdragon XR2 Prozessor ermöglichen produktive mobile Arbeit.",
+  "highlights": [
+   "Nur 44 g Gewicht",
+   "98% transparenter Durchblick",
+   "Micro-LED Waveguide-Display",
+   "Bis zu 8 Stunden Akkulaufzeit"
+  ],
+  "audience": "Alltägliche Nutzer, die eine leichte und diskrete AR-Brille suchen"
+ },
+ "GDAwFX5CU": {
+  "description": "Die Even Realities G2 ist die neueste Variante mit verbesserter HAO-Optik (Holistic Adaptive Optics) und Micro-LED-Display für präzisere AR-Darstellung. Das Modell bietet 640x200 Auflösung, Snapshot-Passthrough und eine beeindruckende Akkulaufzeit von etwa 2 Tagen im Standby. Mit Bluetooth 5.4 und integrierter Kamera ist sie optimiert für alltägliche AR-Aufgaben mit minimaler Gewichtsbelastung.",
+  "highlights": [
+   "HAO (Holistic Adaptive Optics)",
+   "Bis zu 2 Tage Akkulaufzeit",
+   "Micro-LED mit Waveguide",
+   "November 2025 angekündigt"
+  ],
+  "audience": "Early Adopter, die die neueste AR-Optik-Technologie suchen"
+ },
+ "UR8rXYX7t": {
+  "description": "Der Everysight Raptor ist eine Standalone-AR-Sportbrille mit OLED-Display für Outdoor-Aktivitäten wie Radfahren. Mit 1200x1080 Auflösung, 90 Hz Refresh-Rate und nur 98 g Gewicht bietet sie Echtzeit-Dateneinblendung während der Fahrt. Die 13,2-MP-Kamera und bis zu 8 Stunden Akkulaufzeit machen sie ideal für Training und Navigation. Das Modell ist jedoch diskontinuiert und wird durch die kommende Maverick AR-Brille ersetzt.",
+  "highlights": [
+   "1200x1080 OLED, 90 Hz",
+   "Nur 98 g Gewicht",
+   "13,2 MP Kamera",
+   "Diskontinuiert (wird durch Maverick ersetzt)"
+  ],
+  "audience": "Sportler und Radfahrer (Legacy-Modell)"
+ },
+ "EnqtMtA05": {
+  "description": "Google Glass Enterprise Edition 2 ist eine leichte Standalone-AR-Brille mit LCoS-Prism-Optik für geschäftliche Feldanwendungen. Mit 640x360 Auflösung, 8MP-Kamera und 51 g Gewicht ermöglicht sie freihändiges Arbeiten. Der Snapdragon XR1 Prozessor und bis zu 8 Stunden Akkulaufzeit unterstützten produktive Szenarien. Der Verkauf endete März 2023, Support wurde September 2023 beendet.",
+  "highlights": [
+   "Nur 51 g Gewicht",
+   "640x360 LCoS-Display",
+   "8MP Kamera",
+   "Support beendet (Sept 2023)"
+  ],
+  "audience": "Unternehmensnutzer (End-of-Support)"
+ },
+ "HDAcu5kC4": {
+  "description": "Google Glass Explorer Edition ist das Pioniermodell der modernen AR-Brillen von 2013 mit LCoS-Prism-Optik und kompaktem Design. Mit 640x360 Auflösung, 5MP-Kamera und nur 36 g Gewicht war sie revolutionär leicht. Der Texas Instruments OMAP 4430 Prozessor und Knochenleitungslautsprecher definierten die Kategorie, das Modell ist jedoch längst diskontinuiert.",
+  "highlights": [
+   "Nur 36 g Gewicht",
+   "640x360 LCoS-Display",
+   "Knochenleitungslautsprecher",
+   "Diskontinuiert (2013 Explorer-Version)"
+  ],
+  "audience": "AR-Nostalgiker und Sampler (historisches Modell)"
+ },
+ "ZkO_SfqaC": {
+  "description": "Guangli Holoswim ist eine spezialisierte AR-Schwimmbrille mit OLED-Display und wasserfestem Design für Trainer und Sportler. Mit 75 g Gewicht und bis zu 16 Stunden Akkulaufzeit bietet sie Echtzeit-Feedback beim Training. Die hohe Transparenz und robuste Konstruktion machen sie ideal für Sportanwendungen im Wasser. Das Modell ist seit 2021 verfügbar, aktuelle Verfügbarkeit variiert.",
+  "highlights": [
+   "OLED-Display",
+   "Wasserfestes Design",
+   "Bis zu 16 Stunden Akkulaufzeit",
+   "75 g Gewicht"
+  ],
+  "audience": "Schwimmtrainer und Wassersportler"
+ },
+ "HfZ2Dqm1q": {
+  "description": "Guangli Holoswim 2 ist eine leichte Nachfolgeversion mit OLED-Waveguide-Display und verbessertem Design für Schwimmer. Mit nur 70 g Gewicht, 128x64 Auflösung und 4-5 Stunden Akkulaufzeit bietet sie essenzielle Daten-Overlays während des Trainings. Die Bluetooth-Konnektivität ermöglicht drahtlose Updates und Synchronisation mit Trainingsgeräten.",
+  "highlights": [
+   "Nur 70 g Gewicht",
+   "OLED-Waveguide",
+   "4-5 Stunden Akkulaufzeit",
+   "Bluetooth-Konnektivität"
+  ],
+  "audience": "Leistungsorientierte Schwimmer und Trainer"
+ },
+ "QAvnJ3JzH": {
+  "description": "Halliday ist eine innovative KI-Brille mit unsichtbarem MicroLED-Display in Espresso-Spiegeloptik für subtile tägliche Nutzung. Mit nur 35 g Gewicht, 12MP-Kamera und etwa 12 Stunden Akkulaufzeit eignet sie sich für Benachrichtigungen und KI-gesteuerte Assistenz. Das Modell wurde auf der CES 2025 vorgestellt und war erfolgreich auf Kickstarter.",
+  "highlights": [
+   "Nur 35 g Gewicht",
+   "Unsichtbares MicroLED-Display",
+   "12 MP Kamera",
+   "Etwa 12 Stunden Akkulaufzeit"
+  ],
+  "audience": "Frühzeitig-Anwender, die AI-Integration und Dezentheit schätzen"
+ },
+ "12CKEzhzY": {
+  "description": "Das HTC Vive Focus Vision ist ein Hybrid-XR-Headset für Standalone- und PC-Betrieb mit 2448x2448 5K-LCD-Display pro Auge, Pancake-Optik und 116° horizontales Sichtfeld. Mit inside-out Tracking, Eye-Tracking, Snapdragon XR2 Gen 1, integrierter Passthrough-Kamera und Wi-Fi 6E bietet es eine enterprise-freundliche All-in-One Lösung. Akkulaufzeit ca. 2 Stunden; 999 USD.",
+  "highlights": [
+   "5K Resolution (2448x2448 pro Auge)",
+   "Eye-Tracking und 6DoF Inside-Out",
+   "Standalone und PC-fähig",
+   "Enterprise-ready"
+  ],
+  "audience": "Enterprise- und Anwendungsentwickler, die eine leistungsstarke Hybrid-XR-Lösung suchen."
+ },
+ "NwViveXREl": {
+  "description": "Das HTC Vive XR Elite ist ein Standalone/PC-XR-Headset mit 1920x1920 LCD-Display pro Auge, Pancake-Optik und 110° horizontales Sichtfeld. Mit inside-out Tracking, Hand-Tracking, Snapdragon XR2, dualer RGB+Depth-Kamera und ~2 Stunden Akkulaufzeit eignet es sich für Entertainment und entwicklergetriebene XR-Anwendungen. Preis: 1099 USD.",
+  "highlights": [
+   "1920x1920 LCD pro Auge",
+   "Pancake-Optik, 110° FOV",
+   "Hand-Tracking unterstützt",
+   "Dual RGB+Depth Kameras"
+  ],
+  "audience": "XR-Entwickler und Enthusiasten, die Standalone- und PC-Konnektivität kombinieren wollen."
+ },
+ "JWXF3ikOV": {
+  "description": "Die Huawei Vision Glass ist eine smartglasse AR-Brille mit Micro-OLED-Display, Birdbath-Optik und 41° diagonales Sichtfeld. Sie funktioniert als Standalone-Display mit Telefon-Tethering (USB-C), bietet 1920x1080 Auflösung bei 60 Hz, wiegt 112 g und hat keinen integrierten Akku. HarmonyOS-basiert, ideal für mobile Inhaltsanzeige; 430 USD.",
+  "highlights": [
+   "Sehr leicht (112 g)",
+   "Micro-OLED mit Birdbath",
+   "1920x1080 @ 60 Hz",
+   "Telefon-gesteuert via USB-C"
+  ],
+  "audience": "Nutzer, die eine leichte, smartphone-gesteuerte AR-Anzeige für Mobilität suchen."
+ },
+ "x3IQCew4E": {
+  "description": "Die Huawei VR Glass ist ein mobiles VR-Headset mit LCD-Display, Pancake-Optik und 90° diagonales Sichtfeld. Mit 1600x1600 Auflösung pro Auge bei 90 Hz, Non-positional-Tracking und 166 g Gewicht wird sie via USB-C an ein Telefon angeschlossen (kein Akku). Sie bietet Dual Speaker und 3,5 mm Audioausgang; 430 USD (seit 2019).",
+  "highlights": [
+   "1600x1600 @ 90 Hz",
+   "Telefon-gesteuert, 166 g",
+   "Pancake-Optik",
+   "Kostenersparnis durch Mobile VR"
+  ],
+  "audience": "Casual Mobile-VR-Nutzer, die eine günstige, telefon-gesteuerte Lösung suchen."
+ },
+ "eTNerb4Vg": {
+  "description": "Die Huawei VR Glass 6DoF ist ein mobiles VR-Headset mit 6DoF-Inside-Out-Tracking, LCD-Display, Pancake-Optik und 90° Sichtfeld. Mit 1600x1600 Auflösung bei 90 Hz, 188 g Gewicht und SteamVR-Unterstützung wird es über USB-C mit einem Telefon verbunden. Ideal für mobiles Gaming ohne Trackingsystem; 310 USD.",
+  "highlights": [
+   "6DoF Inside-Out Tracking",
+   "1600x1600 @ 90 Hz",
+   "SteamVR-kompatibel",
+   "Günstiger als Konkurrenten"
+  ],
+  "audience": "Mobile VR-Gamer, die 6DoF-Freiheit und portable Gaming-Mobilität mögen."
+ },
+ "wJVRRflMf": {
+  "description": "Die INMO Air ist eine standalone AR-Brille mit Micro-OLED-Display, Waveguide-Optik und 26° Sichtfeld. Mit Android Go 10, 640x400 Auflösung, 78 g Gewicht und 5MP-Kamera (720p 30fps) bietet sie mobile Mixed-Reality-Erlebnisse. ARM Cortex-A53 Prozessor, Wi-Fi und Bluetooth; 349 USD.",
+  "highlights": [
+   "Sehr leicht (78 g)",
+   "Micro-OLED Waveguide",
+   "Standalone Android",
+   "5MP Kamera mit 720p Video"
+  ],
+  "audience": "Entwickler und Early Adopters, die leichte, mobile AR mit Standalone-Betrieb suchen."
+ },
+ "UdgWHTDXY": {
+  "description": "Die INMO Air2 ist eine standalone AR-Brille mit Micro-OLED-Display, Waveguide-Optik und 26° Sichtfeld. Mit Android, 640x400 bei 60 Hz, 99 g Gewicht, Inside-Out-Tracking und 8MP-Dual-Kamera bietet sie verbesserte AR-Funktionen gegenüber der Air. Akkulaufzeit ca. 2 Stunden; 550 USD.",
+  "highlights": [
+   "Leicht und kompakt (99 g)",
+   "Inside-Out 6DoF Tracking",
+   "640x400 @ 60 Hz",
+   "Dual 8MP Kamerasystem"
+  ],
+  "audience": "AR-App-Entwickler und Nutzer, die eine tragbare, georeferenzierte AR-Lösung brauchen."
+ },
+ "A5KdHFj88": {
+  "description": "Die INMO GO2 ist eine leichte standalone AR-Brille mit Micro-LED-Display, Diffraction-Waveguide und 30° Sichtfeld. Mit 640x480 Auflösung, 2000 nits Helligkeit, Snapdragon-Prozessor, 5-Mikrofon-Array und 8MP-Kamera (1080p 30fps) erreicht sie ca. 2,5h Akkulaufzeit. Neu ab Januar 2025; 448 USD.",
+  "highlights": [
+   "Micro-LED 2000 Nits",
+   "Diffraction Waveguide",
+   "640x480 @ bis zu 60 Hz",
+   "8MP 1080p 30fps Kamera"
+  ],
+  "audience": "Nutzer, die eine kompakte, helle Micro-LED-AR mit moderner Bildgebung bevorzugen."
+ },
+ "T2HJ66fyR": {
+  "description": "Das Iristick G2 ist eine enterprise AR-Brille mit LCD-Display, Prism-Optik und 117° Sichtfeld. Mit 426x240 Auflösung, 60 Hz, Phone-Tethering via USB-Kabel, 157 g Gewicht und einstellbaren Dioptrien richtet es sich an industrielle Anwendungen. 16MP-Kamera (30fps); 2099 USD.",
+  "highlights": [
+   "Großes FOV (117°)",
+   "Justierbare Dioptrien",
+   "16MP Kamera 30fps",
+   "Enterprise-zertifiziert"
+  ],
+  "audience": "Industrieunternehmen und Feldtechniker, die sicherheitszertifizierte AR benötigen."
+ },
+ "4j3YZdQIM": {
+  "description": "Das Iristick G3 ist die nächste Generation einer enterprise AR-Brille mit OLED-Display und Phone-Tethering via USB-C. Mit 95 g Gewicht, Inside-Out-Tracking, verbessertem Dual-Kamerasystem und magnetischen Linsenträgern bietet es optimierte Sicherheitszertifizierung. Aktuell verfügbar; 2275 USD.",
+  "highlights": [
+   "OLED-Display",
+   "USB-C Tethering",
+   "Leicht (95 g)",
+   "Dual-Kamera Passthrough"
+  ],
+  "audience": "Professionelle Nutzer in sicherheitskritischen Branchen, die aktuellste Enterprise-AR brauchen."
+ },
+ "6z7r29ojZ": {
+  "description": "Die Julbo EVAD-1 ist eine leichte AR-Sportbrille mit integriertem AMOLED-Display (304x256) und diskretem 10°-Sichtfeld. Die spezialisierte ActiveLook-Plattform richtet sich an Outdoor-Sportler, die sich Echtzeit-Daten beim Joggen, Radfahren oder Schwimmen ansehen möchten. Mit Bluetooth 5.0 und bis zu 12 Stunden Akkulaufzeit bietet sie praktische Dauerhaftigkeit für Trainingsszenarien.",
+  "highlights": [
+   "35 g ultraleicht",
+   "12h Akkulaufzeit",
+   "AMOLED-Display (304x256)",
+   "Spezialisiert für Sport/Fitness"
+  ],
+  "audience": "Ausdauersportler und Fitness-Enthusiasten, die diskrete Live-Daten-Einblendungen benötigen"
+ },
+ "pEEE5EDVo": {
+  "description": "Die Lenovo Glasses T1 ist eine kabelgebundene Micro-OLED-Brille für PC-Gaming und Entertainment-Streaming mit 1920x1080 Auflösung und 60 Hz Bildwiederholrate. Sie nutzt eine DisplayPort-Verbindung über USB-C und wiegt nur 96 Gramm. Trotz fehlender Standalone-Rechenleistung bietet das System eine elegante Alternative zu großen Monitoren für Spiele und Videos.",
+  "highlights": [
+   "96 g leicht",
+   "Micro-OLED (1920x1080)",
+   "60 Hz, kabelgebunden",
+   "DisplayPort via USB-C"
+  ],
+  "audience": "PC-Gamer und Streamer, die eine tragbare, hochauflösende Display-Alternative suchen"
+ },
+ "MplTgXoYM": {
+  "description": "Das Lenovo ThinkReality A3 ist ein Enterprise-AR-Headset mit LCoS-Optik und beeindruckender 120 Hz Bildwiederholrate, ideal für die Fernzusammenarbeit und Wartungsanweisungen. Mit integrierter 8MP-Kamera (1080p), Inside-Out-Tracking und Inside-Out-Hand-Tracking bietet es professionelle Funktionalität bei 130 Grammen Gewicht. Der USB-C 3.2-Port und 5 Stunden Akkulaufzeit ermöglichen mobiles Arbeiten.",
+  "highlights": [
+   "120 Hz Bildwiederholrate",
+   "Inside-Out Tracking & Hand-Tracking",
+   "8MP Kamera (1080p)",
+   "5h Akkulaufzeit"
+  ],
+  "audience": "Unternehmens- und Industriefachkräfte im Servicebereich, Remote-Collaboration-Teams"
+ },
+ "NwLynxR1_": {
+  "description": "Das Lynx R-1 war ein ambitioniertes Standalone-XR-Headset mit 1600x1600 LCD-Display, Hand-Tracking und Color-Passthrough, konnte sich aber marktlich nicht behaupten und wurde eingestellt. Mit 600 Gramm Gewicht, Snapdragon XR2 und gut 2 Stunden Akkulaufzeit repräsentiert es einen gescheiterten Versuch der VR-Demokratisierung, der 2026 durch die Liquidation des Herstellers endet.",
+  "highlights": [
+   "600 g Gewicht",
+   "1600x1600 LCD, 90 Hz",
+   "Hand-Tracking",
+   "Eingestellt März 2026 (Liquidation)"
+  ],
+  "audience": "Nicht empfohlen — Produkt eingestellt und nicht länger unterstützt"
+ },
+ "sCAIQq45W": {
+  "description": "Die MAD Gaze Glow Plus ist eine telefongebundene AR-Brille mit OLED-Display (1920x1080) und Birdbath-Optik für mobile Augmented-Reality-Anwendungen. Mit Inside-Out-Tracking, 5MP-Kamera und 92 Grammen tragbar, verbindet sie Gaming, Navigation und Social Apps direkt am Auge. Die Smartphone-Abhängigkeit macht sie kostengünstig, aber ortsgebunden.",
+  "highlights": [
+   "92 g leicht",
+   "OLED (1920x1080)",
+   "Inside-Out Tracking",
+   "5MP Kamera"
+  ],
+  "audience": "Mobile AR-Enthusiasten und Casual-Gamer, die AR-Apps auf dem Smartphone nutzen"
+ },
+ "KdZOqV1Ev": {
+  "description": "Der MAD Gaze Vader (2017) ist ein Standalone-AR-Gerät mit 1280x720 LCD und 8MP-Kamera für Hand-Tracking und Passthrough-Sicht. Basierend auf dem MediaTek MT6737V Chipset und mit 5 Stunden Akkulaufzeit konzipiert, stellte er einen frühen Versuch dar, mobile AR mit stabiler Hand-Erfassung zu kombinieren. Heute ist das Gerät veraltet und wird nicht mehr aktiv vermarktet.",
+  "highlights": [
+   "1280x720 LCD",
+   "8MP Kamera mit Hand-Tracking",
+   "5h Akkulaufzeit",
+   "Veraltet (2017)"
+  ],
+  "audience": "AR-Sampler und Enterprise-Evaluatoren (für Legacy-Systeme ungeeignet)"
+ },
+ "Vg5P0BH6B": {
+  "description": "Die MAD Gaze Wave ist eine telefongebundene Micro-OLED-Brille mit Waveguide-Optik und 1920x1080 Auflösung für mobile AR. Mit 80 Grammen Gewicht, Inside-Out-Tracking und 8MP-Kamera bietet sie eine leichte Option für Nutzer, die AR-Apps über ihr Smartphone steuern möchten. Die DisplayPort-Tethering über USB-C ermöglicht stabile Verbindung.",
+  "highlights": [
+   "80 g ultraleicht",
+   "Micro-OLED Waveguide (1920x1080)",
+   "Inside-Out Tracking",
+   "Smartphone-gebunden"
+  ],
+  "audience": "Mobile AR-Nutzer, die leichte und modulare Eyewear-Form bevorzugen"
+ },
+ "1N3k3S4MN": {
+  "description": "Das Magic Leap 1 war Pionier der Spatial Computing mit LCoS-Waveguide-Optik, 1280x960 Auflösung und 122 Hz Bildwiederholrate. Mit Nvidia Tegra TX2, vollständigem Hand- und Eye-Tracking und 7,5 Stunden Akkulaufzeit definierte es den Enterprise-AR-Standard ab 2018. Der Support endete 2024; kein weiterer Service verfügbar.",
+  "highlights": [
+   "122 Hz Bildwiederholrate",
+   "Eye-Tracking & Hand-Tracking",
+   "Nvidia Tegra TX2",
+   "Support endete 31.12.2024"
+  ],
+  "audience": "Enterprise-AR-Entwickler und Arbeiter (Legacy-Support auslaufend)"
+ },
+ "mt3AEYJu5": {
+  "description": "Das Magic Leap 2 ist ein hochperformes AR-Headset mit LCoS-Waveguide (1440x1760) und 120 Hz Bildwiederholrate für professionelle Anwendungen. Ausgestattet mit AMD Zen 2, 16GB LPDDR5, vollständigem Hand- und Eye-Tracking sowie 12,6MP-Kamera bietet es tiefgreifende räumliche Erfassung. Die externe Compute-Pack-Batterie ermöglicht etwa 3,5 Stunden Betrieb.",
+  "highlights": [
+   "120 Hz, 1440x1760 (LCoS)",
+   "Eye-Tracking & Hand-Tracking",
+   "AMD Zen 2 + 16GB RAM",
+   "12.6MP Kamera (60fps)"
+  ],
+  "audience": "Enterprise-Spezialisten, Chirurgen, Designer und industrielle Anwendungen"
+ },
+ "98wLZvTJQ": {
+  "description": "Das Meta 2 (2016) war eines der ersten PC-gebundenen AR-Headsets mit LCD-Display (1280x1440) und 90° horizontalem Sichtfeld für die Frühe Mixed-Reality-Entwicklung. Mit gebogenen Spiegeln als Optik und 720p Pass-Through-Kamera setzte es Standards, ist aber mittlerweile veraltet. Die Anforderung eines hochperformanten PCs (i7-6700+ oder äquivalent) über 3-Meter HDMI/DisplayPort-Kabel begrenzte seine Anwendbarkeit.",
+  "highlights": [
+   "1280x1440 LCD, 90° FOV",
+   "Pass-Through-Kamera (720p)",
+   "PC-gebunden (High-End erforderlich)",
+   "Eingestellt (2016)"
+  ],
+  "audience": "AR-Historiker und Legacy-Software-Entwickler (nicht aktuell empfohlen)"
+ },
+ "NwMetaQ3__": {
+  "description": "Das Meta Quest 3 ist ein Standalone-XR-Headset mit LCD-Display und Pancake-Optik, das 2023 veröffentlicht wurde. Die 2064x2208er Auflösung pro Auge und 120 Hz Bildwiederholrate bieten flüssiges Gaming und Anwendungserlebnis. Mit Inside-Out-Tracking, Hand-Tracking und natürlichem Farb-Passthrough ist es für Mixed Reality und Unterhaltung ausgelegt; das 515g Gerät wird vom Snapdragon XR2 Gen 2 betrieben.",
+  "highlights": [
+   "Standalone XR-Headset (2064x2208, 120 Hz)",
+   "Inside-Out-Tracking mit Hand-Tracking",
+   "Native Farb-Passthrough für Mixed Reality",
+   "515g, ca. 2,2h Akkulaufzeit"
+  ],
+  "audience": "VR-Enthusiasten und Mixed-Reality-Gamer; für Consumer Mainstream geeignet."
+ },
+ "NwMetaQ3S_": {
+  "description": "Das Meta Quest 3S ist ein günstigeres Standalone-XR-Headset mit LCD-Display und Fresnel-Optik, das 2024 für 299 USD eingeführt wurde. Mit 1832x1920er Auflösung pro Auge, 120 Hz und Inside-Out-Tracking kombiniert es gutes VR-Gameplay mit Mixed-Reality-Funktionen. Das 514g Gerät ist leichter zugänglich als das Quest 3 und nutzt denselben Snapdragon XR2 Gen 2 Prozessor.",
+  "highlights": [
+   "Budget-XR-Headset zu 299 USD",
+   "1832x1920er Auflösung, 120 Hz, Fresnel-Optik",
+   "Inside-Out-Tracking mit Hand-Tracking",
+   "514g, ca. 2,5h Akkulaufzeit"
+  ],
+  "audience": "Einsteiger und preisbewusste VR-Nutzer; gutes Kosten-Leistungs-Verhältnis."
+ },
+ "NwMetaQPro": {
+  "description": "Das Meta Quest Pro war ein Premium-XR-Headset mit mini-LED-Lokalausleuchtung und Pancake-Optik, entwickelt für Profis und Content Creator. Mit QLED-Display, 1800x1920er Auflösung pro Auge, 90 Hz und erweiterten Tracking-Features (Eye und Hand Tracking) bot es hochwertige Mixed Reality. Das Gerät wurde im Januar 2025 diskontinuiert.",
+  "highlights": [
+   "Premium-XR mit QLED-Display und Pancake-Optik",
+   "1800x1920, 90 Hz; 722g schwer",
+   "Eye- und Hand-Tracking, High-Res Passthrough",
+   "DISKONTINUIERT Januar 2025"
+  ],
+  "audience": "Content Creator und Profis; nicht mehr im Handel erhältlich."
+ },
+ "0iz9ksGZA": {
+  "description": "Die Meta Ray-Ban Display ist eine leichte AI-AR-Brille mit LCoS-Waveguide-Optik, die September 2025 veröffentlicht wurde. Mit nur 69g, 600x600er Auflösung pro Auge und 90 Hz bietet sie kompakte Mixed Reality mit integrierter 12MP Kamera. Der Snapdragon AR1 Gen 1 ermöglicht drahtlose Kommunikation und 6h Akkulaufzeit, ideal für alltägliche AI-unterstützte Anwendungen.",
+  "highlights": [
+   "Leichte AI-AR-Brille (69g nur)",
+   "LCoS-Waveguide, 600x600, 90 Hz",
+   "12MP Kamera, 3K Video-Unterstützung",
+   "6h Akkulaufzeit, Snapdragon AR1 Gen 1"
+  ],
+  "audience": "AI-Nutzer und alltägliche Mixed-Reality-Anwender; leicht und tragbar."
+ },
+ "tSCQxsAA_": {
+  "description": "Das Microsoft HoloLens 1 ist eine Enterprise-AR-Brille mit LCoS-Waveguide-Optik von 2016, die auf Windows Holographic basiert. Mit 1268x720 Auflösung, 60 Hz, 30° horizontales FOV und 2MP Kamera ermöglichte es frühe Augmented Reality für Industrieunternehmungen. Das Support-Ende wurde am 10. Dezember 2024 erreicht.",
+  "highlights": [
+   "Pioneering Enterprise-AR-Brille (2016)",
+   "LCoS-Waveguide, 1268x720, 60 Hz",
+   "30° horizontales FOV, 579g schwer",
+   "SUPPORT BEENDET Dezember 2024"
+  ],
+  "audience": "Legacy-Enterprise; Support nicht mehr verfügbar."
+ },
+ "EkSDYv0cW": {
+  "description": "Das Microsoft HoloLens 2 ist eine High-End-Enterprise-AR-Brille mit LBS-Waveguide-Optik von 2019, optimiert für professionelle Mixed-Reality-Szenarien. Mit 1440x936 Auflösung pro Auge, 60 Hz, präzisem Eye-Tracking und Hand-Tracking sowie 8MP Kamera bietet es ausgezeichnete Passthrough-Bildqualität. Microsoft kündigt Support-Ende für Dezember 2027 an.",
+  "highlights": [
+   "Enterprise-AR mit LBS-Waveguide und Eyetracking",
+   "1440x936, 60 Hz; 43° horiz., 29° vert. FOV",
+   "8MP Kamera 1080p 30fps, 556g",
+   "Support bis Dezember 2027"
+  ],
+  "audience": "Enterprise und Industrial-Profis; hochwertige Passthrough und Tracking."
+ },
+ "PRD287sFm": {
+  "description": "Das Nimo ist ein Standalone-AR-Headset mit Waveguide-Optik, das 2022 vorgestellt wurde. Mit 1280x720 Auflösung, 120 Hz und Non-Positional-Tracking ist es für leichte AR-Anwendungen konzipiert. Der Snapdragon XR1 Prozessor und 120g Gewicht machen es portabel; die Akkulaufzeit beträgt ca. 2,5 Stunden.",
+  "highlights": [
+   "Lightweight Standalone-AR-Brille",
+   "1280x720 Auflösung, 120 Hz Bildwiederholrate",
+   "120g leicht, Waveguide-Optik",
+   "2,5h Akkulaufzeit, Snapdragon XR1"
+  ],
+  "audience": "Nutzer leichter AR-Anwendungen; portabel und einfach bedienbar."
+ },
+ "vktjm1mHt": {
+  "description": "Das Nolo VR Glass ist ein Phone-gebundenes XR-Headset mit Pancake-Optik von 2023, das als diskontinuiert markiert ist. Mit 2280x2280 Auflösung pro Auge und 90 Hz bot es VR-Erlebnis über eine Telefonverbindung; Non-Positional-Tracking und kein integriertes WiFi/Bluetooth charakterisierten das Gerät.",
+  "highlights": [
+   "Phone-gebundes XR-Headset (diskontinuiert)",
+   "2280x2280 Auflösung, 90 Hz",
+   "Pancake-Optik mit 92° FOV",
+   "Non-Positional-Tracking"
+  ],
+  "audience": "Nicht aktiv im Handel; als diskontinuiert eingestellt."
+ },
+ "jtG3rIKIH": {
+  "description": "Das Nreal Air ist eine leichte Phone-gebundene AR-Brille mit Micro-OLED-Display und Birdbath-Optik, veröffentlicht 2022. Mit 1920x1080 Auflösung pro Auge, 60 Hz und nur 79g ist es das erste tragbare Gerät dieser Kategorie. Das LCoS-Display mit 400 nits und USB-C DisplayPort-Tethering eignet sich für Multimedia und erweiterte Anwendungen.",
+  "highlights": [
+   "Leichte Phone-gebundene AR (79g)",
+   "Micro OLED, 1920x1080, 60 Hz, Birdbath-Optik",
+   "400 nits Helligkeit, USB-C DisplayPort",
+   "Stereo-Lautsprecher in den Armen"
+  ],
+  "audience": "Mobile AR-Enthusiasten; reduziertes Gewicht und Leistung."
+ },
+ "Y2w9aRodp": {
+  "description": "Das Nreal Light ist eine Phone-gebundene AR-Brille mit OLED-Display und Birdbath-Optik von 2020, die 2022 zur XREAL Light umbenannt wurde. Mit 1920x1080 Auflösung pro Auge, 60 Hz, Hand-Tracking und 1080p Video-Kamera kombiniert es kompakte Größe mit guter Bildqualität. Das Gerät wurde diskontinuiert und als Final Sale markiert.",
+  "highlights": [
+   "Phone-AR-Brille mit OLED-Display (diskontinuiert)",
+   "1920x1080, 60 Hz, Birdbath-Optik",
+   "Hand-Tracking, 1080p Videokamera",
+   "106g, OLED-Display, FINAL SALE"
+  ],
+  "audience": "Nicht mehr aktiv; durch XREAL Light ersetzt."
+ },
+ "vn_zQOTOV": {
+  "description": "Das Nubia Neovision Glass ist eine leichte AR-Brille mit hochauflösendem Micro-OLED Display (1920x1080) und Birdbath-Optik. Sie verbindet sich drahtlos mit einem Smartphone und bietet natives Passthrough-Sehen. Mit 79 Gramm Gewicht und 1800 Nits Helligkeit eignet sich das Gerät für portable AR-Anwendungen im Alltag.",
+  "highlights": [
+   "Leicht (79 g)",
+   "Micro-OLED 1920x1080",
+   "Phone-tethered, kabellos"
+  ],
+  "audience": "Nutzer, die eine leichte, mobile AR-Erfahrung mit Smartphone-Verbindung suchen."
+ },
+ "oqaLcHVYE": {
+  "description": "Das NuEyes Pro 3e ist eine kompakte AR-Brille mit OLED-Display und Birdbath-Optik, entworfen für die Smartphone-Verbindung. Die 1920x1080 Auflösung mit 75 Hz Bildwiederholfrequenz ermöglicht flüssige AR-Anwendungen. Bei 68 Gramm Gewicht bietet es eine tragbare Lösung für AR-Navigation und Informationslayer.",
+  "highlights": [
+   "Sehr leicht (68 g)",
+   "OLED-Display 1920x1080",
+   "75 Hz Bildwiederholfrequenz"
+  ],
+  "audience": "Anwender, die leichte, tragbare AR-Brillen für alltägliche mobile Nutzung bevorzugen."
+ },
+ "0Qjzt-5qf": {
+  "description": "Das Oppo Air Glass ist ein eigenständiges AR-System mit Micro-LED Display und Waveguide-Optik, betrieben durch den Snapdragon Wear 4100 Prozessor. Die 640x480 Auflösung bei nur 30 Gramm macht es zur derzeit leichtesten AR-Brille. Mit circa 3 Stunden Akkulaufzeit ist es für kurze bis mittelfristige AR-Anwendungen ausgerichtet.",
+  "highlights": [
+   "Extrem leicht (30 g)",
+   "Micro-LED Waveguide-Display",
+   "Standalone-Betrieb (Snapdragon Wear 4100)"
+  ],
+  "audience": "Nutzer, die die leichteste und kompakteste AR-Erfahrung suchen."
+ },
+ "3ZdVU3ZJM": {
+  "description": "Das P&C Solution METALENSE ist ein hochwertiges Standalone-AR-Headset mit Micro-OLED Display und Prism-Optik. Mit 580 Gramm Gewicht und innenseitiger Hand-Verfolgung richtet es sich auf Enterprise- und professionelle Anwendungen aus. Die 1920x1080 Auflösung bei 60 Hz bietet für spezialisierte Aufgaben ausreichend visuelle Informationen.",
+  "highlights": [
+   "Micro-OLED Prism-Optik",
+   "Hand-Tracking integriert",
+   "Austauschbarer Akku"
+  ],
+  "audience": "Enterprise-Nutzer und Profis, die robuste AR-Systeme für spezialisierte Anwendungen benötigen."
+ },
+ "NwPimaxCry": {
+  "description": "Das Pimax Crystal ist ein hochwertiges Hybrid-VR/AR-Headset mit 2880x2880 Auflösung pro Auge und 120 Hz Bildwiederholfrequenz. Die Micro-LED QLED-Optik mit Augentracking und optionalem Hand-Tracking bietet immersive Erfahrungen. Mit 960 Gramm ist es für PC- und Standalone-Betrieb ausgelegt und zielt auf enthusiastische VR-Gamer und Content-Creator.",
+  "highlights": [
+   "Sehr hohe Auflösung (2880x2880)",
+   "120 Hz Bildwiederholfrequenz",
+   "Augentracking integriert"
+  ],
+  "audience": "VR-Enthusiasten und professionelle Inhaltsentwickler, die maximale visuelle Qualität suchen."
+ },
+ "itQWsK0YF": {
+  "description": "Das Pimax Crystal Light ist ein Mid-Range-PC-VR-Headset mit 2880x2880 Auflösung und 120 Hz Bildwiederholfrequenz. Die QLED-Optik mit asphärischen Gläsern und 125 Grad horizontales Sichtfeld ermöglicht großflächige Sichtbarkeit. Mit SteamVR-Kompatibilität ist es ideal für preisorientierte PC-VR-Gamer.",
+  "highlights": [
+   "2880x2880 Auflösung",
+   "125° horizontales FOV",
+   "120 Hz, hoher Pixeldichte (35 PPD)"
+  ],
+  "audience": "PC-Gamer, die Qualität und Breite des Sichtfeldes zu moderaten Kosten suchen."
+ },
+ "6wtHtGTJL": {
+  "description": "Das Pimax Crystal Super ist ein High-End-PC-VR-Headset mit ultra-hoher 3840x3840 Auflösung pro Auge und 130 Grad Sichtfeld. Mit Micro-OLED Pancake-Optik, Augentracking und optionaler Hand-Verfolgung bietet es absolute visuellen Spitzenwerte. Seit April 2025 verfügbar, richtet es sich an professionelle Anwender und VR-Puristen.",
+  "highlights": [
+   "Ultra-hohe Auflösung (3840x3840)",
+   "130° Sichtfeld",
+   "Augentracking und Hand-Tracking möglich"
+  ],
+  "audience": "VR-Profis und Enthusiasten, die höchste visuelle Qualität und großes Sichtfeld wünschen."
+ },
+ "fmvzFDQnb": {
+  "description": "Das Pimax Dream Air ist ein ultra-leichtes PC-VR-Headset mit nur 170 Gramm Gewicht und hochmoderner Micro-OLED Pancake-Optik. Mit 3840x3552 Auflösung und 90 Hz bietet es visuell beeindruckende Qualität ohne Gewichtslast. Seit Februar 2025 verfügbar, richtet es sich an Nutzer, die Komfort mit Leistung verbinden wollen.",
+  "highlights": [
+   "Extrem leicht (170 g)",
+   "Micro-OLED Pancake-Optik",
+   "Hohe Auflösung (3840x3552)"
+  ],
+  "audience": "Nutzer, die längere VR-Sessions mit höchstem Komfort und Bildqualität suchen."
+ },
+ "Z3yEBUJAV": {
+  "description": "Das Play For Dream MR ist das weltweit erste Android-basierte MR-Headset mit Micro-OLED Display, 3840x3552 Auflösung und 90 Hz. Mit integriertem Augen- und Hand-Tracking bietet es natives farbiges Passthrough und steht ab März 2026 zur Verfügung. Das Gerät verbindet VR- und AR-Fähigkeiten auf einer Standalone-Plattform.",
+  "highlights": [
+   "Erstes Android MR-Headset",
+   "Micro-OLED 3840x3552",
+   "Auge- und Hand-Tracking integriert"
+  ],
+  "audience": "Early Adopter, die Mixed Reality auf Android erkunden möchten."
+ },
+ "NwPSVR2Xr": {
+  "description": "Das PlayStation VR2 ist ein leistungsstarkes Konsolen-VR-Headset mit OLED-Display, 2000x2040 Auflösung und 120 Hz Bildwiederholfrequenz. Mit integriertem Augentracking, Fresnel-Optik und 110 Grad Sichtfeld bietet es hochwertige PlayStation 5-Gaming. Seit März 2025 erhältlich zu reduzierten Preisen, richtet es sich auf PS5-Besitzer und mittels Adapter auch auf PC-Nutzer.",
+  "highlights": [
+   "OLED-Display 2000x2040",
+   "120 Hz Bildwiederholfrequenz",
+   "Integriertes Augentracking"
+  ],
+  "audience": "PlayStation 5-Besitzer und VR-Gamer, die hochwertiges Konsolen-Gaming suchen."
+ },
+ "ms0htz68c": {
+  "description": "Die RayNeo Air 3s ist eine tragbare AR-Brille mit Micro-OLED-Display und Birdbath-Optik, ideal zum Streamen von Filmen und Multimedia-Inhalten auf einem großen virtuellen Bildschirm (201 Zoll simuliert). Mit 1920x1080 Auflösung, 120 Hz Refresh-Rate und 650 nits Helligkeit bietet sie beeindruckende visuelle Qualität. Das Gerät wird per USB-C/DisplayPort an ein Telefon angeschlossen und wiegt unter 100g.",
+  "highlights": [
+   "1920x1080, 120 Hz, Micro-OLED",
+   "650 nits Helligkeit",
+   "Phone-Tethering (USB-C DisplayPort)",
+   "Quad-Speaker-System"
+  ],
+  "audience": "Perfekt für Multimedia-Nutzer, die ein tragbares Kino-Erlebnis mögen, und Profis mit Tethering-Setup."
+ },
+ "xgyr4Q0iB": {
+  "description": "Die RayNeo X3 Pro ist eine vollständige Standalone-AR-Brille mit Micro-LED Waveguide-Display und Snapdragon AR1 Prozessor, speziell für Farb-AR-Anwendungen entwickelt. Sie bietet 640x480 Auflösung, 6DoF Inside-out Tracking mit SLAM und native 12MP RGB-Kamera. Mit 245 mAh Akku hält die 76g schwere Brille etwa 30 Minuten im aktiven Betrieb und unterstützt Wi-Fi 6, Bluetooth 5.3 sowie USB-C.",
+  "highlights": [
+   "Micro-LED Waveguide, 640x480",
+   "Snapdragon AR1 Gen 1, 6DoF SLAM",
+   "12MP Sony Kamera, 76g leicht",
+   "Wi-Fi 6, Bluetooth 5.3"
+  ],
+  "audience": "Enterprise und Developer, die vollständige Farbgrafiken in AR benötigen und mobil arbeiten."
+ },
+ "FauT-Oibf": {
+  "description": "Die Realmax Qian ist eine Standalone-AR-Brille mit LCD-Display, Birdbath-Optik und breitem 101-Grad Sichtfeld. Mit Snapdragon 835 Prozessor und 1280x720 Auflösung (60 Hz) bietet sie dezente Augmented-Reality-Erlebnisse. Die 530g schwere Brille ist mit Inside-out Tracking ausgestattet und wird durch ein 6000 mAh Akku versorgt, das ca. 5 Stunden Laufzeit bietet.",
+  "highlights": [
+   "101° Sichtfeld, LCD 1280x720",
+   "Snapdragon 835, Inside-out Tracking",
+   "530g schwer, 6000 mAh Akku (~5h)",
+   "Birdbath-Optik"
+  ],
+  "audience": "AR-Enthusiasten und Entwickler, die ein breites Sichtfeld für immersive AR-Anwendungen wünschen."
+ },
+ "gJzO9KhG5": {
+  "description": "Die RealWear HMT-1 ist eine robuste, spezialisierte Brille für Industrie und Feldarbeit mit LCD-Display und 854x480 Auflösung. Mit 20-Grad Sichtfeld und 16MP Kamera mit optischem Bildstabilisator ist sie für dokumentation und Remote-Hilfe optimiert. Die 380g schwere Brille wurde im September 2022 eingestellt, ist aber teilweise noch gebraucht erhältlich; Support endete mit Firmware v12.6.",
+  "highlights": [
+   "16MP Kamera mit OIS, 854x480",
+   "Snapdragon 625/626, aktive Rauschanpassung",
+   "3250 mAh Akku (~8+ h)",
+   "EOL September 2022 – nur begrenzte Unterstützung"
+  ],
+  "audience": "Legacy-Nutzer und Unternehmen, die bestehende Systeme unterstützen; nicht für Neukäufe empfohlen."
+ },
+ "ufFwiatGb": {
+  "description": "Die RealWear HMT-1Z1 ist ein robustes Android 8.1 Gerät für anspruchsvolle Industrieumgebungen, entwickelt für Feld- und Reparaturarbeiten. Mit 854x480 LCD-Display, 20-Grad Sichtfeld und 16MP 1080p Kamera bietet sie zuverlässige Dokumentation. Die 430g schwere Brille wurde eingestellt und erhält keine Updates mehr; der 3400 mAh Akku bietet typischerweise 9-10 Stunden Nutzung pro Schicht.",
+  "highlights": [
+   "16MP Kamera, 854x480 LCD",
+   "Snapdragon 625, 20° Sichtfeld",
+   "3400 mAh Akku (~9-10h pro Schicht)",
+   "EOL – kein Support über Firmware v12.6"
+  ],
+  "audience": "Bestehende Nutzer in Industrie und Feld; nicht für Neubeschaffung geeignet."
+ },
+ "zPABenwmr": {
+  "description": "Der RealWear Navigator 500 ist eine weiterentwickelte, robuste Arbeitsbrille für Industrie mit 854x480 LCD-Display und 20-Grad Sichtfeld. Die 272g schwere Brille ist mit einem Snapdragon 662 Prozessor und einer 48MP Kamera mit 6x digitalem Zoom ausgestattet. Ein 2600 mAh Akku bietet bis zu 8 Stunden Laufzeit; Bluetooth 5.1, Wi-Fi 6 und optional 5G sind verbaut.",
+  "highlights": [
+   "48MP Kamera mit 6x Zoom, 854x480",
+   "Snapdragon 662, 20° Sichtfeld, 272g leicht",
+   "2600 mAh Akku (~8h), Bluetooth 5.1",
+   "Wi-Fi 6, optional 5G"
+  ],
+  "audience": "Feldtechniker, Wartungsprofis und Industrieunternehmen, die hochauflösende Kameras und lange Nutzung benötigen."
+ },
+ "o9JH3GwIU": {
+  "description": "Der RealWear Navigator 520 ist eine aktuelle Arbeitsbrille mit 1280x720 LCD-Display und erweiterten Optionen. Die 274g schwere Brille verfügt über einen Snapdragon 662 Prozessor, 24-Grad Sichtfeld und eine 48MP Kamera mit 1080p Videoaufnahme bei 60 fps. Ein 2600 mAh Akku liefert etwa 8 Stunden Betriebszeit; optional lässt sich ein FLIR-Wärmekamera-Modul ergänzen.",
+  "highlights": [
+   "50MP Kamera, 1280x720 LCD, 24° FOV",
+   "Snapdragon 662, optionales FLIR-Wärmemodul",
+   "2600 mAh Akku (~8h), 274g",
+   "Bluetooth 5.1, Wi-Fi 6"
+  ],
+  "audience": "Techniker und Handwerker, die höhere Auflösung und optional thermale Bildgebung benötigen."
+ },
+ "ElhWfkAbQ": {
+  "description": "Der RealWear Navigator Z1 ist das aktuelle Premium-Modell für Industrie mit 1280x720 LCD-Display und 24-Grad Sichtfeld, ausgestattet mit Qualcomm QCS6490 Prozessor und Android 12. Die 383g schwere Brille bietet 48MP Kamera, 2550 mAh Akku (Vollschicht-Laufzeit) und unterstützt Bluetooth 5.2, Wi-Fi 6/6E sowie optionale 5G. Support bis mindestens 2030 zugesichert; Android 16 ist für 2026 geplant.",
+  "highlights": [
+   "48MP Kamera, 1280x720, 24° FOV",
+   "Qualcomm QCS6490, Wi-Fi 6E, optional 5G",
+   "2550 mAh Akku (Vollschicht), 383g",
+   "Support bis 2030+, Android 16 2026 geplant"
+  ],
+  "audience": "Professionelle Industrienutzer, die langfristige Unterstützung und moderne Connectivity benötigen."
+ },
+ "legacy-reconjet": {
+  "description": "Die Recon Jet ist eine historische sportwissenschaftliche AR-Brille mit LCOS HUD-Prism-Display und 400x240 Auflösung (30 Hz Sichtfeld). Die Brille wurde 2017 von Intel eingestellt, nachdem das Unternehmen Recon Instruments 2014 übernahm. Mit 490 mAh Akku (~4 Stunden) und 2.1MP Kamera ist sie für moderne Anwendungen technisch veraltet und nur noch sammlerwert.",
+  "highlights": [
+   "LCOS HUD-Display, 400x240, 30° FOV",
+   "2.1MP Kamera, 490 mAh (~4h)",
+   "EOL Juni 2017 – vollständig eingestellt",
+   "Antiquarischer Wert, keine Unterstützung"
+  ],
+  "audience": "Historiker und Sammler der AR-Geschichte; völlig ungeeignet für moderne Anwendungen."
+ },
+ "Tyzj7UF28": {
+  "description": "Die Rokid AI Glasses Style ist eine ultraleichte, displayfreie AI-Brille mit Snapdragon AR1 Gen 1 Prozessor, ideal für sprachgesteuerte KI-Assistenten und Audio-Anwendungen. Mit nur 39g ist sie die leichteste der Devices; sie bietet 12MP Sony IMX681 Kamera, 4K-Video-Fähigkeit und integrierte Unterstützung für Seh- und Astigmatismuskorrektur. Der 210 mAh Akku ermöglicht ca. 12 Stunden Nutzung; optional gibt es ein 3000 mAh Case.",
+  "highlights": [
+   "Nur 39g ultraleicht, displayfrei",
+   "12MP Sony 4K-Kamera, Snapdragon AR1 Gen 1",
+   "210 mAh (~12h), optional 3000 mAh Case",
+   "Brillenkorrektion eingebaut (-15 bis +15 D)"
+  ],
+  "audience": "KI-Assistenten-Nutzer, Vielfahrer und alle, die minimalistisches tragbares Computing mit präskriptiver Unterstützung suchen."
+ },
+ "kG1_Qtju3": {
+  "description": "Rokid Air ist eine leichte AR-Brille mit Micro-OLED-Display (1920x1080, 60 Hz), die über USB-C DisplayPort mit dem Smartphone verbunden wird. Sie wiegt nur 85 g und bietet ein 43° FOV. Das Gerät nutzt die Rechenleistung des Smartphones, da es keinen eigenen Prozessor hat, und ist ideal für tragbare digitale Anzeigen im Alltag.",
+  "highlights": [
+   "Sehr leicht (85 g)",
+   "Micro-OLED 1920x1080",
+   "Smartphone-gesteuert (DisplayPort USB-C)"
+  ],
+  "audience": "Nutzer, die eine ultraleichte, praktische AR-Brille für Smartphone-Integration suchen."
+ },
+ "Owzy8dkih": {
+  "description": "Die Rokid Air Pro ist eine verbesserte Version der Air mit 75 Hz Bildwiederholfrequenz, Micro-OLED-Display (1920x1080) und 43° FOV. Sie wiegt 83 g und verfügt über eine 8MP-Kamera für Passthrough-Ansicht. Wie die Air wird sie übers Smartphone angesteuert und eignet sich für Alltags-AR-Anwendungen mit höherer Flüssigkeit.",
+  "highlights": [
+   "Sehr leicht (83 g)",
+   "75 Hz Micro-OLED",
+   "8MP-Kamera mit Passthrough"
+  ],
+  "audience": "Nutzer, die eine bessere Bildrate und Kamerafunktion in einer leichten, Phone-gesteuerten AR-Brille mögen."
+ },
+ "Jc6hpT2dK": {
+  "description": "Die Rokid AR Lite ist eine Standalone-AI-Brille von 2025 mit Micro-LED-Display (480x398, 23° FOV) und nur 48 g Gewicht. Sie bietet Inside-Out-Tracking, Snapdragon-6-Prozessor und eine 12MP-Kamera. Mit optionalem Akku-Dock erreicht sie bis zu 8 Stunden Nutzungsdauer und richtet sich an Nutzer, die ultraleichte, tragbare KI-Funktionen wünschen.",
+  "highlights": [
+   "Extrem leicht (48 g)",
+   "Standalone Snapdragon 6",
+   "Micro-LED 480x398, 23° FOV"
+  ],
+  "audience": "Nutzer, die eine ultraleichte, tragbare KI-Brille für ständige Verfügbarkeit suchen."
+ },
+ "HqqnCqpAR": {
+  "description": "Das Rokid AR Spatial ist ein PC-gebundenes XR-System mit drei Micro-OLED-Displays (1920x1200, 120 Hz) und 3-DoF-Tracking, das durch die Station 2 (mit Snapdragon) angetrieben wird. Es wiegt 75 g und bietet einen virtuellen 300-Zoll-Display. Mit Myopie-Korrektur (-0,00D bis -6,00D) und HiFi-Sprechern richtet es sich an Power-User mit hohem Display-Anspruch.",
+  "highlights": [
+   "Drei Micro-OLED-Displays 1920x1200, 120 Hz",
+   "300-Zoll virtueller Display",
+   "PC-gebunden via Station 2"
+  ],
+  "audience": "Power-User und Profis, die einen großen virtuellen Display mit PC-Leistung benötigen."
+ },
+ "WCyEdkzUk": {
+  "description": "Das Rokid Glass 2 ist ein Standalone-AR-Gerät von 2020 mit Waveguide-Optik und 1280x720 Auflösung (40° FOV). Es wiegt 96 g, verfügt über einen Amlogic-Prozessor und eine 1080p-Kamera. Mit 10.000-mAh-Akku erreicht es bis zu 8 Stunden Nutzung. Es ist ein etabliertes Gerät für räumliche AR-Anwendungen im Business- und Consumer-Bereich.",
+  "highlights": [
+   "Waveguide-Optik 1280x720",
+   "8 Stunden Akkulaufzeit (10.000 mAh)",
+   "1080p-Kamera, 40° FOV"
+  ],
+  "audience": "Business- und Konsumentennutzer, die ein bewährtes Standalone-AR-System brauchen."
+ },
+ "PAAgbYfc4": {
+  "description": "Die Rokid Glasses sind eine ultra-leichte Standalone-AR-Brille von 2025 mit dualen Micro-LED-Displays (480x398, 30° FOV) und nur 49 g Gewicht. Sie verfügen über Snapdragon-AR1-Prozessor, Inside-Out-Tracking und eine 12MP-Sony-Kamera. Mit dem 3.000-mAh-Case erreicht die 210-mAh-Batterie bis zu 2 Stunden, ideal für tragbare KI- und AR-Erlebnisse.",
+  "highlights": [
+   "Extrem leicht (49 g)",
+   "Dual Micro-LED 480x398",
+   "Snapdragon AR1 mit Inside-Out-Tracking"
+  ],
+  "audience": "Nutzer, die eine leichte, moderne Standalone-AR-Brille für Alltags-Anwendungen suchen."
+ },
+ "y-HjRHyLZ": {
+  "description": "Das Rokid Max ist eine Phone-tethered AR-Brille von 2023 mit Micro-OLED-Display (1920x1080, 120 Hz) und 50° FOV. Mit nur 75 g ist es eine mobile Plattform für Smartphone-basierte AR, die über USB-C DisplayPort angebunden wird. Es bietet keine eigene Rechenleistung, sondern nutzt die des Smartphones für AR-Anwendungen.",
+  "highlights": [
+   "Sehr leicht (75 g)",
+   "120 Hz Micro-OLED 1920x1080",
+   "50° FOV, Smartphone-gesteuert"
+  ],
+  "audience": "Nutzer, die eine hochfrequente, tragbare AR-Brille für Smartphone-Anwendungen brauchen."
+ },
+ "kQcRu82xv": {
+  "description": "Das Rokid Max 2 ist eine Phone-tethered AR-Brille von 2025 mit Micro-OLED-Display (1920x1080, 120 Hz) und 50° FOV. Mit 75 g Gewicht und USB-C DisplayPort 3.1 kann es von modernen Smartphones angesteuert werden. Es bietet keine integrierte Kamera und richtet sich an Nutzer, die eine hochfrequente, leichte Display-Erweiterung brauchen.",
+  "highlights": [
+   "120 Hz Micro-OLED 1920x1080",
+   "DisplayPort 3.1 USB-C",
+   "Sehr leicht (75 g)"
+  ],
+  "audience": "Nutzer, die eine hochwertiges Display-Upgrade für ihr Smartphone benötigen."
+ },
+ "3rjj5keYC": {
+  "description": "Das Rokid Max Pro ist eine Phone-tethered AR-Brille von 2024 mit Micro-OLED-Display (1920x1080, 120 Hz), 50° FOV und 76 g Gewicht. Sie nutzt den Qualcomm-XR2+-Prozessor, bietet Inside-Out-Tracking und eine Grayscale-Kamera für SLAM. Mit Dual-Sprechern und USB-C DisplayPort ist es eine fortgeschrittene Lösung für räumliche AR über das Smartphone.",
+  "highlights": [
+   "120 Hz Micro-OLED, Qualcomm XR2+ Gen 1",
+   "Inside-Out-Tracking mit SLAM-Kamera",
+   "Sehr leicht (76 g)"
+  ],
+  "audience": "Nutzer, die räumliche AR mit Tracking und Tiefenerkennung via Smartphone benötigen."
+ },
+ "oHsFwXqoj": {
+  "description": "Das Rokid Vision 2 ist ein Standalone-AR-Konzept aus 2021, das die Entwicklung nicht über das Stadium eines Developer-Prototyps hinaus kam und nie kommerziell veröffentlicht wurde. Es handelt sich um ein eingestelltes Produkt ohne verfügbare Spezifikationen und keine Marktpräsenz.",
+  "highlights": [
+   "Eingestelltes Entwicklungsprojekt",
+   "Nie kommerziell verfügbar",
+   "Kein Produkt mehr"
+  ],
+  "audience": "Nicht für den Kauf verfügbar."
+ },
+ "W1kyhxveC": {
+  "description": "Die Rokid X-Craft ist eine Standalone-AR-Brille mit Waveguide-Optik und 1280x720er Auflösung pro Auge. Ausgestattet mit dem Amlogic A311D Prozessor, bietet sie 5G-, Wi-Fi 6- und Bluetooth-Konnektivität sowie eine 8MP-Kamera für Durchsichtfunktionen. Mit einem 10.000-mAh-Akku ermöglicht sie circa 8 Stunden Akkulaufzeit.",
+  "highlights": [
+   "Wavelguide-Optik mit 40° FOV",
+   "10.000 mAh Akku (~8h)",
+   "8MP Kamera mit 1080p",
+   "5G und Wi-Fi 6 Support"
+  ],
+  "audience": "Entwickler und Enterprise-Nutzer mit Fokus auf erweiterte Konnektivität und lange Akkulaufzeit."
+ },
+ "8SjwcAQOr": {
+  "description": "Das Samsung Galaxy XR ist ein hochauflösendes XR-Headset mit Micro-OLED-Displays (3552x3840 pro Auge) und Pancake-Optik. Es bietet Full-Eye-Tracking und Hand-Tracking mit Inside-out-Tracking, wiegt 545g und wird über ein externes Batterie-Pack versorgt (ca. 2–2,5 Stunden Laufzeit). Das Android XR Betriebssystem macht es zum erste Android-XR-Headset von Samsung.",
+  "highlights": [
+   "3552x3840 Micro-OLED (90 Hz)",
+   "Eye-Tracking und Hand-Tracking",
+   "Snapdragon XR2+ Gen 2",
+   "Externe Batterie (2–2,5h)"
+  ],
+  "audience": "Early Adopter und XR-Enthusiasten, die Samsungs Android XR-Ökosystem erkunden möchten."
+ },
+ "o1Kzyd1z_": {
+  "description": "Die Shadow Creator Action One ist eine eigenständige AR-Brille mit OLED-Display und 1280x720er Auflösung. Sie nutzt den Qualcomm Snapdragon 835 Prozessor, verfügt über Inside-out-Tracking, eine 13MP-Kamera und wiegt 328g. Die 4000-mAh-Batterie gewährleistet portable Nutzung für Extended-Reality-Anwendungen.",
+  "highlights": [
+   "OLED-Display (1280x720)",
+   "Snapdragon 835",
+   "13MP Kamera",
+   "Inside-out-Tracking"
+  ],
+  "audience": "AR-Enthusiasten und Entwickler, die ein eigenständiges Gerät mit stabiler Performance anstreben."
+ },
+ "nzYmv8egK": {
+  "description": "Die Shadow Creator Halomini ist eine leichte AR-Brille mit OLED-Display und Waveguide-Optik (40° FOV). Das Gerät bietet Inside-out-Tracking, eine 13MP-Kamera und wiegt 370g. Mit 3200-mAh-Akku ist sie für mobile AR-Szenarien ausgerichtet, ideal für Augmented-Reality-Anwendungen im Feld.",
+  "highlights": [
+   "OLED mit Waveguide-Optik",
+   "40° FOV",
+   "13MP Kamera",
+   "Inside-out-Tracking"
+  ],
+  "audience": "Mobile AR-Nutzer, die eine leichte Brille mit natürlicher Optik bevorzugen."
+ },
+ "oq9fGnG34": {
+  "description": "Die Sharge Loomos ist eine innovative AI-Brille mit Micro-LED-Display (1920x1080) und Waveguide-Optik mit 123° FOV. Extrem leicht bei nur 49g und mit integriertem GPT-4o, richtet sie sich an KI-gestützte Anwendungen. Die 450-mAh-Batterie bietet bis zu 40 Stunden Standby-Zeit, perfekt für ständige tragbare KI-Assistenz.",
+  "highlights": [
+   "Nur 49g – extrem leicht",
+   "Micro-LED (1920x1080, 123° FOV)",
+   "GPT-4o Integration",
+   "40 Stunden Standby"
+  ],
+  "audience": "KI-Enthusiasten und Nutzer, die eine ultraleichte, tragbare KI-Assistentin mögen."
+ },
+ "Pw1ENb4d8": {
+  "description": "Das Shiftall MeganeX superlight 8K ist ein PC-VR-Headset mit beeindruckender 4K-Auflösung pro Auge (3552x3840) und Micro-OLED-Displaytechnologie. Mit nur 179g ist es das leichteste 8K-PC-VR-System und bietet Pancake-Optik für kompakte Bauweise. Es wird per USB-C DisplayPort an den PC angebunden und hat keine interne Batterie.",
+  "highlights": [
+   "3552x3840 Micro-OLED pro Auge (90 Hz)",
+   "Nur 179g – leichtestes 8K-Headset",
+   "Pancake-Optik",
+   "PC-gebunden (USB-C DisplayPort)"
+  ],
+  "audience": "PC-VR-Gamer und Enthusiasten, die maximale Auflösung bei minimalem Gewicht bevorzugen."
+ },
+ "Hz5LNjh9Y": {
+  "description": "Die Snap Spectacles (2021) ist eine werkseitig eingestellte AR-Brille mit Waveguide-Optik, 480x564er Auflösung und 120Hz Refresh-Rate. Das Gerät war ausschließlich für Entwickler konzipiert und wurde nicht an Verbraucher vermarktet. Mit 134g Gewicht und Dual-RGB-Kameras ist es eine frühe Exploration von tragbarem AR, ist aber nicht mehr im Handel erhältlich.",
+  "highlights": [
+   "480x564 bei 120 Hz",
+   "Dual RGB-Kameras",
+   "134g",
+   "EOL – Developer-only Release (2021)"
+  ],
+  "audience": "AR-Historiker und Entwickler, die frühe Snapchat-AR-Hardware untersuchen möchten (kein Verkauf)."
+ },
+ "NK2ZBl7SV": {
+  "description": "Die Solos AirGo Vision ist eine ultraleichte AR-Brille (42g) mit Micro-OLED-Display und Birdbath-Optik. Sie ist mit ChatGPT-4o integriert und bietet ein modulares Design mit austauschbaren Rahmen. Trotz ihrer Leichtigkeit bietet sie Open-Ear-Stereo-Lautsprecher und 6–10 Stunden Akkulaufzeit für verlängerte Nutzung.",
+  "highlights": [
+   "Nur 42g – extrem leicht",
+   "Micro-OLED mit Birdbath-Optik",
+   "ChatGPT-4o integriert",
+   "Modulares Design, austauschbare Rahmen"
+  ],
+  "audience": "AI-Smart-Glasses-Nutzer, die maximale Leichtigkeit und ChatGPT-Integration bevorzugen."
+ },
+ "wGtNi7Owy": {
+  "description": "Das Somnium VR1 ist ein modulares, hochauflösendes PC-VR-Headset mit QLED-Mini-LED-Technologie und asphärischen Linsen (2880x2880 pro Auge, 120Hz). Mit 6DoF-Inside-out-Tracking, Eye- und Hand-Tracking sowie optionalem Passthrough bietet es professionelle VR-Erfahrung. Das Open-Source-Design und die Tethering-Architektur sprechen PC-VR-Power-User an.",
+  "highlights": [
+   "2880x2880 QLED pro Auge (120 Hz)",
+   "6DoF Inside-out & Eye-Tracking",
+   "Modulares, Open-Source-Design",
+   "Optional natives Passthrough"
+  ],
+  "audience": "PC-VR-Profis, die Premium-Auflösung und modulare Erweiterbarkeit benötigen."
+ },
+ "legacy-sonysmarteyeglassde": {
+  "description": "Die Sony SmartEyeglass (SED-E1) ist eine werkseitig eingestellte Developer Edition aus 2015 mit monochromatischem OLED-Display und holographischer Waveguide-Optik. Mit 77g Gewicht und 3MP-Kamera war sie eine frühe Erkundung von tragbarem Android-AR. Das Gerät ist nicht mehr in Verkauf und nur in refurbished Form erhältlich.",
+  "highlights": [
+   "Monochrom-OLED (419x138)",
+   "Holographische Waveguide-Optik",
+   "77g",
+   "EOL seit ca. 2015 – Developer Edition"
+  ],
+  "audience": "AR-Historiker und Forscher, die frühe Sony-AR-Hardware untersuchen (nicht zum Verkauf)."
+ },
+ "MRE_j97gq": {
+  "description": "Die Spacetop ist eine eingestellte AR-Brille von Sichtful mit OLED-Display (1920x1080, 60 Hz), Birdbath-Optik und einem 52° Sichtfeld. Sie wiegt 106 g und nutzt den Snapdragon 865. Das Modell wurde 2023 angekündigt, ist aber nicht mehr erhältlich; Sichtful konzentriert sich nun auf Software-Lösungen für andere AR-Brillen.",
+  "highlights": [
+   "Eingestellt (Hardware-Produktion beendet)",
+   "OLED-Display, 1920x1080, 60 Hz",
+   "106 g Gewicht",
+   "Snapdragon 865, Birdbath-Optik"
+  ],
+  "audience": "Nicht mehr für Neukauf; historisches Referenzmaterial."
+ },
+ "wrjEu415W": {
+  "description": "Die Spacetop G1 sollte die nächste Generation mit Micro-OLED-Display (1920x1080, 90 Hz) und modernerem Snapdragon QCS8550 bieten, wiegt nur 80 g. Nach Vorbestellung im Mai 2024 wurde das Hardwaremodell jedoch im Oktober 2024 storniert; Sichtful erstattet Zahlungen zurück.",
+  "highlights": [
+   "Eingestellt (Hardware storniert Oktober 2024)",
+   "Micro-OLED, 1920x1080, 90 Hz, 80 g",
+   "Wi-Fi 7, 5G-Modem",
+   "8 Stunden Akkulaufzeit"
+  ],
+  "audience": "Vorbesteller erhalten Rückerstattung."
+ },
+ "UIRKkbXSO": {
+  "description": "Die TCL NXTWEAR G ist eine telefon-gekoppelte AR-Brille mit Micro-OLED-Display (1920x1080, 60 Hz), Birdbath-Optik und 47° Sichtfeld. Mit 100 g ist sie handlich und wird über USB-C mit dem Smartphone verbunden. Seit 2021 verfügbar, bietet sie ein solides Einstiegsangebot für AR-Video und Gaming.",
+  "highlights": [
+   "Micro-OLED, 1920x1080, 60 Hz",
+   "100 g Gewicht",
+   "Telefon-gekoppelt via USB-C",
+   "47° Sichtfeld"
+  ],
+  "audience": "AR-Interessierte mit modernem Smartphone für Streaming und Gaming."
+ },
+ "x7KWR1zVL": {
+  "description": "Die TCL NXTWEAR S ist eine schlanke, telefon-gekoppelte AR-Brille mit Micro-OLED (1920x1080, 60 Hz) und 47° Sichtfeld. Bei nur 75 g Gewicht und dynamischen Stereo-Lautsprechern bietet sie mobilen Wiedergabefokus. Seit Februar 2023 verfügbar, wird per USB-C DisplayPort mit dem Smartphone verbunden.",
+  "highlights": [
+   "Sehr leicht (75 g)",
+   "Micro-OLED, 1920x1080, 60 Hz",
+   "Dynamische Stereo-Lautsprecher",
+   "47° Sichtfeld"
+  ],
+  "audience": "Smartphone-Nutzer, die eine tragbare AR-Display-Lösung suchen."
+ },
+ "Dnsbasmiv": {
+  "description": "Die TCL NXTWEAR V ist ein standalone XR-Headset mit LCD-Display (2280x2280, 90 Hz) und Pancake-Linsen für ein breites 108° Sichtfeld. Es nutzt den Snapdragon XR2 und bietet 6DoF Inside-Out-Tracking sowie Dual-RGB-Passthrough-Kameras. Die aktuelle Verfügbarkeit ist unklar.",
+  "highlights": [
+   "108° Sichtfeld (sehr breit)",
+   "2280x2280 pro Auge, 90 Hz",
+   "Inside-Out-Tracking mit Dual-Kameras",
+   "Standalone mit Snapdragon XR2"
+  ],
+  "audience": "Enterprise und Content-Creator mit Bedarf für breites Sichtfeld."
+ },
+ "xo3cio_3V": {
+  "description": "Die TCL RayNeo X2 ist ein standalone AR-Headset mit Micro-LED-Waveguides und 120 Hz Refresh-Rate, 25° Sichtfeld und 120 g Gewicht. Mit Snapdragon XR2 Gen 1, 1000 nits Helligkeit und 16MP-Kamera bietet es modernes AR-Tracking. Seit März 2024 verfügbar, kostet $899.",
+  "highlights": [
+   "Micro-LED-Waveguides, 120 Hz",
+   "120 g Gewicht",
+   "1000 nits Helligkeit",
+   "16MP RGB-Kamera, Inside-Out-Tracking"
+  ],
+  "audience": "Professional AR-Nutzer mit hohem Anspruch an Tracking und Helligkeit."
+ },
+ "rNPYFiTHx": {
+  "description": "Die TCL RayNeo X2 Lite ist eine vereinfachte Variante mit Micro-LED-Waveguides (60 Hz, 30° Sichtfeld) und Snapdragon AR1 Gen 1. Mit 12MP-Kamera, Wi-Fi 6E und etwa 3 Stunden Akkulaufzeit bietet sie ein leichteres, preiswerteres Modell. Seit September 2024 verfügbar.",
+  "highlights": [
+   "Micro-LED-Waveguides, 60 Hz",
+   "Snapdragon AR1 Gen 1",
+   "Wi-Fi 6E, Bluetooth 5.3",
+   "~3 Stunden Akkulaufzeit"
+  ],
+  "audience": "AR-Anwender, die ein Budget-freundlicheres Standalone-Gerät bevorzugen."
+ },
+ "sMDYLv4VB": {
+  "description": "Die ThirdEye Razor MR Glasses sind telefon-gekoppelte AR-Brille mit Birdbath-Optik und 43° Sichtfeld. Mit 1920x1080-Auflösung und 70 Hz wird das Display per DisplayPort oder USB-C verbunden. Das 85 g schwere Gerät verfügt über räumliches Audio und 8 Stunden Akkulaufzeit. Seit Dezember 2022 verfügbar.",
+  "highlights": [
+   "85 g Gewicht",
+   "1920x1080, 70 Hz, 43° Sichtfeld",
+   "DisplayPort/USB-C Verbindung",
+   "8 Stunden Akkulaufzeit"
+  ],
+  "audience": "Professional AR-Nutzer mit DisplayPort-ausgestatteten Systemen."
+ },
+ "-pmNU-it0": {
+  "description": "Die ThirdEye X2 ist ein eigenständiges AR-Headset mit Waveguide-Optik und 42° Sichtfeld (1280x720, 60 Hz). Das 312 g schwere Gerät nutzt einen Lion's Mouth XR1-Prozessor und bietet Inside-Out-Tracking mit 13MP-Kamera. Die Batterie hält etwa 2 Stunden. Seit Oktober 2018 am Markt.",
+  "highlights": [
+   "312 g Gewicht",
+   "1280x720, 60 Hz, 42° Sichtfeld",
+   "Inside-Out-Tracking",
+   "13MP RGB-Kamera"
+  ],
+  "audience": "Enterprise-Nutzer und Frühadopter mit Bedarf für Mobilität."
+ },
+ "Rz1MDcJer": {
+  "description": "Die Thunderbird Air Plus ist ein standalone Micro-OLED-Headset (1920x1080, 120 Hz) mit Birdbath-Optik und 49° Sichtfeld. Mit nur 87 g Gewicht und 600 nits Helligkeit bietet sie ein kompaktes, hochfrequentes Display-Erlebnis. Angekündigt Mai 2023, Preis $2499.",
+  "highlights": [
+   "Sehr leicht (87 g)",
+   "Micro-OLED, 1920x1080, 120 Hz",
+   "600 nits Helligkeit",
+   "49° Sichtfeld"
+  ],
+  "audience": "Premium-Nutzer, die Gewicht und schnelle Bildwiederholung priorisieren."
+ },
+ "0WBse43zY": {
+  "description": "Die Thunderbird V3 ist eine leichte KI-Fotografie-Brille mit Micro-LED-Display und 39 g Gewicht, die auf der CES 2025 vorgestellt wurde. Sie bietet eine integrierte 12-MP-Kamera (Sony IMX681) mit 4K-Aufzeichnung und Inside-Out-Tracking. Mit einer Akkulaufzeit von etwa 7 Stunden und dem Snapdragon AR1 als Prozessor richtet sie sich an mobile Nutzer, die dokumentieren und KI-gestützte Fotofunktionen wünschen.",
+  "highlights": [
+   "Sehr leicht (39 g)",
+   "12-MP-Kamera mit 4K-Video",
+   "Micro-LED-Display",
+   "~7 Stunden Akkulaufzeit"
+  ],
+  "audience": "Mobile Nutzer und Content Creator, die KI-gestützte Fotografie und Dokumentation priorisieren."
+ },
+ "Yp1UjtE3P": {
+  "description": "Die Tilt Five ist eine PC-gebundene AR-Brille mit projektorbasiertem LCoS-Display und 110° FOV, die markerbasierte räumliche Verfolgung nutzt. Mit 1280x720 Auflösung, 100 g Gewicht und 8-MP-Infrarotkamera eignet sie sich als spezialisierte Gaming- und Anwendungsplattform für PC-genutzte Szenarien. Der Intel-Movidius-Prozessor und SteamVR-Unterstützung sind für PC-Gamer relevant.",
+  "highlights": [
+   "110° Sichtfeld",
+   "Markerbasierte Positionsverfolgung",
+   "PC-gebunden über USB 3.0/USB-C",
+   "8-MP-Infrarotkamera"
+  ],
+  "audience": "PC-Gaming-Enthusiasten mit etabliertem Trackingsystem und spezialisiertem Infrarot-Tracking-Setup."
+ },
+ "rAxPHOG0_": {
+  "description": "Die TQSKY T1 ist eine Smartphone-gebundene AR-Brille mit OLED-Birdbath-Optik, 1920x1080 Auflösung und 60 Hz Bildwiederholfrequenz. Mit 79 g Gewicht, 5000-mAh-Batterie (interne T-Box, ca. 3h Laufzeit) und einstellbarer Myopie-Anpassung (0 bis -6.0D) richtet sie sich an Smartphone-User. Die Helligkeit von 1800 Nits unterstützt die Sichtbarkeit auch bei Tageslicht.",
+  "highlights": [
+   "1920x1080 OLED-Display",
+   "1800 Nits Helligkeit",
+   "Myopie-Anpassung (0 bis -6,0D)",
+   "5000 mAh Batterie (~3h Laufzeit)"
+  ],
+  "audience": "Smartphone-Nutzer, die eine tragbare AR-Display mit softwaregestützter Sehstärkenanpassung suchen."
+ },
+ "NwVarjoXR4": {
+  "description": "Das Varjo XR-4 ist ein hochwertiges PC-XR-Headset mit Mini-LED- und LCD-Hybrid-Display, 3840x3744 Auflösung pro Auge und 90 Hz. Mit 1021 g Gewicht, Eye- und Hand-Tracking, hochwertiger Farbdurchsicht und 200 Nits Helligkeit ist es für professionelle Anwendungen konzipiert. Der SteamVR-kompatible Inside-Out-Tracking und die rauschunterdrückenden Mikrofone unterstützen anspruchsvolle Mixed-Reality-Anwendungen.",
+  "highlights": [
+   "3840x3744 Auflösung pro Auge",
+   "Eye- und Hand-Tracking",
+   "Hochwertige Farbdurchsicht",
+   "PC-gebunden (DisplayPort/USB-C)"
+  ],
+  "audience": "Professionelle Entwickler und Unternehmen, die hohe Bildqualität und präzise Verfolgung für MR-Anwendungen benötigen."
+ },
+ "RanJuGgtP": {
+  "description": "Die Viture Beast ist eine Standalone/PC-Hybrid-AR-Brille mit Micro-OLED-Display, 1920x1200 Auflösung und 120 Hz Bildwiederholfrequenz. Mit 58° FOV, 3DoF-Tracking und USB-C-Magnetkonnekt (keine Akku) ist sie für Nutzer ohne PC-Tethering ausgelegt. Seit Juli 2025 angekündigt, ab Dezember 2025 verfügbar; sie wird als Flaggschiff-Modell mit fortschrittlicher Optik positioniert.",
+  "highlights": [
+   "58° Sichtfeld (breit)",
+   "120 Hz Micro-OLED",
+   "1920x1200 Auflösung",
+   "USB-C magnetisch (kein Akku)"
+  ],
+  "audience": "Mobile XR-Enthusiasten, die breites Sichtfeld und hohe Bildwiederholfrequenz ohne Akkugewicht schätzen."
+ },
+ "ZTM2WqVqk": {
+  "description": "Die Viture Luma ist eine kompakte Smartphone-gebundene AR-Brille mit Micro-OLED-Birdbath-Optik, 1920x1200 Auflösung und 120 Hz. Mit 77 g Gewicht, 3DoF-Tracking und 50° FOV bietet sie ein leichtgewichtiges Erlebnis für mobile Nutzer ohne Kamera. Die 1000-Nits-Helligkeit unterstützt Tageslichtnutzung, während die USB-C-Verbindung (ohne Akku) die Abhängigkeit vom Host-Telefon unterstreicht.",
+  "highlights": [
+   "77 g (sehr leicht)",
+   "120 Hz Micro-OLED",
+   "1000 Nits Helligkeit",
+   "3DoF-Tracking"
+  ],
+  "audience": "Mobile Nutzer, die eine ultraleichte Smartphone-AR-Brille ohne Kamera und ohne eigenen Akku suchen."
+ },
+ "dueX8NI9A": {
+  "description": "Die Viture Luma Pro ist eine Smartphone-gebundene AR-Brille mit Micro-OLED-Display, 1920x1200 Auflösung und 120 Hz. Mit 79 g Gewicht, Inside-Out-Tracking und integrierter 12-MP-RGB-Kamera erweitert sie die Luma um Kamera-Passthrough und Eye/Hand-Tracking. Die 1000-Nits-Helligkeit und USB-C-Magnetkonnekt (kein Akku) positionieren sie als tragbare erweiterte Realität für Smartphones.",
+  "highlights": [
+   "12-MP-Kamera mit Passthrough",
+   "120 Hz Micro-OLED",
+   "Eye/Hand-Tracking",
+   "79 g Gewicht"
+  ],
+  "audience": "Smartphone-Nutzer, die Kamera-Passthrough und Tracking für immersivere AR-Erfahrungen benötigen."
+ },
+ "1EJmfopvE": {
+  "description": "Die Viture Luma Ultra ist die Premium-Variante der Luma-Serie mit Micro-OLED-Display, 1920x1200 Auflösung und 120 Hz. Sie bietet zusätzlich zu Eye/Hand-Tracking eine duale Grauskala-Tiefenkamera neben der 12-MP-RGB-Kamera, was erweiterte Tiefenerkennung ermöglicht. Mit 77 g Gewicht und mechanischem IPD-Bereich 58–70 mm ist sie für fortgeschrittene AR-Anwendungen mit Tiefensensing ausgerichtet.",
+  "highlights": [
+   "Duale Tiefenkameras + 12-MP-RGB",
+   "120 Hz Micro-OLED",
+   "Eye/Hand-Tracking mit Tiefensensing",
+   "77 g (aktualisiert)"
+  ],
+  "audience": "Fortgeschrittene AR-Entwickler, die Echtzeit-Tiefensensing und Objekterkennung mit mobilem Display nutzen möchten."
+ },
+ "5BNm8a3Zr": {
+  "description": "Die Viture One ist eine Smartphone-gebundene AR-Brille mit Micro-OLED-Birdbath-Optik, 1920x1080 Auflösung und 60 Hz. Mit 78 g Gewicht, 43° FOV und 3DoF-Tracking ist sie eine ältere Generation (März 2022), die durch die Luma-Serie ersetzt wurde. Sie bietet eine RGB-Frontkamera und USB-C-Magnetkonnekt; kein Akku erforderlich.",
+  "highlights": [
+   "78 g Gewicht",
+   "1920x1080 Micro-OLED",
+   "43° Sichtfeld",
+   "3DoF-Tracking"
+  ],
+  "audience": "Smartphone-Nutzer, die ein leichtes, älteres AR-Display mit grundlegenden Funktionen suchen (durch Luma-Serie abgelöst)."
+ },
+ "jjR57q0sj": {
+  "description": "Die Viture One Lite war eine Budget-Smartphone-AR-Brille mit Micro-OLED-Birdbath-Optik, 1920x1080 Auflösung und 60 Hz, gestartet Januar 2024. Mit 76 g Gewicht und 43° FOV bot sie eine Einsteiger-Option ohne Kamera. Im Januar 2026 wurde sie eingestellt und durch die Luma-Serie ersetzt; derzeit nicht mehr verfügbar.",
+  "highlights": [
+   "76 g (leicht)",
+   "1920x1080 Micro-OLED",
+   "43° Sichtfeld",
+   "Eingestellt Januar 2026"
+  ],
+  "audience": "Keine aktuelle Zielgruppe (Produkt eingestellt Januar 2026; durch Viture Luma ersetzt)."
+ },
+ "_IiTfLZMZ": {
+  "description": "Die Viture Pro ist eine leichte AR-Brille (77 g) mit Micro-OLED-Display und Birdbath-Optik, die sich an Smartphones anschließt. Sie bietet 1920x1080er Auflösung bei 120 Hz Bildwiederholfrequenz und dient als tragbarer Bildschirm für Medienkonsum und mobile Inhalte.",
+  "highlights": [
+   "Sehr leicht (77 g)",
+   "120 Hz Bildwiederholfrequenz",
+   "Micro-OLED Display"
+  ],
+  "audience": "Nutzer, die ein tragbares Smartphone-Display für Streaming und Medienkonsum suchen."
+ },
+ "u1Gt3j4C1": {
+  "description": "Die Vuzix Blade 2 ist eine Standalone-AR-Brille mit LED-LCoS-Optik und Waveguide-Design. Mit 480x480 Auflösung, 90 g Gewicht und einer 8-MP-Kamera mit 1080p-Videoaufnahme ist sie für Nutzer entwickelt, die mobile AR-Anwendungen und Videoaufnahmen benötigen.",
+  "highlights": [
+   "Leicht (90 g)",
+   "8-MP-Kamera mit 1080p",
+   "Standalone-Betrieb"
+  ],
+  "audience": "Business- und Enterprise-Nutzer, die mobile AR mit Kamerafunktion benötigen."
+ },
+ "1PE1xcEFb": {
+  "description": "Die Vuzix Blade Upgraded ist eine veraltete Standalone-AR-Brille aus 2020, die nicht mehr hergestellt wird. Sie bot 480x853 Auflösung, 105 g Gewicht und eine 8-MP-Kamera, wird aber nicht mehr im aktuellen Produktkatalog vertrieben.",
+  "highlights": [
+   "Eingestellt/EOL",
+   "8-MP-Kamera",
+   "480x853 Auflösung"
+  ],
+  "audience": "Nicht mehr empfohlen; Legacy-Modell, Neugeräte sollten bevorzugt werden."
+ },
+ "LDF8zLQkE": {
+  "description": "Die Vuzix LX1 ist eine hochwertige Standalone-AR-Brille speziell für Warehouse- und Logistikbetriebe mit Sony-OLED-Display und 4K-Kamera. Mit 222 g Gewicht, Innen-Out-Tracking und bis zu 10 Stunden Akkulaufzeit bietet sie lange Einsatzdauer für industrielle Szenarien.",
+  "highlights": [
+   "4K-Kamera",
+   "10 Stunden Akkulaufzeit",
+   "Für Warehouse-Einsatz gebaut"
+  ],
+  "audience": "Enterprise und Logistik-Operationen, die robuste AR-Geräte für lagerverwaltungsaufgaben benötigen."
+ },
+ "legacy-vuzixm100": {
+  "description": "Das Vuzix M100 ist ein Legacy-Gerät aus 2013 und längst EOL. Diese Pionier-AR-Brille wog 372 g und bot nur 400x240er WQVGA-Auflösung ohne Kamera, gehört aber zur Technik-Historie und ist nicht mehr verfügbar.",
+  "highlights": [
+   "Eingestellt/Legacy",
+   "Aus 2013",
+   "Ohne Kamera"
+  ],
+  "audience": "Nur noch von historischem Interesse; nicht für Neukauf empfohlen."
+ },
+ "r2UX2RNAB": {
+  "description": "Das Vuzix M400 ist eine hochwertige industrielle AR-Brille mit OLED-Display und 12,8-MP-4K-Kamera (30 fps). Bei 180 g Gewicht und bis zu 12 Stunden Betrieb ist es ein bewährtes Standard-Gerät für Enterprise-Szenarien wie Wartung, Reparatur und Fernunterstützung.",
+  "highlights": [
+   "12,8 MP 4K-Kamera (30 fps)",
+   "Bis 12 Stunden Akkulaufzeit",
+   "OLED mit Waveguide-Optik"
+  ],
+  "audience": "Enterprise und Industriekunden, die bewährte AR mit robuster Kameratechnik benötigen."
+ },
+ "AS20GfYCt": {
+  "description": "Das Vuzix M4000 ist eine Premium-AR-Brille mit DLP-Waveguide-Optik und 28° FOV sowie 854x480 Auflösung. Mit 12,8-MP-4K-Kamera und bis zu 12 Stunden Betrieb richtet es sich an anspruchsvolle Enterprise-Anwender mit höheren Anforderungen.",
+  "highlights": [
+   "12,8 MP 4K-Kamera",
+   "DLP-Optik mit 28° FOV",
+   "Bis 12 Stunden Laufzeit"
+  ],
+  "audience": "High-End-Enterprise-Nutzer, die Premium-Bildqualität und erweiterte Funktionen benötigen."
+ },
+ "fdx61QDyF": {
+  "description": "Das Vuzix M400C ist eine PC-gebundene AR-Brille mit OLED-Display und 13-MP-Autofokus-Kamera (1080p 60 fps oder 4K 30 fps). Mit 68 g Gewicht und DisplayPort-Verbindung ermöglicht es kompakte AR-Anwendungen an Desktop-Umgebungen.",
+  "highlights": [
+   "13 MP Autofocus-Kamera",
+   "1080p 60 fps / 4K 30 fps",
+   "Leicht (68 g), PC-tethered"
+  ],
+  "audience": "PC-User und Enterprise-Anwendungen, die tragbare AR mit professioneller Videofunktion benötigen."
+ },
+ "PjuDk6-Sz": {
+  "description": "Das Vuzix Shield ist eine Standalone-AR-Brille mit Micro-LED-Waveguide-Optik, 30° FOV und dual 13-MP-4K-Kameras (30 fps). Mit 1268x720 Auflösung und Dual-Temple-Batterien ist es für mobile AR-Anwendungen mit hohen visuellen Anforderungen ausgelegt.",
+  "highlights": [
+   "Dual 13 MP 4K-Kameras (30 fps)",
+   "Micro-LED mit Waveguides",
+   "1268x720 Auflösung"
+  ],
+  "audience": "Enterprise-Nutzer, die Dual-Kamera-AR mit hoher Bildqualität und Mobilität benötigen."
+ },
+ "wHlIeEbab": {
+  "description": "Die Xiaomi Mijia ist eine eingestellte Standalone-AR-Kamera-Brille (EOL 2023) mit Micro-OLED-Display und dualer Kamera: 50 MP Hauptlinse plus 8 MP Periskop mit 5x optischem Zoom. Mit 100 g Gewicht war sie als tragbares Videoaufnahmegerät konzipiert.",
+  "highlights": [
+   "50 MP + 8 MP Periskop-Kamera",
+   "5x optischer Zoom",
+   "Eingestellt/nicht verfügbar"
+  ],
+  "audience": "Nur noch im Sekundärmarkt verfügbar; Interessenten für Premium-Kamera-AR sollten Alternative suchen."
+ },
+ "Dp6TLH4Gv": {
+  "description": "Diskontinuierte AR-Brille von Xiaomi aus dem Jahr 2021 mit Micro-LED-Display und Waveguide-Optik. Das Gerät bot 640x480 Auflösung bei 50 Hz Bildwiederholfrequenz und wog nur 51 Gramm. Mit integrierter 5-MP-Kamera und Android-Betriebssystem war es als Smartphone-Zubehör konzipiert.",
+  "highlights": [
+   "Micro-LED-Display",
+   "Sehr leicht (51 g)",
+   "Waveguide-Optik",
+   "EOL / Nicht mehr verfügbar"
+  ],
+  "audience": "Interessenten für kompakte AR-Lösungen aus dem frühen Massenmarkt-Zeitalter (2021-2022)."
+ },
+ "rR39x5VXi": {
+  "description": "Standalone-AR-Brille von Ximmerse mit LCD-Display und gekrümmten Spiegeln zur optischen Projektion. Mit 2160x2160 Auflösung pro Auge, 70° horizontalem Sichtfeld und Inside-Out-Tracking wiegt das Gerät 590 Gramm. Der Snapdragon XR2 Prozessor ermöglicht native Anwendungen ohne externe Verbindung.",
+  "highlights": [
+   "2160x2160 Auflösung pro Auge",
+   "70° Sichtfeld",
+   "Inside-Out-Tracking",
+   "590 g (schwer)"
+  ],
+  "audience": "Professional und Enterprise-Nutzer, die hohe Auflösung in einer Standalone-Lösung benötigen."
+ },
+ "oRvXUswBC": {
+  "description": "AR-Brille von Xreal mit 1200p Micro-OLED-Auflösung und Birdbath-Optik, 2026 vorgestellt. Mit 52° Sichtfeld, 120 Hz Bildwiederholfrequenz, 82 Gramm Gewicht und 3-DoF-Tracking bietet sie eine leichte, an das Smartphone tetherte Lösung. Die 700-nits-Helligkeit ermöglicht Verwendung bei Tageslicht.",
+  "highlights": [
+   "1200p Micro-OLED",
+   "52° Sichtfeld",
+   "82 g (leicht)",
+   "120 Hz, 700 nits"
+  ],
+  "audience": "Smartphone-Nutzer und Content-Konsumenten, die mobile AR-Erlebnisse mit hoher Auflösung und Kontrast suchen."
+ },
+ "PnnMj9eH3": {
+  "description": "Diskontinuierte AR-Brille von Xreal (seit 23.12.2025), mit Micro-OLED-Display und Birdbath-Optik. Sie bot 1920x1080 Auflösung, 120 Hz Bildwiederholfrequenz, 46° Sichtfeld und 72 Gramm Gewicht. Die Brille war Smartphone-tethert und bot 500 nits Helligkeit und Open-Ear-Audio.",
+  "highlights": [
+   "Micro-OLED-Display",
+   "1920x1080, 120 Hz",
+   "72 g (sehr leicht)",
+   "EOL / Dezember 2025 eingestellt"
+  ],
+  "audience": "Frühe Adopter von High-End-AR aus dem Zeitraum 2023-2025 (nicht mehr aktiv verfügbar)."
+ },
+ "E7k3-VKas": {
+  "description": "Diskontinuierte Premium-Variante der Xreal Air 2 mit electrochromischen (dimmbaren) Linsen für Helligkeitskontrolle. Mit Micro-OLED-Display, 1920x1080 Auflösung, 120 Hz und 72 Gramm bot sie Dual-Lautsprecher mit Bass-Boost. Die Brille war ebenfalls seit 23.12.2025 eingestellt.",
+  "highlights": [
+   "Electrochromic-Linsen",
+   "Dual-Lautsprecher mit Bass-Boost",
+   "72 g (sehr leicht)",
+   "EOL / Dezember 2025 eingestellt"
+  ],
+  "audience": "Premium-Nutzer, die Helligkeitskontrolle und verbesserte Audioqualität wertschätzten (nicht mehr verfügbar)."
+ },
+ "LUx-f7dXc": {
+  "description": "Diskontinuierte Premium-AR-Brille von Xreal mit Micro-OLED, 1920x1080 Auflösung und 120 Hz. Mit 52° Sichtfeld, 80 Gramm und dualen 3D-Tiefenkameras für Inside-Out-Tracking bot sie umfangreiche Mixed-Reality-Fähigkeiten. Das Gerät war 2025 eingestellt, Support läuft aber weiter.",
+  "highlights": [
+   "Micro-OLED, 1920x1080, 120 Hz",
+   "Dual 3D-Tiefenkameras",
+   "80 g (sehr leicht)",
+   "EOL / 2025 eingestellt"
+  ],
+  "audience": "Professional und Enthusiasten, die fortgeschrittenes Mixed-Reality-Tracking benötigten (nicht mehr aktiv)."
+ },
+ "BhXHG0n1d": {
+  "description": "Modulare Kamera-Zubehör für die Xreal-One-Serie (nicht eigenständiges Gerät). Mit 12-MP-Sensor ermöglicht sie 6-DoF-Inside-Out-Tracking und 4K-60fps-Videoaufnahmen sowie fotografische Funktionen für die Xreal-Brillen. Das POGO-Pin-Interface ermöglicht einfaches Anbringen und Abnehmen.",
+  "highlights": [
+   "12 MP Kamera",
+   "4K 60fps Video",
+   "6DoF Inside-Out-Tracking",
+   "99 USD (Zubehör)"
+  ],
+  "audience": "Xreal-One-Besitzer, die ihre AR-Brillen mit 6-DoF-Tracking und Kamerafunktionalität erweitern möchten."
+ },
+ "AhlOXFzVW": {
+  "description": "AR-Brille von Xreal seit Dezember 2024, mit Micro-OLED-Display und Birdbath-Optik. Die 1920x1080 Auflösung, 120 Hz, 50° Sichtfeld und 84 Gramm bieten eine leichte Smartphone-tetherte Lösung. Der Xreal X1-Chip, 600 nits Helligkeit und Bose-Lautsprecher sowie 4-Mikrofon-Array ermöglichen hochwertige Audio-Video-Erlebnisse.",
+  "highlights": [
+   "Micro-OLED, 1920x1080, 120 Hz",
+   "50° Sichtfeld, 84 g (leicht)",
+   "Bose Lautsprecher",
+   "Xreal X1 Chip, 600 nits"
+  ],
+  "audience": "Mainstream-Nutzer und Mobile-Enthusiasten, die kompakte, hochwertige AR-Displays für Smartphone-Nutzung suchen."
+ },
+ "3uOUBJ6hx": {
+  "description": "Premium-Variante der Xreal One seit April 2025 mit identischem 1920x1080 Micro-OLED-Display und 120 Hz, aber größerem 57° Sichtfeld und 87 Gramm. Mit erhöhter 700-nits-Helligkeit, mechanischer IPD-Anpassung (57-75 mm) und derselben Bose-Audio-Technik bietet sie erweiterte optische und komfortbedingte Features.",
+  "highlights": [
+   "57° Sichtfeld (erweitert)",
+   "700 nits (hellere Variante)",
+   "87 g, mechanische IPD-Anpassung",
+   "Bose Lautsprecher + 4 Mikrofone"
+  ],
+  "audience": "Nutzer mit breiterer Pupillendistanz und Nutzer, die maximale Helligkeit für Outdoor-Nutzung und größeres Sichtfeld bevorzugen."
+ },
+ "Aq7tdhseW": {
+  "description": "Angekündigte Android-XR-Brille von Xreal (Google I/O 2025), mit Marktstart vor Ende 2026 geplant. Mit Micro-OLED, optischem See-Through, 70° Sichtfeld und Standalone/Tethered-Hybrid-Architektur (Compute-Puck). Der Snapdragon XR2+ Gen 2 und Xreal X1S-Chip bieten umfangreiche 6-DoF-Möglichkeiten.",
+  "highlights": [
+   "Android XR System",
+   "70° Sichtfeld",
+   "6DoF Inside-Out-Tracking",
+   "Standalone/Tethered-Hybrid (~4h Akku)"
+  ],
+  "audience": "Entwickler und Early Adopter der Android-XR-Plattform; breites Consumer-Interesse für Marktstart 2026."
+ },
+ "pOfzEGXDw": {
+  "description": "Das XYZ Atom ist eine Enterprise-AR-Brille des Unternehmens XYZ Reality, spezialisiert auf Anwendungen im Bauwesen und industriellen Umfeld. Das Standalone-Gerät verfügt über einen Intel i7 Quad-Core-Prozessor und Native Passthrough-Funktion mit Inside-Out-Tracking. Mit austauschbaren Batterien bietet es ganztägige Laufzeit und wird 2026 weiterhin aktiv vertrieben.",
+  "highlights": [
+   "Standalone-Computeeinheit (Intel i7 Quad-Core)",
+   "Inside-Out Tracking",
+   "Native Passthrough",
+   "All-Day-Akku mit heißwechselbaren Batterien"
+  ],
+  "audience": "Bauwesen und Industrie mit fokus auf Enterprise-Lösungen."
+ }
+}

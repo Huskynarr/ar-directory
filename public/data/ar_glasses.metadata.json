@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-02T08:55:41.456Z",
+  "generated_at": "2026-06-02T15:53:38.208Z",
   "source_dataset": "curated_ar_xr_directory_v2",
   "source_page": "https://huskynarr.de/",
   "records": 151,
@@ -9,7 +9,7 @@
   "official_shop_links": 147,
   "image_links": 150,
   "active_models": 114,
-  "discontinued_models": 151,
+  "discontinued_models": 34,
   "newest_release": "2026-03-01",
   "oldest_release": "2013-03-01",
   "price_range_usd": {
