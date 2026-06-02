@@ -23,7 +23,7 @@
         "Smart Glasses",
         "Headsets"
       ],
-      "dateModified": "2026-06-02T18:16:26.244Z"
+      "dateModified": "2026-06-02T18:24:03.038Z"
     },
     {
       "@type": "Dataset",
@@ -33,7 +33,7 @@
       "description": "Kuratierter Datensatz mit 151 AR/XR-Brillen inkl. Spezifikationen, Preisen und Lifecycle-Status.",
       "isAccessibleForFree": true,
       "inLanguage": "de-DE",
-      "dateModified": "2026-06-02T18:16:26.244Z",
+      "dateModified": "2026-06-02T18:24:03.038Z",
       "distribution": [
         {
           "@type": "DataDownload",
