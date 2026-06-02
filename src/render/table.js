@@ -2,7 +2,10 @@ import { escapeHtml, safeExternalUrl } from '../utils.js';
 import { state } from '../state.js';
 import { t, compactValue, formatPrice, formatNumber, formatLifecycleNotes, maybeHiddenText } from '../i18n.js';
 import { getShopInfo } from '../data/model.js';
+import { AFFILIATE_REL, buildBuyLinks, getAffiliateOverrides } from '../affiliate.js';
 import { categoryTone, selectionLabelTemplate } from './shared.js';
+
+const na = () => t('k. A.', 'n/a');
 
 export const tableTemplate = (rows) => {
   if (!rows.length) {
@@ -12,109 +15,100 @@ export const tableTemplate = (rows) => {
     )}</p>`;
   }
 
+  const headCells = [
+    t('Kat.', 'Cat.'),
+    t('Preis', 'Price'),
+    'Display',
+    t('Optik', 'Optics'),
+    'FOV H',
+    t('Refresh', 'Refresh'),
+    t('Aufloesung', 'Resolution'),
+    t('Gewicht', 'Weight'),
+    t('Tracking', 'Tracking'),
+    'Eye',
+    'Hand',
+    'Passthrough',
+    t('Vertrieb', 'Distribution'),
+    t('EOL / Updates', 'EOL / Updates'),
+    t('Software', 'Software'),
+    t('Compute', 'Compute'),
+    t('Links', 'Links'),
+  ];
+
   return `
     <div class="panel overflow-hidden">
       <div class="overflow-x-auto">
-        <table class="min-w-[1950px] border-collapse text-sm" aria-describedby="results-status">
+        <table class="ui-table min-w-[1700px] w-full border-collapse text-sm" aria-describedby="results-status">
           <caption class="visually-hidden">${t(
             'Tabellarische Ansicht aller gefilterten AR- und XR-Modelle.',
             'Table view of all filtered AR and XR models.',
           )}</caption>
-          <thead class="bg-[#1c1917] text-left text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">
+          <thead class="bg-[#1c1917] text-left text-[11px] font-semibold uppercase tracking-[0.12em] text-[#a8a29e]">
             <tr>
-              <th class="px-3 py-3">${t('Vergleich', 'Compare')}</th>
-              <th class="px-3 py-3">${t('Brille', 'Glasses')}</th>
-              <th class="px-3 py-3">${t('Hersteller', 'Manufacturer')}</th>
-              <th class="px-3 py-3">${t('Kat.', 'Cat.')}</th>
-              <th class="px-3 py-3">Display</th>
-              <th class="px-3 py-3">${t('Optik', 'Optics')}</th>
-              <th class="px-3 py-3">${t('Tracking', 'Tracking')}</th>
-              <th class="px-3 py-3">Eye</th>
-              <th class="px-3 py-3">Hand</th>
-              <th class="px-3 py-3">Passthrough</th>
-              <th class="px-3 py-3">FOV H</th>
-              <th class="px-3 py-3">${t('Refresh', 'Refresh')}</th>
-              <th class="px-3 py-3">${t('Aufloesung', 'Resolution')}</th>
-              <th class="px-3 py-3">${t('Gewicht', 'Weight')}</th>
-              <th class="px-3 py-3">${t('Preis', 'Price')}</th>
-              <th class="px-3 py-3">${t('Vertrieb', 'Distribution')}</th>
-              <th class="px-3 py-3">${t('EOL / Updates', 'EOL / Updates')}</th>
-              <th class="px-3 py-3">${t('Software', 'Software')}</th>
-              <th class="px-3 py-3">${t('Compute', 'Compute')}</th>
-              <th class="px-3 py-3">${t('Links', 'Links')}</th>
+              <th class="sticky left-0 z-20 bg-[#1c1917] px-3 py-2.5 min-w-[230px]">${t('Modell', 'Model')}</th>
+              ${headCells.map((label) => `<th class="whitespace-nowrap px-3 py-2.5">${escapeHtml(label)}</th>`).join('')}
             </tr>
           </thead>
           <tbody>
             ${rows
               .map((row, index) => {
                 const shop = getShopInfo(row);
+                const buyLinks = buildBuyLinks(row, getAffiliateOverrides());
                 const infoUrl = safeExternalUrl(row.lifecycle_source || row.source_page);
                 const selected = state.selectedIds.includes(row.__rowId);
                 const lifecycleNotes = formatLifecycleNotes(row.lifecycle_notes, t('Keine Angaben.', 'No details.'));
                 const modelName = compactValue(row.name, t('Unbekannt', 'Unknown'));
+                const rowBg = index % 2 === 0 ? 'bg-[#171412]' : 'bg-[#1c1917]';
 
                 return `
-                  <tr class="${index % 2 === 0 ? 'bg-[#171412]' : 'bg-[#1c1917]'} align-top text-[#f5f5f4]">
-                    <td class="px-3 py-3">${selectionLabelTemplate(
-                      row.__rowId,
-                      selected,
-                      modelName,
-                    )}</td>
-                    <td class="px-3 py-3">
-                      <p class="font-semibold">${escapeHtml(modelName)}</p>
-                      <p class="mt-1 text-xs text-[#a8a29e]">${escapeHtml(
-                        maybeHiddenText(row.resolution_per_eye, t('k. A.', 'n/a')) || t('k. A.', 'n/a'),
-                      )}</p>
+                  <tr class="${rowBg} group align-top text-[#f5f5f4] transition hover:brightness-125">
+                    <td class="sticky left-0 z-10 ${rowBg} border-r border-[#292524] px-3 py-2.5 align-middle">
+                      <div class="flex items-center gap-2.5">
+                        ${selectionLabelTemplate(row.__rowId, selected, modelName)}
+                        <button type="button" data-detail-open="${escapeHtml(row.__rowId)}" class="min-w-0 text-left">
+                          <p class="truncate font-semibold hover:underline">${escapeHtml(modelName)}</p>
+                          <p class="truncate text-xs text-[#a8a29e]">${escapeHtml(compactValue(row.manufacturer))}</p>
+                        </button>
+                      </div>
                     </td>
-                    <td class="px-3 py-3">${escapeHtml(compactValue(row.manufacturer))}</td>
-                    <td class="px-3 py-3">
-                      <span class="rounded-full border px-2 py-1 text-xs font-semibold ${categoryTone(row.xr_category)}">${escapeHtml(
+                    <td class="px-3 py-2.5">
+                      <span class="rounded-full border px-2 py-0.5 text-xs font-semibold ${categoryTone(row.xr_category)}">${escapeHtml(
                         compactValue(row.xr_category, 'AR'),
                       )}</span>
                     </td>
-                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.display_type) || t('k. A.', 'n/a'))}</td>
-                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.optics) || t('k. A.', 'n/a'))}</td>
-                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.tracking) || t('k. A.', 'n/a'))}</td>
-                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.eye_tracking) || t('k. A.', 'n/a'))}</td>
-                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.hand_tracking) || t('k. A.', 'n/a'))}</td>
-                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.passthrough) || t('k. A.', 'n/a'))}</td>
-                    <td class="px-3 py-3">${escapeHtml(formatNumber(row.fov_horizontal_deg, ' deg'))}</td>
-                    <td class="px-3 py-3">${escapeHtml(formatNumber(row.refresh_hz, ' Hz'))}</td>
-                    <td class="px-3 py-3">${escapeHtml(compactValue(row.resolution_per_eye, t('k. A.', 'n/a')))}</td>
-                    <td class="px-3 py-3">${escapeHtml(formatNumber(row.weight_g, ' g'))}</td>
-                    <td class="px-3 py-3">${escapeHtml(formatPrice(row.price_usd))}</td>
-                    <td class="px-3 py-3">${escapeHtml(compactValue(row.active_distribution, t('k. A.', 'n/a')))}</td>
-                    <td class="px-3 py-3">
+                    <td class="whitespace-nowrap px-3 py-2.5 font-semibold">${escapeHtml(formatPrice(row.price_usd))}</td>
+                    <td class="px-3 py-2.5">${escapeHtml(maybeHiddenText(row.display_type) || na())}</td>
+                    <td class="px-3 py-2.5">${escapeHtml(maybeHiddenText(row.optics) || na())}</td>
+                    <td class="whitespace-nowrap px-3 py-2.5">${escapeHtml(formatNumber(row.fov_horizontal_deg, ' deg'))}</td>
+                    <td class="whitespace-nowrap px-3 py-2.5">${escapeHtml(formatNumber(row.refresh_hz, ' Hz'))}</td>
+                    <td class="whitespace-nowrap px-3 py-2.5">${escapeHtml(compactValue(row.resolution_per_eye, na()))}</td>
+                    <td class="whitespace-nowrap px-3 py-2.5">${escapeHtml(formatNumber(row.weight_g, ' g'))}</td>
+                    <td class="px-3 py-2.5">${escapeHtml(maybeHiddenText(row.tracking) || na())}</td>
+                    <td class="px-3 py-2.5">${escapeHtml(maybeHiddenText(row.eye_tracking) || na())}</td>
+                    <td class="px-3 py-2.5">${escapeHtml(maybeHiddenText(row.hand_tracking) || na())}</td>
+                    <td class="px-3 py-2.5">${escapeHtml(maybeHiddenText(row.passthrough) || na())}</td>
+                    <td class="px-3 py-2.5">${escapeHtml(compactValue(row.active_distribution, na()))}</td>
+                    <td class="px-3 py-2.5 min-w-[200px]">
                       <p class="font-semibold">${escapeHtml(compactValue(row.eol_status))}</p>
                       ${lifecycleNotes ? `<p class="mt-1 text-xs text-[#a8a29e]">${escapeHtml(lifecycleNotes)}</p>` : ''}
                     </td>
-                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.software) || t('k. A.', 'n/a'))}</td>
-                    <td class="px-3 py-3">${escapeHtml(maybeHiddenText(row.compute_unit) || t('k. A.', 'n/a'))}</td>
-                    <td class="px-3 py-3">
-                      <div class="flex flex-col gap-2">
+                    <td class="px-3 py-2.5">${escapeHtml(maybeHiddenText(row.software) || na())}</td>
+                    <td class="px-3 py-2.5">${escapeHtml(maybeHiddenText(row.compute_unit) || na())}</td>
+                    <td class="px-3 py-2.5">
+                      <div class="flex flex-col gap-1.5 whitespace-nowrap">
                         ${
                           shop.url
-                            ? `<a
-                                href="${escapeHtml(shop.url)}"
-                                target="_blank"
-                                rel="noreferrer"
-                                aria-label="${escapeHtml(`${shop.label}: ${modelName}`)}"
-                                class="text-xs font-semibold text-[#84cc16] hover:underline"
-                              >${escapeHtml(shop.label)}</a>`
+                            ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(`${shop.label}: ${modelName}`)}" class="text-xs font-semibold text-[#84cc16] hover:underline">${escapeHtml(shop.label)}</a>`
                             : `<span class="text-xs text-[#a8a29e]">${t('Kein Shop-Link', 'No shop link')}</span>`
                         }
                         ${
+                          buyLinks.length
+                            ? `<a href="${escapeHtml(buyLinks[0].url)}" target="_blank" rel="${AFFILIATE_REL}" aria-label="${escapeHtml(`${buyLinks[0].label}: ${modelName}`)}" class="text-xs font-semibold text-amber-300 hover:underline">${escapeHtml(buyLinks[0].label)} *</a>`
+                            : ''
+                        }
+                        ${
                           infoUrl
-                            ? `<a
-                                href="${escapeHtml(infoUrl)}"
-                                target="_blank"
-                                rel="noreferrer"
-                                aria-label="${escapeHtml(`${t('Quelle', 'Source')}: ${modelName}`)}"
-                                class="text-xs font-semibold text-[#84cc16] hover:underline"
-                              >${t(
-                                'Quelle',
-                                'Source',
-                              )}</a>`
+                            ? `<a href="${escapeHtml(infoUrl)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(`${t('Quelle', 'Source')}: ${modelName}`)}" class="text-xs text-[#a8a29e] hover:underline">${t('Quelle', 'Source')}</a>`
                             : ''
                         }
                       </div>

@@ -120,33 +120,35 @@ const render = () => {
     <main id="main-content" tabindex="-1" class="mx-auto w-full max-w-[1320px] px-4 py-6 sm:px-6 lg:px-8">
       <header class="panel relative overflow-hidden p-5 sm:p-6">
         <div class="theme-hero-surface absolute inset-0 -z-10"></div>
-        <div class="absolute right-4 top-4 flex items-center gap-2 sm:right-5 sm:top-5">
-          <button
-            id="toggle-language"
-            type="button"
-            class="theme-icon-btn"
-            aria-label="${escapeHtml(languageToggleLabel)}"
-            title="${escapeHtml(languageToggleLabel)}"
-          >
-            ${languageToggleIcon}
-          </button>
-          <button
-            id="theme-toggle"
-            type="button"
-            class="theme-icon-btn"
-            aria-pressed="${state.theme === 'dark' ? 'true' : 'false'}"
-            aria-label="${escapeHtml(themeToggleLabel)}"
-            title="${escapeHtml(themeToggleLabel)}"
-          >
-            ${themeToggleIcon}
-          </button>
+        <div class="flex items-start justify-between gap-3">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-lime-500 sm:text-xs">AR / XR DIRECTORY</p>
+          <div class="flex shrink-0 items-center gap-2">
+            <button
+              id="toggle-language"
+              type="button"
+              class="theme-icon-btn"
+              aria-label="${escapeHtml(languageToggleLabel)}"
+              title="${escapeHtml(languageToggleLabel)}"
+            >
+              ${languageToggleIcon}
+            </button>
+            <button
+              id="theme-toggle"
+              type="button"
+              class="theme-icon-btn"
+              aria-pressed="${state.theme === 'dark' ? 'true' : 'false'}"
+              aria-label="${escapeHtml(themeToggleLabel)}"
+              title="${escapeHtml(themeToggleLabel)}"
+            >
+              ${themeToggleIcon}
+            </button>
+          </div>
         </div>
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-lime-500">AR / XR DIRECTORY</p>
-        <h1 class="mt-2 text-3xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-lime-600 sm:text-4xl">${t(
+        <h1 class="mt-2 text-2xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-lime-600 sm:text-4xl">${t(
           'Vergleich fuer AR-Brillen und XR-Glasses',
           'Comparison for AR Glasses and XR Glasses',
         )}</h1>
-        <p class="mt-3 max-w-4xl text-sm text-[#a8a29e] sm:text-base">
+        <p class="mt-2.5 max-w-3xl text-sm leading-relaxed text-[#a8a29e] sm:mt-3 sm:text-base">
           ${t(
             'Vergleichsseite fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Lifecycle, EOL und Shop-Links. Legacy-Modelle sind fuer einen vollstaendigeren Datenbestand enthalten.',
             'Comparison page for AR and XR glasses with specifications, pricing, lifecycle, EOL and shop links. Legacy models are included for a fuller dataset.',
@@ -158,14 +160,14 @@ const render = () => {
       ${!state.focusMode || selectedRows.length ? compareBarTemplate(selectedRows) : ''}
 
       <section class="panel mt-4 p-4 sm:p-5">
-        <div class="flex flex-col gap-3 xl:flex-row xl:items-start xl:justify-between">
-          <div>
+        <div class="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+          <div class="min-w-0">
             <h2 class="text-lg font-semibold text-[#f5f5f4]">${t('Filter', 'Filters')}</h2>
             <p class="mt-1 text-xs text-[#a8a29e]">${state.focusMode
               ? t('Fokusansicht: nur Kernfilter sichtbar.', 'Focus view: only core filters visible.')
               : t('Schnellfilter fuer Suche, Kategorie und Sortierung.', 'Quick filters for search, category and sorting.')}</p>
           </div>
-          <div class="flex flex-wrap items-center gap-2 xl:justify-end">
+          <div class="-mx-1 flex flex-wrap items-center gap-2 px-1 lg:justify-end">
             <button id="view-cards" type="button" aria-pressed="${state.viewMode === 'cards' ? 'true' : 'false'}" class="chip-btn ${
               state.viewMode === 'cards'
                 ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
@@ -204,17 +206,17 @@ const render = () => {
           </div>
         </div>
 
-        <div class="mt-4 grid gap-3 md:grid-cols-2 ${state.focusMode ? 'xl:grid-cols-4' : 'xl:grid-cols-5'}">
-          <label class="space-y-1 xl:col-span-2">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Suche', 'Search')}</span>
+        <div class="mt-4 grid gap-3 sm:gap-3 md:grid-cols-2 ${state.focusMode ? 'xl:grid-cols-4' : 'xl:grid-cols-5'}">
+          <label class="space-y-1.5 md:col-span-2 xl:col-span-2">
+            <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Suche', 'Search')}</span>
             <input id="query-input" type="search" class="field" placeholder="${t(
               'Modell, Hersteller, Software, Tracking, Lifecycle',
               'Model, manufacturer, software, tracking, lifecycle',
             )}" value="${escapeHtml(state.query)}" />
           </label>
 
-          <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Kategorie', 'Category')}</span>
+          <label class="space-y-1.5">
+            <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Kategorie', 'Category')}</span>
             <select id="category-filter" class="field">
               <option value="all"${state.category === 'all' ? ' selected' : ''}>${t('Alle Kategorien', 'All categories')}</option>
               <option value="AR"${state.category === 'AR' ? ' selected' : ''}>AR</option>
@@ -225,16 +227,16 @@ const render = () => {
           ${
             state.focusMode
               ? ''
-              : `<label class="space-y-1">
-                  <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Hersteller', 'Manufacturer')}</span>
+              : `<label class="space-y-1.5">
+                  <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Hersteller', 'Manufacturer')}</span>
                   <select id="manufacturer-filter" class="field">
                     ${optionList(filterOptions.manufacturers, state.manufacturer, t('Alle Hersteller', 'All manufacturers'))}
                   </select>
                 </label>`
           }
 
-          <label class="space-y-1">
-            <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Sortierung', 'Sorting')}</span>
+          <label class="space-y-1.5">
+            <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Sortierung', 'Sorting')}</span>
             <select id="sort-filter" class="field">
               <option value="priority_default"${
                 state.sort === 'priority_default' ? ' selected' : ''
@@ -268,106 +270,107 @@ const render = () => {
           role="region"
           aria-label="${t('Erweiterte Filter', 'Advanced filters')}"
           aria-hidden="${state.showAdvancedFilters && !state.focusMode ? 'false' : 'true'}"
-          class="mt-4 space-y-3 ${state.showAdvancedFilters && !state.focusMode ? '' : 'hidden'}"
+          class="mt-4 space-y-4 border-t border-[#44403c]/70 pt-4 ${state.showAdvancedFilters && !state.focusMode ? '' : 'hidden'}"
         >
-          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Erweiterte Filter', 'Advanced filters')}</p>
-          <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-            <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Display-Typ', 'Display type')}</span>
+          <p class="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#a8a29e]">${t('Erweiterte Filter', 'Advanced filters')}</p>
+          <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+            <label class="space-y-1.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Display-Typ', 'Display type')}</span>
               <select id="display-filter" class="field">
                 ${optionList(filterOptions.displayTypes, state.displayType, t('Alle Display-Arten', 'All display types'))}
               </select>
             </label>
 
-            <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Optik', 'Optics')}</span>
+            <label class="space-y-1.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Optik', 'Optics')}</span>
               <select id="optics-filter" class="field">
                 ${optionList(filterOptions.optics, state.optics, t('Alle Optik-Typen', 'All optics types'))}
               </select>
             </label>
 
-            <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Tracking', 'Tracking')}</span>
+            <label class="space-y-1.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Tracking', 'Tracking')}</span>
               <select id="tracking-filter" class="field">
                 ${optionList(filterOptions.tracking, state.tracking, t('Alle Tracking-Typen', 'All tracking types'))}
               </select>
             </label>
 
-            <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Eye Tracking</span>
+            <label class="space-y-1.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Eye Tracking</span>
               <select id="eye-tracking-filter" class="field">
                 ${optionList(filterOptions.eyeTracking, state.eyeTracking, t('Alle Eye-Tracking-Werte', 'All eye-tracking values'))}
               </select>
             </label>
 
-            <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Hand Tracking</span>
+            <label class="space-y-1.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Hand Tracking</span>
               <select id="hand-tracking-filter" class="field">
                 ${optionList(filterOptions.handTracking, state.handTracking, t('Alle Hand-Tracking-Werte', 'All hand-tracking values'))}
               </select>
             </label>
 
-            <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Passthrough</span>
+            <label class="space-y-1.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">Passthrough</span>
               <select id="passthrough-filter" class="field">
                 ${optionList(filterOptions.passthrough, state.passthrough, t('Alle Passthrough-Werte', 'All passthrough values'))}
               </select>
             </label>
 
-            <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Aktiver Vertrieb', 'Active distribution')}</span>
+            <label class="space-y-1.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Aktiver Vertrieb', 'Active distribution')}</span>
               <select id="active-filter" class="field">
                 ${optionList(filterOptions.activeStatuses, state.active, t('Alle Vertrieb-Status', 'All distribution statuses'))}
               </select>
             </label>
 
-            <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('EOL / Update-Status', 'EOL / update status')}</span>
+            <label class="space-y-1.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('EOL / Update-Status', 'EOL / update status')}</span>
               <select id="eol-filter" class="field">
                 ${optionList(filterOptions.eolStatuses, state.eol, t('Alle Lifecycle-Status', 'All lifecycle statuses'))}
               </select>
             </label>
 
-            <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Software', 'Software')}</span>
+            <label class="space-y-1.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Software', 'Software')}</span>
               <select id="software-filter" class="field">
                 ${optionList(filterOptions.software, state.software, t('Alle Software', 'All software'))}
               </select>
             </label>
 
-            <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Compute Unit', 'Compute unit')}</span>
+            <label class="space-y-1.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Compute Unit', 'Compute unit')}</span>
               <select id="compute-filter" class="field">
                 ${optionList(filterOptions.computeUnits, state.computeUnit, t('Alle Compute-Typen', 'All compute types'))}
               </select>
             </label>
 
-            <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Min. FOV horizontal (deg)', 'Min. horizontal FOV (deg)')}</span>
+            <label class="space-y-1.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Min. FOV horizontal (deg)', 'Min. horizontal FOV (deg)')}</span>
               <input id="fov-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.minFov)}" placeholder="${t('z. B. 40', 'e.g. 40')}" />
             </label>
 
-            <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Min. Refresh (Hz)', 'Min. refresh (Hz)')}</span>
+            <label class="space-y-1.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Min. Refresh (Hz)', 'Min. refresh (Hz)')}</span>
               <input id="refresh-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.minRefresh)}" placeholder="${t('z. B. 60', 'e.g. 60')}" />
             </label>
 
-            <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Max. Preis (USD)', 'Max. price (USD)')}</span>
+            <label class="space-y-1.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Max. Preis (USD)', 'Max. price (USD)')}</span>
               <input id="price-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.maxPrice)}" placeholder="${t('z. B. 1500', 'e.g. 1500')}" />
             </label>
 
-            <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Max. Gewicht (g)', 'Max. weight (g)')}</span>
+            <label class="space-y-1.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Max. Gewicht (g)', 'Max. weight (g)')}</span>
               <input id="weight-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.maxWeight)}" placeholder="${t('z. B. 500', 'e.g. 500')}" />
             </label>
 
-            <label class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Min. Aufloesung (px Breite)', 'Min. resolution (px width)')}</span>
+            <label class="space-y-1.5">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Min. Aufloesung (px Breite)', 'Min. resolution (px width)')}</span>
               <input id="resolution-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.minResolutionWidth)}" placeholder="${t('z. B. 1440', 'e.g. 1440')}" />
             </label>
           </div>
 
+          <p class="mt-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#a8a29e]">${t('Schnellumschalter', 'Quick toggles')}</p>
           <div class="flex flex-wrap items-center gap-2">
             <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
               <input id="only-price" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyPrice ? 'checked' : ''} />
@@ -410,7 +413,8 @@ const render = () => {
         ${state.showEur ? `<p class="mt-2 text-xs text-[#a8a29e]">${escapeHtml(formatRateHint())}</p>` : ''}
       </section>
 
-      <section class="mt-2 flex flex-wrap items-center gap-2">
+      <section class="mt-3 flex flex-wrap items-center gap-2">
+        <span class="mr-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#a8a29e]">${t('Aktionen', 'Actions')}</span>
         <button id="export-csv" type="button" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]" ${filtered.length === 0 ? 'disabled' : ''}>${t(
           'CSV exportieren',
           'Export CSV',

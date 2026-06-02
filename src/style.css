@@ -370,6 +370,14 @@
   }
 }
 
+/* Table row hover (also tints the sticky first cell, which carries its own bg). */
+.ui-table tbody tr:hover td {
+  background-color: #221c19;
+}
+body.theme-light .ui-table tbody tr:hover td {
+  background-color: #eef3fb;
+}
+
 body.theme-light [class*='text-[#f5f5f4]'] {
   color: #0f213f;
 }
