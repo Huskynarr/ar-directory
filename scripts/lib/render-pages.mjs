@@ -1,5 +1,7 @@
 // Static page rendering for SEO/LLM depth: one standalone, crawlable page per
-// device, a model hub/index, and a glossary + FAQ page. All derived from the CSV.
+// device, a model hub/index, a glossary + FAQ page, and legal pages. CSV-derived.
+
+import { AFFILIATE, AFFILIATE_REL, buildBuyLinks } from '../../src/affiliate.js';
 
 const UNKNOWN = new Set(['', 'k.a.', 'k. a.', 'n/a', 'na', 'unknown', 'unbekannt', '-', '–', 'null', 'undefined']);
 export const hasValue = (v) => !UNKNOWN.has(String(v ?? '').trim().toLowerCase());
@@ -111,12 +113,22 @@ h2{font-size:20px;margin:28px 0 8px}
 ul.rel{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 ul.rel a{display:inline-block;padding:6px 12px;border:1px solid #292524;border-radius:999px}
 footer{margin-top:40px;padding-top:20px;border-top:1px solid #292524;color:#78716c;font-size:14px}
+.buy{margin:8px 0 20px}.buy h2{margin:0 0 8px}
+.buyrow{display:flex;flex-wrap:wrap;gap:8px}
+.cta.buy{background:#1c1917;border-color:#44403c}
+.affnote{font-size:12px;color:#78716c;margin:8px 0 0}
 </style>
 ${jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, '\\u003c')}</script>` : ''}
 </head>`;
 
-export const buildDevicePage = (row, rows, slugs, baseUrl) => {
+export const buildDevicePage = (row, rows, slugs, baseUrl, overrides = {}) => {
   const slug = slugs.get(row.id);
+  const buyLinks = buildBuyLinks(row, overrides);
+  const buyHtml = buyLinks.length
+    ? `<section class="buy"><h2>Kaufen bei</h2><div class="buyrow">${buyLinks
+        .map((l) => `<a class="cta buy" href="${esc(l.url)}" rel="${AFFILIATE_REL}" target="_blank">${esc(l.label)} ↗</a>`)
+        .join('')}</div><p class="affnote">* ${esc(AFFILIATE.disclosureShort)} <a href="/datenschutz.html">Mehr</a></p></section>`
+    : '';
   const canonical = `${baseUrl}modelle/${slug}.html`;
   const cat = CATEGORY_LABEL(row.xr_category);
   const isXr = String(row.xr_category).toUpperCase() === 'XR';
@@ -222,6 +234,7 @@ ${heroMedia}
 ${hasValue(row.official_url) ? `<a class="cta" href="${esc(row.official_url)}" rel="nofollow noopener">Offizielle Produktseite</a>` : ''}
 </div>
 </div>
+${buyHtml}
 <h2>Technische Daten</h2>
 <table><tbody>
 ${specRowsHtml}
@@ -230,8 +243,8 @@ ${lifecycle}
 ${related ? `<h2>Weitere Modelle von ${esc(row.manufacturer)}</h2><ul class="rel">${related}</ul>` : ''}
 ${sameCat ? `<h2>Aehnliche ${esc(cat)}-Modelle</h2><ul class="rel">${sameCat}</ul>` : ''}
 <footer>
-Teil des <a href="/">AR/XR Brillen Vergleichs</a> · <a href="/modelle/">Alle Modelle</a> · <a href="/glossar.html">Glossar &amp; FAQ</a><br>
-Angaben ohne Gewaehr; Spezifikationen koennen je nach Region/Revision abweichen.
+Teil des <a href="/">AR/XR Brillen Vergleichs</a> · <a href="/modelle/">Alle Modelle</a> · <a href="/glossar.html">Glossar &amp; FAQ</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a><br>
+Angaben ohne Gewaehr; Spezifikationen und Preise koennen je nach Region/Revision/Zeitpunkt abweichen.
 </footer>
 </div>
 </body>
@@ -280,7 +293,7 @@ export const buildModelIndex = (rows, slugs, meta, baseUrl) => {
 <p class="lead">${meta.ar_records} AR-Brillen und ${meta.xr_records} XR-Headsets von ${meta.manufacturers} Herstellern. Jede Brille hat eine eigene Detailseite mit allen Spezifikationen.</p>
 <p><a class="cta primary" href="/">Interaktiv vergleichen &amp; filtern</a> <a class="cta" href="/glossar.html">Glossar &amp; FAQ</a></p>
 ${sections}
-<footer>Teil des <a href="/">AR/XR Brillen Vergleichs</a>.</footer>
+<footer>Teil des <a href="/">AR/XR Brillen Vergleichs</a> · <a href="/glossar.html">Glossar &amp; FAQ</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></footer>
 </div>
 </body>
 </html>
@@ -347,9 +360,66 @@ ${FAQ.map(([q, a]) => `<section><h3>${esc(q)}</h3><p>${esc(a)}</p></section>`).j
 <table><tbody>
 ${GLOSSARY.map(([t, d]) => `<tr><th>${esc(t)}</th><td>${esc(d)}</td></tr>`).join('\n')}
 </tbody></table>
-<footer>Teil des <a href="/">AR/XR Brillen Vergleichs</a> · <a href="/modelle/">Alle Modelle</a>.</footer>
+<footer>Teil des <a href="/">AR/XR Brillen Vergleichs</a> · <a href="/modelle/">Alle Modelle</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></footer>
 </div>
 </body>
 </html>
 `;
 };
+
+const legalPage = (title, description, canonical, baseUrl, bodyHtml) => `${head({ title, description, canonical, baseUrl })}
+<body>
+<div class="wrap">
+<nav class="bc"><a href="/">Start</a> › ${esc(title.split('|')[0].trim())}</nav>
+${bodyHtml}
+<footer>Teil des <a href="/">AR/XR Brillen Vergleichs</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></footer>
+</div>
+</body>
+</html>
+`;
+
+// NOTE: legal templates with [PLATZHALTER] fields. Fill in and have them reviewed
+// (this is scaffolding, not legal advice).
+export const buildImpressum = (meta, baseUrl) =>
+  legalPage(
+    'Impressum | AR/XR Brillen Vergleich',
+    'Impressum und Anbieterkennzeichnung des AR/XR Brillen Vergleichs.',
+    `${baseUrl}impressum.html`,
+    baseUrl,
+    `<h1>Impressum</h1>
+<p class="note">Vorlage – bitte [PLATZHALTER] ausfuellen und rechtlich pruefen lassen.</p>
+<h2>Angaben gemaess § 5 DDG (ehem. TMG)</h2>
+<p>[Vorname Nachname / Firma]<br>[Strasse Hausnummer]<br>[PLZ Ort]<br>[Land]</p>
+<h2>Kontakt</h2>
+<p>E-Mail: [E-Mail-Adresse]<br>Telefon: [optional]</p>
+<h2>Verantwortlich i.S.d. § 18 Abs. 2 MStV</h2>
+<p>[Name, Anschrift wie oben]</p>
+<h2>Haftung fuer Inhalte &amp; Links</h2>
+<p>Die Inhalte dieser Seiten wurden mit Sorgfalt erstellt, jedoch ohne Gewaehr fuer Aktualitaet, Vollstaendigkeit und Richtigkeit der Geraete-Spezifikationen und Preise. Fuer Inhalte verlinkter externer Seiten sind deren Betreiber verantwortlich.</p>
+<h2>Affiliate-Hinweis</h2>
+<p>Diese Website nutzt Affiliate-Links (u. a. Amazon, eBay, Otto, idealo). Klickst du auf einen solchen Link und kaufst, koennen wir eine Provision erhalten. Fuer dich entstehen keine Mehrkosten. Als Amazon-Partner verdienen wir an qualifizierten Verkaeufen.</p>
+<h2>EU-Streitschlichtung</h2>
+<p>Plattform der EU-Kommission zur Online-Streitbeilegung: <a href="https://ec.europa.eu/consumers/odr/" rel="nofollow noopener">https://ec.europa.eu/consumers/odr/</a>. Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>`,
+  );
+
+export const buildDatenschutz = (meta, baseUrl) =>
+  legalPage(
+    'Datenschutzerklaerung | AR/XR Brillen Vergleich',
+    'Datenschutzerklaerung des AR/XR Brillen Vergleichs: Hosting, Logfiles, lokale Speicherung, externe Dienste und Affiliate-Programme.',
+    `${baseUrl}datenschutz.html`,
+    baseUrl,
+    `<h1>Datenschutzerklaerung</h1>
+<p class="note">Vorlage – bitte [PLATZHALTER] ausfuellen und rechtlich pruefen lassen (keine Rechtsberatung).</p>
+<h2>1. Verantwortlicher</h2>
+<p>[Vorname Nachname / Firma], [Anschrift], [E-Mail]. Siehe auch <a href="/impressum.html">Impressum</a>.</p>
+<h2>2. Hosting &amp; Server-Logfiles</h2>
+<p>Die Seite wird bei [Hoster, z. B. Plesk-Server / Provider] gehostet. Beim Aufruf werden technisch notwendige Server-Logfiles verarbeitet (IP-Adresse, Datum/Uhrzeit, abgerufene URL, User-Agent) zur Auslieferung und Sicherheit (Art. 6 Abs. 1 lit. f DSGVO).</p>
+<h2>3. Lokale Speicherung (kein Tracking)</h2>
+<p>Die App speichert Einstellungen (Theme, Sprache, Favoriten, Filter) ausschliesslich lokal in deinem Browser (localStorage). Es werden keine Cookies zu Analyse-/Werbezwecken gesetzt und keine personenbezogenen Daten an uns uebertragen.</p>
+<h2>4. Externe Inhalte</h2>
+<p>Zur USD-/EUR-Umrechnung wird bei Bedarf die API <code>api.frankfurter.app</code> abgerufen; dabei wird deine IP-Adresse an diesen Dienst uebertragen. Produktbilder werden teils direkt von Hersteller-/Shop-Servern geladen. Ein Service Worker (PWA) cached statische Inhalte lokal.</p>
+<h2>5. Affiliate-Programme</h2>
+<p>Wir nehmen an Partnerprogrammen teil (u. a. Amazon PartnerNet, eBay Partner Network sowie via AWIN fuer Otto und idealo). Beim Klick auf einen Affiliate-Link wirst du zum jeweiligen Shop/Netzwerk weitergeleitet, das eigene Cookies setzen und Daten (u. a. IP, Referrer) verarbeiten kann, um Kaeufe der Provision zuzuordnen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (wirtschaftliches Interesse). Details in den Datenschutzhinweisen der jeweiligen Anbieter.</p>
+<h2>6. Deine Rechte</h2>
+<p>Du hast Recht auf Auskunft, Berichtigung, Loeschung, Einschraenkung, Datenuebertragbarkeit und Widerspruch sowie ein Beschwerderecht bei einer Aufsichtsbehoerde.</p>`,
+  );

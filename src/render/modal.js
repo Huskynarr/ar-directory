@@ -2,6 +2,7 @@ import { escapeHtml, safeExternalUrl } from '../utils.js';
 import { state, toggleFavorite } from '../state.js';
 import { t, compactValue, formatPrice, formatDate, formatLifecycleNotes } from '../i18n.js';
 import { getShopInfo } from '../data/model.js';
+import { AFFILIATE_REL, buildBuyLinks, getAffiliateOverrides } from '../affiliate.js';
 import { getModelImageUrl } from './image.js';
 import { lifecycleTone, buildCardFacts } from './shared.js';
 import { requestRender } from './registry.js';
@@ -12,6 +13,7 @@ const detailModalTemplate = (row) => {
   const manufacturer = escapeHtml(compactValue(row.manufacturer, t('Unbekannt', 'Unknown')));
   const image = safeExternalUrl(row.image_url) || getModelImageUrl(row);
   const shop = getShopInfo(row);
+  const buyLinks = buildBuyLinks(row, getAffiliateOverrides());
   const isFavorite = state.favorites.includes(row.__rowId);
   const allFacts = buildCardFacts(row);
   const lifecycleNotes = formatLifecycleNotes(row.lifecycle_notes, t('Keine Angaben.', 'No details.'));
@@ -45,7 +47,16 @@ const detailModalTemplate = (row) => {
             <div class="flex flex-wrap gap-2">
               ${shop.url ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" class="chip-btn ${shop.official ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09]' : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4]'}">${escapeHtml(shop.label)}</a>` : ''}
               ${infoUrl ? `<a href="${escapeHtml(infoUrl)}" target="_blank" rel="noreferrer" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4]">${t('Datenquelle', 'Data source')}</a>` : ''}
+              ${buyLinks
+                .map(
+                  (l) =>
+                    `<a href="${escapeHtml(l.url)}" target="_blank" rel="${AFFILIATE_REL}" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4]">${escapeHtml(
+                      l.label,
+                    )}</a>`,
+                )
+                .join('')}
             </div>
+            ${buyLinks.length ? `<p class="text-[11px] text-[#a8a29e]">* ${escapeHtml(t('Affiliate-Links – wir koennen eine Provision erhalten, fuer dich ohne Mehrkosten.', 'Affiliate links – we may earn a commission at no extra cost to you.'))}</p>` : ''}
           </div>
         </div>
       </div>

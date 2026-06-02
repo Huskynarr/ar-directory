@@ -2,6 +2,7 @@ import { escapeHtml, safeExternalUrl } from '../utils.js';
 import { state } from '../state.js';
 import { t, compactValue, formatPrice, formatDate, formatLifecycleNotes, maybeHiddenText } from '../i18n.js';
 import { getShopInfo } from '../data/model.js';
+import { AFFILIATE_REL, buildBuyLinks, getAffiliateOverrides } from '../affiliate.js';
 import { getModelImageUrl } from './image.js';
 import { categoryTone, lifecycleTone, selectionLabelTemplate, buildCardFacts } from './shared.js';
 
@@ -11,6 +12,7 @@ export const cardTemplate = (row) => {
   const category = escapeHtml(compactValue(row.xr_category, 'AR'));
   const image = safeExternalUrl(row.image_url) || getModelImageUrl(row);
   const shop = getShopInfo(row);
+  const buyLinks = buildBuyLinks(row, getAffiliateOverrides());
   const shopButtonClasses = shop.official
     ? 'chip-btn border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
     : 'chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]';
@@ -139,8 +141,18 @@ export const cardTemplate = (row) => {
                 )}</a>`
               : ''
           }
+          ${buyLinks
+            .map(
+              (l) =>
+                `<a href="${escapeHtml(l.url)}" target="_blank" rel="${AFFILIATE_REL}" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${escapeHtml(
+                  l.label,
+                )}</a>`,
+            )
+            .join('')}
         </div>
-        <p class="text-xs text-[#a8a29e]">${escapeHtml(shop.source)}</p>
+        <p class="text-xs text-[#a8a29e]">${escapeHtml(shop.source)}${
+          buyLinks.length ? ` · <span title="Affiliate">*</span> ${escapeHtml(t('Affiliate-Links', 'Affiliate links'))}` : ''
+        }</p>
       </div>
     </article>
   `;

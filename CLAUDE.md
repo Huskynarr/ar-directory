@@ -53,6 +53,8 @@ npm run images:enrich    # Fetch/cache manufacturer product images
 - `apply-enrichment.mjs` — applies a research payload (`enrichment-2026.json`: per-field changes keyed by id + new device rows with sources) to the CSV; identity/image/provenance columns are immutable. Run `data:generate` afterwards.
 - `enrich-manufacturer-images.mjs` — fetches official product images with per-model URL overrides, caches under `public/images/manufacturers/`
 
+**Affiliate** (`src/affiliate.js`, imported by app + page generator): scaffolding for Amazon.de/.com, eBay, Otto, idealo (Otto/idealo via AWIN). `AFFILIATE.enabled` is false by default — no buy buttons/disclosure ship until partner IDs + legal pages are set. `buildBuyLinks(row, overrides)` prefers curated deeplinks from `public/data/affiliate-overrides.json` (keyed by CSV id), else builds tagged search links; all get `rel="sponsored nofollow noopener"`. Legal templates `public/impressum.html` + `public/datenschutz.html` are generated (fill `[PLATZHALTER]`).
+
 **Build-time SEO injection** (`vite.config.js`): a `transformIndexHtml` plugin replaces `__COUNT__/__AR__/__XR__/__MANUFACTURERS__` tokens from metadata, injects the generated JSON-LD into `<head>`, and renders a static crawlable `<section>` catalog of all models into `#app` (the SPA replaces it at runtime — so crawlers/JS-less AI agents see full content).
 
 **Testing** (`src/__tests__/`):

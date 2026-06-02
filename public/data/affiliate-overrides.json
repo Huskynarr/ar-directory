@@ -1,0 +1,9 @@
+{
+  "_README": "Curated affiliate product deeplinks per device id. Where a market is missing here, the app/pages auto-build a tagged search link instead. Keys are CSV 'id' values. Markets: amazon_de, amazon_com, ebay, otto, idealo.",
+  "_example": {
+    "NwAppleVPr": {
+      "amazon_de": "https://www.amazon.de/dp/EXAMPLEASIN",
+      "amazon_com": "https://www.amazon.com/dp/EXAMPLEASIN"
+    }
+  }
+}

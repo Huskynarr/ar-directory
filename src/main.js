@@ -23,6 +23,7 @@ import { t, formatCurrency, formatDate, formatRateHint, compactValue } from './i
 import { getRowId, getShopInfo, isEol, isLikelyActive, isArRow, isXrRow } from './data/model.js';
 import { getFilterOptions, matchesFilters, sortRows, getSelectedRows } from './data/filters.js';
 import { parseCsv, fetchUsdToEurRate } from './data/dataset.js';
+import { AFFILIATE, setAffiliateOverrides } from './affiliate.js';
 import { optionList } from './render/shared.js';
 import { cardTemplate } from './render/cards.js';
 import { tableTemplate } from './render/table.js';
@@ -536,16 +537,23 @@ const render = () => {
       </section>
 
       <footer class="mt-4">
-        <div class="panel flex items-center justify-between p-4 text-sm text-[#a8a29e]">
-          <a href="https://huskynarr.de/impressum" class="font-semibold text-[#84cc16] hover:underline">${t(
-            'Impressum / Legal Notice',
-            'Legal Notice / Impressum',
-          )}</a>
+        <div class="panel flex flex-wrap items-center justify-between gap-3 p-4 text-sm text-[#a8a29e]">
+          <div class="flex flex-wrap items-center gap-3">
+            <a href="/modelle/" class="font-semibold text-[#84cc16] hover:underline">${t('Alle Modelle', 'All models')}</a>
+            <a href="/glossar.html" class="hover:underline">${t('Glossar & FAQ', 'Glossary & FAQ')}</a>
+            <a href="/impressum.html" class="hover:underline">${t('Impressum', 'Legal Notice')}</a>
+            <a href="/datenschutz.html" class="hover:underline">${t('Datenschutz', 'Privacy')}</a>
+          </div>
           <div class="flex items-center gap-3">
             <span class="text-xs">${t('Tastenkuerzel', 'Shortcuts')}: <kbd class="rounded border border-[#44403c] px-1.5 py-0.5 text-[10px]">/</kbd> ${t('Suche', 'Search')} &middot; <kbd class="rounded border border-[#44403c] px-1.5 py-0.5 text-[10px]">Esc</kbd> ${t('Leeren', 'Clear')}</span>
             <span class="rounded-full border border-[#44403c] bg-[#1c1917] px-2 py-0.5 text-[10px] font-semibold">v${APP_VERSION}</span>
           </div>
         </div>
+        ${
+          AFFILIATE.enabled
+            ? `<p class="mt-2 px-1 text-[11px] text-[#78716c]">* ${escapeHtml(AFFILIATE.disclosureShort)}</p>`
+            : ''
+        }
       </footer>
     </main>
     <button
@@ -842,6 +850,17 @@ const init = async () => {
   )}</p></main>`;
 
   const ratePromise = fetchUsdToEurRate();
+
+  // Optional curated affiliate deeplinks; harmless if missing or disabled.
+  fetch('/data/affiliate-overrides.json', { cache: 'no-store' })
+    .then((response) => (response.ok ? response.json() : {}))
+    .then((data) => {
+      setAffiliateOverrides(data);
+      if (state.rows.length) {
+        render();
+      }
+    })
+    .catch(() => {});
 
   try {
     const response = await fetch('/data/ar_glasses.csv', { cache: 'no-store' });

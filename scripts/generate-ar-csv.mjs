@@ -1,6 +1,13 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import Papa from 'papaparse';
-import { assignSlugs, buildDevicePage, buildGlossary, buildModelIndex } from './lib/render-pages.mjs';
+import {
+  assignSlugs,
+  buildDatenschutz,
+  buildDevicePage,
+  buildGlossary,
+  buildImpressum,
+  buildModelIndex,
+} from './lib/render-pages.mjs';
 
 const INPUT_CSV_PATH = 'public/data/ar_glasses.csv';
 const OUTPUT_CSV_PATH = 'public/data/ar_glasses.csv';
@@ -279,6 +286,8 @@ const buildSitemap = (lastmod, rows = [], slugs = new Map()) => {
     { loc: BASE_URL, changefreq: 'daily', priority: '1.0' },
     { loc: `${BASE_URL}modelle/`, changefreq: 'weekly', priority: '0.9' },
     { loc: `${BASE_URL}glossar.html`, changefreq: 'monthly', priority: '0.6' },
+    { loc: `${BASE_URL}impressum.html`, changefreq: 'yearly', priority: '0.3' },
+    { loc: `${BASE_URL}datenschutz.html`, changefreq: 'yearly', priority: '0.3' },
     { loc: `${BASE_URL}data/ar_glasses.csv`, changefreq: 'daily', priority: '0.8' },
     { loc: `${BASE_URL}data/ar_glasses.metadata.json`, changefreq: 'daily', priority: '0.7' },
     { loc: `${BASE_URL}llms.txt`, changefreq: 'weekly', priority: '0.7' },
@@ -479,20 +488,34 @@ const main = async () => {
   await writeFile(OUTPUT_LLMS_FULL_PATH, buildLlmsFull(normalizedRows, metadata, lastmod), 'utf8');
   await writeFile(OUTPUT_AI_SEARCH_PATH, `${JSON.stringify(buildAiSearch(metadata, lastmod), null, 2)}\n`, 'utf8');
 
-  // Static, crawlable pages: one per device + a model hub + a glossary/FAQ.
+  // Curated affiliate deeplink overrides (optional); search links are auto-built.
+  let affiliateOverrides = {};
+  try {
+    affiliateOverrides = JSON.parse(await readFile('public/data/affiliate-overrides.json', 'utf8'));
+  } catch {
+    affiliateOverrides = {};
+  }
+
+  // Static, crawlable pages: one per device + model hub + glossary/FAQ + legal.
   await mkdir('public/modelle', { recursive: true });
   await Promise.all(
     normalizedRows.map((row) =>
-      writeFile(`public/modelle/${slugs.get(row.id)}.html`, buildDevicePage(row, normalizedRows, slugs, BASE_URL), 'utf8'),
+      writeFile(
+        `public/modelle/${slugs.get(row.id)}.html`,
+        buildDevicePage(row, normalizedRows, slugs, BASE_URL, affiliateOverrides),
+        'utf8',
+      ),
     ),
   );
   await writeFile('public/modelle/index.html', buildModelIndex(normalizedRows, slugs, metadata, BASE_URL), 'utf8');
   await writeFile('public/glossar.html', buildGlossary(metadata, BASE_URL), 'utf8');
+  await writeFile('public/impressum.html', buildImpressum(metadata, BASE_URL), 'utf8');
+  await writeFile('public/datenschutz.html', buildDatenschutz(metadata, BASE_URL), 'utf8');
 
   console.log(
     `Generated ${normalizedRows.length} curated AR/XR records at ${retrievedAt}\n` +
       `  -> CSV, metadata, structured-data.json, sitemap.xml, llms.txt, llms-full.txt, ai-search.json\n` +
-      `  -> ${normalizedRows.length} device pages + modelle/index.html + glossar.html`,
+      `  -> ${normalizedRows.length} device pages + modelle/index.html + glossar.html + impressum.html + datenschutz.html`,
   );
 };
 

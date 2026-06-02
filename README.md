@@ -121,6 +121,25 @@ Die produktive Basis-URL ist `https://ardirectory.huskynarr.de/` und wird zentra
 ausfuehren und die absoluten URLs in `index.html`/`robots.txt` ersetzen. (`source_page` = `https://huskynarr.de/`
 bleibt als Autoren-/Markenangabe davon unberuehrt.)
 
+## Affiliate / Monetarisierung
+
+Affiliate-Scaffolding ist vorhanden, aber **standardmaessig deaktiviert** (`AFFILIATE.enabled = false`
+in `src/affiliate.js`) — es werden erst Kauf-Buttons + Disclosure ausgespielt, wenn alles konfiguriert ist.
+
+Unterstuetzt: **Amazon.de, Amazon.com, eBay, Otto, idealo** (Otto/idealo via AWIN). Pro Geraet wird ein
+getaggter **Such-Link** automatisch erzeugt; kuratierte **Produkt-Deeplinks** koennen in
+`public/data/affiliate-overrides.json` (Key = CSV-`id`) hinterlegt werden und haben Vorrang. Alle
+Affiliate-Links erhalten `rel="sponsored nofollow noopener"` + `target="_blank"`. Buttons erscheinen in
+Karten, Detail-Modal und auf den statischen Detailseiten.
+
+**Aktivierung:**
+1. In `src/affiliate.js` die `CHANGEME-*`-Partner-IDs durch echte ersetzen (Amazon-Tags, eBay `campid`,
+   AWIN `awinMid`/`awinAffid`).
+2. `public/impressum.html` und `public/datenschutz.html` (generierte Vorlagen) — `[PLATZHALTER]` ausfuellen
+   und rechtlich pruefen lassen.
+3. Partner der jeweiligen Programme sein (Amazon PartnerNet, eBay Partner Network, AWIN).
+4. `AFFILIATE.enabled = true` setzen, `npm run data:generate` + `npm run build`.
+
 ## Lokale Entwicklung
 
 Voraussetzungen:

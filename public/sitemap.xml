@@ -19,6 +19,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://ardirectory.huskynarr.de/impressum.html</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://ardirectory.huskynarr.de/datenschutz.html</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://ardirectory.huskynarr.de/data/ar_glasses.csv</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>daily</changefreq>
