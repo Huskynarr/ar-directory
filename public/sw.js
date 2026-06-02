@@ -1,54 +1,108 @@
-const CACHE_NAME = 'ar-directory-v2';
+const CACHE_NAME = 'ar-directory-v3';
 const STATIC_ASSETS = ['/', '/icon.svg', '/manifest.json'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(STATIC_ASSETS))
+    caches
+      .open(CACHE_NAME)
+      .then((cache) => cache.addAll(STATIC_ASSETS))
+      .catch(() => {})
   );
   self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)))
-    )
+    caches
+      .keys()
+      .then((keys) =>
+        Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)))
+      )
+      .catch(() => {})
   );
   self.clients.claim();
 });
 
-self.addEventListener('fetch', (event) => {
-  if (event.request.method !== 'GET') return;
-  const url = new URL(event.request.url);
+// Only cache successful responses. Opaque responses (cross-origin no-cors) and
+// error responses must never be stored as a "success", or they poison the cache.
+const isCacheableResponse = (response) =>
+  Boolean(response) && response.status === 200 && response.type !== 'opaque' && response.type !== 'error';
 
-  // Network-first for data files and cross-origin requests (fresh prices/specs).
-  if (url.pathname.startsWith('/data/') || url.hostname !== location.hostname) {
+const putInCache = (request, response) => {
+  caches
+    .open(CACHE_NAME)
+    .then((cache) => cache.put(request, response))
+    .catch(() => {});
+};
+
+// Network-first: fresh data wins, fall back to cache when offline.
+const networkFirst = async (request) => {
+  try {
+    const response = await fetch(request);
+    if (isCacheableResponse(response)) {
+      putInCache(request, response.clone());
+    }
+    return response;
+  } catch (err) {
+    const cached = await caches.match(request);
+    if (cached) return cached;
+    throw err;
+  }
+};
+
+// Stale-while-revalidate: serve cache instantly, refresh in the background.
+const staleWhileRevalidate = async (request) => {
+  const cached = await caches.match(request);
+  const network = fetch(request)
+    .then((response) => {
+      if (isCacheableResponse(response)) {
+        putInCache(request, response.clone());
+      }
+      return response;
+    })
+    .catch(() => undefined);
+
+  if (cached) {
+    // Kick off the background revalidation without blocking the response.
+    network.catch(() => {});
+    return cached;
+  }
+
+  const response = await network;
+  if (response) return response;
+
+  // Offline and nothing cached: provide a navigation fallback.
+  if (request.mode === 'navigate') {
+    const fallback = await caches.match('/');
+    if (fallback) return fallback;
+  }
+  return Response.error();
+};
+
+self.addEventListener('fetch', (event) => {
+  const { request } = event;
+  if (request.method !== 'GET') return;
+
+  let url;
+  try {
+    url = new URL(request.url);
+  } catch {
+    return;
+  }
+
+  // Network-first for data files (fresh prices/specs) and other cross-origin
+  // requests (e.g. exchange-rate API). Avoids serving stale data.
+  if (url.pathname.startsWith('/data/') || url.hostname !== self.location.hostname) {
     event.respondWith(
-      fetch(event.request)
-        .then((response) => {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
-          return response;
-        })
-        .catch(() => caches.match(event.request))
+      networkFirst(request).catch(() => {
+        if (request.mode === 'navigate') return caches.match('/');
+        return Response.error();
+      })
     );
     return;
   }
 
-  // Cache-first for same-origin static assets, with an offline navigation fallback.
-  event.respondWith(
-    caches.match(event.request).then((cached) => {
-      if (cached) return cached;
-      return fetch(event.request)
-        .then((response) => {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
-          return response;
-        })
-        .catch(() => {
-          if (event.request.mode === 'navigate') return caches.match('/');
-          return undefined;
-        });
-    })
-  );
+  // Stale-while-revalidate for same-origin static assets and manufacturer
+  // images: instant repeat visits while still updating in the background.
+  event.respondWith(staleWhileRevalidate(request));
 });
