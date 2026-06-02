@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-AR Directory — a curated AR/XR glasses comparison web application. Single-page app built with Vite + Vanilla JavaScript + Tailwind CSS. Displays 148 AR/XR device specifications from a local CSV dataset with filtering, sorting, comparison, and internationalization (DE/EN).
+AR Directory — a curated AR/XR glasses comparison web application. Single-page app built with Vite + Vanilla JavaScript + Tailwind CSS. Displays 150+ AR/XR device specifications from a local CSV dataset with filtering, sorting, comparison, and internationalization (DE/EN).
 
 ## Commands
 
@@ -65,7 +65,7 @@ npm run images:enrich    # Fetch/cache manufacturer product images
 
 ## CSV Dataset
 
-40 fields per record in `public/data/ar_glasses.csv` (148 records). Deeper spec columns (`chipset`, `brightness_nits`, `connectivity`, `audio`, `battery`, `ipd_mm`, `prescription_support`, `camera`) are surfaced on the static per-device pages. Key fields: `id`, `name`, `manufacturer`, `xr_category` (AR/XR), `price_usd`, `fov_*_deg`, `resolution_per_eye`, `refresh_hz`, `display_type`, `optics`, `tracking`, `release_date`, `eol_status`, `active_distribution`.
+40 fields per record in `public/data/ar_glasses.csv` (151 records). Deeper spec columns (`chipset`, `brightness_nits`, `connectivity`, `audio`, `battery`, `ipd_mm`, `prescription_support`, `camera`) are surfaced on the static per-device pages. Key fields: `id`, `name`, `manufacturer`, `xr_category` (AR/XR), `price_usd`, `fov_*_deg`, `resolution_per_eye`, `refresh_hz`, `display_type`, `optics`, `tracking`, `release_date`, `eol_status`, `active_distribution`.
 
 Metadata in `public/data/ar_glasses.metadata.json`.
 

@@ -1,7 +1,7 @@
 # AR/XR Brillen Vergleich – Vollindex
 
 Maschinenlesbarer Volldatensatz aller gelisteten AR/XR-Brillen. Sprache: de-DE. Quelle: https://huskynarr.de/
-Stand: 2026-06-02 | 148 Modelle (119 AR, 29 XR) | 66 Hersteller
+Stand: 2026-06-02 | 151 Modelle (122 AR, 29 XR) | 67 Hersteller
 
 Felder pro Modell: Hersteller, Kategorie, Release/Ankuendigung, Preis (USD), Display, Optik, FOV (H/V/D in Grad),
 Aufloesung pro Auge, Refresh (Hz), Gewicht (g), Tracking, Eye-/Hand-Tracking, Passthrough, Software, Recheneinheit,
@@ -58,6 +58,32 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: Android | Recheneinheit: Standalone
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – Standalone-VR von 2019; Verfügbarkeit 2026 unklar.
 - Offizielle Seite: https://www.3glasses.com/en/product/x1.html
+
+## Acer AR Vision GR0 (Acer)
+- Kategorie: AR
+- Angekuendigt: 2026-05-29 | Release: k. A.
+- Preis: 499 USD
+- Display: Micro-OLED (Dual FHD) | Optik: Birdbath optics
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: 1920x1080 | Refresh: 60 Hz
+- Gewicht: 69 g
+- Tracking: Non-positional | Eye-Tracking: k. A. | Hand-Tracking: k. A. | Passthrough: No camera passthrough
+- Software: Android, iOS, Windows | Recheneinheit: Phone
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Auf Computex 2026 vorgestellt; Marktstart Q3-Q4 2026 (ab $499). Acers Rueckkehr ins XR.
+- Offizielle Seite: https://www.acer.com/acer-ar-glasses-gr0
+
+## Acer GI0 AI Glasses (Acer)
+- Kategorie: AR
+- Angekuendigt: 2026-05-29 | Release: k. A.
+- Preis: 299 USD
+- Display: Keine (AI-Brille) | Optik: k. A.
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: k. A. | Refresh: k. A.
+- Gewicht: 46 g
+- Tracking: Non-positional | Eye-Tracking: k. A. | Hand-Tracking: k. A. | Passthrough: 12MP camera
+- Software: Google Gemini, Acer AspireSync | Recheneinheit: Phone
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Display-lose KI-Brille mit Google Gemini; Computex 2026, Marktstart Q3-Q4 2026 (ab $299).
+- Offizielle Seite: https://www.acer.com/us-en/accessories/smart-devices/ai-glasses-gi0
 
 ## AjnaLens AjnaX (AjnaLens)
 - Kategorie: AR
@@ -136,6 +162,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: Windows 11 64-bit | Recheneinheit: PC
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Keine eindeutige EOL-Angabe in den Quelldaten.
 - Offizielle Seite: https://www.asus.com/us/displays-desktops/glasses/airvision/asus-airvision-m1/
+
+## ASUS ROG XREAL R1 (Asus)
+- Kategorie: AR
+- Angekuendigt: 2026-06-01 | Release: k. A.
+- Preis: k. A.
+- Display: Micro-OLED (Sony 0.55" FHD) | Optik: Birdbath optics
+- FOV (H/V/D Grad): – / – / 57
+- Aufloesung pro Auge: 1920x1080 | Refresh: 240 Hz
+- Gewicht: 91 g
+- Tracking: Non-positional | Eye-Tracking: k. A. | Hand-Tracking: k. A. | Passthrough: No camera passthrough
+- Software: ROG / Plug-and-play | Recheneinheit: PC
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Weltweit erste 240Hz Micro-OLED Gaming-AR-Brille (ASUS x Xreal); ROG Edition 20 Bundle mit Xbox Ally X20, Computex 2026.
+- Offizielle Seite: https://press.asus.com/news/press-releases/rog-xreal-r1-ar-gaming-glasses/
 
 ## Bigscreen Beyond 2 (Bigscreen)
 - Kategorie: XR

@@ -5,10 +5,10 @@
   "primary_url": "https://huskynarr.de/",
   "description": "Vergleich fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Shop-Links, Lifecycle und EOL-Status.",
   "dataset_summary": {
-    "records": 148,
-    "ar_records": 119,
+    "records": 151,
+    "ar_records": 122,
     "xr_records": 29,
-    "manufacturers": 66,
+    "manufacturers": 67,
     "newest_release": "2026-03-01"
   },
   "resources": [

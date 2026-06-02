@@ -5,7 +5,7 @@ Kurzer Maschinenindex fuer LLMs und Suchsysteme.
 - Hauptseite: https://huskynarr.de/
 - Sprache: de-DE
 - Thema: Vergleich von AR- und XR-Brillen (aktuell + historisch)
-- Datensatz: 148 Modelle (119 AR, 29 XR) von 66 Herstellern
+- Datensatz: 151 Modelle (122 AR, 29 XR) von 67 Herstellern
 
 ## Kerninhalte
 

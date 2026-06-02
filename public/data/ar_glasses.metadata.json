@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-06-02T07:31:58.043Z",
+  "generated_at": "2026-06-02T07:53:14.344Z",
   "source_dataset": "curated_ar_xr_directory_v2",
   "source_page": "https://huskynarr.de/",
-  "records": 148,
-  "ar_records": 119,
+  "records": 151,
+  "ar_records": 122,
   "xr_records": 29,
-  "manufacturers": 66,
-  "official_shop_links": 144,
-  "image_links": 147,
-  "active_models": 111,
-  "discontinued_models": 148,
+  "manufacturers": 67,
+  "official_shop_links": 147,
+  "image_links": 150,
+  "active_models": 114,
+  "discontinued_models": 151,
   "newest_release": "2026-03-01",
   "oldest_release": "2013-03-01",
   "price_range_usd": {
@@ -18,163 +18,163 @@
   },
   "field_coverage": {
     "id": {
-      "filled": 148,
+      "filled": 151,
       "percent": 100
     },
     "short_name": {
-      "filled": 148,
+      "filled": 151,
       "percent": 100
     },
     "name": {
-      "filled": 148,
+      "filled": 151,
       "percent": 100
     },
     "manufacturer": {
-      "filled": 148,
+      "filled": 151,
       "percent": 100
     },
     "image_url": {
-      "filled": 147,
+      "filled": 150,
       "percent": 99.3
     },
     "official_url": {
-      "filled": 144,
-      "percent": 97.3
+      "filled": 147,
+      "percent": 97.4
     },
     "announced_date": {
-      "filled": 147,
+      "filled": 150,
       "percent": 99.3
     },
     "release_date": {
       "filled": 139,
-      "percent": 93.9
+      "percent": 92.1
     },
     "price_usd": {
-      "filled": 132,
-      "percent": 89.2
+      "filled": 134,
+      "percent": 88.7
     },
     "xr_category": {
-      "filled": 148,
+      "filled": 151,
       "percent": 100
     },
     "active_distribution": {
-      "filled": 148,
+      "filled": 151,
       "percent": 100
     },
     "eol_status": {
-      "filled": 148,
+      "filled": 151,
       "percent": 100
     },
     "eol_date": {
       "filled": 11,
-      "percent": 7.4
+      "percent": 7.3
     },
     "lifecycle_notes": {
-      "filled": 148,
+      "filled": 151,
       "percent": 100
     },
     "lifecycle_source": {
-      "filled": 70,
-      "percent": 47.3
+      "filled": 73,
+      "percent": 48.3
     },
     "software": {
-      "filled": 113,
-      "percent": 76.4
+      "filled": 116,
+      "percent": 76.8
     },
     "compute_unit": {
-      "filled": 147,
+      "filled": 150,
       "percent": 99.3
     },
     "display_type": {
-      "filled": 131,
-      "percent": 88.5
+      "filled": 134,
+      "percent": 88.7
     },
     "optics": {
-      "filled": 117,
-      "percent": 79.1
+      "filled": 119,
+      "percent": 78.8
     },
     "fov_horizontal_deg": {
       "filled": 41,
-      "percent": 27.7
+      "percent": 27.2
     },
     "fov_vertical_deg": {
       "filled": 18,
-      "percent": 12.2
+      "percent": 11.9
     },
     "fov_diagonal_deg": {
-      "filled": 103,
-      "percent": 69.6
+      "filled": 104,
+      "percent": 68.9
     },
     "resolution_per_eye": {
-      "filled": 131,
-      "percent": 88.5
+      "filled": 133,
+      "percent": 88.1
     },
     "refresh_hz": {
-      "filled": 84,
-      "percent": 56.8
+      "filled": 86,
+      "percent": 57
     },
     "weight_g": {
-      "filled": 122,
-      "percent": 82.4
+      "filled": 125,
+      "percent": 82.8
     },
     "tracking": {
-      "filled": 130,
-      "percent": 87.8
+      "filled": 133,
+      "percent": 88.1
     },
     "eye_tracking": {
       "filled": 148,
-      "percent": 100
+      "percent": 98
     },
     "hand_tracking": {
       "filled": 148,
-      "percent": 100
+      "percent": 98
     },
     "passthrough": {
-      "filled": 143,
-      "percent": 96.6
+      "filled": 146,
+      "percent": 96.7
     },
     "chipset": {
-      "filled": 116,
-      "percent": 78.4
+      "filled": 118,
+      "percent": 78.1
     },
     "brightness_nits": {
-      "filled": 67,
-      "percent": 45.3
+      "filled": 69,
+      "percent": 45.7
     },
     "connectivity": {
-      "filled": 134,
-      "percent": 90.5
+      "filled": 137,
+      "percent": 90.7
     },
     "audio": {
       "filled": 113,
-      "percent": 76.4
+      "percent": 74.8
     },
     "battery": {
       "filled": 134,
-      "percent": 90.5
+      "percent": 88.7
     },
     "ipd_mm": {
       "filled": 72,
-      "percent": 48.6
+      "percent": 47.7
     },
     "prescription_support": {
       "filled": 55,
-      "percent": 37.2
+      "percent": 36.4
     },
     "camera": {
-      "filled": 116,
-      "percent": 78.4
+      "filled": 119,
+      "percent": 78.8
     },
     "source_dataset": {
-      "filled": 148,
+      "filled": 151,
       "percent": 100
     },
     "source_page": {
-      "filled": 148,
+      "filled": 151,
       "percent": 100
     },
     "dataset_retrieved_at": {
-      "filled": 148,
+      "filled": 151,
       "percent": 100
     }
   },
