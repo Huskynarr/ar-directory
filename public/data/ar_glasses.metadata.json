@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-02T17:33:47.013Z",
+  "generated_at": "2026-06-02T18:16:26.244Z",
   "source_dataset": "curated_ar_xr_directory_v2",
   "source_page": "https://huskynarr.de/",
   "records": 151,
@@ -164,6 +164,10 @@
     "camera": {
       "filled": 119,
       "percent": 78.8
+    },
+    "slug": {
+      "filled": 151,
+      "percent": 100
     },
     "source_dataset": {
       "filled": 151,
