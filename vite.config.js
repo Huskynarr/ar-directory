@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 import Papa from 'papaparse';
+import { assignSlugs } from './scripts/lib/render-pages.mjs';
 
 const DATA_DIR = 'public/data';
 
@@ -25,17 +26,20 @@ const fact = (label, value, suffix = '') =>
     ? `<dt>${label}</dt><dd>${escapeHtml(value)}${suffix}</dd>`
     : '';
 
-const buildCatalogHtml = (rows) => {
+const buildCatalogHtml = (rows, slugs) => {
   const items = rows
     .map((row) => {
       const fov = [row.fov_horizontal_deg, row.fov_vertical_deg, row.fov_diagonal_deg]
         .map((value) => (String(value || '').trim() ? value : '–'))
         .join(' / ');
-      const link = row.official_url
-        ? ` <a href="${escapeHtml(row.official_url)}" rel="nofollow noopener">Produktseite</a>`
-        : '';
+      const slug = slugs.get(row.id);
+      const link = slug
+        ? ` <a href="/modelle/${slug}.html">Details &amp; Vergleich</a>`
+        : row.official_url
+          ? ` <a href="${escapeHtml(row.official_url)}" rel="nofollow noopener">Produktseite</a>`
+          : '';
       return `<article>
-  <h3>${escapeHtml(row.name)}</h3>
+  <h3>${slug ? `<a href="/modelle/${slug}.html">${escapeHtml(row.name)}</a>` : escapeHtml(row.name)}</h3>
   <dl>
     ${fact('Hersteller', row.manufacturer)}
     ${fact('Kategorie', row.xr_category)}
@@ -96,7 +100,8 @@ const seoInjectPlugin = () => ({
         : '';
       out = out.replace('<!-- @structured-data -->', ldScript);
 
-      const catalog = rows.length ? buildCatalogHtml(rows) : '';
+      const slugs = assignSlugs(rows);
+      const catalog = rows.length ? buildCatalogHtml(rows, slugs) : '';
       out = out.replace('<!-- @catalog -->', catalog);
 
       return out;

@@ -100,9 +100,13 @@ Fuer bessere Auffindbarkeit in Suchmaschinen und LLM-basierten Suchsystemen sind
   - Title/Description/Robots inkl. dynamischer Modellanzahl (Build-Tokens)
   - OpenGraph (mit absoluter Bild-URL, Groesse, `site_name`, `locale:alternate`) + Twitter Cards
   - JSON-LD (`WebSite`, `CollectionPage`, `Dataset`, **`ItemList` mit allen Produkten als `Product`**)
+- **Statische Einzelseiten** (aus der CSV generiert, `scripts/lib/render-pages.mjs`):
+  - `public/modelle/<slug>.html` — eine eigenstaendige, crawlbare Detailseite pro Modell mit allen Specs, Lifecycle, JSON-LD `Product` + `BreadcrumbList`, interner Verlinkung (Hersteller/Kategorie) und Deep-Links in die Vergleichs-App
+  - `public/modelle/index.html` — A–Z-Modell-Hub gruppiert nach Hersteller
+  - `public/glossar.html` — Glossar + FAQ mit JSON-LD `FAQPage` + `DefinedTermSet`
 - Build-Time-Injektion via Vite-Plugin (`vite.config.js`):
   - injiziert die generierten JSON-LD-Strukturdaten in das HTML
-  - rendert einen **statischen, crawlbaren Katalog** aller Modelle in `#app` (zur Laufzeit von der SPA ersetzt) — so sehen Suchmaschinen und JS-lose AI-Crawler den vollen Datenbestand
+  - rendert einen **statischen, crawlbaren Katalog** aller Modelle in `#app` (zur Laufzeit von der SPA ersetzt, verlinkt auf die Einzelseiten) — so sehen Suchmaschinen und JS-lose AI-Crawler den vollen Datenbestand
 - Crawl-Dateien (aus der CSV generiert, siehe Datenquelle):
   - `public/robots.txt` (inkl. expliziter Allow-Regeln fuer GPTBot, ClaudeBot, PerplexityBot, Google-Extended u. a.)
   - `public/sitemap.xml`, `public/llms.txt`, `public/llms-full.txt`, `public/ai-search.json`, `public/data/structured-data.json`
@@ -170,17 +174,21 @@ npm run images:enrich
 .
 ├─ public/
 │  ├─ data/
-│  │  ├─ ar_glasses.csv            # Quelle der Wahrheit
+│  │  ├─ ar_glasses.csv            # Quelle der Wahrheit (40 Spalten)
 │  │  ├─ ar_glasses.metadata.json  # generiert
 │  │  └─ structured-data.json      # generiert (JSON-LD)
+│  ├─ modelle/                     # generiert: <slug>.html pro Modell + index.html
+│  ├─ glossar.html                 # generiert (Glossar + FAQ)
 │  ├─ images/manufacturers/
 │  ├─ icon.svg                     # PWA/Favicon
 │  ├─ manifest.json · sw.js · robots.txt
 │  └─ sitemap.xml · llms.txt · llms-full.txt · ai-search.json   # generiert
 ├─ scripts/
-│  ├─ generate-ar-csv.mjs          # CSV -> alle Artefakte
+│  ├─ generate-ar-csv.mjs          # CSV -> alle Artefakte + statische Seiten
+│  ├─ lib/render-pages.mjs         # Pro-Gerät-/Index-/Glossar-HTML
 │  ├─ apply-enrichment.mjs         # Recherche-Payload -> CSV
-│  ├─ enrichment-2026.json         # Recherche-Payload (mit Quellen)
+│  ├─ enrichment-2026.json         # Recherche-Payload (Specs + neue Geraete, mit Quellen)
+│  ├─ enrichment-phase2.json       # Recherche-Payload (Tiefen-Specs, mit Quellen)
 │  └─ enrich-manufacturer-images.mjs
 ├─ src/
 │  ├─ main.js                      # Orchestrator (render-Loop, Events, init)

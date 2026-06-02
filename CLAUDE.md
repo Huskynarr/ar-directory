@@ -49,7 +49,7 @@ npm run images:enrich    # Fetch/cache manufacturer product images
 - Performance: debounced search (150ms) and numeric inputs (200ms)
 
 **Data pipeline** (`scripts/`):
-- `generate-ar-csv.mjs` — normalizes/validates the CSV and generates ALL derived artifacts from it (single source of truth): `ar_glasses.metadata.json`, `structured-data.json` (JSON-LD), `sitemap.xml`, `llms.txt`, `llms-full.txt`, `ai-search.json`. Tolerates recoverable CSV quote/CRLF warnings.
+- `generate-ar-csv.mjs` — normalizes/validates the CSV and generates ALL derived artifacts from it (single source of truth): `ar_glasses.metadata.json`, `structured-data.json` (JSON-LD), `sitemap.xml`, `llms.txt`, `llms-full.txt`, `ai-search.json`, plus static crawlable pages (`public/modelle/<slug>.html` per device, `public/modelle/index.html`, `public/glossar.html`) via `scripts/lib/render-pages.mjs`. Tolerates recoverable CSV quote/CRLF warnings.
 - `apply-enrichment.mjs` — applies a research payload (`enrichment-2026.json`: per-field changes keyed by id + new device rows with sources) to the CSV; identity/image/provenance columns are immutable. Run `data:generate` afterwards.
 - `enrich-manufacturer-images.mjs` — fetches official product images with per-model URL overrides, caches under `public/images/manufacturers/`
 
@@ -65,7 +65,7 @@ npm run images:enrich    # Fetch/cache manufacturer product images
 
 ## CSV Dataset
 
-32 fields per record in `public/data/ar_glasses.csv` (148 records). Key fields: `id`, `name`, `manufacturer`, `xr_category` (AR/XR), `price_usd`, `fov_*_deg`, `resolution_per_eye`, `refresh_hz`, `display_type`, `optics`, `tracking`, `release_date`, `eol_status`, `active_distribution`.
+40 fields per record in `public/data/ar_glasses.csv` (148 records). Deeper spec columns (`chipset`, `brightness_nits`, `connectivity`, `audio`, `battery`, `ipd_mm`, `prescription_support`, `camera`) are surfaced on the static per-device pages. Key fields: `id`, `name`, `manufacturer`, `xr_category` (AR/XR), `price_usd`, `fov_*_deg`, `resolution_per_eye`, `refresh_hz`, `display_type`, `optics`, `tracking`, `release_date`, `eol_status`, `active_distribution`.
 
 Metadata in `public/data/ar_glasses.metadata.json`.
 

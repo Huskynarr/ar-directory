@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import Papa from 'papaparse';
+import { assignSlugs, buildDevicePage, buildGlossary, buildModelIndex } from './lib/render-pages.mjs';
 
 const INPUT_CSV_PATH = 'public/data/ar_glasses.csv';
 const OUTPUT_CSV_PATH = 'public/data/ar_glasses.csv';
@@ -41,6 +42,19 @@ const safeHttpUrl = (value) => {
   } catch {
     return '';
   }
+};
+
+// Image URLs may be absolute http(s) URLs OR root-relative local asset paths
+// (e.g. "/images/manufacturers/x.png") produced by the image-enrichment step.
+const safeImageUrl = (value) => {
+  const input = sanitize(value);
+  if (!input) {
+    return '';
+  }
+  if (input.startsWith('/')) {
+    return input;
+  }
+  return safeHttpUrl(input);
 };
 
 const normalizeCategory = (value) => {
@@ -114,6 +128,14 @@ const OUTPUT_FIELDS = [
   'eye_tracking',
   'hand_tracking',
   'passthrough',
+  'chipset',
+  'brightness_nits',
+  'connectivity',
+  'audio',
+  'battery',
+  'ipd_mm',
+  'prescription_support',
+  'camera',
   'source_dataset',
   'source_page',
   'dataset_retrieved_at',
@@ -169,7 +191,7 @@ const buildMetadata = (rows, retrievedAt) => {
   };
 };
 
-const buildStructuredData = (rows, retrievedAt) => {
+const buildStructuredData = (rows, retrievedAt, slugs = new Map()) => {
   const itemListElement = rows.map((row, index) => {
     const offers = Number(row.price_usd) > 0
       ? {
@@ -189,7 +211,8 @@ const buildStructuredData = (rows, retrievedAt) => {
       brand: { '@type': 'Brand', name: row.manufacturer },
     };
     if (hasValue(row.image_url)) product.image = row.image_url;
-    if (hasValue(row.official_url)) product.url = row.official_url;
+    if (slugs.get(row.id)) product.url = `${BASE_URL}modelle/${slugs.get(row.id)}.html`;
+    if (hasValue(row.official_url)) product.sameAs = row.official_url;
     if (hasValue(row.release_date)) product.releaseDate = row.release_date;
     if (offers) product.offers = offers;
 
@@ -251,13 +274,16 @@ const buildStructuredData = (rows, retrievedAt) => {
   ];
 };
 
-const buildSitemap = (lastmod) => {
+const buildSitemap = (lastmod, rows = [], slugs = new Map()) => {
   const urls = [
     { loc: BASE_URL, changefreq: 'daily', priority: '1.0' },
-    { loc: `${BASE_URL}data/ar_glasses.csv`, changefreq: 'daily', priority: '0.9' },
-    { loc: `${BASE_URL}data/ar_glasses.metadata.json`, changefreq: 'daily', priority: '0.8' },
-    { loc: `${BASE_URL}llms.txt`, changefreq: 'weekly', priority: '0.8' },
-    { loc: `${BASE_URL}llms-full.txt`, changefreq: 'weekly', priority: '0.7' },
+    { loc: `${BASE_URL}modelle/`, changefreq: 'weekly', priority: '0.9' },
+    { loc: `${BASE_URL}glossar.html`, changefreq: 'monthly', priority: '0.6' },
+    { loc: `${BASE_URL}data/ar_glasses.csv`, changefreq: 'daily', priority: '0.8' },
+    { loc: `${BASE_URL}data/ar_glasses.metadata.json`, changefreq: 'daily', priority: '0.7' },
+    { loc: `${BASE_URL}llms.txt`, changefreq: 'weekly', priority: '0.7' },
+    { loc: `${BASE_URL}llms-full.txt`, changefreq: 'weekly', priority: '0.6' },
+    ...rows.map((row) => ({ loc: `${BASE_URL}modelle/${slugs.get(row.id)}.html`, changefreq: 'weekly', priority: '0.7' })),
   ];
   const body = urls
     .map(
@@ -391,7 +417,7 @@ const main = async () => {
       short_name: sanitize(row.short_name),
       name: sanitize(row.name),
       manufacturer: sanitize(row.manufacturer),
-      image_url: safeHttpUrl(row.image_url),
+      image_url: safeImageUrl(row.image_url),
       official_url: safeHttpUrl(row.official_url),
       announced_date: sanitize(row.announced_date),
       release_date: sanitize(row.release_date),
@@ -416,6 +442,14 @@ const main = async () => {
       eye_tracking: sanitize(row.eye_tracking),
       hand_tracking: sanitize(row.hand_tracking),
       passthrough: sanitize(row.passthrough),
+      chipset: sanitize(row.chipset),
+      brightness_nits: toNumberOrEmpty(row.brightness_nits),
+      connectivity: sanitize(row.connectivity),
+      audio: sanitize(row.audio),
+      battery: sanitize(row.battery),
+      ipd_mm: sanitize(row.ipd_mm),
+      prescription_support: sanitize(row.prescription_support),
+      camera: sanitize(row.camera),
       source_dataset: SOURCE_DATASET,
       source_page: SOURCE_PAGE,
       dataset_retrieved_at: retrievedAt,
@@ -431,17 +465,34 @@ const main = async () => {
   const metadata = buildMetadata(normalizedRows, retrievedAt);
   await writeFile(OUTPUT_METADATA_PATH, `${JSON.stringify(metadata, null, 2)}\n`, 'utf8');
 
+  // Stable per-device slug -> used by sitemap, structured data and static pages.
+  const slugs = assignSlugs(normalizedRows);
+
   // Derived SEO + LLM artifacts so the CSV stays the single source of truth.
-  const structuredData = { '@context': 'https://schema.org', '@graph': buildStructuredData(normalizedRows, retrievedAt) };
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': buildStructuredData(normalizedRows, retrievedAt, slugs),
+  };
   await writeFile(OUTPUT_STRUCTURED_DATA_PATH, `${JSON.stringify(structuredData, null, 2)}\n`, 'utf8');
-  await writeFile(OUTPUT_SITEMAP_PATH, buildSitemap(lastmod), 'utf8');
+  await writeFile(OUTPUT_SITEMAP_PATH, buildSitemap(lastmod, normalizedRows, slugs), 'utf8');
   await writeFile(OUTPUT_LLMS_PATH, buildLlms(metadata, lastmod), 'utf8');
   await writeFile(OUTPUT_LLMS_FULL_PATH, buildLlmsFull(normalizedRows, metadata, lastmod), 'utf8');
   await writeFile(OUTPUT_AI_SEARCH_PATH, `${JSON.stringify(buildAiSearch(metadata, lastmod), null, 2)}\n`, 'utf8');
 
+  // Static, crawlable pages: one per device + a model hub + a glossary/FAQ.
+  await mkdir('public/modelle', { recursive: true });
+  await Promise.all(
+    normalizedRows.map((row) =>
+      writeFile(`public/modelle/${slugs.get(row.id)}.html`, buildDevicePage(row, normalizedRows, slugs, BASE_URL), 'utf8'),
+    ),
+  );
+  await writeFile('public/modelle/index.html', buildModelIndex(normalizedRows, slugs, metadata, BASE_URL), 'utf8');
+  await writeFile('public/glossar.html', buildGlossary(metadata, BASE_URL), 'utf8');
+
   console.log(
     `Generated ${normalizedRows.length} curated AR/XR records at ${retrievedAt}\n` +
-      `  -> CSV, metadata, structured-data.json, sitemap.xml, llms.txt, llms-full.txt, ai-search.json`,
+      `  -> CSV, metadata, structured-data.json, sitemap.xml, llms.txt, llms-full.txt, ai-search.json\n` +
+      `  -> ${normalizedRows.length} device pages + modelle/index.html + glossar.html`,
   );
 };
 

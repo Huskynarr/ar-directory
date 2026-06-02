@@ -1,0 +1,355 @@
+// Static page rendering for SEO/LLM depth: one standalone, crawlable page per
+// device, a model hub/index, and a glossary + FAQ page. All derived from the CSV.
+
+const UNKNOWN = new Set(['', 'k.a.', 'k. a.', 'n/a', 'na', 'unknown', 'unbekannt', '-', '–', 'null', 'undefined']);
+export const hasValue = (v) => !UNKNOWN.has(String(v ?? '').trim().toLowerCase());
+
+export const esc = (v) =>
+  String(v ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
+const slugify = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
+// Assign a unique, filesystem-safe slug per row (prefers existing short_name).
+export const assignSlugs = (rows) => {
+  const used = new Set();
+  const map = new Map();
+  for (const row of rows) {
+    let base = slugify(row.short_name || row.name || row.id) || row.id;
+    let slug = base;
+    let n = 2;
+    while (used.has(slug)) slug = `${base}-${n++}`;
+    used.add(slug);
+    map.set(row.id, slug);
+  }
+  return map;
+};
+
+const CATEGORY_LABEL = (c) => (String(c).toUpperCase() === 'XR' ? 'XR-Headset' : 'AR-Brille');
+
+// Ordered spec rows for the detail table. `deep` rows render only when present.
+const SPEC_ROWS = [
+  ['manufacturer', 'Hersteller'],
+  ['xr_category', 'Kategorie'],
+  ['announced_date', 'Angekuendigt'],
+  ['release_date', 'Release'],
+  ['display_type', 'Display'],
+  ['optics', 'Optik'],
+  ['__fov__', 'Sichtfeld (FOV, H/V/D)'],
+  ['resolution_per_eye', 'Aufloesung pro Auge'],
+  ['refresh_hz', 'Bildwiederholrate', ' Hz'],
+  ['brightness_nits', 'Helligkeit', ' nits'],
+  ['weight_g', 'Gewicht', ' g'],
+  ['chipset', 'Chipsatz'],
+  ['compute_unit', 'Recheneinheit'],
+  ['software', 'Software'],
+  ['tracking', 'Tracking'],
+  ['eye_tracking', 'Eye-Tracking'],
+  ['hand_tracking', 'Hand-Tracking'],
+  ['passthrough', 'Passthrough'],
+  ['camera', 'Kamera'],
+  ['connectivity', 'Konnektivitaet'],
+  ['audio', 'Audio'],
+  ['battery', 'Akku'],
+  ['ipd_mm', 'IPD'],
+  ['prescription_support', 'Sehstaerke'],
+];
+
+const fovValue = (row) => {
+  const parts = [row.fov_horizontal_deg, row.fov_vertical_deg, row.fov_diagonal_deg].map((v) =>
+    hasValue(v) ? `${v}°` : '–',
+  );
+  return parts.every((p) => p === '–') ? '' : parts.join(' / ');
+};
+
+const head = ({ title, description, canonical, image, jsonLd, baseUrl }) => `<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>${esc(title)}</title>
+<meta name="description" content="${esc(description)}" />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<link rel="canonical" href="${esc(canonical)}" />
+<link rel="icon" type="image/svg+xml" href="/icon.svg" />
+<meta name="theme-color" content="#0c0a09" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:title" content="${esc(title)}" />
+<meta property="og:description" content="${esc(description)}" />
+<meta property="og:url" content="${esc(canonical)}" />
+<meta property="og:image" content="${esc(image || `${baseUrl}og/startseite.png`)}" />
+<meta name="twitter:card" content="summary_large_image" />
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:#0c0a09;color:#e7e5e4;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:#a3e635;text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:880px;margin:0 auto;padding:24px 20px 64px}
+nav.bc{font-size:14px;color:#a8a29e;margin-bottom:24px}
+nav.bc a{color:#a8a29e}
+h1{font-size:30px;line-height:1.2;margin:8px 0 4px}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.badge{font-size:13px;padding:3px 10px;border-radius:999px;border:1px solid #44403c;color:#d6d3d1}
+.badge.cat{border-color:#65a30d;color:#bef264}.badge.xr{border-color:#0891b2;color:#67e8f9}
+.hero{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start;margin:16px 0 8px}
+.hero img{max-width:280px;width:100%;border-radius:12px;background:#1c1917;border:1px solid #292524}
+.ph{width:280px;height:160px;border-radius:12px;border:1px solid #292524;display:flex;align-items:center;justify-content:center;font-size:42px;font-weight:700;background:linear-gradient(135deg,#1c1917,#0c0a09);color:#3f3f46}
+.price{font-size:24px;font-weight:700;color:#fafaf9;margin:6px 0}
+.lead{color:#d6d3d1;margin:4px 0 20px}
+table{width:100%;border-collapse:collapse;margin:8px 0 24px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid #292524;vertical-align:top}
+th{color:#a8a29e;font-weight:500;width:42%}
+.cta{display:inline-block;margin:4px 8px 4px 0;padding:9px 16px;border-radius:10px;border:1px solid #44403c;color:#fafaf9}
+.cta.primary{background:#4d7c0f;border-color:#4d7c0f}
+.note{background:#1c1917;border:1px solid #292524;border-radius:12px;padding:14px 16px;margin:8px 0 24px;color:#d6d3d1}
+h2{font-size:20px;margin:28px 0 8px}
+ul.rel{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+ul.rel a{display:inline-block;padding:6px 12px;border:1px solid #292524;border-radius:999px}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid #292524;color:#78716c;font-size:14px}
+</style>
+${jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, '\\u003c')}</script>` : ''}
+</head>`;
+
+export const buildDevicePage = (row, rows, slugs, baseUrl) => {
+  const slug = slugs.get(row.id);
+  const canonical = `${baseUrl}modelle/${slug}.html`;
+  const cat = CATEGORY_LABEL(row.xr_category);
+  const isXr = String(row.xr_category).toUpperCase() === 'XR';
+  const priceText = hasValue(row.price_usd) ? `ca. ${row.price_usd} USD` : 'Preis k. A.';
+
+  const descParts = [
+    `${row.name} (${row.manufacturer}) — ${cat}.`,
+    hasValue(row.price_usd) ? `Preis ca. $${row.price_usd}.` : '',
+    hasValue(row.display_type) ? `${row.display_type}.` : '',
+    fovValue(row) ? `FOV ${fovValue(row)}.` : '',
+    hasValue(row.resolution_per_eye) ? `${row.resolution_per_eye} pro Auge.` : '',
+    'Specs, Preis, Lifecycle & Vergleich.',
+  ].filter(Boolean);
+  const description = descParts.join(' ').slice(0, 300);
+
+  const specRowsHtml = SPEC_ROWS.map(([key, label, suffix]) => {
+    let value = key === '__fov__' ? fovValue(row) : row[key];
+    if (key === 'release_date' || key === 'announced_date') value = hasValue(value) ? value : '';
+    if (!hasValue(value) && key !== '__fov__') return '';
+    if (key === '__fov__' && !value) return '';
+    if (key === 'xr_category') value = `${row.xr_category} (${cat})`;
+    return `<tr><th>${label}</th><td>${esc(value)}${suffix && hasValue(row[key]) ? suffix : ''}</td></tr>`;
+  })
+    .filter(Boolean)
+    .join('\n');
+
+  const lifecycle = `<div class="note"><strong>Lifecycle:</strong> ${esc(row.eol_status || 'k. A.')}` +
+    `${hasValue(row.active_distribution) ? ` · Aktiver Vertrieb: ${esc(row.active_distribution)}` : ''}` +
+    `${hasValue(row.eol_date) ? ` · EOL: ${esc(row.eol_date)}` : ''}` +
+    `${hasValue(row.lifecycle_notes) ? `<br>${esc(row.lifecycle_notes)}` : ''}` +
+    `${hasValue(row.lifecycle_source) ? ` <a href="${esc(row.lifecycle_source)}" rel="nofollow noopener">Quelle</a>` : ''}</div>`;
+
+  const related = rows
+    .filter((r) => r.id !== row.id && r.manufacturer === row.manufacturer)
+    .slice(0, 8)
+    .map((r) => `<li><a href="/modelle/${slugs.get(r.id)}.html">${esc(r.name)}</a></li>`)
+    .join('');
+  const sameCat = rows
+    .filter((r) => r.id !== row.id && r.xr_category === row.xr_category && r.manufacturer !== row.manufacturer)
+    .slice(0, 8)
+    .map((r) => `<li><a href="/modelle/${slugs.get(r.id)}.html">${esc(r.name)}</a></li>`)
+    .join('');
+
+  const image = hasValue(row.image_url) ? row.image_url : '';
+  const heroMedia = image
+    ? `<img src="${esc(image)}" alt="${esc(row.name)}" loading="lazy" width="280" height="160" />`
+    : `<div class="ph">${esc((row.name || '?').slice(0, 2).toUpperCase())}</div>`;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Start', item: baseUrl },
+          { '@type': 'ListItem', position: 2, name: 'Modelle', item: `${baseUrl}modelle/` },
+          { '@type': 'ListItem', position: 3, name: row.name, item: canonical },
+        ],
+      },
+      {
+        '@type': 'Product',
+        name: row.name,
+        category: cat,
+        brand: { '@type': 'Brand', name: row.manufacturer },
+        ...(image ? { image } : {}),
+        ...(hasValue(row.release_date) ? { releaseDate: row.release_date } : {}),
+        description,
+        additionalProperty: SPEC_ROWS.flatMap(([key, label]) => {
+          const v = key === '__fov__' ? fovValue(row) : row[key];
+          return hasValue(v) ? [{ '@type': 'PropertyValue', name: label, value: String(v) }] : [];
+        }),
+        ...(hasValue(row.price_usd)
+          ? {
+              offers: {
+                '@type': 'Offer',
+                priceCurrency: 'USD',
+                price: String(row.price_usd),
+                availability: String(row.active_distribution).toLowerCase().startsWith('ja')
+                  ? 'https://schema.org/InStock'
+                  : 'https://schema.org/Discontinued',
+                ...(hasValue(row.official_url) ? { url: row.official_url } : {}),
+              },
+            }
+          : {}),
+      },
+    ],
+  };
+
+  return `${head({ title: `${row.name} – Specs, Preis & Vergleich | AR/XR Brillen Vergleich`, description, canonical, image, jsonLd, baseUrl })}
+<body>
+<div class="wrap">
+<nav class="bc"><a href="/">Start</a> › <a href="/modelle/">Modelle</a> › ${esc(row.name)}</nav>
+<header>
+<h1>${esc(row.name)}</h1>
+<div class="badges"><span class="badge ${isXr ? 'xr' : 'cat'}">${esc(cat)}</span><span class="badge">${esc(row.manufacturer)}</span>${hasValue(row.release_date) ? `<span class="badge">Release ${esc(row.release_date)}</span>` : ''}</div>
+</header>
+<div class="hero">
+${heroMedia}
+<div>
+<p class="price">${esc(priceText)}</p>
+<p class="lead">${esc(row.name)} von ${esc(row.manufacturer)} im AR/XR Brillen Vergleich: alle Spezifikationen, Preis, Lifecycle-Status und der direkte Vergleich mit anderen Modellen.</p>
+<a class="cta primary" href="/?selectedIds=${esc(row.id)}&compareMode=true">Im Vergleich oeffnen</a>
+${hasValue(row.official_url) ? `<a class="cta" href="${esc(row.official_url)}" rel="nofollow noopener">Offizielle Produktseite</a>` : ''}
+</div>
+</div>
+<h2>Technische Daten</h2>
+<table><tbody>
+${specRowsHtml}
+</tbody></table>
+${lifecycle}
+${related ? `<h2>Weitere Modelle von ${esc(row.manufacturer)}</h2><ul class="rel">${related}</ul>` : ''}
+${sameCat ? `<h2>Aehnliche ${esc(cat)}-Modelle</h2><ul class="rel">${sameCat}</ul>` : ''}
+<footer>
+Teil des <a href="/">AR/XR Brillen Vergleichs</a> · <a href="/modelle/">Alle Modelle</a> · <a href="/glossar.html">Glossar &amp; FAQ</a><br>
+Angaben ohne Gewaehr; Spezifikationen koennen je nach Region/Revision abweichen.
+</footer>
+</div>
+</body>
+</html>
+`;
+};
+
+export const buildModelIndex = (rows, slugs, meta, baseUrl) => {
+  const canonical = `${baseUrl}modelle/`;
+  const byMfr = new Map();
+  for (const row of rows) {
+    if (!byMfr.has(row.manufacturer)) byMfr.set(row.manufacturer, []);
+    byMfr.get(row.manufacturer).push(row);
+  }
+  const mfrs = [...byMfr.keys()].sort((a, b) => a.localeCompare(b, 'de', { sensitivity: 'base' }));
+  const sections = mfrs
+    .map((mfr) => {
+      const items = byMfr
+        .get(mfr)
+        .sort((a, b) => a.name.localeCompare(b.name, 'de'))
+        .map((r) => `<li><a href="/modelle/${slugs.get(r.id)}.html">${esc(r.name)}</a>${hasValue(r.price_usd) ? ` <span style="color:#78716c">· $${esc(r.price_usd)}</span>` : ''}</li>`)
+        .join('');
+      return `<section><h2>${esc(mfr)}</h2><ul class="rel">${items}</ul></section>`;
+    })
+    .join('\n');
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Alle AR/XR Brillen Modelle',
+    url: canonical,
+    isPartOf: { '@type': 'WebSite', url: baseUrl, name: 'AR/XR Brillen Vergleich' },
+  };
+
+  return `${head({
+    title: `Alle ${meta.records} AR/XR Brillen Modelle (A–Z) | AR/XR Brillen Vergleich`,
+    description: `Vollstaendige Liste aller ${meta.records} AR- und XR-Brillen (${meta.ar_records} AR, ${meta.xr_records} XR) von ${meta.manufacturers} Herstellern mit Einzelseiten, Specs und Preisen.`,
+    canonical,
+    jsonLd,
+    baseUrl,
+  })}
+<body>
+<div class="wrap">
+<nav class="bc"><a href="/">Start</a> › Modelle</nav>
+<h1>Alle ${meta.records} AR/XR Brillen Modelle</h1>
+<p class="lead">${meta.ar_records} AR-Brillen und ${meta.xr_records} XR-Headsets von ${meta.manufacturers} Herstellern. Jede Brille hat eine eigene Detailseite mit allen Spezifikationen.</p>
+<p><a class="cta primary" href="/">Interaktiv vergleichen &amp; filtern</a> <a class="cta" href="/glossar.html">Glossar &amp; FAQ</a></p>
+${sections}
+<footer>Teil des <a href="/">AR/XR Brillen Vergleichs</a>.</footer>
+</div>
+</body>
+</html>
+`;
+};
+
+const FAQ = [
+  ['Was ist der Unterschied zwischen AR- und XR-Brillen?', 'AR-Brillen (Augmented Reality) blenden digitale Inhalte in die reale Umgebung ein, meist ueber transparente Optiken wie Waveguides oder Birdbath-Linsen. XR ist der Oberbegriff (Extended Reality) und umfasst hier vor allem VR-/MR-Headsets mit Kamera-Passthrough, die die Umgebung digital darstellen.'],
+  ['Welche AR-Brille hat das groesste Sichtfeld (FOV)?', 'Das Sichtfeld (FOV) unterscheidet sich stark: viele Display-/Birdbath-Brillen liegen bei 40–52° diagonal, Waveguide-Brillen oft darunter, waehrend MR-Headsets deutlich groessere Sichtfelder erreichen. Im Vergleich laesst sich nach minimalem FOV filtern und sortieren.'],
+  ['Was bedeutet "EOL" bzw. Support-Ende?', 'EOL (End of Life) bedeutet, dass ein Geraet nicht mehr verkauft und/oder nicht mehr mit Software-Updates versorgt wird. Im Datensatz ist pro Modell vermerkt, ob es noch aktiv im Vertrieb ist und ob ein Support-Ende angekuendigt wurde.'],
+  ['Was ist Birdbath- vs. Waveguide-Optik?', 'Birdbath-Optiken nutzen einen halbtransparenten Spiegel und liefern helle, kontrastreiche Bilder bei kompakter Bauform – typisch fuer Display-Brillen am Smartphone/PC. Waveguides leiten Licht durch duenne Glassubstrate und ermoeglichen schlankere, brillenaehnliche Designs, meist mit kleinerem FOV.'],
+  ['Standalone, Phone oder PC – was heisst das?', 'Die Recheneinheit zeigt, wie eine Brille betrieben wird: "Standalone" hat eigenen Prozessor/Akku, "Phone" wird per USB-C an ein Smartphone angeschlossen, "PC" benoetigt einen Rechner. Das beeinflusst Mobilitaet, Leistung und Preis.'],
+  ['Sind die Preise aktuell?', 'Die Preise sind kuratierte USD-Richtwerte (UVP zum Launch oder aktueller Marktpreis) und dienen der Orientierung. Auf der Startseite kann optional ein Live-EUR-Kurs zur Umrechnung eingeblendet werden.'],
+];
+
+const GLOSSARY = [
+  ['FOV (Field of View)', 'Sichtfeld der Anzeige in Grad, angegeben horizontal/vertikal/diagonal. Groesser = immersiver.'],
+  ['Waveguide', 'Optik, die Licht durch ein duennes Glassubstrat ins Auge leitet; ermoeglicht schlanke AR-Brillen.'],
+  ['Birdbath', 'Optik mit halbtransparentem Spiegel; helle, kontrastreiche Bilder bei kompakter Bauform.'],
+  ['Passthrough', 'Kamera-Durchsicht: bei MR-Headsets wird die Umgebung digital ins Display uebertragen.'],
+  ['IPD', 'Pupillendistanz; verstellbar (mechanisch/Software) oder fix – wichtig fuer scharfes, komfortables Bild.'],
+  ['Nits', 'Einheit der Display-Helligkeit; hoehere Werte verbessern die Sichtbarkeit, besonders im Hellen.'],
+  ['Refresh-Rate (Hz)', 'Bildwiederholrate; hoehere Werte sorgen fuer fluessigere Darstellung und weniger Uebelkeit.'],
+  ['Inside-out Tracking', 'Positionsbestimmung ueber Kameras im Geraet selbst, ohne externe Basisstationen.'],
+  ['Micro-OLED', 'Sehr kleine, hochaufloesende OLED-Panels; verbreitet in modernen Display-/AR-Brillen.'],
+  ['EOL (End of Life)', 'Produktende: kein Verkauf und/oder keine Software-Updates mehr.'],
+];
+
+export const buildGlossary = (meta, baseUrl) => {
+  const canonical = `${baseUrl}glossar.html`;
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'FAQPage',
+        mainEntity: FAQ.map(([q, a]) => ({
+          '@type': 'Question',
+          name: q,
+          acceptedAnswer: { '@type': 'Answer', text: a },
+        })),
+      },
+      {
+        '@type': 'DefinedTermSet',
+        name: 'AR/XR Glossar',
+        hasDefinedTerm: GLOSSARY.map(([t, d]) => ({ '@type': 'DefinedTerm', name: t, description: d })),
+      },
+    ],
+  };
+  return `${head({
+    title: 'AR/XR Glossar & FAQ: FOV, Waveguide, Birdbath, Passthrough erklaert | AR/XR Brillen Vergleich',
+    description: 'Glossar und haeufige Fragen rund um AR- und XR-Brillen: FOV, Waveguide vs. Birdbath, Passthrough, IPD, Nits, Tracking, EOL und mehr – einfach erklaert.',
+    canonical,
+    jsonLd,
+    baseUrl,
+  })}
+<body>
+<div class="wrap">
+<nav class="bc"><a href="/">Start</a> › Glossar &amp; FAQ</nav>
+<h1>AR/XR Glossar &amp; FAQ</h1>
+<p class="lead">Die wichtigsten Begriffe und Fragen rund um AR- und XR-Brillen – einfach erklaert. Begleitend zum Vergleich von ${meta.records} Modellen.</p>
+<h2>Haeufige Fragen</h2>
+${FAQ.map(([q, a]) => `<section><h3>${esc(q)}</h3><p>${esc(a)}</p></section>`).join('\n')}
+<h2>Glossar</h2>
+<table><tbody>
+${GLOSSARY.map(([t, d]) => `<tr><th>${esc(t)}</th><td>${esc(d)}</td></tr>`).join('\n')}
+</tbody></table>
+<footer>Teil des <a href="/">AR/XR Brillen Vergleichs</a> · <a href="/modelle/">Alle Modelle</a>.</footer>
+</div>
+</body>
+</html>
+`;
+};

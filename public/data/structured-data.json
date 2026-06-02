@@ -23,7 +23,7 @@
         "Smart Glasses",
         "Headsets"
       ],
-      "dateModified": "2026-06-01T22:04:47.841Z"
+      "dateModified": "2026-06-02T07:31:58.043Z"
     },
     {
       "@type": "Dataset",
@@ -33,7 +33,7 @@
       "description": "Kuratierter Datensatz mit 148 AR/XR-Brillen inkl. Spezifikationen, Preisen und Lifecycle-Status.",
       "isAccessibleForFree": true,
       "inLanguage": "de-DE",
-      "dateModified": "2026-06-01T22:04:47.841Z",
+      "dateModified": "2026-06-02T07:31:58.043Z",
       "distribution": [
         {
           "@type": "DataDownload",
@@ -64,7 +64,9 @@
               "@type": "Brand",
               "name": "3Glasses"
             },
-            "url": "https://www.3glasses.com/en/product/productS1.html#page1",
+            "image": "/images/manufacturers/3glasses-d2.png",
+            "url": "https://huskynarr.de/modelle/3glassesbluburs1.html",
+            "sameAs": "https://www.3glasses.com/en/product/productS1.html#page1",
             "releaseDate": "2016-11-19",
             "offers": {
               "@type": "Offer",
@@ -85,7 +87,9 @@
               "@type": "Brand",
               "name": "3Glasses"
             },
-            "url": "https://www.3glasses.com/en/product/productS2.html",
+            "image": "/images/manufacturers/3glasses-d2.png",
+            "url": "https://huskynarr.de/modelle/3glassesbluburs2.html",
+            "sameAs": "https://www.3glasses.com/en/product/productS2.html",
             "releaseDate": "2018-02-01",
             "offers": {
               "@type": "Offer",
@@ -106,7 +110,9 @@
               "@type": "Brand",
               "name": "3Glasses"
             },
-            "url": "https://www.3glasses.com/en/product/productD2.html",
+            "image": "/images/manufacturers/3glasses-d2.png",
+            "url": "https://huskynarr.de/modelle/3glassesd2.html",
+            "sameAs": "https://www.3glasses.com/en/product/productD2.html",
             "releaseDate": "2015-06-29",
             "offers": {
               "@type": "Offer",
@@ -127,7 +133,9 @@
               "@type": "Brand",
               "name": "3Glasses"
             },
-            "url": "https://www.3glasses.com/en/product/x1.html",
+            "image": "/images/manufacturers/3glasses-d2.png",
+            "url": "https://huskynarr.de/modelle/3glassesx1.html",
+            "sameAs": "https://www.3glasses.com/en/product/x1.html",
             "releaseDate": "2019-05-17",
             "offers": {
               "@type": "Offer",
@@ -149,7 +157,8 @@
               "name": "AjnaLens"
             },
             "image": "https://www.ajnalens.com/_next/static/media/Rec3467860.81d5d5c9.svg",
-            "url": "https://www.ajnalens.com/ajnax/",
+            "url": "https://huskynarr.de/modelle/ajnalensajnax.html",
+            "sameAs": "https://www.ajnalens.com/ajnax/",
             "releaseDate": "2021-08-15"
           }
         },
@@ -164,7 +173,9 @@
               "@type": "Brand",
               "name": "Alibaba"
             },
-            "url": "https://www.alibabacloud.com/blog/alibaba-launches-new-quark-ai-glasses-series-in-china-deeply-integrated-with-qwen_602717",
+            "image": "https://img.alicdn.com/imgextra/i3/O1CN01MFtVzX1U9b7T38r3V_!!6000000002475-2-tps-200-200.png_.webp",
+            "url": "https://huskynarr.de/modelle/alibabaquarkaiglassess1.html",
+            "sameAs": "https://www.alibabacloud.com/blog/alibaba-launches-new-quark-ai-glasses-series-in-china-deeply-integrated-with-qwen_602717",
             "releaseDate": "2025-11-27",
             "offers": {
               "@type": "Offer",
@@ -185,7 +196,9 @@
               "@type": "Brand",
               "name": "Almer"
             },
-            "url": "https://almer.com/almer-arc2/",
+            "image": "https://almer.com/wp-content/uploads/2024/01/almer-arc-2-keyvisual-mobile.jpg",
+            "url": "https://huskynarr.de/modelle/almerarc2.html",
+            "sameAs": "https://almer.com/almer-arc2/",
             "releaseDate": "2024-01-15",
             "offers": {
               "@type": "Offer",
@@ -206,8 +219,9 @@
               "@type": "Brand",
               "name": "Apple"
             },
-            "image": "https://www.apple.com/v/apple-vision-pro/j/images/meta/apple-vision-pro-us__f28gp8ey4vam_og.png?202512120852",
-            "url": "https://www.apple.com/apple-vision-pro/",
+            "image": "https://www.apple.com/v/apple-vision-pro/k/images/meta/apple-vision-pro-us__f28gp8ey4vam_og.png?202604231148",
+            "url": "https://huskynarr.de/modelle/applevisionpro.html",
+            "sameAs": "https://www.apple.com/apple-vision-pro/",
             "releaseDate": "2024-02-02",
             "offers": {
               "@type": "Offer",
@@ -228,7 +242,9 @@
               "@type": "Brand",
               "name": "Apple"
             },
-            "url": "https://www.apple.com/apple-vision-pro/",
+            "image": "https://www.apple.com/v/apple-vision-pro/k/images/meta/apple-vision-pro-us__f28gp8ey4vam_og.png?202604231148",
+            "url": "https://huskynarr.de/modelle/applevisionprom5.html",
+            "sameAs": "https://www.apple.com/apple-vision-pro/",
             "releaseDate": "2025-10-22",
             "offers": {
               "@type": "Offer",
@@ -249,7 +265,9 @@
               "@type": "Brand",
               "name": "Asus"
             },
-            "url": "https://www.asus.com/us/displays-desktops/glasses/airvision/asus-airvision-m1/",
+            "image": "/images/manufacturers/asus-airvision-m1.webp",
+            "url": "https://huskynarr.de/modelle/asusairvisionm1.html",
+            "sameAs": "https://www.asus.com/us/displays-desktops/glasses/airvision/asus-airvision-m1/",
             "releaseDate": "2025-01-15",
             "offers": {
               "@type": "Offer",
@@ -270,7 +288,9 @@
               "@type": "Brand",
               "name": "Bigscreen"
             },
-            "url": "https://store.bigscreenvr.com/products/bigscreen-beyond-2",
+            "image": "http://store.bigscreenvr.com/cdn/shop/files/orange_bs2.webp?v=1742612265",
+            "url": "https://huskynarr.de/modelle/bigscreenbeyond2.html",
+            "sameAs": "https://store.bigscreenvr.com/products/bigscreen-beyond-2",
             "releaseDate": "2025-04-01",
             "offers": {
               "@type": "Offer",
@@ -291,7 +311,9 @@
               "@type": "Brand",
               "name": "Bigscreen"
             },
-            "url": "https://store.bigscreenvr.com/blogs/beyond/introducing-the-bigscreen-beyond-2e-vrchat-edition",
+            "image": "http://store.bigscreenvr.com/cdn/shop/articles/vrchat_purple_blog.png?v=1758814779",
+            "url": "https://huskynarr.de/modelle/bigscreenbeyond2e.html",
+            "sameAs": "https://store.bigscreenvr.com/blogs/beyond/introducing-the-bigscreen-beyond-2e-vrchat-edition",
             "releaseDate": "2025-04-01",
             "offers": {
               "@type": "Offer",
@@ -312,8 +334,9 @@
               "@type": "Brand",
               "name": "Brilliant Labs"
             },
-            "image": "https://brilliant.xyz/cdn/shop/files/Halo_16_9e6dbe16-f264-4d22-bca1-175227d4ade6.png?v=1753981531",
-            "url": "https://brilliant.xyz/products/frame",
+            "image": "http://brilliant.xyz/cdn/shop/files/Halo_16_9e6dbe16-f264-4d22-bca1-175227d4ade6.png?v=1753981531",
+            "url": "https://huskynarr.de/modelle/brilliantlabsframe.html",
+            "sameAs": "https://brilliant.xyz/products/frame",
             "releaseDate": "2024-08-12",
             "offers": {
               "@type": "Offer",
@@ -334,7 +357,9 @@
               "@type": "Brand",
               "name": "Brilliant Labs"
             },
-            "url": "https://brilliant.xyz/products/halo",
+            "image": "http://brilliant.xyz/cdn/shop/files/Halo_1.png?v=1753738731",
+            "url": "https://huskynarr.de/modelle/brilliantlabshalo.html",
+            "sameAs": "https://brilliant.xyz/products/halo",
             "releaseDate": "2025-11-01",
             "offers": {
               "@type": "Offer",
@@ -355,8 +380,9 @@
               "@type": "Brand",
               "name": "Brilliant Labs"
             },
-            "image": "https://brilliant.xyz/cdn/shop/files/Halo_16_9e6dbe16-f264-4d22-bca1-175227d4ade6.png?v=1753981531",
-            "url": "https://www.brilliantmonocle.com/monocle",
+            "image": "http://brilliant.xyz/cdn/shop/files/Halo_16_9e6dbe16-f264-4d22-bca1-175227d4ade6.png?v=1753981531",
+            "url": "https://huskynarr.de/modelle/brilliantmonocle.html",
+            "sameAs": "https://www.brilliantmonocle.com/monocle",
             "releaseDate": "2023-02-08",
             "offers": {
               "@type": "Offer",
@@ -378,7 +404,8 @@
               "name": "Campfire"
             },
             "image": "https://framerusercontent.com/images/15WJqiYucxkzAHccmcY2E2pcAnc.png",
-            "url": "https://www.campfire3d.com/",
+            "url": "https://huskynarr.de/modelle/campfireheadset.html",
+            "sameAs": "https://www.campfire3d.com/",
             "releaseDate": "2023-05-16",
             "offers": {
               "@type": "Offer",
@@ -399,8 +426,9 @@
               "@type": "Brand",
               "name": "Cosmo Connected"
             },
-            "image": "https://cosmoconnected.com/cdn/shop/files/1200x2700_banner_image_3_1.jpg?v=1716544008",
-            "url": "https://cosmoconnected.com/en/products-bike-scooter/cosmo-vision",
+            "image": "http://cosmoconnected.com/cdn/shop/files/1200x2700_banner_image_3_1.jpg?v=1716544008",
+            "url": "https://huskynarr.de/modelle/cosmovision.html",
+            "sameAs": "https://cosmoconnected.com/en/products-bike-scooter/cosmo-vision",
             "releaseDate": "2022-01-21",
             "offers": {
               "@type": "Offer",
@@ -422,7 +450,8 @@
               "name": "DigiLens"
             },
             "image": "https://www.digilens.com/wp-content/uploads/2025/04/dgl-argo-loggo-white.png",
-            "url": "https://www.digilens.com/argo/",
+            "url": "https://huskynarr.de/modelle/digilensargo.html",
+            "sameAs": "https://www.digilens.com/argo/",
             "releaseDate": "2024-07-10"
           }
         },
@@ -437,7 +466,9 @@
               "@type": "Brand",
               "name": "DreamWorld"
             },
-            "url": "https://www.dreamworldvision.com/dream-glass-developer-kit",
+            "image": "/images/manufacturers/dreamworld-dream-glass.jpg",
+            "url": "https://huskynarr.de/modelle/dreamglass.html",
+            "sameAs": "https://www.dreamworldvision.com/dream-glass-developer-kit",
             "releaseDate": "2018-06-17",
             "offers": {
               "@type": "Offer",
@@ -458,7 +489,9 @@
               "@type": "Brand",
               "name": "DreamWorld"
             },
-            "url": "https://www.dreamworldvision.com/dream-glass-4k-4k-plus",
+            "image": "/images/manufacturers/dreamworld-dream-glass.jpg",
+            "url": "https://huskynarr.de/modelle/dreamglass4k.html",
+            "sameAs": "https://www.dreamworldvision.com/dream-glass-4k-4k-plus",
             "releaseDate": "2020-07-14",
             "offers": {
               "@type": "Offer",
@@ -479,7 +512,9 @@
               "@type": "Brand",
               "name": "DreamWorld"
             },
-            "url": "https://www.dreamworldvision.com/dream-glass-4k-4k-plus",
+            "image": "/images/manufacturers/dreamworld-dream-glass.jpg",
+            "url": "https://huskynarr.de/modelle/dreamglass4kplus.html",
+            "sameAs": "https://www.dreamworldvision.com/dream-glass-4k-4k-plus",
             "releaseDate": "2020-07-14",
             "offers": {
               "@type": "Offer",
@@ -500,7 +535,9 @@
               "@type": "Brand",
               "name": "DreamWorld"
             },
-            "url": "https://www.dreamworldvision.com/",
+            "image": "/images/manufacturers/dreamworld-dream-glass.jpg",
+            "url": "https://huskynarr.de/modelle/dreamglassflow.html",
+            "sameAs": "https://www.dreamworldvision.com/",
             "releaseDate": "2022-10-01",
             "offers": {
               "@type": "Offer",
@@ -521,7 +558,9 @@
               "@type": "Brand",
               "name": "DreamWorld"
             },
-            "url": "https://www.dreamworldvision.com/lead-lead-pro",
+            "image": "/images/manufacturers/dreamworld-dream-glass.jpg",
+            "url": "https://huskynarr.de/modelle/dreamglassleadplus.html",
+            "sameAs": "https://www.dreamworldvision.com/lead-lead-pro",
             "releaseDate": "2022-01-24",
             "offers": {
               "@type": "Offer",
@@ -542,7 +581,9 @@
               "@type": "Brand",
               "name": "DreamWorld"
             },
-            "url": "https://www.dreamworldvision.com/lead-lead-pro",
+            "image": "/images/manufacturers/dreamworld-dream-glass.jpg",
+            "url": "https://huskynarr.de/modelle/dreamglassleadpro.html",
+            "sameAs": "https://www.dreamworldvision.com/lead-lead-pro",
             "releaseDate": "2022-01-24",
             "offers": {
               "@type": "Offer",
@@ -563,8 +604,9 @@
               "@type": "Brand",
               "name": "Engo Eyewear"
             },
-            "image": "https://engoeyewear.com/cdn/shop/files/Noir_-_Standard_-_1.png?v=1761012727&width=2048",
-            "url": "https://engoeyewear.com/products/engo-2",
+            "image": "http://engoeyewear.com/cdn/shop/files/engo-2-noir_-_standard_-_1.2.jpg?v=1774472502&width=2048",
+            "url": "https://huskynarr.de/modelle/engo2.html",
+            "sameAs": "https://engoeyewear.com/products/engo-2",
             "releaseDate": "2022-09-01",
             "offers": {
               "@type": "Offer",
@@ -585,8 +627,9 @@
               "@type": "Brand",
               "name": "Engo Eyewear"
             },
-            "image": "https://engoeyewear.com/cdn/shop/files/Screen-Recording-2022-11-09-at-3.46.gif?v=1668027611&width=2048",
-            "url": "https://us.engoeyewear.com/products/engo-eyewear",
+            "image": "http://engoeyewear.com/cdn/shop/files/Capture_d_ecran_2026-04-07_a_16.56.25.png?v=1775577495&width=2048",
+            "url": "https://huskynarr.de/modelle/engoeyewear.html",
+            "sameAs": "https://us.engoeyewear.com/products/engo-eyewear",
             "releaseDate": "2021-11-02",
             "offers": {
               "@type": "Offer",
@@ -607,8 +650,9 @@
               "@type": "Brand",
               "name": "Epson"
             },
-            "image": "https://mediaserver.goepson.com/ImConvServlet/imconv/fc3fedb2e17c1ef9d6643d16ebdef8e0e36c1537/300Wx300H?use=productpictures&hybrisId=B2C&assetDescr=BT-45C_headon_headset_690x460",
-            "url": "https://epson.com/For-Work/Wearables/Smart-Glasses/c/w420",
+            "image": "https://mediaserver.goepson.com/adaptivemedia/rendition?id=4a117236b905cb5bd52e5e417c4d3b0c6711eda9&vid=4a117236b905cb5bd52e5e417c4d3b0c6711eda9&prid=original&clid=SAPDAM&prclid=productpictures&assetDescr=tm-s2000ii_left-checks-endorsed-card-reader_690x460",
+            "url": "https://huskynarr.de/modelle/epsonmoveriobt-200.html",
+            "sameAs": "https://epson.com/For-Work/Wearables/Smart-Glasses/c/w420",
             "releaseDate": "2014-05-01",
             "offers": {
               "@type": "Offer",
@@ -629,8 +673,9 @@
               "@type": "Brand",
               "name": "Epson"
             },
-            "image": "https://mediaserver.goepson.com/ImConvServlet/imconv/82a0dca6d987e385f33da92f109c4caf4e53db4b/300Wx300H?use=productpictures&hybrisId=B2C&assetDescr=BT-40_left_690x460",
-            "url": "https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-40-Smart-Glasses-with-USB-Type-C-Connectivity-/p/V11H969020",
+            "image": "https://mediaserver.goepson.com/adaptivemedia/rendition?id=82a0dca6d987e385f33da92f109c4caf4e53db4b&vid=82a0dca6d987e385f33da92f109c4caf4e53db4b&prid=300Wx300H&clid=SAPDAM&prclid=productpictures&assetDescr=BT-40_left_690x460",
+            "url": "https://huskynarr.de/modelle/epsonmoveriobt-40.html",
+            "sameAs": "https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-40-Smart-Glasses-with-USB-Type-C-Connectivity-/p/V11H969020",
             "releaseDate": "2021-03-03",
             "offers": {
               "@type": "Offer",
@@ -651,8 +696,9 @@
               "@type": "Brand",
               "name": "Epson"
             },
-            "image": "https://mediaserver.goepson.com/ImConvServlet/imconv/fc3fedb2e17c1ef9d6643d16ebdef8e0e36c1537/300Wx300H?use=productpictures&hybrisId=B2C&assetDescr=BT-45C_headon_headset_690x460",
-            "url": "https://epson.com/For-Work/Wearables/Smart-Glasses/c/w420",
+            "image": "https://mediaserver.goepson.com/adaptivemedia/rendition?id=1ae80106e441774e1fac9165dcac7159299a9cd2&vid=1ae80106e441774e1fac9165dcac7159299a9cd2&prid=original&clid=SAPDAM&prclid=productpictures&assetDescr=ET-4950_wht_headon-output_690x460%402x",
+            "url": "https://huskynarr.de/modelle/epsonmoveriobt-40s.html",
+            "sameAs": "https://epson.com/For-Work/Wearables/Smart-Glasses/c/w420",
             "releaseDate": "2021-03-03",
             "offers": {
               "@type": "Offer",
@@ -673,7 +719,9 @@
               "@type": "Brand",
               "name": "Even Realities"
             },
-            "url": "https://www.evenrealities.com/g1",
+            "image": "https://cdn.sanity.io/images/wfyhg2qw/production/5467c59fc9e94a4637c5be4b9c01333aae9838f0-1200x630.jpg",
+            "url": "https://huskynarr.de/modelle/evenrealitiesg1.html",
+            "sameAs": "https://www.evenrealities.com/g1",
             "releaseDate": "2024-06-30",
             "offers": {
               "@type": "Offer",
@@ -694,7 +742,9 @@
               "@type": "Brand",
               "name": "Even Realities"
             },
-            "url": "https://www.evenrealities.com/g2",
+            "image": "https://cdn.sanity.io/images/wfyhg2qw/production/fa29f360026bf5c4e080b217180e646d580402f3-1200x630.jpg",
+            "url": "https://huskynarr.de/modelle/evenrealitiesg2.html",
+            "sameAs": "https://www.evenrealities.com/g2",
             "releaseDate": "2025-11-12",
             "offers": {
               "@type": "Offer",
@@ -716,7 +766,8 @@
               "name": "Everysight"
             },
             "image": "https://static.wixstatic.com/media/86f41c_ff8e1bdf90e1402b98efcb9c7dc5e98c~mv2.png/v1/fit/w_1920,h_1440,q_90,enc_avif,quality_auto/86f41c_ff8e1bdf90e1402b98efcb9c7dc5e98c~mv2.png",
-            "url": "https://everysight.com/about-raptor/",
+            "url": "https://huskynarr.de/modelle/everysightraptor.html",
+            "sameAs": "https://everysight.com/about-raptor/",
             "releaseDate": "2017-02-01",
             "offers": {
               "@type": "Offer",
@@ -738,7 +789,8 @@
               "name": "Google"
             },
             "image": "https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png",
-            "url": "https://www.google.com/glass/start/",
+            "url": "https://huskynarr.de/modelle/googleglassenterpriseedition2.html",
+            "sameAs": "https://www.google.com/glass/start/",
             "releaseDate": "2019-05-20",
             "offers": {
               "@type": "Offer",
@@ -760,7 +812,8 @@
               "name": "Google"
             },
             "image": "https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png",
-            "url": "https://www.google.com/glass/start/",
+            "url": "https://huskynarr.de/modelle/googleglassexploreredition.html",
+            "sameAs": "https://www.google.com/glass/start/",
             "releaseDate": "2013-03-01",
             "offers": {
               "@type": "Offer",
@@ -781,8 +834,9 @@
               "@type": "Brand",
               "name": "Guangli"
             },
-            "image": "https://www.holoswim.com/cdn/shop/files/holoswim-ar-smart-swim-goggles-2s-438350_1200x1200.png?v=1741749365",
-            "url": "https://holoswim.com/products/holoswim-smart-swim-goggles",
+            "image": "http://holosport.ai/cdn/shop/files/Holoswim_smart_swim_goggles_product_render_on_a_white_background.jpg?v=1773978683",
+            "url": "https://huskynarr.de/modelle/guangliholoswim.html",
+            "sameAs": "https://holoswim.com/products/holoswim-smart-swim-goggles",
             "releaseDate": "2021-12-29",
             "offers": {
               "@type": "Offer",
@@ -803,8 +857,9 @@
               "@type": "Brand",
               "name": "Guangli"
             },
-            "image": "https://www.holoswim.com/cdn/shop/files/holoswim-ar-smart-swim-goggles-2s-438350_1200x1200.png?v=1741749365",
-            "url": "https://www.kickstarter.com/projects/holoswim/holoswim-2-ar-smart-swim-goggles/",
+            "image": "http://holosport.ai/cdn/shop/files/Holoswim_smart_swim_goggles_product_render_on_a_white_background.jpg?v=1773978683",
+            "url": "https://huskynarr.de/modelle/guangliholoswim2.html",
+            "sameAs": "https://www.kickstarter.com/projects/holoswim/holoswim-2-ar-smart-swim-goggles/",
             "releaseDate": "2022-08-23",
             "offers": {
               "@type": "Offer",
@@ -825,7 +880,9 @@
               "@type": "Brand",
               "name": "Halliday"
             },
-            "url": "https://hallidayglobal.com/",
+            "image": "https://hallidayglobal.com/cdn/shop/files/Halliday_AI_Glasses_Blog.webp?v=1772173063",
+            "url": "https://huskynarr.de/modelle/halliday.html",
+            "sameAs": "https://hallidayglobal.com/",
             "releaseDate": "2025-03-01",
             "offers": {
               "@type": "Offer",
@@ -846,7 +903,9 @@
               "@type": "Brand",
               "name": "HTC"
             },
-            "url": "https://www.vive.com/us/product/vive-focus-vision/overview/",
+            "image": "https://www.vive.com/media/filer_public/fed-assets/vive-focus-vision/images/vive-focus-vision-vr-headset-social-share-1200.jpg",
+            "url": "https://huskynarr.de/modelle/htcvivefocusvision.html",
+            "sameAs": "https://www.vive.com/us/product/vive-focus-vision/overview/",
             "releaseDate": "2024-11-01",
             "offers": {
               "@type": "Offer",
@@ -868,7 +927,8 @@
               "name": "HTC"
             },
             "image": "https://www.vive.com/media/filer_public/fed-assets/vive-xr-elite/images/meta/vive-xr-elite-full-kit-1200.jpeg",
-            "url": "https://www.vive.com/us/product/vive-xr-elite/overview/",
+            "url": "https://huskynarr.de/modelle/htcvivexrelite.html",
+            "sameAs": "https://www.vive.com/us/product/vive-xr-elite/overview/",
             "releaseDate": "2023-03-25",
             "offers": {
               "@type": "Offer",
@@ -890,7 +950,8 @@
               "name": "Huawei"
             },
             "image": "https://consumer.huawei.com/content/dam/huawei-cbg-site/cn/mkt/pdp/wearables/vision-glass/list/list.png",
-            "url": "https://consumer.huawei.com/cn/wearables/vision-glass/",
+            "url": "https://huskynarr.de/modelle/huaweivisionglass.html",
+            "sameAs": "https://consumer.huawei.com/cn/wearables/vision-glass/",
             "releaseDate": "2022-12-09",
             "offers": {
               "@type": "Offer",
@@ -911,8 +972,9 @@
               "@type": "Brand",
               "name": "Huawei"
             },
-            "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/homepage-x/new/1211-2025-huawei-flagship-product-launch/herobanner/mate-x7-mob.jpg",
-            "url": "https://consumer.huawei.com/cn/wearables/vr-glass/",
+            "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/homepage-x/new/0507-2026-huawei-innovative-product-launch/herobanner/watch-fit5-pro-mob.jpg",
+            "url": "https://huskynarr.de/modelle/huaweivrglass.html",
+            "sameAs": "https://consumer.huawei.com/cn/wearables/vr-glass/",
             "releaseDate": "2019-12-19",
             "offers": {
               "@type": "Offer",
@@ -933,8 +995,9 @@
               "@type": "Brand",
               "name": "Huawei"
             },
-            "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/homepage-x/new/1211-2025-huawei-flagship-product-launch/herobanner/mate-x7-mob.jpg",
-            "url": "https://consumer.huawei.com/cn/wearables/vr-glass-6dof-gaming-kit/",
+            "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/homepage-x/new/0507-2026-huawei-innovative-product-launch/herobanner/watch-fit5-pro-mob.jpg",
+            "url": "https://huskynarr.de/modelle/huaweivrglass6dof.html",
+            "sameAs": "https://consumer.huawei.com/cn/wearables/vr-glass-6dof-gaming-kit/",
             "releaseDate": "2021-11-17",
             "offers": {
               "@type": "Offer",
@@ -955,8 +1018,9 @@
               "@type": "Brand",
               "name": "INMO"
             },
-            "image": "https://www.inmoxr.com/cdn/shop/files/inmo-air3-800x400.png?v=1753841171&amp;width=800",
-            "url": "https://www.inmoglass.com/",
+            "image": "https://www.inmoxr.com/cdn/shop/files/home-inmo-multi-screen-mb-1.jpg?v=1753844167&width=1000",
+            "url": "https://huskynarr.de/modelle/inmoair.html",
+            "sameAs": "https://www.inmoglass.com/",
             "releaseDate": "2022-06-09",
             "offers": {
               "@type": "Offer",
@@ -978,7 +1042,8 @@
               "name": "INMO"
             },
             "image": "https://www.inmoxr.com/cdn/shop/files/inmo-air2-built-in-apps-v2.png?v=1742190356&width=1000",
-            "url": "https://inmoglass.com/pages/inmo-ar",
+            "url": "https://huskynarr.de/modelle/inmoair2.html",
+            "sameAs": "https://inmoglass.com/pages/inmo-ar",
             "releaseDate": "2023-04-20",
             "offers": {
               "@type": "Offer",
@@ -999,7 +1064,9 @@
               "@type": "Brand",
               "name": "INMO"
             },
-            "url": "https://www.inmoxr.com/products/inmo-go2",
+            "image": "https://www.inmoxr.com/cdn/shop/files/home-inmo-multi-screen-mb-1.jpg?v=1753844167&width=1000",
+            "url": "https://huskynarr.de/modelle/inmogo2.html",
+            "sameAs": "https://www.inmoxr.com/products/inmo-go2",
             "releaseDate": "2025-01-31",
             "offers": {
               "@type": "Offer",
@@ -1021,7 +1088,8 @@
               "name": "Iristick"
             },
             "image": "https://iristick.com/_app/immutable/assets/10.B2KXxPzh.png",
-            "url": "https://iristick.com/products/iristick-g2",
+            "url": "https://huskynarr.de/modelle/iristickg2.html",
+            "sameAs": "https://iristick.com/products/iristick-g2",
             "releaseDate": "2021-12-10",
             "offers": {
               "@type": "Offer",
@@ -1042,7 +1110,9 @@
               "@type": "Brand",
               "name": "Iristick"
             },
-            "url": "https://shop.iristick.com/products/iristick-g3",
+            "image": "https://d2gt4h1eeousrn.cloudfront.net/112155257/global/L2Z68c6-1200x1200.webp",
+            "url": "https://huskynarr.de/modelle/iristickg3.html",
+            "sameAs": "https://shop.iristick.com/products/iristick-g3",
             "offers": {
               "@type": "Offer",
               "priceCurrency": "USD",
@@ -1063,7 +1133,8 @@
               "name": "Julbo"
             },
             "image": "https://images.prismic.io/julbo/Zw5sh4F3NbkBXduo_adilheadermobile.jpg?auto=format,compress&rect=0,375,1748,1748&w=580&h=580&fit=crop",
-            "url": "https://www.julbo.com/en_us/evad-1",
+            "url": "https://huskynarr.de/modelle/julboevad-1.html",
+            "sameAs": "https://www.julbo.com/en_us/evad-1",
             "releaseDate": "2020-09-21",
             "offers": {
               "@type": "Offer",
@@ -1084,8 +1155,9 @@
               "@type": "Brand",
               "name": "Lenovo"
             },
-            "image": "https://news.lenovo.com/wp-content/uploads/2022/08/Lenovo-Glasses-T1-scaled.jpg",
-            "url": "https://news.lenovo.com/pressroom/press-releases/glasses-t1-wearable-display-for-gaming-streaming-privacy-on-the-go/",
+            "image": "https://media.lenovonews.fiestic.com/2026/04/08045104/Lenovo-YCYC-Ballard_Lenovo-YCYC-4x5-Ballard-1536x1055.png",
+            "url": "https://huskynarr.de/modelle/lenovoglassest1.html",
+            "sameAs": "https://news.lenovo.com/pressroom/press-releases/glasses-t1-wearable-display-for-gaming-streaming-privacy-on-the-go/",
             "releaseDate": "2022-12-15"
           }
         },
@@ -1100,8 +1172,9 @@
               "@type": "Brand",
               "name": "Lenovo"
             },
-            "image": "https://www.lenovo.com/content/dam/lenovo/site-design/lenovo-helix/ftv/hero-discover-ai-solutions.png",
-            "url": "https://www.lenovo.com/us/en/thinkrealitya3",
+            "image": "https://p3-ofp.static.pub/ShareResource/thinkrealitya3/img/lenovo-campaign-thinkreality-a3-phase3-gallery-7.2818c9955190e002.jpg",
+            "url": "https://huskynarr.de/modelle/lenovothinkrealitya3.html",
+            "sameAs": "https://www.lenovo.com/us/en/thinkrealitya3",
             "releaseDate": "2021-12-01",
             "offers": {
               "@type": "Offer",
@@ -1123,7 +1196,8 @@
               "name": "Lynx"
             },
             "image": "https://www.lynx-r.com/images/hero-headset.webp",
-            "url": "https://www.lynx-r.com/"
+            "url": "https://huskynarr.de/modelle/lynxr1.html",
+            "sameAs": "https://www.lynx-r.com/"
           }
         },
         {
@@ -1137,7 +1211,9 @@
               "@type": "Brand",
               "name": "MAD Gaze"
             },
-            "url": "https://www.madgaze.com/glow-plus/",
+            "image": "/images/manufacturers/madgaze-glow-plus.jpg",
+            "url": "https://huskynarr.de/modelle/madgazeglowplus.html",
+            "sameAs": "https://www.madgaze.com/glow-plus/",
             "releaseDate": "2020-04-01",
             "offers": {
               "@type": "Offer",
@@ -1158,7 +1234,9 @@
               "@type": "Brand",
               "name": "MAD Gaze"
             },
-            "url": "https://www.madgaze.com/vader/",
+            "image": "/images/manufacturers/madgaze-glow-plus.jpg",
+            "url": "https://huskynarr.de/modelle/madgazevader.html",
+            "sameAs": "https://www.madgaze.com/vader/",
             "releaseDate": "2017-12-01",
             "offers": {
               "@type": "Offer",
@@ -1179,7 +1257,9 @@
               "@type": "Brand",
               "name": "MAD Gaze"
             },
-            "url": "https://mall.madgaze.com/wave",
+            "image": "/images/manufacturers/madgaze-glow-plus.jpg",
+            "url": "https://huskynarr.de/modelle/madgazewave.html",
+            "sameAs": "https://mall.madgaze.com/wave",
             "releaseDate": "2022-05-22",
             "offers": {
               "@type": "Offer",
@@ -1201,7 +1281,8 @@
               "name": "Magic Leap"
             },
             "image": "https://cdn.prod.website-files.com/67083eaf123e93296073a9a1/68fff97227ea884ec422d41a_6cda6f9643c1ad40ca42d94654904653_ml-opengraph-2025.jpg",
-            "url": "https://www.magicleap.com/en-us/magic-leap-1",
+            "url": "https://huskynarr.de/modelle/magicleap1.html",
+            "sameAs": "https://www.magicleap.com/en-us/magic-leap-1",
             "releaseDate": "2018-08-08",
             "offers": {
               "@type": "Offer",
@@ -1223,7 +1304,8 @@
               "name": "Magic Leap"
             },
             "image": "https://cdn.prod.website-files.com/67083eaf123e93296073a9a1/68fff97227ea884ec422d41a_6cda6f9643c1ad40ca42d94654904653_ml-opengraph-2025.jpg",
-            "url": "https://www.magicleap.com/en-us/magic-leap-2",
+            "url": "https://huskynarr.de/modelle/magicleap2.html",
+            "sameAs": "https://www.magicleap.com/en-us/magic-leap-2",
             "releaseDate": "2022-09-30",
             "offers": {
               "@type": "Offer",
@@ -1244,7 +1326,9 @@
               "@type": "Brand",
               "name": "Meta (2016)"
             },
-            "url": "https://vrarwiki.com/wiki/Meta_2",
+            "image": "https://vrarwiki.com/resources/assets/poweredby_mediawiki.svg",
+            "url": "https://huskynarr.de/modelle/meta2.html",
+            "sameAs": "https://vrarwiki.com/wiki/Meta_2",
             "releaseDate": "2016-04-12",
             "offers": {
               "@type": "Offer",
@@ -1265,8 +1349,9 @@
               "@type": "Brand",
               "name": "Meta"
             },
-            "image": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=157327897433582&version=1770262799&transcode_extension=webp",
-            "url": "https://www.meta.com/quest/quest-3/",
+            "image": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=2061368471315981&version=1765379917&transcode_extension=webp",
+            "url": "https://huskynarr.de/modelle/metaquest3.html",
+            "sameAs": "https://www.meta.com/quest/quest-3/",
             "releaseDate": "2023-10-10",
             "offers": {
               "@type": "Offer",
@@ -1287,8 +1372,9 @@
               "@type": "Brand",
               "name": "Meta"
             },
-            "image": "https://lookaside.fbsbx.com/elementpath/media/?media_id=1608140463383971&version=1768796649&transcode_extension=webp",
-            "url": "https://www.meta.com/quest/quest-3s/",
+            "image": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=2061368471315981&version=1765379917&transcode_extension=webp",
+            "url": "https://huskynarr.de/modelle/metaquest3s.html",
+            "sameAs": "https://www.meta.com/quest/quest-3s/",
             "releaseDate": "2024-10-15",
             "offers": {
               "@type": "Offer",
@@ -1309,8 +1395,9 @@
               "@type": "Brand",
               "name": "Meta"
             },
-            "image": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=1457447194666503&version=1762771876&transcode_extension=webp",
-            "url": "https://www.meta.com/quest/quest-pro/",
+            "image": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=2061368471315981&version=1765379917&transcode_extension=webp",
+            "url": "https://huskynarr.de/modelle/metaquestpro.html",
+            "sameAs": "https://www.meta.com/quest/quest-pro/",
             "releaseDate": "2022-10-25",
             "offers": {
               "@type": "Offer",
@@ -1332,7 +1419,8 @@
               "name": "Meta"
             },
             "image": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=2061368471315981&version=1765379917&transcode_extension=webp",
-            "url": "https://www.meta.com/ai-glasses/meta-ray-ban-display/",
+            "url": "https://huskynarr.de/modelle/metaray-bandisplay.html",
+            "sameAs": "https://www.meta.com/ai-glasses/meta-ray-ban-display/",
             "releaseDate": "2025-09-30",
             "offers": {
               "@type": "Offer",
@@ -1354,7 +1442,8 @@
               "name": "Microsoft"
             },
             "image": "https://learn.microsoft.com/en-us/media/open-graph-image.png",
-            "url": "https://docs.microsoft.com/en-us/hololens/hololens1-hardware",
+            "url": "https://huskynarr.de/modelle/microsofthololens.html",
+            "sameAs": "https://docs.microsoft.com/en-us/hololens/hololens1-hardware",
             "releaseDate": "2016-03-30",
             "offers": {
               "@type": "Offer",
@@ -1376,7 +1465,8 @@
               "name": "Microsoft"
             },
             "image": "https://learn.microsoft.com/en-us/media/open-graph-image.png",
-            "url": "https://www.microsoft.com/en-us/hololens",
+            "url": "https://huskynarr.de/modelle/microsofthololens2.html",
+            "sameAs": "https://www.microsoft.com/en-us/hololens",
             "releaseDate": "2019-11-07",
             "offers": {
               "@type": "Offer",
@@ -1398,7 +1488,8 @@
               "name": "Nimo Planet"
             },
             "image": "https://cdn.prod.website-files.com/64d9a2acbec48c791090668e/653a71d4e7bf9cbe24804559_nimo_1.webp",
-            "url": "https://www.nimoplanet.com/",
+            "url": "https://huskynarr.de/modelle/nimo.html",
+            "sameAs": "https://www.nimoplanet.com/",
             "offers": {
               "@type": "Offer",
               "priceCurrency": "USD",
@@ -1419,7 +1510,8 @@
               "name": "Nolo"
             },
             "image": "https://www.nolovr.com/UploadFiles/images/nolo_ring.jpg?bm9sb19yaW5nLmpwZw==",
-            "url": "https://www.nolovr.com/"
+            "url": "https://huskynarr.de/modelle/nolovrglass.html",
+            "sameAs": "https://www.nolovr.com/"
           }
         },
         {
@@ -1434,7 +1526,8 @@
               "name": "Nreal"
             },
             "image": "https://resource.xreal.com/www-xreal-com/images/home/home_herosection_1S_Desktop.webp",
-            "url": "https://www.nreal.ai/",
+            "url": "https://huskynarr.de/modelle/nrealair.html",
+            "sameAs": "https://www.nreal.ai/",
             "releaseDate": "2022-03-04",
             "offers": {
               "@type": "Offer",
@@ -1456,7 +1549,8 @@
               "name": "Nreal"
             },
             "image": "https://resource.xreal.com/www-xreal-com/images/home/home_herosection_1S_Desktop.webp",
-            "url": "https://www.nreal.ai/light/",
+            "url": "https://huskynarr.de/modelle/nreallight.html",
+            "sameAs": "https://www.nreal.ai/light/",
             "releaseDate": "2020-08-21",
             "offers": {
               "@type": "Offer",
@@ -1478,7 +1572,8 @@
               "name": "Nubia"
             },
             "image": "https://ztedevices.com/content/dam/zte-devices/global/products/accessories/wearable/nubia-neovision-glass/nubia%20Neovision%20Glass.png",
-            "url": "https://ztedevices.com/en-gl/nubia-neovision-glasses/",
+            "url": "https://huskynarr.de/modelle/nubianeovisionglass.html",
+            "sameAs": "https://ztedevices.com/en-gl/nubia-neovision-glasses/",
             "releaseDate": "2023-06-19",
             "offers": {
               "@type": "Offer",
@@ -1500,7 +1595,8 @@
               "name": "NuEyes"
             },
             "image": "https://lirp.cdn-website.com/2f06bfe7/dms3rep/multi/opt/nueyes-pro4-1920w.png",
-            "url": "https://www.nueyes.com/pro3e",
+            "url": "https://huskynarr.de/modelle/nueyespro3e.html",
+            "sameAs": "https://www.nueyes.com/pro3e",
             "releaseDate": "2022-01-31",
             "offers": {
               "@type": "Offer",
@@ -1522,7 +1618,8 @@
               "name": "Oppo"
             },
             "image": "https://www.oppo.com/content/dam/oppo/en/mkt/newsroom/press/oppo-air-glass/main.jpg",
-            "url": "https://www.oppo.com/en/newsroom/press/oppo-air-glass/",
+            "url": "https://huskynarr.de/modelle/oppoairglass.html",
+            "sameAs": "https://www.oppo.com/en/newsroom/press/oppo-air-glass/",
             "releaseDate": "2022-03-03",
             "offers": {
               "@type": "Offer",
@@ -1543,6 +1640,7 @@
               "@type": "Brand",
               "name": "P&C Solution"
             },
+            "url": "https://huskynarr.de/modelle/p-csolutionmetalense.html",
             "releaseDate": "2022-10-04"
           }
         },
@@ -1557,8 +1655,9 @@
               "@type": "Brand",
               "name": "Pimax"
             },
-            "image": "https://pimax.com/cdn/shop/files/product_pimaxcrystal_2404_1.webp?v=1714661941",
-            "url": "https://pimax.com/products/pimax-crystal",
+            "image": "https://cdn.shopify.com/s/files/1/0127/3767/5323/files/product_pimaxcrystalsuper-withcontrollers_white_240x240.webp?v=1756796355",
+            "url": "https://huskynarr.de/modelle/pimaxcrystal.html",
+            "sameAs": "https://pimax.com/products/pimax-crystal",
             "releaseDate": "2023-05-31",
             "offers": {
               "@type": "Offer",
@@ -1579,7 +1678,9 @@
               "@type": "Brand",
               "name": "Pimax"
             },
-            "url": "https://pimax.com/products/pimax-crystal-light",
+            "image": "https://cdn.shopify.com/s/files/1/0127/3767/5323/files/product_pimaxcrystallight_headsetwithcontrollers_2405_00537d9f-5f8a-4ca0-ba20-07de3b678991_240x240.webp?v=1754989215",
+            "url": "https://huskynarr.de/modelle/pimaxcrystallight.html",
+            "sameAs": "https://pimax.com/products/pimax-crystal-light",
             "releaseDate": "2024-05-01",
             "offers": {
               "@type": "Offer",
@@ -1600,7 +1701,9 @@
               "@type": "Brand",
               "name": "Pimax"
             },
-            "url": "https://pimax.com/products/pimax-crystal-super",
+            "image": "https://cdn.shopify.com/s/files/1/0127/3767/5323/files/product_pimaxcrystalsuper-withcontrollers_white_240x240.webp?v=1756796355",
+            "url": "https://huskynarr.de/modelle/pimaxcrystalsuper.html",
+            "sameAs": "https://pimax.com/products/pimax-crystal-super",
             "releaseDate": "2025-04-01"
           }
         },
@@ -1615,7 +1718,9 @@
               "@type": "Brand",
               "name": "Pimax"
             },
-            "url": "https://pimax.com/products/pimax-dream-air",
+            "image": "https://judgeme.imgix.net/pimax-store/1753866783__124_2421__original.JPG?auto=format&amp;w=240",
+            "url": "https://huskynarr.de/modelle/pimaxdreamair.html",
+            "sameAs": "https://pimax.com/products/pimax-dream-air",
             "releaseDate": "2025-02-01",
             "offers": {
               "@type": "Offer",
@@ -1636,7 +1741,9 @@
               "@type": "Brand",
               "name": "Play For Dream"
             },
-            "url": "https://pfdm.ai/",
+            "image": "https://pfdm.ai/cdn/shop/files/09.jpg?v=1740393511",
+            "url": "https://huskynarr.de/modelle/playfordreammr.html",
+            "sameAs": "https://pfdm.ai/",
             "releaseDate": "2026-03-01",
             "offers": {
               "@type": "Offer",
@@ -1658,7 +1765,8 @@
               "name": "Sony Interactive Entertainment"
             },
             "image": "https://gmedia.playstation.com/is/image/SIEPDC/PSVR2-thumbnail-01-en-22feb22?$facebook$",
-            "url": "https://www.playstation.com/en-us/ps-vr2/",
+            "url": "https://huskynarr.de/modelle/playstationvr2.html",
+            "sameAs": "https://www.playstation.com/en-us/ps-vr2/",
             "releaseDate": "2023-02-22",
             "offers": {
               "@type": "Offer",
@@ -1679,7 +1787,9 @@
               "@type": "Brand",
               "name": "TCL"
             },
-            "url": "https://www.rayneo.com/products/rayneo-air-3s-xr-glasses",
+            "image": "http://www.rayneo.com/cdn/shop/files/A3.png?v=1764728289",
+            "url": "https://huskynarr.de/modelle/rayneoair3s.html",
+            "sameAs": "https://www.rayneo.com/products/rayneo-air-3s-xr-glasses",
             "releaseDate": "2025-02-01",
             "offers": {
               "@type": "Offer",
@@ -1700,7 +1810,9 @@
               "@type": "Brand",
               "name": "TCL"
             },
-            "url": "https://www.rayneo.com/products/x3-pro-ai-display-glasses",
+            "image": "http://www.rayneo.com/cdn/shop/files/X3pro_5c78e08d-a20f-4067-bd80-0c41c3630cf3.png?v=1772188092",
+            "url": "https://huskynarr.de/modelle/rayneox3pro.html",
+            "sameAs": "https://www.rayneo.com/products/x3-pro-ai-display-glasses",
             "releaseDate": "2025-12-01",
             "offers": {
               "@type": "Offer",
@@ -1721,7 +1833,9 @@
               "@type": "Brand",
               "name": "Realmax"
             },
-            "url": "http://realmaxinc.com/",
+            "image": "/images/manufacturers/realmax-qian.jpeg",
+            "url": "https://huskynarr.de/modelle/realmaxqian.html",
+            "sameAs": "http://realmaxinc.com/",
             "releaseDate": "2020-09-13",
             "offers": {
               "@type": "Offer",
@@ -1743,7 +1857,8 @@
               "name": "RealWear"
             },
             "image": "https://framerusercontent.com/assets/xPxgIGeBms3NXxDt3tU5Hg6Zg.png",
-            "url": "https://www.realwear.com/hmt-1/",
+            "url": "https://huskynarr.de/modelle/realwearhmt-1.html",
+            "sameAs": "https://www.realwear.com/hmt-1/",
             "releaseDate": "2017-09-01",
             "offers": {
               "@type": "Offer",
@@ -1765,7 +1880,8 @@
               "name": "RealWear"
             },
             "image": "https://framerusercontent.com/assets/5qYqrA6rT7gaNUAxVKqiY5Fuc70.jpg",
-            "url": "https://www.realwear.com/hmt-1z1/",
+            "url": "https://huskynarr.de/modelle/realwearhmt-1z1.html",
+            "sameAs": "https://www.realwear.com/hmt-1z1/",
             "releaseDate": "2018-06-15",
             "offers": {
               "@type": "Offer",
@@ -1787,7 +1903,8 @@
               "name": "RealWear"
             },
             "image": "https://framerusercontent.com/assets/xPxgIGeBms3NXxDt3tU5Hg6Zg.png",
-            "url": "https://www.realwear.com/navigator/",
+            "url": "https://huskynarr.de/modelle/realwearnavigator500.html",
+            "sameAs": "https://www.realwear.com/navigator/",
             "releaseDate": "2021-12-30",
             "offers": {
               "@type": "Offer",
@@ -1809,7 +1926,8 @@
               "name": "RealWear"
             },
             "image": "https://framerusercontent.com/assets/dQ8adYVqC4LjzfYNDaeWRVEwvtE.png",
-            "url": "https://www.realwear.com/hyperdisplay/",
+            "url": "https://huskynarr.de/modelle/realwearnavigator520.html",
+            "sameAs": "https://www.realwear.com/hyperdisplay/",
             "releaseDate": "2023-01-03",
             "offers": {
               "@type": "Offer",
@@ -1831,7 +1949,8 @@
               "name": "RealWear"
             },
             "image": "https://framerusercontent.com/assets/5qYqrA6rT7gaNUAxVKqiY5Fuc70.jpg",
-            "url": "https://www.realwear.com/devices/navigator-Z1",
+            "url": "https://huskynarr.de/modelle/realwearnavigatorz1.html",
+            "sameAs": "https://www.realwear.com/devices/navigator-Z1",
             "releaseDate": "2023-11-01",
             "offers": {
               "@type": "Offer",
@@ -1852,7 +1971,9 @@
               "@type": "Brand",
               "name": "Recon Instruments"
             },
-            "url": "https://en.wikipedia.org/wiki/Recon_Jet",
+            "image": "/images/manufacturers/recon-jet.jpg",
+            "url": "https://huskynarr.de/modelle/reconjet.html",
+            "sameAs": "https://en.wikipedia.org/wiki/Recon_Jet",
             "releaseDate": "2015-04-01",
             "offers": {
               "@type": "Offer",
@@ -1873,7 +1994,9 @@
               "@type": "Brand",
               "name": "Rokid"
             },
-            "url": "https://global.rokid.com/products/rokid-ai-glasses-style",
+            "image": "http://global.rokid.com/cdn/shop/files/001_6_48afc345-c913-4148-bfaf-4984f1f62ff9.jpg?v=1768896106",
+            "url": "https://huskynarr.de/modelle/rokidaiglassesstyle.html",
+            "sameAs": "https://global.rokid.com/products/rokid-ai-glasses-style",
             "releaseDate": "2026-01-19",
             "offers": {
               "@type": "Offer",
@@ -1894,8 +2017,9 @@
               "@type": "Brand",
               "name": "Rokid"
             },
-            "image": "https://global.rokid.com/cdn/shop/files/Rokid_social_sharing_image.jpg?v=1689303583",
-            "url": "https://air.rokid.com/",
+            "image": "http://global.rokid.com/cdn/shop/files/001_6_48afc345-c913-4148-bfaf-4984f1f62ff9.jpg?v=1768896106",
+            "url": "https://huskynarr.de/modelle/rokidair.html",
+            "sameAs": "https://air.rokid.com/",
             "releaseDate": "2021-12-26",
             "offers": {
               "@type": "Offer",
@@ -1916,8 +2040,9 @@
               "@type": "Brand",
               "name": "Rokid"
             },
-            "image": "https://global.rokid.com/cdn/shop/files/Rokid_social_sharing_image.jpg?v=1689303583",
-            "url": "https://www.rokid.ai/rokid-air-pro/",
+            "image": "http://global.rokid.com/cdn/shop/files/001_6_48afc345-c913-4148-bfaf-4984f1f62ff9.jpg?v=1768896106",
+            "url": "https://huskynarr.de/modelle/rokidairpro.html",
+            "sameAs": "https://www.rokid.ai/rokid-air-pro/",
             "releaseDate": "2022-03-04",
             "offers": {
               "@type": "Offer",
@@ -1938,7 +2063,9 @@
               "@type": "Brand",
               "name": "Rokid"
             },
-            "url": "https://global.rokid.com/products/rokid-glasses",
+            "image": "http://global.rokid.com/cdn/shop/files/002.png?v=1777113204",
+            "url": "https://huskynarr.de/modelle/rokidarlite.html",
+            "sameAs": "https://global.rokid.com/products/rokid-glasses",
             "releaseDate": "2025-10-10",
             "offers": {
               "@type": "Offer",
@@ -1959,7 +2086,9 @@
               "@type": "Brand",
               "name": "Rokid"
             },
-            "url": "https://global.rokid.com/products/rokid-ar-spatial",
+            "image": "http://global.rokid.com/cdn/shop/files/01_953fc2a0-40e8-433d-8e89-bbded15e8545.jpg?v=1767603651",
+            "url": "https://huskynarr.de/modelle/rokidarspatial.html",
+            "sameAs": "https://global.rokid.com/products/rokid-ar-spatial",
             "releaseDate": "2025-01-08",
             "offers": {
               "@type": "Offer",
@@ -1980,8 +2109,9 @@
               "@type": "Brand",
               "name": "Rokid"
             },
-            "image": "https://global.rokid.com/cdn/shop/files/Rokid_social_sharing_image.jpg?v=1689303583",
-            "url": "https://www.rokid.com/en/rokid-glass-2/",
+            "image": "https://www.rokid.com/_next/static/media/about-award-1.3f646067.jpg",
+            "url": "https://huskynarr.de/modelle/rokidglass2.html",
+            "sameAs": "https://www.rokid.com/en/rokid-glass-2/",
             "releaseDate": "2020-07-10",
             "offers": {
               "@type": "Offer",
@@ -2002,7 +2132,9 @@
               "@type": "Brand",
               "name": "Rokid"
             },
-            "url": "https://global.rokid.com/products/rokid-glasses",
+            "image": "http://global.rokid.com/cdn/shop/files/002.png?v=1777113204",
+            "url": "https://huskynarr.de/modelle/rokidglasses.html",
+            "sameAs": "https://global.rokid.com/products/rokid-glasses",
             "releaseDate": "2025-10-31",
             "offers": {
               "@type": "Offer",
@@ -2023,8 +2155,9 @@
               "@type": "Brand",
               "name": "Rokid"
             },
-            "image": "https://global.rokid.com/cdn/shop/files/Rokid_social_sharing_image.jpg?v=1689303583",
-            "url": "https://global.rokid.com/products/rokid-max",
+            "image": "https://global.rokid.com/cdn/shop/articles/Rokid-Style-smart-glasses-5-1420x799.webp?v=1767834769&amp;width=1296",
+            "url": "https://huskynarr.de/modelle/rokidmax.html",
+            "sameAs": "https://global.rokid.com/products/rokid-max",
             "releaseDate": "2023-05-31",
             "offers": {
               "@type": "Offer",
@@ -2045,7 +2178,9 @@
               "@type": "Brand",
               "name": "Rokid"
             },
-            "url": "https://global.rokid.com/products/rokid-max-2-ar-glasses",
+            "image": "http://global.rokid.com/cdn/shop/files/max_2.jpg?v=1767063587",
+            "url": "https://huskynarr.de/modelle/rokidmax2.html",
+            "sameAs": "https://global.rokid.com/products/rokid-max-2-ar-glasses",
             "releaseDate": "2025-01-01",
             "offers": {
               "@type": "Offer",
@@ -2066,8 +2201,9 @@
               "@type": "Brand",
               "name": "Rokid"
             },
-            "image": "https://global.rokid.com/cdn/shop/files/Rokid_social_sharing_image.jpg?v=1689303583",
-            "url": "https://global.rokid.com/products/rokid-max",
+            "image": "https://global.rokid.com/cdn/shop/articles/Rokid-Style-smart-glasses-5-1420x799.webp?v=1767834769&amp;width=1296",
+            "url": "https://huskynarr.de/modelle/rokidmaxpro.html",
+            "sameAs": "https://global.rokid.com/products/rokid-max",
             "releaseDate": "2024-03-01",
             "offers": {
               "@type": "Offer",
@@ -2088,7 +2224,8 @@
               "@type": "Brand",
               "name": "Rokid"
             },
-            "image": "https://global.rokid.com/cdn/shop/files/Rokid_social_sharing_image.jpg?v=1689303583"
+            "image": "http://global.rokid.com/cdn/shop/files/001_6_48afc345-c913-4148-bfaf-4984f1f62ff9.jpg?v=1768896106",
+            "url": "https://huskynarr.de/modelle/rokidvision2.html"
           }
         },
         {
@@ -2102,8 +2239,9 @@
               "@type": "Brand",
               "name": "Rokid"
             },
-            "image": "https://global.rokid.com/cdn/shop/files/Rokid_social_sharing_image.jpg?v=1689303583",
-            "url": "https://www.rokid.com/en/rokid-x-craft/",
+            "image": "https://www.rokid.com/_next/static/media/about-award-1.3f646067.jpg",
+            "url": "https://huskynarr.de/modelle/rokidx-craft.html",
+            "sameAs": "https://www.rokid.com/en/rokid-x-craft/",
             "releaseDate": "2020-11-29"
           }
         },
@@ -2118,7 +2256,9 @@
               "@type": "Brand",
               "name": "Samsung"
             },
-            "url": "https://www.samsung.com/us/business/electronics/wearables/virtual-reality-mixed-reality/samsung-galaxy-xr/",
+            "image": "https://images.samsung.com/is/image/samsung/assets/us/business/homepage/kv/05032024/B2B_Homepage_OG_TabS10_B2B_KV.jpg",
+            "url": "https://huskynarr.de/modelle/samsunggalaxyxr.html",
+            "sameAs": "https://www.samsung.com/us/business/electronics/wearables/virtual-reality-mixed-reality/samsung-galaxy-xr/",
             "releaseDate": "2025-10-21",
             "offers": {
               "@type": "Offer",
@@ -2139,8 +2279,9 @@
               "@type": "Brand",
               "name": "Shadow Creator"
             },
-            "image": "https://www.shadowcreator.com/resource/upload/newspic/2026-02-18/20260386841301_1.jpg",
-            "url": "https://www.shadowcreator.com/actionone/actionone.html",
+            "image": "https://www.shadowcreator.com/static/images/default.png",
+            "url": "https://huskynarr.de/modelle/shadowcreatoractionone.html",
+            "sameAs": "https://www.shadowcreator.com/actionone/actionone.html",
             "releaseDate": "2019-03-28",
             "offers": {
               "@type": "Offer",
@@ -2161,7 +2302,9 @@
               "@type": "Brand",
               "name": "Shadow Creator"
             },
-            "url": "https://www.shadowcreator.com/halomini/halomini.html",
+            "image": "/images/manufacturers/shadow-creator-halomini.jpg",
+            "url": "https://huskynarr.de/modelle/shadowcreatorhalomini.html",
+            "sameAs": "https://www.shadowcreator.com/halomini/halomini.html",
             "releaseDate": "2018-05-01",
             "offers": {
               "@type": "Offer",
@@ -2182,7 +2325,9 @@
               "@type": "Brand",
               "name": "Sharge"
             },
-            "url": "https://loomos.ai/",
+            "image": "http://loomos.ai/cdn/shop/files/20241207-105513.jpg?v=1733743633",
+            "url": "https://huskynarr.de/modelle/shargeloomos.html",
+            "sameAs": "https://loomos.ai/",
             "releaseDate": "2025-01-28",
             "offers": {
               "@type": "Offer",
@@ -2203,7 +2348,9 @@
               "@type": "Brand",
               "name": "Shiftall"
             },
-            "url": "https://en.shiftall.net/products/meganex8k",
+            "image": "https://cdn.prod.website-files.com/615ff9cd5c0185a6354c51b8/67065d373c81f1d6f1900d05_meganex8k_ogp_sns_en.jpg",
+            "url": "https://huskynarr.de/modelle/shiftallmeganexsuperlight8k.html",
+            "sameAs": "https://en.shiftall.net/products/meganex8k",
             "releaseDate": "2025-02-01",
             "offers": {
               "@type": "Offer",
@@ -2225,7 +2372,8 @@
               "name": "Snap Inc"
             },
             "image": "https://images.ctfassets.net/kp51zybwznx4/3P1Fux2xcYmf0t3sD7fk6d/784622597e41b813f543bb17acfcc27f/Snapchat_Highlight_Image.png",
-            "url": "https://www.spectacles.com/",
+            "url": "https://huskynarr.de/modelle/snapspectacles-2021.html",
+            "sameAs": "https://www.spectacles.com/",
             "releaseDate": "2021-05-21"
           }
         },
@@ -2240,7 +2388,9 @@
               "@type": "Brand",
               "name": "Solos"
             },
-            "url": "https://solosglasses.com/products/solos-airgo-vision",
+            "image": "https://solosglasses.com/cdn/shop/collections/SolosSmartglasses_Helium_1_RD_3.png?crop=center&height=300&v=1705987111&width=300",
+            "url": "https://huskynarr.de/modelle/solosairgovision.html",
+            "sameAs": "https://solosglasses.com/products/solos-airgo-vision",
             "releaseDate": "2024-12-10",
             "offers": {
               "@type": "Offer",
@@ -2261,7 +2411,9 @@
               "@type": "Brand",
               "name": "Somnium Space"
             },
-            "url": "https://vrgineers.com/somnium-vr1-vr/",
+            "image": "https://vrgineers.com/data/files/page/somnium-vr1-vr/SomniumVR1-VR-left-angle-strap.jpg",
+            "url": "https://huskynarr.de/modelle/somniumvr1.html",
+            "sameAs": "https://vrgineers.com/somnium-vr1-vr/",
             "releaseDate": "2024-07-12",
             "offers": {
               "@type": "Offer",
@@ -2282,7 +2434,9 @@
               "@type": "Brand",
               "name": "Sony"
             },
-            "url": "https://developer.sony.com/develop/smarteyeglass-sed-e1/",
+            "image": "/images/manufacturers/sony-smarteyeglass.jpg",
+            "url": "https://huskynarr.de/modelle/sonysmarteyeglassde.html",
+            "sameAs": "https://developer.sony.com/develop/smarteyeglass-sed-e1/",
             "releaseDate": "2015-03-10",
             "offers": {
               "@type": "Offer",
@@ -2304,7 +2458,8 @@
               "name": "Sightful"
             },
             "image": "https://cdn.prod.website-files.com/67d3f3c8636ba1042f4dbe5f/6808bc768a78ba8c43ec64a6_Graph%20image_Spacetop1.min.jpg",
-            "url": "https://www.sightful.com/",
+            "url": "https://huskynarr.de/modelle/spacetop.html",
+            "sameAs": "https://www.sightful.com/",
             "releaseDate": "2023-05-18",
             "offers": {
               "@type": "Offer",
@@ -2326,7 +2481,8 @@
               "name": "Sightful"
             },
             "image": "https://cdn.prod.website-files.com/67d3f3c8636ba1042f4dbe5f/6808bc768a78ba8c43ec64a6_Graph%20image_Spacetop1.min.jpg",
-            "url": "https://www.sightful.com/",
+            "url": "https://huskynarr.de/modelle/spacetopg1.html",
+            "sameAs": "https://www.sightful.com/",
             "offers": {
               "@type": "Offer",
               "priceCurrency": "USD",
@@ -2347,7 +2503,8 @@
               "name": "TCL"
             },
             "image": "https://static-obg.tcl.com/content/dam/brandsite/it-resources/third-party/tcl-share.jpg",
-            "url": "https://www.tcl.com/global/en/glasses/tcl-nxtwear-g",
+            "url": "https://huskynarr.de/modelle/tclnxtwearg.html",
+            "sameAs": "https://www.tcl.com/global/en/glasses/tcl-nxtwear-g",
             "releaseDate": "2021-07-01",
             "offers": {
               "@type": "Offer",
@@ -2368,8 +2525,9 @@
               "@type": "Brand",
               "name": "TCL"
             },
-            "image": "https://www.rayneo.com/cdn/shop/files/02_1e676fb1-fdad-44c7-ac64-e78a66b529a2.png?v=1752223320",
-            "url": "https://www.rayneo.com/products/nxtwear-s",
+            "image": "http://www.rayneo.com/cdn/shop/files/02_1e676fb1-fdad-44c7-ac64-e78a66b529a2.png?v=1752223320",
+            "url": "https://huskynarr.de/modelle/tclnxtwears.html",
+            "sameAs": "https://www.rayneo.com/products/nxtwear-s",
             "releaseDate": "2023-02-18",
             "offers": {
               "@type": "Offer",
@@ -2390,8 +2548,9 @@
               "@type": "Brand",
               "name": "TCL"
             },
-            "image": "https://aws-obg-image-lb-1.tcl.com/content/dam/brandsite/region/de/product/tv/kv/1152x1152_115C7K,.jpg?t=1763618139175&amp;w=576",
-            "url": "https://www.tcl.com/uk/en"
+            "image": "https://aws-obg-image-lb-4.tcl.com/content/dam/brandsite/region/de/product/tv/c8l/1152x1152px_C8L98-20260331.jpg?t=1776767719138&amp;w=243",
+            "url": "https://huskynarr.de/modelle/tclnxtwearv.html",
+            "sameAs": "https://www.tcl.com/uk/en"
           }
         },
         {
@@ -2405,8 +2564,9 @@
               "@type": "Brand",
               "name": "TCL"
             },
-            "image": "https://www.rayneo.com/cdn/shop/files/X2.png?v=1754545207",
-            "url": "https://www.rayneo.com/products/tcl-rayneo-x2",
+            "image": "http://www.rayneo.com/cdn/shop/files/X2.png?v=1774235536",
+            "url": "https://huskynarr.de/modelle/tclrayneox2.html",
+            "sameAs": "https://www.rayneo.com/products/tcl-rayneo-x2",
             "releaseDate": "2024-03-01",
             "offers": {
               "@type": "Offer",
@@ -2427,8 +2587,9 @@
               "@type": "Brand",
               "name": "TCL"
             },
-            "image": "https://www.rayneo.com/cdn/shop/files/02_1e676fb1-fdad-44c7-ac64-e78a66b529a2.png?v=1752223320",
-            "url": "https://www.rayneo.com/",
+            "image": "http://www.rayneo.com/cdn/shop/files/02_1e676fb1-fdad-44c7-ac64-e78a66b529a2.png?v=1752223320",
+            "url": "https://huskynarr.de/modelle/tclrayneox2lite.html",
+            "sameAs": "https://www.rayneo.com/",
             "releaseDate": "2024-09-01",
             "offers": {
               "@type": "Offer",
@@ -2450,7 +2611,8 @@
               "name": "ThirdEye"
             },
             "image": "https://www.thirdeyegen.com/assets/images/realeye_bg_1-1920w.webp",
-            "url": "https://www.thirdeyegen.com/",
+            "url": "https://huskynarr.de/modelle/thirdeyerazormrglasses.html",
+            "sameAs": "https://www.thirdeyegen.com/",
             "releaseDate": "2022-12-31",
             "offers": {
               "@type": "Offer",
@@ -2472,7 +2634,8 @@
               "name": "ThirdEye"
             },
             "image": "https://thirdeyegen.com/assets/images/realeye_bg_1-1920w.webp",
-            "url": "https://thirdeyegen.com/x2-smart-glasses",
+            "url": "https://huskynarr.de/modelle/thirdeyex2.html",
+            "sameAs": "https://thirdeyegen.com/x2-smart-glasses",
             "releaseDate": "2018-10-04",
             "offers": {
               "@type": "Offer",
@@ -2493,6 +2656,8 @@
               "@type": "Brand",
               "name": "Thunderbird"
             },
+            "image": "https://www.thunderbird.net/media/img/thunderbird/thunderbird-256.png",
+            "url": "https://huskynarr.de/modelle/thunderbirdairplus.html",
             "offers": {
               "@type": "Offer",
               "priceCurrency": "USD",
@@ -2512,7 +2677,9 @@
               "@type": "Brand",
               "name": "Thunderbird"
             },
-            "url": "https://www.thunderbird.net/",
+            "image": "https://www.thunderbird.net/media/img/thunderbird/thunderbird-256.png",
+            "url": "https://huskynarr.de/modelle/thunderbirdv3.html",
+            "sameAs": "https://www.thunderbird.net/",
             "releaseDate": "2025-01-10",
             "offers": {
               "@type": "Offer",
@@ -2534,7 +2701,8 @@
               "name": "Tilt Five"
             },
             "image": "https://cdn.prod.website-files.com/64c014cfbff33f53d39bd26f/64dd126493fec362e82b2fd7_AR-Glasses-Tilt-Five-Augmented-Reality-Gaming.jpg",
-            "url": "https://www.tiltfive.com/",
+            "url": "https://huskynarr.de/modelle/tiltfive.html",
+            "sameAs": "https://www.tiltfive.com/",
             "releaseDate": "2021-12-22",
             "offers": {
               "@type": "Offer",
@@ -2556,7 +2724,8 @@
               "name": "TQSKY"
             },
             "image": "https://store.tqsky.com/cdn/shop/files/795f1d6f37fc8fa00e9fc4991014c2d5.png?v=1746525616",
-            "url": "https://store.tqsky.com/products/tqsky-t1",
+            "url": "https://huskynarr.de/modelle/tqskyt1.html",
+            "sameAs": "https://store.tqsky.com/products/tqsky-t1",
             "releaseDate": "2022-12-08",
             "offers": {
               "@type": "Offer",
@@ -2577,8 +2746,9 @@
               "@type": "Brand",
               "name": "Varjo"
             },
-            "image": "https://varjo.com/hubfs/Hero%20XR-4.jpg",
-            "url": "https://varjo.com/products/xr-4/",
+            "image": "https://varjo.com/hubfs/Gaia%20images/1920x1080%20(5)-min.png",
+            "url": "https://huskynarr.de/modelle/varjoxr4.html",
+            "sameAs": "https://varjo.com/products/xr-4/",
             "releaseDate": "2023-12-12",
             "offers": {
               "@type": "Offer",
@@ -2599,7 +2769,9 @@
               "@type": "Brand",
               "name": "Viture"
             },
-            "url": "https://www.viture.com/product/viture-beast-xr-glasses",
+            "image": "https://www.viture.com/opengraph-image?376fa9d8052ebb8e",
+            "url": "https://huskynarr.de/modelle/viturebeast.html",
+            "sameAs": "https://www.viture.com/product/viture-beast-xr-glasses",
             "releaseDate": "2025-12-01",
             "offers": {
               "@type": "Offer",
@@ -2621,7 +2793,8 @@
               "name": "Viture"
             },
             "image": "https://www.viture.com/opengraph-image?376fa9d8052ebb8e",
-            "url": "https://www.viture.com/product/viture-luma-xr-glasses",
+            "url": "https://huskynarr.de/modelle/vitureluma.html",
+            "sameAs": "https://www.viture.com/product/viture-luma-xr-glasses",
             "releaseDate": "2025-08-31",
             "offers": {
               "@type": "Offer",
@@ -2643,7 +2816,8 @@
               "name": "Viture"
             },
             "image": "https://www.viture.com/opengraph-image?376fa9d8052ebb8e",
-            "url": "https://www.viture.com/product/viture-luma-pro-xr-glasses",
+            "url": "https://huskynarr.de/modelle/viturelumapro.html",
+            "sameAs": "https://www.viture.com/product/viture-luma-pro-xr-glasses",
             "releaseDate": "2025-08-31",
             "offers": {
               "@type": "Offer",
@@ -2665,7 +2839,8 @@
               "name": "Viture"
             },
             "image": "https://www.viture.com/opengraph-image?376fa9d8052ebb8e",
-            "url": "https://www.viture.com/product/viture-luma-ultra-xr-glasses",
+            "url": "https://huskynarr.de/modelle/viturelumaultra.html",
+            "sameAs": "https://www.viture.com/product/viture-luma-ultra-xr-glasses",
             "releaseDate": "2025-08-31",
             "offers": {
               "@type": "Offer",
@@ -2687,7 +2862,8 @@
               "name": "Viture"
             },
             "image": "https://www.viture.com/opengraph-image?376fa9d8052ebb8e",
-            "url": "https://www.viture.com/",
+            "url": "https://huskynarr.de/modelle/vitureone.html",
+            "sameAs": "https://www.viture.com/",
             "releaseDate": "2022-12-22",
             "offers": {
               "@type": "Offer",
@@ -2708,8 +2884,9 @@
               "@type": "Brand",
               "name": "Viture"
             },
-            "image": "https://www.viture.com/opengraph-image?376fa9d8052ebb8e",
-            "url": "https://store.viture.com/products/viture-one-lite-xr-glasses?Color=Marshmallow",
+            "image": "https://cdn.shopify.com/s/files/1/0762/8760/7065/files/viture_final-black.png?v=1685631918",
+            "url": "https://huskynarr.de/modelle/vitureonelite.html",
+            "sameAs": "https://store.viture.com/products/viture-one-lite-xr-glasses?Color=Marshmallow",
             "releaseDate": "2024-01-01",
             "offers": {
               "@type": "Offer",
@@ -2731,7 +2908,8 @@
               "name": "Viture"
             },
             "image": "https://www.viture.com/opengraph-image?376fa9d8052ebb8e",
-            "url": "https://www.viture.com/",
+            "url": "https://huskynarr.de/modelle/viturepro.html",
+            "sameAs": "https://www.viture.com/",
             "releaseDate": "2024-06-01",
             "offers": {
               "@type": "Offer",
@@ -2752,8 +2930,9 @@
               "@type": "Brand",
               "name": "Vuzix"
             },
-            "image": "https://www.vuzix.com/cdn/shop/products/Blade-ALpng-Front_074b128a-99e2-429c-a858-47c4f84354bb.png?v=1657898574",
-            "url": "https://www.vuzix.com/products/vuzix-blade-2-smart-glasses",
+            "image": "http://www.vuzix.com/cdn/shop/products/Blade-ALpng-Front_074b128a-99e2-429c-a858-47c4f84354bb.png?v=1657898574",
+            "url": "https://huskynarr.de/modelle/vuzixblade2.html",
+            "sameAs": "https://www.vuzix.com/products/vuzix-blade-2-smart-glasses",
             "releaseDate": "2022-09-30",
             "offers": {
               "@type": "Offer",
@@ -2774,8 +2953,9 @@
               "@type": "Brand",
               "name": "Vuzix"
             },
-            "image": "https://www.vuzix.com/cdn/shop/files/Artboard_1.png?v=1635345615",
-            "url": "https://www.vuzix.com/products/vuzix-blade-smart-glasses-upgraded",
+            "image": "http://www.vuzix.com/cdn/shop/files/Artboard_1.png?v=1635345615",
+            "url": "https://huskynarr.de/modelle/vuzixbladeupgraded.html",
+            "sameAs": "https://www.vuzix.com/products/vuzix-blade-smart-glasses-upgraded",
             "releaseDate": "2020-10-01",
             "offers": {
               "@type": "Offer",
@@ -2796,7 +2976,9 @@
               "@type": "Brand",
               "name": "Vuzix"
             },
-            "url": "https://www.vuzix.com/products/vuzix-lx1-smart-glasses",
+            "image": "http://www.vuzix.com/cdn/shop/files/LX1Isometric2.jpg?v=1754321981",
+            "url": "https://huskynarr.de/modelle/vuzixlx1.html",
+            "sameAs": "https://www.vuzix.com/products/vuzix-lx1-smart-glasses",
             "releaseDate": "2025-12-31"
           }
         },
@@ -2811,8 +2993,9 @@
               "@type": "Brand",
               "name": "Vuzix"
             },
-            "image": "https://www.vuzix.com/cdn/shop/files/Artboard_1.png?v=1635345615",
-            "url": "https://www.vuzix.com/pages/vuzix-m100",
+            "image": "http://www.vuzix.com/cdn/shop/files/Artboard_1.png?v=1635345615",
+            "url": "https://huskynarr.de/modelle/vuzixm100.html",
+            "sameAs": "https://www.vuzix.com/pages/vuzix-m100",
             "releaseDate": "2013-08-15",
             "offers": {
               "@type": "Offer",
@@ -2833,8 +3016,9 @@
               "@type": "Brand",
               "name": "Vuzix"
             },
-            "image": "https://www.vuzix.com/cdn/shop/files/M400_Xtreme_Kit1048-color_bca05364-14f8-4941-ba31-0dec3f104c19.jpg?v=1723565839",
-            "url": "https://www.vuzix.com/products/m400-smart-glasses",
+            "image": "http://www.vuzix.com/cdn/shop/files/M400_Xtreme_Kit1048-color_bca05364-14f8-4941-ba31-0dec3f104c19.jpg?v=1723565839",
+            "url": "https://huskynarr.de/modelle/vuzixm400.html",
+            "sameAs": "https://www.vuzix.com/products/m400-smart-glasses",
             "releaseDate": "2020-01-11",
             "offers": {
               "@type": "Offer",
@@ -2855,8 +3039,9 @@
               "@type": "Brand",
               "name": "Vuzix"
             },
-            "image": "https://www.vuzix.com/cdn/shop/files/Vuzix_M4000_Safety_Glasses-003_49ec7738-5cf3-4b1d-9e29-fbf57a281ddc.jpg?v=1723566638",
-            "url": "https://www.vuzix.com/products/m4000-smart-glasses",
+            "image": "http://www.vuzix.com/cdn/shop/files/Vuzix_M4000_Safety_Glasses-003_49ec7738-5cf3-4b1d-9e29-fbf57a281ddc.jpg?v=1723566638",
+            "url": "https://huskynarr.de/modelle/vuzixm4000.html",
+            "sameAs": "https://www.vuzix.com/products/m4000-smart-glasses",
             "releaseDate": "2020-11-01",
             "offers": {
               "@type": "Offer",
@@ -2877,8 +3062,9 @@
               "@type": "Brand",
               "name": "Vuzix"
             },
-            "image": "https://www.vuzix.com/cdn/shop/files/Artboard_1.png?v=1635345615",
-            "url": "https://www.vuzix.com/pages/vuzix-m400c",
+            "image": "http://www.vuzix.com/cdn/shop/files/Artboard_1.png?v=1635345615",
+            "url": "https://huskynarr.de/modelle/vuzixm400c.html",
+            "sameAs": "https://www.vuzix.com/pages/vuzix-m400c",
             "releaseDate": "2022-11-04",
             "offers": {
               "@type": "Offer",
@@ -2899,8 +3085,9 @@
               "@type": "Brand",
               "name": "Vuzix"
             },
-            "image": "https://www.vuzix.com/cdn/shop/files/Artboard_1.png?v=1635345615",
-            "url": "https://www.vuzix.com/pages/vuzix-shield",
+            "image": "http://www.vuzix.com/cdn/shop/files/Artboard_1.png?v=1635345615",
+            "url": "https://huskynarr.de/modelle/vuzixshield.html",
+            "sameAs": "https://www.vuzix.com/pages/vuzix-shield",
             "releaseDate": "2022-09-30"
           }
         },
@@ -2915,6 +3102,8 @@
               "@type": "Brand",
               "name": "Xiaomi"
             },
+            "image": "/images/manufacturers/xiaomi-smart-glasses.jpg",
+            "url": "https://huskynarr.de/modelle/xiaomimijia.html",
             "releaseDate": "2023-07-01",
             "offers": {
               "@type": "Offer",
@@ -2935,7 +3124,9 @@
               "@type": "Brand",
               "name": "Xiaomi"
             },
-            "url": "https://blog.mi.com/en/2021/09/14/xiaomi-unveils-xiaomi-smart-glasses/",
+            "image": "/images/manufacturers/xiaomi-smart-glasses.jpg",
+            "url": "https://huskynarr.de/modelle/xiaomismartglasses.html",
+            "sameAs": "https://blog.mi.com/en/2021/09/14/xiaomi-unveils-xiaomi-smart-glasses/",
             "releaseDate": "2022-12-31"
           }
         },
@@ -2950,7 +3141,9 @@
               "@type": "Brand",
               "name": "Ximmerse"
             },
-            "url": "https://www.ximmerse.com/RhinoXPro",
+            "image": "https://www.ximmerse.com/comdata/91359/202306/2023062917365268d5d8.jpg?t=0.6230197124765935",
+            "url": "https://huskynarr.de/modelle/ximmerserhinoxpro.html",
+            "sameAs": "https://www.ximmerse.com/RhinoXPro",
             "releaseDate": "2022-11-14",
             "offers": {
               "@type": "Offer",
@@ -2971,7 +3164,9 @@
               "@type": "Brand",
               "name": "Xreal"
             },
-            "url": "https://www.xreal.com/",
+            "image": "https://resource.xreal.com/www-xreal-com/images/home/home_herosection_1S_Desktop.webp",
+            "url": "https://huskynarr.de/modelle/xreal1s.html",
+            "sameAs": "https://www.xreal.com/",
             "releaseDate": "2026-01-04",
             "offers": {
               "@type": "Offer",
@@ -2993,7 +3188,8 @@
               "name": "Xreal"
             },
             "image": "https://resource.xreal.com/www-xreal-com/images/home/home_herosection_1S_Desktop.webp",
-            "url": "https://www.xreal.com/",
+            "url": "https://huskynarr.de/modelle/xrealair2.html",
+            "sameAs": "https://www.xreal.com/",
             "releaseDate": "2023-11-01",
             "offers": {
               "@type": "Offer",
@@ -3015,7 +3211,8 @@
               "name": "Xreal"
             },
             "image": "https://resource.xreal.com/www-xreal-com/images/home/OnePro_Group_Desktop.webp",
-            "url": "https://www.xreal.com/",
+            "url": "https://huskynarr.de/modelle/xrealair2pro.html",
+            "sameAs": "https://www.xreal.com/",
             "releaseDate": "2023-11-16",
             "offers": {
               "@type": "Offer",
@@ -3037,7 +3234,8 @@
               "name": "Xreal"
             },
             "image": "https://resource.xreal.com/www-xreal-com/images/home/home_herosection_1S_Desktop.webp",
-            "url": "https://www.xreal.com/",
+            "url": "https://huskynarr.de/modelle/xrealair2ultra.html",
+            "sameAs": "https://www.xreal.com/",
             "releaseDate": "2024-07-01",
             "offers": {
               "@type": "Offer",
@@ -3058,7 +3256,9 @@
               "@type": "Brand",
               "name": "Xreal"
             },
-            "url": "https://www.xreal.com/one-pro",
+            "image": "https://resource.xreal.com/www-xreal-com/images/home/Eye_Group_Desktop.webp",
+            "url": "https://huskynarr.de/modelle/xrealeye.html",
+            "sameAs": "https://www.xreal.com/one-pro",
             "releaseDate": "2025-07-01",
             "offers": {
               "@type": "Offer",
@@ -3080,7 +3280,8 @@
               "name": "Xreal"
             },
             "image": "https://resource.xreal.com/www-xreal-com/images/home/OnePro_Group_Desktop.webp",
-            "url": "https://www.xreal.com/one",
+            "url": "https://huskynarr.de/modelle/xrealone.html",
+            "sameAs": "https://www.xreal.com/one",
             "releaseDate": "2024-12-15",
             "offers": {
               "@type": "Offer",
@@ -3102,7 +3303,8 @@
               "name": "Xreal"
             },
             "image": "https://resource.xreal.com/www-xreal-com/images/home/OnePro_Group_Desktop.webp",
-            "url": "https://www.xreal.com/one-pro",
+            "url": "https://huskynarr.de/modelle/xrealonepro.html",
+            "sameAs": "https://www.xreal.com/one-pro",
             "releaseDate": "2025-04-30",
             "offers": {
               "@type": "Offer",
@@ -3123,7 +3325,9 @@
               "@type": "Brand",
               "name": "Xreal"
             },
-            "url": "https://www.xreal.com/us/aura"
+            "image": "https://resource.xreal.com/www-xreal-com/images/home/home_herosection_1S_Desktop.webp",
+            "url": "https://huskynarr.de/modelle/xrealprojectaura.html",
+            "sameAs": "https://www.xreal.com/us/aura"
           }
         },
         {
@@ -3138,7 +3342,8 @@
               "name": "XYZ Reality"
             },
             "image": "https://xyz-reality.transforms.svdcdn.com/production/assets/Page-Images/Onsite-deployment/Ontime-delivery-3.jpg?w=1200&h=630&q=82&auto=format&fit=crop&dm=1738945418&s=9a14dac00700f9b0f5a72140d5d5c816",
-            "url": "https://www.xyzreality.com/",
+            "url": "https://huskynarr.de/modelle/xyzatom.html",
+            "sameAs": "https://www.xyzreality.com/",
             "releaseDate": "2021-11-23"
           }
         }
