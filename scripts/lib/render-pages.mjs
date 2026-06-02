@@ -117,12 +117,20 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid #292524;color:#7871
 .buyrow{display:flex;flex-wrap:wrap;gap:8px}
 .cta.buy{background:#1c1917;border-color:#44403c}
 .affnote{font-size:12px;color:#78716c;margin:8px 0 0}
+.hl{background:#1c1917;border:1px solid #292524;border-radius:14px;padding:14px 18px;margin:4px 0 20px}
+.hl h2{margin:0 0 8px;font-size:16px;color:#bef264}
+.hl ul{margin:0;padding-left:18px}.hl li{margin:3px 0}
+.aud{margin:10px 0 0;color:#a8a29e;font-size:14px}
 </style>
 ${jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, '\\u003c')}</script>` : ''}
 </head>`;
 
-export const buildDevicePage = (row, rows, slugs, baseUrl, overrides = {}) => {
+export const buildDevicePage = (row, rows, slugs, baseUrl, overrides = {}, descriptions = {}) => {
   const slug = slugs.get(row.id);
+  const editorial = descriptions[row.id] || {};
+  const highlightsHtml = Array.isArray(editorial.highlights) && editorial.highlights.length
+    ? `<div class="hl"><h2>Highlights</h2><ul>${editorial.highlights.map((h) => `<li>${esc(h)}</li>`).join('')}</ul>${editorial.audience ? `<p class="aud"><strong>Geeignet fuer:</strong> ${esc(editorial.audience)}</p>` : ''}</div>`
+    : '';
   const buyLinks = buildBuyLinks(row, overrides);
   const buyHtml = buyLinks.length
     ? `<section class="buy"><h2>Kaufen bei</h2><div class="buyrow">${buyLinks
@@ -142,7 +150,7 @@ export const buildDevicePage = (row, rows, slugs, baseUrl, overrides = {}) => {
     hasValue(row.resolution_per_eye) ? `${row.resolution_per_eye} pro Auge.` : '',
     'Specs, Preis, Lifecycle & Vergleich.',
   ].filter(Boolean);
-  const description = descParts.join(' ').slice(0, 300);
+  const description = (editorial.description || descParts.join(' ')).slice(0, 300);
 
   const specRowsHtml = SPEC_ROWS.map(([key, label, suffix]) => {
     let value = key === '__fov__' ? fovValue(row) : row[key];
@@ -229,11 +237,12 @@ export const buildDevicePage = (row, rows, slugs, baseUrl, overrides = {}) => {
 ${heroMedia}
 <div>
 <p class="price">${esc(priceText)}</p>
-<p class="lead">${esc(row.name)} von ${esc(row.manufacturer)} im AR/XR Brillen Vergleich: alle Spezifikationen, Preis, Lifecycle-Status und der direkte Vergleich mit anderen Modellen.</p>
+<p class="lead">${esc(editorial.description || `${row.name} von ${row.manufacturer} im AR/XR Brillen Vergleich: alle Spezifikationen, Preis, Lifecycle-Status und der direkte Vergleich mit anderen Modellen.`)}</p>
 <a class="cta primary" href="/?selectedIds=${esc(row.id)}&compareMode=true">Im Vergleich oeffnen</a>
 ${hasValue(row.official_url) ? `<a class="cta" href="${esc(row.official_url)}" rel="nofollow noopener">Offizielle Produktseite</a>` : ''}
 </div>
 </div>
+${highlightsHtml}
 ${buyHtml}
 <h2>Technische Daten</h2>
 <table><tbody>

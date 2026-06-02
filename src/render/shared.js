@@ -21,12 +21,12 @@ export const categoryTone = (value) =>
 
 export const lifecycleTone = (row) => {
   if (isEol(row)) {
-    return 'border-red-500/40 bg-red-500/10 text-red-200';
+    return 'border-red-500/25 bg-red-500/5 text-red-300';
   }
   if (normalizeText(row.eol_status).includes('angekuendigt')) {
-    return 'border-amber-500/40 bg-amber-500/10 text-amber-200';
+    return 'border-amber-500/25 bg-amber-500/5 text-amber-300';
   }
-  return 'border-lime-500/40 bg-lime-500/10 text-lime-200';
+  return 'border-lime-500/20 bg-lime-500/5 text-lime-300';
 };
 
 export const selectionLabelTemplate = (rowId, selected, rowName = '') => `

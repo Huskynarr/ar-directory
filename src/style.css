@@ -44,10 +44,10 @@
     --chip-text: #f2f6ff;
     --focus-ring: #84cc16;
     background:
-      radial-gradient(circle at 12% 8%, rgba(101, 163, 13, 0.2) 0%, transparent 38%),
-      radial-gradient(circle at 90% 10%, rgba(47, 111, 181, 0.2) 0%, transparent 42%),
-      radial-gradient(circle at 56% 100%, rgba(132, 204, 22, 0.12) 0%, transparent 48%),
-      linear-gradient(180deg, #0a1018 0%, #111823 42%, #0c121b 100%);
+      radial-gradient(circle at 12% 8%, rgba(101, 163, 13, 0.1) 0%, transparent 40%),
+      radial-gradient(circle at 90% 10%, rgba(47, 111, 181, 0.1) 0%, transparent 44%),
+      radial-gradient(circle at 56% 100%, rgba(132, 204, 22, 0.05) 0%, transparent 50%),
+      linear-gradient(180deg, #0a0f16 0%, #0e141d 45%, #0a0f17 100%);
   }
 
   body::before,
@@ -69,7 +69,7 @@
         rgba(255, 255, 255, 0.08) 260deg,
         rgba(255, 255, 255, 0.14) 360deg
       );
-    opacity: 0.24;
+    opacity: 0.1;
     filter: blur(80px);
     transform: rotate(-8deg);
   }
@@ -78,7 +78,7 @@
     background:
       radial-gradient(circle at 76% 22%, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 34%),
       radial-gradient(circle at 30% 72%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 28%);
-    opacity: 0.28;
+    opacity: 0.12;
     filter: blur(48px);
   }
 
@@ -116,20 +116,38 @@
     --chip-text: #10203b;
     --focus-ring: #2f6fb5;
     background:
-      radial-gradient(circle at 8% 2%, rgba(106, 169, 255, 0.2) 0%, transparent 42%),
-      radial-gradient(circle at 92% 8%, rgba(132, 204, 22, 0.18) 0%, transparent 36%),
-      radial-gradient(circle at 56% 100%, rgba(47, 111, 181, 0.12) 0%, transparent 48%),
-      linear-gradient(180deg, #f2f6fb 0%, #eaf2fb 36%, #edf4fb 100%);
+      radial-gradient(circle at 8% 2%, rgba(106, 169, 255, 0.1) 0%, transparent 44%),
+      radial-gradient(circle at 92% 8%, rgba(132, 204, 22, 0.07) 0%, transparent 38%),
+      radial-gradient(circle at 56% 100%, rgba(47, 111, 181, 0.06) 0%, transparent 50%),
+      linear-gradient(180deg, #f4f7fb 0%, #eef3f9 36%, #f1f5fb 100%);
   }
 
   body.theme-light::before {
-    opacity: 0.32;
+    opacity: 0.14;
     filter: blur(72px);
   }
 
   body.theme-light::after {
-    opacity: 0.26;
+    opacity: 0.12;
     filter: blur(42px);
+  }
+
+  /* Status/accent text colors are tuned for dark surfaces; darken them on the
+     light theme so lifecycle boxes and badges stay readable. */
+  body.theme-light .text-lime-300,
+  body.theme-light .text-lime-200 {
+    color: #3f6212;
+  }
+  body.theme-light .text-red-300,
+  body.theme-light .text-red-200 {
+    color: #b91c1c;
+  }
+  body.theme-light .text-amber-300,
+  body.theme-light .text-amber-200 {
+    color: #b45309;
+  }
+  body.theme-light .text-cyan-200 {
+    color: #0e7490;
   }
 }
 

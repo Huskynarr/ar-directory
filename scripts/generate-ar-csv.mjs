@@ -189,7 +189,11 @@ const buildMetadata = (rows, retrievedAt) => {
     official_shop_links: rows.filter((row) => row.official_url).length,
     image_links: rows.filter((row) => hasValue(row.image_url)).length,
     active_models: rows.filter((row) => sanitize(row.active_distribution).toLowerCase().startsWith('ja')).length,
-    discontinued_models: rows.filter((row) => /eol|discontinued|support/i.test(row.eol_status || '')).length,
+    discontinued_models: rows.filter((row) => {
+      const status = String(row.eol_status || '').toLowerCase();
+      if (!status || status.includes('aktiv') || status.includes('ohne eol')) return false;
+      return /eol|discontinued|eingestellt|support beendet|support-ende/.test(status);
+    }).length,
     newest_release: releaseDates.at(-1) || '',
     oldest_release: releaseDates[0] || '',
     price_range_usd: prices.length ? { min: Math.min(...prices), max: Math.max(...prices) } : null,
@@ -496,13 +500,21 @@ const main = async () => {
     affiliateOverrides = {};
   }
 
+  // Editorial descriptions + highlights per device (optional).
+  let descriptions = {};
+  try {
+    descriptions = JSON.parse(await readFile('public/data/descriptions.json', 'utf8'));
+  } catch {
+    descriptions = {};
+  }
+
   // Static, crawlable pages: one per device + model hub + glossary/FAQ + legal.
   await mkdir('public/modelle', { recursive: true });
   await Promise.all(
     normalizedRows.map((row) =>
       writeFile(
         `public/modelle/${slugs.get(row.id)}.html`,
-        buildDevicePage(row, normalizedRows, slugs, BASE_URL, affiliateOverrides),
+        buildDevicePage(row, normalizedRows, slugs, BASE_URL, affiliateOverrides, descriptions),
         'utf8',
       ),
     ),

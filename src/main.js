@@ -35,6 +35,8 @@ import { exportFilteredCsv, copyShareUrl } from './actions.js';
 import { updateDocumentSeoSignals, captureQueryFocusState, restoreQueryFocusState } from './seo.js';
 
 const app = document.querySelector('#app');
+// Injected by Vite at build time (Europe/Berlin). Empty in non-built contexts.
+const BUILD_TIME = typeof __BUILD_TIME__ !== 'undefined' ? __BUILD_TIME__ : '';
 
 const render = () => {
   const queryFocusState = captureQueryFocusState();
@@ -543,6 +545,7 @@ const render = () => {
             <a href="/glossar.html" class="hover:underline">${t('Glossar & FAQ', 'Glossary & FAQ')}</a>
             <a href="/impressum.html" class="hover:underline">${t('Impressum', 'Legal Notice')}</a>
             <a href="/datenschutz.html" class="hover:underline">${t('Datenschutz', 'Privacy')}</a>
+            ${BUILD_TIME ? `<span class="text-xs text-[#78716c]">${t('Build', 'Build')}: ${escapeHtml(BUILD_TIME)}</span>` : ''}
           </div>
           <div class="flex items-center gap-3">
             <span class="text-xs">${t('Tastenkuerzel', 'Shortcuts')}: <kbd class="rounded border border-[#44403c] px-1.5 py-0.5 text-[10px]">/</kbd> ${t('Suche', 'Search')} &middot; <kbd class="rounded border border-[#44403c] px-1.5 py-0.5 text-[10px]">Esc</kbd> ${t('Leeren', 'Clear')}</span>
@@ -859,6 +862,14 @@ const init = async () => {
       if (state.rows.length) {
         render();
       }
+    })
+    .catch(() => {});
+
+  // Editorial descriptions for the detail modal.
+  fetch('/data/descriptions.json', { cache: 'no-store' })
+    .then((response) => (response.ok ? response.json() : {}))
+    .then((data) => {
+      state.descriptions = data && typeof data === 'object' ? data : {};
     })
     .catch(() => {});
 

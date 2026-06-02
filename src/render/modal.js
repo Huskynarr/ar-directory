@@ -14,6 +14,7 @@ const detailModalTemplate = (row) => {
   const image = safeExternalUrl(row.image_url) || getModelImageUrl(row);
   const shop = getShopInfo(row);
   const buyLinks = buildBuyLinks(row, getAffiliateOverrides());
+  const editorial = (state.descriptions || {})[row.id] || {};
   const isFavorite = state.favorites.includes(row.__rowId);
   const allFacts = buildCardFacts(row);
   const lifecycleNotes = formatLifecycleNotes(row.lifecycle_notes, t('Keine Angaben.', 'No details.'));
@@ -36,6 +37,14 @@ const detailModalTemplate = (row) => {
               <div class="soft-panel p-3"><p class="text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">${t('Release', 'Release')}</p><p class="mt-1 font-semibold text-[#f5f5f4]">${escapeHtml(formatDate(row.release_date || row.announced_date))}</p></div>
               <div class="soft-panel p-3"><p class="text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">${t('Kategorie', 'Category')}</p><p class="mt-1 font-semibold text-[#f5f5f4]">${escapeHtml(compactValue(row.xr_category, 'AR'))}</p></div>
             </div>
+            ${editorial.description ? `<p class="text-sm leading-relaxed text-[#d6d3d1]">${escapeHtml(editorial.description)}</p>` : ''}
+            ${
+              Array.isArray(editorial.highlights) && editorial.highlights.length
+                ? `<div class="rounded-2xl border border-[#292524] bg-[#1c1917] p-3"><p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#a3e635]">${t('Highlights', 'Highlights')}</p><ul class="mt-1 list-disc space-y-0.5 pl-5 text-sm text-[#f5f5f4]">${editorial.highlights
+                    .map((h) => `<li>${escapeHtml(h)}</li>`)
+                    .join('')}</ul>${editorial.audience ? `<p class="mt-2 text-xs text-[#a8a29e]">${t('Geeignet fuer', 'Best for')}: ${escapeHtml(editorial.audience)}</p>` : ''}</div>`
+                : ''
+            }
             <dl class="grid grid-cols-2 gap-x-4 gap-y-3 text-sm sm:grid-cols-3">
               ${allFacts.map((f) => `<div><dt class="text-xs text-[#a8a29e]">${escapeHtml(f.label)}</dt><dd class="mt-0.5 font-medium text-[#f5f5f4]">${escapeHtml(f.value)}</dd></div>`).join('')}
             </dl>

@@ -109,6 +109,20 @@ const seoInjectPlugin = () => ({
   },
 });
 
+const buildStamp = new Date()
+  .toLocaleString('de-DE', {
+    timeZone: 'Europe/Berlin',
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  })
+  .replace(', ', ' - ');
+
 export default defineConfig({
+  define: {
+    __BUILD_TIME__: JSON.stringify(buildStamp),
+  },
   plugins: [tailwindcss(), seoInjectPlugin()],
 });

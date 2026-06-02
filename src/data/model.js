@@ -41,7 +41,17 @@ export const getShopInfo = (row) => {
 
 export const isEol = (row) => {
   const status = normalizeText(row.eol_status);
-  return status.includes('eol') || status.includes('discontinued') || status.includes('support beendet');
+  // "Aktiv oder ohne EOL-Angabe" contains the substring "eol" but is NOT end-of-life.
+  if (!status || status.includes('aktiv') || status.includes('ohne eol')) {
+    return false;
+  }
+  return (
+    status.includes('eol') ||
+    status.includes('discontinued') ||
+    status.includes('eingestellt') ||
+    status.includes('support beendet') ||
+    status.includes('support-ende')
+  );
 };
 
 export const isLikelyActive = (row) => normalizeText(row.active_distribution).includes('ja');
