@@ -12,8 +12,8 @@ const OUTPUT_LLMS_FULL_PATH = 'public/llms-full.txt';
 const OUTPUT_AI_SEARCH_PATH = 'public/ai-search.json';
 
 const SOURCE_DATASET = 'curated_ar_xr_directory_v2';
-const BASE_URL = 'https://huskynarr.de/';
-const SOURCE_PAGE = BASE_URL;
+const BASE_URL = 'https://ardirectory.huskynarr.de/';
+const SOURCE_PAGE = 'https://huskynarr.de/';
 
 const CONTROL_CHAR_REGEX = /[\u0000-\u001F\u007F]+/g;
 

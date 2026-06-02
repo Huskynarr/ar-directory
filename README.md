@@ -115,9 +115,11 @@ Fuer bessere Auffindbarkeit in Suchmaschinen und LLM-basierten Suchsystemen sind
 - OpenGraph-Bild:
   - `public/og/startseite.png`
 
-Wenn die Seite nicht unter `https://huskynarr.de/` laeuft, sollten URLs in
-`public/sitemap.xml`, `public/robots.txt`, `public/llms.txt`, `public/llms-full.txt` und `public/ai-search.json`
-auf die produktive Domain angepasst werden.
+Die produktive Basis-URL ist `https://ardirectory.huskynarr.de/` und wird zentral in `scripts/generate-ar-csv.mjs`
+(`BASE_URL`) gepflegt; alle generierten Artefakte (sitemap, llms, ai-search, structured-data, Einzelseiten) sowie
+`index.html` und `public/robots.txt` nutzen sie. Bei einem Domainwechsel `BASE_URL` anpassen, `npm run data:generate`
+ausfuehren und die absoluten URLs in `index.html`/`robots.txt` ersetzen. (`source_page` = `https://huskynarr.de/`
+bleibt als Autoren-/Markenangabe davon unberuehrt.)
 
 ## Lokale Entwicklung
 
