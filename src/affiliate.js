@@ -21,13 +21,16 @@ export const AFFILIATE = {
   disclosureShort: 'Affiliate-Links: Als Partner verdienen wir an qualifizierten Kaeufen. Fuer dich aendert sich der Preis nicht.',
 
   programs: {
-    amazonDe: { enabled: true, label: 'Amazon.de', domain: 'www.amazon.de', tag: 'CHANGEME-21' },
-    amazonCom: { enabled: true, label: 'Amazon.com', domain: 'www.amazon.com', tag: 'CHANGEME-20' },
+    // Amazon.de tag is live. Only the `tag` param matters for commission — clean
+    // links like https://www.amazon.de/dp/<ASIN>?tag=xboxdev.com-21 are sufficient.
+    amazonDe: { enabled: true, label: 'Amazon.de', domain: 'www.amazon.de', tag: 'xboxdev.com-21' },
+    // Disabled until their IDs are provided (set enabled:true after filling them).
+    amazonCom: { enabled: false, label: 'Amazon.com', domain: 'www.amazon.com', tag: 'CHANGEME-20' },
     // eBay Partner Network: campid (Campaign ID) + mkrid (rotation id, market-specific).
-    ebay: { enabled: true, label: 'eBay', domain: 'www.ebay.de', campid: 'CHANGEME', mkrid: '707-53477-19255-0' },
+    ebay: { enabled: false, label: 'eBay', domain: 'www.ebay.de', campid: 'CHANGEME', mkrid: '707-53477-19255-0' },
     // Otto / idealo run via AWIN — fill awinMid (advertiser) + awinAffid (your id).
-    otto: { enabled: true, label: 'Otto', awinMid: 'CHANGEME', awinAffid: 'CHANGEME' },
-    idealo: { enabled: true, label: 'idealo', awinMid: 'CHANGEME', awinAffid: 'CHANGEME' },
+    otto: { enabled: false, label: 'Otto', awinMid: 'CHANGEME', awinAffid: 'CHANGEME' },
+    idealo: { enabled: false, label: 'idealo', awinMid: 'CHANGEME', awinAffid: 'CHANGEME' },
   },
 };
 
