@@ -2,7 +2,7 @@
 
 Kurzer Maschinenindex fuer LLMs und Suchsysteme.
 
-- Hauptseite: https://ardirectory.huskynarr.de/
+- Hauptseite: https://ar-directory.huskynarr.de/
 - Sprache: de-DE
 - Thema: Vergleich von AR- und XR-Brillen (aktuell + historisch)
 - Datensatz: 151 Modelle (122 AR, 29 XR) von 67 Herstellern
@@ -17,11 +17,11 @@ Kurzer Maschinenindex fuer LLMs und Suchsysteme.
 
 ## Strukturierte Datenquellen
 
-- CSV: https://ardirectory.huskynarr.de/data/ar_glasses.csv
-- Metadata JSON: https://ardirectory.huskynarr.de/data/ar_glasses.metadata.json
-- JSON-LD Strukturdaten: https://ardirectory.huskynarr.de/data/structured-data.json
-- AI Search Manifest: https://ardirectory.huskynarr.de/ai-search.json
-- Vollindex: https://ardirectory.huskynarr.de/llms-full.txt
+- CSV: https://ar-directory.huskynarr.de/data/ar_glasses.csv
+- Metadata JSON: https://ar-directory.huskynarr.de/data/ar_glasses.metadata.json
+- JSON-LD Strukturdaten: https://ar-directory.huskynarr.de/data/structured-data.json
+- AI Search Manifest: https://ar-directory.huskynarr.de/ai-search.json
+- Vollindex: https://ar-directory.huskynarr.de/llms-full.txt
 
 ## Relevante Entitaeten
 
