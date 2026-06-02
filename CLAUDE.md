@@ -16,6 +16,7 @@ npm test                 # Run Vitest unit tests
 npm run test:watch       # Run tests in watch mode
 npm run data:generate    # Regenerate CSV (normalize) + metadata + all SEO/LLM artifacts
 npm run data:enrich      # Apply scripts/enrichment-2026.json (field updates + new devices) to CSV
+npm run og:generate      # Regenerate branded 1200x630 OG share cards -> public/og/models/<slug>.png (needs sharp; run locally + commit)
 npm run images:enrich    # Fetch/cache manufacturer product images
 ```
 
@@ -54,6 +55,8 @@ npm run images:enrich    # Fetch/cache manufacturer product images
 - `enrich-manufacturer-images.mjs` — fetches official product images with per-model URL overrides, caches under `public/images/manufacturers/`
 
 **Affiliate** (`src/affiliate.js`, imported by app + page generator): scaffolding for Amazon.de/.com, eBay, Otto, idealo (Otto/idealo via AWIN). `AFFILIATE.enabled` is false by default — no buy buttons/disclosure ship until partner IDs + legal pages are set. `buildBuyLinks(row, overrides)` prefers curated deeplinks from `public/data/affiliate-overrides.json` (keyed by CSV id), else builds tagged search links; all get `rel="sponsored nofollow noopener"`. Legal templates `public/impressum.html` + `public/datenschutz.html` are generated (fill `[PLATZHALTER]`).
+
+**Branded OG cards**: `scripts/generate-og-images.mjs` (`npm run og:generate`) renders a 1200x630 PNG share card per device (name, manufacturer, category, key spec chips, price) via `sharp` into `public/og/models/<slug>.png`. Device pages set `og:image`/`twitter:image` to these cards. Run locally and COMMIT the PNGs — they are static assets, so the deploy host needs no image build step. `sharp` is an `optionalDependency` so `npm ci` on the host won't fail if it can't build it.
 
 **Build-time SEO injection** (`vite.config.js`): a `transformIndexHtml` plugin replaces `__COUNT__/__AR__/__XR__/__MANUFACTURERS__` tokens from metadata, injects the generated JSON-LD into `<head>`, and renders a static crawlable `<section>` catalog of all models into `#app` (the SPA replaces it at runtime — so crawlers/JS-less AI agents see full content).
 

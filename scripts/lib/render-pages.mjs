@@ -264,6 +264,7 @@ export const buildDevicePage = (row, rows, slugs, baseUrl, overrides = {}, descr
   const imageAlt = `${row.name} – ${cat} von ${row.manufacturer}`;
   const inStock = String(row.active_distribution).toLowerCase().startsWith('ja');
   const extraMeta = [
+    `<meta property="og:image:width" content="1200" />\n<meta property="og:image:height" content="630" />`,
     `<meta property="product:brand" content="${esc(row.manufacturer)}" />`,
     hasValue(row.price_usd)
       ? `<meta property="product:price:amount" content="${esc(row.price_usd)}" />\n<meta property="product:price:currency" content="USD" />\n<meta property="product:availability" content="${inStock ? 'in stock' : 'discontinued'}" />`
@@ -274,7 +275,8 @@ export const buildDevicePage = (row, rows, slugs, baseUrl, overrides = {}, descr
     .filter(Boolean)
     .join('\n');
 
-  return `${head({ title: pageTitle, description, canonical, image, imageAlt, ogType: 'product', extraMeta, jsonLd, baseUrl })}
+  const ogCard = `${baseUrl}og/models/${slug}.png`;
+  return `${head({ title: pageTitle, description, canonical, image: ogCard, imageAlt, ogType: 'product', extraMeta, jsonLd, baseUrl })}
 <body>
 <div class="wrap">
 <nav class="bc"><a href="/">Start</a> › <a href="/modelle/">Modelle</a> › ${esc(row.name)}</nav>

@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "data:generate": "node scripts/generate-ar-csv.mjs",
     "data:enrich": "node scripts/apply-enrichment.mjs",
+    "og:generate": "node scripts/generate-og-images.mjs",
     "images:enrich": "node scripts/enrich-manufacturer-images.mjs",
     "test": "vitest run",
     "test:watch": "vitest"
@@ -21,5 +22,8 @@
   },
   "dependencies": {
     "papaparse": "^5.5.3"
+  },
+  "optionalDependencies": {
+    "sharp": "^0.34.5"
   }
 }
