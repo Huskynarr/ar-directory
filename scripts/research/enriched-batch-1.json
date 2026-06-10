@@ -1,0 +1,506 @@
+{
+ "enriched": [
+  {
+   "id": "pOfzEGXDw",
+   "name": "XYZ Atom",
+   "changes": {
+    "resolution_per_eye": "1280x720",
+    "fov_diagonal_deg": "40",
+    "connectivity": "Wi-Fi, Bluetooth"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.xrtoday.com/augmented-reality/xyz-reality-atom-review-a-leading-ar-headset/",
+    "https://vr-compare.com/headset/xyzatom"
+   ]
+  },
+  {
+   "id": "4fhEoK1p8",
+   "name": "Acer GI0 AI Glasses",
+   "changes": {
+    "release_date": "2026",
+    "audio": "Stereo speakers (1 driver per side), 3 microphones",
+    "battery": "217 mAh",
+    "optics": "Keine (AI-Brille)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://the-gadgeteer.com/2026/06/03/acer-ar-vision-gr0-gi0-ai-glasses/",
+    "https://vr.org/articles/acer-returns-xr-ar-vision-gr0-gi0-ai-glasses-computex-2026"
+   ]
+  },
+  {
+   "id": "vH20M2KPj",
+   "name": "AjnaLens AjnaX",
+   "changes": {
+    "audio": "Integrated stereo speakers"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/ajnalensajnax"
+   ]
+  },
+  {
+   "id": "eANw0hTFv",
+   "name": "Campfire Headset",
+   "changes": {
+    "refresh_hz": "60",
+    "chipset": "none / tethered",
+    "battery": "Tethered (no battery, powered via PC)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://moorinsightsstrategy.com/hands-on-with-campfires-new-holographic-computing-enterprise-headset-and-platform/",
+    "https://skarredghost.com/2023/07/03/hands-on-campfire-ar-haptx-gloves/",
+    "https://vr-compare.com/headset/campfireheadset"
+   ]
+  },
+  {
+   "id": "ZkO_SfqaC",
+   "name": "Guangli Holoswim",
+   "changes": {
+    "connectivity": "Bluetooth",
+    "audio": "None (no speakers/microphone)",
+    "camera": "No camera"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/guangliholoswim"
+   ]
+  },
+  {
+   "id": "Dnsbasmiv",
+   "name": "TCL NXTWEAR V",
+   "changes": {
+    "brightness_nits": "500",
+    "connectivity": "Wi-Fi 6, Bluetooth 5.1, USB-C",
+    "ipd_mm": "55-71",
+    "prescription_support": "Ja (Diopter-Einstellung)",
+    "camera": "Dual RGB (Passthrough)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/tclnxtwearv"
+   ]
+  },
+  {
+   "id": "hMIl1sAzP",
+   "name": "Engo Eyewear",
+   "changes": {
+    "brightness_nits": "10000",
+    "optics": "HUD micro-projection (semi-reflective lens)",
+    "audio": "None (no speakers/microphone)",
+    "camera": "No camera",
+    "connectivity": "Bluetooth 4.2 LE, Micro-USB"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.activelook.net/pages/the-tech",
+    "https://www.activelook.net/news-blog/press-release-activelook-the-lightest-see-throught-head-up-display-solution-for-glasses",
+    "https://vr-compare.com/headset/engoeyewear"
+   ]
+  },
+  {
+   "id": "BhXHG0n1d",
+   "name": "Xreal Eye",
+   "changes": {
+    "weight_g": "1.5",
+    "battery": "Via Host-Geraet (Xreal One Serie)",
+    "audio": "None (camera accessory)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://us.shop.xreal.com/products/xreal-eye",
+    "https://www.bestbuy.com/product/eye-detachable-camera-for-ar-glasses-12mp-1080p-60fps-video-6-dof-for-xreal-one-and-xreal-one-pro-black/CZTVG22G83",
+    "https://mixed-news.com/en/xreal-eye-launch/"
+   ]
+  },
+  {
+   "id": "YR7b7p4DU",
+   "name": "Cosmo Vision",
+   "changes": {
+    "brightness_nits": "10000",
+    "optics": "HUD micro-projection (semi-reflective lens)",
+    "camera": "No camera"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.activelook.net/pages/the-tech",
+    "https://vr-compare.com/headset/cosmovision"
+   ]
+  },
+  {
+   "id": "Z1gjavg5l",
+   "name": "Engo 2",
+   "changes": {
+    "brightness_nits": "10000",
+    "optics": "HUD micro-projection (semi-reflective lens)",
+    "audio": "None (no speakers/microphone)",
+    "camera": "No camera"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.activelook.net/pages/the-tech",
+    "https://us.engoeyewear.com/products/engo-2",
+    "https://vr-compare.com/headset/engo2"
+   ]
+  },
+  {
+   "id": "legacy-epsonmoveriobt-200",
+   "name": "Epson Moverio BT-200",
+   "changes": {
+    "weight_g": "88",
+    "camera": "VGA (0.3 MP)",
+    "audio": "Dolby Digital Plus, earphones"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Epson_Moverio_BT-200",
+    "https://epson.com/Certified-ReNew/Wearables/Moverio-BT-200-Smart-Glasses-(Developer-Version-Only)/p/V11H560020"
+   ]
+  },
+  {
+   "id": "4j3YZdQIM",
+   "name": "Iristick G3",
+   "changes": {
+    "resolution_per_eye": "640x400",
+    "brightness_nits": "2000",
+    "audio": "Dual beamforming microphones, integrated speaker"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://docs.iristick.com/smart-glasses/specifications/"
+   ]
+  },
+  {
+   "id": "6z7r29ojZ",
+   "name": "Julbo EVAD-1",
+   "changes": {
+    "brightness_nits": "10000",
+    "optics": "HUD micro-projection (semi-reflective lens)",
+    "audio": "None (no speakers/microphone)",
+    "camera": "No camera"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.activelook.net/pages/the-tech",
+    "https://www.julbo.com/en_wo/faq/evad-1-connected-glasses/what-is-activelook-the-embedded-technology-in-our-evad-1-connected-glasses",
+    "https://vr-compare.com/headset/julboevad-1"
+   ]
+  },
+  {
+   "id": "nzYmv8egK",
+   "name": "Shadow Creator Halomini",
+   "changes": {
+    "connectivity": "Wi-Fi, Bluetooth, Micro-USB",
+    "audio": "Integrated stereo speakers"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/shadowcreatorhalomini"
+   ]
+  },
+  {
+   "id": "Dp6TLH4Gv",
+   "name": "Xiaomi Smart Glasses",
+   "changes": {
+    "connectivity": "Wi-Fi, Bluetooth",
+    "audio": "Integrated stereo speakers, microphone",
+    "chipset": "Quad-core ARM"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/xiaomismartglasses"
+   ]
+  },
+  {
+   "id": "CgySYMXLq",
+   "name": "3Glasses Blubur S1",
+   "changes": {
+    "ipd_mm": "60-63",
+    "audio": "Integrated stereo headphones",
+    "battery": "Tethered (no battery)",
+    "camera": "No camera"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/3glassesbluburs1"
+   ]
+  },
+  {
+   "id": "MFKzu5lwb",
+   "name": "3Glasses Blubur S2",
+   "changes": {
+    "ipd_mm": "60-63",
+    "audio": "Integrated stereo speakers, microphone, 3.5mm jack",
+    "battery": "Tethered (no battery)",
+    "camera": "Tracking cameras (passthrough)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/3glassesbluburs2"
+   ]
+  },
+  {
+   "id": "CMlHLhpbt",
+   "name": "Alibaba Quark AI Glasses S1",
+   "changes": {
+    "weight_g": "51",
+    "audio": "Dual 10mm speakers, 5 microphones (incl. bone conduction)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.gizmochina.com/2025/11/27/alibaba-quark-ai-glasses-s1-g1-sale-china-specifications/",
+    "https://www.cnbc.com/2025/11/27/alibaba-quark-ai-glasses-go-on-sale-price-specs.html"
+   ]
+  },
+  {
+   "id": "GgaK5c41-",
+   "name": "Dream Glass 4K Plus",
+   "changes": {
+    "audio": "Integrated stereo speakers, microphone, 3.5mm jack"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/dreamglass4kplus"
+   ]
+  },
+  {
+   "id": "hPA8JixLI",
+   "name": "Dream Glass Flow",
+   "changes": {
+    "prescription_support": "Ja (Diopter-Einstellung)",
+    "chipset": "Quad-core 1.9 GHz"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/dreamglassflow"
+   ]
+  },
+  {
+   "id": "Wmqx-AT6q",
+   "name": "Epson Moverio BT-40",
+   "changes": {
+    "weight_g": "95",
+    "chipset": "none / tethered"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-40-Smart-Glasses-with-USB-Type-C-Connectivity-/p/V11H969020",
+    "https://www.epson.eu/en_EU/products/smart-glasses/see-through-mobile-viewer/moverio-bt-40/p/31095"
+   ]
+  },
+  {
+   "id": "GDAwFX5CU",
+   "name": "Even Realities G2",
+   "changes": {
+    "weight_g": "36",
+    "prescription_support": "Ja (-12 bis +12 dpt)",
+    "resolution_per_eye": "640x480"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://513.toys/even-g2/",
+    "https://www.trustedreviews.com/reviews/even-realities-g2"
+   ]
+  },
+  {
+   "id": "HfZ2Dqm1q",
+   "name": "Guangli Holoswim 2",
+   "changes": {
+    "audio": "None (no speakers/microphone)",
+    "camera": "No camera"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/guangliholoswim2"
+   ]
+  },
+  {
+   "id": "vktjm1mHt",
+   "name": "Nolo VR Glass",
+   "changes": {
+    "ipd_mm": "58-72",
+    "prescription_support": "Ja (Diopter-Einstellung)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/nolovrglass"
+   ]
+  },
+  {
+   "id": "NK2ZBl7SV",
+   "name": "Solos AirGo Vision",
+   "changes": {
+    "display_type": "Keine (AI-Brille)",
+    "optics": "Keine (AI-Brille)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.androidauthority.com/solos-airgo-vision-3456195/",
+    "https://www.notebookcheck.net/Solos-AirGo-Vision-New-AR-glasses-support-GPT-4o-and-won-t-cost-a-fortune.855705.0.html"
+   ]
+  },
+  {
+   "id": "Rz1MDcJer",
+   "name": "Thunderbird Air Plus",
+   "changes": {
+    "price_usd": "350",
+    "connectivity": "Wi-Fi, Bluetooth 5.0, USB-C",
+    "audio": "Integrated stereo speakers"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/thunderbirdairplus"
+   ]
+  },
+  {
+   "id": "0WBse43zY",
+   "name": "Thunderbird V3",
+   "changes": {
+    "display_type": "Keine (AI-Brille)",
+    "optics": "Keine (AI-Brille)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.prnewswire.com/news-releases/rayneo-showcases-new-ar-lineup-at-ces-2025-302343690.html",
+    "https://www.minimicroled.com/rayneo-v3-smart-glasses-waveguide-technology-ces-2025/"
+   ]
+  },
+  {
+   "id": "LDF8zLQkE",
+   "name": "Vuzix LX1",
+   "changes": {
+    "price_usd": "2199",
+    "audio": "Integrated speaker (100 dB), triple noise-cancelling microphones, bone-conduction mic"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.vuzix.com/products/vuzix-lx1-smart-glasses"
+   ]
+  },
+  {
+   "id": "rR39x5VXi",
+   "name": "Ximmerse Rhino X Pro",
+   "changes": {
+    "connectivity": "Wi-Fi, Bluetooth, USB-C",
+    "battery": "3680 mAh"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/ximmerserhinoxpro"
+   ]
+  },
+  {
+   "id": "FUmJdcmqg",
+   "name": "3Glasses D2",
+   "changes": {
+    "resolution_per_eye": "1280x1440",
+    "battery": "Tethered (no battery)",
+    "audio": "None (no integrated audio)",
+    "camera": "No camera"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/3glassesd2"
+   ]
+  },
+  {
+   "id": "vbmfgIFUl",
+   "name": "Acer AR Vision GR0",
+   "changes": {
+    "release_date": "2026",
+    "audio": "Stereo speakers in temples",
+    "battery": "Tethered (no battery)",
+    "prescription_support": "Optional (magnetic lens insert)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://the-gadgeteer.com/2026/06/03/acer-ar-vision-gr0-gi0-ai-glasses/"
+   ]
+  },
+  {
+   "id": "LMUhhwNq7",
+   "name": "ASUS ROG XREAL R1",
+   "changes": {
+    "announced_date": "2026-01-06",
+    "audio": "Sound by Bose, spatial audio",
+    "battery": "Tethered (no battery)",
+    "ipd_mm": "Digital adjustment"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://press.asus.com/news/press-releases/rog-xreal-r1-ar-gaming-glasses/"
+   ]
+  },
+  {
+   "id": "GlONfBjEP",
+   "name": "Dream Glass 4K",
+   "changes": {
+    "audio": "Integrated stereo speakers, microphone, 3.5mm jack"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/dreamglass4k"
+   ]
+  },
+  {
+   "id": "EV601vi66",
+   "name": "Dream Glass Lead Plus",
+   "changes": {
+    "audio": "Integrated stereo speakers, microphone, 3.5mm jack"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/dreamglassleadplus"
+   ]
+  },
+  {
+   "id": "-yaNtlMz9",
+   "name": "Dream Glass Lead Pro",
+   "changes": {
+    "audio": "Integrated stereo speakers, microphone, 3.5mm jack"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/dreamglassleadpro"
+   ]
+  },
+  {
+   "id": "wJVRRflMf",
+   "name": "INMO Air",
+   "changes": {
+    "battery": "350 mAh",
+    "audio": "Integrated stereo speakers, microphone"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/inmoair"
+   ]
+  },
+  {
+   "id": "Vg5P0BH6B",
+   "name": "MAD Gaze Wave",
+   "changes": {
+    "chipset": "none / tethered",
+    "battery": "Tethered (via smartphone)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/madgazewave"
+   ]
+  },
+  {
+   "id": "Tyzj7UF28",
+   "name": "Rokid AI Glasses Style",
+   "changes": {
+    "display_type": "Keine (AI-Brille)",
+    "optics": "Keine (AI-Brille)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://global.rokid.com/products/rokid-ai-glasses-style"
+   ]
+  }
+ ]
+}

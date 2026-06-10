@@ -1,0 +1,609 @@
+[
+ {
+  "id": "sMDYLv4VB",
+  "name": "ThirdEye Razor MR Glasses",
+  "manufacturer": "ThirdEye",
+  "missing": [
+   "chipset",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "display_type"
+  ],
+  "n": 8
+ },
+ {
+  "id": "Yp1UjtE3P",
+  "name": "Tilt Five",
+  "manufacturer": "Tilt Five",
+  "missing": [
+   "brightness_nits",
+   "battery",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz"
+  ],
+  "n": 8
+ },
+ {
+  "id": "Q9zkHODZI",
+  "name": "Brilliant Monocle",
+  "manufacturer": "Brilliant Labs",
+  "missing": [
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz",
+   "optics"
+  ],
+  "n": 7
+ },
+ {
+  "id": "suVKDU_0P",
+  "name": "DigiLens Argo",
+  "manufacturer": "DigiLens",
+  "missing": [
+   "price_usd",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "resolution_per_eye",
+   "refresh_hz"
+  ],
+  "n": 7
+ },
+ {
+  "id": "MNTNWLDu4",
+  "name": "Dream Glass",
+  "manufacturer": "DreamWorld",
+  "missing": [
+   "brightness_nits",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "fov_vertical_deg",
+   "display_type",
+   "optics"
+  ],
+  "n": 7
+ },
+ {
+  "id": "QAvnJ3JzH",
+  "name": "Halliday",
+  "manufacturer": "Halliday",
+  "missing": [
+   "chipset",
+   "brightness_nits",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "resolution_per_eye",
+   "refresh_hz"
+  ],
+  "n": 7
+ },
+ {
+  "id": "A5KdHFj88",
+  "name": "INMO GO2",
+  "manufacturer": "INMO",
+  "missing": [
+   "connectivity",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz",
+   "weight_g"
+  ],
+  "n": 7
+ },
+ {
+  "id": "3ZdVU3ZJM",
+  "name": "P&C Solution METALENSE",
+  "manufacturer": "P&C Solution",
+  "missing": [
+   "price_usd",
+   "brightness_nits",
+   "audio",
+   "ipd_mm",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 7
+ },
+ {
+  "id": "6wtHtGTJL",
+  "name": "Pimax Crystal Super",
+  "manufacturer": "Pimax",
+  "missing": [
+   "price_usd",
+   "chipset",
+   "audio",
+   "prescription_support",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "weight_g"
+  ],
+  "n": 7
+ },
+ {
+  "id": "Z3yEBUJAV",
+  "name": "Play For Dream MR",
+  "manufacturer": "Play For Dream",
+  "missing": [
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "weight_g",
+   "optics"
+  ],
+  "n": 7
+ },
+ {
+  "id": "ms0htz68c",
+  "name": "RayNeo Air 3s",
+  "manufacturer": "TCL",
+  "missing": [
+   "chipset",
+   "battery",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "weight_g"
+  ],
+  "n": 7
+ },
+ {
+  "id": "ufFwiatGb",
+  "name": "RealWear HMT-1Z1",
+  "manufacturer": "RealWear",
+  "missing": [
+   "brightness_nits",
+   "connectivity",
+   "prescription_support",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "refresh_hz",
+   "optics"
+  ],
+  "n": 7
+ },
+ {
+  "id": "o9JH3GwIU",
+  "name": "RealWear Navigator 520",
+  "manufacturer": "RealWear",
+  "missing": [
+   "brightness_nits",
+   "connectivity",
+   "prescription_support",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "refresh_hz",
+   "optics"
+  ],
+  "n": 7
+ },
+ {
+  "id": "WCyEdkzUk",
+  "name": "Rokid Glass 2",
+  "manufacturer": "Rokid",
+  "missing": [
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz",
+   "display_type"
+  ],
+  "n": 7
+ },
+ {
+  "id": "W1kyhxveC",
+  "name": "Rokid X-Craft",
+  "manufacturer": "Rokid",
+  "missing": [
+   "price_usd",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz",
+   "weight_g",
+   "display_type"
+  ],
+  "n": 7
+ },
+ {
+  "id": "o1Kzyd1z_",
+  "name": "Shadow Creator Action One",
+  "manufacturer": "Shadow Creator",
+  "missing": [
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz",
+   "optics"
+  ],
+  "n": 7
+ },
+ {
+  "id": "r2UX2RNAB",
+  "name": "Vuzix M400",
+  "manufacturer": "Vuzix",
+  "missing": [
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "optics"
+  ],
+  "n": 7
+ },
+ {
+  "id": "PjuDk6-Sz",
+  "name": "Vuzix Shield",
+  "manufacturer": "Vuzix",
+  "missing": [
+   "price_usd",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_vertical_deg",
+   "weight_g"
+  ],
+  "n": 7
+ },
+ {
+  "id": "wHlIeEbab",
+  "name": "Xiaomi Mijia",
+  "manufacturer": "Xiaomi",
+  "missing": [
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "resolution_per_eye",
+   "refresh_hz"
+  ],
+  "n": 7
+ },
+ {
+  "id": "scBhMmwQy",
+  "name": "3Glasses X1",
+  "manufacturer": "3Glasses",
+  "missing": [
+   "brightness_nits",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_diagonal_deg"
+  ],
+  "n": 6
+ },
+ {
+  "id": "c46yfe7il",
+  "name": "Epson Moverio BT-40S",
+  "manufacturer": "Epson",
+  "missing": [
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 6
+ },
+ {
+  "id": "EnqtMtA05",
+  "name": "Google Glass Enterprise Edition 2",
+  "manufacturer": "Google",
+  "missing": [
+   "brightness_nits",
+   "ipd_mm",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "refresh_hz"
+  ],
+  "n": 6
+ },
+ {
+  "id": "HDAcu5kC4",
+  "name": "Google Glass Explorer Edition",
+  "manufacturer": "Google",
+  "missing": [
+   "brightness_nits",
+   "ipd_mm",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "refresh_hz"
+  ],
+  "n": 6
+ },
+ {
+  "id": "eTNerb4Vg",
+  "name": "Huawei VR Glass 6DoF",
+  "manufacturer": "Huawei",
+  "missing": [
+   "brightness_nits",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 6
+ },
+ {
+  "id": "UdgWHTDXY",
+  "name": "INMO Air2",
+  "manufacturer": "INMO",
+  "missing": [
+   "brightness_nits",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 6
+ },
+ {
+  "id": "NwLynxR1_",
+  "name": "Lynx R-1",
+  "manufacturer": "Lynx",
+  "missing": [
+   "release_date",
+   "price_usd",
+   "brightness_nits",
+   "prescription_support",
+   "fov_vertical_deg",
+   "fov_diagonal_deg"
+  ],
+  "n": 6
+ },
+ {
+  "id": "sCAIQq45W",
+  "name": "MAD Gaze Glow Plus",
+  "manufacturer": "MAD Gaze",
+  "missing": [
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz"
+  ],
+  "n": 6
+ },
+ {
+  "id": "PRD287sFm",
+  "name": "Nimo",
+  "manufacturer": "Nimo Planet",
+  "missing": [
+   "release_date",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz",
+   "display_type"
+  ],
+  "n": 6
+ },
+ {
+  "id": "NwPSVR2Xr",
+  "name": "PlayStation VR2",
+  "manufacturer": "Sony Interactive Entertainment",
+  "missing": [
+   "chipset",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "fov_vertical_deg",
+   "fov_diagonal_deg"
+  ],
+  "n": 6
+ },
+ {
+  "id": "gJzO9KhG5",
+  "name": "RealWear HMT-1",
+  "manufacturer": "RealWear",
+  "missing": [
+   "brightness_nits",
+   "prescription_support",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "refresh_hz",
+   "optics"
+  ],
+  "n": 6
+ },
+ {
+  "id": "zPABenwmr",
+  "name": "RealWear Navigator 500",
+  "manufacturer": "RealWear",
+  "missing": [
+   "brightness_nits",
+   "prescription_support",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "refresh_hz",
+   "optics"
+  ],
+  "n": 6
+ },
+ {
+  "id": "ElhWfkAbQ",
+  "name": "RealWear Navigator Z1",
+  "manufacturer": "RealWear",
+  "missing": [
+   "brightness_nits",
+   "prescription_support",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "refresh_hz",
+   "optics"
+  ],
+  "n": 6
+ },
+ {
+  "id": "legacy-reconjet",
+  "name": "Recon Jet",
+  "manufacturer": "Recon Instruments",
+  "missing": [
+   "brightness_nits",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz",
+   "weight_g"
+  ],
+  "n": 6
+ },
+ {
+  "id": "oq9fGnG34",
+  "name": "Sharge Loomos",
+  "manufacturer": "Sharge",
+  "missing": [
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz"
+  ],
+  "n": 6
+ },
+ {
+  "id": "Hz5LNjh9Y",
+  "name": "Snap Spectacles (2021)",
+  "manufacturer": "Snap Inc",
+  "missing": [
+   "price_usd",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "display_type"
+  ],
+  "n": 6
+ },
+ {
+  "id": "legacy-sonysmarteyeglassde",
+  "name": "Sony SmartEyeglass (SED-E1)",
+  "manufacturer": "Sony",
+  "missing": [
+   "chipset",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "refresh_hz"
+  ],
+  "n": 6
+ },
+ {
+  "id": "wrjEu415W",
+  "name": "Spacetop G1",
+  "manufacturer": "Sightful",
+  "missing": [
+   "release_date",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 6
+ },
+ {
+  "id": "-pmNU-it0",
+  "name": "ThirdEye X2",
+  "manufacturer": "ThirdEye",
+  "missing": [
+   "brightness_nits",
+   "connectivity",
+   "ipd_mm",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "display_type"
+  ],
+  "n": 6
+ },
+ {
+  "id": "1PE1xcEFb",
+  "name": "Vuzix Blade Upgraded",
+  "manufacturer": "Vuzix",
+  "missing": [
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz",
+   "display_type"
+  ],
+  "n": 6
+ },
+ {
+  "id": "legacy-vuzixm100",
+  "name": "Vuzix M100",
+  "manufacturer": "Vuzix",
+  "missing": [
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "refresh_hz"
+  ],
+  "n": 6
+ },
+ {
+  "id": "x3IQCew4E",
+  "name": "Huawei VR Glass",
+  "manufacturer": "Huawei",
+  "missing": [
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 5
+ },
+ {
+  "id": "vn_zQOTOV",
+  "name": "Nubia Neovision Glass",
+  "manufacturer": "Nubia",
+  "missing": [
+   "chipset",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz"
+  ],
+  "n": 5
+ }
+]

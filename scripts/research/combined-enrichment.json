@@ -1,0 +1,3301 @@
+{
+ "enriched": [
+  {
+   "id": "pOfzEGXDw",
+   "name": "XYZ Atom",
+   "changes": {
+    "resolution_per_eye": "1280x720",
+    "fov_diagonal_deg": "40",
+    "connectivity": "Wi-Fi, Bluetooth"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.xrtoday.com/augmented-reality/xyz-reality-atom-review-a-leading-ar-headset/",
+    "https://vr-compare.com/headset/xyzatom"
+   ]
+  },
+  {
+   "id": "4fhEoK1p8",
+   "name": "Acer GI0 AI Glasses",
+   "changes": {
+    "release_date": "2026",
+    "audio": "Stereo speakers (1 driver per side), 3 microphones",
+    "battery": "217 mAh",
+    "optics": "Keine (AI-Brille)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://the-gadgeteer.com/2026/06/03/acer-ar-vision-gr0-gi0-ai-glasses/",
+    "https://vr.org/articles/acer-returns-xr-ar-vision-gr0-gi0-ai-glasses-computex-2026"
+   ]
+  },
+  {
+   "id": "vH20M2KPj",
+   "name": "AjnaLens AjnaX",
+   "changes": {
+    "audio": "Integrated stereo speakers"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/ajnalensajnax"
+   ]
+  },
+  {
+   "id": "eANw0hTFv",
+   "name": "Campfire Headset",
+   "changes": {
+    "refresh_hz": "60",
+    "chipset": "none / tethered",
+    "battery": "Tethered (no battery, powered via PC)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://moorinsightsstrategy.com/hands-on-with-campfires-new-holographic-computing-enterprise-headset-and-platform/",
+    "https://skarredghost.com/2023/07/03/hands-on-campfire-ar-haptx-gloves/",
+    "https://vr-compare.com/headset/campfireheadset"
+   ]
+  },
+  {
+   "id": "ZkO_SfqaC",
+   "name": "Guangli Holoswim",
+   "changes": {
+    "connectivity": "Bluetooth",
+    "audio": "None (no speakers/microphone)",
+    "camera": "No camera"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/guangliholoswim"
+   ]
+  },
+  {
+   "id": "Dnsbasmiv",
+   "name": "TCL NXTWEAR V",
+   "changes": {
+    "brightness_nits": "500",
+    "connectivity": "Wi-Fi 6, Bluetooth 5.1, USB-C",
+    "ipd_mm": "55-71",
+    "prescription_support": "Ja (Diopter-Einstellung)",
+    "camera": "Dual RGB (Passthrough)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/tclnxtwearv"
+   ]
+  },
+  {
+   "id": "hMIl1sAzP",
+   "name": "Engo Eyewear",
+   "changes": {
+    "brightness_nits": "10000",
+    "optics": "HUD micro-projection (semi-reflective lens)",
+    "audio": "None (no speakers/microphone)",
+    "camera": "No camera",
+    "connectivity": "Bluetooth 4.2 LE, Micro-USB"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.activelook.net/pages/the-tech",
+    "https://www.activelook.net/news-blog/press-release-activelook-the-lightest-see-throught-head-up-display-solution-for-glasses",
+    "https://vr-compare.com/headset/engoeyewear"
+   ]
+  },
+  {
+   "id": "BhXHG0n1d",
+   "name": "Xreal Eye",
+   "changes": {
+    "weight_g": "1.5",
+    "battery": "Via Host-Geraet (Xreal One Serie)",
+    "audio": "None (camera accessory)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://us.shop.xreal.com/products/xreal-eye",
+    "https://www.bestbuy.com/product/eye-detachable-camera-for-ar-glasses-12mp-1080p-60fps-video-6-dof-for-xreal-one-and-xreal-one-pro-black/CZTVG22G83",
+    "https://mixed-news.com/en/xreal-eye-launch/"
+   ]
+  },
+  {
+   "id": "YR7b7p4DU",
+   "name": "Cosmo Vision",
+   "changes": {
+    "brightness_nits": "10000",
+    "optics": "HUD micro-projection (semi-reflective lens)",
+    "camera": "No camera"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.activelook.net/pages/the-tech",
+    "https://vr-compare.com/headset/cosmovision"
+   ]
+  },
+  {
+   "id": "Z1gjavg5l",
+   "name": "Engo 2",
+   "changes": {
+    "brightness_nits": "10000",
+    "optics": "HUD micro-projection (semi-reflective lens)",
+    "audio": "None (no speakers/microphone)",
+    "camera": "No camera"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.activelook.net/pages/the-tech",
+    "https://us.engoeyewear.com/products/engo-2",
+    "https://vr-compare.com/headset/engo2"
+   ]
+  },
+  {
+   "id": "legacy-epsonmoveriobt-200",
+   "name": "Epson Moverio BT-200",
+   "changes": {
+    "weight_g": "88",
+    "camera": "VGA (0.3 MP)",
+    "audio": "Dolby Digital Plus, earphones"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Epson_Moverio_BT-200",
+    "https://epson.com/Certified-ReNew/Wearables/Moverio-BT-200-Smart-Glasses-(Developer-Version-Only)/p/V11H560020"
+   ]
+  },
+  {
+   "id": "4j3YZdQIM",
+   "name": "Iristick G3",
+   "changes": {
+    "resolution_per_eye": "640x400",
+    "brightness_nits": "2000",
+    "audio": "Dual beamforming microphones, integrated speaker"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://docs.iristick.com/smart-glasses/specifications/"
+   ]
+  },
+  {
+   "id": "6z7r29ojZ",
+   "name": "Julbo EVAD-1",
+   "changes": {
+    "brightness_nits": "10000",
+    "optics": "HUD micro-projection (semi-reflective lens)",
+    "audio": "None (no speakers/microphone)",
+    "camera": "No camera"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.activelook.net/pages/the-tech",
+    "https://www.julbo.com/en_wo/faq/evad-1-connected-glasses/what-is-activelook-the-embedded-technology-in-our-evad-1-connected-glasses",
+    "https://vr-compare.com/headset/julboevad-1"
+   ]
+  },
+  {
+   "id": "nzYmv8egK",
+   "name": "Shadow Creator Halomini",
+   "changes": {
+    "connectivity": "Wi-Fi, Bluetooth, Micro-USB",
+    "audio": "Integrated stereo speakers"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/shadowcreatorhalomini"
+   ]
+  },
+  {
+   "id": "Dp6TLH4Gv",
+   "name": "Xiaomi Smart Glasses",
+   "changes": {
+    "connectivity": "Wi-Fi, Bluetooth",
+    "audio": "Integrated stereo speakers, microphone",
+    "chipset": "Quad-core ARM"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/xiaomismartglasses"
+   ]
+  },
+  {
+   "id": "CgySYMXLq",
+   "name": "3Glasses Blubur S1",
+   "changes": {
+    "ipd_mm": "60-63",
+    "audio": "Integrated stereo headphones",
+    "battery": "Tethered (no battery)",
+    "camera": "No camera"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/3glassesbluburs1"
+   ]
+  },
+  {
+   "id": "MFKzu5lwb",
+   "name": "3Glasses Blubur S2",
+   "changes": {
+    "ipd_mm": "60-63",
+    "audio": "Integrated stereo speakers, microphone, 3.5mm jack",
+    "battery": "Tethered (no battery)",
+    "camera": "Tracking cameras (passthrough)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/3glassesbluburs2"
+   ]
+  },
+  {
+   "id": "CMlHLhpbt",
+   "name": "Alibaba Quark AI Glasses S1",
+   "changes": {
+    "weight_g": "51",
+    "audio": "Dual 10mm speakers, 5 microphones (incl. bone conduction)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.gizmochina.com/2025/11/27/alibaba-quark-ai-glasses-s1-g1-sale-china-specifications/",
+    "https://www.cnbc.com/2025/11/27/alibaba-quark-ai-glasses-go-on-sale-price-specs.html"
+   ]
+  },
+  {
+   "id": "GgaK5c41-",
+   "name": "Dream Glass 4K Plus",
+   "changes": {
+    "audio": "Integrated stereo speakers, microphone, 3.5mm jack"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/dreamglass4kplus"
+   ]
+  },
+  {
+   "id": "hPA8JixLI",
+   "name": "Dream Glass Flow",
+   "changes": {
+    "prescription_support": "Ja (Diopter-Einstellung)",
+    "chipset": "Quad-core 1.9 GHz"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/dreamglassflow"
+   ]
+  },
+  {
+   "id": "Wmqx-AT6q",
+   "name": "Epson Moverio BT-40",
+   "changes": {
+    "weight_g": "95",
+    "chipset": "none / tethered"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-40-Smart-Glasses-with-USB-Type-C-Connectivity-/p/V11H969020",
+    "https://www.epson.eu/en_EU/products/smart-glasses/see-through-mobile-viewer/moverio-bt-40/p/31095"
+   ]
+  },
+  {
+   "id": "GDAwFX5CU",
+   "name": "Even Realities G2",
+   "changes": {
+    "weight_g": "36",
+    "prescription_support": "Ja (-12 bis +12 dpt)",
+    "resolution_per_eye": "640x480"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://513.toys/even-g2/",
+    "https://www.trustedreviews.com/reviews/even-realities-g2"
+   ]
+  },
+  {
+   "id": "HfZ2Dqm1q",
+   "name": "Guangli Holoswim 2",
+   "changes": {
+    "audio": "None (no speakers/microphone)",
+    "camera": "No camera"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/guangliholoswim2"
+   ]
+  },
+  {
+   "id": "vktjm1mHt",
+   "name": "Nolo VR Glass",
+   "changes": {
+    "ipd_mm": "58-72",
+    "prescription_support": "Ja (Diopter-Einstellung)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/nolovrglass"
+   ]
+  },
+  {
+   "id": "NK2ZBl7SV",
+   "name": "Solos AirGo Vision",
+   "changes": {
+    "display_type": "Keine (AI-Brille)",
+    "optics": "Keine (AI-Brille)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.androidauthority.com/solos-airgo-vision-3456195/",
+    "https://www.notebookcheck.net/Solos-AirGo-Vision-New-AR-glasses-support-GPT-4o-and-won-t-cost-a-fortune.855705.0.html"
+   ]
+  },
+  {
+   "id": "Rz1MDcJer",
+   "name": "Thunderbird Air Plus",
+   "changes": {
+    "price_usd": "350",
+    "connectivity": "Wi-Fi, Bluetooth 5.0, USB-C",
+    "audio": "Integrated stereo speakers"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/thunderbirdairplus"
+   ]
+  },
+  {
+   "id": "0WBse43zY",
+   "name": "Thunderbird V3",
+   "changes": {
+    "display_type": "Keine (AI-Brille)",
+    "optics": "Keine (AI-Brille)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.prnewswire.com/news-releases/rayneo-showcases-new-ar-lineup-at-ces-2025-302343690.html",
+    "https://www.minimicroled.com/rayneo-v3-smart-glasses-waveguide-technology-ces-2025/"
+   ]
+  },
+  {
+   "id": "LDF8zLQkE",
+   "name": "Vuzix LX1",
+   "changes": {
+    "price_usd": "2199",
+    "audio": "Integrated speaker (100 dB), triple noise-cancelling microphones, bone-conduction mic"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.vuzix.com/products/vuzix-lx1-smart-glasses"
+   ]
+  },
+  {
+   "id": "rR39x5VXi",
+   "name": "Ximmerse Rhino X Pro",
+   "changes": {
+    "connectivity": "Wi-Fi, Bluetooth, USB-C",
+    "battery": "3680 mAh"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/ximmerserhinoxpro"
+   ]
+  },
+  {
+   "id": "FUmJdcmqg",
+   "name": "3Glasses D2",
+   "changes": {
+    "resolution_per_eye": "1280x1440",
+    "battery": "Tethered (no battery)",
+    "audio": "None (no integrated audio)",
+    "camera": "No camera"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/3glassesd2"
+   ]
+  },
+  {
+   "id": "vbmfgIFUl",
+   "name": "Acer AR Vision GR0",
+   "changes": {
+    "release_date": "2026",
+    "audio": "Stereo speakers in temples",
+    "battery": "Tethered (no battery)",
+    "prescription_support": "Optional (magnetic lens insert)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://the-gadgeteer.com/2026/06/03/acer-ar-vision-gr0-gi0-ai-glasses/"
+   ]
+  },
+  {
+   "id": "LMUhhwNq7",
+   "name": "ASUS ROG XREAL R1",
+   "changes": {
+    "announced_date": "2026-01-06",
+    "audio": "Sound by Bose, spatial audio",
+    "battery": "Tethered (no battery)",
+    "ipd_mm": "Digital adjustment"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://press.asus.com/news/press-releases/rog-xreal-r1-ar-gaming-glasses/"
+   ]
+  },
+  {
+   "id": "GlONfBjEP",
+   "name": "Dream Glass 4K",
+   "changes": {
+    "audio": "Integrated stereo speakers, microphone, 3.5mm jack"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/dreamglass4k"
+   ]
+  },
+  {
+   "id": "EV601vi66",
+   "name": "Dream Glass Lead Plus",
+   "changes": {
+    "audio": "Integrated stereo speakers, microphone, 3.5mm jack"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/dreamglassleadplus"
+   ]
+  },
+  {
+   "id": "-yaNtlMz9",
+   "name": "Dream Glass Lead Pro",
+   "changes": {
+    "audio": "Integrated stereo speakers, microphone, 3.5mm jack"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/dreamglassleadpro"
+   ]
+  },
+  {
+   "id": "wJVRRflMf",
+   "name": "INMO Air",
+   "changes": {
+    "battery": "350 mAh",
+    "audio": "Integrated stereo speakers, microphone"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/inmoair"
+   ]
+  },
+  {
+   "id": "Vg5P0BH6B",
+   "name": "MAD Gaze Wave",
+   "changes": {
+    "chipset": "none / tethered",
+    "battery": "Tethered (via smartphone)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/madgazewave"
+   ]
+  },
+  {
+   "id": "Tyzj7UF28",
+   "name": "Rokid AI Glasses Style",
+   "changes": {
+    "display_type": "Keine (AI-Brille)",
+    "optics": "Keine (AI-Brille)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://global.rokid.com/products/rokid-ai-glasses-style"
+   ]
+  },
+  {
+   "id": "sMDYLv4VB",
+   "name": "ThirdEye Razor MR Glasses",
+   "changes": {
+    "prescription_support": "Ja (Dioptrien-Einstellung 0 bis -5)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.auganix.org/thirdeye-announces-new-razor-mr-glasses-consumer-mixed-reality-device/"
+   ]
+  },
+  {
+   "id": "Yp1UjtE3P",
+   "name": "Tilt Five",
+   "changes": {
+    "battery": "Keine, via Host-Gerät (USB 3.0 / USB-C)",
+    "camera": "2x 8 MP Infrarot (Head-Tracking + Computer Vision)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.tiltfive.com/make/tech-overview",
+    "https://skarredghost.com/2022/02/16/tilt-five-hands-on-review/"
+   ]
+  },
+  {
+   "id": "Q9zkHODZI",
+   "name": "Brilliant Monocle",
+   "changes": {
+    "optics": "Prisma (optisch gebondet)",
+    "prescription_support": "Ja (Clip-on auf eigener Brille)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://docs.brilliant.xyz/monocle/hardware/",
+    "https://www.designboom.com/technology/monocle-world-smallest-ar-device-clip-glasses-brilliant-labs-02-10-2023/"
+   ]
+  },
+  {
+   "id": "suVKDU_0P",
+   "name": "DigiLens Argo",
+   "changes": {
+    "resolution_per_eye": "1280x720",
+    "prescription_support": "Ja (Einsätze)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://kguttag.com/2023/03/27/digilens-lumus-vuzix-oppo-avegant-optical-ar-ces-ar-vr-mr-2023-pt-8/",
+    "https://frameofchoice.com/products/digilens-argo-smart-glasses"
+   ]
+  },
+  {
+   "id": "MNTNWLDu4",
+   "name": "Dream Glass",
+   "changes": {
+    "audio": "3,5-mm-Klinke",
+    "prescription_support": "Ja (mit Brille nutzbar)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://skarredghost.com/2018/06/14/dreamglass-is-an-interesting-augmented-reality-glass-that-costs-only-399/"
+   ]
+  },
+  {
+   "id": "A5KdHFj88",
+   "name": "INMO GO2",
+   "changes": {
+    "connectivity": "Wi-Fi (2,4/5 GHz), Bluetooth 5.0",
+    "weight_g": "52"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://513.toys/inmo_go2/",
+    "https://www.inmoxr.com/collections/go"
+   ]
+  },
+  {
+   "id": "6wtHtGTJL",
+   "name": "Pimax Crystal Super",
+   "changes": {
+    "price_usd": "1696",
+    "audio": "Austauschbare 3,5-mm-Klinke (SMAS/DMAS-Module), 2 Mikrofone",
+    "fov_vertical_deg": "111"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://pimax.com/blogs/blogs/pimax-launches-the-worlds-first-retina-level-vr-headset-with-the-crystal-super-reaching-57-ppd",
+    "https://pimax.com/products/pimax-crystal-super",
+    "https://www.overtake.gg/news/pimax-crystal-super-new-flagship-vr-headset-with-enormous-resolution-unveiled.2627/"
+   ]
+  },
+  {
+   "id": "Z3yEBUJAV",
+   "name": "Play For Dream MR",
+   "changes": {
+    "ipd_mm": "51-78",
+    "prescription_support": "Ja (magnetische Einsätze)",
+    "weight_g": "650",
+    "optics": "Pancake"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://pfdm.ai/products/mr-headset",
+    "https://skarredghost.com/2025/09/11/play-for-dream-hands-on-review/"
+   ]
+  },
+  {
+   "id": "ms0htz68c",
+   "name": "RayNeo Air 3s",
+   "changes": {
+    "battery": "Keine, via Host-Gerät (USB-C)",
+    "prescription_support": "Ja (Einsätze, Myopie 0 bis -10,0 dpt)",
+    "camera": "Keine",
+    "weight_g": "76"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.rayneo.com/products/rayneo-air-3s-xr-glasses",
+    "https://www.phonearena.com/reviews/rayneo-air-3-s-review_id7224"
+   ]
+  },
+  {
+   "id": "ufFwiatGb",
+   "name": "RealWear HMT-1Z1",
+   "changes": {
+    "connectivity": "Wi-Fi 802.11 a/b/g/n/ac (2,4/5 GHz), Bluetooth LE 4.1",
+    "fov_diagonal_deg": "20"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://support.realwear.com/knowledge/hmt-1z1-device-details"
+   ]
+  },
+  {
+   "id": "o9JH3GwIU",
+   "name": "RealWear Navigator 520",
+   "changes": {
+    "connectivity": "Wi-Fi 802.11 a/b/g/n/ac (2,4/5 GHz), Bluetooth 5.1",
+    "fov_diagonal_deg": "24",
+    "prescription_support": "Ja (mit eigener Brille/Schutzbrille nutzbar)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://bestware.com/en/realwear-navigator-520.html",
+    "https://www.realwear.com/devices/navigator-520"
+   ]
+  },
+  {
+   "id": "W1kyhxveC",
+   "name": "Rokid X-Craft",
+   "changes": {
+    "refresh_hz": "60",
+    "weight_g": "600"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://intrinsicallysafestore.com/product/rokid-xcraft-ar-device/",
+    "https://www.rokid.ai/products/rokid-x-craft/"
+   ]
+  },
+  {
+   "id": "r2UX2RNAB",
+   "name": "Vuzix M400",
+   "changes": {
+    "resolution_per_eye": "640x360"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.vuzix.com/products/m400-smart-glasses",
+    "https://vrx.vr-expert.com/vuzix-m400-review/"
+   ]
+  },
+  {
+   "id": "PjuDk6-Sz",
+   "name": "Vuzix Shield",
+   "changes": {
+    "price_usd": "2499",
+    "camera": "2x 13 MP (Stereo, Autofokus, 4K30)",
+    "prescription_support": "Ja (Einsätze)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.vuzix.com/products/vuzix-shield-smart-glasses",
+    "https://vrx.vr-expert.com/vuzix-shield-release-date-key-features-and-cost-everything-you-need-to-know/"
+   ]
+  },
+  {
+   "id": "wHlIeEbab",
+   "name": "Xiaomi Mijia",
+   "changes": {
+    "resolution_per_eye": "1920x1080"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.oled-info.com/mijia-glasses-camera"
+   ]
+  },
+  {
+   "id": "scBhMmwQy",
+   "name": "3Glasses X1",
+   "changes": {
+    "prescription_support": "Ja (Dioptrien-Anpassung bis 600°/-6,0 dpt)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.3glasses.com/en/product/x1.html"
+   ]
+  },
+  {
+   "id": "c46yfe7il",
+   "name": "Epson Moverio BT-40S",
+   "changes": {
+    "camera": "13 MP (im Touch-Controller BO-IC400, Autofokus)",
+    "prescription_support": "Ja (über eigener Brille tragbar)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://epson.com/c/Moverio-BT-40S-Smart-Glasses-with-Intelligent-Touch-Controller/p/V11H969120",
+    "https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-40-Smart-Glasses-with-USB-Type-C-Connectivity-/p/V11H969020"
+   ]
+  },
+  {
+   "id": "eTNerb4Vg",
+   "name": "Huawei VR Glass 6DoF",
+   "changes": {
+    "ipd_mm": "55-71",
+    "prescription_support": "Ja (Dioptrien-Einstellung 0 bis -7, pro Auge)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.4gltemall.com/huawei-vr-glass.html",
+    "https://skarredghost.com/2021/05/20/huawei-vr-glasses-6dof-preview/"
+   ]
+  },
+  {
+   "id": "UdgWHTDXY",
+   "name": "INMO Air2",
+   "changes": {
+    "audio": "Integrierte Lautsprecher (nach unten gerichtet), Mikrofon",
+    "prescription_support": "Ja (magnetische Einsätze)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.inmoxr.com/pages/inmo-air2",
+    "https://www.slashgear.com/1323632/inmo-air2-review-affordable-ar-glasses/"
+   ]
+  },
+  {
+   "id": "NwLynxR1_",
+   "name": "Lynx R-1",
+   "changes": {
+    "release_date": "2023",
+    "price_usd": "849",
+    "fov_vertical_deg": "90"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://lynx-r.com/news/update-on-the-availability-and-price-change-of-the-lynx-r1/",
+    "https://vrarwiki.com/wiki/Lynx-R1"
+   ]
+  },
+  {
+   "id": "NwPSVR2Xr",
+   "name": "PlayStation VR2",
+   "changes": {
+    "chipset": "Custom MediaTek SoC (Headset-Controller, Rendering via PS5)",
+    "prescription_support": "Ja (Brille tragbar; Einsätze von Drittanbietern)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.techadvisor.com/article/1377161/ps-vr2-custom-mediatek-chip.html",
+    "https://www.videogamer.com/tech/vr/can-you-wear-glasses-with-psvr-2/",
+    "https://www.playstation.com/en-us/ps-vr2/ps-vr2-tech-specs/"
+   ]
+  },
+  {
+   "id": "gJzO9KhG5",
+   "name": "RealWear HMT-1",
+   "changes": {
+    "fov_diagonal_deg": "20"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://support.realwear.com/knowledge/hmt-1-device-details"
+   ]
+  },
+  {
+   "id": "zPABenwmr",
+   "name": "RealWear Navigator 500",
+   "changes": {
+    "fov_diagonal_deg": "20"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://support.realwear.com/knowledge/device-specifications"
+   ]
+  },
+  {
+   "id": "ElhWfkAbQ",
+   "name": "RealWear Navigator Z1",
+   "changes": {
+    "fov_diagonal_deg": "24"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://support.realwear.com/knowledge/realwear-navigator-z1",
+    "https://vr-compare.com/headset/realwearnavigatorz1"
+   ]
+  },
+  {
+   "id": "legacy-reconjet",
+   "name": "Recon Jet",
+   "changes": {
+    "weight_g": "86"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.engadget.com/2015-07-17-recon-jet-review.html",
+    "https://road.cc/content/review/164529-recon-jet-black-heads-display-smart-eyewear"
+   ]
+  },
+  {
+   "id": "legacy-sonysmarteyeglassde",
+   "name": "Sony SmartEyeglass (SED-E1)",
+   "changes": {
+    "fov_horizontal_deg": "19",
+    "fov_vertical_deg": "6",
+    "fov_diagonal_deg": "20"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vrarwiki.com/wiki/SmartEyeglass_Developer_Edition_SED-E1"
+   ]
+  },
+  {
+   "id": "wrjEu415W",
+   "name": "Spacetop G1",
+   "changes": {
+    "prescription_support": "Ja (maßgefertigte Korrekturgläser -8,0 bis +6,0 dpt)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.uploadvr.com/sightful-cancels-spacetop-pivots-to-windows-software-for-xreal-glasses/",
+    "https://liliputing.com/spacetop-g1-is-a-1900-laptop-that-uses-a-pair-of-augmented-reality-glasses-as-a-display/"
+   ]
+  },
+  {
+   "id": "-pmNU-it0",
+   "name": "ThirdEye X2",
+   "changes": {
+    "brightness_nits": "500",
+    "connectivity": "Wi-Fi, Bluetooth, USB-C"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://skarredghost.com/2021/08/06/thirdeye-x2-mr/",
+    "https://www.thirdeyegen.com/x2-smart-glasses"
+   ]
+  },
+  {
+   "id": "1PE1xcEFb",
+   "name": "Vuzix Blade Upgraded",
+   "changes": {
+    "prescription_support": "Ja (Einsätze)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vrx.vr-expert.com/the-key-differences-between-the-vuzix-blade-upgraded-and-the-vuzix-blade/",
+    "https://vuzix-website.s3.amazonaws.com/files/Content/pdfs/Vuzix-Blade-Upgraded-Smart-Glasses-d07.pdf"
+   ]
+  },
+  {
+   "id": "legacy-vuzixm100",
+   "name": "Vuzix M100",
+   "changes": {
+    "fov_diagonal_deg": "15"
+   },
+   "confidence": "high",
+   "sources": [
+    "http://files.vuzix.com/Content/docs/north-american/web/Vuzix-M100-Product-Sheet-01-20-16.pdf",
+    "https://www.realtimelogistics.com.au/products/vuzix-m100/"
+   ]
+  },
+  {
+   "id": "x3IQCew4E",
+   "name": "Huawei VR Glass",
+   "changes": {
+    "ipd_mm": "55-71",
+    "prescription_support": "Ja (Dioptrien-Einstellung 0 bis -7, pro Auge)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.4gltemall.com/huawei-vr-glass.html",
+    "https://www.giztop.com/huawei-vr-glass.html"
+   ]
+  },
+  {
+   "id": "vn_zQOTOV",
+   "name": "Nubia Neovision Glass",
+   "changes": {
+    "prescription_support": "Ja (integrierte Myopie-Anpassung 0 bis -5,0 dpt)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.notebookcheck.net/ZTE-Nubia-Neovision-Glass-New-Micro-OLED-AR-glasses-showcased-with-up-to-120-inch-display.700031.0.html",
+    "https://www.gizchina.com/2023/06/19/zte-nubia-neovision-glass-is-now-available-for-sale/"
+   ]
+  },
+  {
+   "id": "itQWsK0YF",
+   "name": "Pimax Crystal Light",
+   "changes": {
+    "fov_horizontal_deg": "105",
+    "weight_g": "815",
+    "chipset": "None / tethered (PC DisplayPort)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://pimax.com/pages/crystal-light",
+    "https://vrheadsetpicker.com/headsets/pimax-crystal-light/"
+   ]
+  },
+  {
+   "id": "MRE_j97gq",
+   "name": "Spacetop",
+   "changes": {
+    "prescription_support": "Ja (custom prescription lenses included, magnetic rim)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://help.sightful.com/en/articles/8725893-using-prescription-lenses-with-spacetop"
+   ]
+  },
+  {
+   "id": "xo3cio_3V",
+   "name": "TCL RayNeo X2",
+   "changes": {
+    "resolution_per_eye": "640x480",
+    "prescription_support": "Optional (custom prescription lenses via Lensology partner)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.uploadvr.com/rayneo-x2-standalone-ar-glasses-review/",
+    "https://www.rayneo.com/products/tcl-rayneo-x2"
+   ]
+  },
+  {
+   "id": "u1Gt3j4C1",
+   "name": "Vuzix Blade 2",
+   "changes": {
+    "prescription_support": "Optional (prescription inserts)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.vuzix.com/products/vuzix-blade-2-smart-glasses",
+    "https://vrx.vr-expert.com/vuzix-blade-2-review-vrx-by-vr-expert/"
+   ]
+  },
+  {
+   "id": "UR8rXYX7t",
+   "name": "Everysight Raptor",
+   "changes": {
+    "optics": "BEAM projection (OLED micro-projector onto visor)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.everysight.com/technology"
+   ]
+  },
+  {
+   "id": "12CKEzhzY",
+   "name": "HTC Vive Focus Vision",
+   "changes": {
+    "weight_g": "785",
+    "fov_vertical_deg": "96"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/htcvivefocusvision",
+    "https://vr-expert.com/vr-headsets/htc-vive-focus-vision/"
+   ]
+  },
+  {
+   "id": "98wLZvTJQ",
+   "name": "Meta 2",
+   "changes": {
+    "weight_g": "500"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.sizescreens.com/meta-2-specifications/"
+   ]
+  },
+  {
+   "id": "oqaLcHVYE",
+   "name": "NuEyes Pro 3e",
+   "changes": {
+    "chipset": "None / tethered (DisplayPort Alt Mode via USB-C)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.worldcast.io/nueyes-pro-3-specs",
+    "https://www.nueyes.com/pro3e"
+   ]
+  },
+  {
+   "id": "fmvzFDQnb",
+   "name": "Pimax Dream Air",
+   "changes": {
+    "chipset": "None / tethered (PC DisplayPort via USB-C)",
+    "prescription_support": "Optional (prescription lens frames)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://pimax.com/pages/dream-air",
+    "https://pimax.com/blogs/blogs/pimax-unveils-new-vr-headsets-offering-the-widest-field-of-view-for-micro-oled"
+   ]
+  },
+  {
+   "id": "xgyr4Q0iB",
+   "name": "RayNeo X3 Pro",
+   "changes": {
+    "fov_diagonal_deg": "30",
+    "refresh_hz": "60"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.tomshardware.com/peripherals/wearable-tech/rayneo-x3-pro-ar-glasses-review",
+    "https://skarredghost.com/2025/12/17/rayneo-x3-pro-review/"
+   ]
+  },
+  {
+   "id": "kG1_Qtju3",
+   "name": "Rokid Air",
+   "changes": {
+    "prescription_support": "Software (0.00 to -5.00D diopter adjustment built-in)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://static.rokidcdn.com/website/air/0.1.0/Rokid%20Air%20User%20Manual.pdf",
+    "https://vrtech.wiki/rokid/rokid-air/rokid-air-user-manual/"
+   ]
+  },
+  {
+   "id": "UIRKkbXSO",
+   "name": "TCL NXTWEAR G",
+   "changes": {
+    "chipset": "None / tethered (USB-C DisplayPort)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://newatlas.com/wearables/tcl-nxtwear-s-wearable-display-glasses/"
+   ]
+  },
+  {
+   "id": "x7KWR1zVL",
+   "name": "TCL NXTWEAR S",
+   "changes": {
+    "prescription_support": "Optional (magnetic lens frame for prescription lenses)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://newatlas.com/wearables/tcl-nxtwear-s-wearable-display-glasses/",
+    "https://mixed-news.com/en/tcl-nxtwear-s-review/"
+   ]
+  },
+  {
+   "id": "_IiTfLZMZ",
+   "name": "Viture Pro",
+   "changes": {
+    "camera": "No camera",
+    "chipset": "None / tethered (USB-C DisplayPort)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://wearablexp.com/smart-glasses/viture-pro-xr-review/",
+    "https://www.tomsguide.com/computing/vr-ar/viture-pro-xr-glasses-review"
+   ]
+  },
+  {
+   "id": "fdx61QDyF",
+   "name": "Vuzix M400C",
+   "changes": {
+    "optics": "Occluded OLED display (non-see-through)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://ir.vuzix.com/news-events/press-releases/detail/1937/vuzix-introduces-its-new-m400-c-smart-glasses",
+    "https://vrx.vr-expert.com/vuzix-m400-review/"
+   ]
+  },
+  {
+   "id": "pdUGQrVUI",
+   "name": "Even Realities G1",
+   "changes": {
+    "ipd_mm": "54-80 (single size, no adjustment)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.engadget.com/wearables/even-realities-g1-review-limited-but-effective-smart-glasses-140059586.html"
+   ]
+  },
+  {
+   "id": "JWXF3ikOV",
+   "name": "Huawei Vision Glass",
+   "changes": {
+    "prescription_support": "Software (0 to -5.00D diopter adjustment built-in)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.huaweicentral.com/huawei-vision-glass-vr-ar-everything-you-need-to-know/"
+   ]
+  },
+  {
+   "id": "T2HJ66fyR",
+   "name": "Iristick G2",
+   "changes": {
+    "camera": "16 MP central camera (117° diagonal FOV, 6x zoom) + zoom/barcode features"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://docs.iristick.com/smart-glasses/specifications/",
+    "https://iristick.com/products/iristick-g2"
+   ]
+  },
+  {
+   "id": "0iz9ksGZA",
+   "name": "Meta Ray-Ban Display",
+   "changes": {
+    "brightness_nits": "5000"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://roadtovr.com/meta-ray-ban-smart-glasses-display-price-release-date-specs/",
+    "https://en.wikipedia.org/wiki/Ray-Ban_Meta"
+   ]
+  },
+  {
+   "id": "jtG3rIKIH",
+   "name": "Nreal Air",
+   "changes": {
+    "chipset": "None / tethered (USB-C DisplayPort)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/nrealair"
+   ]
+  },
+  {
+   "id": "Jc6hpT2dK",
+   "name": "Rokid AR Lite",
+   "changes": {
+    "display_type": "Micro-OLED",
+    "optics": "Birdbath optics",
+    "fov_diagonal_deg": "50",
+    "resolution_per_eye": "1920x1080",
+    "refresh_hz": "120",
+    "brightness_nits": "600",
+    "weight_g": "75",
+    "camera": "No camera"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.tomsguide.com/computing/smart-glasses/rokid-ar-lite-ar-glasses-review",
+    "https://www.notebookcheck.net/Rokid-announces-Rokid-AR-Lite-suite-with-updated-Rokid-Max-2-glasses-and-Rokid-Station-2-host-unit.832131.0.html"
+   ]
+  },
+  {
+   "id": "y-HjRHyLZ",
+   "name": "Rokid Max",
+   "changes": {
+    "prescription_support": "Software (0.00 to -6.00D diopter adjustment built-in)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://global.rokid.com/products/prescription-mount",
+    "https://global.rokid.com/pages/rokid-max-specs"
+   ]
+  },
+  {
+   "id": "kQcRu82xv",
+   "name": "Rokid Max 2",
+   "changes": {
+    "prescription_support": "Software (0.00 to -6.00D diopter adjustment built-in) + optional prescription lenses"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://global.rokid.com/blogs/max-2/can-i-use-prescription-lenses-with-the-rokid-max-2"
+   ]
+  },
+  {
+   "id": "RanJuGgtP",
+   "name": "Viture Beast",
+   "changes": {
+    "weight_g": "88"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.viture.com/beast",
+    "https://visionxo.com/products/viture-beast"
+   ]
+  },
+  {
+   "id": "jjR57q0sj",
+   "name": "Viture One Lite",
+   "changes": {
+    "prescription_support": "Software (0 to -5.0D diopter dial built-in)",
+    "chipset": "None / tethered (USB-C DisplayPort)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.slashgear.com/1553677/viture-one-lite-review-ax-glasses-with-sight-adjustment-immersion/",
+    "https://academy.viture.com/xr_glasses/pro_one_introduction"
+   ]
+  },
+  {
+   "id": "PnnMj9eH3",
+   "name": "Xreal Air 2",
+   "changes": {
+    "chipset": "None / tethered (USB-C DisplayPort)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/xrealair2"
+   ]
+  },
+  {
+   "id": "E7k3-VKas",
+   "name": "Xreal Air 2 Pro",
+   "changes": {
+    "chipset": "None / tethered (USB-C DisplayPort)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/xrealair2pro"
+   ]
+  }
+ ],
+ "newDevices": [
+  {
+   "name": "Valve Index",
+   "manufacturer": "Valve",
+   "official_url": "https://store.steampowered.com/valveindex",
+   "announced_date": "2019-04-30",
+   "release_date": "2019-06-28",
+   "price_usd": "999",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "2025-11-12",
+   "lifecycle_notes": "Am 12. November 2025 eingestellt; Nachfolger ist das Steam Frame.",
+   "lifecycle_source": "https://en.wikipedia.org/wiki/Valve_Index",
+   "software": "SteamVR",
+   "compute_unit": "PC",
+   "display_type": "LCD",
+   "optics": "Fresnel (zweielementig, gekantet)",
+   "fov_horizontal_deg": "108",
+   "resolution_per_eye": "1440x1600",
+   "refresh_hz": "144",
+   "tracking": "6DoF Outside-in (Lighthouse 2.0)",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Unklar",
+   "connectivity": "DisplayPort 1.2, USB 3.0",
+   "audio": "Off-Ear-Lautsprecher (extra-aural), Dual-Mikrofon",
+   "battery": "Kabelgebunden (PC)",
+   "ipd_mm": "58-70",
+   "prescription_support": "Unklar",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Valve_Index"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Valve Steam Frame",
+   "manufacturer": "Valve",
+   "official_url": "https://store.steampowered.com/sale/steamframe",
+   "announced_date": "2025-11-12",
+   "release_date": "2026",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Angekündigt: Marktstart im Sommer 2026 (aus Q1 2026 verschoben), Preis noch offen.",
+   "lifecycle_source": "https://www.videogameschronicle.com/news/steam-machine-and-steam-frame-confirmed-for-summer-2026-by-valve/",
+   "software": "SteamOS",
+   "compute_unit": "Standalone",
+   "display_type": "LCD",
+   "optics": "Pancake",
+   "resolution_per_eye": "2160x2160",
+   "refresh_hz": "144",
+   "weight_g": "440",
+   "tracking": "6DoF Inside-out (4 Kameras, SLAM)",
+   "eye_tracking": "Ja",
+   "hand_tracking": "Unklar",
+   "passthrough": "Monochrom (Tracking-Kameras)",
+   "chipset": "Snapdragon 8 Gen 3",
+   "connectivity": "Wi-Fi 7, Bluetooth 5.3, USB-C, 6-GHz-Funkadapter für PC-Streaming",
+   "battery": "Integriert, 21,6 Wh",
+   "prescription_support": "Unklar",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Steam_Frame",
+    "https://roadtovr.com/valve-steam-frame-machine-release-window-confirmed/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "HP Reverb G2",
+   "manufacturer": "HP",
+   "official_url": "https://support.hp.com/us-en/product/product-specs/hp-reverb-g2-virtual-reality-headset/33835976",
+   "announced_date": "2020-05-28",
+   "release_date": "2020-11",
+   "price_usd": "599",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "",
+   "lifecycle_notes": "Eingestellt; die Windows-Mixed-Reality-Plattform wurde von Microsoft beendet.",
+   "lifecycle_source": "https://www.uploadvr.com/new-hp-reverb-g2-specs/",
+   "software": "Windows Mixed Reality / SteamVR",
+   "compute_unit": "PC",
+   "display_type": "LCD",
+   "optics": "Fresnel (Valve-Design)",
+   "fov_diagonal_deg": "114",
+   "resolution_per_eye": "2160x2160",
+   "refresh_hz": "90",
+   "tracking": "6DoF Inside-out (4 Kameras)",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "audio": "Off-Ear-Lautsprecher (Valve-Design), Dual-Mikrofon",
+   "battery": "Kabelgebunden (PC)",
+   "ipd_mm": "60-68",
+   "sources": [
+    "https://www.uploadvr.com/new-hp-reverb-g2-specs/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Meta Quest 2",
+   "manufacturer": "Meta",
+   "official_url": "https://www.meta.com/quest/",
+   "announced_date": "2020-09-16",
+   "release_date": "2020-10-13",
+   "price_usd": "299",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "2024-09-25",
+   "lifecycle_notes": "Meistverkauftes VR-Headset; im September 2024 zugunsten des Quest 3S eingestellt.",
+   "lifecycle_source": "https://en.wikipedia.org/wiki/Quest_2",
+   "software": "Meta Horizon OS (Android-basiert)",
+   "compute_unit": "Standalone",
+   "display_type": "LCD",
+   "optics": "Fresnel",
+   "resolution_per_eye": "1832x1920",
+   "refresh_hz": "120",
+   "weight_g": "503",
+   "tracking": "6DoF Inside-out (4 Kameras)",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Ja",
+   "passthrough": "Monochrom",
+   "chipset": "Snapdragon XR2 Gen 1",
+   "connectivity": "Wi-Fi 6, Bluetooth, USB-C",
+   "ipd_mm": "58/63/68 (3 Stufen)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Quest_2"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Oculus Quest",
+   "manufacturer": "Meta",
+   "official_url": "https://www.meta.com/quest/",
+   "announced_date": "2018-09-26",
+   "release_date": "2019-05-21",
+   "price_usd": "399",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "2020-09",
+   "lifecycle_notes": "Erstes 6DoF-Standalone-Headset von Oculus, im September 2020 vom Quest 2 abgelöst.",
+   "lifecycle_source": "https://en.wikipedia.org/wiki/Oculus_Quest",
+   "software": "Oculus OS (Android-basiert)",
+   "compute_unit": "Standalone",
+   "display_type": "OLED (PenTile)",
+   "resolution_per_eye": "1440x1600",
+   "refresh_hz": "72",
+   "weight_g": "571",
+   "tracking": "6DoF Inside-out (4 Kameras, Oculus Insight)",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Ja",
+   "chipset": "Snapdragon 835",
+   "ipd_mm": "Mechanisch verstellbar",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Oculus_Quest"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Oculus Rift S",
+   "manufacturer": "Meta",
+   "official_url": "https://www.meta.com/",
+   "announced_date": "2019-03-20",
+   "release_date": "2019-05-21",
+   "price_usd": "399",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "2021-04",
+   "lifecycle_notes": "Letztes PC-VR-Headset von Oculus, im April 2021 eingestellt.",
+   "lifecycle_source": "https://en.wikipedia.org/wiki/Oculus_Rift_S",
+   "software": "Oculus PC / SteamVR",
+   "compute_unit": "PC",
+   "display_type": "LCD",
+   "fov_horizontal_deg": "115",
+   "resolution_per_eye": "1280x1440",
+   "refresh_hz": "80",
+   "weight_g": "500",
+   "tracking": "6DoF Inside-out (5 Kameras)",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "audio": "Integrierte Lautsprecher im Kopfband",
+   "battery": "Kabelgebunden (PC)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Oculus_Rift_S"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Oculus Rift (CV1)",
+   "manufacturer": "Meta",
+   "official_url": "https://www.meta.com/",
+   "announced_date": "2015-06-11",
+   "release_date": "2016-03-28",
+   "price_usd": "599",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "2019",
+   "lifecycle_notes": "Erstes Consumer-PC-VR-Headset von Oculus, 2019 vom Rift S abgelöst.",
+   "lifecycle_source": "https://en.wikipedia.org/wiki/Oculus_Rift_CV1",
+   "software": "Oculus PC / SteamVR",
+   "compute_unit": "PC",
+   "display_type": "OLED (PenTile)",
+   "optics": "Fresnel",
+   "fov_horizontal_deg": "110",
+   "resolution_per_eye": "1080x1200",
+   "refresh_hz": "90",
+   "weight_g": "470",
+   "tracking": "6DoF Outside-in (Constellation, IR-Sensoren)",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "audio": "Integrierte abnehmbare Kopfhörer",
+   "battery": "Kabelgebunden (PC)",
+   "ipd_mm": "Mechanisch verstellbar",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Oculus_Rift_CV1"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Oculus Go",
+   "manufacturer": "Meta",
+   "official_url": "https://www.meta.com/",
+   "announced_date": "2017-10-11",
+   "release_date": "2018-05-01",
+   "price_usd": "199",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "2020-06-23",
+   "lifecycle_notes": "3DoF-Standalone-Headset, Verkauf im Juni 2020 eingestellt.",
+   "lifecycle_source": "https://en.wikipedia.org/wiki/Oculus_Go",
+   "software": "Oculus OS (Android-basiert)",
+   "compute_unit": "Standalone",
+   "display_type": "LCD",
+   "optics": "Fresnel",
+   "fov_horizontal_deg": "101",
+   "resolution_per_eye": "1280x1440",
+   "refresh_hz": "72",
+   "weight_g": "468",
+   "tracking": "3DoF",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "chipset": "Snapdragon 821",
+   "battery": "Integriert, 2600 mAh (ca. 2h)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Oculus_Go"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "PlayStation VR",
+   "manufacturer": "Sony Interactive Entertainment",
+   "official_url": "https://www.playstation.com/",
+   "announced_date": "2016-03-15",
+   "release_date": "2016-10-13",
+   "price_usd": "399",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "2024",
+   "lifecycle_notes": "Konsolen-VR-Headset für PS4, nach dem Start des PSVR2 (2023) eingestellt.",
+   "lifecycle_source": "https://en.wikipedia.org/wiki/PlayStation_VR",
+   "software": "PlayStation 4",
+   "compute_unit": "Tethered",
+   "display_type": "OLED (5,7 Zoll)",
+   "fov_horizontal_deg": "100",
+   "resolution_per_eye": "960x1080",
+   "refresh_hz": "120",
+   "weight_g": "600",
+   "tracking": "6DoF Outside-in (PlayStation Camera, 9 LEDs)",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "audio": "3D-Audio via 3,5-mm-Klinke",
+   "battery": "Kabelgebunden (Konsole)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/PlayStation_VR"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "HTC Vive",
+   "manufacturer": "HTC",
+   "official_url": "https://www.vive.com/",
+   "announced_date": "2015-03-01",
+   "release_date": "2016-04-05",
+   "price_usd": "799",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "",
+   "lifecycle_notes": "Erstes SteamVR-Headset mit Lighthouse-Tracking, von Nachfolgemodellen abgelöst.",
+   "lifecycle_source": "https://en.wikipedia.org/wiki/HTC_Vive",
+   "software": "SteamVR",
+   "compute_unit": "PC",
+   "display_type": "OLED (PenTile)",
+   "optics": "Fresnel",
+   "fov_horizontal_deg": "110",
+   "resolution_per_eye": "1080x1200",
+   "refresh_hz": "90",
+   "weight_g": "470",
+   "tracking": "6DoF Outside-in (Lighthouse)",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Frontkamera (rudimentär)",
+   "battery": "Kabelgebunden (PC)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/HTC_Vive"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "HTC Vive Pro",
+   "manufacturer": "HTC",
+   "official_url": "https://www.vive.com/",
+   "announced_date": "2018-01-08",
+   "release_date": "2018",
+   "price_usd": "799",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "",
+   "lifecycle_notes": "Profi-Upgrade des Vive mit OLED-Displays, von Vive Pro 2 abgelöst.",
+   "lifecycle_source": "https://blog.vive.com/us/htc-vive-announces-price-vive-pro-hmd-799-pre-orders-start-today-price-vive-reduced-499/",
+   "software": "SteamVR",
+   "compute_unit": "PC",
+   "display_type": "OLED",
+   "resolution_per_eye": "1440x1600",
+   "refresh_hz": "90",
+   "tracking": "6DoF Outside-in (Lighthouse)",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "audio": "Integrierte Kopfhörer",
+   "battery": "Kabelgebunden (PC)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/HTC_Vive",
+    "https://blog.vive.com/us/htc-vive-announces-price-vive-pro-hmd-799-pre-orders-start-today-price-vive-reduced-499/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "HTC Vive Pro 2",
+   "manufacturer": "HTC",
+   "official_url": "https://www.vive.com/us/product/vive-pro2/overview/",
+   "announced_date": "2021-05-11",
+   "release_date": "2021-06-03",
+   "price_usd": "799",
+   "xr_category": "XR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "PC-VR-Headset mit 5K-Auflösung; Full Kit mit Basisstationen kostete 1399 USD.",
+   "lifecycle_source": "https://www.roadtovr.com/htc-vive-pro-2-specs-price-release-date-announcement/",
+   "software": "SteamVR",
+   "compute_unit": "PC",
+   "display_type": "LCD",
+   "fov_horizontal_deg": "120",
+   "resolution_per_eye": "2448x2448",
+   "refresh_hz": "120",
+   "tracking": "6DoF Outside-in (Lighthouse)",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "battery": "Kabelgebunden (PC)",
+   "sources": [
+    "https://www.roadtovr.com/htc-vive-pro-2-specs-price-release-date-announcement/",
+    "https://en.wikipedia.org/wiki/HTC_Vive"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "HTC Vive Cosmos",
+   "manufacturer": "HTC",
+   "official_url": "https://www.vive.com/",
+   "announced_date": "2019-01-07",
+   "release_date": "2019-10-03",
+   "price_usd": "699",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "",
+   "lifecycle_notes": "Modulares PC-VR-Headset mit Inside-out-Tracking, inzwischen eingestellt.",
+   "lifecycle_source": "https://www.vive.com/us/newsroom/2019-09-12/",
+   "software": "SteamVR / Viveport",
+   "compute_unit": "PC",
+   "display_type": "LCD",
+   "fov_horizontal_deg": "110",
+   "resolution_per_eye": "1440x1700",
+   "refresh_hz": "90",
+   "tracking": "6DoF Inside-out (6 Kameras)",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "battery": "Kabelgebunden (PC)",
+   "sources": [
+    "https://www.vive.com/us/newsroom/2019-09-12/",
+    "https://www.tweaktown.com/news/67561/htc-cosmos-modular-vr-headset-costs-699-coming-october-3/index.html"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "HTC Vive Flow",
+   "manufacturer": "HTC",
+   "official_url": "https://www.vive.com/us/product/vive-flow/overview/",
+   "announced_date": "2021-10-14",
+   "release_date": "2021-11",
+   "price_usd": "499",
+   "xr_category": "XR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Kompakte Immersionsbrille für Entertainment und Wellness, Smartphone dient als Controller.",
+   "lifecycle_source": "https://www.roadtovr.com/htc-vive-flow-specs-price-release-date-announcement/",
+   "software": "Viveport (Android-basiert)",
+   "compute_unit": "Standalone",
+   "display_type": "LCD",
+   "optics": "Pancake",
+   "fov_horizontal_deg": "100",
+   "resolution_per_eye": "1600x1600",
+   "refresh_hz": "75",
+   "weight_g": "189",
+   "tracking": "6DoF Inside-out",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "battery": "Externe Powerbank erforderlich",
+   "prescription_support": "Ja (Dioptrien-Einstellung)",
+   "sources": [
+    "https://www.roadtovr.com/htc-vive-flow-specs-price-release-date-announcement/",
+    "https://www.vive.com/us/product/vive-flow/specs/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "HTC Vive Focus 3",
+   "manufacturer": "HTC",
+   "official_url": "https://www.vive.com/us/product/vive-focus3/overview/",
+   "announced_date": "2021-05-11",
+   "release_date": "2021-06",
+   "price_usd": "1300",
+   "xr_category": "XR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Standalone-Enterprise-Headset, Vorgänger des Vive Focus Vision.",
+   "lifecycle_source": "https://en.wikipedia.org/wiki/HTC_Vive_Focus",
+   "software": "Vive (Android-basiert)",
+   "compute_unit": "Standalone",
+   "display_type": "LCD",
+   "fov_horizontal_deg": "120",
+   "resolution_per_eye": "2448x2448",
+   "refresh_hz": "90",
+   "tracking": "6DoF Inside-out",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Ja",
+   "chipset": "Snapdragon XR2 Gen 1",
+   "battery": "Wechselakku (hinten am Kopfband)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/HTC_Vive_Focus"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Pico 4",
+   "manufacturer": "Pico",
+   "official_url": "https://www.picoxr.com",
+   "announced_date": "2022-09-22",
+   "release_date": "2022-10-18",
+   "price_usd": "420",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Launch Oktober 2022 fuer 429 EUR (EU) bzw. 2499 CNY in China (~420 USD umgerechnet); kein offizieller USD-Preis, da nie in den USA verkauft.",
+   "lifecycle_source": "https://en.wikipedia.org/wiki/PICO_4",
+   "software": "Pico OS",
+   "compute_unit": "Standalone",
+   "display_type": "LCD",
+   "optics": "Pancake",
+   "fov_horizontal_deg": "105",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "105",
+   "resolution_per_eye": "2160x2160",
+   "refresh_hz": "90",
+   "weight_g": "586",
+   "tracking": "Inside-out",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Ja",
+   "passthrough": "Ja (Farbe, 16 MP)",
+   "chipset": "Snapdragon XR2",
+   "brightness_nits": "",
+   "connectivity": "Wi-Fi 6, Bluetooth 5.1, USB-C",
+   "audio": "Integrierte Stereo-Lautsprecher",
+   "battery": "Integriert, 5300 mAh, ca. 2,5-3h",
+   "ipd_mm": "62-72",
+   "prescription_support": "Unklar",
+   "camera": "16 MP RGB Passthrough + 4 Tracking-Kameras",
+   "sources": [
+    "https://en.wikipedia.org/wiki/PICO_4",
+    "https://vr-compare.com/headset/pico4"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Pico 4 Ultra",
+   "manufacturer": "Pico",
+   "official_url": "https://www.picoxr.com/global/products/pico4-ultra",
+   "announced_date": "2024-08-20",
+   "release_date": "2024-09-02",
+   "price_usd": "600",
+   "xr_category": "XR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Launch September 2024 fuer 4299 CNY in China (~600 USD umgerechnet) bzw. 549 EUR in Europa.",
+   "lifecycle_source": "https://roadtovr.com/pico-ultra-4-vr-mr-headset-china-release/",
+   "software": "Pico OS",
+   "compute_unit": "Standalone",
+   "display_type": "LCD",
+   "optics": "Pancake",
+   "fov_horizontal_deg": "104",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "105",
+   "resolution_per_eye": "2160x2160",
+   "refresh_hz": "90",
+   "weight_g": "580",
+   "tracking": "Inside-out",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Ja",
+   "passthrough": "Ja (Farbe, 2x 32 MP + iToF-Tiefensensor)",
+   "chipset": "Snapdragon XR2 Gen 2",
+   "brightness_nits": "",
+   "connectivity": "Wi-Fi 7, Bluetooth 5.3, USB-C",
+   "audio": "Integrierte Stereo-Lautsprecher",
+   "battery": "Integriert, 5700 mAh, 45W-Laden",
+   "ipd_mm": "",
+   "prescription_support": "Unklar",
+   "camera": "2x 32 MP RGB + iToF",
+   "sources": [
+    "https://www.picoxr.com/global/products/pico4-ultra",
+    "https://roadtovr.com/pico-ultra-4-vr-mr-headset-china-release/",
+    "https://vr-compare.com/headset/pico4ultra",
+    "https://www.uploadvr.com/pico-4-ultra-europe-apac-preorders/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Pico Neo 3 Link",
+   "manufacturer": "Pico",
+   "official_url": "https://www.picoxr.com/global/products/neo3-link/specs",
+   "announced_date": "2022-04-15",
+   "release_date": "2022-05",
+   "price_usd": "449",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "",
+   "lifecycle_notes": "Launchpreis 449 EUR in Europa; Standalone-Headset mit DisplayPort-PC-Anbindung, vom Pico 4 abgelöst.",
+   "lifecycle_source": "https://www.roadtovr.com/pico-neo-3-link-standalone-hoping-compete-quest-2-europe/",
+   "software": "PICO OS (Android-basiert)",
+   "compute_unit": "Standalone",
+   "display_type": "LCD",
+   "optics": "Fresnel",
+   "resolution_per_eye": "1832x1920",
+   "refresh_hz": "90",
+   "tracking": "6DoF Inside-out",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "chipset": "Snapdragon XR2 Gen 1",
+   "connectivity": "Wi-Fi 6, DisplayPort, USB-C",
+   "battery": "Integriert, 5300 mAh (ca. 4h)",
+   "sources": [
+    "https://www.roadtovr.com/pico-neo-3-link-standalone-hoping-compete-quest-2-europe/",
+    "https://www.notebookcheck.net/Pico-Neo-3-Link-New-VR-headset-lands-promising-uncompressed-video-for-EUR449.613790.0.html"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Varjo Aero",
+   "manufacturer": "Varjo",
+   "official_url": "https://varjo.com/products/aero",
+   "announced_date": "2021-10-21",
+   "release_date": "2022-01-20",
+   "price_usd": "1990",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "",
+   "lifecycle_notes": "Prosumer-PC-VR-Headset mit asphärischen Linsen, inzwischen eingestellt.",
+   "lifecycle_source": "https://www.roadtovr.com/varjo-aero-price-specs-release-date-announcement/amp/",
+   "software": "SteamVR / Varjo Base",
+   "compute_unit": "PC",
+   "display_type": "Mini-LED LCD",
+   "optics": "Asphärische Linsen",
+   "fov_horizontal_deg": "115",
+   "fov_diagonal_deg": "134",
+   "resolution_per_eye": "2880x2720",
+   "refresh_hz": "90",
+   "weight_g": "717",
+   "tracking": "6DoF Outside-in (Lighthouse)",
+   "eye_tracking": "Ja",
+   "hand_tracking": "Nein",
+   "battery": "Kabelgebunden (PC)",
+   "sources": [
+    "https://www.roadtovr.com/varjo-aero-price-specs-release-date-announcement/amp/",
+    "https://www.uploadvr.com/varjo-aero-announced/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Varjo XR-3",
+   "manufacturer": "Varjo",
+   "official_url": "https://varjo.com/products/varjo-xr-3",
+   "announced_date": "2020-12-01",
+   "release_date": "2021-01",
+   "price_usd": "5495",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "",
+   "lifecycle_notes": "High-End-MR-Headset mit Bionic Display, vom Varjo XR-4 abgelöst.",
+   "lifecycle_source": "https://www.roadtovr.com/varjo-xr-3-vr-3-announcement-specs-release-date-price/",
+   "software": "Varjo Base / SteamVR",
+   "compute_unit": "PC",
+   "display_type": "Bionic Display (Micro-OLED Fokus 1920x1920 + LCD Kontext)",
+   "fov_horizontal_deg": "115",
+   "fov_vertical_deg": "90",
+   "resolution_per_eye": "2880x2720",
+   "refresh_hz": "90",
+   "tracking": "6DoF (Lighthouse oder Inside-out)",
+   "eye_tracking": "Ja",
+   "hand_tracking": "Ja",
+   "passthrough": "Farbe (Video-Passthrough mit LiDAR)",
+   "battery": "Kabelgebunden (PC)",
+   "sources": [
+    "https://www.roadtovr.com/varjo-xr-3-vr-3-announcement-specs-release-date-price/",
+    "https://varjo.com/products/varjo-xr-3"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Bigscreen Beyond",
+   "manufacturer": "Bigscreen",
+   "official_url": "https://store.bigscreenvr.com/products/bigscreen-beyond",
+   "announced_date": "2023-02-13",
+   "release_date": "2023",
+   "price_usd": "999",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "",
+   "lifecycle_notes": "Ultraleichtes maßgefertigtes PC-VR-Headset, 2025 vom Beyond 2 abgelöst.",
+   "lifecycle_source": "https://www.roadtovr.com/bigscreen-beyond-pc-vr-steam-release-price-specs/",
+   "software": "SteamVR",
+   "compute_unit": "PC",
+   "display_type": "Micro-OLED",
+   "optics": "Pancake",
+   "fov_horizontal_deg": "93",
+   "fov_vertical_deg": "90",
+   "resolution_per_eye": "2560x2560",
+   "refresh_hz": "90",
+   "weight_g": "127",
+   "tracking": "6DoF Outside-in (Lighthouse)",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "battery": "Kabelgebunden (PC)",
+   "prescription_support": "Ja (Einsätze)",
+   "sources": [
+    "https://www.roadtovr.com/bigscreen-beyond-pc-vr-steam-release-price-specs/",
+    "https://www.uploadvr.com/bigscreen-beyond-weight-specs/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Lenovo ThinkReality VRX",
+   "manufacturer": "Lenovo",
+   "official_url": "https://www.lenovo.com/us/en/p/smart-devices/virtual-reality/thinkreality-vrx/len101r0001",
+   "announced_date": "2022-08-31",
+   "release_date": "2023-06",
+   "price_usd": "1299",
+   "xr_category": "XR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Standalone-Enterprise-Headset mit Farb-Passthrough für Training und Kollaboration.",
+   "lifecycle_source": "https://news.lenovo.com/pressroom/press-releases/thinkreality-vrx-now-available-select-markets-worldwide/",
+   "software": "Android 12 (ThinkReality)",
+   "compute_unit": "Standalone",
+   "display_type": "LCD",
+   "optics": "Pancake",
+   "fov_horizontal_deg": "95",
+   "resolution_per_eye": "2280x2280",
+   "refresh_hz": "90",
+   "tracking": "6DoF Inside-out (4 Kameras)",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Ja",
+   "passthrough": "Farbe (hochauflösend)",
+   "chipset": "Snapdragon XR2+ Gen 1",
+   "battery": "Integriert, 6900 mAh",
+   "sources": [
+    "https://news.lenovo.com/pressroom/press-releases/thinkreality-vrx-now-available-select-markets-worldwide/",
+    "https://psref.lenovo.com/Product/ThinkReality/ThinkReality_VRX"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "DPVR E4",
+   "manufacturer": "DPVR",
+   "official_url": "https://www.dpvr.com/en/product/dpvr-e4-pc-virtual-reality-headset/",
+   "announced_date": "2022-11-28",
+   "release_date": "2023-01-15",
+   "price_usd": "549",
+   "xr_category": "XR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Tethered PC-VR-Headset des Shanghaier Herstellers DPVR, Auslieferung ab Januar 2023.",
+   "lifecycle_source": "https://www.prnewswire.com/news-releases/dpvr-e4-announced-with-november-launch-aims-to-dominating-the-consumer-market-for-tethered-pc-vr-headsets-301687567.html",
+   "software": "SteamVR (PC)",
+   "compute_unit": "PC",
+   "display_type": "LCD",
+   "optics": "Unklar",
+   "fov_horizontal_deg": "",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "116",
+   "resolution_per_eye": "1832x1920",
+   "refresh_hz": "120",
+   "weight_g": "280",
+   "tracking": "Inside-out",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Unklar",
+   "chipset": "",
+   "brightness_nits": "",
+   "connectivity": "DisplayPort/HDMI + USB (Kabel)",
+   "audio": "Integriert",
+   "battery": "Via Host-Geraet",
+   "ipd_mm": "",
+   "prescription_support": "Unklar",
+   "camera": "4 Tracking-Kameras",
+   "sources": [
+    "https://www.dpvr.com/en/product/dpvr-e4-pc-virtual-reality-headset/",
+    "https://www.prnewswire.com/news-releases/dpvr-e4-announced-with-november-launch-aims-to-dominating-the-consumer-market-for-tethered-pc-vr-headsets-301687567.html",
+    "https://vr-compare.com/headset/dpvre4",
+    "https://www.pcgamer.com/dpvr-e4-vr-headset-review/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Sony SRH-S1 (XYN Headset)",
+   "manufacturer": "Sony",
+   "official_url": "https://www.sony.com/",
+   "announced_date": "2025-01-07",
+   "release_date": "2025-02",
+   "price_usd": "4750",
+   "xr_category": "XR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Standalone-Enterprise-MR-Headset für industrielles CAD-Design, ab Februar 2025 ausgeliefert.",
+   "lifecycle_source": "https://www.uploadvr.com/sony-enterprise-standalone-headset-price-release-date/",
+   "software": "Android-basiert (Siemens NX Immersive Engineering)",
+   "compute_unit": "Standalone",
+   "display_type": "Micro-OLED (Sony ECX344A)",
+   "resolution_per_eye": "3552x3840",
+   "refresh_hz": "90",
+   "tracking": "6DoF Inside-out",
+   "eye_tracking": "Unklar",
+   "hand_tracking": "Nein",
+   "passthrough": "Farbe",
+   "chipset": "Snapdragon XR2+ Gen 2",
+   "brightness_nits": "1000",
+   "sources": [
+    "https://www.uploadvr.com/sony-enterprise-standalone-headset-price-release-date/",
+    "https://www.roadtovr.com/sony-xyn-mr-headset-price-release/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Pimax Dream Air SE",
+   "manufacturer": "Pimax",
+   "official_url": "https://pimax.com/blogs/blogs/pimax-dream-air-se-shipping-now",
+   "announced_date": "2025-04",
+   "release_date": "2026-05-14",
+   "price_usd": "899",
+   "xr_category": "XR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Kompaktes PC-VR-Headset des Shanghaier Herstellers Pimax, Auslieferung seit Mai 2026 (Lighthouse- und SLAM-Variante).",
+   "lifecycle_source": "https://roadtovr.com/pimax-dream-air-se-release-date-shipping/",
+   "software": "SteamVR (PC)",
+   "compute_unit": "PC",
+   "display_type": "Micro-OLED",
+   "optics": "Pancake",
+   "fov_horizontal_deg": "105",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "2560x2560",
+   "refresh_hz": "90",
+   "weight_g": "",
+   "tracking": "Inside-out",
+   "eye_tracking": "Ja",
+   "hand_tracking": "Unklar",
+   "passthrough": "Unklar",
+   "chipset": "",
+   "brightness_nits": "",
+   "connectivity": "USB-C/DisplayPort (Kabel)",
+   "audio": "Integriert",
+   "battery": "Via Host-Geraet",
+   "ipd_mm": "Automatische IPD-Anpassung",
+   "prescription_support": "Unklar",
+   "camera": "4 Tracking-Kameras (SLAM-Variante)",
+   "sources": [
+    "https://roadtovr.com/pimax-dream-air-se-release-date-shipping/",
+    "https://pimax.com/blogs/blogs/pimax-dream-air-se-shipping-now"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Vuzix Z100",
+   "manufacturer": "Vuzix",
+   "official_url": "https://www.vuzix.com/products/z100-smart-glasses",
+   "announced_date": "2024-01-09",
+   "release_date": "2024-11",
+   "price_usd": "499",
+   "xr_category": "AR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Leichte Alltags-Smart-Glasses, seit November 2024 allgemein verfuegbar (Developer Edition ab Januar 2024).",
+   "lifecycle_source": "https://www.prnewswire.com/news-releases/vuzix-announces-general-availability-of-z100-smart-glasses-302311326.html",
+   "software": "Companion-App (Android/iOS)",
+   "compute_unit": "Smartphone",
+   "display_type": "Micro LED (monochrom gruen, monokular)",
+   "optics": "Waveguide",
+   "resolution_per_eye": "640x480",
+   "weight_g": "38",
+   "tracking": "None",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Nein",
+   "connectivity": "Bluetooth",
+   "battery": "Integriert, bis 48h",
+   "prescription_support": "Ja",
+   "camera": "Keine",
+   "sources": [
+    "https://www.prnewswire.com/news-releases/vuzix-announces-general-availability-of-z100-smart-glasses-302311326.html",
+    "https://www.vuzix.com/products/z100-smart-glasses"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Snap Spectacles 5",
+   "manufacturer": "Snap Inc",
+   "official_url": "https://www.spectacles.com/",
+   "announced_date": "2024-09-17",
+   "release_date": "2024-09-17",
+   "xr_category": "AR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Nur fuer Entwickler im Abo (99 USD/Monat), kein freier Verkauf; Konsumenten-Nachfolger Specs fuer 2026 angekuendigt.",
+   "lifecycle_source": "https://newsroom.snap.com/sps-2024-spectacles-snapos",
+   "software": "Snap OS",
+   "compute_unit": "Standalone",
+   "display_type": "LCoS (Mikroprojektoren)",
+   "optics": "Waveguide",
+   "fov_diagonal_deg": "46",
+   "refresh_hz": "Unklar",
+   "weight_g": "226",
+   "tracking": "6DoF Inside-out (4 Kameras)",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Ja",
+   "passthrough": "Nein (echtes See-Through)",
+   "chipset": "2x Qualcomm Snapdragon (Dual-SoC)",
+   "battery": "Integriert, ca. 45 min",
+   "camera": "4 Kameras",
+   "sources": [
+    "https://newsroom.snap.com/sps-2024-spectacles-snapos",
+    "https://www.lowpass.cc/p/snap-ar-spectacles-fov-specs-os-details"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Mentra Mach1",
+   "manufacturer": "Mentra",
+   "official_url": "https://shop.mentra.glass/products/mach1-devkit-display-glasses",
+   "announced_date": "2025-01",
+   "release_date": "2025-05",
+   "price_usd": "349",
+   "xr_category": "AR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Open-Source-Smart-Glasses (DevKit) auf Basis von Vuzix-Waveguide-Technik, laeuft mit MentraOS/AugmentOS.",
+   "lifecycle_source": "https://shop.mentra.glass/products/mach1-devkit-display-glasses",
+   "software": "MentraOS (AugmentOS)",
+   "compute_unit": "Smartphone",
+   "display_type": "Micro LED (monochrom gruen, monokular)",
+   "optics": "Waveguide",
+   "resolution_per_eye": "640x480",
+   "tracking": "None",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Nein",
+   "connectivity": "Bluetooth",
+   "camera": "Keine",
+   "sources": [
+    "https://shop.mentra.glass/products/mach1-devkit-display-glasses",
+    "https://www.digitaltrends.com/phones/exciting-new-software-wants-to-be-the-android-of-smartglasses/"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "Lenovo Legion Glasses",
+   "manufacturer": "Lenovo",
+   "official_url": "https://www.lenovo.com/us/en/p/accessories-and-software/vr-headsets/vr-headsets_smart-glasses/gy21m72722",
+   "announced_date": "2023-09-01",
+   "release_date": "2023-10",
+   "price_usd": "329",
+   "xr_category": "AR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "",
+   "lifecycle_notes": "Display-Brille als Zubehoer zum Legion Go, von der Gen 2 abgeloest.",
+   "lifecycle_source": "https://www.techradar.com/computing/virtual-reality-augmented-reality/lenovo-legion-glasses",
+   "software": "Plug-and-Play (USB-C DisplayPort)",
+   "compute_unit": "Tethered",
+   "display_type": "Micro-OLED",
+   "resolution_per_eye": "1920x1080",
+   "refresh_hz": "60",
+   "weight_g": "96",
+   "tracking": "None",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "connectivity": "USB-C (DisplayPort Alt Mode)",
+   "audio": "Integrierte Lautsprecher",
+   "battery": "Via Host-Geraet",
+   "sources": [
+    "https://www.techradar.com/computing/virtual-reality-augmented-reality/lenovo-legion-glasses",
+    "https://hothardware.com/news/lenovo-launches-legion-go-and-legion-glasses"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Lenovo Legion Glasses Gen 2",
+   "manufacturer": "Lenovo",
+   "official_url": "https://www.lenovo.com/us/en/p/accessories-and-software/vr-headsets/vr-headsets_smart-glasses/gy21r10236",
+   "announced_date": "2025-01-07",
+   "release_date": "2025-02",
+   "price_usd": "399",
+   "xr_category": "AR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Display-Brille fuer Legion Go und USB-C-Geraete, seit Februar 2025 erhaeltlich.",
+   "lifecycle_source": "https://glassalmanac.com/lenovo-legion-glasses-2-unveiled-next-gen-ar-gaming-eyewear-launches-in-february-for-399/",
+   "software": "Plug-and-Play (USB-C DisplayPort)",
+   "compute_unit": "Tethered",
+   "display_type": "Micro-OLED",
+   "fov_diagonal_deg": "43.5",
+   "resolution_per_eye": "1920x1080",
+   "refresh_hz": "120",
+   "weight_g": "65",
+   "tracking": "None",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "brightness_nits": "800",
+   "connectivity": "USB-C (DisplayPort Alt Mode)",
+   "audio": "2 Lautsprecher, 2 Mikrofone",
+   "battery": "Via Host-Geraet",
+   "sources": [
+    "https://www.lenovo.com/us/en/p/accessories-and-software/vr-headsets/vr-headsets_smart-glasses/gy21r10236",
+    "https://glassalmanac.com/lenovo-legion-glasses-2-unveiled-next-gen-ar-gaming-eyewear-launches-in-february-for-399/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "RayNeo Air 2s",
+   "manufacturer": "TCL",
+   "official_url": "https://www.rayneo.com/products/rayneo-air_2s",
+   "announced_date": "2024-08-15",
+   "release_date": "2024-08-15",
+   "price_usd": "399",
+   "xr_category": "AR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Ueberarbeitete Air 2 mit Vier-Lautsprecher-System, Launch August 2024 fuer 399 USD.",
+   "lifecycle_source": "https://www.prnewswire.com/news-releases/rayneo-launches-air-2s-redefining-xr-industry-with-symmetric-audio-visual-brilliance-and-ergonomic-comfort-302222387.html",
+   "software": "Plug-and-Play (USB-C DisplayPort)",
+   "compute_unit": "Phone",
+   "display_type": "Micro-OLED",
+   "optics": "Birdbath",
+   "fov_horizontal_deg": "46",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "1920x1080",
+   "refresh_hz": "120",
+   "weight_g": "76",
+   "tracking": "Non-positional",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Nein",
+   "chipset": "",
+   "brightness_nits": "600",
+   "connectivity": "USB-C (DisplayPort Alt Mode)",
+   "audio": "4 dynamische Lautsprecher",
+   "battery": "Via Host-Geraet",
+   "ipd_mm": "",
+   "prescription_support": "Ja (Einsaetze)",
+   "camera": "Nein",
+   "sources": [
+    "https://www.prnewswire.com/news-releases/rayneo-launches-air-2s-redefining-xr-industry-with-symmetric-audio-visual-brilliance-and-ergonomic-comfort-302222387.html",
+    "https://www.rayneo.com/products/rayneo-air_2s",
+    "https://www.notebookcheck.net/RayNeo-announces-RayNeo-Air-2s-AR-XR-glasses-with-virtual-201-OLED-display-and-quad-speaker-sound.875030.0.html"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "GOOVIS G3 Max",
+   "manufacturer": "GOOVIS",
+   "official_url": "https://www.goovis.com/products/goovis-g3max",
+   "announced_date": "2023",
+   "release_date": "2023-06-27",
+   "price_usd": "799",
+   "xr_category": "XR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Persoenliches Kino-HMD des Shenzhener Herstellers GOOVIS, Launch Juni 2023 fuer 799 USD (spaeter 1299 USD UVP).",
+   "lifecycle_source": "https://displaydaily.com/the-goovis-g3-max-is-about-to-become-commercially-available/",
+   "software": "Plug-and-Play (HDMI/USB-C-Zuspieler)",
+   "compute_unit": "Phone",
+   "display_type": "Micro-OLED",
+   "optics": "Asphärische Linsen (ASPH)",
+   "fov_horizontal_deg": "",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "65",
+   "resolution_per_eye": "2560x1440",
+   "refresh_hz": "120",
+   "weight_g": "300",
+   "tracking": "Non-positional",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Nein",
+   "chipset": "",
+   "brightness_nits": "",
+   "connectivity": "USB-C/HDMI",
+   "audio": "Integriert",
+   "battery": "Via Host-Geraet/Zuspieler",
+   "ipd_mm": "56-72",
+   "prescription_support": "Ja (Dioptrien-Verstellung +2D bis -7D)",
+   "camera": "Nein",
+   "sources": [
+    "https://www.goovis.com/products/goovis-g3max",
+    "https://displaydaily.com/the-goovis-g3-max-is-about-to-become-commercially-available/",
+    "https://hometheaterhifi.com/reviews/video-accessory/video-accessories-misc/goovis-g3-max-3d-head-mounted-display-review/",
+    "https://www.indiegogo.com/projects/goovis-g3-max-most-advanced-5k-oled-cinematic-hmd",
+    "https://goovis.eu/products/g3max"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "GOOVIS Art (A1)",
+   "manufacturer": "GOOVIS",
+   "official_url": "https://www.goovis.com/products/art",
+   "announced_date": "2024",
+   "release_date": "2024",
+   "price_usd": "699",
+   "xr_category": "AR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Leichte Open-View-Videobrille mit 110-Zoll-Virtualbild fuer Multitasking.",
+   "lifecycle_source": "https://www.techradar.com/pro/goovis-art-a1-3d-head-mounted-display-review",
+   "software": "Plug-and-Play (USB-C DisplayPort)",
+   "compute_unit": "Tethered",
+   "display_type": "Micro-OLED",
+   "optics": "Asphärische Linsen",
+   "fov_diagonal_deg": "40",
+   "resolution_per_eye": "1920x1080",
+   "refresh_hz": "60",
+   "weight_g": "110",
+   "tracking": "None",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "connectivity": "USB-C (DisplayPort Alt Mode)",
+   "battery": "Via Host-Geraet",
+   "ipd_mm": "58-74",
+   "prescription_support": "Ja (Dioptrien 0 bis -3,5)",
+   "sources": [
+    "https://www.techradar.com/pro/goovis-art-a1-3d-head-mounted-display-review",
+    "https://www.goovis.com/products/art"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "Epson Moverio BT-45C",
+   "manufacturer": "Epson",
+   "official_url": "https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-45C-AR-Smart-Glasses/p/V11H970020",
+   "announced_date": "2022-01",
+   "release_date": "2022-11",
+   "xr_category": "AR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "",
+   "lifecycle_notes": "Enterprise-See-Through-Brille fuer Remote-Assistance, bei Haendlern inzwischen als EOL gelistet.",
+   "lifecycle_source": "https://unboundxr.com/b2b/epson-moverio-bt-45c",
+   "software": "USB-C-Anbindung an Host-Geraete",
+   "compute_unit": "Tethered",
+   "display_type": "Si-OLED",
+   "optics": "Binokulares See-Through (Epson Optical Engine)",
+   "fov_diagonal_deg": "34",
+   "resolution_per_eye": "1920x1080",
+   "refresh_hz": "60",
+   "tracking": "None",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "brightness_nits": "1000",
+   "connectivity": "USB-C",
+   "battery": "Via Host-Geraet",
+   "camera": "8 MP RGB (Front)",
+   "sources": [
+    "https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-45C-AR-Smart-Glasses/p/V11H970020",
+    "https://keypointintelligence.com/keypoint-blogs/epson-launches-the-new-moverio-bt-45c-and-bt-45cs-headsets"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "Focals by North",
+   "manufacturer": "North (ehem. Thalmic Labs)",
+   "official_url": "https://www.bynorth.com/",
+   "announced_date": "2018-10",
+   "release_date": "2018",
+   "price_usd": "999",
+   "xr_category": "AR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "2020-07-31",
+   "lifecycle_notes": "Nach der Google-Uebernahme wurden alle Focals am 31. Juli 2020 dauerhaft deaktiviert; Preis spaeter auf 599 USD gesenkt.",
+   "lifecycle_source": "https://www.vice.com/en/article/focals-maker-north-shutting-off-smart-glasses-after-google-purchase/",
+   "software": "Companion-App (Android/iOS)",
+   "compute_unit": "Smartphone",
+   "display_type": "Laser-Projektion (monokular)",
+   "optics": "Holografischer Reflektor",
+   "tracking": "None",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Nein",
+   "chipset": "Qualcomm APQ8009w",
+   "connectivity": "Bluetooth, Wi-Fi",
+   "prescription_support": "Ja",
+   "camera": "Keine",
+   "sources": [
+    "https://www.vice.com/en/article/focals-maker-north-shutting-off-smart-glasses-after-google-purchase/",
+    "https://www.tomshardware.com/reviews/north-focals-smart-glasses-ar,5968.html"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "Form Smart Swim 2",
+   "manufacturer": "FORM",
+   "official_url": "https://www.formswim.com/products/smart-swim-2-goggles",
+   "announced_date": "2024",
+   "release_date": "2024",
+   "price_usd": "249",
+   "xr_category": "AR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Schwimmbrille mit Heads-up-Display und Herzfrequenzsensor; guenstigere LT-Variante folgte im Mai 2026.",
+   "lifecycle_source": "https://www.engadget.com/2164698/form-smart-swim-2-lt/",
+   "software": "FORM Companion-App",
+   "compute_unit": "Standalone",
+   "display_type": "Monokulares Display (Projektion im Brillenglas)",
+   "tracking": "None",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Nein",
+   "connectivity": "Bluetooth",
+   "battery": "Integriert, bis 14h",
+   "camera": "Keine",
+   "sources": [
+    "https://www.formswim.com/products/smart-swim-2-goggles",
+    "https://www.triathlete.com/gear/swim/triathlete-tests-the-new-form-smart-swim-2-heads-up-display-goggles/"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "Pico Neo 3",
+   "manufacturer": "Pico",
+   "official_url": "https://www.picoxr.com",
+   "announced_date": "2021-05",
+   "release_date": "2021-05",
+   "price_usd": "390",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "",
+   "lifecycle_notes": "China-Launch Mai 2021 ab ca. 2499 CNY (~390 USD), inzwischen vom Pico 4 abgeloest.",
+   "lifecycle_source": "https://vr-compare.com/headset/piconeo3",
+   "software": "Pico OS",
+   "compute_unit": "Standalone",
+   "display_type": "LCD",
+   "optics": "Fresnel",
+   "fov_horizontal_deg": "98",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "1832x1920",
+   "refresh_hz": "90",
+   "weight_g": "",
+   "tracking": "Inside-out",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Unklar",
+   "passthrough": "Ja (monochrom)",
+   "chipset": "Snapdragon XR2",
+   "brightness_nits": "",
+   "connectivity": "Wi-Fi 6, Bluetooth 5.1, USB-C",
+   "audio": "Integrierte Stereo-Lautsprecher",
+   "battery": "Integriert, ca. 2,5-3h",
+   "ipd_mm": "",
+   "prescription_support": "Unklar",
+   "camera": "4 Tracking-Kameras",
+   "sources": [
+    "https://vr-compare.com/headset/piconeo3",
+    "https://roadtovr.com/pico-neo-3-pro-eye-release-date-price/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Pico G3",
+   "manufacturer": "Pico",
+   "official_url": "https://www.picoxr.com/global/products/g3",
+   "announced_date": "2023-04",
+   "release_date": "2023",
+   "price_usd": "399",
+   "xr_category": "XR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Enterprise-3DoF-Headset, Launch 2023 fuer 399 USD/EUR.",
+   "lifecycle_source": "https://vrx.vr-expert.com/pico-announces-pico-g3-3dof-vr-headset/",
+   "software": "Pico OS (Enterprise)",
+   "compute_unit": "Standalone",
+   "display_type": "LCD",
+   "optics": "Fresnel",
+   "fov_horizontal_deg": "",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "1832x1920",
+   "refresh_hz": "90",
+   "weight_g": "604",
+   "tracking": "3DoF",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Nein",
+   "chipset": "Snapdragon XR2",
+   "brightness_nits": "",
+   "connectivity": "Wi-Fi 6, Bluetooth, USB-C",
+   "audio": "Integrierte Lautsprecher",
+   "battery": "Integriert, 5300 mAh, ca. 2-2,5h",
+   "ipd_mm": "",
+   "prescription_support": "Unklar",
+   "camera": "Unklar",
+   "sources": [
+    "https://www.picoxr.com/global/products/g3",
+    "https://vrx.vr-expert.com/pico-announces-pico-g3-3dof-vr-headset/"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "iQIYI Qiyu 3",
+   "manufacturer": "iQIYI",
+   "official_url": "https://dev-qiyu.iqiyi.com",
+   "announced_date": "2021-08",
+   "release_date": "2021-09-03",
+   "price_usd": "",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "",
+   "lifecycle_notes": "Nur in China (JD.com/Tmall) verkauft; iQIYI hat das VR-Hardwaregeschaeft inzwischen eingestellt.",
+   "lifecycle_source": "https://www.prnewswire.com/news-releases/iqiyi-launches-new-all-in-one-vr-headset-qiyu-3-further-expanding-its-premium-vr-gaming-ecosystem-301366852.html",
+   "software": "Qiyu OS (Android-basiert)",
+   "compute_unit": "Standalone",
+   "display_type": "LCD",
+   "optics": "Fresnel",
+   "fov_horizontal_deg": "",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "2160x2160",
+   "refresh_hz": "90",
+   "weight_g": "",
+   "tracking": "Inside-out",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Unklar",
+   "chipset": "Snapdragon XR2",
+   "brightness_nits": "",
+   "connectivity": "Wi-Fi, Bluetooth, USB-C",
+   "audio": "Integrierte Lautsprecher",
+   "battery": "Integriert",
+   "ipd_mm": "58-72",
+   "prescription_support": "Unklar",
+   "camera": "Tracking-Kameras (Q-Light 6DoF)",
+   "sources": [
+    "https://www.prnewswire.com/news-releases/iqiyi-launches-new-all-in-one-vr-headset-qiyu-3-further-expanding-its-premium-vr-gaming-ecosystem-301366852.html",
+    "https://vr-compare.com/headset/iqiyiqiyu3"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "iQIYI Qiyu Dream",
+   "manufacturer": "iQIYI",
+   "official_url": "https://dev-qiyu.iqiyi.com",
+   "announced_date": "2021-12",
+   "release_date": "2021",
+   "price_usd": "",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "",
+   "lifecycle_notes": "Guenstiges China-only Einsteiger-Headset; iQIYI hat das VR-Hardwaregeschaeft eingestellt.",
+   "lifecycle_source": "https://vr-compare.com/headset/iqiyiqiyudream",
+   "software": "Qiyu OS (Android-basiert)",
+   "compute_unit": "Standalone",
+   "display_type": "LCD",
+   "optics": "Fresnel",
+   "fov_horizontal_deg": "",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "93",
+   "resolution_per_eye": "1280x1440",
+   "refresh_hz": "72",
+   "weight_g": "",
+   "tracking": "6DoF",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Unklar",
+   "chipset": "Snapdragon XR2",
+   "brightness_nits": "",
+   "connectivity": "Wi-Fi, Bluetooth, USB-C",
+   "audio": "Integrierte Lautsprecher",
+   "battery": "Integriert",
+   "ipd_mm": "",
+   "prescription_support": "Unklar",
+   "camera": "Tracking-Kameras",
+   "sources": [
+    "https://vr-compare.com/headset/iqiyiqiyudream"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "YVR 1",
+   "manufacturer": "YVR",
+   "official_url": "https://www.yvr.cn",
+   "announced_date": "",
+   "release_date": "2022",
+   "price_usd": "",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "",
+   "lifecycle_notes": "China-only Standalone-Headset; YVR firmiert inzwischen als Play For Dream und verkauft die YVR-Reihe nicht mehr.",
+   "lifecycle_source": "https://vr-compare.com/headset/yvr1",
+   "software": "YVR OS (Android-basiert)",
+   "compute_unit": "Standalone",
+   "display_type": "LCD",
+   "optics": "Fresnel",
+   "fov_horizontal_deg": "",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "2160x2160",
+   "refresh_hz": "90",
+   "weight_g": "",
+   "tracking": "Inside-out",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Unklar",
+   "passthrough": "Unklar",
+   "chipset": "Snapdragon XR2",
+   "brightness_nits": "",
+   "connectivity": "Wi-Fi 6, Bluetooth, USB-C",
+   "audio": "Integrierte Lautsprecher",
+   "battery": "Integriert",
+   "ipd_mm": "",
+   "prescription_support": "Unklar",
+   "camera": "Tracking-Kameras",
+   "sources": [
+    "https://vr-compare.com/headset/yvr1",
+    "https://www.techgenyz.com/2021/12/30/play-the-dream-officially-launched-yvr-dk1/"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "YVR 2",
+   "manufacturer": "YVR",
+   "official_url": "https://www.yvr.cn",
+   "announced_date": "2022",
+   "release_date": "2022",
+   "price_usd": "700",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "",
+   "lifecycle_notes": "Erstes Massenmarkt-Pancake-Standalone aus China, Launch 2022 fuer 4999 CNY (~700 USD umgerechnet); YVR firmiert heute als Play For Dream.",
+   "lifecycle_source": "https://vr-compare.com/headset/yvr2",
+   "software": "YVR OS (Android-basiert)",
+   "compute_unit": "Standalone",
+   "display_type": "LCD",
+   "optics": "Pancake",
+   "fov_horizontal_deg": "95",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "1600x1600",
+   "refresh_hz": "90",
+   "weight_g": "",
+   "tracking": "Inside-out",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Ja",
+   "passthrough": "Ja (monochrom)",
+   "chipset": "Snapdragon XR2",
+   "brightness_nits": "",
+   "connectivity": "Wi-Fi 6, Bluetooth, USB-C",
+   "audio": "Integrierte Lautsprecher",
+   "battery": "Integriert, 5300 mAh, ca. 2,5h",
+   "ipd_mm": "",
+   "prescription_support": "Unklar",
+   "camera": "4 Tracking-Kameras",
+   "sources": [
+    "https://vr-compare.com/headset/yvr2",
+    "https://www.laitimes.com/en/article/3qwql_47lq3.html",
+    "https://www.neogaf.com/threads/yvr-partners-with-qualcomm-to-bring-their-yvr2-vr-headset-to-mwc-2023-looking-to-launch-overseas-this-year-434-price-6dof.1653794/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Skyworth Pancake 1",
+   "manufacturer": "Skyworth",
+   "official_url": "https://www.skyworthxr.com",
+   "announced_date": "2022-07-25",
+   "release_date": "2022-09",
+   "price_usd": "445",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "",
+   "lifecycle_notes": "China-only Launch September 2022 ab 2999 CNY (~445 USD umgerechnet) unter der Marke PANCAKEXR.",
+   "lifecycle_source": "https://pandaily.com/skyworth-vr-releases-pancakexr-brand-and-new-vr-products/",
+   "software": "Android-basiertes Skyworth-OS",
+   "compute_unit": "Standalone",
+   "display_type": "LCD",
+   "optics": "Pancake",
+   "fov_horizontal_deg": "",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "2280x2280",
+   "refresh_hz": "90",
+   "weight_g": "189",
+   "tracking": "Inside-out",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Unklar",
+   "passthrough": "Unklar",
+   "chipset": "Snapdragon XR2",
+   "brightness_nits": "",
+   "connectivity": "Wi-Fi 6, Bluetooth, USB-C",
+   "audio": "Integrierte Lautsprecher",
+   "battery": "Integriert",
+   "ipd_mm": "",
+   "prescription_support": "Unklar",
+   "camera": "Fisheye-Tracking-Kameras",
+   "sources": [
+    "https://pandaily.com/skyworth-vr-releases-pancakexr-brand-and-new-vr-products/",
+    "https://vr-compare.com/headset/skyworthpancake1"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "Nolo Sonic",
+   "manufacturer": "Nolo",
+   "official_url": "https://www.nolovr.com",
+   "announced_date": "2021",
+   "release_date": "2021-06",
+   "price_usd": "399",
+   "xr_category": "XR",
+   "active_distribution": "Nein",
+   "eol_status": "EOL / Discontinued",
+   "eol_date": "",
+   "lifecycle_notes": "Standalone-Headset vor allem fuer den chinesischen Markt, Launch Juni 2021.",
+   "lifecycle_source": "https://vr-compare.com/headset/nolosonic",
+   "software": "Android-basiertes Nolo-OS",
+   "compute_unit": "Standalone",
+   "display_type": "LCD",
+   "optics": "Fresnel",
+   "fov_horizontal_deg": "101",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "1920x2160",
+   "refresh_hz": "72",
+   "weight_g": "",
+   "tracking": "6DoF",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Unklar",
+   "chipset": "Snapdragon 845",
+   "brightness_nits": "",
+   "connectivity": "Wi-Fi, Bluetooth, USB-C",
+   "audio": "Integrierte Lautsprecher (3D-Sound)",
+   "battery": "Integriert",
+   "ipd_mm": "",
+   "prescription_support": "Unklar",
+   "camera": "Tracking-Sensorik (NOLO Sound-Tracking)",
+   "sources": [
+    "https://vr-compare.com/headset/nolosonic",
+    "https://skarredghost.com/2021/06/07/quest-2-pro-nolo-sonic-arpara/"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "arpara Tethered 5K",
+   "manufacturer": "arpara",
+   "official_url": "https://www.arparaland.com/",
+   "announced_date": "2021-06",
+   "release_date": "2022-03",
+   "price_usd": "399",
+   "xr_category": "XR",
+   "active_distribution": "Unklar",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Kickstarter-Auslieferung ab Maerz 2022; 399 USD war der Early-Bird-Preis der Kampagne.",
+   "lifecycle_source": "https://www.prweb.com/releases/arpara-launches-kickstarter-campaign-for-world-s-first-5k-dual-micro-oled-vr-headset-806762712.html",
+   "software": "SteamVR (PC)",
+   "compute_unit": "PC",
+   "display_type": "Micro-OLED",
+   "optics": "Unklar",
+   "fov_horizontal_deg": "95",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "2560x2560",
+   "refresh_hz": "120",
+   "weight_g": "200",
+   "tracking": "Unklar",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Nein",
+   "chipset": "",
+   "brightness_nits": "",
+   "connectivity": "USB-C/DisplayPort (Kabel)",
+   "audio": "Unklar",
+   "battery": "Via Host-Geraet",
+   "ipd_mm": "",
+   "prescription_support": "Unklar",
+   "camera": "Nein",
+   "sources": [
+    "https://www.prweb.com/releases/arpara-launches-kickstarter-campaign-for-world-s-first-5k-dual-micro-oled-vr-headset-806762712.html",
+    "https://omdia.tech.informa.com/blogs/2023/may/the-arpara-tethered-5k-features-oledos-displays-from-seeya",
+    "https://vrx.vr-expert.com/database-xr/arpara-tethered-5k/"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "RayNeo Air 2",
+   "manufacturer": "TCL",
+   "official_url": "https://www.rayneo.com/products/rayneo-air-2-xr-glasses",
+   "announced_date": "2023-10",
+   "release_date": "2023",
+   "price_usd": "379",
+   "xr_category": "AR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Birdbath-Viewing-Glasses, Launch Ende 2023 fuer 379 USD.",
+   "lifecycle_source": "https://vrarwiki.com/wiki/RayNeo_Air_2",
+   "software": "Plug-and-Play (USB-C DisplayPort)",
+   "compute_unit": "Phone",
+   "display_type": "Micro-OLED",
+   "optics": "Birdbath",
+   "fov_horizontal_deg": "46",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "1920x1080",
+   "refresh_hz": "120",
+   "weight_g": "76",
+   "tracking": "Non-positional",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Nein",
+   "chipset": "",
+   "brightness_nits": "600",
+   "connectivity": "USB-C (DisplayPort Alt Mode)",
+   "audio": "Direktionale Lautsprecher",
+   "battery": "Via Host-Geraet",
+   "ipd_mm": "",
+   "prescription_support": "Ja (Einsaetze)",
+   "camera": "Nein",
+   "sources": [
+    "https://vrarwiki.com/wiki/RayNeo_Air_2",
+    "https://www.rayneo.com/products/rayneo-air-2-xr-glasses",
+    "https://www.notebookcheck.net/RayNeo-Air-2-XR-glasses-with-Sony-Micro-OLED-displays-to-launch-at-surprisingly-low-starting-price.760450.0.html"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "RayNeo Air 3",
+   "manufacturer": "TCL",
+   "official_url": "https://www.rayneo.com",
+   "announced_date": "2024-10-28",
+   "release_date": "2024-10-28",
+   "price_usd": "238",
+   "xr_category": "AR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "China-Launch Oktober 2024 fuer 1699 CNY (~238 USD umgerechnet); international erschien die Variante Air 3s.",
+   "lifecycle_source": "https://heyupnow.com/blogs/news/rayneo-air-3-ar-glasses-debut-micro-oled-display-120hz-priced-at-238",
+   "software": "Plug-and-Play (USB-C DisplayPort)",
+   "compute_unit": "Phone",
+   "display_type": "Micro-OLED",
+   "optics": "Birdbath",
+   "fov_horizontal_deg": "",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "1920x1080",
+   "refresh_hz": "120",
+   "weight_g": "",
+   "tracking": "Non-positional",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Nein",
+   "chipset": "",
+   "brightness_nits": "",
+   "connectivity": "USB-C (DisplayPort Alt Mode)",
+   "audio": "4 Lautsprecher",
+   "battery": "Via Host-Geraet",
+   "ipd_mm": "",
+   "prescription_support": "Ja (Einsaetze)",
+   "camera": "Nein",
+   "sources": [
+    "https://heyupnow.com/blogs/news/rayneo-air-3-ar-glasses-debut-micro-oled-display-120hz-priced-at-238"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "RayNeo Air 4",
+   "manufacturer": "TCL",
+   "official_url": "https://www.rayneo.com",
+   "announced_date": "2025-10-23",
+   "release_date": "2025-10-23",
+   "price_usd": "224",
+   "xr_category": "AR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "China-Launch Oktober 2025 fuer 1599 CNY (~224 USD umgerechnet); erste AR-Brille mit HDR10-Unterstuetzung.",
+   "lifecycle_source": "https://www.gizmochina.com/2025/10/24/rayneo-air-4-are-worlds-first-hdr10-ready-ar-glasses-with-audio-by-bo/",
+   "software": "Plug-and-Play (USB-C DisplayPort)",
+   "compute_unit": "Phone",
+   "display_type": "Micro-OLED (Tandem)",
+   "optics": "Birdbath",
+   "fov_horizontal_deg": "",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "1920x1080",
+   "refresh_hz": "",
+   "weight_g": "76",
+   "tracking": "Non-positional",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Nein",
+   "chipset": "Vision 4000 Display-Chip",
+   "brightness_nits": "1200",
+   "connectivity": "USB-C (DisplayPort Alt Mode)",
+   "audio": "4 Lautsprecher (Bang & Olufsen)",
+   "battery": "Via Host-Geraet",
+   "ipd_mm": "",
+   "prescription_support": "Ja (Einsaetze)",
+   "camera": "Nein",
+   "sources": [
+    "https://www.gizmochina.com/2025/10/24/rayneo-air-4-are-worlds-first-hdr10-ready-ar-glasses-with-audio-by-bo/",
+    "https://www.notebookcheck.net/Rayneo-Air-4-launch-as-new-lightweight-AR-glasses-with-tandem-micro-OLED-displays.1154017.0.html"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "RayNeo Air 4 Pro",
+   "manufacturer": "TCL",
+   "official_url": "https://www.rayneo.com/products/rayneo-air-4-pro-ar-glasses",
+   "announced_date": "2025-10-23",
+   "release_date": "2026-01-25",
+   "price_usd": "299",
+   "xr_category": "AR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "China-Launch Oktober 2025 fuer 1799 CNY, globaler Verkaufsstart Januar 2026 fuer 299 USD.",
+   "lifecycle_source": "https://www.androidauthority.com/rayneo-air-4-pro-launch-3630910/",
+   "software": "Plug-and-Play (USB-C DisplayPort)",
+   "compute_unit": "Phone",
+   "display_type": "Micro-OLED (Tandem)",
+   "optics": "Birdbath",
+   "fov_horizontal_deg": "",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "1920x1080",
+   "refresh_hz": "",
+   "weight_g": "76",
+   "tracking": "Non-positional",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Nein",
+   "chipset": "Vision 4000 Display-Chip",
+   "brightness_nits": "1200",
+   "connectivity": "USB-C (DisplayPort Alt Mode)",
+   "audio": "4 Lautsprecher (Bang & Olufsen)",
+   "battery": "Via Host-Geraet",
+   "ipd_mm": "",
+   "prescription_support": "Ja (Einsaetze)",
+   "camera": "Nein",
+   "sources": [
+    "https://www.rayneo.com/products/rayneo-air-4-pro-ar-glasses",
+    "https://www.androidauthority.com/rayneo-air-4-pro-launch-3630910/",
+    "https://www.gizmochina.com/2025/10/24/rayneo-air-4-are-worlds-first-hdr10-ready-ar-glasses-with-audio-by-bo/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "INMO Air3",
+   "manufacturer": "INMO",
+   "official_url": "https://www.inmoxr.com/pages/inmo-air3",
+   "announced_date": "2025-09",
+   "release_date": "2025",
+   "price_usd": "1099",
+   "xr_category": "AR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Erste Standalone-AR-Brille mit 1080p-RGB-Waveguide; globaler Kickstarter-Start September 2025, UVP 1099 USD.",
+   "lifecycle_source": "https://www.prnewswire.com/news-releases/inmo-announces-the-debut-of-inmo-air3-the-worlds-first-1080p-full-color-optical-waveguide-all-in-one-ar-glasses-302548091.html",
+   "software": "IMOS 3.0 (Android-kompatibel)",
+   "compute_unit": "Standalone",
+   "display_type": "Micro-OLED",
+   "optics": "Waveguide",
+   "fov_horizontal_deg": "",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "36",
+   "resolution_per_eye": "1920x1080",
+   "refresh_hz": "",
+   "weight_g": "135",
+   "tracking": "Unklar",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Unklar",
+   "passthrough": "Nein (durchsichtige Optik)",
+   "chipset": "Qualcomm Snapdragon (Spatial Computing)",
+   "brightness_nits": "600",
+   "connectivity": "Wi-Fi, Bluetooth, USB-C",
+   "audio": "Open-ear Lautsprecher",
+   "battery": "Integriert",
+   "ipd_mm": "",
+   "prescription_support": "Unklar",
+   "camera": "Ja (Details unklar)",
+   "sources": [
+    "https://www.prnewswire.com/news-releases/inmo-announces-the-debut-of-inmo-air3-the-worlds-first-1080p-full-color-optical-waveguide-all-in-one-ar-glasses-302548091.html",
+    "https://www.inmoxr.com/pages/inmo-air3-specs"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "INMO GO3",
+   "manufacturer": "INMO",
+   "official_url": "https://www.inmoxr.com/pages/inmo-go3-ai-glasses",
+   "announced_date": "2025-10-16",
+   "release_date": "2025-10-16",
+   "price_usd": "420",
+   "xr_category": "AR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Launch Oktober 2025 in China fuer 2999 CNY (~420 USD umgerechnet), binokulares Display mit Wechselakku-System.",
+   "lifecycle_source": "https://513.toys/inmo-go3/",
+   "software": "Companion-App (Smartphone)",
+   "compute_unit": "Phone",
+   "display_type": "Micro LED (monochrom gruen)",
+   "optics": "Waveguide",
+   "fov_horizontal_deg": "",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "640x480",
+   "refresh_hz": "",
+   "weight_g": "53",
+   "tracking": "Non-positional",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Nein (durchsichtige Optik)",
+   "chipset": "UNISOC W337",
+   "brightness_nits": "1500",
+   "connectivity": "Bluetooth 5.4",
+   "audio": "Open-ear Lautsprecher, 4-Mikrofon-Array",
+   "battery": "Wechselbare Akkus in den Buegeln",
+   "ipd_mm": "",
+   "prescription_support": "Ja (Einsaetze)",
+   "camera": "Nein",
+   "sources": [
+    "https://513.toys/inmo-go3/",
+    "https://www.inmoxr.com/pages/inmo-go3-ai-glasses"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Meizu MYVU",
+   "manufacturer": "Meizu",
+   "official_url": "https://www.meizu.com",
+   "announced_date": "2023-11-30",
+   "release_date": "2023-12",
+   "price_usd": "352",
+   "xr_category": "AR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "China-Launch Ende 2023 fuer 2499 CNY (~352 USD umgerechnet), leichte Waveguide-Smart-Glasses mit Flyme-Anbindung.",
+   "lifecycle_source": "https://www.notebookcheck.net/Meizu-unveils-MYVU-Smart-Ring-and-flagship-alternative-to-Google-Glass.776598.0.html",
+   "software": "Flyme AR / Companion-App",
+   "compute_unit": "Phone",
+   "display_type": "Micro LED",
+   "optics": "Waveguide",
+   "fov_horizontal_deg": "",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "",
+   "refresh_hz": "",
+   "weight_g": "43",
+   "tracking": "Non-positional",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Nein (durchsichtige Optik)",
+   "chipset": "",
+   "brightness_nits": "",
+   "connectivity": "Bluetooth",
+   "audio": "Open-ear Lautsprecher mit Spatial Audio",
+   "battery": "Integriert",
+   "ipd_mm": "",
+   "prescription_support": "Unklar",
+   "camera": "Nein",
+   "sources": [
+    "https://www.notebookcheck.net/Meizu-unveils-MYVU-Smart-Ring-and-flagship-alternative-to-Google-Glass.776598.0.html",
+    "https://www.gizmochina.com/2023/12/04/meizu-myvu-discovery-ar-glasses-impressive-precision-unveiled-china/"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "Meizu MYVU Discovery",
+   "manufacturer": "Meizu",
+   "official_url": "https://www.meizu.com",
+   "announced_date": "2023-11-30",
+   "release_date": "2023-12",
+   "price_usd": "1400",
+   "xr_category": "AR",
+   "active_distribution": "Unklar",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Vollfarb-MicroLED-Flaggschiff mit Resin-Waveguide, China-Launch fuer 9999 CNY (~1400 USD umgerechnet).",
+   "lifecycle_source": "https://www.igeekphone.com/meizu-flagship-ar-glasses-myvu-discovery-release-the-first-flyme-ar-system-at-9999-yuan-1388/",
+   "software": "Flyme AR",
+   "compute_unit": "Standalone",
+   "display_type": "Micro LED (Vollfarbe)",
+   "optics": "Waveguide (Resin, doppellagig)",
+   "fov_horizontal_deg": "",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "",
+   "refresh_hz": "",
+   "weight_g": "71",
+   "tracking": "Non-positional",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Nein (durchsichtige Optik)",
+   "chipset": "",
+   "brightness_nits": "",
+   "connectivity": "Bluetooth, Wi-Fi",
+   "audio": "Open-ear Lautsprecher",
+   "battery": "Integriert",
+   "ipd_mm": "",
+   "prescription_support": "Unklar",
+   "camera": "Unklar",
+   "sources": [
+    "https://www.igeekphone.com/meizu-flagship-ar-glasses-myvu-discovery-release-the-first-flyme-ar-system-at-9999-yuan-1388/",
+    "https://www.gizmochina.com/2023/12/04/meizu-myvu-discovery-ar-glasses-impressive-precision-unveiled-china/",
+    "https://www.microled-info.com/meizu-announces-microled-microdisplays-powered-myvu-discovery-ar-glasses"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "Meizu StarV Air2",
+   "manufacturer": "Meizu",
+   "official_url": "https://www.meizu.com/global/product/starv-air2",
+   "announced_date": "2024-09-25",
+   "release_date": "2024-10-08",
+   "price_usd": "399",
+   "xr_category": "AR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Erstverkauf Oktober 2024 ab 2799 CNY (~399 USD umgerechnet, UVP 2999 CNY), inzwischen auch global erhaeltlich.",
+   "lifecycle_source": "https://www.ithome.com/0/798/321.htm",
+   "software": "StarVision / Companion-App (Flyme)",
+   "compute_unit": "Phone",
+   "display_type": "Micro LED (monochrom gruen)",
+   "optics": "Waveguide",
+   "fov_horizontal_deg": "",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "",
+   "refresh_hz": "",
+   "weight_g": "44",
+   "tracking": "Non-positional",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Nein (durchsichtige Optik)",
+   "chipset": "",
+   "brightness_nits": "2000",
+   "connectivity": "Bluetooth",
+   "audio": "Open-ear Lautsprecher, Dual-Mikrofon",
+   "battery": "Integriert",
+   "ipd_mm": "",
+   "prescription_support": "Ja (integrierte Korrekturglaeser, offizieller Verglasungsservice)",
+   "camera": "Nein",
+   "sources": [
+    "https://www.ithome.com/0/798/321.htm",
+    "https://www.meizu.com/global/product/starv-air2",
+    "https://www.vrtuoluo.cn/540948.html"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Meizu StarV View",
+   "manufacturer": "Meizu",
+   "official_url": "https://www.meizu.com",
+   "announced_date": "2024-09-25",
+   "release_date": "2024-10",
+   "price_usd": "399",
+   "xr_category": "AR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Birdbath-Viewing-Glasses, Launch Herbst 2024 fuer 2799 CNY (~399 USD umgerechnet; Vorbestellerpreis 2499 CNY).",
+   "lifecycle_source": "https://heyupnow.com/blogs/news/meizu-starv-view-the-latest-ar-smart-glasses-hits-pre-sale-at-352",
+   "software": "Plug-and-Play (USB-C DisplayPort)",
+   "compute_unit": "Phone",
+   "display_type": "Micro-OLED",
+   "optics": "Birdbath",
+   "fov_horizontal_deg": "",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "",
+   "refresh_hz": "120",
+   "weight_g": "",
+   "tracking": "Non-positional",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Nein",
+   "chipset": "",
+   "brightness_nits": "",
+   "connectivity": "USB-C (DisplayPort Alt Mode)",
+   "audio": "Lautsprecher mit Dual-Mikrofon-Noise-Cancelling",
+   "battery": "Via Host-Geraet",
+   "ipd_mm": "",
+   "prescription_support": "Ja (Myopie-Anpassung 0-600 Grad)",
+   "camera": "Nein",
+   "sources": [
+    "https://heyupnow.com/blogs/news/meizu-starv-view-the-latest-ar-smart-glasses-hits-pre-sale-at-352",
+    "https://www.vrtuoluo.cn/540948.html",
+    "https://mikeshouts.com/meizu-starv-view-ar-smart-glasses/"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "Honor Vision Glass",
+   "manufacturer": "Honor",
+   "official_url": "https://www.honor.com/cn/wearables/honor-vision-glass/",
+   "announced_date": "2023-03-06",
+   "release_date": "2023-03-24",
+   "price_usd": "365",
+   "xr_category": "AR",
+   "active_distribution": "Unklar",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "China-only Launch Maerz 2023 fuer 2499 CNY (~365 USD umgerechnet), Viewing-Glasses analog zur Huawei Vision Glass.",
+   "lifecycle_source": "https://news.sina.cn/sx/2023-03-24/detail-imymxtkk3005620.d.html",
+   "software": "Plug-and-Play (USB-C DisplayPort)",
+   "compute_unit": "Phone",
+   "display_type": "Micro-OLED",
+   "optics": "Birdbath",
+   "fov_horizontal_deg": "",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "",
+   "resolution_per_eye": "1920x1080",
+   "refresh_hz": "",
+   "weight_g": "80",
+   "tracking": "Non-positional",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Nein",
+   "chipset": "",
+   "brightness_nits": "500",
+   "connectivity": "USB-C (DisplayPort Alt Mode)",
+   "audio": "Integrierte Lautsprecher",
+   "battery": "Via Host-Geraet",
+   "ipd_mm": "",
+   "prescription_support": "Ja (Dioptrien-Anpassung)",
+   "camera": "Nein",
+   "sources": [
+    "https://www.honor.com/cn/wearables/honor-vision-glass/spec/",
+    "https://news.sina.cn/sx/2023-03-24/detail-imymxtkk3005620.d.html",
+    "https://www.geekpark.net/news/315807"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "LAWK ONE",
+   "manufacturer": "LAWK",
+   "official_url": "https://global.lawaken.com/products/lawk-one-ar-glasses",
+   "announced_date": "2023-11",
+   "release_date": "2023-12",
+   "price_usd": "349",
+   "xr_category": "AR",
+   "active_distribution": "Ja",
+   "eol_status": "Aktiv oder ohne EOL-Angabe",
+   "eol_date": "",
+   "lifecycle_notes": "Sport-AR-Brille der chinesischen Marke LAWK (Li Weike/Lawaken), Crowdfunding-Auslieferung ab Dezember 2023 zum Launchpreis von 349 USD (spaeter 699 USD).",
+   "lifecycle_source": "https://newatlas.com/outdoors/lawk-one-ar-glasses/",
+   "software": "Companion-App, ChatGPT-Sprachassistent",
+   "compute_unit": "Phone",
+   "display_type": "Micro LED (monochrom gruen, JBD 0,13 Zoll)",
+   "optics": "Waveguide",
+   "fov_horizontal_deg": "",
+   "fov_vertical_deg": "",
+   "fov_diagonal_deg": "30",
+   "resolution_per_eye": "640x480",
+   "refresh_hz": "",
+   "weight_g": "80",
+   "tracking": "Non-positional",
+   "eye_tracking": "Nein",
+   "hand_tracking": "Nein",
+   "passthrough": "Nein (durchsichtige Optik)",
+   "chipset": "",
+   "brightness_nits": "1150",
+   "connectivity": "Bluetooth",
+   "audio": "Open-ear Lautsprecher",
+   "battery": "2x 150 mAh, 6-8h",
+   "ipd_mm": "",
+   "prescription_support": "Unklar",
+   "camera": "8 MP, 4K-Video, 120 Grad",
+   "sources": [
+    "https://newatlas.com/outdoors/lawk-one-ar-glasses/",
+    "https://global.lawaken.com/products/lawk-one-ar-glasses",
+    "https://www.microled-info.com/lawk-one-microled-ar-glasses-launch-next-month"
+   ],
+   "confidence": "medium"
+  }
+ ]
+}

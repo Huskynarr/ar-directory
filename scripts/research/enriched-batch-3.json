@@ -1,0 +1,333 @@
+{
+ "enriched": [
+  {
+   "id": "itQWsK0YF",
+   "name": "Pimax Crystal Light",
+   "changes": {
+    "fov_horizontal_deg": "105",
+    "weight_g": "815",
+    "chipset": "None / tethered (PC DisplayPort)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://pimax.com/pages/crystal-light",
+    "https://vrheadsetpicker.com/headsets/pimax-crystal-light/"
+   ]
+  },
+  {
+   "id": "MRE_j97gq",
+   "name": "Spacetop",
+   "changes": {
+    "prescription_support": "Ja (custom prescription lenses included, magnetic rim)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://help.sightful.com/en/articles/8725893-using-prescription-lenses-with-spacetop"
+   ]
+  },
+  {
+   "id": "xo3cio_3V",
+   "name": "TCL RayNeo X2",
+   "changes": {
+    "resolution_per_eye": "640x480",
+    "prescription_support": "Optional (custom prescription lenses via Lensology partner)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.uploadvr.com/rayneo-x2-standalone-ar-glasses-review/",
+    "https://www.rayneo.com/products/tcl-rayneo-x2"
+   ]
+  },
+  {
+   "id": "u1Gt3j4C1",
+   "name": "Vuzix Blade 2",
+   "changes": {
+    "prescription_support": "Optional (prescription inserts)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.vuzix.com/products/vuzix-blade-2-smart-glasses",
+    "https://vrx.vr-expert.com/vuzix-blade-2-review-vrx-by-vr-expert/"
+   ]
+  },
+  {
+   "id": "UR8rXYX7t",
+   "name": "Everysight Raptor",
+   "changes": {
+    "optics": "BEAM projection (OLED micro-projector onto visor)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.everysight.com/technology"
+   ]
+  },
+  {
+   "id": "12CKEzhzY",
+   "name": "HTC Vive Focus Vision",
+   "changes": {
+    "weight_g": "785",
+    "fov_vertical_deg": "96"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/htcvivefocusvision",
+    "https://vr-expert.com/vr-headsets/htc-vive-focus-vision/"
+   ]
+  },
+  {
+   "id": "98wLZvTJQ",
+   "name": "Meta 2",
+   "changes": {
+    "weight_g": "500"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.sizescreens.com/meta-2-specifications/"
+   ]
+  },
+  {
+   "id": "oqaLcHVYE",
+   "name": "NuEyes Pro 3e",
+   "changes": {
+    "chipset": "None / tethered (DisplayPort Alt Mode via USB-C)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.worldcast.io/nueyes-pro-3-specs",
+    "https://www.nueyes.com/pro3e"
+   ]
+  },
+  {
+   "id": "fmvzFDQnb",
+   "name": "Pimax Dream Air",
+   "changes": {
+    "chipset": "None / tethered (PC DisplayPort via USB-C)",
+    "prescription_support": "Optional (prescription lens frames)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://pimax.com/pages/dream-air",
+    "https://pimax.com/blogs/blogs/pimax-unveils-new-vr-headsets-offering-the-widest-field-of-view-for-micro-oled"
+   ]
+  },
+  {
+   "id": "xgyr4Q0iB",
+   "name": "RayNeo X3 Pro",
+   "changes": {
+    "fov_diagonal_deg": "30",
+    "refresh_hz": "60"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.tomshardware.com/peripherals/wearable-tech/rayneo-x3-pro-ar-glasses-review",
+    "https://skarredghost.com/2025/12/17/rayneo-x3-pro-review/"
+   ]
+  },
+  {
+   "id": "kG1_Qtju3",
+   "name": "Rokid Air",
+   "changes": {
+    "prescription_support": "Software (0.00 to -5.00D diopter adjustment built-in)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://static.rokidcdn.com/website/air/0.1.0/Rokid%20Air%20User%20Manual.pdf",
+    "https://vrtech.wiki/rokid/rokid-air/rokid-air-user-manual/"
+   ]
+  },
+  {
+   "id": "UIRKkbXSO",
+   "name": "TCL NXTWEAR G",
+   "changes": {
+    "chipset": "None / tethered (USB-C DisplayPort)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://newatlas.com/wearables/tcl-nxtwear-s-wearable-display-glasses/"
+   ]
+  },
+  {
+   "id": "x7KWR1zVL",
+   "name": "TCL NXTWEAR S",
+   "changes": {
+    "prescription_support": "Optional (magnetic lens frame for prescription lenses)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://newatlas.com/wearables/tcl-nxtwear-s-wearable-display-glasses/",
+    "https://mixed-news.com/en/tcl-nxtwear-s-review/"
+   ]
+  },
+  {
+   "id": "_IiTfLZMZ",
+   "name": "Viture Pro",
+   "changes": {
+    "camera": "No camera",
+    "chipset": "None / tethered (USB-C DisplayPort)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://wearablexp.com/smart-glasses/viture-pro-xr-review/",
+    "https://www.tomsguide.com/computing/vr-ar/viture-pro-xr-glasses-review"
+   ]
+  },
+  {
+   "id": "fdx61QDyF",
+   "name": "Vuzix M400C",
+   "changes": {
+    "optics": "Occluded OLED display (non-see-through)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://ir.vuzix.com/news-events/press-releases/detail/1937/vuzix-introduces-its-new-m400-c-smart-glasses",
+    "https://vrx.vr-expert.com/vuzix-m400-review/"
+   ]
+  },
+  {
+   "id": "pdUGQrVUI",
+   "name": "Even Realities G1",
+   "changes": {
+    "ipd_mm": "54-80 (single size, no adjustment)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.engadget.com/wearables/even-realities-g1-review-limited-but-effective-smart-glasses-140059586.html"
+   ]
+  },
+  {
+   "id": "JWXF3ikOV",
+   "name": "Huawei Vision Glass",
+   "changes": {
+    "prescription_support": "Software (0 to -5.00D diopter adjustment built-in)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.huaweicentral.com/huawei-vision-glass-vr-ar-everything-you-need-to-know/"
+   ]
+  },
+  {
+   "id": "T2HJ66fyR",
+   "name": "Iristick G2",
+   "changes": {
+    "camera": "16 MP central camera (117° diagonal FOV, 6x zoom) + zoom/barcode features"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://docs.iristick.com/smart-glasses/specifications/",
+    "https://iristick.com/products/iristick-g2"
+   ]
+  },
+  {
+   "id": "0iz9ksGZA",
+   "name": "Meta Ray-Ban Display",
+   "changes": {
+    "brightness_nits": "5000"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://roadtovr.com/meta-ray-ban-smart-glasses-display-price-release-date-specs/",
+    "https://en.wikipedia.org/wiki/Ray-Ban_Meta"
+   ]
+  },
+  {
+   "id": "jtG3rIKIH",
+   "name": "Nreal Air",
+   "changes": {
+    "chipset": "None / tethered (USB-C DisplayPort)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/nrealair"
+   ]
+  },
+  {
+   "id": "Jc6hpT2dK",
+   "name": "Rokid AR Lite",
+   "changes": {
+    "display_type": "Micro-OLED",
+    "optics": "Birdbath optics",
+    "fov_diagonal_deg": "50",
+    "resolution_per_eye": "1920x1080",
+    "refresh_hz": "120",
+    "brightness_nits": "600",
+    "weight_g": "75",
+    "camera": "No camera"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.tomsguide.com/computing/smart-glasses/rokid-ar-lite-ar-glasses-review",
+    "https://www.notebookcheck.net/Rokid-announces-Rokid-AR-Lite-suite-with-updated-Rokid-Max-2-glasses-and-Rokid-Station-2-host-unit.832131.0.html"
+   ]
+  },
+  {
+   "id": "y-HjRHyLZ",
+   "name": "Rokid Max",
+   "changes": {
+    "prescription_support": "Software (0.00 to -6.00D diopter adjustment built-in)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://global.rokid.com/products/prescription-mount",
+    "https://global.rokid.com/pages/rokid-max-specs"
+   ]
+  },
+  {
+   "id": "kQcRu82xv",
+   "name": "Rokid Max 2",
+   "changes": {
+    "prescription_support": "Software (0.00 to -6.00D diopter adjustment built-in) + optional prescription lenses"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://global.rokid.com/blogs/max-2/can-i-use-prescription-lenses-with-the-rokid-max-2"
+   ]
+  },
+  {
+   "id": "RanJuGgtP",
+   "name": "Viture Beast",
+   "changes": {
+    "weight_g": "88"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.viture.com/beast",
+    "https://visionxo.com/products/viture-beast"
+   ]
+  },
+  {
+   "id": "jjR57q0sj",
+   "name": "Viture One Lite",
+   "changes": {
+    "prescription_support": "Software (0 to -5.0D diopter dial built-in)",
+    "chipset": "None / tethered (USB-C DisplayPort)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.slashgear.com/1553677/viture-one-lite-review-ax-glasses-with-sight-adjustment-immersion/",
+    "https://academy.viture.com/xr_glasses/pro_one_introduction"
+   ]
+  },
+  {
+   "id": "PnnMj9eH3",
+   "name": "Xreal Air 2",
+   "changes": {
+    "chipset": "None / tethered (USB-C DisplayPort)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/xrealair2"
+   ]
+  },
+  {
+   "id": "E7k3-VKas",
+   "name": "Xreal Air 2 Pro",
+   "changes": {
+    "chipset": "None / tethered (USB-C DisplayPort)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/xrealair2pro"
+   ]
+  }
+ ]
+}

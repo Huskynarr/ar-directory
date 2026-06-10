@@ -1,0 +1,748 @@
+[
+ {
+  "id": "oHsFwXqoj",
+  "name": "Rokid Vision 2",
+  "manufacturer": "Rokid",
+  "missing": [
+   "release_date",
+   "price_usd",
+   "brightness_nits",
+   "connectivity",
+   "audio",
+   "battery",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "weight_g",
+   "display_type",
+   "optics"
+  ],
+  "n": 16
+ },
+ {
+  "id": "pOfzEGXDw",
+  "name": "XYZ Atom",
+  "manufacturer": "XYZ Reality",
+  "missing": [
+   "price_usd",
+   "brightness_nits",
+   "connectivity",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "weight_g",
+   "display_type",
+   "optics"
+  ],
+  "n": 15
+ },
+ {
+  "id": "4fhEoK1p8",
+  "name": "Acer GI0 AI Glasses",
+  "manufacturer": "Acer",
+  "missing": [
+   "release_date",
+   "chipset",
+   "brightness_nits",
+   "audio",
+   "battery",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "optics"
+  ],
+  "n": 13
+ },
+ {
+  "id": "vH20M2KPj",
+  "name": "AjnaLens AjnaX",
+  "manufacturer": "AjnaLens",
+  "missing": [
+   "price_usd",
+   "chipset",
+   "brightness_nits",
+   "audio",
+   "battery",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "resolution_per_eye",
+   "refresh_hz"
+  ],
+  "n": 12
+ },
+ {
+  "id": "eANw0hTFv",
+  "name": "Campfire Headset",
+  "manufacturer": "Campfire",
+  "missing": [
+   "chipset",
+   "brightness_nits",
+   "audio",
+   "battery",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_vertical_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "weight_g",
+   "optics"
+  ],
+  "n": 12
+ },
+ {
+  "id": "ZkO_SfqaC",
+  "name": "Guangli Holoswim",
+  "manufacturer": "Guangli",
+  "missing": [
+   "chipset",
+   "brightness_nits",
+   "connectivity",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "optics"
+  ],
+  "n": 12
+ },
+ {
+  "id": "Dnsbasmiv",
+  "name": "TCL NXTWEAR V",
+  "manufacturer": "TCL",
+  "missing": [
+   "release_date",
+   "price_usd",
+   "brightness_nits",
+   "connectivity",
+   "audio",
+   "battery",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "weight_g"
+  ],
+  "n": 12
+ },
+ {
+  "id": "Aq7tdhseW",
+  "name": "Xreal Project Aura",
+  "manufacturer": "Xreal",
+  "missing": [
+   "release_date",
+   "price_usd",
+   "brightness_nits",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "weight_g"
+  ],
+  "n": 12
+ },
+ {
+  "id": "hMIl1sAzP",
+  "name": "Engo Eyewear",
+  "manufacturer": "Engo Eyewear",
+  "missing": [
+   "chipset",
+   "brightness_nits",
+   "connectivity",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz",
+   "optics"
+  ],
+  "n": 11
+ },
+ {
+  "id": "BhXHG0n1d",
+  "name": "Xreal Eye",
+  "manufacturer": "Xreal",
+  "missing": [
+   "brightness_nits",
+   "audio",
+   "battery",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "weight_g"
+  ],
+  "n": 11
+ },
+ {
+  "id": "YR7b7p4DU",
+  "name": "Cosmo Vision",
+  "manufacturer": "Cosmo Connected",
+  "missing": [
+   "chipset",
+   "brightness_nits",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz",
+   "optics"
+  ],
+  "n": 10
+ },
+ {
+  "id": "Z1gjavg5l",
+  "name": "Engo 2",
+  "manufacturer": "Engo Eyewear",
+  "missing": [
+   "chipset",
+   "brightness_nits",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz",
+   "optics"
+  ],
+  "n": 10
+ },
+ {
+  "id": "legacy-epsonmoveriobt-200",
+  "name": "Epson Moverio BT-200",
+  "manufacturer": "Epson",
+  "missing": [
+   "brightness_nits",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "refresh_hz",
+   "weight_g"
+  ],
+  "n": 10
+ },
+ {
+  "id": "4j3YZdQIM",
+  "name": "Iristick G3",
+  "manufacturer": "Iristick",
+  "missing": [
+   "announced_date",
+   "release_date",
+   "brightness_nits",
+   "ipd_mm",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "optics"
+  ],
+  "n": 10
+ },
+ {
+  "id": "6z7r29ojZ",
+  "name": "Julbo EVAD-1",
+  "manufacturer": "Julbo",
+  "missing": [
+   "chipset",
+   "brightness_nits",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz",
+   "optics"
+  ],
+  "n": 10
+ },
+ {
+  "id": "nzYmv8egK",
+  "name": "Shadow Creator Halomini",
+  "manufacturer": "Shadow Creator",
+  "missing": [
+   "chipset",
+   "brightness_nits",
+   "connectivity",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "resolution_per_eye",
+   "refresh_hz"
+  ],
+  "n": 10
+ },
+ {
+  "id": "Dp6TLH4Gv",
+  "name": "Xiaomi Smart Glasses",
+  "manufacturer": "Xiaomi",
+  "missing": [
+   "price_usd",
+   "chipset",
+   "brightness_nits",
+   "connectivity",
+   "audio",
+   "battery",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 10
+ },
+ {
+  "id": "CgySYMXLq",
+  "name": "3Glasses Blubur S1",
+  "manufacturer": "3Glasses",
+  "missing": [
+   "brightness_nits",
+   "audio",
+   "battery",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_diagonal_deg",
+   "weight_g",
+   "optics"
+  ],
+  "n": 9
+ },
+ {
+  "id": "MFKzu5lwb",
+  "name": "3Glasses Blubur S2",
+  "manufacturer": "3Glasses",
+  "missing": [
+   "brightness_nits",
+   "audio",
+   "battery",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_diagonal_deg",
+   "weight_g",
+   "optics"
+  ],
+  "n": 9
+ },
+ {
+  "id": "CMlHLhpbt",
+  "name": "Alibaba Quark AI Glasses S1",
+  "manufacturer": "Alibaba",
+  "missing": [
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "weight_g"
+  ],
+  "n": 9
+ },
+ {
+  "id": "GgaK5c41-",
+  "name": "Dream Glass 4K Plus",
+  "manufacturer": "DreamWorld",
+  "missing": [
+   "brightness_nits",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_vertical_deg",
+   "refresh_hz",
+   "display_type",
+   "optics"
+  ],
+  "n": 9
+ },
+ {
+  "id": "hPA8JixLI",
+  "name": "Dream Glass Flow",
+  "manufacturer": "DreamWorld",
+  "missing": [
+   "chipset",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz",
+   "optics"
+  ],
+  "n": 9
+ },
+ {
+  "id": "Wmqx-AT6q",
+  "name": "Epson Moverio BT-40",
+  "manufacturer": "Epson",
+  "missing": [
+   "chipset",
+   "brightness_nits",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "weight_g"
+  ],
+  "n": 9
+ },
+ {
+  "id": "GDAwFX5CU",
+  "name": "Even Realities G2",
+  "manufacturer": "Even Realities",
+  "missing": [
+   "chipset",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "refresh_hz",
+   "weight_g"
+  ],
+  "n": 9
+ },
+ {
+  "id": "HfZ2Dqm1q",
+  "name": "Guangli Holoswim 2",
+  "manufacturer": "Guangli",
+  "missing": [
+   "chipset",
+   "brightness_nits",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz"
+  ],
+  "n": 9
+ },
+ {
+  "id": "vktjm1mHt",
+  "name": "Nolo VR Glass",
+  "manufacturer": "Nolo",
+  "missing": [
+   "release_date",
+   "price_usd",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "weight_g",
+   "display_type"
+  ],
+  "n": 9
+ },
+ {
+  "id": "NK2ZBl7SV",
+  "name": "Solos AirGo Vision",
+  "manufacturer": "Solos",
+  "missing": [
+   "chipset",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "resolution_per_eye",
+   "refresh_hz"
+  ],
+  "n": 9
+ },
+ {
+  "id": "Rz1MDcJer",
+  "name": "Thunderbird Air Plus",
+  "manufacturer": "Thunderbird",
+  "missing": [
+   "release_date",
+   "chipset",
+   "connectivity",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 9
+ },
+ {
+  "id": "0WBse43zY",
+  "name": "Thunderbird V3",
+  "manufacturer": "Thunderbird",
+  "missing": [
+   "brightness_nits",
+   "connectivity",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "resolution_per_eye",
+   "refresh_hz"
+  ],
+  "n": 9
+ },
+ {
+  "id": "LDF8zLQkE",
+  "name": "Vuzix LX1",
+  "manufacturer": "Vuzix",
+  "missing": [
+   "price_usd",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "optics"
+  ],
+  "n": 9
+ },
+ {
+  "id": "rR39x5VXi",
+  "name": "Ximmerse Rhino X Pro",
+  "manufacturer": "Ximmerse",
+  "missing": [
+   "brightness_nits",
+   "connectivity",
+   "audio",
+   "battery",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_diagonal_deg",
+   "refresh_hz"
+  ],
+  "n": 9
+ },
+ {
+  "id": "FUmJdcmqg",
+  "name": "3Glasses D2",
+  "manufacturer": "3Glasses",
+  "missing": [
+   "brightness_nits",
+   "audio",
+   "battery",
+   "ipd_mm",
+   "prescription_support",
+   "camera",
+   "fov_vertical_deg",
+   "fov_diagonal_deg"
+  ],
+  "n": 8
+ },
+ {
+  "id": "vbmfgIFUl",
+  "name": "Acer AR Vision GR0",
+  "manufacturer": "Acer",
+  "missing": [
+   "release_date",
+   "audio",
+   "battery",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg"
+  ],
+  "n": 8
+ },
+ {
+  "id": "LMUhhwNq7",
+  "name": "ASUS ROG XREAL R1",
+  "manufacturer": "Asus",
+  "missing": [
+   "release_date",
+   "price_usd",
+   "audio",
+   "battery",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 8
+ },
+ {
+  "id": "GlONfBjEP",
+  "name": "Dream Glass 4K",
+  "manufacturer": "DreamWorld",
+  "missing": [
+   "brightness_nits",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "fov_vertical_deg",
+   "refresh_hz",
+   "display_type",
+   "optics"
+  ],
+  "n": 8
+ },
+ {
+  "id": "EV601vi66",
+  "name": "Dream Glass Lead Plus",
+  "manufacturer": "DreamWorld",
+  "missing": [
+   "brightness_nits",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "fov_vertical_deg",
+   "refresh_hz",
+   "display_type",
+   "optics"
+  ],
+  "n": 8
+ },
+ {
+  "id": "-yaNtlMz9",
+  "name": "Dream Glass Lead Pro",
+  "manufacturer": "DreamWorld",
+  "missing": [
+   "brightness_nits",
+   "audio",
+   "ipd_mm",
+   "prescription_support",
+   "fov_vertical_deg",
+   "refresh_hz",
+   "display_type",
+   "optics"
+  ],
+  "n": 8
+ },
+ {
+  "id": "wJVRRflMf",
+  "name": "INMO Air",
+  "manufacturer": "INMO",
+  "missing": [
+   "brightness_nits",
+   "audio",
+   "battery",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz"
+  ],
+  "n": 8
+ },
+ {
+  "id": "pEEE5EDVo",
+  "name": "Lenovo Glasses T1",
+  "manufacturer": "Lenovo",
+  "missing": [
+   "price_usd",
+   "brightness_nits",
+   "ipd_mm",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "optics"
+  ],
+  "n": 8
+ },
+ {
+  "id": "KdZOqV1Ev",
+  "name": "MAD Gaze Vader",
+  "manufacturer": "MAD Gaze",
+  "missing": [
+   "brightness_nits",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz",
+   "weight_g",
+   "display_type",
+   "optics"
+  ],
+  "n": 8
+ },
+ {
+  "id": "Vg5P0BH6B",
+  "name": "MAD Gaze Wave",
+  "manufacturer": "MAD Gaze",
+  "missing": [
+   "chipset",
+   "brightness_nits",
+   "battery",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz"
+  ],
+  "n": 8
+ },
+ {
+  "id": "Tyzj7UF28",
+  "name": "Rokid AI Glasses Style",
+  "manufacturer": "Rokid",
+  "missing": [
+   "brightness_nits",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "display_type",
+   "optics"
+  ],
+  "n": 8
+ }
+]

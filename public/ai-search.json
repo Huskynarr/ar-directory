@@ -5,11 +5,11 @@
   "primary_url": "https://ar-directory.huskynarr.de/",
   "description": "Vergleich fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Shop-Links, Lifecycle und EOL-Status.",
   "dataset_summary": {
-    "records": 151,
-    "ar_records": 122,
-    "xr_records": 29,
-    "manufacturers": 67,
-    "newest_release": "2026-03-01"
+    "records": 208,
+    "ar_records": 144,
+    "xr_records": 64,
+    "manufacturers": 82,
+    "newest_release": "2026-05-14"
   },
   "resources": [
     {
@@ -59,5 +59,5 @@
     "FOV",
     "Refresh Rate"
   ],
-  "updated_at": "2026-06-02"
+  "updated_at": "2026-06-10"
 }

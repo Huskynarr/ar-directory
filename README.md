@@ -78,7 +78,7 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
 
 ## Datenquelle
 
-Die Datengrundlage ist ein kuratierter lokaler Datensatz (aktuell **151 Modelle**, inkl. Computex-2026-Neuheiten):
+Die Datengrundlage ist ein kuratierter lokaler Datensatz (aktuell **208 Modelle**, inkl. globaler und chinesischer Markt bis Juni 2026):
 - Generator: `scripts/generate-ar-csv.mjs` — normalisiert die CSV und erzeugt daraus **alle** abgeleiteten Artefakte (Metadaten, JSON-LD-Strukturdaten, Sitemap, llms.txt, llms-full.txt, ai-search.json). Die CSV ist damit die einzige Quelle der Wahrheit.
 - Recherche-Enrichment: `scripts/apply-enrichment.mjs` — spielt einen Recherche-Payload (`scripts/enrichment-2026.json`: Feld-Aenderungen + neue Geraete inkl. Quellenangaben) in die CSV ein; danach `npm run data:generate` ausfuehren.
 - Herstellerbild-Enrichment: `scripts/enrich-manufacturer-images.mjs`

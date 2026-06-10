@@ -1,0 +1,412 @@
+{
+ "enriched": [
+  {
+   "id": "sMDYLv4VB",
+   "name": "ThirdEye Razor MR Glasses",
+   "changes": {
+    "prescription_support": "Ja (Dioptrien-Einstellung 0 bis -5)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.auganix.org/thirdeye-announces-new-razor-mr-glasses-consumer-mixed-reality-device/"
+   ]
+  },
+  {
+   "id": "Yp1UjtE3P",
+   "name": "Tilt Five",
+   "changes": {
+    "battery": "Keine, via Host-Gerät (USB 3.0 / USB-C)",
+    "camera": "2x 8 MP Infrarot (Head-Tracking + Computer Vision)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.tiltfive.com/make/tech-overview",
+    "https://skarredghost.com/2022/02/16/tilt-five-hands-on-review/"
+   ]
+  },
+  {
+   "id": "Q9zkHODZI",
+   "name": "Brilliant Monocle",
+   "changes": {
+    "optics": "Prisma (optisch gebondet)",
+    "prescription_support": "Ja (Clip-on auf eigener Brille)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://docs.brilliant.xyz/monocle/hardware/",
+    "https://www.designboom.com/technology/monocle-world-smallest-ar-device-clip-glasses-brilliant-labs-02-10-2023/"
+   ]
+  },
+  {
+   "id": "suVKDU_0P",
+   "name": "DigiLens Argo",
+   "changes": {
+    "resolution_per_eye": "1280x720",
+    "prescription_support": "Ja (Einsätze)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://kguttag.com/2023/03/27/digilens-lumus-vuzix-oppo-avegant-optical-ar-ces-ar-vr-mr-2023-pt-8/",
+    "https://frameofchoice.com/products/digilens-argo-smart-glasses"
+   ]
+  },
+  {
+   "id": "MNTNWLDu4",
+   "name": "Dream Glass",
+   "changes": {
+    "audio": "3,5-mm-Klinke",
+    "prescription_support": "Ja (mit Brille nutzbar)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://skarredghost.com/2018/06/14/dreamglass-is-an-interesting-augmented-reality-glass-that-costs-only-399/"
+   ]
+  },
+  {
+   "id": "A5KdHFj88",
+   "name": "INMO GO2",
+   "changes": {
+    "connectivity": "Wi-Fi (2,4/5 GHz), Bluetooth 5.0",
+    "weight_g": "52"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://513.toys/inmo_go2/",
+    "https://www.inmoxr.com/collections/go"
+   ]
+  },
+  {
+   "id": "6wtHtGTJL",
+   "name": "Pimax Crystal Super",
+   "changes": {
+    "price_usd": "1696",
+    "audio": "Austauschbare 3,5-mm-Klinke (SMAS/DMAS-Module), 2 Mikrofone",
+    "fov_vertical_deg": "111"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://pimax.com/blogs/blogs/pimax-launches-the-worlds-first-retina-level-vr-headset-with-the-crystal-super-reaching-57-ppd",
+    "https://pimax.com/products/pimax-crystal-super",
+    "https://www.overtake.gg/news/pimax-crystal-super-new-flagship-vr-headset-with-enormous-resolution-unveiled.2627/"
+   ]
+  },
+  {
+   "id": "Z3yEBUJAV",
+   "name": "Play For Dream MR",
+   "changes": {
+    "ipd_mm": "51-78",
+    "prescription_support": "Ja (magnetische Einsätze)",
+    "weight_g": "650",
+    "optics": "Pancake"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://pfdm.ai/products/mr-headset",
+    "https://skarredghost.com/2025/09/11/play-for-dream-hands-on-review/"
+   ]
+  },
+  {
+   "id": "ms0htz68c",
+   "name": "RayNeo Air 3s",
+   "changes": {
+    "battery": "Keine, via Host-Gerät (USB-C)",
+    "prescription_support": "Ja (Einsätze, Myopie 0 bis -10,0 dpt)",
+    "camera": "Keine",
+    "weight_g": "76"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.rayneo.com/products/rayneo-air-3s-xr-glasses",
+    "https://www.phonearena.com/reviews/rayneo-air-3-s-review_id7224"
+   ]
+  },
+  {
+   "id": "ufFwiatGb",
+   "name": "RealWear HMT-1Z1",
+   "changes": {
+    "connectivity": "Wi-Fi 802.11 a/b/g/n/ac (2,4/5 GHz), Bluetooth LE 4.1",
+    "fov_diagonal_deg": "20"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://support.realwear.com/knowledge/hmt-1z1-device-details"
+   ]
+  },
+  {
+   "id": "o9JH3GwIU",
+   "name": "RealWear Navigator 520",
+   "changes": {
+    "connectivity": "Wi-Fi 802.11 a/b/g/n/ac (2,4/5 GHz), Bluetooth 5.1",
+    "fov_diagonal_deg": "24",
+    "prescription_support": "Ja (mit eigener Brille/Schutzbrille nutzbar)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://bestware.com/en/realwear-navigator-520.html",
+    "https://www.realwear.com/devices/navigator-520"
+   ]
+  },
+  {
+   "id": "W1kyhxveC",
+   "name": "Rokid X-Craft",
+   "changes": {
+    "refresh_hz": "60",
+    "weight_g": "600"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://intrinsicallysafestore.com/product/rokid-xcraft-ar-device/",
+    "https://www.rokid.ai/products/rokid-x-craft/"
+   ]
+  },
+  {
+   "id": "r2UX2RNAB",
+   "name": "Vuzix M400",
+   "changes": {
+    "resolution_per_eye": "640x360"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.vuzix.com/products/m400-smart-glasses",
+    "https://vrx.vr-expert.com/vuzix-m400-review/"
+   ]
+  },
+  {
+   "id": "PjuDk6-Sz",
+   "name": "Vuzix Shield",
+   "changes": {
+    "price_usd": "2499",
+    "camera": "2x 13 MP (Stereo, Autofokus, 4K30)",
+    "prescription_support": "Ja (Einsätze)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.vuzix.com/products/vuzix-shield-smart-glasses",
+    "https://vrx.vr-expert.com/vuzix-shield-release-date-key-features-and-cost-everything-you-need-to-know/"
+   ]
+  },
+  {
+   "id": "wHlIeEbab",
+   "name": "Xiaomi Mijia",
+   "changes": {
+    "resolution_per_eye": "1920x1080"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.oled-info.com/mijia-glasses-camera"
+   ]
+  },
+  {
+   "id": "scBhMmwQy",
+   "name": "3Glasses X1",
+   "changes": {
+    "prescription_support": "Ja (Dioptrien-Anpassung bis 600°/-6,0 dpt)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.3glasses.com/en/product/x1.html"
+   ]
+  },
+  {
+   "id": "c46yfe7il",
+   "name": "Epson Moverio BT-40S",
+   "changes": {
+    "camera": "13 MP (im Touch-Controller BO-IC400, Autofokus)",
+    "prescription_support": "Ja (über eigener Brille tragbar)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://epson.com/c/Moverio-BT-40S-Smart-Glasses-with-Intelligent-Touch-Controller/p/V11H969120",
+    "https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-40-Smart-Glasses-with-USB-Type-C-Connectivity-/p/V11H969020"
+   ]
+  },
+  {
+   "id": "eTNerb4Vg",
+   "name": "Huawei VR Glass 6DoF",
+   "changes": {
+    "ipd_mm": "55-71",
+    "prescription_support": "Ja (Dioptrien-Einstellung 0 bis -7, pro Auge)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.4gltemall.com/huawei-vr-glass.html",
+    "https://skarredghost.com/2021/05/20/huawei-vr-glasses-6dof-preview/"
+   ]
+  },
+  {
+   "id": "UdgWHTDXY",
+   "name": "INMO Air2",
+   "changes": {
+    "audio": "Integrierte Lautsprecher (nach unten gerichtet), Mikrofon",
+    "prescription_support": "Ja (magnetische Einsätze)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.inmoxr.com/pages/inmo-air2",
+    "https://www.slashgear.com/1323632/inmo-air2-review-affordable-ar-glasses/"
+   ]
+  },
+  {
+   "id": "NwLynxR1_",
+   "name": "Lynx R-1",
+   "changes": {
+    "release_date": "2023",
+    "price_usd": "849",
+    "fov_vertical_deg": "90"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://lynx-r.com/news/update-on-the-availability-and-price-change-of-the-lynx-r1/",
+    "https://vrarwiki.com/wiki/Lynx-R1"
+   ]
+  },
+  {
+   "id": "NwPSVR2Xr",
+   "name": "PlayStation VR2",
+   "changes": {
+    "chipset": "Custom MediaTek SoC (Headset-Controller, Rendering via PS5)",
+    "prescription_support": "Ja (Brille tragbar; Einsätze von Drittanbietern)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.techadvisor.com/article/1377161/ps-vr2-custom-mediatek-chip.html",
+    "https://www.videogamer.com/tech/vr/can-you-wear-glasses-with-psvr-2/",
+    "https://www.playstation.com/en-us/ps-vr2/ps-vr2-tech-specs/"
+   ]
+  },
+  {
+   "id": "gJzO9KhG5",
+   "name": "RealWear HMT-1",
+   "changes": {
+    "fov_diagonal_deg": "20"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://support.realwear.com/knowledge/hmt-1-device-details"
+   ]
+  },
+  {
+   "id": "zPABenwmr",
+   "name": "RealWear Navigator 500",
+   "changes": {
+    "fov_diagonal_deg": "20"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://support.realwear.com/knowledge/device-specifications"
+   ]
+  },
+  {
+   "id": "ElhWfkAbQ",
+   "name": "RealWear Navigator Z1",
+   "changes": {
+    "fov_diagonal_deg": "24"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://support.realwear.com/knowledge/realwear-navigator-z1",
+    "https://vr-compare.com/headset/realwearnavigatorz1"
+   ]
+  },
+  {
+   "id": "legacy-reconjet",
+   "name": "Recon Jet",
+   "changes": {
+    "weight_g": "86"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.engadget.com/2015-07-17-recon-jet-review.html",
+    "https://road.cc/content/review/164529-recon-jet-black-heads-display-smart-eyewear"
+   ]
+  },
+  {
+   "id": "legacy-sonysmarteyeglassde",
+   "name": "Sony SmartEyeglass (SED-E1)",
+   "changes": {
+    "fov_horizontal_deg": "19",
+    "fov_vertical_deg": "6",
+    "fov_diagonal_deg": "20"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vrarwiki.com/wiki/SmartEyeglass_Developer_Edition_SED-E1"
+   ]
+  },
+  {
+   "id": "wrjEu415W",
+   "name": "Spacetop G1",
+   "changes": {
+    "prescription_support": "Ja (maßgefertigte Korrekturgläser -8,0 bis +6,0 dpt)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.uploadvr.com/sightful-cancels-spacetop-pivots-to-windows-software-for-xreal-glasses/",
+    "https://liliputing.com/spacetop-g1-is-a-1900-laptop-that-uses-a-pair-of-augmented-reality-glasses-as-a-display/"
+   ]
+  },
+  {
+   "id": "-pmNU-it0",
+   "name": "ThirdEye X2",
+   "changes": {
+    "brightness_nits": "500",
+    "connectivity": "Wi-Fi, Bluetooth, USB-C"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://skarredghost.com/2021/08/06/thirdeye-x2-mr/",
+    "https://www.thirdeyegen.com/x2-smart-glasses"
+   ]
+  },
+  {
+   "id": "1PE1xcEFb",
+   "name": "Vuzix Blade Upgraded",
+   "changes": {
+    "prescription_support": "Ja (Einsätze)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vrx.vr-expert.com/the-key-differences-between-the-vuzix-blade-upgraded-and-the-vuzix-blade/",
+    "https://vuzix-website.s3.amazonaws.com/files/Content/pdfs/Vuzix-Blade-Upgraded-Smart-Glasses-d07.pdf"
+   ]
+  },
+  {
+   "id": "legacy-vuzixm100",
+   "name": "Vuzix M100",
+   "changes": {
+    "fov_diagonal_deg": "15"
+   },
+   "confidence": "high",
+   "sources": [
+    "http://files.vuzix.com/Content/docs/north-american/web/Vuzix-M100-Product-Sheet-01-20-16.pdf",
+    "https://www.realtimelogistics.com.au/products/vuzix-m100/"
+   ]
+  },
+  {
+   "id": "x3IQCew4E",
+   "name": "Huawei VR Glass",
+   "changes": {
+    "ipd_mm": "55-71",
+    "prescription_support": "Ja (Dioptrien-Einstellung 0 bis -7, pro Auge)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.4gltemall.com/huawei-vr-glass.html",
+    "https://www.giztop.com/huawei-vr-glass.html"
+   ]
+  },
+  {
+   "id": "vn_zQOTOV",
+   "name": "Nubia Neovision Glass",
+   "changes": {
+    "prescription_support": "Ja (integrierte Myopie-Anpassung 0 bis -5,0 dpt)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.notebookcheck.net/ZTE-Nubia-Neovision-Glass-New-Micro-OLED-AR-glasses-showcased-with-up-to-120-inch-display.700031.0.html",
+    "https://www.gizchina.com/2023/06/19/zte-nubia-neovision-glass-is-now-available-for-sale/"
+   ]
+  }
+ ],
+ "newDevices": []
+}

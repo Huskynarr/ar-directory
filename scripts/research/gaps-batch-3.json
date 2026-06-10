@@ -1,0 +1,491 @@
+[
+ {
+  "id": "itQWsK0YF",
+  "name": "Pimax Crystal Light",
+  "manufacturer": "Pimax",
+  "missing": [
+   "chipset",
+   "prescription_support",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "weight_g"
+  ],
+  "n": 5
+ },
+ {
+  "id": "FauT-Oibf",
+  "name": "Realmax Qian",
+  "manufacturer": "Realmax",
+  "missing": [
+   "brightness_nits",
+   "prescription_support",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 5
+ },
+ {
+  "id": "MRE_j97gq",
+  "name": "Spacetop",
+  "manufacturer": "Sightful",
+  "missing": [
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 5
+ },
+ {
+  "id": "xo3cio_3V",
+  "name": "TCL RayNeo X2",
+  "manufacturer": "TCL",
+  "missing": [
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "resolution_per_eye"
+  ],
+  "n": 5
+ },
+ {
+  "id": "rNPYFiTHx",
+  "name": "TCL RayNeo X2 Lite",
+  "manufacturer": "TCL",
+  "missing": [
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "resolution_per_eye"
+  ],
+  "n": 5
+ },
+ {
+  "id": "u1Gt3j4C1",
+  "name": "Vuzix Blade 2",
+  "manufacturer": "Vuzix",
+  "missing": [
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz"
+  ],
+  "n": 5
+ },
+ {
+  "id": "e3W1mUjky",
+  "name": "Brilliant Labs Halo",
+  "manufacturer": "Brilliant Labs",
+  "missing": [
+   "brightness_nits",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz"
+  ],
+  "n": 4
+ },
+ {
+  "id": "UR8rXYX7t",
+  "name": "Everysight Raptor",
+  "manufacturer": "Everysight",
+  "missing": [
+   "brightness_nits",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "optics"
+  ],
+  "n": 4
+ },
+ {
+  "id": "12CKEzhzY",
+  "name": "HTC Vive Focus Vision",
+  "manufacturer": "HTC",
+  "missing": [
+   "brightness_nits",
+   "fov_vertical_deg",
+   "fov_diagonal_deg",
+   "weight_g"
+  ],
+  "n": 4
+ },
+ {
+  "id": "98wLZvTJQ",
+  "name": "Meta 2",
+  "manufacturer": "Meta (2016)",
+  "missing": [
+   "brightness_nits",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "weight_g"
+  ],
+  "n": 4
+ },
+ {
+  "id": "oqaLcHVYE",
+  "name": "NuEyes Pro 3e",
+  "manufacturer": "NuEyes",
+  "missing": [
+   "chipset",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 4
+ },
+ {
+  "id": "fmvzFDQnb",
+  "name": "Pimax Dream Air",
+  "manufacturer": "Pimax",
+  "missing": [
+   "chipset",
+   "prescription_support",
+   "fov_vertical_deg",
+   "fov_diagonal_deg"
+  ],
+  "n": 4
+ },
+ {
+  "id": "xgyr4Q0iB",
+  "name": "RayNeo X3 Pro",
+  "manufacturer": "TCL",
+  "missing": [
+   "ipd_mm",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz"
+  ],
+  "n": 4
+ },
+ {
+  "id": "kG1_Qtju3",
+  "name": "Rokid Air",
+  "manufacturer": "Rokid",
+  "missing": [
+   "brightness_nits",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 4
+ },
+ {
+  "id": "Owzy8dkih",
+  "name": "Rokid Air Pro",
+  "manufacturer": "Rokid",
+  "missing": [
+   "brightness_nits",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 4
+ },
+ {
+  "id": "Pw1ENb4d8",
+  "name": "Shiftall MeganeX superlight 8K",
+  "manufacturer": "Shiftall",
+  "missing": [
+   "brightness_nits",
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg"
+  ],
+  "n": 4
+ },
+ {
+  "id": "UIRKkbXSO",
+  "name": "TCL NXTWEAR G",
+  "manufacturer": "TCL",
+  "missing": [
+   "chipset",
+   "ipd_mm",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 4
+ },
+ {
+  "id": "x7KWR1zVL",
+  "name": "TCL NXTWEAR S",
+  "manufacturer": "TCL",
+  "missing": [
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 4
+ },
+ {
+  "id": "_IiTfLZMZ",
+  "name": "Viture Pro",
+  "manufacturer": "Viture",
+  "missing": [
+   "chipset",
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 4
+ },
+ {
+  "id": "AS20GfYCt",
+  "name": "Vuzix M4000",
+  "manufacturer": "Vuzix",
+  "missing": [
+   "ipd_mm",
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 4
+ },
+ {
+  "id": "fdx61QDyF",
+  "name": "Vuzix M400C",
+  "manufacturer": "Vuzix",
+  "missing": [
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz",
+   "optics"
+  ],
+  "n": 4
+ },
+ {
+  "id": "rknuyNUbR",
+  "name": "Almer Arc 2",
+  "manufacturer": "Almer",
+  "missing": [
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz"
+  ],
+  "n": 3
+ },
+ {
+  "id": "NwAppleVPr",
+  "name": "Apple Vision Pro",
+  "manufacturer": "Apple",
+  "missing": [
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg"
+  ],
+  "n": 3
+ },
+ {
+  "id": "Fc2aRdyog",
+  "name": "Apple Vision Pro (M5)",
+  "manufacturer": "Apple",
+  "missing": [
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "fov_diagonal_deg"
+  ],
+  "n": 3
+ },
+ {
+  "id": "BE0kbfi2T",
+  "name": "Brilliant Labs Frame",
+  "manufacturer": "Brilliant Labs",
+  "missing": [
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz"
+  ],
+  "n": 3
+ },
+ {
+  "id": "pdUGQrVUI",
+  "name": "Even Realities G1",
+  "manufacturer": "Even Realities",
+  "missing": [
+   "ipd_mm",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 3
+ },
+ {
+  "id": "NwViveXREl",
+  "name": "HTC Vive XR Elite",
+  "manufacturer": "HTC",
+  "missing": [
+   "brightness_nits",
+   "fov_vertical_deg",
+   "fov_diagonal_deg"
+  ],
+  "n": 3
+ },
+ {
+  "id": "JWXF3ikOV",
+  "name": "Huawei Vision Glass",
+  "manufacturer": "Huawei",
+  "missing": [
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 3
+ },
+ {
+  "id": "T2HJ66fyR",
+  "name": "Iristick G2",
+  "manufacturer": "Iristick",
+  "missing": [
+   "brightness_nits",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 3
+ },
+ {
+  "id": "0iz9ksGZA",
+  "name": "Meta Ray-Ban Display",
+  "manufacturer": "Meta",
+  "missing": [
+   "brightness_nits",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 3
+ },
+ {
+  "id": "jtG3rIKIH",
+  "name": "Nreal Air",
+  "manufacturer": "Nreal",
+  "missing": [
+   "chipset",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 3
+ },
+ {
+  "id": "0Qjzt-5qf",
+  "name": "Oppo Air Glass",
+  "manufacturer": "Oppo",
+  "missing": [
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz"
+  ],
+  "n": 3
+ },
+ {
+  "id": "Jc6hpT2dK",
+  "name": "Rokid AR Lite",
+  "manufacturer": "Rokid",
+  "missing": [
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz"
+  ],
+  "n": 3
+ },
+ {
+  "id": "PAAgbYfc4",
+  "name": "Rokid Glasses",
+  "manufacturer": "Rokid",
+  "missing": [
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "refresh_hz"
+  ],
+  "n": 3
+ },
+ {
+  "id": "y-HjRHyLZ",
+  "name": "Rokid Max",
+  "manufacturer": "Rokid",
+  "missing": [
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 3
+ },
+ {
+  "id": "kQcRu82xv",
+  "name": "Rokid Max 2",
+  "manufacturer": "Rokid",
+  "missing": [
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 3
+ },
+ {
+  "id": "3rjj5keYC",
+  "name": "Rokid Max Pro",
+  "manufacturer": "Rokid",
+  "missing": [
+   "prescription_support",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 3
+ },
+ {
+  "id": "rAxPHOG0_",
+  "name": "TQSKY T1",
+  "manufacturer": "TQSKY",
+  "missing": [
+   "camera",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 3
+ },
+ {
+  "id": "RanJuGgtP",
+  "name": "Viture Beast",
+  "manufacturer": "Viture",
+  "missing": [
+   "fov_horizontal_deg",
+   "fov_vertical_deg",
+   "weight_g"
+  ],
+  "n": 3
+ },
+ {
+  "id": "jjR57q0sj",
+  "name": "Viture One Lite",
+  "manufacturer": "Viture",
+  "missing": [
+   "chipset",
+   "ipd_mm",
+   "prescription_support"
+  ],
+  "n": 3
+ },
+ {
+  "id": "PnnMj9eH3",
+  "name": "Xreal Air 2",
+  "manufacturer": "Xreal",
+  "missing": [
+   "chipset",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 3
+ },
+ {
+  "id": "E7k3-VKas",
+  "name": "Xreal Air 2 Pro",
+  "manufacturer": "Xreal",
+  "missing": [
+   "chipset",
+   "fov_horizontal_deg",
+   "fov_vertical_deg"
+  ],
+  "n": 3
+ }
+]

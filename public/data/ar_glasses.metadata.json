@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-06-02T18:24:03.038Z",
+  "generated_at": "2026-06-10T07:23:59.744Z",
   "source_dataset": "curated_ar_xr_directory_v2",
   "source_page": "https://huskynarr.de/",
-  "records": 151,
-  "ar_records": 122,
-  "xr_records": 29,
-  "manufacturers": 67,
-  "official_shop_links": 147,
+  "records": 208,
+  "ar_records": 144,
+  "xr_records": 64,
+  "manufacturers": 82,
+  "official_shop_links": 204,
   "image_links": 150,
-  "active_models": 114,
-  "discontinued_models": 34,
-  "newest_release": "2026-03-01",
+  "active_models": 141,
+  "discontinued_models": 59,
+  "newest_release": "2026-05-14",
   "oldest_release": "2013-03-01",
   "price_range_usd": {
     "min": 99,
@@ -18,167 +18,167 @@
   },
   "field_coverage": {
     "id": {
-      "filled": 151,
+      "filled": 208,
       "percent": 100
     },
     "short_name": {
-      "filled": 151,
+      "filled": 208,
       "percent": 100
     },
     "name": {
-      "filled": 151,
+      "filled": 208,
       "percent": 100
     },
     "manufacturer": {
-      "filled": 151,
+      "filled": 208,
       "percent": 100
     },
     "image_url": {
       "filled": 150,
-      "percent": 99.3
+      "percent": 72.1
     },
     "official_url": {
-      "filled": 147,
-      "percent": 97.4
+      "filled": 204,
+      "percent": 98.1
     },
     "announced_date": {
-      "filled": 150,
-      "percent": 99.3
+      "filled": 206,
+      "percent": 99
     },
     "release_date": {
-      "filled": 139,
-      "percent": 92.1
+      "filled": 199,
+      "percent": 95.7
     },
     "price_usd": {
-      "filled": 134,
-      "percent": 88.7
+      "filled": 189,
+      "percent": 90.9
     },
     "xr_category": {
-      "filled": 151,
+      "filled": 208,
       "percent": 100
     },
     "active_distribution": {
-      "filled": 151,
+      "filled": 208,
       "percent": 100
     },
     "eol_status": {
-      "filled": 151,
+      "filled": 208,
       "percent": 100
     },
     "eol_date": {
-      "filled": 11,
-      "percent": 7.3
+      "filled": 19,
+      "percent": 9.1
     },
     "lifecycle_notes": {
-      "filled": 151,
+      "filled": 208,
       "percent": 100
     },
     "lifecycle_source": {
-      "filled": 73,
-      "percent": 48.3
+      "filled": 130,
+      "percent": 62.5
     },
     "software": {
-      "filled": 116,
-      "percent": 76.8
+      "filled": 173,
+      "percent": 83.2
     },
     "compute_unit": {
-      "filled": 150,
-      "percent": 99.3
+      "filled": 207,
+      "percent": 99.5
     },
     "display_type": {
-      "filled": 134,
-      "percent": 88.7
+      "filled": 192,
+      "percent": 92.3
     },
     "optics": {
-      "filled": 119,
-      "percent": 78.8
+      "filled": 173,
+      "percent": 83.2
     },
     "fov_horizontal_deg": {
-      "filled": 41,
-      "percent": 27.2
+      "filled": 64,
+      "percent": 30.8
     },
     "fov_vertical_deg": {
-      "filled": 18,
-      "percent": 11.9
+      "filled": 24,
+      "percent": 11.5
     },
     "fov_diagonal_deg": {
-      "filled": 104,
-      "percent": 68.9
+      "filled": 124,
+      "percent": 59.6
     },
     "resolution_per_eye": {
-      "filled": 133,
-      "percent": 88.1
+      "filled": 189,
+      "percent": 90.9
     },
     "refresh_hz": {
-      "filled": 86,
-      "percent": 57
+      "filled": 133,
+      "percent": 63.9
     },
     "weight_g": {
-      "filled": 125,
-      "percent": 82.8
+      "filled": 173,
+      "percent": 83.2
     },
     "tracking": {
-      "filled": 133,
-      "percent": 88.1
+      "filled": 190,
+      "percent": 91.3
     },
     "eye_tracking": {
-      "filled": 148,
-      "percent": 98
+      "filled": 205,
+      "percent": 98.6
     },
     "hand_tracking": {
-      "filled": 148,
-      "percent": 98
+      "filled": 205,
+      "percent": 98.6
     },
     "passthrough": {
-      "filled": 146,
-      "percent": 96.7
+      "filled": 185,
+      "percent": 88.9
     },
     "chipset": {
-      "filled": 118,
-      "percent": 78.1
+      "filled": 157,
+      "percent": 75.5
     },
     "brightness_nits": {
-      "filled": 69,
-      "percent": 45.7
+      "filled": 89,
+      "percent": 42.8
     },
     "connectivity": {
-      "filled": 137,
-      "percent": 90.7
+      "filled": 188,
+      "percent": 90.4
     },
     "audio": {
-      "filled": 113,
-      "percent": 74.8
+      "filled": 174,
+      "percent": 83.7
     },
     "battery": {
-      "filled": 134,
-      "percent": 88.7
+      "filled": 199,
+      "percent": 95.7
     },
     "ipd_mm": {
-      "filled": 72,
-      "percent": 47.7
+      "filled": 91,
+      "percent": 43.8
     },
     "prescription_support": {
-      "filled": 55,
-      "percent": 36.4
+      "filled": 121,
+      "percent": 58.2
     },
     "camera": {
-      "filled": 119,
-      "percent": 78.8
+      "filled": 168,
+      "percent": 80.8
     },
     "slug": {
-      "filled": 151,
+      "filled": 208,
       "percent": 100
     },
     "source_dataset": {
-      "filled": 151,
+      "filled": 208,
       "percent": 100
     },
     "source_page": {
-      "filled": 151,
+      "filled": 208,
       "percent": 100
     },
     "dataset_retrieved_at": {
-      "filled": 151,
+      "filled": 208,
       "percent": 100
     }
   },
