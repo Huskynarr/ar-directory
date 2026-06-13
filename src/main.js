@@ -38,6 +38,58 @@ const app = document.querySelector('#app');
 // Injected by Vite at build time (Europe/Berlin). Empty in non-built contexts.
 const BUILD_TIME = typeof __BUILD_TIME__ !== 'undefined' ? __BUILD_TIME__ : '';
 
+// Windowed page list with ellipsis, e.g. [1, '…', 4, 5, 6, '…', 18].
+const buildPageList = (current, total) => {
+  if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
+  const wanted = [1, total, current, current - 1, current + 1].filter((p) => p >= 1 && p <= total);
+  const sorted = [...new Set(wanted)].sort((a, b) => a - b);
+  const out = [];
+  let prev = 0;
+  for (const p of sorted) {
+    if (p - prev > 1) out.push('…');
+    out.push(p);
+    prev = p;
+  }
+  return out;
+};
+
+const paginationTemplate = (current, total, shownCount, totalCount) => {
+  const countLabel = `<p class="text-sm text-[#a8a29e]">${t(
+    `Seite ${current} von ${total} · ${shownCount} von ${totalCount} Modellen`,
+    `Page ${current} of ${total} · ${shownCount} of ${totalCount} models`,
+  )}</p>`;
+  if (total <= 1) {
+    return `<div class="mt-6 flex justify-center">${countLabel}</div>`;
+  }
+  const baseBtn =
+    'inline-flex h-9 min-w-9 items-center justify-center rounded-lg border px-3 text-sm font-semibold transition';
+  const idle = 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]';
+  const activeCls = 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09]';
+  const disabledCls = 'border-[#44403c] bg-[#1c1917]/50 text-[#57534e] cursor-not-allowed';
+  const numbers = buildPageList(current, total)
+    .map((p) =>
+      p === '…'
+        ? '<span class="inline-flex h-9 min-w-9 items-center justify-center px-1 text-sm text-[#a8a29e]" aria-hidden="true">…</span>'
+        : `<button type="button" data-page="${p}" aria-label="${t(`Seite ${p}`, `Page ${p}`)}"${
+            p === current ? ' aria-current="page"' : ''
+          } class="${baseBtn} ${p === current ? activeCls : idle}">${p}</button>`,
+    )
+    .join('');
+  return `
+    <nav class="mt-6 flex flex-col items-center gap-3" aria-label="${t('Seitennavigation', 'Pagination')}">
+      <div class="flex flex-wrap items-center justify-center gap-1.5">
+        <button type="button" data-page-prev${current <= 1 ? ' disabled' : ''} class="${baseBtn} ${
+          current <= 1 ? disabledCls : idle
+        }">${t('Zurück', 'Prev')}</button>
+        ${numbers}
+        <button type="button" data-page-next${current >= total ? ' disabled' : ''} class="${baseBtn} ${
+          current >= total ? disabledCls : idle
+        }">${t('Weiter', 'Next')}</button>
+      </div>
+      ${countLabel}
+    </nav>`;
+};
+
 const render = () => {
   const queryFocusState = captureQueryFocusState();
   const filterOptions = getFilterOptions();
@@ -106,8 +158,10 @@ const render = () => {
   if (state.cardsPage > maxPage) {
     state.cardsPage = maxPage;
   }
-  const visibleCards = filtered.slice(0, state.cardsPage * state.cardsPageSize);
-  const hasMoreCards = visibleCards.length < filtered.length;
+  const visibleCards = filtered.slice(
+    (state.cardsPage - 1) * state.cardsPageSize,
+    state.cardsPage * state.cardsPageSize,
+  );
   updateDocumentSeoSignals(filtered.length);
   syncUrlWithState();
   const resultsStatusLabel = t(
@@ -432,7 +486,7 @@ const render = () => {
         )}</button>
       </section>
 
-      <section class="mt-4">
+      <section id="results" class="mt-4 scroll-mt-4">
         ${
           state.compareMode
             ? compareModeTemplate(selectedRows)
@@ -466,20 +520,7 @@ const render = () => {
               : state.viewMode === 'cards'
                 ? `
                     <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">${visibleCards.map(cardTemplate).join('')}</div>
-                    <div class="mt-4 flex flex-wrap items-center gap-2">
-                      <p class="text-sm text-[#a8a29e]">${t(
-                        `${visibleCards.length} von ${filtered.length} Modellen angezeigt`,
-                        `${visibleCards.length} of ${filtered.length} models shown`,
-                      )}</p>
-                      ${
-                        hasMoreCards
-                          ? `<button id="load-more-cards" type="button" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(
-                              'Mehr laden',
-                              'Load more',
-                            )}</button>`
-                          : ''
-                      }
-                    </div>
+                    ${paginationTemplate(state.cardsPage, maxPage, visibleCards.length, filtered.length)}
                   `
                 : tableTemplate(filtered)
         }
@@ -684,21 +725,6 @@ const render = () => {
     el.addEventListener('click', () => openDetailModal(el.getAttribute('data-detail-open')));
   });
 
-  // Intersection Observer for infinite scroll (cards view)
-  if (hasMoreCards && state.viewMode === 'cards' && !state.compareMode) {
-    const sentinel = document.querySelector('#load-more-cards');
-    if (sentinel) {
-      const observer = new IntersectionObserver((entries) => {
-        if (entries[0]?.isIntersecting) {
-          observer.disconnect();
-          state.cardsPage += 1;
-          render();
-        }
-      }, { rootMargin: '200px' });
-      observer.observe(sentinel);
-    }
-  }
-
   document.querySelector('#export-csv')?.addEventListener('click', () => exportFilteredCsv(filtered));
   document.querySelector('#share-url')?.addEventListener('click', (event) => {
     copyShareUrl();
@@ -737,10 +763,18 @@ const render = () => {
       setAndRender('showAdvancedFilters', !state.showAdvancedFilters, { resetCardsPage: false }),
     );
 
-  document.querySelector('#load-more-cards')?.addEventListener('click', () => {
-    state.cardsPage += 1;
+  const goToPage = (page) => {
+    const target = Math.min(Math.max(1, page), maxPage);
+    if (target === state.cardsPage) return;
+    state.cardsPage = target;
     render();
+    document.querySelector('#results')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+  document.querySelectorAll('[data-page]').forEach((el) => {
+    el.addEventListener('click', () => goToPage(Number.parseInt(el.getAttribute('data-page'), 10)));
   });
+  document.querySelector('[data-page-prev]')?.addEventListener('click', () => goToPage(state.cardsPage - 1));
+  document.querySelector('[data-page-next]')?.addEventListener('click', () => goToPage(state.cardsPage + 1));
 
   document.querySelector('#toggle-compare-mode')?.addEventListener('click', () => {
     if (!state.selectedIds.length) {

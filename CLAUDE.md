@@ -22,7 +22,7 @@ npm run images:enrich    # Fetch/cache manufacturer product images
 
 ## Architecture
 
-**Modular SPA**: `index.html` → `src/main.js` (thin orchestrator: `render()` loop, event wiring, IntersectionObserver, `init()`) wiring together focused ES modules:
+**Modular SPA**: `index.html` → `src/main.js` (thin orchestrator: `render()` loop, event wiring, `init()`) wiring together focused ES modules:
 - `src/state.js` — central `state` object, constants, theme/language/favorites, localStorage + URL persistence
 - `src/i18n.js` — `t()`, locale/number/currency/date formatting
 - `src/seo.js` — runtime document SEO signal updates; `src/actions.js` — CSV export, share URL
@@ -33,7 +33,7 @@ npm run images:enrich    # Fetch/cache manufacturer product images
 **Data flow**:
 1. `init()` loads CSV from `/data/ar_glasses.csv` via Papa Parse, fetches USD→EUR rate from Frankfurter API, loads favorites/theme/language from localStorage
 2. Centralized `state` object holds all filters, view mode, language, theme, selections, pagination, favorites
-3. `render()` is the core loop: filters rows → sorts → extracts filter options → builds DOM via template literals → attaches event listeners + IntersectionObserver
+3. `render()` is the core loop: filters rows → sorts → extracts filter options → builds DOM via template literals → attaches event listeners
 4. URL params and localStorage keep state persistent across sessions
 
 **Key patterns**:
@@ -46,7 +46,7 @@ npm run images:enrich    # Fetch/cache manufacturer product images
 - Image fallback: generated SVG data URLs with model initials
 - Theme: auto-detects `prefers-color-scheme`, then dark/light via CSS custom properties
 - Keyboard shortcuts: `/` focuses search, `Esc` clears search or closes modal
-- Infinite scroll: IntersectionObserver auto-loads next page of cards
+- Pagination: cards view shows one page at a time (`CARDS_PER_PAGE`) with windowed page controls (`paginationTemplate`); changing page scrolls to the top of `#results` so the footer stays reachable. `cardsPage` persists in the URL.
 - Performance: debounced search (150ms) and numeric inputs (200ms)
 
 **Data pipeline** (`scripts/`):
