@@ -44,9 +44,8 @@
     --chip-text: #f2f6ff;
     --focus-ring: #84cc16;
     background:
-      radial-gradient(circle at 12% 8%, rgba(101, 163, 13, 0.1) 0%, transparent 40%),
-      radial-gradient(circle at 90% 10%, rgba(47, 111, 181, 0.1) 0%, transparent 44%),
-      radial-gradient(circle at 56% 100%, rgba(132, 204, 22, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 12% 8%, rgba(101, 163, 13, 0.06) 0%, transparent 42%),
+      radial-gradient(circle at 90% 10%, rgba(47, 111, 181, 0.06) 0%, transparent 46%),
       linear-gradient(180deg, #0a0f16 0%, #0e141d 45%, #0a0f17 100%);
   }
 
@@ -69,16 +68,16 @@
         rgba(255, 255, 255, 0.08) 260deg,
         rgba(255, 255, 255, 0.14) 360deg
       );
-    opacity: 0.1;
-    filter: blur(80px);
+    opacity: 0.05;
+    filter: blur(90px);
     transform: rotate(-8deg);
   }
 
   body::after {
     background:
-      radial-gradient(circle at 76% 22%, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 34%),
-      radial-gradient(circle at 30% 72%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 28%);
-    opacity: 0.12;
+      radial-gradient(circle at 76% 22%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 34%),
+      radial-gradient(circle at 30% 72%, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 28%);
+    opacity: 0.08;
     filter: blur(48px);
   }
 
@@ -335,15 +334,13 @@
   }
 
   .compact-details {
-    border: 1px solid color-mix(in srgb, var(--glass-border) 82%, transparent);
-    background:
-      linear-gradient(145deg, rgba(39, 52, 74, 0.55) 0%, rgba(23, 34, 48, 0.42) 100%),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0) 65%);
-    backdrop-filter: blur(12px) saturate(145%);
-    -webkit-backdrop-filter: blur(12px) saturate(145%);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.14),
-      0 10px 26px rgba(7, 16, 31, 0.23);
+    border: 1px solid color-mix(in srgb, var(--glass-border) 55%, transparent);
+    background: rgba(255, 255, 255, 0.025);
+    box-shadow: none;
+  }
+
+  body.theme-light .compact-details {
+    background: rgba(20, 40, 80, 0.03);
   }
 
   .compact-details[open] {

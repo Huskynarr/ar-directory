@@ -519,7 +519,7 @@ const render = () => {
                 </div>`
               : state.viewMode === 'cards'
                 ? `
-                    <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">${visibleCards.map(cardTemplate).join('')}</div>
+                    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3 xl:gap-6">${visibleCards.map(cardTemplate).join('')}</div>
                     ${paginationTemplate(state.cardsPage, maxPage, visibleCards.length, filtered.length)}
                   `
                 : tableTemplate(filtered)

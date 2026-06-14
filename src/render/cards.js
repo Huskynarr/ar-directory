@@ -32,7 +32,7 @@ export const cardTemplate = (row) => {
 
   return `
     <article class="panel group overflow-hidden transition duration-200 ease-out hover:-translate-y-0.5 hover:border-[#84cc16]/50 hover:ring-1 hover:ring-[#84cc16]/30 hover:shadow-lg hover:shadow-black/30" data-model-card="${escapeHtml(row.__rowId)}">
-      <div class="relative h-48 cursor-pointer overflow-hidden border-b border-[#44403c] bg-gradient-to-br from-[#1c1917] to-[#1c1917]" data-detail-open="${escapeHtml(row.__rowId)}">
+      <div class="relative h-44 cursor-pointer overflow-hidden border-b border-[#44403c]/60 bg-[#131b26]" data-detail-open="${escapeHtml(row.__rowId)}">
         ${
           image
             ? `<img src="${escapeHtml(image)}" alt="${name}" loading="lazy" class="h-full w-full object-contain p-4 transition duration-300 ease-out group-hover:scale-[1.03] group-hover:brightness-105" />`
@@ -52,8 +52,8 @@ export const cardTemplate = (row) => {
         </div>
         <span class="absolute right-3 top-3 rounded-full border px-2.5 py-1 text-xs font-bold ${categoryTone(row.xr_category)}">${category}</span>
       </div>
-      <div class="space-y-4 p-4">
-        <div class="space-y-1">
+      <div class="space-y-5 p-5">
+        <div class="space-y-1.5">
           <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#a8a29e]">${manufacturer}</p>
           <h2 class="font-semibold text-2xl leading-tight text-[#f5f5f4]"><button type="button" data-detail-open="${escapeHtml(row.__rowId)}" class="text-left underline-offset-4 transition-colors hover:text-[#84cc16] hover:underline focus-visible:text-[#84cc16] focus-visible:underline">${name}</button></h2>
           <p class="text-sm text-[#a8a29e]">${t('Release', 'Release')}: ${escapeHtml(releaseDate)}</p>
@@ -112,7 +112,7 @@ export const cardTemplate = (row) => {
             : ''
         }
 
-        <div class="rounded-2xl border p-3 text-sm ${lifecycleClasses}">
+        <div class="rounded-lg border-l-[3px] py-2 pl-3.5 pr-2 text-sm ${lifecycleClasses}">
           <p class="text-[11px] font-semibold uppercase tracking-[0.12em]">${t('Updates / EOL', 'Updates / EOL')}</p>
           <p class="mt-1 font-semibold">${escapeHtml(compactValue(row.eol_status))}</p>
           ${row.eol_date ? `<p class="mt-1 text-xs">${t('EOL-Datum', 'EOL date')}: ${escapeHtml(eolDate)}</p>` : ''}
