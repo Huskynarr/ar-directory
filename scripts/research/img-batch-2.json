@@ -1,0 +1,380 @@
+[
+ {
+  "id": "kEtY5VQot",
+  "name": "Oculus Go",
+  "manufacturer": "Meta",
+  "official_url": "https://www.meta.com/",
+  "category": "XR"
+ },
+ {
+  "id": "X6EAYuLgx",
+  "name": "Oculus Quest",
+  "manufacturer": "Meta",
+  "official_url": "https://www.meta.com/quest/",
+  "category": "XR"
+ },
+ {
+  "id": "usnhaeS7Z",
+  "name": "Oculus Rift (CV1)",
+  "manufacturer": "Meta",
+  "official_url": "https://www.meta.com/",
+  "category": "XR"
+ },
+ {
+  "id": "rZp7Tqu2W",
+  "name": "Oculus Rift DK2",
+  "manufacturer": "Meta",
+  "official_url": "https://www.meta.com/",
+  "category": "XR"
+ },
+ {
+  "id": "ZnvBY4AB8",
+  "name": "Oculus Rift S",
+  "manufacturer": "Meta",
+  "official_url": "https://www.meta.com/",
+  "category": "XR"
+ },
+ {
+  "id": "mdPBAoL4U",
+  "name": "ODG R-7",
+  "manufacturer": "Osterhout Design Group",
+  "official_url": "https://vrarwiki.com/wiki/R-7_Smartglasses",
+  "category": "AR"
+ },
+ {
+  "id": "qiQEr4cJi",
+  "name": "ODG R-9",
+  "manufacturer": "Osterhout Design Group",
+  "official_url": "https://vrarwiki.com/wiki/R-9_Smartglasses",
+  "category": "AR"
+ },
+ {
+  "id": "3ZdVU3ZJM",
+  "name": "P&C Solution METALENSE",
+  "manufacturer": "P&C Solution",
+  "official_url": "",
+  "category": "AR"
+ },
+ {
+  "id": "rFFKRgeF6",
+  "name": "Pico 4",
+  "manufacturer": "Pico",
+  "official_url": "https://www.picoxr.com/",
+  "category": "XR"
+ },
+ {
+  "id": "QTpNhJ3tM",
+  "name": "Pico 4 Ultra",
+  "manufacturer": "Pico",
+  "official_url": "https://www.picoxr.com/global/products/pico4-ultra",
+  "category": "XR"
+ },
+ {
+  "id": "zmbo0i1g4",
+  "name": "Pico G2 4K",
+  "manufacturer": "Pico",
+  "official_url": "https://www.picoxr.com/",
+  "category": "XR"
+ },
+ {
+  "id": "yFK5BJeLD",
+  "name": "Pico G3",
+  "manufacturer": "Pico",
+  "official_url": "https://www.picoxr.com/global/products/g3",
+  "category": "XR"
+ },
+ {
+  "id": "QvtLKzZ2s",
+  "name": "Pico Neo 2",
+  "manufacturer": "Pico",
+  "official_url": "https://www.picoxr.com/",
+  "category": "XR"
+ },
+ {
+  "id": "Kmnh8mcV9",
+  "name": "Pico Neo 3",
+  "manufacturer": "Pico",
+  "official_url": "https://www.picoxr.com/",
+  "category": "XR"
+ },
+ {
+  "id": "LT3iRRzsa",
+  "name": "Pico Neo 3 Link",
+  "manufacturer": "Pico",
+  "official_url": "https://www.picoxr.com/global/products/neo3-link/specs",
+  "category": "XR"
+ },
+ {
+  "id": "efoG2ry52",
+  "name": "Pimax Dream Air SE",
+  "manufacturer": "Pimax",
+  "official_url": "https://pimax.com/blogs/blogs/pimax-dream-air-se-shipping-now",
+  "category": "XR"
+ },
+ {
+  "id": "oE29W8yJ0",
+  "name": "PlayStation VR",
+  "manufacturer": "Sony Interactive Entertainment",
+  "official_url": "https://www.playstation.com/",
+  "category": "XR"
+ },
+ {
+  "id": "Vbt8ReSXF",
+  "name": "RayNeo Air 1S",
+  "manufacturer": "TCL",
+  "official_url": "https://www.rayneo.com/",
+  "category": "AR"
+ },
+ {
+  "id": "Eu0pBpN3c",
+  "name": "RayNeo Air 2",
+  "manufacturer": "TCL",
+  "official_url": "https://www.rayneo.com/products/rayneo-air-2-xr-glasses",
+  "category": "AR"
+ },
+ {
+  "id": "JACFSYkEs",
+  "name": "RayNeo Air 2s",
+  "manufacturer": "TCL",
+  "official_url": "https://www.rayneo.com/products/rayneo-air_2s",
+  "category": "AR"
+ },
+ {
+  "id": "oZkxPc4X5",
+  "name": "RayNeo Air 3",
+  "manufacturer": "TCL",
+  "official_url": "https://www.rayneo.com/",
+  "category": "AR"
+ },
+ {
+  "id": "ZDtEjwsS5",
+  "name": "RayNeo Air 4",
+  "manufacturer": "TCL",
+  "official_url": "https://www.rayneo.com/",
+  "category": "AR"
+ },
+ {
+  "id": "kI4EYTiv0",
+  "name": "RayNeo Air 4 Pro",
+  "manufacturer": "TCL",
+  "official_url": "https://www.rayneo.com/products/rayneo-air-4-pro-ar-glasses",
+  "category": "AR"
+ },
+ {
+  "id": "0343CHExu",
+  "name": "RayNeo GT Max",
+  "manufacturer": "TCL",
+  "official_url": "https://www.rayneo.com/",
+  "category": "AR"
+ },
+ {
+  "id": "XxfrQXJ8j",
+  "name": "Razer OSVR HDK 2",
+  "manufacturer": "Razer",
+  "official_url": "http://www.osvr.org/hdk2.html",
+  "category": "XR"
+ },
+ {
+  "id": "mjVfG40CU",
+  "name": "Red 6 ATARS",
+  "manufacturer": "Red 6",
+  "official_url": "https://red6ar.com/atars/",
+  "category": "AR"
+ },
+ {
+  "id": "yQcCOZDrB",
+  "name": "Samsung Gear VR (2017)",
+  "manufacturer": "Samsung",
+  "official_url": "https://www.samsung.com/global/galaxy/gear-vr/",
+  "category": "XR"
+ },
+ {
+  "id": "i55EocmJE",
+  "name": "Samsung HMD Odyssey",
+  "manufacturer": "Samsung",
+  "official_url": "https://www.samsung.com/us/computing/hmd/windows-mixed-reality/hmd-odyssey-mixed-reality-headset-xe800zaa-hc1us/",
+  "category": "XR"
+ },
+ {
+  "id": "k4jvLzPHu",
+  "name": "Samsung HMD Odyssey+",
+  "manufacturer": "Samsung",
+  "official_url": "https://www.samsungmobilepress.com/media-assets/samsung_hmd_odyssey_plus",
+  "category": "XR"
+ },
+ {
+  "id": "Mj9oszKGi",
+  "name": "Shiftall MeganeX 8K Mark II",
+  "manufacturer": "Shiftall",
+  "official_url": "https://en.shiftall.net/products/meganex8kmk2",
+  "category": "XR"
+ },
+ {
+  "id": "R0viSMCTs",
+  "name": "Skyworth Pancake 1",
+  "manufacturer": "Skyworth",
+  "official_url": "https://www.skyworthxr.com/",
+  "category": "XR"
+ },
+ {
+  "id": "MjGIuoKW8",
+  "name": "Skyworth PANCAKE 2",
+  "manufacturer": "Skyworth",
+  "official_url": "https://www.skyworthxr.com/",
+  "category": "XR"
+ },
+ {
+  "id": "9zs1bepSY",
+  "name": "Snap Specs",
+  "manufacturer": "Snap Inc",
+  "official_url": "https://www.spectacles.com/",
+  "category": "AR"
+ },
+ {
+  "id": "AtQbA7a2v",
+  "name": "Snap Spectacles 5",
+  "manufacturer": "Snap Inc",
+  "official_url": "https://www.spectacles.com/",
+  "category": "AR"
+ },
+ {
+  "id": "XEgII6hGl",
+  "name": "Sol Reader",
+  "manufacturer": "Sol",
+  "official_url": "https://solreader.com/",
+  "category": "AR"
+ },
+ {
+  "id": "O86z6CxEz",
+  "name": "Sony HMZ-T1",
+  "manufacturer": "Sony",
+  "official_url": "https://www.sony.com/",
+  "category": "XR"
+ },
+ {
+  "id": "znJry7pKl",
+  "name": "Sony SRH-S1 (XYN Headset)",
+  "manufacturer": "Sony",
+  "official_url": "https://www.sony.com/",
+  "category": "XR"
+ },
+ {
+  "id": "OFRrBDscs",
+  "name": "StarVR One",
+  "manufacturer": "StarVR",
+  "official_url": "https://www.starvr.com/",
+  "category": "XR"
+ },
+ {
+  "id": "F4OskUmdX",
+  "name": "Toshiba dynaEdge AR100 Viewer",
+  "manufacturer": "Toshiba (Dynabook)",
+  "official_url": "https://asia.dynabook.com/smart-solutions/dynaedge-ar100/specification.php",
+  "category": "AR"
+ },
+ {
+  "id": "KpeOzmgAg",
+  "name": "Valve Index",
+  "manufacturer": "Valve",
+  "official_url": "https://store.steampowered.com/valveindex",
+  "category": "XR"
+ },
+ {
+  "id": "oDCIYsoJ3",
+  "name": "Valve Steam Frame",
+  "manufacturer": "Valve",
+  "official_url": "https://store.steampowered.com/sale/steamframe",
+  "category": "XR"
+ },
+ {
+  "id": "2bTI4ivJI",
+  "name": "Varjo Aero",
+  "manufacturer": "Varjo",
+  "official_url": "https://varjo.com/products/aero",
+  "category": "XR"
+ },
+ {
+  "id": "5XGUDVfRh",
+  "name": "Varjo VR-1",
+  "manufacturer": "Varjo",
+  "official_url": "https://varjo.com/",
+  "category": "XR"
+ },
+ {
+  "id": "yPnSpo6KA",
+  "name": "Varjo VR-3",
+  "manufacturer": "Varjo",
+  "official_url": "https://varjo.com/products/varjo-vr-3",
+  "category": "XR"
+ },
+ {
+  "id": "EnXGQFwSt",
+  "name": "Varjo XR-1",
+  "manufacturer": "Varjo",
+  "official_url": "https://varjo.com/",
+  "category": "XR"
+ },
+ {
+  "id": "nyBAUkY9t",
+  "name": "Varjo XR-3",
+  "manufacturer": "Varjo",
+  "official_url": "https://varjo.com/products/varjo-xr-3",
+  "category": "XR"
+ },
+ {
+  "id": "7VzhRVXhG",
+  "name": "Vivo Vision Discovery Edition",
+  "manufacturer": "Vivo",
+  "official_url": "https://www.vivo.com/",
+  "category": "XR"
+ },
+ {
+  "id": "74ZoZuHEa",
+  "name": "VRgineers XTAL 3",
+  "manufacturer": "VRgineers",
+  "official_url": "https://vrgineers.com/xtal-3-vr-virtual-reality-headset/",
+  "category": "XR"
+ },
+ {
+  "id": "j3ogdah5f",
+  "name": "Vuzix M300",
+  "manufacturer": "Vuzix",
+  "official_url": "https://www.vuzix.com/Products/m300-smart-glasses",
+  "category": "AR"
+ },
+ {
+  "id": "a8rSzeAu8",
+  "name": "Vuzix M300XL",
+  "manufacturer": "Vuzix",
+  "official_url": "https://www.vuzix.com/Products/m300xl-smart-glasses",
+  "category": "AR"
+ },
+ {
+  "id": "OBQXxPRQP",
+  "name": "Vuzix Z100",
+  "manufacturer": "Vuzix",
+  "official_url": "https://www.vuzix.com/products/z100-smart-glasses",
+  "category": "AR"
+ },
+ {
+  "id": "1adjWwRkv",
+  "name": "X by Xreal a01",
+  "manufacturer": "Xreal",
+  "official_url": "https://tutorials.xreal.com/docs/glasses/xbxa01/",
+  "category": "AR"
+ },
+ {
+  "id": "YVEMCxt0s",
+  "name": "YVR 1",
+  "manufacturer": "YVR",
+  "official_url": "https://www.yvr.cn/",
+  "category": "XR"
+ },
+ {
+  "id": "GdG76cFEW",
+  "name": "YVR 2",
+  "manufacturer": "YVR",
+  "official_url": "https://www.yvr.cn/",
+  "category": "XR"
+ }
+]

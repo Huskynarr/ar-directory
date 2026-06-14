@@ -1,0 +1,797 @@
+[
+ {
+  "id": "BhXHG0n1d",
+  "name": "Xreal Eye",
+  "manufacturer": "Xreal",
+  "official_url": "https://www.xreal.com/one-pro",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "YVEMCxt0s",
+  "name": "YVR 1",
+  "manufacturer": "YVR",
+  "official_url": "https://www.yvr.cn/",
+  "missing": [
+   "price_usd",
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "CMlHLhpbt",
+  "name": "Alibaba Quark AI Glasses S1",
+  "manufacturer": "Alibaba",
+  "official_url": "https://www.alibabacloud.com/blog/alibaba-launches-new-quark-ai-glasses-series-in-china-deeply-integrated-with-qwen_602717",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "ipd_mm",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "brzlBaebm",
+  "name": "Bigscreen Beyond",
+  "manufacturer": "Bigscreen",
+  "official_url": "https://store.bigscreenvr.com/products/bigscreen-beyond",
+  "missing": [
+   "fov_diagonal_deg",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "audio",
+   "connectivity"
+  ]
+ },
+ {
+  "id": "YR7b7p4DU",
+  "name": "Cosmo Vision",
+  "manufacturer": "Cosmo Connected",
+  "official_url": "https://cosmoconnected.com/en/products-bike-scooter/cosmo-vision",
+  "missing": [
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "ipd_mm",
+   "chipset",
+   "audio",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "ymrfmSxZE",
+  "name": "DAQRI Smart Glasses",
+  "manufacturer": "DAQRI",
+  "official_url": "https://en.wikipedia.org/wiki/Daqri",
+  "missing": [
+   "fov_horizontal_deg",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "Jleru7hdi",
+  "name": "DPVR E4",
+  "manufacturer": "DPVR",
+  "official_url": "https://www.dpvr.com/en/product/dpvr-e4-pc-virtual-reality-headset/",
+  "missing": [
+   "fov_horizontal_deg",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "GlONfBjEP",
+  "name": "Dream Glass 4K",
+  "manufacturer": "DreamWorld",
+  "official_url": "https://www.dreamworldvision.com/dream-glass-4k-4k-plus",
+  "missing": [
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "optics",
+   "display_type"
+  ]
+ },
+ {
+  "id": "GgaK5c41-",
+  "name": "Dream Glass 4K Plus",
+  "manufacturer": "DreamWorld",
+  "official_url": "https://www.dreamworldvision.com/dream-glass-4k-4k-plus",
+  "missing": [
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "optics",
+   "display_type"
+  ]
+ },
+ {
+  "id": "EV601vi66",
+  "name": "Dream Glass Lead Plus",
+  "manufacturer": "DreamWorld",
+  "official_url": "https://www.dreamworldvision.com/lead-lead-pro",
+  "missing": [
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "optics",
+   "display_type"
+  ]
+ },
+ {
+  "id": "-yaNtlMz9",
+  "name": "Dream Glass Lead Pro",
+  "manufacturer": "DreamWorld",
+  "official_url": "https://www.dreamworldvision.com/lead-lead-pro",
+  "missing": [
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "optics",
+   "display_type"
+  ]
+ },
+ {
+  "id": "legacy-epsonmoveriobt-200",
+  "name": "Epson Moverio BT-200",
+  "manufacturer": "Epson",
+  "official_url": "https://epson.com/For-Work/Wearables/Smart-Glasses/c/w420",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "GDAwFX5CU",
+  "name": "Even Realities G2",
+  "manufacturer": "Even Realities",
+  "official_url": "https://www.evenrealities.com/g2",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "ipd_mm",
+   "chipset",
+   "audio"
+  ]
+ },
+ {
+  "id": "HfZ2Dqm1q",
+  "name": "Guangli Holoswim 2",
+  "manufacturer": "Guangli",
+  "official_url": "https://www.kickstarter.com/projects/holoswim/holoswim-2-ar-smart-swim-goggles/",
+  "missing": [
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "QAvnJ3JzH",
+  "name": "Halliday",
+  "manufacturer": "Halliday",
+  "official_url": "https://hallidayglobal.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "brightness_nits",
+   "chipset"
+  ]
+ },
+ {
+  "id": "HZfEHuVOB",
+  "name": "HP Reverb G2",
+  "manufacturer": "HP",
+  "official_url": "https://support.hp.com/us-en/product/product-specs/hp-reverb-g2-virtual-reality-headset/33835976",
+  "missing": [
+   "fov_horizontal_deg",
+   "weight_g",
+   "brightness_nits",
+   "chipset",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "DwNDxwEXq",
+  "name": "HTC Vive Flow",
+  "manufacturer": "HTC",
+  "official_url": "https://www.vive.com/us/product/vive-flow/overview/",
+  "missing": [
+   "fov_diagonal_deg",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "audio",
+   "connectivity"
+  ]
+ },
+ {
+  "id": "SnuFhVAg3",
+  "name": "INAIR 2 Pro",
+  "manufacturer": "INAIR",
+  "official_url": "https://inairspace.com/products/inair-2-pro-ar-glass",
+  "missing": [
+   "price_usd",
+   "fov_horizontal_deg",
+   "weight_g",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "enBOnFSmq",
+  "name": "INAIR Glasses",
+  "manufacturer": "INAIR",
+  "official_url": "https://inairspace.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "qIft0kA6s",
+  "name": "iQIYI Qiyu 3",
+  "manufacturer": "iQIYI",
+  "official_url": "https://dev-qiyu.iqiyi.com/",
+  "missing": [
+   "price_usd",
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "weight_g",
+   "brightness_nits",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "WeyR55HY1",
+  "name": "iQIYI Qiyu Dream",
+  "manufacturer": "iQIYI",
+  "official_url": "https://dev-qiyu.iqiyi.com/",
+  "missing": [
+   "price_usd",
+   "fov_horizontal_deg",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "4j3YZdQIM",
+  "name": "Iristick G3",
+  "manufacturer": "Iristick",
+  "official_url": "https://shop.iristick.com/products/iristick-g3",
+  "missing": [
+   "release_date",
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "ipd_mm",
+   "optics"
+  ]
+ },
+ {
+  "id": "pEEE5EDVo",
+  "name": "Lenovo Glasses T1",
+  "manufacturer": "Lenovo",
+  "official_url": "https://news.lenovo.com/pressroom/press-releases/glasses-t1-wearable-display-for-gaming-streaming-privacy-on-the-go/",
+  "missing": [
+   "price_usd",
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "brightness_nits",
+   "ipd_mm",
+   "optics"
+  ]
+ },
+ {
+  "id": "cgXP6ZeWn",
+  "name": "Lenovo ThinkReality A6",
+  "manufacturer": "Lenovo",
+  "official_url": "https://www.tomshardware.com/news/lenovo-thinkreality-a6-ar-headset-specs,39329.html",
+  "missing": [
+   "price_usd",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "bYDUHLwEV",
+  "name": "Meizu StarV Air2",
+  "manufacturer": "Meizu",
+  "official_url": "https://www.meizu.com/global/product/starv-air2",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "ipd_mm",
+   "chipset"
+  ]
+ },
+ {
+  "id": "vktjm1mHt",
+  "name": "Nolo VR Glass",
+  "manufacturer": "Nolo",
+  "official_url": "https://www.nolovr.com/",
+  "missing": [
+   "price_usd",
+   "release_date",
+   "fov_horizontal_deg",
+   "weight_g",
+   "brightness_nits",
+   "display_type"
+  ]
+ },
+ {
+  "id": "kEtY5VQot",
+  "name": "Oculus Go",
+  "manufacturer": "Meta",
+  "official_url": "https://www.meta.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "brightness_nits",
+   "ipd_mm",
+   "audio",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "mdPBAoL4U",
+  "name": "ODG R-7",
+  "manufacturer": "Osterhout Design Group",
+  "official_url": "https://vrarwiki.com/wiki/R-7_Smartglasses",
+  "missing": [
+   "fov_horizontal_deg",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "qiQEr4cJi",
+  "name": "ODG R-9",
+  "manufacturer": "Osterhout Design Group",
+  "official_url": "https://vrarwiki.com/wiki/R-9_Smartglasses",
+  "missing": [
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "oZkxPc4X5",
+  "name": "RayNeo Air 3",
+  "manufacturer": "TCL",
+  "official_url": "https://www.rayneo.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset"
+  ]
+ },
+ {
+  "id": "0343CHExu",
+  "name": "RayNeo GT Max",
+  "manufacturer": "TCL",
+  "official_url": "https://www.rayneo.com/",
+  "missing": [
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "WCyEdkzUk",
+  "name": "Rokid Glass 2",
+  "manufacturer": "Rokid",
+  "official_url": "https://www.rokid.com/en/rokid-glass-2/",
+  "missing": [
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "display_type"
+  ]
+ },
+ {
+  "id": "o1Kzyd1z_",
+  "name": "Shadow Creator Action One",
+  "manufacturer": "Shadow Creator",
+  "official_url": "https://www.shadowcreator.com/actionone/actionone.html",
+  "missing": [
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "oq9fGnG34",
+  "name": "Sharge Loomos",
+  "manufacturer": "Sharge",
+  "official_url": "https://loomos.ai/",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "OFRrBDscs",
+  "name": "StarVR One",
+  "manufacturer": "StarVR",
+  "official_url": "https://www.starvr.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "2bTI4ivJI",
+  "name": "Varjo Aero",
+  "manufacturer": "Varjo",
+  "official_url": "https://varjo.com/products/aero",
+  "missing": [
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "audio",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "7VzhRVXhG",
+  "name": "Vivo Vision Discovery Edition",
+  "manufacturer": "Vivo",
+  "official_url": "https://www.vivo.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "74ZoZuHEa",
+  "name": "VRgineers XTAL 3",
+  "manufacturer": "VRgineers",
+  "official_url": "https://vrgineers.com/xtal-3-vr-virtual-reality-headset/",
+  "missing": [
+   "fov_diagonal_deg",
+   "weight_g",
+   "brightness_nits",
+   "chipset",
+   "audio",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "rR39x5VXi",
+  "name": "Ximmerse Rhino X Pro",
+  "manufacturer": "Ximmerse",
+  "official_url": "https://www.ximmerse.com/RhinoXPro",
+  "missing": [
+   "fov_diagonal_deg",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "audio",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "CgySYMXLq",
+  "name": "3Glasses Blubur S1",
+  "manufacturer": "3Glasses",
+  "official_url": "https://www.3glasses.com/en/product/productS1.html#page1",
+  "missing": [
+   "fov_diagonal_deg",
+   "weight_g",
+   "brightness_nits",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "MFKzu5lwb",
+  "name": "3Glasses Blubur S2",
+  "manufacturer": "3Glasses",
+  "official_url": "https://www.3glasses.com/en/product/productS2.html",
+  "missing": [
+   "fov_diagonal_deg",
+   "weight_g",
+   "brightness_nits",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "Nn4SRTGIQ",
+  "name": "Acer AH101",
+  "manufacturer": "Acer",
+  "official_url": "https://www.acer.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "Mpz7ENfNA",
+  "name": "ARknovv A1",
+  "manufacturer": "Gyges Labs",
+  "official_url": "https://gygeslabs.com/",
+  "missing": [
+   "fov_horizontal_deg",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "PqpuQHG3T",
+  "name": "Dell Visor",
+  "manufacturer": "Dell",
+  "official_url": "https://www.dell.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "hPA8JixLI",
+  "name": "Dream Glass Flow",
+  "manufacturer": "DreamWorld",
+  "official_url": "https://www.dreamworldvision.com/",
+  "missing": [
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "optics"
+  ]
+ },
+ {
+  "id": "Z1gjavg5l",
+  "name": "Engo 2",
+  "manufacturer": "Engo Eyewear",
+  "official_url": "https://engoeyewear.com/products/engo-2",
+  "missing": [
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "hMIl1sAzP",
+  "name": "Engo Eyewear",
+  "manufacturer": "Engo Eyewear",
+  "official_url": "https://us.engoeyewear.com/products/engo-eyewear",
+  "missing": [
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "Wmqx-AT6q",
+  "name": "Epson Moverio BT-40",
+  "manufacturer": "Epson",
+  "official_url": "https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-40-Smart-Glasses-with-USB-Type-C-Connectivity-/p/V11H969020",
+  "missing": [
+   "fov_horizontal_deg",
+   "brightness_nits",
+   "ipd_mm",
+   "audio",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "aLXkJNTX8",
+  "name": "FOVE 0",
+  "manufacturer": "FOVE",
+  "official_url": "https://www.getfove.com/",
+  "missing": [
+   "fov_horizontal_deg",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "EnqtMtA05",
+  "name": "Google Glass Enterprise Edition 2",
+  "manufacturer": "Google",
+  "official_url": "https://www.google.com/glass/start/",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm"
+  ]
+ },
+ {
+  "id": "HDAcu5kC4",
+  "name": "Google Glass Explorer Edition",
+  "manufacturer": "Google",
+  "official_url": "https://www.google.com/glass/start/",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm"
+  ]
+ },
+ {
+  "id": "stQj142Dq",
+  "name": "Honor Vision Glass",
+  "manufacturer": "Honor",
+  "official_url": "https://www.honor.com/cn/wearables/honor-vision-glass/",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "ipd_mm",
+   "chipset"
+  ]
+ },
+ {
+  "id": "wJVRRflMf",
+  "name": "INMO Air",
+  "manufacturer": "INMO",
+  "official_url": "https://www.inmoglass.com/",
+  "missing": [
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "6z7r29ojZ",
+  "name": "Julbo EVAD-1",
+  "manufacturer": "Julbo",
+  "official_url": "https://www.julbo.com/en_us/evad-1",
+  "missing": [
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "odFxunHTf",
+  "name": "LAWK ONE",
+  "manufacturer": "LAWK",
+  "official_url": "https://global.lawaken.com/products/lawk-one-ar-glasses",
+  "missing": [
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "PH9qawOBH",
+  "name": "Leion Hey",
+  "manufacturer": "LLVision",
+  "official_url": "https://leion.glass/",
+  "missing": [
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "ipd_mm",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "LU3PGDM40",
+  "name": "Lenovo Explorer",
+  "manufacturer": "Lenovo",
+  "official_url": "https://www.lenovo.com/",
+  "missing": [
+   "fov_horizontal_deg",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "rfwT9GHfQ",
+  "name": "Lenovo Legion Glasses Gen 2",
+  "manufacturer": "Lenovo",
+  "official_url": "https://www.lenovo.com/us/en/p/accessories-and-software/vr-headsets/vr-headsets_smart-glasses/gy21r10236",
+  "missing": [
+   "fov_horizontal_deg",
+   "ipd_mm",
+   "chipset",
+   "prescription_support",
+   "optics"
+  ]
+ }
+]

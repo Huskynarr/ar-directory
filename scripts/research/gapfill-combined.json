@@ -1,0 +1,1524 @@
+{
+ "enriched": [
+  {
+   "id": "iA6f0pVBg",
+   "name": "Augmedics xvision Spine System",
+   "changes": {
+    "prescription_support": "Unklar"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://augmedics.com/xvision/",
+    "https://www.medicalexpo.com/prod/augmedics/product-4579039-1105659.html"
+   ]
+  },
+  {
+   "id": "K8QDUQxOu",
+   "name": "Form Smart Swim 2",
+   "changes": {
+    "optics": "Waveguide"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.formswim.com/products/smart-swim-2-goggles"
+   ]
+  },
+  {
+   "id": "BLXT2V2lq",
+   "name": "Captify Pro",
+   "changes": {
+    "fov_diagonal_deg": "30",
+    "resolution_per_eye": "640x480",
+    "optics": "Waveguide",
+    "display_type": "Micro LED",
+    "brightness_nits": "1500"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://captify.glass/pages/specifications",
+    "https://captify.glass/products/captify-pro"
+   ]
+  },
+  {
+   "id": "kMS1N5axn",
+   "name": "Fujitsu Ubiquitousware Head Mounted Display",
+   "changes": {
+    "weight_g": "105"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.fujitsu.com/global/about/resources/news/press-releases/2015/0511-02.html",
+    "https://www.fujitsu.com/us/Images/FAI-Ubiquitousware-HMD-datasheet.pdf"
+   ]
+  },
+  {
+   "id": "AtQbA7a2v",
+   "name": "Snap Spectacles 5",
+   "changes": {
+    "connectivity": "Wi-Fi 6, Bluetooth, GPS/GNSS",
+    "audio": "Open-ear Stereo"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://newsroom.snap.com/sps-2024-spectacles-snapos",
+    "https://www.uploadvr.com/snap-spectacles-5-ar/"
+   ]
+  },
+  {
+   "id": "Aq7tdhseW",
+   "name": "Xreal Project Aura",
+   "changes": {
+    "fov_horizontal_deg": "70",
+    "release_date": "2026"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://roadtovr.com/xreal-aura-ar-glasses-android-xr-hands-on-preview/",
+    "https://9to5google.com/2026/05/19/xreal-project-aura-android-xr-developers-2026-launch/"
+   ]
+  },
+  {
+   "id": "pOfzEGXDw",
+   "name": "XYZ Atom",
+   "changes": {
+    "fov_horizontal_deg": "40"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.xrtoday.com/augmented-reality/xyz-reality-atom-review-a-leading-ar-headset/",
+    "https://www.xyzreality.com/atom"
+   ]
+  },
+  {
+   "id": "95D3X6CjE",
+   "name": "HTC Vive Cosmos",
+   "changes": {
+    "weight_g": "702",
+    "audio": "Stereo (integrierte Kopfhoerer, abnehmbar)",
+    "connectivity": "USB-C 3.0, DisplayPort 1.2"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/htcvivecosmos",
+    "https://www.vive.com/us/product/vive-cosmos/specs/"
+   ]
+  },
+  {
+   "id": "qGCzW5DOo",
+   "name": "HTC Vive Pro",
+   "changes": {
+    "weight_g": "555",
+    "connectivity": "USB 3.0, DisplayPort 1.2, Bluetooth"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/htcvivepro"
+   ]
+  },
+  {
+   "id": "XB6FPwK6G",
+   "name": "HTC Vive Pro 2",
+   "changes": {
+    "fov_diagonal_deg": "120",
+    "audio": "Hi-Res Stereo (integrierte Kopfhoerer)",
+    "connectivity": "USB 3.0, DisplayPort 1.2"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/htcvivepro2",
+    "https://www.uploadvr.com/htc-vive-pro-2-full-specs/"
+   ]
+  },
+  {
+   "id": "LHMPSIx5Q",
+   "name": "Mentra Mach1",
+   "changes": {
+    "optics": "Waveguide",
+    "display_type": "Micro LED"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://shop.mentra.glass/products/mach1-devkit-display-glasses",
+    "https://www.digitaltrends.com/phones/exciting-new-software-wants-to-be-the-android-of-smartglasses/"
+   ]
+  },
+  {
+   "id": "MjGIuoKW8",
+   "name": "Skyworth PANCAKE 2",
+   "changes": {
+    "display_type": "Micro-OLED",
+    "optics": "Pancake"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.gizmochina.com/2024/01/11/skyworth-xr-mr-pancake-2-headset/",
+    "https://www.xrom.in/post/skyworth-pancake-2-set-to-make-a-grand-debut-at-ces-2024"
+   ]
+  },
+  {
+   "id": "XEgII6hGl",
+   "name": "Sol Reader",
+   "changes": {
+    "resolution_per_eye": "256x256",
+    "display_type": "E Ink",
+    "optics": "Lens (Fixed-focus, Dioptrieneinstellung)",
+    "prescription_support": "Ja (Dioptrieneinstellung)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://solreader.com/products/sol-reader",
+    "https://goodereader.com/blog/tablet-slates/sol-reader-your-own-private-reading-aid-a-review"
+   ]
+  },
+  {
+   "id": "F4OskUmdX",
+   "name": "Toshiba dynaEdge AR100 Viewer",
+   "changes": {
+    "weight_g": "47",
+    "resolution_per_eye": "640x360",
+    "connectivity": "USB-C"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://asia.dynabook.com/smart-solutions/dynaedge-ar100/specification.php",
+    "https://clement.aniwaa.com/product/vr-ar/toshiba-dynaedge-ar100-viewer/"
+   ]
+  },
+  {
+   "id": "nyBAUkY9t",
+   "name": "Varjo XR-3",
+   "changes": {
+    "weight_g": "594",
+    "audio": "3.5mm Klinkenanschluss (Audio ueber Adapter)",
+    "connectivity": "2x DisplayPort, 2x USB-A 3.0 (PC-tethered)",
+    "optics": "Aspheric (Bionic Display, Micro-OLED + LCD)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://varjo.com/products/varjo-xr-3",
+    "https://vr-compare.com/headset/varjoxr-3"
+   ]
+  },
+  {
+   "id": "4fhEoK1p8",
+   "name": "Acer GI0 AI Glasses",
+   "changes": {
+    "camera": "12 MP (1080p/30fps)",
+    "connectivity": "Wi-Fi 5, Bluetooth 5.0"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.acer.com/acer-ai-glasses-gi0",
+    "https://www.fonearena.com/blog/483955/acer-ar-vision-gr0-gi0-ai-smart-glasses-price-features.html"
+   ]
+  },
+  {
+   "id": "TV7CiCh26",
+   "name": "Atheer AiR Glasses",
+   "changes": {
+    "fov_horizontal_deg": "50",
+    "resolution_per_eye": "1024x768"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vrarwiki.com/wiki/Atheer_AiR",
+    "https://www.ireviews.com/review/atheer-air-glasses"
+   ]
+  },
+  {
+   "id": "4fWI0Wuls",
+   "name": "Focals by North",
+   "changes": {
+    "fov_diagonal_deg": "15",
+    "resolution_per_eye": "110x110",
+    "refresh_hz": "",
+    "weight_g": "68",
+    "audio": "Mono Lautsprecher (rechter Buegel)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vrlitic.com/north-focals/",
+    "https://www.tomshardware.com/reviews/north-focals-smart-glasses-ar,5968.html"
+   ]
+  },
+  {
+   "id": "ZkO_SfqaC",
+   "name": "Guangli Holoswim",
+   "changes": {
+    "resolution_per_eye": "128x64",
+    "optics": "Waveguide"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.holoswim.com/",
+    "https://holosport.ai/products/holoswim-2s-smart-swim-goggles"
+   ]
+  },
+  {
+   "id": "RKSpNuMY0",
+   "name": "HTC Vive Focus 3",
+   "changes": {
+    "fov_diagonal_deg": "120",
+    "audio": "Dual-Driver Lautsprecher + 3.5mm Klinke",
+    "connectivity": "Wi-Fi 6/6E, Bluetooth 5.2, 2x USB-C 3.2",
+    "optics": "Fresnel"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.vive.com/us/product/vive-focus3/specs/",
+    "https://www.uploadvr.com/vive-focus-3-specs/"
+   ]
+  },
+  {
+   "id": "DXHyJcE9A",
+   "name": "Meizu MYVU",
+   "changes": {
+    "resolution_per_eye": "1280x480",
+    "brightness_nits": "2000",
+    "optics": "Waveguide (Resin)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.microled-info.com/meizu-announces-microled-microdisplays-powered-myvu-discovery-ar-glasses",
+    "https://mikeshouts.com/meizu-myvu-augmented-reality-smart-glasses/"
+   ]
+  },
+  {
+   "id": "cEsHUSt3q",
+   "name": "Meizu MYVU Discovery",
+   "changes": {
+    "resolution_per_eye": "640x480",
+    "optics": "Waveguide (Resin)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.microled-info.com/meizu-announces-microled-microdisplays-powered-myvu-discovery-ar-glasses",
+    "https://www.gizmochina.com/2023/12/04/meizu-myvu-discovery-ar-glasses-impressive-precision-unveiled-china/"
+   ]
+  },
+  {
+   "id": "NK2ZBl7SV",
+   "name": "Solos AirGo Vision",
+   "changes": {
+    "camera": "16 MP (1080p Video)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://solosglasses.com/products/solos-airgo-vision",
+    "https://www.androidcentral.com/wearables/the-solos-airgo-vision-ai-smart-glasses-are-finally-here-to-challenge-ray-ban-meta"
+   ]
+  },
+  {
+   "id": "znJry7pKl",
+   "name": "Sony SRH-S1 (XYN Headset)",
+   "changes": {
+    "audio": "Integrierte Lautsprecher",
+    "optics": "Pancake"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.roadtovr.com/sony-srh-s1-mr-headset-hands-on-awe-2024/",
+    "https://vr-compare.com/headset/sonysrh-s1"
+   ]
+  },
+  {
+   "id": "a8rSzeAu8",
+   "name": "Vuzix M300XL",
+   "changes": {
+    "price_usd": "1499",
+    "fov_horizontal_deg": "16.7",
+    "connectivity": "Wi-Fi, Bluetooth, USB-C, GPS"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.vuzix.com/Products/m300xl-smart-glasses",
+    "https://www.prnewswire.com/news-releases/vuzix-announces-commercial-availability-of-the-m300xl-smart-glasses-for-enterprise-300760131.html"
+   ]
+  },
+  {
+   "id": "lYyGNGICW",
+   "name": "arpara Tethered 5K",
+   "changes": {
+    "fov_diagonal_deg": "95",
+    "ipd_mm": "56-72",
+    "audio": "Directional Speaker + 3.5mm Klinke",
+    "optics": "Pancake",
+    "prescription_support": "Ja (Dioptrieneinstellung -5.00D bis +1.00D)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.arparaland.com/pages/arpara-tethered-5k",
+    "https://omdia.tech.informa.com/blogs/2023/may/the-arpara-tethered-5k-features-oledos-displays-from-seeya"
+   ]
+  },
+  {
+   "id": "eANw0hTFv",
+   "name": "Campfire Headset",
+   "changes": {
+    "resolution_per_eye": "1280x1440",
+    "weight_g": "500",
+    "optics": "Mirror (Birdbath-aehnlich)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/campfireheadset",
+    "https://mixed-news.com/en/campfire-brings-3d-collaboration-with-ar-headsets-to-large-spaces/"
+   ]
+  },
+  {
+   "id": "b1AgJZABS",
+   "name": "Epson Moverio BT-45C",
+   "changes": {
+    "fov_horizontal_deg": "34",
+    "audio": "Integrierter Lautsprecher + Mini-Klinke",
+    "prescription_support": "Unklar"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-45C-AR-Smart-Glasses/p/V11H970020",
+    "https://mediaserver.goepson.com/ImConvServlet/imconv/6ebac924875302db6e05190598883e68c6691584/original?assetDescr=Moverio-BT-45C-Smart-Glasses-Specification-Sheet-CPD-62587-Final.pdf"
+   ]
+  },
+  {
+   "id": "U36ZvMkGN",
+   "name": "Everysight Maverick AI Pro",
+   "changes": {
+    "fov_diagonal_deg": "28",
+    "chipset": "Alif Ensemble E7",
+    "connectivity": "Bluetooth (Smartphone-tethered)",
+    "prescription_support": "Ja"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://letsdatascience.com/news/everysight-debuts-maverick-ai-pro-smart-glasses-889a917d",
+    "https://alifsemi.com/edge-ai-meets-wearables-inside-everysight-maverick-smart-glasses-powered-by-alif-ensemble-e7/"
+   ]
+  },
+  {
+   "id": "2zF79J1mn",
+   "name": "HTC Vive",
+   "changes": {
+    "audio": "Integrierte Kopfhoerer (3D-Audio)",
+    "connectivity": "HDMI, USB 3.0, DisplayPort 1.2"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/htcvive",
+    "https://www.sizescreens.com/htc-vive-specifications/"
+   ]
+  },
+  {
+   "id": "cQJtgHGeO",
+   "name": "Lenovo Legion Glasses",
+   "changes": {
+    "fov_diagonal_deg": "60",
+    "brightness_nits": "270",
+    "display_type": "Micro-OLED"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.oled-info.com/lenovo-legion-glasses",
+    "https://pokde.net/system/pc/display/lenovo-legion-glasses-ifa-2023"
+   ]
+  },
+  {
+   "id": "kKQIRlqM6",
+   "name": "Lenovo ThinkReality VRX",
+   "changes": {
+    "fov_diagonal_deg": "95",
+    "weight_g": "800",
+    "audio": "Integrierte Stereo-Lautsprecher + 3.5mm Klinke",
+    "connectivity": "USB-C, Wi-Fi"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/lenovothinkrealityvrx",
+    "https://psref.lenovo.com/syspool/Sys/PDF/ThinkReality/ThinkReality_VRX/ThinkReality_VRX_Spec.pdf"
+   ]
+  },
+  {
+   "id": "KdZOqV1Ev",
+   "name": "MAD Gaze Vader",
+   "changes": {
+    "fov_horizontal_deg": "45",
+    "display_type": "OLED"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/madgazevader",
+    "https://www.wareable.com/ar/mad-gaze-vr-headset-before-2020-340"
+   ]
+  },
+  {
+   "id": "LQ5o9LAg5",
+   "name": "Meizu StarV View",
+   "changes": {
+    "fov_diagonal_deg": "43.5",
+    "resolution_per_eye": "1920x1080",
+    "weight_g": "74",
+    "brightness_nits": "700"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://m.meizu.com/global/product/starv-view/specs",
+    "https://www.oled-info.com/meizu-starv-view"
+   ]
+  },
+  {
+   "id": "X6EAYuLgx",
+   "name": "Oculus Quest",
+   "changes": {
+    "fov_horizontal_deg": "93",
+    "audio": "Integriertes 3D-Positional-Audio + 3.5mm Klinke",
+    "connectivity": "USB-C (Oculus Link), Wi-Fi, Bluetooth",
+    "optics": "Fresnel"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/oculusquest",
+    "https://vrarwiki.com/wiki/Oculus_Quest"
+   ]
+  },
+  {
+   "id": "ZnvBY4AB8",
+   "name": "Oculus Rift S",
+   "changes": {
+    "connectivity": "DisplayPort 1.2, USB 3.0",
+    "optics": "Fresnel"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/oculusrifts",
+    "https://en.wikipedia.org/wiki/Oculus_Rift_S"
+   ]
+  },
+  {
+   "id": "LT3iRRzsa",
+   "name": "Pico Neo 3 Link",
+   "changes": {
+    "fov_horizontal_deg": "98",
+    "weight_g": "620",
+    "audio": "Integrierte Lautsprecher + Dual-Mikrofon"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.picoxr.com/global/products/neo3-link/specs",
+    "https://vr-compare.com/headset/piconeo3link"
+   ]
+  },
+  {
+   "id": "oE29W8yJ0",
+   "name": "PlayStation VR",
+   "changes": {
+    "connectivity": "HDMI, USB (ueber Prozessoreinheit)",
+    "optics": "Aspheric"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/playstationvr",
+    "https://www.playstation.com/en-us/ps-vr/tech-specs/"
+   ]
+  },
+  {
+   "id": "Vbt8ReSXF",
+   "name": "RayNeo Air 1S",
+   "changes": {
+    "fov_diagonal_deg": "46",
+    "refresh_hz": "120",
+    "brightness_nits": "600",
+    "display_type": "Micro-OLED"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.rayneo.com/products/rayneo-air_2s",
+    "https://www.rayneo.com/collections/air-series"
+   ]
+  },
+  {
+   "id": "XxfrQXJ8j",
+   "name": "Razer OSVR HDK 2",
+   "changes": {
+    "fov_horizontal_deg": "110",
+    "optics": "Aspheric (SLR-grade)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/razerosvrhdk2",
+    "https://press.razer.com/product-news/osvr-launches-the-hdk-2-an-open-source-2160-x-1200-dual-display-vr-headset-in-the-asia-pacific-region/"
+   ]
+  },
+  {
+   "id": "oDCIYsoJ3",
+   "name": "Valve Steam Frame",
+   "changes": {
+    "audio": "Dual-Driver Lautsprecher pro Seite + Dual-Mikrofon"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://roadtovr.com/valve-steam-frame-release-date-price-specs/",
+    "https://en.wikipedia.org/wiki/Steam_Frame"
+   ]
+  },
+  {
+   "id": "5XGUDVfRh",
+   "name": "Varjo VR-1",
+   "changes": {
+    "optics": "Aspheric (Bionic Display, Micro-OLED + AMOLED)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/varjovr-1",
+    "https://varjo.com/press-release/varjo-announces-vr-1-worlds-first-human-eye-resolution-vr-headset-for-industrial-use/"
+   ]
+  },
+  {
+   "id": "EnXGQFwSt",
+   "name": "Varjo XR-1",
+   "changes": {
+    "optics": "Aspheric (Bionic Display)"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/varjoxr-1"
+   ]
+  },
+  {
+   "id": "LDF8zLQkE",
+   "name": "Vuzix LX1",
+   "changes": {
+    "display_type": "OLED",
+    "optics": "Waveguide"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.vuzix.com/products/vuzix-lx1-smart-glasses",
+    "https://ir.vuzix.com/news-events/press-releases/detail/2143/vuzix-introduces-lx1-smart-glasses-designed-specifically"
+   ]
+  },
+  {
+   "id": "j3ogdah5f",
+   "name": "Vuzix M300",
+   "changes": {
+    "fov_horizontal_deg": "20",
+    "connectivity": "Wi-Fi (Dual-Band), Bluetooth 4.1, Micro-USB, GPS"
+   },
+   "confidence": "medium",
+   "sources": [
+    "http://files.vuzix.com/Content/pdfs/Vuzix-M300-Product-Sheet-07-28-16.pdf",
+    "https://www.realtimelogistics.com.au/products/vuzix-m300/"
+   ]
+  },
+  {
+   "id": "OBQXxPRQP",
+   "name": "Vuzix Z100",
+   "changes": {
+    "fov_diagonal_deg": "30",
+    "audio": "Kein Audio (nur Display)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.vuzix.com/products/z100-smart-glasses",
+    "https://pdf.medicalexpo.com/pdf/vuzix/vuzix-z100/306008-272801.html"
+   ]
+  },
+  {
+   "id": "BhXHG0n1d",
+   "name": "Xreal Eye",
+   "changes": {
+    "fov_diagonal_deg": "57",
+    "resolution_per_eye": "1920x1080",
+    "refresh_hz": "120"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/xrealonepro",
+    "https://www.notebookcheck.net/Xreal-One-Pro-AR-glasses-launch-with-virtual-171-inch-display-Bose-audio-and-optional-12MP-camera.928200.0.html"
+   ]
+  },
+  {
+   "id": "CMlHLhpbt",
+   "name": "Alibaba Quark AI Glasses S1",
+   "changes": {
+    "fov_diagonal_deg": "28",
+    "chipset": "Qualcomm Snapdragon AR1 + BES2800"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.roadtovr.com/alibaba-smart-glasses-rival-meta-ray-ban-display/",
+    "https://www.gizmochina.com/2025/11/12/alibaba-quark-ai-glasses-s1-unveiled-specs-price/"
+   ]
+  },
+  {
+   "id": "brzlBaebm",
+   "name": "Bigscreen Beyond",
+   "changes": {
+    "ipd_mm": "53-74",
+    "audio": "Kein integriertes Audio (3.5-mm-Klinke / optionaler Audio-Strap)",
+    "connectivity": "DisplayPort + 2x USB-A ueber 5-m-Glasfaserkabel"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://store.bigscreenvr.com/products/bigscreen-beyond",
+    "https://en.wikipedia.org/wiki/Bigscreen_Beyond"
+   ]
+  },
+  {
+   "id": "YR7b7p4DU",
+   "name": "Cosmo Vision",
+   "changes": {
+    "audio": "Nein"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/cosmovision",
+    "https://cosmoconnected.com/en/products-bike-scooter/cosmo-vision"
+   ]
+  },
+  {
+   "id": "ymrfmSxZE",
+   "name": "DAQRI Smart Glasses",
+   "changes": {
+    "weight_g": "400"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.roadtovr.com/daqri-now-shipping-ar-smart-glasses-professionals/"
+   ]
+  },
+  {
+   "id": "Jleru7hdi",
+   "name": "DPVR E4",
+   "changes": {
+    "optics": "Fresnel",
+    "ipd_mm": "54-74"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/dpvre4",
+    "https://www.dpvr.com/en/product/dpvr-e4-pc-virtual-reality-headset/"
+   ]
+  },
+  {
+   "id": "GDAwFX5CU",
+   "name": "Even Realities G2",
+   "changes": {
+    "fov_diagonal_deg": "27.5",
+    "refresh_hz": "60",
+    "audio": "Nur Mikrofone (4-Mikrofon-Array), keine Lautsprecher"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.heise.de/en/news/Even-Realities-G2-New-smart-glasses-with-larger-display-and-smart-ring-11076939.html",
+    "https://www.evenrealities.com/tech"
+   ]
+  },
+  {
+   "id": "HZfEHuVOB",
+   "name": "HP Reverb G2",
+   "changes": {
+    "weight_g": "550",
+    "connectivity": "DisplayPort 1.3, USB-C 3.0 (Controller via Bluetooth)",
+    "prescription_support": "Nein (mit Brille tragbar)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/hpreverbg2",
+    "https://www8.hp.com/h20195/v2/GetPDF.aspx/c06630565.pdf"
+   ]
+  },
+  {
+   "id": "DwNDxwEXq",
+   "name": "HTC Vive Flow",
+   "changes": {
+    "fov_diagonal_deg": "100",
+    "chipset": "Qualcomm Snapdragon XR1"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/htcviveflow",
+    "https://www.notebookcheck.com/HTC-praesentiert-Vive-Flow-eine-Brille-mit-1-6K-Displays-Snapdragon-XR1-und-externem-10-000-mAh-Akku.572956.0.html"
+   ]
+  },
+  {
+   "id": "SnuFhVAg3",
+   "name": "INAIR 2 Pro",
+   "changes": {
+    "fov_diagonal_deg": "46"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://inairspace.com/products/inair-2-pro-set",
+    "https://www.amazon.com/INAIR-Multi-Screen-Entertainment-Compatible-iPhone15/dp/B0F2438Y1F"
+   ]
+  },
+  {
+   "id": "bYDUHLwEV",
+   "name": "Meizu StarV Air2",
+   "changes": {
+    "fov_diagonal_deg": "30",
+    "resolution_per_eye": "640x480"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.meizu.com/global/product/starv-air2/specs"
+   ]
+  },
+  {
+   "id": "legacy-epsonmoveriobt-200",
+   "name": "Epson Moverio BT-200",
+   "changes": {
+    "fov_diagonal_deg": "23"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Epson_Moverio_BT-200",
+    "https://www.tomshardware.com/reviews/epson-moverio-bt-200-augmented-reality-glasses,3923-2.html"
+   ]
+  },
+  {
+   "id": "kEtY5VQot",
+   "name": "Oculus Go",
+   "changes": {
+    "fov_diagonal_deg": "98",
+    "audio": "Integrierte Lautsprecher + 3.5-mm-Klinke",
+    "connectivity": "Wi-Fi 802.11ac, Bluetooth 4.1, Micro-USB",
+    "ipd_mm": "63.5"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/oculusgo",
+    "https://en.wikipedia.org/wiki/Oculus_Go"
+   ]
+  },
+  {
+   "id": "mdPBAoL4U",
+   "name": "ODG R-7",
+   "changes": {
+    "weight_g": "170"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://newatlas.com/odg-smartglasses-r7-review-hands-on/41395/",
+    "https://vrarwiki.com/wiki/R-7_Smartglasses"
+   ]
+  },
+  {
+   "id": "qiQEr4cJi",
+   "name": "ODG R-9",
+   "changes": {
+    "weight_g": "184"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.uploadvr.com/ces-2017-odg-r9-r8/",
+    "https://vrarwiki.com/wiki/R-9_Smartglasses"
+   ]
+  },
+  {
+   "id": "0343CHExu",
+   "name": "RayNeo GT Max",
+   "changes": {
+    "fov_diagonal_deg": "59"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://pandaily.com/rayneo-gt-series-v4-ar-ai-glasses-may2026",
+    "https://www.gizmochina.com/2026/05/28/rayneo-gt-max-ar-glasses-dolby-vision-launch-specs-price/"
+   ]
+  },
+  {
+   "id": "OFRrBDscs",
+   "name": "StarVR One",
+   "changes": {
+    "weight_g": "450"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/starvrone",
+    "https://www.roadtovr.com/starvr-one-headset-revealed-with-steamvr-tracking-2-0-eye-tracking-upgraded-specs/"
+   ]
+  },
+  {
+   "id": "2bTI4ivJI",
+   "name": "Varjo Aero",
+   "changes": {
+    "brightness_nits": "150",
+    "ipd_mm": "57-73",
+    "audio": "Kein integriertes Audio (3.5-mm-Klinke)",
+    "connectivity": "DisplayPort 1.4, USB 3.1 Typ-A"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://varjo.com/products/aero",
+    "https://vr-compare.com/headset/varjoaero"
+   ]
+  },
+  {
+   "id": "74ZoZuHEa",
+   "name": "VRgineers XTAL 3",
+   "changes": {
+    "weight_g": "600"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/vrgineersxtal3",
+    "https://vrgineers.com/xtal-3-vr-virtual-reality-headset/"
+   ]
+  },
+  {
+   "id": "rR39x5VXi",
+   "name": "Ximmerse Rhino X Pro",
+   "changes": {
+    "fov_diagonal_deg": "70"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/ximmerserhinoxpro"
+   ]
+  },
+  {
+   "id": "CgySYMXLq",
+   "name": "3Glasses Blubur S1",
+   "changes": {
+    "fov_diagonal_deg": "110",
+    "weight_g": "358"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/3glassesbluburs1",
+    "https://www.fasttech.com/product/5570900-3glasses-blubur-s1-virtual-reality-3d-goggles"
+   ]
+  },
+  {
+   "id": "Nn4SRTGIQ",
+   "name": "Acer AH101",
+   "changes": {
+    "fov_diagonal_deg": "100"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/acerah101",
+    "https://www.laptopmag.com/reviews/headphones/acer-mixed-reality-ah101-headset"
+   ]
+  },
+  {
+   "id": "Mpz7ENfNA",
+   "name": "ARknovv A1",
+   "changes": {
+    "brightness_nits": "1000"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.gizmochina.com/2023/07/26/arknovv-a1-ar-glass-wearable/"
+   ]
+  },
+  {
+   "id": "stQj142Dq",
+   "name": "Honor Vision Glass",
+   "changes": {
+    "fov_diagonal_deg": "46"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.gizmochina.com/2023/03/06/honor-movie-glasses-up-to-500-nits-brightness-lightweight-design-released/",
+    "https://www.vopmart.com/honor-vision-glass.html"
+   ]
+  },
+  {
+   "id": "PH9qawOBH",
+   "name": "Leion Hey",
+   "changes": {
+    "resolution_per_eye": "640x360",
+    "refresh_hz": "60"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://leion.llvision.com/techspec"
+   ]
+  },
+  {
+   "id": "rfwT9GHfQ",
+   "name": "Lenovo Legion Glasses Gen 2",
+   "changes": {
+    "optics": "Birdbath"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.lenovo.com/us/en/p/accessories-and-software/vr-headsets/vr-headsets_smart-glasses/gy21r10236",
+    "https://www.xda-developers.com/lenovos-legion-glasses-gen-2-review/"
+   ]
+  },
+  {
+   "id": "Wmqx-AT6q",
+   "name": "Epson Moverio BT-40",
+   "changes": {
+    "audio": "Integrierter Lautsprecher, Klinkenbuchse, Mikrofon mit Geraeuschunterdrueckung"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-40-Smart-Glasses-with-USB-Type-C-Connectivity-/p/V11H969020",
+    "https://news.epson.com/news/moverio-bt-40-40s-ar-smart-glasses"
+   ]
+  },
+  {
+   "id": "sCAIQq45W",
+   "name": "MAD Gaze Glow Plus",
+   "changes": {
+    "fov_diagonal_deg": "53"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/madgazeglowplus",
+    "https://vrlitic.com/mad-gaze-glow-plus/"
+   ]
+  },
+  {
+   "id": "Vg5P0BH6B",
+   "name": "MAD Gaze Wave",
+   "changes": {
+    "fov_diagonal_deg": "40"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/madgazewave",
+    "https://vrlitic.com/mad-gaze-wave/"
+   ]
+  },
+  {
+   "id": "sW1D3BWLl",
+   "name": "Meta Quest 2",
+   "changes": {
+    "fov_horizontal_deg": "96",
+    "audio": "Integrierte Stereo-Lautsprecher (positional) + 3.5mm Klinke"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/oculusquest2",
+    "https://www.wevolver.com/specs/meta-quest-2"
+   ]
+  },
+  {
+   "id": "PRD287sFm",
+   "name": "Nimo",
+   "changes": {
+    "fov_diagonal_deg": "46"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/nimo",
+    "https://www.uploadvr.com/nimo-productivity-focused-smart-glasses/"
+   ]
+  },
+  {
+   "id": "epY189CtX",
+   "name": "Nolo Sonic",
+   "changes": {
+    "fov_diagonal_deg": "101"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/nolosonic",
+    "https://vrlitic.com/nolo-sonic/"
+   ]
+  },
+  {
+   "id": "usnhaeS7Z",
+   "name": "Oculus Rift (CV1)",
+   "changes": {
+    "connectivity": "HDMI 1.3, USB 3.0, USB 2.0"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Oculus_Rift_CV1",
+    "https://www.vr-compare.com/headset/oculusrift"
+   ]
+  },
+  {
+   "id": "zmbo0i1g4",
+   "name": "Pico G2 4K",
+   "changes": {
+    "fov_diagonal_deg": "101",
+    "weight_g": "278"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/picog24k",
+    "https://knowledge.vr-expert.com/kb/what-is-the-weight-of-the-pico-g2-4k/"
+   ]
+  },
+  {
+   "id": "yFK5BJeLD",
+   "name": "Pico G3",
+   "changes": {
+    "fov_diagonal_deg": "98"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/picog3",
+    "https://www.picoxr.com/global/products/g3/specs"
+   ]
+  },
+  {
+   "id": "QvtLKzZ2s",
+   "name": "Pico Neo 2",
+   "changes": {
+    "fov_diagonal_deg": "101",
+    "weight_g": "350"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/piconeo2",
+    "https://us.millenium.gg/news/10551.html"
+   ]
+  },
+  {
+   "id": "Kmnh8mcV9",
+   "name": "Pico Neo 3",
+   "changes": {
+    "fov_diagonal_deg": "98"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/piconeo3pro",
+    "https://www.picoxr.com/global/products/neo3-pro-eye/specs"
+   ]
+  },
+  {
+   "id": "efoG2ry52",
+   "name": "Pimax Dream Air SE",
+   "changes": {
+    "weight_g": "140"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.auganix.org/vr-news-pimax-dream-air-se-micro-oled/",
+    "https://pimax.com/products/pimax-dream-air-se"
+   ]
+  },
+  {
+   "id": "yQcCOZDrB",
+   "name": "Samsung Gear VR (2017)",
+   "changes": {
+    "fov_diagonal_deg": "101",
+    "resolution_per_eye": "1280x1440"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://newatlas.com/gear-vr-vs-daydream-view-2017/48985/",
+    "https://www.sizescreens.com/samsung-gear-vr-2017-specifications/"
+   ]
+  },
+  {
+   "id": "Mj9oszKGi",
+   "name": "Shiftall MeganeX 8K Mark II",
+   "changes": {
+    "fov_horizontal_deg": "100",
+    "audio": "Keine integrierten Lautsprecher; USB-C-Audioport, Dual-Mikrofone"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://en.shiftall.net/products/meganex8kmk2",
+    "https://www.provideocoalition.com/meganex-8k-mark-ii-8k-vr-headset-weighs-just-179g/"
+   ]
+  },
+  {
+   "id": "R0viSMCTs",
+   "name": "Skyworth Pancake 1",
+   "changes": {
+    "ipd_mm": "60-68"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/skyworthpancake1"
+   ]
+  },
+  {
+   "id": "Hz5LNjh9Y",
+   "name": "Snap Spectacles (2021)",
+   "changes": {
+    "fov_diagonal_deg": "26.3",
+    "display_type": "Waveguide (Micro-OLED)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/snapspectacles(2021)",
+    "https://newsroom.snap.com/introducing-the-next-generation-of-spectacles"
+   ]
+  },
+  {
+   "id": "O86z6CxEz",
+   "name": "Sony HMZ-T1",
+   "changes": {
+    "brightness_nits": "200",
+    "optics": "Asphaerische Vergroesserungslinse (Eyepiece)",
+    "audio": "Integrierte Kopfhoerer mit virtuellem 5.1-Surround"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/HMZ-T1",
+    "https://www.theregister.com/Print/2011/11/16/review_sony_hmz_t1_personal_3d_head_mounted_display/"
+   ]
+  },
+  {
+   "id": "Dnsbasmiv",
+   "name": "TCL NXTWEAR V",
+   "changes": {
+    "fov_horizontal_deg": "108"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/tclnxtwearv",
+    "https://www.gamingnexus.com/News/54863/CES-2023-TCL-introduces-some-new-AR-and-VR-products"
+   ]
+  },
+  {
+   "id": "sMDYLv4VB",
+   "name": "ThirdEye Razor MR Glasses",
+   "changes": {
+    "fov_diagonal_deg": "42",
+    "display_type": "OLED"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.auganix.org/thirdeye-announces-new-razor-mr-glasses-consumer-mixed-reality-device/",
+    "https://blog.thirdeyegen.com/thirdeye-announces-razor-mr-glasses-and-expands-into-consumer-metaverse"
+   ]
+  },
+  {
+   "id": "Rz1MDcJer",
+   "name": "Thunderbird Air Plus",
+   "changes": {
+    "fov_diagonal_deg": "49"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/thunderbirdairplus",
+    "https://inf.news/en/digital/c3a0d92283c6b60d6f20f06df246f53a.html"
+   ]
+  },
+  {
+   "id": "Yp1UjtE3P",
+   "name": "Tilt Five",
+   "changes": {
+    "fov_diagonal_deg": "110"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://vr-compare.com/headset/tiltfive",
+    "https://kguttag.com/2021/11/19/awe-2021-part-1-tilt-5-was-magical/"
+   ]
+  },
+  {
+   "id": "KpeOzmgAg",
+   "name": "Valve Index",
+   "changes": {
+    "fov_diagonal_deg": "130",
+    "weight_g": "809"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.valvesoftware.com/en/index/deep-dive/fov",
+    "https://en.wikipedia.org/wiki/Valve_Index"
+   ]
+  },
+  {
+   "id": "yPnSpo6KA",
+   "name": "Varjo VR-3",
+   "changes": {
+    "optics": "Ultra-Wide Non-Fresnel-Linsen (asphaerisch)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://varjo.com/products/varjo-vr-3"
+   ]
+  },
+  {
+   "id": "r2UX2RNAB",
+   "name": "Vuzix M400",
+   "changes": {
+    "fov_diagonal_deg": "16.8",
+    "optics": "Prisma (okkludierter Microdisplay-Viewer)"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.vuzix.com/products/m400-smart-glasses",
+    "https://vr-compare.com/headset/vuzixm400"
+   ]
+  },
+  {
+   "id": "GdG76cFEW",
+   "name": "YVR 2",
+   "changes": {
+    "fov_diagonal_deg": "110",
+    "ipd_mm": "58-68"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/yvr2",
+    "https://www.aliexpress.com/s/wiki-ssr/article/vr-pancake_1005007941227544"
+   ]
+  },
+  {
+   "id": "FUmJdcmqg",
+   "name": "3Glasses D2",
+   "changes": {
+    "fov_diagonal_deg": "110"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.windowscentral.com/hands-3glasses-d2-399-vr-headset",
+    "https://vr-compare.com/headset/3glassesd2"
+   ]
+  },
+  {
+   "id": "scBhMmwQy",
+   "name": "3Glasses X1",
+   "changes": {
+    "fov_diagonal_deg": "105"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/3glassesx1",
+    "https://www.3glasses.com/en/product/x1.html"
+   ]
+  },
+  {
+   "id": "LMUhhwNq7",
+   "name": "ASUS ROG XREAL R1",
+   "changes": {
+    "price_usd": "849",
+    "release_date": "2026-06-01",
+    "fov_diagonal_deg": "57"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.tomshardware.com/virtual-reality/asus-rog-xreal-r1-ar-glasses-pre-orders-start-today-at-usd849-240-hz-virtual-gaming-at-171-inches-on-pc-xbox-and-playstation",
+    "https://press.asus.com/news/press-releases/rog-xreal-r1-gaming-ar-glasses-240hz-micro-oled/"
+   ]
+  },
+  {
+   "id": "Q9zkHODZI",
+   "name": "Brilliant Monocle",
+   "changes": {
+    "fov_diagonal_deg": "20"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://docs.brilliant.xyz/monocle/hardware/",
+    "https://vr-compare.com/headset/brilliantmonocle"
+   ]
+  },
+  {
+   "id": "suVKDU_0P",
+   "name": "DigiLens Argo",
+   "changes": {
+    "fov_diagonal_deg": "30"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.digilens.com/argo/",
+    "https://mixed-news.com/en/digilens-argo-is-a-standalone-ar-headset-with-voice-control/"
+   ]
+  },
+  {
+   "id": "hZlysEI3L",
+   "name": "GOOVIS Art (A1)",
+   "changes": {
+    "fov_diagonal_deg": "40",
+    "audio": "3.5mm Klinke + integrierter Lautsprecher"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://goovis.eu/products/a1white",
+    "https://www.goovis.com/products/art"
+   ]
+  },
+  {
+   "id": "0lR0V2Y30",
+   "name": "INMO Air3",
+   "changes": {
+    "fov_diagonal_deg": "36",
+    "refresh_hz": "120"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.inmoxr.com/products/inmo-air3-ar-glasses-all-in-one-full-color-waveguide",
+    "https://www.geeky-gadgets.com/inmo-air-3-waveguide-display/"
+   ]
+  },
+  {
+   "id": "A5KdHFj88",
+   "name": "INMO GO2",
+   "changes": {
+    "fov_diagonal_deg": "30"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.inmoxr.com/products/inmo-go2",
+    "https://www.microled-info.com/inmo-go-2-ar-glasses-feature-jbds-microled-displays"
+   ]
+  },
+  {
+   "id": "Q6Sz4MiCo",
+   "name": "INMO GO3",
+   "changes": {
+    "fov_diagonal_deg": "30"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.inmoxr.com/pages/inmo-go3-ai-glasses",
+    "https://the-gadgeteer.com/2026/06/10/inmo-go3-smart-glasses-ai-translation-kickstarter-2026/"
+   ]
+  },
+  {
+   "id": "Te5iB4fwf",
+   "name": "Leion Hey2",
+   "changes": {
+    "fov_diagonal_deg": "25"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.llvision.com/en/leion-pro.html",
+    "https://www.gadgetmatch.com/leion-hey2-worlds-1st-ar-translation-glasses-launched-at-ces-2026/"
+   ]
+  },
+  {
+   "id": "6wtHtGTJL",
+   "name": "Pimax Crystal Super",
+   "changes": {
+    "weight_g": "966"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://vr-compare.com/headset/pimaxcrystalsuper",
+    "https://simracingcockpit.gg/pimax-crystal-super-review/"
+   ]
+  },
+  {
+   "id": "ZDtEjwsS5",
+   "name": "RayNeo Air 4",
+   "changes": {
+    "fov_diagonal_deg": "47",
+    "refresh_hz": "120"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.rayneo.com/collections/air-series",
+    "https://www.rayneo.com/pages/rayneo-air-4-pro-launch-best-ar-glasses"
+   ]
+  },
+  {
+   "id": "kI4EYTiv0",
+   "name": "RayNeo Air 4 Pro",
+   "changes": {
+    "fov_diagonal_deg": "47",
+    "refresh_hz": "120"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.rayneo.com/products/rayneo-air-4-pro-ar-glasses",
+    "https://www.tomshardware.com/peripherals/wearable-tech/rayneo-air-4-pro-ar-glasses-review"
+   ]
+  },
+  {
+   "id": "W1kyhxveC",
+   "name": "Rokid X-Craft",
+   "changes": {
+    "fov_diagonal_deg": "40"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://intrinsicallysafestore.com/product/rokid-xcraft-ar-device/",
+    "https://vrlitic.com/rokid-x-craft/"
+   ]
+  },
+  {
+   "id": "i55EocmJE",
+   "name": "Samsung HMD Odyssey",
+   "changes": {
+    "ipd_mm": "60-72"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.samsung.com/us/support/troubleshooting/TSG01111314/",
+    "https://vr-compare.com/headset/samsungodyssey"
+   ]
+  },
+  {
+   "id": "k4jvLzPHu",
+   "name": "Samsung HMD Odyssey+",
+   "changes": {
+    "ipd_mm": "60-72"
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://www.sizescreens.com/samsung-hmd-odyssey-plus-windows-mixed-reality-specifications/",
+    "https://www.tomshardware.com/news/samsung-hmd-odyssey-vr-headset-specs,37963.html"
+   ]
+  },
+  {
+   "id": "wrjEu415W",
+   "name": "Spacetop G1",
+   "changes": {
+    "release_date": "2024-10",
+    "fov_diagonal_deg": "50",
+    "brightness_nits": "500"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://roadtovr.com/sightful-spacetop-g1-ar-headset-laptop-release/",
+    "https://www.notebookcheck.net/Spacetop-G1-New-laptop-reimagining-arrives-with-Qualcomm-Snapdragon-ARM-chipset-and-help-from-Xreal-Air-2-Pro-AR-glasses-for-1-900-starting-price.842593.0.html"
+   ]
+  },
+  {
+   "id": "rNPYFiTHx",
+   "name": "TCL RayNeo X2 Lite",
+   "changes": {
+    "fov_diagonal_deg": "30",
+    "resolution_per_eye": "640x480"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.prnewswire.com/news-releases/rayneo-introduces-full-color-3d-display-smart-glasses-rayneo-x2-lite-at-snapdragon-summit-2023-301967591.html",
+    "https://www.laptopmag.com/gaming/vr/tcls-rayneo-x2-lite-ar-glasses-are-a-blend-of-ray-ban-meta-smart-glasses-and-apples-vision-pro"
+   ]
+  },
+  {
+   "id": "1PE1xcEFb",
+   "name": "Vuzix Blade Upgraded",
+   "changes": {
+    "display_type": "Waveguide"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://support.vuzix.com/docs/vuzix-blade-capabilities-features",
+    "https://vuzix-website.s3.amazonaws.com/files/Content/pdfs/Vuzix-Blade-Upgraded-Smart-Glasses-d07.pdf"
+   ]
+  },
+  {
+   "id": "legacy-vuzixm100",
+   "name": "Vuzix M100",
+   "changes": {
+    "fov_diagonal_deg": "15"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.vuzix.com/products/m100-smart-glasses",
+    "http://files.vuzix.com/Content/docs/north-american/web/Vuzix-M100-Product-Sheet-01-20-16.pdf"
+   ]
+  },
+  {
+   "id": "1adjWwRkv",
+   "name": "X by Xreal a01",
+   "changes": {
+    "fov_diagonal_deg": "50"
+   },
+   "confidence": "high",
+   "sources": [
+    "https://www.gizmochina.com/2026/05/27/xreal-xbx-a01-ar-glasses-launched-specs-price/",
+    "https://9to5google.com/2026/05/27/xreal-a01-ar-glasses/"
+   ]
+  }
+ ],
+ "newDevices": []
+}

@@ -1,0 +1,956 @@
+[
+ {
+  "id": "oHsFwXqoj",
+  "name": "Rokid Vision 2",
+  "manufacturer": "Rokid",
+  "official_url": "",
+  "missing": [
+   "price_usd",
+   "release_date",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "audio",
+   "connectivity",
+   "prescription_support",
+   "optics",
+   "display_type"
+  ]
+ },
+ {
+  "id": "iA6f0pVBg",
+  "name": "Augmedics xvision Spine System",
+  "manufacturer": "Augmedics",
+  "official_url": "https://augmedics.com/xvision/",
+  "missing": [
+   "price_usd",
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "audio",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "w2pyyTYD2",
+  "name": "Beyeonics One",
+  "manufacturer": "Beyeonics Vision (Elbit Systems)",
+  "official_url": "https://www.elbitsystems.com/commercial/medical/beyeonics-onetm",
+  "missing": [
+   "price_usd",
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "audio",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "mqo53rFnv",
+  "name": "Konica Minolta AIRe Lens",
+  "manufacturer": "Konica Minolta",
+  "official_url": "https://thearea.org/ar-news/konica-minolta-develops-ar-glasses-for-industrial-environments/",
+  "missing": [
+   "price_usd",
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "audio",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "mjVfG40CU",
+  "name": "Red 6 ATARS",
+  "manufacturer": "Red 6",
+  "official_url": "https://red6ar.com/atars/",
+  "missing": [
+   "price_usd",
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "audio",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "K8QDUQxOu",
+  "name": "Form Smart Swim 2",
+  "manufacturer": "FORM",
+  "official_url": "https://www.formswim.com/products/smart-swim-2-goggles",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "audio",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "BLXT2V2lq",
+  "name": "Captify Pro",
+  "manufacturer": "Captify",
+  "official_url": "https://captify.glass/products/captify-pro",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "audio",
+   "optics",
+   "display_type"
+  ]
+ },
+ {
+  "id": "kMS1N5axn",
+  "name": "Fujitsu Ubiquitousware Head Mounted Display",
+  "manufacturer": "Fujitsu",
+  "official_url": "https://www.fujitsu.com/global/about/resources/news/press-releases/2015/0511-02.html",
+  "missing": [
+   "price_usd",
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "CBjkOUetd",
+  "name": "Goolton Star1S",
+  "manufacturer": "Goolton",
+  "official_url": "https://goolton.com/ar-glasses/",
+  "missing": [
+   "price_usd",
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "smKbDn8oo",
+  "name": "Microsoft IVAS",
+  "manufacturer": "Microsoft",
+  "official_url": "https://en.wikipedia.org/wiki/Integrated_Visual_Augmentation_System",
+  "missing": [
+   "price_usd",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "audio",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "9zs1bepSY",
+  "name": "Snap Specs",
+  "manufacturer": "Snap Inc",
+  "official_url": "https://www.spectacles.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "audio",
+   "prescription_support",
+   "display_type"
+  ]
+ },
+ {
+  "id": "Aq7tdhseW",
+  "name": "Xreal Project Aura",
+  "manufacturer": "Xreal",
+  "official_url": "https://www.xreal.com/us/aura",
+  "missing": [
+   "price_usd",
+   "release_date",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "audio",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "pOfzEGXDw",
+  "name": "XYZ Atom",
+  "manufacturer": "XYZ Reality",
+  "official_url": "https://www.xyzreality.com/",
+  "missing": [
+   "price_usd",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "audio",
+   "prescription_support",
+   "optics",
+   "display_type"
+  ]
+ },
+ {
+  "id": "Zn3buICy4",
+  "name": "Goolton Star1",
+  "manufacturer": "Goolton",
+  "official_url": "https://goolton.com/ar-glasses/",
+  "missing": [
+   "price_usd",
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "95D3X6CjE",
+  "name": "HTC Vive Cosmos",
+  "manufacturer": "HTC",
+  "official_url": "https://www.vive.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "audio",
+   "connectivity",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "qGCzW5DOo",
+  "name": "HTC Vive Pro",
+  "manufacturer": "HTC",
+  "official_url": "https://www.vive.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "connectivity",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "XB6FPwK6G",
+  "name": "HTC Vive Pro 2",
+  "manufacturer": "HTC",
+  "official_url": "https://www.vive.com/us/product/vive-pro2/overview/",
+  "missing": [
+   "fov_diagonal_deg",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "audio",
+   "connectivity",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "LHMPSIx5Q",
+  "name": "Mentra Mach1",
+  "manufacturer": "Mentra",
+  "official_url": "https://shop.mentra.glass/products/mach1-devkit-display-glasses",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "audio",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "MjGIuoKW8",
+  "name": "Skyworth PANCAKE 2",
+  "manufacturer": "Skyworth",
+  "official_url": "https://www.skyworthxr.com/",
+  "missing": [
+   "price_usd",
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "AtQbA7a2v",
+  "name": "Snap Spectacles 5",
+  "manufacturer": "Snap Inc",
+  "official_url": "https://www.spectacles.com/",
+  "missing": [
+   "price_usd",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "audio",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "XEgII6hGl",
+  "name": "Sol Reader",
+  "manufacturer": "Sol",
+  "official_url": "https://solreader.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "F4OskUmdX",
+  "name": "Toshiba dynaEdge AR100 Viewer",
+  "manufacturer": "Toshiba (Dynabook)",
+  "official_url": "https://asia.dynabook.com/smart-solutions/dynaedge-ar100/specification.php",
+  "missing": [
+   "price_usd",
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "nyBAUkY9t",
+  "name": "Varjo XR-3",
+  "manufacturer": "Varjo",
+  "official_url": "https://varjo.com/products/varjo-xr-3",
+  "missing": [
+   "fov_diagonal_deg",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "audio",
+   "connectivity",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "4fhEoK1p8",
+  "name": "Acer GI0 AI Glasses",
+  "manufacturer": "Acer",
+  "official_url": "https://www.acer.com/us-en/accessories/smart-devices/ai-glasses-gi0",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "vH20M2KPj",
+  "name": "AjnaLens AjnaX",
+  "manufacturer": "AjnaLens",
+  "official_url": "https://www.ajnalens.com/ajnax/",
+  "missing": [
+   "price_usd",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "TV7CiCh26",
+  "name": "Atheer AiR Glasses",
+  "manufacturer": "Atheer",
+  "official_url": "https://vrarwiki.com/wiki/Atheer_AiR",
+  "missing": [
+   "price_usd",
+   "fov_horizontal_deg",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "audio",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "4fWI0Wuls",
+  "name": "Focals by North",
+  "manufacturer": "North (ehem. Thalmic Labs)",
+  "official_url": "https://www.bynorth.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "audio"
+  ]
+ },
+ {
+  "id": "ZkO_SfqaC",
+  "name": "Guangli Holoswim",
+  "manufacturer": "Guangli",
+  "official_url": "https://holoswim.com/products/holoswim-smart-swim-goggles",
+  "missing": [
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "RKSpNuMY0",
+  "name": "HTC Vive Focus 3",
+  "manufacturer": "HTC",
+  "official_url": "https://www.vive.com/us/product/vive-focus3/overview/",
+  "missing": [
+   "fov_diagonal_deg",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "audio",
+   "connectivity",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "lfp5m7Rfs",
+  "name": "Kopin Solos",
+  "manufacturer": "Kopin / Solos",
+  "official_url": "https://solosglasses.com/blogs/news/kopin-starts-selling-500-solos-smart-glasses-for-joggers-and-cyclists",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "DXHyJcE9A",
+  "name": "Meizu MYVU",
+  "manufacturer": "Meizu",
+  "official_url": "https://www.meizu.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "cEsHUSt3q",
+  "name": "Meizu MYVU Discovery",
+  "manufacturer": "Meizu",
+  "official_url": "https://www.meizu.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "NK2ZBl7SV",
+  "name": "Solos AirGo Vision",
+  "manufacturer": "Solos",
+  "official_url": "https://solosglasses.com/products/solos-airgo-vision",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "znJry7pKl",
+  "name": "Sony SRH-S1 (XYN Headset)",
+  "manufacturer": "Sony",
+  "official_url": "https://www.sony.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "weight_g",
+   "ipd_mm",
+   "audio",
+   "connectivity",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "0WBse43zY",
+  "name": "Thunderbird V3",
+  "manufacturer": "Thunderbird",
+  "official_url": "https://www.thunderbird.net/",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "a8rSzeAu8",
+  "name": "Vuzix M300XL",
+  "manufacturer": "Vuzix",
+  "official_url": "https://www.vuzix.com/Products/m300xl-smart-glasses",
+  "missing": [
+   "price_usd",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "lYyGNGICW",
+  "name": "arpara Tethered 5K",
+  "manufacturer": "arpara",
+  "official_url": "https://www.arparaland.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "audio",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "eANw0hTFv",
+  "name": "Campfire Headset",
+  "manufacturer": "Campfire",
+  "official_url": "https://www.campfire3d.com/",
+  "missing": [
+   "resolution_per_eye",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "audio",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "b1AgJZABS",
+  "name": "Epson Moverio BT-45C",
+  "manufacturer": "Epson",
+  "official_url": "https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-45C-AR-Smart-Glasses/p/V11H970020",
+  "missing": [
+   "price_usd",
+   "fov_horizontal_deg",
+   "weight_g",
+   "ipd_mm",
+   "chipset",
+   "audio",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "U36ZvMkGN",
+  "name": "Everysight Maverick AI Pro",
+  "manufacturer": "Everysight",
+  "official_url": "https://www.everysight.com/maverick",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "ipd_mm",
+   "chipset",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "2zF79J1mn",
+  "name": "HTC Vive",
+  "manufacturer": "HTC",
+  "official_url": "https://www.vive.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "audio",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "cQJtgHGeO",
+  "name": "Lenovo Legion Glasses",
+  "manufacturer": "Lenovo",
+  "official_url": "https://www.lenovo.com/us/en/p/accessories-and-software/vr-headsets/vr-headsets_smart-glasses/gy21m72722",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "kKQIRlqM6",
+  "name": "Lenovo ThinkReality VRX",
+  "manufacturer": "Lenovo",
+  "official_url": "https://www.lenovo.com/us/en/p/smart-devices/virtual-reality/thinkreality-vrx/len101r0001",
+  "missing": [
+   "fov_diagonal_deg",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "audio",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "KdZOqV1Ev",
+  "name": "MAD Gaze Vader",
+  "manufacturer": "MAD Gaze",
+  "official_url": "https://www.madgaze.com/vader/",
+  "missing": [
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "prescription_support",
+   "optics",
+   "display_type"
+  ]
+ },
+ {
+  "id": "LQ5o9LAg5",
+  "name": "Meizu StarV View",
+  "manufacturer": "Meizu",
+  "official_url": "https://www.meizu.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset"
+  ]
+ },
+ {
+  "id": "X6EAYuLgx",
+  "name": "Oculus Quest",
+  "manufacturer": "Meta",
+  "official_url": "https://www.meta.com/quest/",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "brightness_nits",
+   "audio",
+   "connectivity",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "ZnvBY4AB8",
+  "name": "Oculus Rift S",
+  "manufacturer": "Meta",
+  "official_url": "https://www.meta.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "connectivity",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "LT3iRRzsa",
+  "name": "Pico Neo 3 Link",
+  "manufacturer": "Pico",
+  "official_url": "https://www.picoxr.com/global/products/neo3-link/specs",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "audio",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "oE29W8yJ0",
+  "name": "PlayStation VR",
+  "manufacturer": "Sony Interactive Entertainment",
+  "official_url": "https://www.playstation.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "connectivity",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "Vbt8ReSXF",
+  "name": "RayNeo Air 1S",
+  "manufacturer": "TCL",
+  "official_url": "https://www.rayneo.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset"
+  ]
+ },
+ {
+  "id": "XxfrQXJ8j",
+  "name": "Razer OSVR HDK 2",
+  "manufacturer": "Razer",
+  "official_url": "http://www.osvr.org/hdk2.html",
+  "missing": [
+   "fov_horizontal_deg",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "nzYmv8egK",
+  "name": "Shadow Creator Halomini",
+  "manufacturer": "Shadow Creator",
+  "official_url": "https://www.shadowcreator.com/halomini/halomini.html",
+  "missing": [
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "oDCIYsoJ3",
+  "name": "Valve Steam Frame",
+  "manufacturer": "Valve",
+  "official_url": "https://store.steampowered.com/sale/steamframe",
+  "missing": [
+   "price_usd",
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "brightness_nits",
+   "ipd_mm",
+   "audio",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "5XGUDVfRh",
+  "name": "Varjo VR-1",
+  "manufacturer": "Varjo",
+  "official_url": "https://varjo.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "EnXGQFwSt",
+  "name": "Varjo XR-1",
+  "manufacturer": "Varjo",
+  "official_url": "https://varjo.com/",
+  "missing": [
+   "fov_diagonal_deg",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "LDF8zLQkE",
+  "name": "Vuzix LX1",
+  "manufacturer": "Vuzix",
+  "official_url": "https://www.vuzix.com/products/vuzix-lx1-smart-glasses",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "resolution_per_eye",
+   "refresh_hz",
+   "ipd_mm",
+   "prescription_support",
+   "optics"
+  ]
+ },
+ {
+  "id": "j3ogdah5f",
+  "name": "Vuzix M300",
+  "manufacturer": "Vuzix",
+  "official_url": "https://www.vuzix.com/Products/m300-smart-glasses",
+  "missing": [
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "weight_g",
+   "brightness_nits",
+   "ipd_mm",
+   "connectivity",
+   "prescription_support"
+  ]
+ },
+ {
+  "id": "OBQXxPRQP",
+  "name": "Vuzix Z100",
+  "manufacturer": "Vuzix",
+  "official_url": "https://www.vuzix.com/products/z100-smart-glasses",
+  "missing": [
+   "fov_diagonal_deg",
+   "fov_horizontal_deg",
+   "refresh_hz",
+   "brightness_nits",
+   "ipd_mm",
+   "chipset",
+   "audio"
+  ]
+ }
+]

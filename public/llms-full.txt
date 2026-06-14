@@ -12,9 +12,9 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2016-06-29 | Release: 2016-11-19
 - Preis: 530 USD
 - Display: LCD | Optik: k. A.
-- FOV (H/V/D Grad): 110 / 110 / –
+- FOV (H/V/D Grad): 110 / 110 / 110
 - Aufloesung pro Auge: 1440x1440 | Refresh: 120 Hz
-- Gewicht: k. A.
+- Gewicht: 358 g
 - Tracking: Outside-in | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: k. A.
 - Software: SteamVR, Windows Mixed Reality | Recheneinheit: PC
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – VR-Headset von 2016, längst aus dem Handel.
@@ -38,7 +38,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2015-06-29 | Release: 2015-06-29
 - Preis: 400 USD
 - Display: LCD | Optik: Non-spherical lenses
-- FOV (H/V/D Grad): 110 / – / –
+- FOV (H/V/D Grad): 110 / – / 110
 - Aufloesung pro Auge: 1280x1440 | Refresh: 60 Hz
 - Gewicht: 246 g
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: k. A.
@@ -51,7 +51,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2019-04-10 | Release: 2019-05-17
 - Preis: 550 USD
 - Display: LCD | Optik: Short TTL lens
-- FOV (H/V/D Grad): 105 / 88.6 / –
+- FOV (H/V/D Grad): 105 / 88.6 / 105
 - Aufloesung pro Auge: 1200x1200 | Refresh: 90 Hz
 - Gewicht: 150 g
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: k. A.
@@ -64,7 +64,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2017-08-31 | Release: 2017-10-17
 - Preis: 399 USD
 - Display: LCD | Optik: Fresnel
-- FOV (H/V/D Grad): 97 / – / –
+- FOV (H/V/D Grad): 97 / – / 100
 - Aufloesung pro Auge: 1440x1440 | Refresh: 90 Hz
 - Gewicht: 350 g
 - Tracking: Inside-out | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
@@ -82,7 +82,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 69 g
 - Tracking: Non-positional | Eye-Tracking: k. A. | Hand-Tracking: k. A. | Passthrough: No camera passthrough
 - Software: Android, iOS, Windows | Recheneinheit: Phone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Auf Computex 2026 vorgestellt; Marktstart Q3-Q4 2026 (ab $499). Acers Rueckkehr ins XR.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Auf Computex 2026 vorgestellt; Marktstart Q3-Q4 2026 (ab $499). Acers Rückkehr ins XR.
 - Offizielle Seite: https://www.acer.com/acer-ar-glasses-gr0
 
 ## Acer GI0 AI Glasses (Acer)
@@ -116,7 +116,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2025-11-27 | Release: 2025-11-27
 - Preis: 536 USD
 - Display: Micro LED | Optik: Waveguide
-- FOV (H/V/D Grad): – / – / –
+- FOV (H/V/D Grad): – / – / 28
 - Aufloesung pro Auge: Unklar | Refresh: k. A.
 - Gewicht: 51 g
 - Tracking: Inside-out | Eye-Tracking: Unklar | Hand-Tracking: Unklar | Passthrough: Native passthrough with integrated camera, 3K video
@@ -160,7 +160,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 600 g
 - Tracking: Inside-out | Eye-Tracking: Ja | Hand-Tracking: Ja | Passthrough: Native color passthrough
 - Software: visionOS | Recheneinheit: Standalone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – M5 Refresh mit verbesserten Specs, 120Hz moeglich, 2.5h Akkulaufzeit
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – M5 Refresh mit verbesserten Specs, 120Hz möglich, 2.5h Akkulaufzeit
 - Offizielle Seite: https://www.apple.com/apple-vision-pro/
 
 ## ARknovv A1 (Gyges Labs)
@@ -173,20 +173,20 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 68 g
 - Tracking: 3DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein (optische Durchsicht)
 - Software: Aladdin OS | Recheneinheit: Tethered
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – Birdbath-AR-Brille mit elektrochromen Glaesern und Aladdin OS; China-Start zu 2.988 CNY (ca. 417 USD), HUD-Version 3.988 CNY.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – Birdbath-AR-Brille mit elektrochromen Gläsern und Aladdin OS; China-Start zu 2.988 CNY (ca. 417 USD), HUD-Version 3.988 CNY.
 - Offizielle Seite: https://gygeslabs.com/
 
 ## arpara Tethered 5K (arpara)
 - Kategorie: XR
 - Angekuendigt: 2021-06 | Release: 2022-03
 - Preis: 399 USD
-- Display: Micro-OLED | Optik: Unklar
-- FOV (H/V/D Grad): 95 / – / –
+- Display: Micro-OLED | Optik: Pancake
+- FOV (H/V/D Grad): 95 / – / 95
 - Aufloesung pro Auge: 2560x2560 | Refresh: 120 Hz
 - Gewicht: 200 g
 - Tracking: Unklar | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: SteamVR (PC) | Recheneinheit: PC
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – Kickstarter-Auslieferung ab Maerz 2022; 399 USD war der Early-Bird-Preis der Kampagne.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – Kickstarter-Auslieferung ab März 2022; 399 USD war der Early-Bird-Preis der Kampagne.
 - Offizielle Seite: https://www.arparaland.com/
 
 ## Asus AirVision M1 (Asus)
@@ -204,8 +204,8 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 
 ## ASUS ROG XREAL R1 (Asus)
 - Kategorie: AR
-- Angekuendigt: 2026-01-06 | Release: k. A.
-- Preis: k. A.
+- Angekuendigt: 2026-01-06 | Release: 2026-06-01
+- Preis: 849 USD
 - Display: Micro-OLED (Sony 0.55" FHD) | Optik: Birdbath optics
 - FOV (H/V/D Grad): – / – / 57
 - Aufloesung pro Auge: 1920x1080 | Refresh: 240 Hz
@@ -220,8 +220,8 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2015-11 | Release: 2016
 - Preis: k. A.
 - Display: Dual See-through Display | Optik: See-through
-- FOV (H/V/D Grad): – / – / 50
-- Aufloesung pro Auge: 1280x720 | Refresh: 60 Hz
+- FOV (H/V/D Grad): 50 / – / 50
+- Aufloesung pro Auge: 1024x768 | Refresh: 60 Hz
 - Gewicht: k. A.
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Ja (ToF-Tiefensensor) | Passthrough: Optisches See-through
 - Software: AiR Enterprise Suite (Android-basiert) | Recheneinheit: Standalone
@@ -238,7 +238,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: k. A.
 - Tracking: Optisches Marker-Tracking | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisches See-through
 - Software: xvision Spine Navigation | Recheneinheit: Tethered
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – FDA-zugelassenes chirurgisches AR-Headset fuer Wirbelsaeulenchirurgie; Nachfolger X2 erhielt 2025 FDA-Freigabe.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – FDA-zugelassenes chirurgisches AR-Headset für Wirbelsäulenchirurgie; Nachfolger X2 erhielt 2025 FDA-Freigabe.
 - Offizielle Seite: https://augmedics.com/xvision/
 
 ## Beyeonics One (Beyeonics Vision (Elbit Systems))
@@ -251,7 +251,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: k. A.
 - Tracking: Kopf-Gesten-Steuerung | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Video (3D-Stereokameras)
 - Software: Beyeonics Plattform | Recheneinheit: Tethered
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Kopfgetragenes chirurgisches Visualisierungssystem (digitales Exoskop) fuer Ophthalmologie; 2022 CE-Mark erhalten.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Kopfgetragenes chirurgisches Visualisierungssystem (digitales Exoskop) für Ophthalmologie; 2022 CE-Mark erhalten.
 - Offizielle Seite: https://www.elbitsystems.com/commercial/medical/beyeonics-onetm
 
 ## Bigscreen Beyond (Bigscreen)
@@ -277,7 +277,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 107 g
 - Tracking: Inside-out | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: No camera passthrough
 - Software: SteamVR | Recheneinheit: PC
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Weltweit kleinste VR-Headset, 107g, neu verfuegbar April 2025
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Weltweit kleinste VR-Headset, 107g, neu verfügbar April 2025
 - Offizielle Seite: https://store.bigscreenvr.com/products/bigscreen-beyond-2
 
 ## Bigscreen Beyond 2e (Bigscreen)
@@ -336,10 +336,10 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Kategorie: AR
 - Angekuendigt: 2021-04-27 | Release: 2023-05-16
 - Preis: 7500 USD
-- Display: LCD | Optik: k. A.
+- Display: LCD | Optik: Mirror (Birdbath-aehnlich)
 - FOV (H/V/D Grad): 92 / – / 92
-- Aufloesung pro Auge: k. A. | Refresh: 60 Hz
-- Gewicht: k. A.
+- Aufloesung pro Auge: 1280x1440 | Refresh: 60 Hz
+- Gewicht: 500 g
 - Tracking: 6DoF inside-out | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Native passthrough
 - Software: Campfire | Recheneinheit: PC
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Keine eindeutige EOL-Angabe in den Quelldaten.
@@ -349,13 +349,13 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Kategorie: AR
 - Angekuendigt: 2025-01 | Release: 2025
 - Preis: 899 USD
-- Display: Unklar | Optik: Unklar
-- FOV (H/V/D Grad): – / – / –
-- Aufloesung pro Auge: Unklar | Refresh: k. A.
+- Display: Micro LED | Optik: Waveguide
+- FOV (H/V/D Grad): – / – / 30
+- Aufloesung pro Auge: 640x480 | Refresh: k. A.
 - Gewicht: 37 g
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Captify Glass App (iOS/Android) | Recheneinheit: Smartphone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Untertitel-Brille fuer Hoergeschaedigte mit binokularem Display und Echtzeit-Transkription in 40+ Sprachen.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Untertitel-Brille für Hörgeschädigte mit binokularem Display und Echtzeit-Transkription in 40+ Sprachen.
 - Offizielle Seite: https://captify.glass/products/captify-pro
 
 ## Cosmo Vision (Cosmo Connected)
@@ -378,7 +378,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Display: See-through Waveguide | Optik: Waveguide
 - FOV (H/V/D Grad): – / – / 44
 - Aufloesung pro Auge: 1360x768 | Refresh: 90 Hz
-- Gewicht: k. A.
+- Gewicht: 400 g
 - Tracking: 6DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisches See-through
 - Software: DAQRI OS | Recheneinheit: Tethered
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Industrielle AR-Brille; DAQRI stellte im September 2019 den Hardware-Betrieb ein.
@@ -394,7 +394,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 590 g
 - Tracking: Inside-out | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Windows Mixed Reality / SteamVR | Recheneinheit: PC
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Windows-Mixed-Reality-Headset von Dell; mit Einstellung der WMR-Plattform abgekuendigt.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Windows-Mixed-Reality-Headset von Dell; mit Einstellung der WMR-Plattform abgekündigt.
 - Offizielle Seite: https://www.dell.com/
 
 ## DigiLens Argo (DigiLens)
@@ -414,7 +414,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Kategorie: XR
 - Angekuendigt: 2022-11-28 | Release: 2023-01-15
 - Preis: 549 USD
-- Display: LCD | Optik: Unklar
+- Display: LCD | Optik: Fresnel
 - FOV (H/V/D Grad): – / – / 116
 - Aufloesung pro Auge: 1832x1920 | Refresh: 120 Hz
 - Gewicht: 280 g
@@ -532,7 +532,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2014-01-07 | Release: 2014-05-01
 - Preis: 699 USD
 - Display: Si-OLED | Optik: Optical see-through
-- FOV (H/V/D Grad): – / – / –
+- FOV (H/V/D Grad): – / – / 23
 - Aufloesung pro Auge: 960x540 | Refresh: k. A.
 - Gewicht: 88 g
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: No camera passthrough
@@ -571,12 +571,12 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2022-01 | Release: 2022-11
 - Preis: k. A.
 - Display: Si-OLED | Optik: Binokulares See-Through (Epson Optical Engine)
-- FOV (H/V/D Grad): – / – / 34
+- FOV (H/V/D Grad): 34 / – / 34
 - Aufloesung pro Auge: 1920x1080 | Refresh: 60 Hz
 - Gewicht: k. A.
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: k. A.
 - Software: USB-C-Anbindung an Host-Geraete | Recheneinheit: Tethered
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Enterprise-See-Through-Brille fuer Remote-Assistance, bei Haendlern inzwischen als EOL gelistet.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Enterprise-See-Through-Brille für Remote-Assistance, bei Händlern inzwischen als EOL gelistet.
 - Offizielle Seite: https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-45C-AR-Smart-Glasses/p/V11H970020
 
 ## Even Realities G1 (Even Realities)
@@ -597,8 +597,8 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2025-11-12 | Release: 2025-11-12
 - Preis: 599 USD
 - Display: Micro-LED | Optik: HAO (Holistic Adaptive Optics), waveguide with microLED projectors
-- FOV (H/V/D Grad): – / – / –
-- Aufloesung pro Auge: 640x480 | Refresh: k. A.
+- FOV (H/V/D Grad): – / – / 27.5
+- Aufloesung pro Auge: 640x480 | Refresh: 60 Hz
 - Gewicht: 36 g
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optical passthrough
 - Software: Even OS | Recheneinheit: Standalone
@@ -610,12 +610,12 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2026-03-31 | Release: 2026
 - Preis: 599 USD
 - Display: Color OLED (monokular) | Optik: BEAM Optics (See-through Projektion)
-- FOV (H/V/D Grad): – / – / –
+- FOV (H/V/D Grad): – / – / 28
 - Aufloesung pro Auge: 1280x720 | Refresh: k. A.
 - Gewicht: 47 g
 - Tracking: None | Eye-Tracking: Ja | Hand-Tracking: Nein | Passthrough: Monokulares See-through
 - Software: Everysight OS | Recheneinheit: Standalone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Vollfarb-AR/AI-Sportbrille mit Eye-Tracking; Crowdfunding ab Maerz 2026, Auslieferung fuer Q4 2026 geplant.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Vollfarb-AR/AI-Sportbrille mit Eye-Tracking; Crowdfunding ab März 2026, Auslieferung für Q4 2026 geplant.
 - Offizielle Seite: https://www.everysight.com/maverick
 
 ## Everysight Raptor (Everysight)
@@ -636,25 +636,25 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2018-10 | Release: 2018
 - Preis: 999 USD
 - Display: Laser-Projektion (monokular) | Optik: Holografischer Reflektor
-- FOV (H/V/D Grad): – / – / –
-- Aufloesung pro Auge: k. A. | Refresh: k. A.
-- Gewicht: k. A.
+- FOV (H/V/D Grad): – / – / 15
+- Aufloesung pro Auge: 110x110 | Refresh: k. A.
+- Gewicht: 68 g
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Companion-App (Android/iOS) | Recheneinheit: Smartphone
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Nach der Google-Uebernahme wurden alle Focals am 31. Juli 2020 dauerhaft deaktiviert; Preis spaeter auf 599 USD gesenkt.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Nach der Google-Uebernahme wurden alle Focals am 31. Juli 2020 dauerhaft deaktiviert; Preis später auf 599 USD gesenkt.
 - Offizielle Seite: https://www.bynorth.com/
 
 ## Form Smart Swim 2 (FORM)
 - Kategorie: AR
 - Angekuendigt: 2024 | Release: 2024
 - Preis: 249 USD
-- Display: Monokulares Display (Projektion im Brillenglas) | Optik: k. A.
+- Display: Monokulares Display (Projektion im Brillenglas) | Optik: Waveguide
 - FOV (H/V/D Grad): – / – / –
 - Aufloesung pro Auge: k. A. | Refresh: k. A.
 - Gewicht: k. A.
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: FORM Companion-App | Recheneinheit: Standalone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Schwimmbrille mit Heads-up-Display und Herzfrequenzsensor; guenstigere LT-Variante folgte im Mai 2026.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Schwimmbrille mit Heads-up-Display und Herzfrequenzsensor; günstigere LT-Variante folgte im Mai 2026.
 - Offizielle Seite: https://www.formswim.com/products/smart-swim-2-goggles
 
 ## FOVE 0 (FOVE)
@@ -677,10 +677,10 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Display: Mikro-Display (monokular, non-see-through) | Optik: Monokular vor einem Auge
 - FOV (H/V/D Grad): – / – / –
 - Aufloesung pro Auge: 854x480 | Refresh: k. A.
-- Gewicht: k. A.
+- Gewicht: 105 g
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein (Display vor einem Auge)
 - Software: Interstage AR (Android-basiert) | Recheneinheit: Standalone
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Robustes monokulares Enterprise-HMD (IOT001) auf Kopin-Basis fuer Aussen- und Industrieeinsatz.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Robustes monokulares Enterprise-HMD (IOT001) auf Kopin-Basis für Aussen- und Industrieeinsatz.
 - Offizielle Seite: https://www.fujitsu.com/global/about/resources/news/press-releases/2015/0511-02.html
 
 ## Google Glass Enterprise Edition 2 (Google)
@@ -745,7 +745,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 110 g
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: k. A.
 - Software: Plug-and-Play (USB-C DisplayPort) | Recheneinheit: Tethered
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Leichte Open-View-Videobrille mit 110-Zoll-Virtualbild fuer Multitasking.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Leichte Open-View-Videobrille mit 110-Zoll-Virtualbild für Multitasking.
 - Offizielle Seite: https://www.goovis.com/products/art
 
 ## GOOVIS G3 Max (GOOVIS)
@@ -758,16 +758,16 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 300 g
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Plug-and-Play (HDMI/USB-C-Zuspieler) | Recheneinheit: Phone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Persoenliches Kino-HMD des Shenzhener Herstellers GOOVIS, Launch Juni 2023 fuer 799 USD (spaeter 1299 USD UVP).
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Persönliches Kino-HMD des Shenzhener Herstellers GOOVIS, Launch Juni 2023 für 799 USD (später 1299 USD UVP).
 - Offizielle Seite: https://www.goovis.com/products/goovis-g3max
 
 ## Guangli Holoswim (Guangli)
 - Kategorie: AR
 - Angekuendigt: 2021-09-14 | Release: 2021-12-29
 - Preis: 179 USD
-- Display: OLED | Optik: k. A.
+- Display: OLED | Optik: Waveguide
 - FOV (H/V/D Grad): – / – / 25
-- Aufloesung pro Auge: k. A. | Refresh: k. A.
+- Aufloesung pro Auge: 128x64 | Refresh: k. A.
 - Gewicht: 75 g
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Native passthrough
 - Software: Holoswim | Recheneinheit: Standalone
@@ -805,12 +805,12 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2023-03-06 | Release: 2023-03-24
 - Preis: 365 USD
 - Display: Micro-OLED | Optik: Birdbath
-- FOV (H/V/D Grad): – / – / –
+- FOV (H/V/D Grad): – / – / 46
 - Aufloesung pro Auge: 1920x1080 | Refresh: k. A.
 - Gewicht: 80 g
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Plug-and-Play (USB-C DisplayPort) | Recheneinheit: Phone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – China-only Launch Maerz 2023 fuer 2499 CNY (~365 USD umgerechnet), Viewing-Glasses analog zur Huawei Vision Glass.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – China-only Launch März 2023 für 2499 CNY (~365 USD umgerechnet), Viewing-Glasses analog zur Huawei Vision Glass.
 - Offizielle Seite: https://www.honor.com/cn/wearables/honor-vision-glass/
 
 ## HP Reverb G2 (HP)
@@ -820,7 +820,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Display: LCD | Optik: Fresnel (Valve-Design)
 - FOV (H/V/D Grad): – / – / 114
 - Aufloesung pro Auge: 2160x2160 | Refresh: 90 Hz
-- Gewicht: k. A.
+- Gewicht: 550 g
 - Tracking: 6DoF Inside-out (4 Kameras) | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: k. A.
 - Software: Windows Mixed Reality / SteamVR | Recheneinheit: PC
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Eingestellt; die Windows-Mixed-Reality-Plattform wurde von Microsoft beendet.
@@ -846,7 +846,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Display: LCD | Optik: k. A.
 - FOV (H/V/D Grad): 110 / – / –
 - Aufloesung pro Auge: 1440x1700 | Refresh: 90 Hz
-- Gewicht: k. A.
+- Gewicht: 702 g
 - Tracking: 6DoF Inside-out (6 Kameras) | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: k. A.
 - Software: SteamVR / Viveport | Recheneinheit: PC
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Modulares PC-VR-Headset mit Inside-out-Tracking, inzwischen eingestellt.
@@ -857,7 +857,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2021-10-14 | Release: 2021-11
 - Preis: 499 USD
 - Display: LCD | Optik: Pancake
-- FOV (H/V/D Grad): 100 / – / –
+- FOV (H/V/D Grad): 100 / – / 100
 - Aufloesung pro Auge: 1600x1600 | Refresh: 75 Hz
 - Gewicht: 189 g
 - Tracking: 6DoF Inside-out | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: k. A.
@@ -869,8 +869,8 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Kategorie: XR
 - Angekuendigt: 2021-05-11 | Release: 2021-06
 - Preis: 1300 USD
-- Display: LCD | Optik: k. A.
-- FOV (H/V/D Grad): 120 / – / –
+- Display: LCD | Optik: Fresnel
+- FOV (H/V/D Grad): 120 / – / 120
 - Aufloesung pro Auge: 2448x2448 | Refresh: 90 Hz
 - Gewicht: k. A.
 - Tracking: 6DoF Inside-out | Eye-Tracking: Nein | Hand-Tracking: Ja | Passthrough: k. A.
@@ -898,7 +898,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Display: OLED | Optik: k. A.
 - FOV (H/V/D Grad): – / – / –
 - Aufloesung pro Auge: 1440x1600 | Refresh: 90 Hz
-- Gewicht: k. A.
+- Gewicht: 555 g
 - Tracking: 6DoF Outside-in (Lighthouse) | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: k. A.
 - Software: SteamVR | Recheneinheit: PC
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Profi-Upgrade des Vive mit OLED-Displays, von Vive Pro 2 abgelöst.
@@ -909,7 +909,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2021-05-11 | Release: 2021-06-03
 - Preis: 799 USD
 - Display: LCD | Optik: k. A.
-- FOV (H/V/D Grad): 120 / – / –
+- FOV (H/V/D Grad): 120 / – / 120
 - Aufloesung pro Auge: 2448x2448 | Refresh: 120 Hz
 - Gewicht: k. A.
 - Tracking: 6DoF Outside-in (Lighthouse) | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: k. A.
@@ -992,7 +992,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 77 g
 - Tracking: 3DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein (optische Durchsicht)
 - Software: INAIR OS | Recheneinheit: Standalone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Birdbath-Display-Brille mit eigenem INAIR OS, 134-Zoll-Multifenster und Tastatur/Pod im Etui; in China fuer ca. 650 USD erhaeltlich.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Birdbath-Display-Brille mit eigenem INAIR OS, 134-Zoll-Multifenster und Tastatur/Pod im Etui; in China für ca. 650 USD erhältlich.
 - Offizielle Seite: https://inairspace.com/
 
 ## INMO Air (INMO)
@@ -1027,7 +1027,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Preis: 1099 USD
 - Display: Micro-OLED | Optik: Waveguide
 - FOV (H/V/D Grad): – / – / 36
-- Aufloesung pro Auge: 1920x1080 | Refresh: k. A.
+- Aufloesung pro Auge: 1920x1080 | Refresh: 120 Hz
 - Gewicht: 135 g
 - Tracking: Unklar | Eye-Tracking: Nein | Hand-Tracking: Unklar | Passthrough: Nein (durchsichtige Optik)
 - Software: IMOS 3.0 (Android-kompatibel) | Recheneinheit: Standalone
@@ -1052,12 +1052,12 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2025-10-16 | Release: 2025-10-16
 - Preis: 420 USD
 - Display: Micro LED (monochrom gruen) | Optik: Waveguide
-- FOV (H/V/D Grad): – / – / –
+- FOV (H/V/D Grad): – / – / 30
 - Aufloesung pro Auge: 640x480 | Refresh: k. A.
 - Gewicht: 53 g
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein (durchsichtige Optik)
 - Software: Companion-App (Smartphone) | Recheneinheit: Phone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Launch Oktober 2025 in China fuer 2999 CNY (~420 USD umgerechnet), binokulares Display mit Wechselakku-System.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Launch Oktober 2025 in China für 2999 CNY (~420 USD umgerechnet), binokulares Display mit Wechselakku-System.
 - Offizielle Seite: https://www.inmoxr.com/pages/inmo-go3-ai-glasses
 
 ## iQIYI Qiyu 3 (iQIYI)
@@ -1070,7 +1070,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: k. A.
 - Tracking: Inside-out | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Unklar
 - Software: Qiyu OS (Android-basiert) | Recheneinheit: Standalone
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Nur in China (JD.com/Tmall) verkauft; iQIYI hat das VR-Hardwaregeschaeft inzwischen eingestellt.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Nur in China (JD.com/Tmall) verkauft; iQIYI hat das VR-Hardwaregeschäft inzwischen eingestellt.
 - Offizielle Seite: https://dev-qiyu.iqiyi.com/
 
 ## iQIYI Qiyu Dream (iQIYI)
@@ -1083,7 +1083,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: k. A.
 - Tracking: 6DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Unklar
 - Software: Qiyu OS (Android-basiert) | Recheneinheit: Standalone
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Guenstiges China-only Einsteiger-Headset; iQIYI hat das VR-Hardwaregeschaeft eingestellt.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Günstiges China-only Einsteiger-Headset; iQIYI hat das VR-Hardwaregeschäft eingestellt.
 - Offizielle Seite: https://dev-qiyu.iqiyi.com/
 
 ## Iristick G2 (Iristick)
@@ -1135,7 +1135,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: k. A.
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Monokulares See-through
 - Software: AIRe Workflow | Recheneinheit: Standalone
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Industrie-AR-Brille mit transparentem Display und hot-swap 7h-Akku; zunaechst in DE/AT/CZ eingefuehrt.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Industrie-AR-Brille mit transparentem Display und hot-swap 7h-Akku; zunächst in DE/AT/CZ eingeführt.
 - Offizielle Seite: https://thearea.org/ar-news/konica-minolta-develops-ar-glasses-for-industrial-environments/
 
 ## Kopin Solos (Kopin / Solos)
@@ -1148,7 +1148,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: k. A.
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Monokulares See-through
 - Software: Solos App | Recheneinheit: Smartphone
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Erste Solos-Sportbrille mit Pupil-See-through-Display fuer Radfahrer und Laeufer; durch AirGo-Reihe abgeloest.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Erste Solos-Sportbrille mit Pupil-See-through-Display für Radfahrer und Läufer; durch AirGo-Reihe abgelöst.
 - Offizielle Seite: https://solosglasses.com/blogs/news/kopin-starts-selling-500-solos-smart-glasses-for-joggers-and-cyclists
 
 ## LAWK ONE (LAWK)
@@ -1161,7 +1161,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 80 g
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein (durchsichtige Optik)
 - Software: Companion-App, ChatGPT-Sprachassistent | Recheneinheit: Phone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Sport-AR-Brille der chinesischen Marke LAWK (Li Weike/Lawaken), Crowdfunding-Auslieferung ab Dezember 2023 zum Launchpreis von 349 USD (spaeter 699 USD).
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Sport-AR-Brille der chinesischen Marke LAWK (Li Weike/Lawaken), Crowdfunding-Auslieferung ab Dezember 2023 zum Launchpreis von 349 USD (später 699 USD).
 - Offizielle Seite: https://global.lawaken.com/products/lawk-one-ar-glasses
 
 ## Leion Hey (LLVision)
@@ -1170,11 +1170,11 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Preis: 620 USD
 - Display: Micro-LED | Optik: Waveguide
 - FOV (H/V/D Grad): – / – / 23
-- Aufloesung pro Auge: Unklar | Refresh: k. A.
+- Aufloesung pro Auge: 640x360 | Refresh: 60 Hz
 - Gewicht: 79 g
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein (optische Durchsicht)
 - Software: Eigene Uebersetzungssoftware | Recheneinheit: Standalone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – AR-Uebersetzungsbrille der ersten Generation mit transparentem Wellenleiter; China-Aktionspreis 3.998 CNY (ca. 620 USD), ueber 30.000 Einheiten ausgeliefert.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – AR-Uebersetzungsbrille der ersten Generation mit transparentem Wellenleiter; China-Aktionspreis 3.998 CNY (ca. 620 USD), über 30.000 Einheiten ausgeliefert.
 - Offizielle Seite: https://leion.glass/
 
 ## Leion Hey2 (LLVision)
@@ -1187,7 +1187,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 49 g
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein (optische Durchsicht, >90% Transparenz)
 - Software: Eigene Uebersetzungssoftware | Recheneinheit: Standalone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – AR-Uebersetzungsbrille mit gruenem Micro-LED-Wellenleiter und 100+ Sprachen; China 3.999 CNY, international 549 USD (Vorbestellung 499 USD).
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – AR-Uebersetzungsbrille mit grünem Micro-LED-Wellenleiter und 100+ Sprachen; China 3.999 CNY, international 549 USD (Vorbestellung 499 USD).
 - Offizielle Seite: https://www.llvision.com/en/leion-pro.html
 
 ## Lenovo Explorer (Lenovo)
@@ -1200,7 +1200,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 380 g
 - Tracking: Inside-out | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Windows Mixed Reality / SteamVR | Recheneinheit: PC
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Guenstiges Windows-Mixed-Reality-Einsteigerheadset; nach WMR-Aus nicht mehr verfuegbar.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Günstiges Windows-Mixed-Reality-Einsteigerheadset; nach WMR-Aus nicht mehr verfügbar.
 - Offizielle Seite: https://www.lenovo.com/
 
 ## Lenovo Glasses T1 (Lenovo)
@@ -1234,25 +1234,25 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2023-09-01 | Release: 2023-10
 - Preis: 329 USD
 - Display: Micro-OLED | Optik: k. A.
-- FOV (H/V/D Grad): – / – / –
+- FOV (H/V/D Grad): – / – / 60
 - Aufloesung pro Auge: 1920x1080 | Refresh: 60 Hz
 - Gewicht: 96 g
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: k. A.
 - Software: Plug-and-Play (USB-C DisplayPort) | Recheneinheit: Tethered
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Display-Brille als Zubehoer zum Legion Go, von der Gen 2 abgeloest.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Display-Brille als Zubehör zum Legion Go, von der Gen 2 abgelöst.
 - Offizielle Seite: https://www.lenovo.com/us/en/p/accessories-and-software/vr-headsets/vr-headsets_smart-glasses/gy21m72722
 
 ## Lenovo Legion Glasses Gen 2 (Lenovo)
 - Kategorie: AR
 - Angekuendigt: 2025-01-07 | Release: 2025-02
 - Preis: 399 USD
-- Display: Micro-OLED | Optik: k. A.
+- Display: Micro-OLED | Optik: Birdbath
 - FOV (H/V/D Grad): – / – / 43.5
 - Aufloesung pro Auge: 1920x1080 | Refresh: 120 Hz
 - Gewicht: 65 g
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: k. A.
 - Software: Plug-and-Play (USB-C DisplayPort) | Recheneinheit: Tethered
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Display-Brille fuer Legion Go und USB-C-Geraete, seit Februar 2025 erhaeltlich.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Display-Brille für Legion Go und USB-C-Geräte, seit Februar 2025 erhältlich.
 - Offizielle Seite: https://www.lenovo.com/us/en/p/accessories-and-software/vr-headsets/vr-headsets_smart-glasses/gy21r10236
 
 ## Lenovo ThinkReality A3 (Lenovo)
@@ -1278,7 +1278,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 380 g
 - Tracking: 6DoF (Inside-out) | Eye-Tracking: Unklar | Hand-Tracking: Unklar | Passthrough: Optisches See-through
 - Software: ThinkReality (Android-basiert) | Recheneinheit: Standalone
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Enterprise-MR-Headset, vorgestellt auf der Lenovo Accelerate 2019; durch ThinkReality A3 abgeloest.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Enterprise-MR-Headset, vorgestellt auf der Lenovo Accelerate 2019; durch ThinkReality A3 abgelöst.
 - Offizielle Seite: https://www.tomshardware.com/news/lenovo-thinkreality-a6-ar-headset-specs,39329.html
 
 ## Lenovo ThinkReality VRX (Lenovo)
@@ -1286,9 +1286,9 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2022-08-31 | Release: 2023-06
 - Preis: 1299 USD
 - Display: LCD | Optik: Pancake
-- FOV (H/V/D Grad): 95 / – / –
+- FOV (H/V/D Grad): 95 / – / 95
 - Aufloesung pro Auge: 2280x2280 | Refresh: 90 Hz
-- Gewicht: k. A.
+- Gewicht: 800 g
 - Tracking: 6DoF Inside-out (4 Kameras) | Eye-Tracking: Nein | Hand-Tracking: Ja | Passthrough: Farbe (hochauflösend)
 - Software: Android 12 (ThinkReality) | Recheneinheit: Standalone
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Standalone-Enterprise-Headset mit Farb-Passthrough für Training und Kollaboration.
@@ -1324,8 +1324,8 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Kategorie: AR
 - Angekuendigt: 2017-11-17 | Release: 2017-12-01
 - Preis: 769 USD
-- Display: k. A. | Optik: k. A.
-- FOV (H/V/D Grad): – / – / 45
+- Display: OLED | Optik: k. A.
+- FOV (H/V/D Grad): 45 / – / 45
 - Aufloesung pro Auge: 1280x720 | Refresh: k. A.
 - Gewicht: k. A.
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Ja | Passthrough: Native passthrough, 8MP camera
@@ -1376,26 +1376,26 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Kategorie: AR
 - Angekuendigt: 2023-11-30 | Release: 2023-12
 - Preis: 352 USD
-- Display: Micro LED | Optik: Waveguide
+- Display: Micro LED | Optik: Waveguide (Resin)
 - FOV (H/V/D Grad): – / – / –
-- Aufloesung pro Auge: k. A. | Refresh: k. A.
+- Aufloesung pro Auge: 1280x480 | Refresh: k. A.
 - Gewicht: 43 g
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein (durchsichtige Optik)
 - Software: Flyme AR / Companion-App | Recheneinheit: Phone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – China-Launch Ende 2023 fuer 2499 CNY (~352 USD umgerechnet), leichte Waveguide-Smart-Glasses mit Flyme-Anbindung.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – China-Launch Ende 2023 für 2499 CNY (~352 USD umgerechnet), leichte Waveguide-Smart-Glasses mit Flyme-Anbindung.
 - Offizielle Seite: https://www.meizu.com/
 
 ## Meizu MYVU Discovery (Meizu)
 - Kategorie: AR
 - Angekuendigt: 2023-11-30 | Release: 2023-12
 - Preis: 1400 USD
-- Display: Micro LED (Vollfarbe) | Optik: Waveguide (Resin, doppellagig)
+- Display: Micro LED (Vollfarbe) | Optik: Waveguide (Resin)
 - FOV (H/V/D Grad): – / – / –
-- Aufloesung pro Auge: k. A. | Refresh: k. A.
+- Aufloesung pro Auge: 640x480 | Refresh: k. A.
 - Gewicht: 71 g
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein (durchsichtige Optik)
 - Software: Flyme AR | Recheneinheit: Standalone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – Vollfarb-MicroLED-Flaggschiff mit Resin-Waveguide, China-Launch fuer 9999 CNY (~1400 USD umgerechnet).
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – Vollfarb-MicroLED-Flaggschiff mit Resin-Waveguide, China-Launch für 9999 CNY (~1400 USD umgerechnet).
 - Offizielle Seite: https://www.meizu.com/
 
 ## Meizu StarV Air2 (Meizu)
@@ -1403,12 +1403,12 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2024-09-25 | Release: 2024-10-08
 - Preis: 399 USD
 - Display: Micro LED (monochrom gruen) | Optik: Waveguide
-- FOV (H/V/D Grad): – / – / –
-- Aufloesung pro Auge: k. A. | Refresh: k. A.
+- FOV (H/V/D Grad): – / – / 30
+- Aufloesung pro Auge: 640x480 | Refresh: k. A.
 - Gewicht: 44 g
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein (durchsichtige Optik)
 - Software: StarVision / Companion-App (Flyme) | Recheneinheit: Phone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Erstverkauf Oktober 2024 ab 2799 CNY (~399 USD umgerechnet, UVP 2999 CNY), inzwischen auch global erhaeltlich.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Erstverkauf Oktober 2024 ab 2799 CNY (~399 USD umgerechnet, UVP 2999 CNY), inzwischen auch global erhältlich.
 - Offizielle Seite: https://www.meizu.com/global/product/starv-air2
 
 ## Meizu StarV View (Meizu)
@@ -1416,25 +1416,25 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2024-09-25 | Release: 2024-10
 - Preis: 399 USD
 - Display: Micro-OLED | Optik: Birdbath
-- FOV (H/V/D Grad): – / – / –
-- Aufloesung pro Auge: k. A. | Refresh: 120 Hz
-- Gewicht: k. A.
+- FOV (H/V/D Grad): – / – / 43.5
+- Aufloesung pro Auge: 1920x1080 | Refresh: 120 Hz
+- Gewicht: 74 g
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Plug-and-Play (USB-C DisplayPort) | Recheneinheit: Phone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Birdbath-Viewing-Glasses, Launch Herbst 2024 fuer 2799 CNY (~399 USD umgerechnet; Vorbestellerpreis 2499 CNY).
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Birdbath-Viewing-Glasses, Launch Herbst 2024 für 2799 CNY (~399 USD umgerechnet; Vorbestellerpreis 2499 CNY).
 - Offizielle Seite: https://www.meizu.com/
 
 ## Mentra Mach1 (Mentra)
 - Kategorie: AR
 - Angekuendigt: 2025-01 | Release: 2025-05
 - Preis: 349 USD
-- Display: Micro LED (monochrom gruen, monokular) | Optik: Waveguide
+- Display: Micro LED | Optik: Waveguide
 - FOV (H/V/D Grad): – / – / –
 - Aufloesung pro Auge: 640x480 | Refresh: k. A.
 - Gewicht: k. A.
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: MentraOS (AugmentOS) | Recheneinheit: Smartphone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Open-Source-Smart-Glasses (DevKit) auf Basis von Vuzix-Waveguide-Technik, laeuft mit MentraOS/AugmentOS.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Open-Source-Smart-Glasses (DevKit) auf Basis von Vuzix-Waveguide-Technik, läuft mit MentraOS/AugmentOS.
 - Offizielle Seite: https://shop.mentra.glass/products/mach1-devkit-display-glasses
 
 ## Meta 2 (Meta (2016))
@@ -1455,7 +1455,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2020-09-16 | Release: 2020-10-13
 - Preis: 299 USD
 - Display: LCD | Optik: Fresnel
-- FOV (H/V/D Grad): – / – / –
+- FOV (H/V/D Grad): 96 / – / –
 - Aufloesung pro Auge: 1832x1920 | Refresh: 120 Hz
 - Gewicht: 503 g
 - Tracking: 6DoF Inside-out (4 Kameras) | Eye-Tracking: Nein | Hand-Tracking: Ja | Passthrough: Monochrom
@@ -1499,7 +1499,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 722 g
 - Tracking: Inside-out | Eye-Tracking: Ja | Hand-Tracking: Ja | Passthrough: Native color passthrough
 - Software: Meta Horizon OS | Recheneinheit: Standalone
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Diskontinuiert Januar 2025; keine neuen Verkaeufe mehr von Meta.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Diskontinuiert Januar 2025; keine neuen Verkäufe mehr von Meta.
 - Offizielle Seite: https://www.meta.com/quest/quest-pro/
 
 ## Meta Ray-Ban Display (Meta)
@@ -1525,7 +1525,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 579 g
 - Tracking: Inside-out | Eye-Tracking: Nein | Hand-Tracking: Ja | Passthrough: Native passthrough, 2MP camera
 - Software: Windows Holographic | Recheneinheit: Standalone
-- Lifecycle: EOL / Support beendet | Aktiver Vertrieb: Nein – Microsoft Release Notes: Support fuer HoloLens (1st gen) endete am 10 Dec 2024.
+- Lifecycle: EOL / Support beendet | Aktiver Vertrieb: Nein – Microsoft Release Notes: Support für HoloLens (1st gen) endete am 10 Dec 2024.
 - Offizielle Seite: https://docs.microsoft.com/en-us/hololens/hololens1-hardware
 
 ## Microsoft HoloLens 2 (Microsoft)
@@ -1538,7 +1538,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 556 g
 - Tracking: Inside-out | Eye-Tracking: Ja | Hand-Tracking: Ja | Passthrough: Native passthrough, 8MP camera @ 30fps
 - Software: Windows Holographic | Recheneinheit: Standalone
-- Lifecycle: Support-Ende angekuendigt | Aktiver Vertrieb: Nein – Microsoft nennt HoloLens 2 als out of stock; Support bis 31 Dec 2027.
+- Lifecycle: Support-Ende angekündigt | Aktiver Vertrieb: Nein – Microsoft nennt HoloLens 2 als out of stock; Support bis 31 Dec 2027.
 - Offizielle Seite: https://www.microsoft.com/en-us/hololens
 
 ## Microsoft IVAS (Microsoft)
@@ -1551,7 +1551,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 1293 g
 - Tracking: 6DoF (Inside-out) | Eye-Tracking: Ja | Hand-Tracking: Ja | Passthrough: Optisches See-through mit Nachtsicht/Thermal-Overlay
 - Software: IVAS (Windows/HoloLens-basiert) | Recheneinheit: Standalone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Militaerisches HoloLens-basiertes AR-System der US Army; Variante 1.2 mit 60-Grad-FOV ab 2023 ausgeliefert.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Militärisches HoloLens-basiertes AR-System der US Army; Variante 1.2 mit 60-Grad-FOV ab 2023 ausgeliefert.
 - Offizielle Seite: https://en.wikipedia.org/wiki/Integrated_Visual_Augmentation_System
 
 ## Nimo (Nimo Planet)
@@ -1559,7 +1559,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2022-02-21 | Release: k. A.
 - Preis: 1299 USD
 - Display: k. A. | Optik: Waveguides
-- FOV (H/V/D Grad): – / – / 26
+- FOV (H/V/D Grad): – / – / 46
 - Aufloesung pro Auge: 1280x720 | Refresh: k. A.
 - Gewicht: 120 g
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Native passthrough
@@ -1572,12 +1572,12 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2021 | Release: 2021-06
 - Preis: 399 USD
 - Display: LCD | Optik: Fresnel
-- FOV (H/V/D Grad): 101 / – / –
+- FOV (H/V/D Grad): 101 / – / 101
 - Aufloesung pro Auge: 1920x2160 | Refresh: 72 Hz
 - Gewicht: k. A.
 - Tracking: 6DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Unklar
 - Software: Android-basiertes Nolo-OS | Recheneinheit: Standalone
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Standalone-Headset vor allem fuer den chinesischen Markt, Launch Juni 2021.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Standalone-Headset vor allem für den chinesischen Markt, Launch Juni 2021.
 - Offizielle Seite: https://www.nolovr.com/
 
 ## Nolo VR Glass (Nolo)
@@ -1650,7 +1650,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2017-10-11 | Release: 2018-05-01
 - Preis: 199 USD
 - Display: LCD | Optik: Fresnel
-- FOV (H/V/D Grad): 101 / – / –
+- FOV (H/V/D Grad): 101 / – / 98
 - Aufloesung pro Auge: 1280x1440 | Refresh: 72 Hz
 - Gewicht: 468 g
 - Tracking: 3DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: k. A.
@@ -1662,8 +1662,8 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Kategorie: XR
 - Angekuendigt: 2018-09-26 | Release: 2019-05-21
 - Preis: 399 USD
-- Display: OLED (PenTile) | Optik: k. A.
-- FOV (H/V/D Grad): – / – / –
+- Display: OLED (PenTile) | Optik: Fresnel
+- FOV (H/V/D Grad): 93 / – / –
 - Aufloesung pro Auge: 1440x1600 | Refresh: 72 Hz
 - Gewicht: 571 g
 - Tracking: 6DoF Inside-out (4 Kameras, Oculus Insight) | Eye-Tracking: Nein | Hand-Tracking: Ja | Passthrough: k. A.
@@ -1694,14 +1694,14 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 440 g
 - Tracking: 6DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Oculus SDK | Recheneinheit: PC
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Zweites Oculus-Entwicklerkit mit Low-Persistence-OLED und Positions-Tracking; historisch bedeutend, laengst eingestellt.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Zweites Oculus-Entwicklerkit mit Low-Persistence-OLED und Positions-Tracking; historisch bedeutend, längst eingestellt.
 - Offizielle Seite: https://www.meta.com/
 
 ## Oculus Rift S (Meta)
 - Kategorie: XR
 - Angekuendigt: 2019-03-20 | Release: 2019-05-21
 - Preis: 399 USD
-- Display: LCD | Optik: k. A.
+- Display: LCD | Optik: Fresnel
 - FOV (H/V/D Grad): 115 / – / –
 - Aufloesung pro Auge: 1280x1440 | Refresh: 80 Hz
 - Gewicht: 500 g
@@ -1717,7 +1717,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Display: OLED | Optik: See-through (Folded Optic)
 - FOV (H/V/D Grad): – / – / 30
 - Aufloesung pro Auge: 1280x720 | Refresh: 80 Hz
-- Gewicht: k. A.
+- Gewicht: 170 g
 - Tracking: 6DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisches See-through (80% Transparenz)
 - Software: ReticleOS (Android-basiert) | Recheneinheit: Standalone
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Enterprise-AR-Brille; ODG stellte 2019 nach Verkauf der Patente an Magic Leap den Betrieb ein.
@@ -1730,10 +1730,10 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Display: OLED | Optik: See-through (Folded Optic)
 - FOV (H/V/D Grad): – / – / 50
 - Aufloesung pro Auge: 1920x1080 | Refresh: k. A.
-- Gewicht: k. A.
+- Gewicht: 184 g
 - Tracking: 6DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisches See-through
 - Software: ReticleOS (Android-basiert) | Recheneinheit: Standalone
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Auf der CES 2017 vorgestellt; ODG stellte 2019 den Geschaeftsbetrieb ein.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Auf der CES 2017 vorgestellt; ODG stellte 2019 den Geschäftsbetrieb ein.
 - Offizielle Seite: https://vrarwiki.com/wiki/R-9_Smartglasses
 
 ## Oppo Air Glass (Oppo)
@@ -1772,7 +1772,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 586 g
 - Tracking: Inside-out | Eye-Tracking: Nein | Hand-Tracking: Ja | Passthrough: Ja (Farbe, 16 MP)
 - Software: Pico OS | Recheneinheit: Standalone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Nein – Launch Oktober 2022 fuer 429 EUR (EU) bzw. 2499 CNY in China (~420 USD umgerechnet); kein offizieller USD-Preis, da nie in den USA verkauft.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Nein – Launch Oktober 2022 für 429 EUR (EU) bzw. 2499 CNY in China (~420 USD umgerechnet); kein offizieller USD-Preis, da nie in den USA verkauft.
 - Offizielle Seite: https://www.picoxr.com/
 
 ## Pico 4 Ultra (Pico)
@@ -1785,7 +1785,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 580 g
 - Tracking: Inside-out | Eye-Tracking: Nein | Hand-Tracking: Ja | Passthrough: Ja (Farbe, 2x 32 MP + iToF-Tiefensensor)
 - Software: Pico OS | Recheneinheit: Standalone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Launch September 2024 fuer 4299 CNY in China (~600 USD umgerechnet) bzw. 549 EUR in Europa.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Launch September 2024 für 4299 CNY in China (~600 USD umgerechnet) bzw. 549 EUR in Europa.
 - Offizielle Seite: https://www.picoxr.com/global/products/pico4-ultra
 
 ## Pico G2 4K (Pico)
@@ -1793,12 +1793,12 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2019-01-01 | Release: 2019-03-30
 - Preis: 299 USD
 - Display: LCD | Optik: Fresnel
-- FOV (H/V/D Grad): 101 / – / –
+- FOV (H/V/D Grad): 101 / – / 101
 - Aufloesung pro Auge: 1920x2160 | Refresh: 75 Hz
-- Gewicht: k. A.
+- Gewicht: 278 g
 - Tracking: 3DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Pico OS (Android 8.1) | Recheneinheit: Standalone
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – 3DoF-Standalone-Headset mit 4K-LCD, vor allem fuer Video und Enterprise; eingestellt.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – 3DoF-Standalone-Headset mit 4K-LCD, vor allem für Video und Enterprise; eingestellt.
 - Offizielle Seite: https://www.picoxr.com/
 
 ## Pico G3 (Pico)
@@ -1806,12 +1806,12 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2023-04 | Release: 2023
 - Preis: 399 USD
 - Display: LCD | Optik: Fresnel
-- FOV (H/V/D Grad): – / – / –
+- FOV (H/V/D Grad): – / – / 98
 - Aufloesung pro Auge: 1832x1920 | Refresh: 90 Hz
 - Gewicht: 604 g
 - Tracking: 3DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Pico OS (Enterprise) | Recheneinheit: Standalone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Enterprise-3DoF-Headset, Launch 2023 fuer 399 USD/EUR.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Enterprise-3DoF-Headset, Launch 2023 für 399 USD/EUR.
 - Offizielle Seite: https://www.picoxr.com/global/products/g3
 
 ## Pico Neo 2 (Pico)
@@ -1819,12 +1819,12 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2019-12-01 | Release: 2020-05-27
 - Preis: 699 USD
 - Display: LCD | Optik: Fresnel
-- FOV (H/V/D Grad): 101 / – / –
+- FOV (H/V/D Grad): 101 / – / 101
 - Aufloesung pro Auge: 1920x2160 | Refresh: 75 Hz
-- Gewicht: k. A.
+- Gewicht: 350 g
 - Tracking: 6DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Pico OS (Android) | Recheneinheit: Standalone
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – 6DoF-Standalone-Headset fuer Enterprise mit elektromagnetischem Controller-Tracking; durch Neo 3 abgeloest.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – 6DoF-Standalone-Headset für Enterprise mit elektromagnetischem Controller-Tracking; durch Neo 3 abgelöst.
 - Offizielle Seite: https://www.picoxr.com/
 
 ## Pico Neo 3 (Pico)
@@ -1832,12 +1832,12 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2021-05 | Release: 2021-05
 - Preis: 390 USD
 - Display: LCD | Optik: Fresnel
-- FOV (H/V/D Grad): 98 / – / –
+- FOV (H/V/D Grad): 98 / – / 98
 - Aufloesung pro Auge: 1832x1920 | Refresh: 90 Hz
 - Gewicht: k. A.
 - Tracking: Inside-out | Eye-Tracking: Nein | Hand-Tracking: Unklar | Passthrough: Ja (monochrom)
 - Software: Pico OS | Recheneinheit: Standalone
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – China-Launch Mai 2021 ab ca. 2499 CNY (~390 USD), inzwischen vom Pico 4 abgeloest.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – China-Launch Mai 2021 ab ca. 2499 CNY (~390 USD), inzwischen vom Pico 4 abgelöst.
 - Offizielle Seite: https://www.picoxr.com/
 
 ## Pico Neo 3 Link (Pico)
@@ -1845,9 +1845,9 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2022-04-15 | Release: 2022-05
 - Preis: 449 USD
 - Display: LCD | Optik: Fresnel
-- FOV (H/V/D Grad): – / – / –
+- FOV (H/V/D Grad): 98 / – / –
 - Aufloesung pro Auge: 1832x1920 | Refresh: 90 Hz
-- Gewicht: k. A.
+- Gewicht: 620 g
 - Tracking: 6DoF Inside-out | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: k. A.
 - Software: PICO OS (Android-basiert) | Recheneinheit: Standalone
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Launchpreis 449 EUR in Europa; Standalone-Headset mit DisplayPort-PC-Anbindung, vom Pico 4 abgelöst.
@@ -1876,7 +1876,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 815 g
 - Tracking: Inside-out | Eye-Tracking: Unklar | Hand-Tracking: Unklar | Passthrough: No camera passthrough
 - Software: SteamVR | Recheneinheit: PC
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Mid-range PC VR Headset, 35 PPD, SLAM/Lighthouse tracking moeglich
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Mid-range PC VR Headset, 35 PPD, SLAM/Lighthouse tracking möglich
 - Offizielle Seite: https://pimax.com/products/pimax-crystal-light
 
 ## Pimax Crystal Super (Pimax)
@@ -1886,7 +1886,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Display: QLED | Optik: Aspheric glass lenses
 - FOV (H/V/D Grad): 130 / 111 / –
 - Aufloesung pro Auge: 3840x3840 | Refresh: 120 Hz
-- Gewicht: k. A.
+- Gewicht: 966 g
 - Tracking: Inside-out | Eye-Tracking: Ja | Hand-Tracking: Optional | Passthrough: Native color passthrough
 - Software: SteamVR | Recheneinheit: PC
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – High-end PC VR mit 130° FOV, 3840x3840 pro Auge, Versand seit April 2025
@@ -1912,7 +1912,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Display: Micro-OLED | Optik: Pancake
 - FOV (H/V/D Grad): 105 / – / –
 - Aufloesung pro Auge: 2560x2560 | Refresh: 90 Hz
-- Gewicht: k. A.
+- Gewicht: 140 g
 - Tracking: Inside-out | Eye-Tracking: Ja | Hand-Tracking: Unklar | Passthrough: Unklar
 - Software: SteamVR (PC) | Recheneinheit: PC
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Kompaktes PC-VR-Headset des Shanghaier Herstellers Pimax, Auslieferung seit Mai 2026 (Lighthouse- und SLAM-Variante).
@@ -1935,7 +1935,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Kategorie: XR
 - Angekuendigt: 2016-03-15 | Release: 2016-10-13
 - Preis: 399 USD
-- Display: OLED (5,7 Zoll) | Optik: k. A.
+- Display: OLED (5,7 Zoll) | Optik: Aspheric
 - FOV (H/V/D Grad): 100 / – / –
 - Aufloesung pro Auge: 960x1080 | Refresh: 120 Hz
 - Gewicht: 600 g
@@ -1962,12 +1962,12 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2023-10 | Release: 2023-10-20
 - Preis: 344 USD
 - Display: Micro-OLED | Optik: Birdbath
-- FOV (H/V/D Grad): – / – / –
-- Aufloesung pro Auge: 1920x1080 | Refresh: k. A.
+- FOV (H/V/D Grad): – / – / 46
+- Aufloesung pro Auge: 1920x1080 | Refresh: 120 Hz
 - Gewicht: k. A.
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein (optische Durchsicht)
 - Software: Kein eigenes OS (DisplayPort) | Recheneinheit: Tethered
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Erste Generation der Birdbath-Kinobrille (in China als Thunderbird Air 1S), Start zu 2.499 CNY (ca. 344 USD); inzwischen von Air 2/3-Serie abgeloest.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Erste Generation der Birdbath-Kinobrille (in China als Thunderbird Air 1S), Start zu 2.499 CNY (ca. 344 USD); inzwischen von Air 2/3-Serie abgelöst.
 - Offizielle Seite: https://www.rayneo.com/
 
 ## RayNeo Air 2 (TCL)
@@ -1980,7 +1980,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 76 g
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Plug-and-Play (USB-C DisplayPort) | Recheneinheit: Phone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Birdbath-Viewing-Glasses, Launch Ende 2023 fuer 379 USD.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Birdbath-Viewing-Glasses, Launch Ende 2023 für 379 USD.
 - Offizielle Seite: https://www.rayneo.com/products/rayneo-air-2-xr-glasses
 
 ## RayNeo Air 2s (TCL)
@@ -1993,7 +1993,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 76 g
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Plug-and-Play (USB-C DisplayPort) | Recheneinheit: Phone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Ueberarbeitete Air 2 mit Vier-Lautsprecher-System, Launch August 2024 fuer 399 USD.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Ueberarbeitete Air 2 mit Vier-Lautsprecher-System, Launch August 2024 für 399 USD.
 - Offizielle Seite: https://www.rayneo.com/products/rayneo-air_2s
 
 ## RayNeo Air 3 (TCL)
@@ -2006,7 +2006,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: k. A.
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Plug-and-Play (USB-C DisplayPort) | Recheneinheit: Phone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – China-Launch Oktober 2024 fuer 1699 CNY (~238 USD umgerechnet); international erschien die Variante Air 3s.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – China-Launch Oktober 2024 für 1699 CNY (~238 USD umgerechnet); international erschien die Variante Air 3s.
 - Offizielle Seite: https://www.rayneo.com/
 
 ## RayNeo Air 3s (TCL)
@@ -2027,12 +2027,12 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2025-10-23 | Release: 2025-10-23
 - Preis: 224 USD
 - Display: Micro-OLED (Tandem) | Optik: Birdbath
-- FOV (H/V/D Grad): – / – / –
-- Aufloesung pro Auge: 1920x1080 | Refresh: k. A.
+- FOV (H/V/D Grad): – / – / 47
+- Aufloesung pro Auge: 1920x1080 | Refresh: 120 Hz
 - Gewicht: 76 g
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Plug-and-Play (USB-C DisplayPort) | Recheneinheit: Phone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – China-Launch Oktober 2025 fuer 1599 CNY (~224 USD umgerechnet); erste AR-Brille mit HDR10-Unterstuetzung.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – China-Launch Oktober 2025 für 1599 CNY (~224 USD umgerechnet); erste AR-Brille mit HDR10-Unterstützung.
 - Offizielle Seite: https://www.rayneo.com/
 
 ## RayNeo Air 4 Pro (TCL)
@@ -2040,12 +2040,12 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2025-10-23 | Release: 2026-01-25
 - Preis: 299 USD
 - Display: Micro-OLED (Tandem) | Optik: Birdbath
-- FOV (H/V/D Grad): – / – / –
-- Aufloesung pro Auge: 1920x1080 | Refresh: k. A.
+- FOV (H/V/D Grad): – / – / 47
+- Aufloesung pro Auge: 1920x1080 | Refresh: 120 Hz
 - Gewicht: 76 g
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Plug-and-Play (USB-C DisplayPort) | Recheneinheit: Phone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – China-Launch Oktober 2025 fuer 1799 CNY, globaler Verkaufsstart Januar 2026 fuer 299 USD.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – China-Launch Oktober 2025 für 1799 CNY, globaler Verkaufsstart Januar 2026 für 299 USD.
 - Offizielle Seite: https://www.rayneo.com/products/rayneo-air-4-pro-ar-glasses
 
 ## RayNeo GT Max (TCL)
@@ -2078,13 +2078,13 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Kategorie: XR
 - Angekuendigt: 2016-06-01 | Release: 2016-07-01
 - Preis: 399 USD
-- Display: OLED | Optik: Unklar
-- FOV (H/V/D Grad): – / – / 110
+- Display: OLED | Optik: Aspheric (SLR-grade)
+- FOV (H/V/D Grad): 110 / – / 110
 - Aufloesung pro Auge: 1080x1200 | Refresh: 90 Hz
 - Gewicht: k. A.
 - Tracking: 6DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: OSVR (Open Source Virtual Reality) | Recheneinheit: PC
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Open-Source-VR-Headset (OSVR-Initiative) mit Specs aehnlich dem Oculus Rift CV1; Projekt eingestellt.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Open-Source-VR-Headset (OSVR-Initiative) mit Specs ähnlich dem Oculus Rift CV1; Projekt eingestellt.
 - Offizielle Seite: http://www.osvr.org/hdk2.html
 
 ## Realmax Qian (Realmax)
@@ -2188,7 +2188,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: k. A.
 - Tracking: 6DoF (Helm-Tracking) | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisches See-through (Visor)
 - Software: Red 6 ATARS | Recheneinheit: Tethered
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Helmmontiertes Vollfarb-AR-Display fuer In-Flight-Trainings; 2025 von der USAF fuer F-16-Integration ausgewaehlt.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Helmmontiertes Vollfarb-AR-Display für In-Flight-Trainings; 2025 von der USAF für F-16-Integration ausgewählt.
 - Offizielle Seite: https://red6ar.com/atars/
 
 ## Rokid AI Glasses Style (Rokid)
@@ -2357,7 +2357,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 545 g
 - Tracking: Inside-out | Eye-Tracking: Ja | Hand-Tracking: Ja | Passthrough: Native color passthrough
 - Software: Android XR | Recheneinheit: Standalone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Neu veroeffentlicht Oktober 2025, Samsung erste Android XR Headset
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Neu veröffentlicht Oktober 2025, Samsung erste Android XR Headset
 - Offizielle Seite: https://www.samsung.com/us/business/electronics/wearables/virtual-reality-mixed-reality/samsung-galaxy-xr/
 
 ## Samsung Gear VR (2017) (Samsung)
@@ -2365,12 +2365,12 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2017-03-29 | Release: 2017-04-21
 - Preis: 129 USD
 - Display: AMOLED | Optik: Fresnel
-- FOV (H/V/D Grad): 101 / – / –
-- Aufloesung pro Auge: Unklar | Refresh: 60 Hz
+- FOV (H/V/D Grad): 101 / – / 101
+- Aufloesung pro Auge: 1280x1440 | Refresh: 60 Hz
 - Gewicht: 345 g
 - Tracking: 3DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Oculus Mobile (Gear VR) | Recheneinheit: Smartphone
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Smartphone-VR-Halterung (Galaxy-Reihe) mit Oculus-Software und erstmals mitgeliefertem Controller; Plattform laengst eingestellt.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Smartphone-VR-Halterung (Galaxy-Reihe) mit Oculus-Software und erstmals mitgeliefertem Controller; Plattform längst eingestellt.
 - Offizielle Seite: https://www.samsung.com/global/galaxy/gear-vr/
 
 ## Samsung HMD Odyssey (Samsung)
@@ -2383,7 +2383,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 644 g
 - Tracking: Inside-out | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Windows Mixed Reality / SteamVR | Recheneinheit: PC
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Premium-Windows-Mixed-Reality-Headset mit AMOLED-Displays; nach Microsofts WMR-Aus nicht mehr erhaeltlich.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Premium-Windows-Mixed-Reality-Headset mit AMOLED-Displays; nach Microsofts WMR-Aus nicht mehr erhältlich.
 - Offizielle Seite: https://www.samsung.com/us/computing/hmd/windows-mixed-reality/hmd-odyssey-mixed-reality-headset-xe800zaa-hc1us/
 
 ## Samsung HMD Odyssey+ (Samsung)
@@ -2396,7 +2396,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 645 g
 - Tracking: Inside-out | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Windows Mixed Reality / SteamVR | Recheneinheit: PC
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – WMR-Headset mit Anti-Screen-Door-Effect-Technik; mit Einstellung von Windows Mixed Reality abgekuendigt.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – WMR-Headset mit Anti-Screen-Door-Effect-Technik; mit Einstellung von Windows Mixed Reality abgekündigt.
 - Offizielle Seite: https://www.samsungmobilepress.com/media-assets/samsung_hmd_odyssey_plus
 
 ## Shadow Creator Action One (Shadow Creator)
@@ -2443,7 +2443,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2025-10-14 | Release: 2025-12
 - Preis: 1899 USD
 - Display: Micro-OLED | Optik: Pancake
-- FOV (H/V/D Grad): – / – / –
+- FOV (H/V/D Grad): 100 / – / –
 - Aufloesung pro Auge: 3552x3840 | Refresh: 90 Hz
 - Gewicht: 179 g
 - Tracking: 6DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
@@ -2461,7 +2461,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 179 g
 - Tracking: Inside-out | Eye-Tracking: Unklar | Hand-Tracking: Unklar | Passthrough: No camera passthrough
 - Software: SteamVR | Recheneinheit: PC
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Ultra-leicht 179g, 4K pro Auge, OLED, Februar-Maerz 2025 Versand
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Ultra-leicht 179g, 4K pro Auge, OLED, Februar-März 2025 Versand
 - Offizielle Seite: https://en.shiftall.net/products/meganex8k
 
 ## Skyworth Pancake 1 (Skyworth)
@@ -2487,7 +2487,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: k. A.
 - Tracking: 6DoF | Eye-Tracking: Ja | Hand-Tracking: Ja | Passthrough: Vollfarb-VST-Passthrough (zwei Frontkameras)
 - Software: Unklar | Recheneinheit: Standalone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – MR-All-in-One mit Pancake-Optik und Micro-OLED (4K je Auge / 8K binokular), gezeigt auf CES 2024; kein offizieller Preis verfuegbar.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – MR-All-in-One mit Pancake-Optik und Micro-OLED (4K je Auge / 8K binokular), gezeigt auf CES 2024; kein offizieller Preis verfügbar.
 - Offizielle Seite: https://www.skyworthxr.com/
 
 ## Snap Specs (Snap Inc)
@@ -2500,14 +2500,14 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: k. A.
 - Tracking: 6DoF | Eye-Tracking: Unklar | Hand-Tracking: Ja | Passthrough: Optical see-through
 - Software: Snap OS | Recheneinheit: Standalone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Nein – Angekuendigt: erste Consumer-AR-Brille von Snap auf Snap-OS-Basis; Marktstart Herbst 2026 geplant, kolportierter Preis ca. 2.500 USD.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Nein – Angekündigt: erste Consumer-AR-Brille von Snap auf Snap-OS-Basis; Marktstart Herbst 2026 geplant, kolportierter Preis ca. 2.500 USD.
 - Offizielle Seite: https://www.spectacles.com/
 
 ## Snap Spectacles (2021) (Snap Inc)
 - Kategorie: AR
 - Angekuendigt: 2021-05-21 | Release: 2021-05-21
 - Preis: k. A.
-- Display: k. A. | Optik: Waveguides
+- Display: Waveguide (Micro-OLED) | Optik: Waveguides
 - FOV (H/V/D Grad): – / – / 26.3
 - Aufloesung pro Auge: 480x564 | Refresh: 120 Hz
 - Gewicht: 134 g
@@ -2526,20 +2526,20 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 226 g
 - Tracking: 6DoF Inside-out (4 Kameras) | Eye-Tracking: Nein | Hand-Tracking: Ja | Passthrough: Nein (echtes See-Through)
 - Software: Snap OS | Recheneinheit: Standalone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Nur fuer Entwickler im Abo (99 USD/Monat), kein freier Verkauf; Konsumenten-Nachfolger Specs fuer 2026 angekuendigt.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Nur für Entwickler im Abo (99 USD/Monat), kein freier Verkauf; Konsumenten-Nachfolger Specs für 2026 angekündigt.
 - Offizielle Seite: https://www.spectacles.com/
 
 ## Sol Reader (Sol)
 - Kategorie: AR
 - Angekuendigt: 2023-01 | Release: 2024
 - Preis: 399 USD
-- Display: E Ink | Optik: Unklar
+- Display: E Ink | Optik: Lens (Fixed-focus, Dioptrieneinstellung)
 - FOV (H/V/D Grad): – / – / –
-- Aufloesung pro Auge: Unklar | Refresh: k. A.
+- Aufloesung pro Auge: 256x256 | Refresh: k. A.
 - Gewicht: 104 g
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Sol Reader App (iOS/Android) | Recheneinheit: Standalone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – E-Ink-Lesebrille im VR-Formfaktor; seit 2024 ausgeliefert, nur ePUB-Unterstuetzung.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – E-Ink-Lesebrille im VR-Formfaktor; seit 2024 ausgeliefert, nur ePUB-Unterstützung.
 - Offizielle Seite: https://solreader.com/
 
 ## Solos AirGo Vision (Solos)
@@ -2572,13 +2572,13 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Kategorie: XR
 - Angekuendigt: 2011-08-31 | Release: 2011-11-11
 - Preis: 783 USD
-- Display: OLED | Optik: Unklar
+- Display: OLED | Optik: Asphaerische Vergroesserungslinse (Eyepiece)
 - FOV (H/V/D Grad): 45 / – / 52
 - Aufloesung pro Auge: 1280x720 | Refresh: 60 Hz
 - Gewicht: 420 g
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Keine (HDMI-Bildschirm) | Recheneinheit: Tethered
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Sonys 'Personal 3D Viewer' mit zwei 720p-OLED-Panels, kein Tracking; historischer HMD-Vorlaeufer, laengst eingestellt.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Sonys 'Personal 3D Viewer' mit zwei 720p-OLED-Panels, kein Tracking; historischer HMD-Vorläufer, längst eingestellt.
 - Offizielle Seite: https://www.sony.com/
 
 ## Sony SmartEyeglass (SED-E1) (Sony)
@@ -2598,7 +2598,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Kategorie: XR
 - Angekuendigt: 2025-01-07 | Release: 2025-02
 - Preis: 4750 USD
-- Display: Micro-OLED (Sony ECX344A) | Optik: k. A.
+- Display: Micro-OLED (Sony ECX344A) | Optik: Pancake
 - FOV (H/V/D Grad): – / – / –
 - Aufloesung pro Auge: 3552x3840 | Refresh: 90 Hz
 - Gewicht: k. A.
@@ -2622,7 +2622,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 
 ## Spacetop G1 (Sightful)
 - Kategorie: AR
-- Angekuendigt: 2024-05-30 | Release: k. A.
+- Angekuendigt: 2024-05-30 | Release: 2024-10
 - Preis: 1700 USD
 - Display: Micro OLED | Optik: Birdbath optics
 - FOV (H/V/D Grad): – / – / 50
@@ -2630,7 +2630,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 80 g
 - Tracking: Inside-out | Eye-Tracking: Nein | Hand-Tracking: Ja | Passthrough: Native passthrough
 - Software: SpaceOS | Recheneinheit: Standalone
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Hardware storniert Oktober 2024; Praorder-Rueckzahlungen ausgegeben.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Hardware storniert Oktober 2024; Praorder-Rückzahlungen ausgegeben.
 - Offizielle Seite: https://www.sightful.com/
 
 ## StarVR One (StarVR)
@@ -2640,10 +2640,10 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Display: AMOLED | Optik: Fresnel
 - FOV (H/V/D Grad): 210 / 130 / –
 - Aufloesung pro Auge: 1830x1464 | Refresh: 90 Hz
-- Gewicht: k. A.
+- Gewicht: 450 g
 - Tracking: 6DoF | Eye-Tracking: Ja | Hand-Tracking: Nein | Passthrough: Nein
 - Software: SteamVR | Recheneinheit: PC
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Ultraweites Enterprise-VR-Headset (210 Grad FoV) mit Tobii-Eye-Tracking; nur fuer Entwickler/Profis, eingestellt.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Ultraweites Enterprise-VR-Headset (210 Grad FoV) mit Tobii-Eye-Tracking; nur für Entwickler/Profis, eingestellt.
 - Offizielle Seite: https://www.starvr.com/
 
 ## TCL NXTWEAR G (TCL)
@@ -2677,7 +2677,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2022-11-13 | Release: k. A.
 - Preis: k. A.
 - Display: LCD | Optik: Pancake lenses
-- FOV (H/V/D Grad): – / – / 108
+- FOV (H/V/D Grad): 108 / – / 108
 - Aufloesung pro Auge: 2280x2280 | Refresh: 90 Hz
 - Gewicht: k. A.
 - Tracking: Inside-out | Eye-Tracking: Nein | Hand-Tracking: Unklar | Passthrough: Dual RGB passthrough cameras
@@ -2704,7 +2704,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Preis: 899 USD
 - Display: Micro-LED | Optik: Waveguides
 - FOV (H/V/D Grad): – / – / 30
-- Aufloesung pro Auge: k. A. | Refresh: 60 Hz
+- Aufloesung pro Auge: 640x480 | Refresh: 60 Hz
 - Gewicht: 60 g
 - Tracking: Inside-out | Eye-Tracking: Nein | Hand-Tracking: Unklar | Passthrough: Native passthrough, 12MP camera
 - Software: k. A. | Recheneinheit: Standalone
@@ -2715,8 +2715,8 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Kategorie: AR
 - Angekuendigt: 2022-01-03 | Release: 2022-12-31
 - Preis: 699 USD
-- Display: k. A. | Optik: Birdbath optics
-- FOV (H/V/D Grad): – / – / 43
+- Display: OLED | Optik: Birdbath optics
+- FOV (H/V/D Grad): – / – / 42
 - Aufloesung pro Auge: 1920x1080 | Refresh: 70 Hz
 - Gewicht: 85 g
 - Tracking: k. A. | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Native passthrough
@@ -2783,7 +2783,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Display: Monokular Mikro-Display | Optik: See-through Prisma
 - FOV (H/V/D Grad): – / – / –
 - Aufloesung pro Auge: 640x360 | Refresh: k. A.
-- Gewicht: 48 g
+- Gewicht: 47 g
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Monokulares See-through
 - Software: Windows 10 (via DE-100 Mini-PC) | Recheneinheit: Tethered
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Monokulare Enterprise-AR-Brille, angetrieben vom dynaEdge DE-100 Windows-Mini-PC; nicht mehr aktiv vertrieben.
@@ -2807,9 +2807,9 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2019-04-30 | Release: 2019-06-28
 - Preis: 999 USD
 - Display: LCD | Optik: Fresnel (zweielementig, gekantet)
-- FOV (H/V/D Grad): 108 / – / –
+- FOV (H/V/D Grad): 108 / – / 130
 - Aufloesung pro Auge: 1440x1600 | Refresh: 144 Hz
-- Gewicht: k. A.
+- Gewicht: 809 g
 - Tracking: 6DoF Outside-in (Lighthouse 2.0) | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Unklar
 - Software: SteamVR | Recheneinheit: PC
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Am 12. November 2025 eingestellt; Nachfolger ist das Steam Frame.
@@ -2845,49 +2845,49 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Kategorie: XR
 - Angekuendigt: 2019-02-19 | Release: 2019-02-19
 - Preis: 5995 USD
-- Display: Micro-OLED + AMOLED (Bionic Display) | Optik: Unklar
+- Display: Micro-OLED + AMOLED (Bionic Display) | Optik: Aspheric (Bionic Display, Micro-OLED + AMOLED)
 - FOV (H/V/D Grad): 87 / 87 / –
 - Aufloesung pro Auge: 1920x1080 | Refresh: 90 Hz
 - Gewicht: k. A.
 - Tracking: 6DoF | Eye-Tracking: Ja | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Varjo Base / SteamVR | Recheneinheit: PC
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Erstes VR-Headset mit Bionic-Display in Human-Eye-Aufloesung fuer Industrie; durch VR-3 abgeloest.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Erstes VR-Headset mit Bionic-Display in Human-Eye-Auflösung für Industrie; durch VR-3 abgelöst.
 - Offizielle Seite: https://varjo.com/
 
 ## Varjo VR-3 (Varjo)
 - Kategorie: XR
 - Angekuendigt: 2020-12-02 | Release: 2021-02-01
 - Preis: 5495 USD
-- Display: Micro-OLED + LCD (Bionic Display) | Optik: Unklar
+- Display: Micro-OLED + LCD (Bionic Display) | Optik: Ultra-Wide Non-Fresnel-Linsen (asphaerisch)
 - FOV (H/V/D Grad): 115 / – / –
 - Aufloesung pro Auge: 2880x2720 | Refresh: 90 Hz
 - Gewicht: 594 g
 - Tracking: 6DoF | Eye-Tracking: Ja | Hand-Tracking: Ja | Passthrough: Nein
 - Software: Varjo Base / SteamVR | Recheneinheit: PC
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Hochaufloesendes Profi-VR-Headset mit Foveated-Display, Eye- und Ultraleap-Handtracking; durch neuere Varjo-Modelle abgeloest.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Hochauflösendes Profi-VR-Headset mit Foveated-Display, Eye- und Ultraleap-Handtracking; durch neuere Varjo-Modelle abgelöst.
 - Offizielle Seite: https://varjo.com/products/varjo-vr-3
 
 ## Varjo XR-1 (Varjo)
 - Kategorie: XR
 - Angekuendigt: 2019-05-01 | Release: 2019-12-01
 - Preis: 9995 USD
-- Display: Micro-OLED + AMOLED (Bionic Display) | Optik: Unklar
+- Display: Micro-OLED + AMOLED (Bionic Display) | Optik: Aspheric (Bionic Display)
 - FOV (H/V/D Grad): 87 / – / –
 - Aufloesung pro Auge: 1440x1600 | Refresh: 90 Hz
 - Gewicht: k. A.
 - Tracking: 6DoF | Eye-Tracking: Ja | Hand-Tracking: Nein | Passthrough: Ja, Video-Passthrough (Dual-Kamera, fotorealistisch)
 - Software: Varjo Base / SteamVR | Recheneinheit: PC
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Mixed-Reality-Devkit mit fotorealistischem Video-Passthrough und Eye-Tracking; durch XR-3 abgeloest.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Mixed-Reality-Devkit mit fotorealistischem Video-Passthrough und Eye-Tracking; durch XR-3 abgelöst.
 - Offizielle Seite: https://varjo.com/
 
 ## Varjo XR-3 (Varjo)
 - Kategorie: XR
 - Angekuendigt: 2020-12-01 | Release: 2021-01
 - Preis: 5495 USD
-- Display: Bionic Display (Micro-OLED Fokus 1920x1920 + LCD Kontext) | Optik: k. A.
+- Display: Bionic Display (Micro-OLED Fokus 1920x1920 + LCD Kontext) | Optik: Aspheric (Bionic Display, Micro-OLED + LCD)
 - FOV (H/V/D Grad): 115 / 90 / –
 - Aufloesung pro Auge: 2880x2720 | Refresh: 90 Hz
-- Gewicht: k. A.
+- Gewicht: 594 g
 - Tracking: 6DoF (Lighthouse oder Inside-out) | Eye-Tracking: Ja | Hand-Tracking: Ja | Passthrough: Farbe (Video-Passthrough mit LiDAR)
 - Software: Varjo Base / SteamVR | Recheneinheit: PC
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – High-End-MR-Headset mit Bionic Display, vom Varjo XR-4 abgelöst.
@@ -3007,7 +3007,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 398 g
 - Tracking: 6DoF | Eye-Tracking: Ja | Hand-Tracking: Ja | Passthrough: Farb-Passthrough (Mixed Reality)
 - Software: Unklar (Android-basiert) | Recheneinheit: Standalone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Erstes MR-Headset von Vivo (398 g), zunaechst nur als Store-Demo in China; breiterer Marktstart 2026 erwartet, Preis ca. 10.000 Yuan (ca. 1.400 USD).
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Erstes MR-Headset von Vivo (398 g), zunächst nur als Store-Demo in China; breiterer Marktstart 2026 erwartet, Preis ca. 10.000 Yuan (ca. 1.400 USD).
 - Offizielle Seite: https://www.vivo.com/
 
 ## VRgineers XTAL 3 (VRgineers)
@@ -3017,7 +3017,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Display: LCD | Optik: Non-Fresnel-Glaslinsen
 - FOV (H/V/D Grad): 180 / 120 / –
 - Aufloesung pro Auge: 3840x2160 | Refresh: 120 Hz
-- Gewicht: k. A.
+- Gewicht: 600 g
 - Tracking: 6DoF | Eye-Tracking: Ja | Hand-Tracking: Unklar | Passthrough: Optional (MR-Variante mit 4K-Kameras)
 - Software: SteamVR / proprietaer | Recheneinheit: PC
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Enterprise-/Simulations-VR-Headset mit 4K-pro-Auge, 180-Grad-FoV und Eye-Tracking; MR-Variante kostet 11.500 USD.
@@ -3040,7 +3040,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Kategorie: AR
 - Angekuendigt: 2020-10-01 | Release: 2020-10-01
 - Preis: 799 USD
-- Display: k. A. | Optik: Waveguides, UV protection lenses
+- Display: Waveguide | Optik: Waveguides, UV protection lenses
 - FOV (H/V/D Grad): – / – / 19
 - Aufloesung pro Auge: 480x853 | Refresh: k. A.
 - Gewicht: 105 g
@@ -3053,7 +3053,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Kategorie: AR
 - Angekuendigt: 2025-08-14 | Release: 2025-12-31
 - Preis: 2199 USD
-- Display: Sony OLED HD | Optik: k. A.
+- Display: OLED | Optik: Waveguide
 - FOV (H/V/D Grad): – / – / –
 - Aufloesung pro Auge: k. A. | Refresh: k. A.
 - Gewicht: 222 g
@@ -3080,33 +3080,33 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2016-02-01 | Release: 2016
 - Preis: 1499 USD
 - Display: nHD Farb-Display (monokular) | Optik: See-through (monokular)
-- FOV (H/V/D Grad): – / – / 20
+- FOV (H/V/D Grad): 20 / – / 20
 - Aufloesung pro Auge: 640x360 | Refresh: k. A.
 - Gewicht: k. A.
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Monokulares See-through
 - Software: Android 6.0 | Recheneinheit: Standalone
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Monokulare Industrie-Smartglass, Vorgaenger der M400-Reihe; nicht mehr im aktiven Vertrieb.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Monokulare Industrie-Smartglass, Vorgänger der M400-Reihe; nicht mehr im aktiven Vertrieb.
 - Offizielle Seite: https://www.vuzix.com/Products/m300-smart-glasses
 
 ## Vuzix M300XL (Vuzix)
 - Kategorie: AR
 - Angekuendigt: 2017 | Release: 2017
-- Preis: k. A.
+- Preis: 1499 USD
 - Display: OLED (monokular) | Optik: See-through (monokular)
-- FOV (H/V/D Grad): – / – / 16.7
+- FOV (H/V/D Grad): 16.7 / – / 16.7
 - Aufloesung pro Auge: 640x360 | Refresh: k. A.
 - Gewicht: k. A.
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Monokulares See-through
 - Software: Android | Recheneinheit: Standalone
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Verbesserte Version der M300 mit groesserem Akku und 16-MP-Kamera; nicht mehr im aktiven Vertrieb.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Verbesserte Version der M300 mit größerem Akku und 16-MP-Kamera; nicht mehr im aktiven Vertrieb.
 - Offizielle Seite: https://www.vuzix.com/Products/m300xl-smart-glasses
 
 ## Vuzix M400 (Vuzix)
 - Kategorie: AR
 - Angekuendigt: 2019-03-21 | Release: 2020-01-11
 - Preis: 1799 USD
-- Display: OLED | Optik: k. A.
-- FOV (H/V/D Grad): – / – / 16
+- Display: OLED | Optik: Prisma (okkludierter Microdisplay-Viewer)
+- FOV (H/V/D Grad): – / – / 16.8
 - Aufloesung pro Auge: 640x360 | Refresh: k. A.
 - Gewicht: 180 g
 - Tracking: Non-positional | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: 12.8 MP 4K 30fps camera
@@ -3158,12 +3158,12 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2024-01-09 | Release: 2024-11
 - Preis: 499 USD
 - Display: Micro LED (monochrom gruen, monokular) | Optik: Waveguide
-- FOV (H/V/D Grad): – / – / –
+- FOV (H/V/D Grad): – / – / 30
 - Aufloesung pro Auge: 640x480 | Refresh: k. A.
 - Gewicht: 38 g
 - Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
 - Software: Companion-App (Android/iOS) | Recheneinheit: Smartphone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Leichte Alltags-Smart-Glasses, seit November 2024 allgemein verfuegbar (Developer Edition ab Januar 2024).
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Leichte Alltags-Smart-Glasses, seit November 2024 allgemein verfügbar (Developer Edition ab Januar 2024).
 - Offizielle Seite: https://www.vuzix.com/products/z100-smart-glasses
 
 ## X by Xreal a01 (Xreal)
@@ -3176,7 +3176,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 62 g
 - Tracking: 3DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein (optische Durchsicht)
 - Software: Nebula OS | Recheneinheit: Tethered
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Erstes Produkt der Budget-Submarke xbx, zunaechst nur China fuer 1.699 CNY (ca. 250 USD); US-Start im Juli 2026 fuer 299 USD.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Erstes Produkt der Budget-Submarke xbx, zunächst nur China für 1.699 CNY (ca. 250 USD); US-Start im Juli 2026 für 299 USD.
 - Offizielle Seite: https://tutorials.xreal.com/docs/glasses/xbxa01/
 
 ## Xiaomi Mijia (Xiaomi)
@@ -3210,7 +3210,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2022-11-14 | Release: 2022-11-14
 - Preis: 799 USD
 - Display: LCD | Optik: Curved mirrors
-- FOV (H/V/D Grad): 70 / 57 / –
+- FOV (H/V/D Grad): 70 / 57 / 70
 - Aufloesung pro Auge: 2160x2160 | Refresh: k. A.
 - Gewicht: 590 g
 - Tracking: Inside-out | Eye-Tracking: Nein | Hand-Tracking: Ja | Passthrough: Native passthrough
@@ -3267,7 +3267,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 80 g
 - Tracking: Inside-out | Eye-Tracking: Nein | Hand-Tracking: Ja | Passthrough: Native passthrough
 - Software: Nebula | Recheneinheit: Phone
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Diskontinuiert 2025, Support laeuft weiter
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Diskontinuiert 2025, Support läuft weiter
 - Offizielle Seite: https://www.xreal.com/
 
 ## Xreal Eye (Xreal)
@@ -3275,8 +3275,8 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2025-05-01 | Release: 2025-07-01
 - Preis: 99 USD
 - Display: Modular camera accessory | Optik: POGO pin connection
-- FOV (H/V/D Grad): – / – / –
-- Aufloesung pro Auge: k. A. | Refresh: k. A.
+- FOV (H/V/D Grad): – / – / 57
+- Aufloesung pro Auge: 1920x1080 | Refresh: 120 Hz
 - Gewicht: 1.5 g
 - Tracking: 6DoF inside-out | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: 12MP camera with 4K60 video
 - Software: Integrates with Xreal glasses OS | Recheneinheit: Standalone
@@ -3293,7 +3293,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 84 g
 - Tracking: 3 DoF inside-out | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Native passthrough
 - Software: k. A. | Recheneinheit: Phone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Verkaeufer seit Dezember 2024, weiterhin aktiv
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Verkäufer seit Dezember 2024, weiterhin aktiv
 - Offizielle Seite: https://www.xreal.com/one
 
 ## Xreal One Pro (Xreal)
@@ -3306,20 +3306,20 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Gewicht: 87 g
 - Tracking: 3 DoF inside-out | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Native passthrough
 - Software: k. A. | Recheneinheit: Phone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Verkaeufer seit April 2025, aktiv; Preis auf 599 USD
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Verkäufer seit April 2025, aktiv; Preis auf 599 USD
 - Offizielle Seite: https://www.xreal.com/one-pro
 
 ## Xreal Project Aura (Xreal)
 - Kategorie: XR
-- Angekuendigt: 2025-05-15 | Release: k. A.
+- Angekuendigt: 2025-05-15 | Release: 2026
 - Preis: k. A.
 - Display: Micro-OLED | Optik: Optical see-through
-- FOV (H/V/D Grad): – / – / 70
+- FOV (H/V/D Grad): 70 / – / 70
 - Aufloesung pro Auge: k. A. | Refresh: k. A.
 - Gewicht: k. A.
 - Tracking: 6DoF inside-out | Eye-Tracking: Unklar | Hand-Tracking: Unklar | Passthrough: Optical passthrough
 - Software: Android XR | Recheneinheit: Standalone / Tethered compute puck
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – Android XR-Brille. Angekündigt Google I/O 2025, Marktstart vor Ende 2026 geplant. Angekuendigt, Marktstart ausstehend.
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – Android XR-Brille. Angekündigt Google I/O 2025, Marktstart vor Ende 2026 geplant. Angekündigt, Marktstart ausstehend.
 - Offizielle Seite: https://www.xreal.com/us/aura
 
 ## XYZ Atom (XYZ Reality)
@@ -3327,12 +3327,12 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2021-11-01 | Release: 2021-11-23
 - Preis: k. A.
 - Display: k. A. | Optik: k. A.
-- FOV (H/V/D Grad): – / – / 40
+- FOV (H/V/D Grad): 40 / – / 40
 - Aufloesung pro Auge: 1280x720 | Refresh: k. A.
 - Gewicht: k. A.
 - Tracking: Inside-out | Eye-Tracking: Unklar | Hand-Tracking: Unklar | Passthrough: Native passthrough
 - Software: HoloSite | Recheneinheit: Standalone
-- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Enterprise AR Headset fuer Bauwesen, weiterhin aktiv 2026
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Enterprise AR Headset für Bauwesen, weiterhin aktiv 2026
 - Offizielle Seite: https://www.xyzreality.com/
 
 ## YVR 1 (YVR)
@@ -3353,10 +3353,10 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Angekuendigt: 2022 | Release: 2022
 - Preis: 700 USD
 - Display: LCD | Optik: Pancake
-- FOV (H/V/D Grad): 95 / – / –
+- FOV (H/V/D Grad): 95 / – / 110
 - Aufloesung pro Auge: 1600x1600 | Refresh: 90 Hz
 - Gewicht: k. A.
 - Tracking: Inside-out | Eye-Tracking: Nein | Hand-Tracking: Ja | Passthrough: Ja (monochrom)
 - Software: YVR OS (Android-basiert) | Recheneinheit: Standalone
-- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Erstes Massenmarkt-Pancake-Standalone aus China, Launch 2022 fuer 4999 CNY (~700 USD umgerechnet); YVR firmiert heute als Play For Dream.
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Erstes Massenmarkt-Pancake-Standalone aus China, Launch 2022 für 4999 CNY (~700 USD umgerechnet); YVR firmiert heute als Play For Dream.
 - Offizielle Seite: https://www.yvr.cn/

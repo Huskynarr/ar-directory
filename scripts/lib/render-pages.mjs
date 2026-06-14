@@ -37,12 +37,12 @@ const CATEGORY_LABEL = (c) => (String(c).toUpperCase() === 'XR' ? 'XR-Headset' :
 const SPEC_ROWS = [
   ['manufacturer', 'Hersteller'],
   ['xr_category', 'Kategorie'],
-  ['announced_date', 'Angekuendigt'],
+  ['announced_date', 'Angekündigt'],
   ['release_date', 'Release'],
   ['display_type', 'Display'],
   ['optics', 'Optik'],
   ['__fov__', 'Sichtfeld (FOV, H/V/D)'],
-  ['resolution_per_eye', 'Aufloesung pro Auge'],
+  ['resolution_per_eye', 'Auflösung pro Auge'],
   ['refresh_hz', 'Bildwiederholrate', ' Hz'],
   ['brightness_nits', 'Helligkeit', ' nits'],
   ['weight_g', 'Gewicht', ' g'],
@@ -54,11 +54,11 @@ const SPEC_ROWS = [
   ['hand_tracking', 'Hand-Tracking'],
   ['passthrough', 'Passthrough'],
   ['camera', 'Kamera'],
-  ['connectivity', 'Konnektivitaet'],
+  ['connectivity', 'Konnektivität'],
   ['audio', 'Audio'],
   ['battery', 'Akku'],
   ['ipd_mm', 'IPD'],
-  ['prescription_support', 'Sehstaerke'],
+  ['prescription_support', 'Sehstärke'],
 ];
 
 const fovValue = (row) => {
@@ -163,7 +163,7 @@ export const buildDevicePage = (row, rows, slugs, baseUrl, overrides = {}, descr
   const slug = slugs.get(row.id);
   const editorial = descriptions[row.id] || {};
   const highlightsHtml = Array.isArray(editorial.highlights) && editorial.highlights.length
-    ? `<div class="hl"><h2>Highlights</h2><ul>${editorial.highlights.map((h) => `<li>${esc(h)}</li>`).join('')}</ul>${editorial.audience ? `<p class="aud"><strong>Geeignet fuer:</strong> ${esc(editorial.audience)}</p>` : ''}</div>`
+    ? `<div class="hl"><h2>Highlights</h2><ul>${editorial.highlights.map((h) => `<li>${esc(h)}</li>`).join('')}</ul>${editorial.audience ? `<p class="aud"><strong>Geeignet für:</strong> ${esc(editorial.audience)}</p>` : ''}</div>`
     : '';
   const buyLinks = buildBuyLinks(row, overrides);
   const buyHtml = buyLinks.length
@@ -289,7 +289,7 @@ ${heroMedia}
 <div>
 <p class="price">${esc(priceText)}</p>
 <p class="lead">${esc(editorial.description || `${row.name} von ${row.manufacturer} im AR/XR Brillen Vergleich: alle Spezifikationen, Preis, Lifecycle-Status und der direkte Vergleich mit anderen Modellen.`)}</p>
-<a class="cta primary" href="/?selectedIds=${esc(row.id)}&compareMode=true">Im Vergleich oeffnen</a>
+<a class="cta primary" href="/?selectedIds=${esc(row.id)}&compareMode=true">Im Vergleich öffnen</a>
 ${hasValue(row.official_url) ? `<a class="cta" href="${esc(row.official_url)}" rel="nofollow noopener">Offizielle Produktseite</a>` : ''}
 </div>
 </div>
@@ -305,7 +305,7 @@ ${sameCat ? `<h2>Aehnliche ${esc(cat)}-Modelle</h2><ul class="rel">${sameCat}</u
 ${shareButtons(shareTitle, canonical)}
 <footer>
 Teil des <a href="/">AR/XR Brillen Vergleichs</a> · <a href="/modelle/">Alle Modelle</a> · <a href="/glossar.html">Glossar &amp; FAQ</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a><br>
-Angaben ohne Gewaehr; Spezifikationen und Preise koennen je nach Region/Revision/Zeitpunkt abweichen.
+Angaben ohne Gewähr; Spezifikationen und Preise können je nach Region/Revision/Zeitpunkt abweichen.
 </footer>
 </div>
 </body>
@@ -342,7 +342,7 @@ export const buildModelIndex = (rows, slugs, meta, baseUrl) => {
 
   return `${head({
     title: `Alle ${meta.records} AR/XR Brillen Modelle (A–Z) | AR/XR Brillen Vergleich`,
-    description: `Vollstaendige Liste aller ${meta.records} AR- und XR-Brillen (${meta.ar_records} AR, ${meta.xr_records} XR) von ${meta.manufacturers} Herstellern mit Einzelseiten, Specs und Preisen.`,
+    description: `Vollständige Liste aller ${meta.records} AR- und XR-Brillen (${meta.ar_records} AR, ${meta.xr_records} XR) von ${meta.manufacturers} Herstellern mit Einzelseiten, Specs und Preisen.`,
     canonical,
     jsonLd,
     baseUrl,
@@ -362,24 +362,24 @@ ${sections}
 };
 
 const FAQ = [
-  ['Was ist der Unterschied zwischen AR- und XR-Brillen?', 'AR-Brillen (Augmented Reality) blenden digitale Inhalte in die reale Umgebung ein, meist ueber transparente Optiken wie Waveguides oder Birdbath-Linsen. XR ist der Oberbegriff (Extended Reality) und umfasst hier vor allem VR-/MR-Headsets mit Kamera-Passthrough, die die Umgebung digital darstellen.'],
-  ['Welche AR-Brille hat das groesste Sichtfeld (FOV)?', 'Das Sichtfeld (FOV) unterscheidet sich stark: viele Display-/Birdbath-Brillen liegen bei 40–52° diagonal, Waveguide-Brillen oft darunter, waehrend MR-Headsets deutlich groessere Sichtfelder erreichen. Im Vergleich laesst sich nach minimalem FOV filtern und sortieren.'],
-  ['Was bedeutet "EOL" bzw. Support-Ende?', 'EOL (End of Life) bedeutet, dass ein Geraet nicht mehr verkauft und/oder nicht mehr mit Software-Updates versorgt wird. Im Datensatz ist pro Modell vermerkt, ob es noch aktiv im Vertrieb ist und ob ein Support-Ende angekuendigt wurde.'],
-  ['Was ist Birdbath- vs. Waveguide-Optik?', 'Birdbath-Optiken nutzen einen halbtransparenten Spiegel und liefern helle, kontrastreiche Bilder bei kompakter Bauform – typisch fuer Display-Brillen am Smartphone/PC. Waveguides leiten Licht durch duenne Glassubstrate und ermoeglichen schlankere, brillenaehnliche Designs, meist mit kleinerem FOV.'],
-  ['Standalone, Phone oder PC – was heisst das?', 'Die Recheneinheit zeigt, wie eine Brille betrieben wird: "Standalone" hat eigenen Prozessor/Akku, "Phone" wird per USB-C an ein Smartphone angeschlossen, "PC" benoetigt einen Rechner. Das beeinflusst Mobilitaet, Leistung und Preis.'],
+  ['Was ist der Unterschied zwischen AR- und XR-Brillen?', 'AR-Brillen (Augmented Reality) blenden digitale Inhalte in die reale Umgebung ein, meist über transparente Optiken wie Waveguides oder Birdbath-Linsen. XR ist der Oberbegriff (Extended Reality) und umfasst hier vor allem VR-/MR-Headsets mit Kamera-Passthrough, die die Umgebung digital darstellen.'],
+  ['Welche AR-Brille hat das größte Sichtfeld (FOV)?', 'Das Sichtfeld (FOV) unterscheidet sich stark: viele Display-/Birdbath-Brillen liegen bei 40–52° diagonal, Waveguide-Brillen oft darunter, während MR-Headsets deutlich größere Sichtfelder erreichen. Im Vergleich lässt sich nach minimalem FOV filtern und sortieren.'],
+  ['Was bedeutet "EOL" bzw. Support-Ende?', 'EOL (End of Life) bedeutet, dass ein Gerät nicht mehr verkauft und/oder nicht mehr mit Software-Updates versorgt wird. Im Datensatz ist pro Modell vermerkt, ob es noch aktiv im Vertrieb ist und ob ein Support-Ende angekündigt wurde.'],
+  ['Was ist Birdbath- vs. Waveguide-Optik?', 'Birdbath-Optiken nutzen einen halbtransparenten Spiegel und liefern helle, kontrastreiche Bilder bei kompakter Bauform – typisch für Display-Brillen am Smartphone/PC. Waveguides leiten Licht durch dünne Glassubstrate und ermöglichen schlankere, brillenähnliche Designs, meist mit kleinerem FOV.'],
+  ['Standalone, Phone oder PC – was heisst das?', 'Die Recheneinheit zeigt, wie eine Brille betrieben wird: "Standalone" hat eigenen Prozessor/Akku, "Phone" wird per USB-C an ein Smartphone angeschlossen, "PC" benötigt einen Rechner. Das beeinflusst Mobilität, Leistung und Preis.'],
   ['Sind die Preise aktuell?', 'Die Preise sind kuratierte USD-Richtwerte (UVP zum Launch oder aktueller Marktpreis) und dienen der Orientierung. Auf der Startseite kann optional ein Live-EUR-Kurs zur Umrechnung eingeblendet werden.'],
 ];
 
 const GLOSSARY = [
-  ['FOV (Field of View)', 'Sichtfeld der Anzeige in Grad, angegeben horizontal/vertikal/diagonal. Groesser = immersiver.'],
-  ['Waveguide', 'Optik, die Licht durch ein duennes Glassubstrat ins Auge leitet; ermoeglicht schlanke AR-Brillen.'],
+  ['FOV (Field of View)', 'Sichtfeld der Anzeige in Grad, angegeben horizontal/vertikal/diagonal. Größer = immersiver.'],
+  ['Waveguide', 'Optik, die Licht durch ein dünnes Glassubstrat ins Auge leitet; ermöglicht schlanke AR-Brillen.'],
   ['Birdbath', 'Optik mit halbtransparentem Spiegel; helle, kontrastreiche Bilder bei kompakter Bauform.'],
-  ['Passthrough', 'Kamera-Durchsicht: bei MR-Headsets wird die Umgebung digital ins Display uebertragen.'],
-  ['IPD', 'Pupillendistanz; verstellbar (mechanisch/Software) oder fix – wichtig fuer scharfes, komfortables Bild.'],
-  ['Nits', 'Einheit der Display-Helligkeit; hoehere Werte verbessern die Sichtbarkeit, besonders im Hellen.'],
-  ['Refresh-Rate (Hz)', 'Bildwiederholrate; hoehere Werte sorgen fuer fluessigere Darstellung und weniger Uebelkeit.'],
-  ['Inside-out Tracking', 'Positionsbestimmung ueber Kameras im Geraet selbst, ohne externe Basisstationen.'],
-  ['Micro-OLED', 'Sehr kleine, hochaufloesende OLED-Panels; verbreitet in modernen Display-/AR-Brillen.'],
+  ['Passthrough', 'Kamera-Durchsicht: bei MR-Headsets wird die Umgebung digital ins Display übertragen.'],
+  ['IPD', 'Pupillendistanz; verstellbar (mechanisch/Software) oder fix – wichtig für scharfes, komfortables Bild.'],
+  ['Nits', 'Einheit der Display-Helligkeit; höhere Werte verbessern die Sichtbarkeit, besonders im Hellen.'],
+  ['Refresh-Rate (Hz)', 'Bildwiederholrate; höhere Werte sorgen für flüssigere Darstellung und weniger Uebelkeit.'],
+  ['Inside-out Tracking', 'Positionsbestimmung über Kameras im Gerät selbst, ohne externe Basisstationen.'],
+  ['Micro-OLED', 'Sehr kleine, hochauflösende OLED-Panels; verbreitet in modernen Display-/AR-Brillen.'],
   ['EOL (End of Life)', 'Produktende: kein Verkauf und/oder keine Software-Updates mehr.'],
 ];
 
@@ -404,8 +404,8 @@ export const buildGlossary = (meta, baseUrl) => {
     ],
   };
   return `${head({
-    title: 'AR/XR Glossar & FAQ: FOV, Waveguide, Birdbath, Passthrough erklaert | AR/XR Brillen Vergleich',
-    description: 'Glossar und haeufige Fragen rund um AR- und XR-Brillen: FOV, Waveguide vs. Birdbath, Passthrough, IPD, Nits, Tracking, EOL und mehr – einfach erklaert.',
+    title: 'AR/XR Glossar & FAQ: FOV, Waveguide, Birdbath, Passthrough erklärt | AR/XR Brillen Vergleich',
+    description: 'Glossar und häufige Fragen rund um AR- und XR-Brillen: FOV, Waveguide vs. Birdbath, Passthrough, IPD, Nits, Tracking, EOL und mehr – einfach erklärt.',
     canonical,
     jsonLd,
     baseUrl,
@@ -414,8 +414,8 @@ export const buildGlossary = (meta, baseUrl) => {
 <div class="wrap">
 <nav class="bc"><a href="/">Start</a> › Glossar &amp; FAQ</nav>
 <h1>AR/XR Glossar &amp; FAQ</h1>
-<p class="lead">Die wichtigsten Begriffe und Fragen rund um AR- und XR-Brillen – einfach erklaert. Begleitend zum Vergleich von ${meta.records} Modellen.</p>
-<h2>Haeufige Fragen</h2>
+<p class="lead">Die wichtigsten Begriffe und Fragen rund um AR- und XR-Brillen – einfach erklärt. Begleitend zum Vergleich von ${meta.records} Modellen.</p>
+<h2>Häufige Fragen</h2>
 ${FAQ.map(([q, a]) => `<section><h3>${esc(q)}</h3><p>${esc(a)}</p></section>`).join('\n')}
 <h2>Glossar</h2>
 <table><tbody>
@@ -448,39 +448,39 @@ export const buildImpressum = (meta, baseUrl) =>
     `${baseUrl}impressum.html`,
     baseUrl,
     `<h1>Impressum</h1>
-<p class="note">Vorlage – bitte [PLATZHALTER] ausfuellen und rechtlich pruefen lassen.</p>
-<h2>Angaben gemaess § 5 DDG (ehem. TMG)</h2>
+<p class="note">Vorlage – bitte [PLATZHALTER] ausfüllen und rechtlich prüfen lassen.</p>
+<h2>Angaben gemäß § 5 DDG (ehem. TMG)</h2>
 <p>Selinger Consulting<br>Sebastian Selinger<br>[Strasse + Hausnummer]<br>[PLZ] Freiburg<br>Deutschland</p>
 <h2>Kontakt</h2>
 <p>E-Mail: [E-Mail-Adresse]<br>Telefon: [optional]</p>
 <h2>Verantwortlich i.S.d. § 18 Abs. 2 MStV</h2>
 <p>Sebastian Selinger (Anschrift wie oben)</p>
-<h2>Haftung fuer Inhalte &amp; Links</h2>
-<p>Die Inhalte dieser Seiten wurden mit Sorgfalt erstellt, jedoch ohne Gewaehr fuer Aktualitaet, Vollstaendigkeit und Richtigkeit der Geraete-Spezifikationen und Preise. Fuer Inhalte verlinkter externer Seiten sind deren Betreiber verantwortlich.</p>
+<h2>Haftung für Inhalte &amp; Links</h2>
+<p>Die Inhalte dieser Seiten wurden mit Sorgfalt erstellt, jedoch ohne Gewähr für Aktualität, Vollständigkeit und Richtigkeit der Geräte-Spezifikationen und Preise. Für Inhalte verlinkter externer Seiten sind deren Betreiber verantwortlich.</p>
 <h2>Affiliate-Hinweis</h2>
-<p>Diese Website nutzt Affiliate-Links (u. a. Amazon, eBay, Otto, idealo). Klickst du auf einen solchen Link und kaufst, koennen wir eine Provision erhalten. Fuer dich entstehen keine Mehrkosten. Als Amazon-Partner verdienen wir an qualifizierten Verkaeufen.</p>
+<p>Diese Website nutzt Affiliate-Links (u. a. Amazon, eBay, Otto, idealo). Klickst du auf einen solchen Link und kaufst, können wir eine Provision erhalten. Für dich entstehen keine Mehrkosten. Als Amazon-Partner verdienen wir an qualifizierten Verkäufen.</p>
 <h2>EU-Streitschlichtung</h2>
 <p>Plattform der EU-Kommission zur Online-Streitbeilegung: <a href="https://ec.europa.eu/consumers/odr/" rel="nofollow noopener">https://ec.europa.eu/consumers/odr/</a>. Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>`,
   );
 
 export const buildDatenschutz = (meta, baseUrl) =>
   legalPage(
-    'Datenschutzerklaerung | AR/XR Brillen Vergleich',
-    'Datenschutzerklaerung des AR/XR Brillen Vergleichs: Hosting, Logfiles, lokale Speicherung, externe Dienste und Affiliate-Programme.',
+    'Datenschutzerklärung | AR/XR Brillen Vergleich',
+    'Datenschutzerklärung des AR/XR Brillen Vergleichs: Hosting, Logfiles, lokale Speicherung, externe Dienste und Affiliate-Programme.',
     `${baseUrl}datenschutz.html`,
     baseUrl,
-    `<h1>Datenschutzerklaerung</h1>
-<p class="note">Vorlage – bitte [PLATZHALTER] ausfuellen und rechtlich pruefen lassen (keine Rechtsberatung).</p>
+    `<h1>Datenschutzerklärung</h1>
+<p class="note">Vorlage – bitte [PLATZHALTER] ausfüllen und rechtlich prüfen lassen (keine Rechtsberatung).</p>
 <h2>1. Verantwortlicher</h2>
 <p>Selinger Consulting, Sebastian Selinger, [Strasse + Hausnummer], [PLZ] Freiburg, [E-Mail]. Siehe auch <a href="/impressum.html">Impressum</a>.</p>
 <h2>2. Hosting &amp; Server-Logfiles</h2>
 <p>Die Seite wird bei [Hoster, z. B. Plesk-Server / Provider] gehostet. Beim Aufruf werden technisch notwendige Server-Logfiles verarbeitet (IP-Adresse, Datum/Uhrzeit, abgerufene URL, User-Agent) zur Auslieferung und Sicherheit (Art. 6 Abs. 1 lit. f DSGVO).</p>
 <h2>3. Lokale Speicherung (kein Tracking)</h2>
-<p>Die App speichert Einstellungen (Theme, Sprache, Favoriten, Filter) ausschliesslich lokal in deinem Browser (localStorage). Es werden keine Cookies zu Analyse-/Werbezwecken gesetzt und keine personenbezogenen Daten an uns uebertragen.</p>
+<p>Die App speichert Einstellungen (Theme, Sprache, Favoriten, Filter) ausschliesslich lokal in deinem Browser (localStorage). Es werden keine Cookies zu Analyse-/Werbezwecken gesetzt und keine personenbezogenen Daten an uns übertragen.</p>
 <h2>4. Externe Inhalte</h2>
-<p>Zur USD-/EUR-Umrechnung wird bei Bedarf die API <code>api.frankfurter.app</code> abgerufen; dabei wird deine IP-Adresse an diesen Dienst uebertragen. Produktbilder werden teils direkt von Hersteller-/Shop-Servern geladen. Ein Service Worker (PWA) cached statische Inhalte lokal.</p>
+<p>Zur USD-/EUR-Umrechnung wird bei Bedarf die API <code>api.frankfurter.app</code> abgerufen; dabei wird deine IP-Adresse an diesen Dienst übertragen. Produktbilder werden teils direkt von Hersteller-/Shop-Servern geladen. Ein Service Worker (PWA) cached statische Inhalte lokal.</p>
 <h2>5. Affiliate-Programme</h2>
-<p>Wir nehmen an Partnerprogrammen teil (u. a. Amazon PartnerNet, eBay Partner Network sowie via AWIN fuer Otto und idealo). Beim Klick auf einen Affiliate-Link wirst du zum jeweiligen Shop/Netzwerk weitergeleitet, das eigene Cookies setzen und Daten (u. a. IP, Referrer) verarbeiten kann, um Kaeufe der Provision zuzuordnen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (wirtschaftliches Interesse). Details in den Datenschutzhinweisen der jeweiligen Anbieter.</p>
+<p>Wir nehmen an Partnerprogrammen teil (u. a. Amazon PartnerNet, eBay Partner Network sowie via AWIN für Otto und idealo). Beim Klick auf einen Affiliate-Link wirst du zum jeweiligen Shop/Netzwerk weitergeleitet, das eigene Cookies setzen und Daten (u. a. IP, Referrer) verarbeiten kann, um Käufe der Provision zuzuordnen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (wirtschaftliches Interesse). Details in den Datenschutzhinweisen der jeweiligen Anbieter.</p>
 <h2>6. Deine Rechte</h2>
-<p>Du hast Recht auf Auskunft, Berichtigung, Loeschung, Einschraenkung, Datenuebertragbarkeit und Widerspruch sowie ein Beschwerderecht bei einer Aufsichtsbehoerde.</p>`,
+<p>Du hast Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch sowie ein Beschwerderecht bei einer Aufsichtsbehörde.</p>`,
   );

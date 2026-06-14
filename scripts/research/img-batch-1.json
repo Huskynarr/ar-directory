@@ -1,0 +1,380 @@
+[
+ {
+  "id": "Nn4SRTGIQ",
+  "name": "Acer AH101",
+  "manufacturer": "Acer",
+  "official_url": "https://www.acer.com/",
+  "category": "XR"
+ },
+ {
+  "id": "Mpz7ENfNA",
+  "name": "ARknovv A1",
+  "manufacturer": "Gyges Labs",
+  "official_url": "https://gygeslabs.com/",
+  "category": "AR"
+ },
+ {
+  "id": "lYyGNGICW",
+  "name": "arpara Tethered 5K",
+  "manufacturer": "arpara",
+  "official_url": "https://www.arparaland.com/",
+  "category": "XR"
+ },
+ {
+  "id": "TV7CiCh26",
+  "name": "Atheer AiR Glasses",
+  "manufacturer": "Atheer",
+  "official_url": "https://vrarwiki.com/wiki/Atheer_AiR",
+  "category": "AR"
+ },
+ {
+  "id": "iA6f0pVBg",
+  "name": "Augmedics xvision Spine System",
+  "manufacturer": "Augmedics",
+  "official_url": "https://augmedics.com/xvision/",
+  "category": "AR"
+ },
+ {
+  "id": "w2pyyTYD2",
+  "name": "Beyeonics One",
+  "manufacturer": "Beyeonics Vision (Elbit Systems)",
+  "official_url": "https://www.elbitsystems.com/commercial/medical/beyeonics-onetm",
+  "category": "AR"
+ },
+ {
+  "id": "brzlBaebm",
+  "name": "Bigscreen Beyond",
+  "manufacturer": "Bigscreen",
+  "official_url": "https://store.bigscreenvr.com/products/bigscreen-beyond",
+  "category": "XR"
+ },
+ {
+  "id": "BLXT2V2lq",
+  "name": "Captify Pro",
+  "manufacturer": "Captify",
+  "official_url": "https://captify.glass/products/captify-pro",
+  "category": "AR"
+ },
+ {
+  "id": "ymrfmSxZE",
+  "name": "DAQRI Smart Glasses",
+  "manufacturer": "DAQRI",
+  "official_url": "https://en.wikipedia.org/wiki/Daqri",
+  "category": "AR"
+ },
+ {
+  "id": "PqpuQHG3T",
+  "name": "Dell Visor",
+  "manufacturer": "Dell",
+  "official_url": "https://www.dell.com/",
+  "category": "XR"
+ },
+ {
+  "id": "Jleru7hdi",
+  "name": "DPVR E4",
+  "manufacturer": "DPVR",
+  "official_url": "https://www.dpvr.com/en/product/dpvr-e4-pc-virtual-reality-headset/",
+  "category": "XR"
+ },
+ {
+  "id": "b1AgJZABS",
+  "name": "Epson Moverio BT-45C",
+  "manufacturer": "Epson",
+  "official_url": "https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-45C-AR-Smart-Glasses/p/V11H970020",
+  "category": "AR"
+ },
+ {
+  "id": "U36ZvMkGN",
+  "name": "Everysight Maverick AI Pro",
+  "manufacturer": "Everysight",
+  "official_url": "https://www.everysight.com/maverick",
+  "category": "AR"
+ },
+ {
+  "id": "4fWI0Wuls",
+  "name": "Focals by North",
+  "manufacturer": "North (ehem. Thalmic Labs)",
+  "official_url": "https://www.bynorth.com/",
+  "category": "AR"
+ },
+ {
+  "id": "K8QDUQxOu",
+  "name": "Form Smart Swim 2",
+  "manufacturer": "FORM",
+  "official_url": "https://www.formswim.com/products/smart-swim-2-goggles",
+  "category": "AR"
+ },
+ {
+  "id": "aLXkJNTX8",
+  "name": "FOVE 0",
+  "manufacturer": "FOVE",
+  "official_url": "https://www.getfove.com/",
+  "category": "XR"
+ },
+ {
+  "id": "kMS1N5axn",
+  "name": "Fujitsu Ubiquitousware Head Mounted Display",
+  "manufacturer": "Fujitsu",
+  "official_url": "https://www.fujitsu.com/global/about/resources/news/press-releases/2015/0511-02.html",
+  "category": "AR"
+ },
+ {
+  "id": "Zn3buICy4",
+  "name": "Goolton Star1",
+  "manufacturer": "Goolton",
+  "official_url": "https://goolton.com/ar-glasses/",
+  "category": "AR"
+ },
+ {
+  "id": "CBjkOUetd",
+  "name": "Goolton Star1S",
+  "manufacturer": "Goolton",
+  "official_url": "https://goolton.com/ar-glasses/",
+  "category": "AR"
+ },
+ {
+  "id": "hZlysEI3L",
+  "name": "GOOVIS Art (A1)",
+  "manufacturer": "GOOVIS",
+  "official_url": "https://www.goovis.com/products/art",
+  "category": "AR"
+ },
+ {
+  "id": "4owq2fcrf",
+  "name": "GOOVIS G3 Max",
+  "manufacturer": "GOOVIS",
+  "official_url": "https://www.goovis.com/products/goovis-g3max",
+  "category": "XR"
+ },
+ {
+  "id": "stQj142Dq",
+  "name": "Honor Vision Glass",
+  "manufacturer": "Honor",
+  "official_url": "https://www.honor.com/cn/wearables/honor-vision-glass/",
+  "category": "AR"
+ },
+ {
+  "id": "HZfEHuVOB",
+  "name": "HP Reverb G2",
+  "manufacturer": "HP",
+  "official_url": "https://support.hp.com/us-en/product/product-specs/hp-reverb-g2-virtual-reality-headset/33835976",
+  "category": "XR"
+ },
+ {
+  "id": "2zF79J1mn",
+  "name": "HTC Vive",
+  "manufacturer": "HTC",
+  "official_url": "https://www.vive.com/",
+  "category": "XR"
+ },
+ {
+  "id": "95D3X6CjE",
+  "name": "HTC Vive Cosmos",
+  "manufacturer": "HTC",
+  "official_url": "https://www.vive.com/",
+  "category": "XR"
+ },
+ {
+  "id": "DwNDxwEXq",
+  "name": "HTC Vive Flow",
+  "manufacturer": "HTC",
+  "official_url": "https://www.vive.com/us/product/vive-flow/overview/",
+  "category": "XR"
+ },
+ {
+  "id": "RKSpNuMY0",
+  "name": "HTC Vive Focus 3",
+  "manufacturer": "HTC",
+  "official_url": "https://www.vive.com/us/product/vive-focus3/overview/",
+  "category": "XR"
+ },
+ {
+  "id": "qGCzW5DOo",
+  "name": "HTC Vive Pro",
+  "manufacturer": "HTC",
+  "official_url": "https://www.vive.com/",
+  "category": "XR"
+ },
+ {
+  "id": "XB6FPwK6G",
+  "name": "HTC Vive Pro 2",
+  "manufacturer": "HTC",
+  "official_url": "https://www.vive.com/us/product/vive-pro2/overview/",
+  "category": "XR"
+ },
+ {
+  "id": "SnuFhVAg3",
+  "name": "INAIR 2 Pro",
+  "manufacturer": "INAIR",
+  "official_url": "https://inairspace.com/products/inair-2-pro-ar-glass",
+  "category": "AR"
+ },
+ {
+  "id": "enBOnFSmq",
+  "name": "INAIR Glasses",
+  "manufacturer": "INAIR",
+  "official_url": "https://inairspace.com/",
+  "category": "AR"
+ },
+ {
+  "id": "0lR0V2Y30",
+  "name": "INMO Air3",
+  "manufacturer": "INMO",
+  "official_url": "https://www.inmoxr.com/pages/inmo-air3",
+  "category": "AR"
+ },
+ {
+  "id": "Q6Sz4MiCo",
+  "name": "INMO GO3",
+  "manufacturer": "INMO",
+  "official_url": "https://www.inmoxr.com/pages/inmo-go3-ai-glasses",
+  "category": "AR"
+ },
+ {
+  "id": "qIft0kA6s",
+  "name": "iQIYI Qiyu 3",
+  "manufacturer": "iQIYI",
+  "official_url": "https://dev-qiyu.iqiyi.com/",
+  "category": "XR"
+ },
+ {
+  "id": "WeyR55HY1",
+  "name": "iQIYI Qiyu Dream",
+  "manufacturer": "iQIYI",
+  "official_url": "https://dev-qiyu.iqiyi.com/",
+  "category": "XR"
+ },
+ {
+  "id": "mqo53rFnv",
+  "name": "Konica Minolta AIRe Lens",
+  "manufacturer": "Konica Minolta",
+  "official_url": "https://thearea.org/ar-news/konica-minolta-develops-ar-glasses-for-industrial-environments/",
+  "category": "AR"
+ },
+ {
+  "id": "lfp5m7Rfs",
+  "name": "Kopin Solos",
+  "manufacturer": "Kopin / Solos",
+  "official_url": "https://solosglasses.com/blogs/news/kopin-starts-selling-500-solos-smart-glasses-for-joggers-and-cyclists",
+  "category": "AR"
+ },
+ {
+  "id": "odFxunHTf",
+  "name": "LAWK ONE",
+  "manufacturer": "LAWK",
+  "official_url": "https://global.lawaken.com/products/lawk-one-ar-glasses",
+  "category": "AR"
+ },
+ {
+  "id": "PH9qawOBH",
+  "name": "Leion Hey",
+  "manufacturer": "LLVision",
+  "official_url": "https://leion.glass/",
+  "category": "AR"
+ },
+ {
+  "id": "Te5iB4fwf",
+  "name": "Leion Hey2",
+  "manufacturer": "LLVision",
+  "official_url": "https://www.llvision.com/en/leion-pro.html",
+  "category": "AR"
+ },
+ {
+  "id": "LU3PGDM40",
+  "name": "Lenovo Explorer",
+  "manufacturer": "Lenovo",
+  "official_url": "https://www.lenovo.com/",
+  "category": "XR"
+ },
+ {
+  "id": "Kwh8l4piN",
+  "name": "Lenovo Legion AR Smart Glasses",
+  "manufacturer": "Lenovo",
+  "official_url": "https://www.lenovo.com/",
+  "category": "AR"
+ },
+ {
+  "id": "cQJtgHGeO",
+  "name": "Lenovo Legion Glasses",
+  "manufacturer": "Lenovo",
+  "official_url": "https://www.lenovo.com/us/en/p/accessories-and-software/vr-headsets/vr-headsets_smart-glasses/gy21m72722",
+  "category": "AR"
+ },
+ {
+  "id": "rfwT9GHfQ",
+  "name": "Lenovo Legion Glasses Gen 2",
+  "manufacturer": "Lenovo",
+  "official_url": "https://www.lenovo.com/us/en/p/accessories-and-software/vr-headsets/vr-headsets_smart-glasses/gy21r10236",
+  "category": "AR"
+ },
+ {
+  "id": "cgXP6ZeWn",
+  "name": "Lenovo ThinkReality A6",
+  "manufacturer": "Lenovo",
+  "official_url": "https://www.tomshardware.com/news/lenovo-thinkreality-a6-ar-headset-specs,39329.html",
+  "category": "AR"
+ },
+ {
+  "id": "kKQIRlqM6",
+  "name": "Lenovo ThinkReality VRX",
+  "manufacturer": "Lenovo",
+  "official_url": "https://www.lenovo.com/us/en/p/smart-devices/virtual-reality/thinkreality-vrx/len101r0001",
+  "category": "XR"
+ },
+ {
+  "id": "DXHyJcE9A",
+  "name": "Meizu MYVU",
+  "manufacturer": "Meizu",
+  "official_url": "https://www.meizu.com/",
+  "category": "AR"
+ },
+ {
+  "id": "cEsHUSt3q",
+  "name": "Meizu MYVU Discovery",
+  "manufacturer": "Meizu",
+  "official_url": "https://www.meizu.com/",
+  "category": "AR"
+ },
+ {
+  "id": "bYDUHLwEV",
+  "name": "Meizu StarV Air2",
+  "manufacturer": "Meizu",
+  "official_url": "https://www.meizu.com/global/product/starv-air2",
+  "category": "AR"
+ },
+ {
+  "id": "LQ5o9LAg5",
+  "name": "Meizu StarV View",
+  "manufacturer": "Meizu",
+  "official_url": "https://www.meizu.com/",
+  "category": "AR"
+ },
+ {
+  "id": "LHMPSIx5Q",
+  "name": "Mentra Mach1",
+  "manufacturer": "Mentra",
+  "official_url": "https://shop.mentra.glass/products/mach1-devkit-display-glasses",
+  "category": "AR"
+ },
+ {
+  "id": "sW1D3BWLl",
+  "name": "Meta Quest 2",
+  "manufacturer": "Meta",
+  "official_url": "https://www.meta.com/quest/",
+  "category": "XR"
+ },
+ {
+  "id": "smKbDn8oo",
+  "name": "Microsoft IVAS",
+  "manufacturer": "Microsoft",
+  "official_url": "https://en.wikipedia.org/wiki/Integrated_Visual_Augmentation_System",
+  "category": "AR"
+ },
+ {
+  "id": "epY189CtX",
+  "name": "Nolo Sonic",
+  "manufacturer": "Nolo",
+  "official_url": "https://www.nolovr.com/",
+  "category": "XR"
+ }
+]

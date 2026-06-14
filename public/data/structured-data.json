@@ -23,7 +23,7 @@
         "Smart Glasses",
         "Headsets"
       ],
-      "dateModified": "2026-06-14T08:01:54.118Z"
+      "dateModified": "2026-06-14T19:10:27.058Z"
     },
     {
       "@type": "Dataset",
@@ -33,7 +33,7 @@
       "description": "Kuratierter Datensatz mit 258 AR/XR-Brillen inkl. Spezifikationen, Preisen und Lifecycle-Status.",
       "isAccessibleForFree": true,
       "inLanguage": "de-DE",
-      "dateModified": "2026-06-14T08:01:54.118Z",
+      "dateModified": "2026-06-14T19:10:27.058Z",
       "distribution": [
         {
           "@type": "DataDownload",
@@ -156,6 +156,7 @@
               "@type": "Brand",
               "name": "Acer"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/acerah101.png",
             "url": "https://ar-directory.huskynarr.de/modelle/acerah101.html",
             "sameAs": "https://www.acer.com/",
             "releaseDate": "2017-10-17",
@@ -333,6 +334,7 @@
               "@type": "Brand",
               "name": "Gyges Labs"
             },
+            "image": "https://www.gizmochina.com/wp-content/uploads/2023/07/ARknovv-A1.webp",
             "url": "https://ar-directory.huskynarr.de/modelle/arknovva1.html",
             "sameAs": "https://gygeslabs.com/",
             "releaseDate": "2023-09-26",
@@ -355,6 +357,7 @@
               "@type": "Brand",
               "name": "arpara"
             },
+            "image": "https://www.notebookcheck.com/fileadmin/Notebooks/News/_nc3/arpara.jpg",
             "url": "https://ar-directory.huskynarr.de/modelle/arparatethered5k.html",
             "sameAs": "https://www.arparaland.com/",
             "releaseDate": "2022-03",
@@ -402,7 +405,14 @@
             },
             "image": "https://press.asus.com/assets/w_1200,h_630/73fe77d0-849e-4323-8b41-064e6fbcd241/ROG%20XREAL%20R1%20Gaming%20glasses%20with%20PC%20and%20Console_s.jpg",
             "url": "https://ar-directory.huskynarr.de/modelle/asusrogxrealr1.html",
-            "sameAs": "https://press.asus.com/news/press-releases/rog-xreal-r1-ar-gaming-glasses/"
+            "sameAs": "https://press.asus.com/news/press-releases/rog-xreal-r1-ar-gaming-glasses/",
+            "releaseDate": "2026-06-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "849",
+              "availability": "https://schema.org/InStock"
+            }
           }
         },
         {
@@ -416,6 +426,7 @@
               "@type": "Brand",
               "name": "Atheer"
             },
+            "image": "https://displaydaily.com/wp-content/uploads/2015/02/1-JPG.webp",
             "url": "https://ar-directory.huskynarr.de/modelle/atheerairglasses.html",
             "sameAs": "https://vrarwiki.com/wiki/Atheer_AiR",
             "releaseDate": "2016"
@@ -432,6 +443,7 @@
               "@type": "Brand",
               "name": "Augmedics"
             },
+            "image": "https://augmedics.com/wp-content/uploads/2025/11/X2-600x500-3.png",
             "url": "https://ar-directory.huskynarr.de/modelle/augmedicsxvisionspinesystem.html",
             "sameAs": "https://augmedics.com/xvision/",
             "releaseDate": "2020"
@@ -464,6 +476,7 @@
               "@type": "Brand",
               "name": "Bigscreen"
             },
+            "image": "https://store.bigscreenvr.com/cdn/shop/products/hmdkey_5d33f8ae-de43-4fc8-b7f4-ec1245b0e67a.webp?v=1676266590",
             "url": "https://ar-directory.huskynarr.de/modelle/bigscreenbeyond.html",
             "sameAs": "https://store.bigscreenvr.com/products/bigscreen-beyond",
             "releaseDate": "2023",
@@ -624,6 +637,7 @@
               "@type": "Brand",
               "name": "Captify"
             },
+            "image": "https://captify.glass/cdn/shop/files/captify_pro_model_1.jpg?v=1776238198",
             "url": "https://ar-directory.huskynarr.de/modelle/captifypro.html",
             "sameAs": "https://captify.glass/products/captify-pro",
             "releaseDate": "2025",
@@ -669,6 +683,7 @@
               "@type": "Brand",
               "name": "DAQRI"
             },
+            "image": "https://img.newequipment.com/files/base/ebm/newequipment/image/2019/03/newequipment_5464_daqri_smartglasses_promo.png?auto=format,compress&fit=fill&fill=blur&w=1200&h=630",
             "url": "https://ar-directory.huskynarr.de/modelle/daqrismartglasses.html",
             "sameAs": "https://en.wikipedia.org/wiki/Daqri",
             "releaseDate": "2017-11",
@@ -691,6 +706,7 @@
               "@type": "Brand",
               "name": "Dell"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/dellvisor.png",
             "url": "https://ar-directory.huskynarr.de/modelle/dellvisor.html",
             "sameAs": "https://www.dell.com/",
             "releaseDate": "2017-10-17",
@@ -730,6 +746,7 @@
               "@type": "Brand",
               "name": "DPVR"
             },
+            "image": "https://www.dpvr.com/wp-content/uploads/2022/10/DPVR-E4-03-1.png",
             "url": "https://ar-directory.huskynarr.de/modelle/dpvre4.html",
             "sameAs": "https://www.dpvr.com/en/product/dpvr-e4-pc-virtual-reality-headset/",
             "releaseDate": "2023-01-15",
@@ -1005,6 +1022,7 @@
               "@type": "Brand",
               "name": "Epson"
             },
+            "image": "https://mediaserver.goepson.com/adaptivemedia/rendition?id=fc3fedb2e17c1ef9d6643d16ebdef8e0e36c1537&vid=fc3fedb2e17c1ef9d6643d16ebdef8e0e36c1537&prid=300Wx300H&clid=SAPDAM&prclid=productpictures&assetDescr=BT-45C_headon_headset_690x460",
             "url": "https://ar-directory.huskynarr.de/modelle/epsonmoveriobt45c.html",
             "sameAs": "https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-45C-AR-Smart-Glasses/p/V11H970020",
             "releaseDate": "2022-11"
@@ -1067,6 +1085,7 @@
               "@type": "Brand",
               "name": "Everysight"
             },
+            "image": "https://gizmodo.com/app/uploads/2026/03/maverick-ai-smart-glasses-1200x675.jpg",
             "url": "https://ar-directory.huskynarr.de/modelle/everysightmaverickaipro.html",
             "sameAs": "https://www.everysight.com/maverick",
             "releaseDate": "2026",
@@ -1134,6 +1153,7 @@
               "@type": "Brand",
               "name": "FORM"
             },
+            "image": "https://www.formswim.com/cdn/shop/files/SS2.jpg?v=1712014561",
             "url": "https://ar-directory.huskynarr.de/modelle/formsmartswim2.html",
             "sameAs": "https://www.formswim.com/products/smart-swim-2-goggles",
             "releaseDate": "2024",
@@ -1156,6 +1176,7 @@
               "@type": "Brand",
               "name": "FOVE"
             },
+            "image": "https://i0.wp.com/roadtovr.com/wp-content/uploads/2016/09/fove-0-vr-headset-1.jpg?fit=1920%2C1080&ssl=1",
             "url": "https://ar-directory.huskynarr.de/modelle/fove0.html",
             "sameAs": "https://www.getfove.com/",
             "releaseDate": "2017-01-01",
@@ -1240,6 +1261,7 @@
               "@type": "Brand",
               "name": "Goolton"
             },
+            "image": "https://static.wixstatic.com/media/4e320a_4351dee62f9b460fbbba9010c425d12c~mv2.jpg/v1/fill/w_1000,h_635,al_c,q_85,usm_0.66_1.00_0.01/4e320a_4351dee62f9b460fbbba9010c425d12c~mv2.jpg",
             "url": "https://ar-directory.huskynarr.de/modelle/gooltonstar1.html",
             "sameAs": "https://goolton.com/ar-glasses/",
             "releaseDate": "2024-12"
@@ -1256,6 +1278,7 @@
               "@type": "Brand",
               "name": "Goolton"
             },
+            "image": "https://static.wixstatic.com/media/4e320a_4351dee62f9b460fbbba9010c425d12c~mv2.jpg/v1/fill/w_1000,h_635,al_c,q_85,usm_0.66_1.00_0.01/4e320a_4351dee62f9b460fbbba9010c425d12c~mv2.jpg",
             "url": "https://ar-directory.huskynarr.de/modelle/gooltonstar1s.html",
             "sameAs": "https://goolton.com/ar-glasses/",
             "releaseDate": "2024-12"
@@ -1272,6 +1295,7 @@
               "@type": "Brand",
               "name": "GOOVIS"
             },
+            "image": "https://www.goovis.com/cdn/shop/files/1-1_1.jpg?v=1778323346",
             "url": "https://ar-directory.huskynarr.de/modelle/goovisarta1.html",
             "sameAs": "https://www.goovis.com/products/art",
             "releaseDate": "2024",
@@ -1294,6 +1318,7 @@
               "@type": "Brand",
               "name": "GOOVIS"
             },
+            "image": "https://www.goovis.com/cdn/shop/files/G3-Max_92a25c71-4167-456e-a81a-fa233ad010bb.jpg?v=1755509325",
             "url": "https://ar-directory.huskynarr.de/modelle/goovisg3max.html",
             "sameAs": "https://www.goovis.com/products/goovis-g3max",
             "releaseDate": "2023-06-27",
@@ -1385,6 +1410,7 @@
               "@type": "Brand",
               "name": "Honor"
             },
+            "image": "https://www.gizmochina.com/wp-content/uploads/2023/03/Honor-viewing-glasses.png",
             "url": "https://ar-directory.huskynarr.de/modelle/honorvisionglass.html",
             "sameAs": "https://www.honor.com/cn/wearables/honor-vision-glass/",
             "releaseDate": "2023-03-24",
@@ -1407,6 +1433,7 @@
               "@type": "Brand",
               "name": "HP"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/hpreverbg2.png",
             "url": "https://ar-directory.huskynarr.de/modelle/hpreverbg2.html",
             "sameAs": "https://support.hp.com/us-en/product/product-specs/hp-reverb-g2-virtual-reality-headset/33835976",
             "releaseDate": "2020-11",
@@ -1429,6 +1456,7 @@
               "@type": "Brand",
               "name": "HTC"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/htcvive.png",
             "url": "https://ar-directory.huskynarr.de/modelle/htcvive.html",
             "sameAs": "https://www.vive.com/",
             "releaseDate": "2016-04-05",
@@ -1451,6 +1479,7 @@
               "@type": "Brand",
               "name": "HTC"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/htcvivecosmos.png",
             "url": "https://ar-directory.huskynarr.de/modelle/htcvivecosmos.html",
             "sameAs": "https://www.vive.com/",
             "releaseDate": "2019-10-03",
@@ -1473,6 +1502,7 @@
               "@type": "Brand",
               "name": "HTC"
             },
+            "image": "https://www.vive.com/media/filer_public/fed-assets/hubble/images/vive-flow-meta.png",
             "url": "https://ar-directory.huskynarr.de/modelle/htcviveflow.html",
             "sameAs": "https://www.vive.com/us/product/vive-flow/overview/",
             "releaseDate": "2021-11",
@@ -1495,6 +1525,7 @@
               "@type": "Brand",
               "name": "HTC"
             },
+            "image": "https://www.vive.com/media/filer_public/fed-assets/sunrise/images/focus3-meta.png",
             "url": "https://ar-directory.huskynarr.de/modelle/htcvivefocus3.html",
             "sameAs": "https://www.vive.com/us/product/vive-focus3/overview/",
             "releaseDate": "2021-06",
@@ -1540,6 +1571,7 @@
               "@type": "Brand",
               "name": "HTC"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/htcvivepro.png",
             "url": "https://ar-directory.huskynarr.de/modelle/htcvivepro.html",
             "sameAs": "https://www.vive.com/",
             "releaseDate": "2018",
@@ -1562,6 +1594,7 @@
               "@type": "Brand",
               "name": "HTC"
             },
+            "image": "https://www.vive.com/media/filer_public/fed-assets/vivepro2/images/pro2-meta.jpg",
             "url": "https://ar-directory.huskynarr.de/modelle/htcvivepro2.html",
             "sameAs": "https://www.vive.com/us/product/vive-pro2/overview/",
             "releaseDate": "2021-06-03",
@@ -1676,6 +1709,7 @@
               "@type": "Brand",
               "name": "INAIR"
             },
+            "image": "https://inairspace.com/cdn/shop/files/Frame-2090054748.jpg?v=1768209003",
             "url": "https://ar-directory.huskynarr.de/modelle/inair2pro.html",
             "sameAs": "https://inairspace.com/products/inair-2-pro-ar-glass",
             "releaseDate": "2025"
@@ -1692,6 +1726,7 @@
               "@type": "Brand",
               "name": "INAIR"
             },
+            "image": "https://inairspace.com/cdn/shop/files/Frame-2090054748.jpg?v=1768209003",
             "url": "https://ar-directory.huskynarr.de/modelle/inairglasses.html",
             "sameAs": "https://inairspace.com/",
             "releaseDate": "2024",
@@ -1760,6 +1795,7 @@
               "@type": "Brand",
               "name": "INMO"
             },
+            "image": "https://www.inmoxr.com/cdn/shop/files/AIR3-main-1.jpg?v=1766728843",
             "url": "https://ar-directory.huskynarr.de/modelle/inmoair3.html",
             "sameAs": "https://www.inmoxr.com/pages/inmo-air3",
             "releaseDate": "2025",
@@ -1805,6 +1841,7 @@
               "@type": "Brand",
               "name": "INMO"
             },
+            "image": "https://mma.prnewswire.com/media/2946710/1.jpg?p=facebook",
             "url": "https://ar-directory.huskynarr.de/modelle/inmogo3.html",
             "sameAs": "https://www.inmoxr.com/pages/inmo-go3-ai-glasses",
             "releaseDate": "2025-10-16",
@@ -1827,6 +1864,7 @@
               "@type": "Brand",
               "name": "iQIYI"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/iqiyiqiyu3.png",
             "url": "https://ar-directory.huskynarr.de/modelle/iqiyiqiyu3.html",
             "sameAs": "https://dev-qiyu.iqiyi.com/",
             "releaseDate": "2021-09-03"
@@ -1843,6 +1881,7 @@
               "@type": "Brand",
               "name": "iQIYI"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/iqiyiqiyudream.png",
             "url": "https://ar-directory.huskynarr.de/modelle/iqiyiqiyudream.html",
             "sameAs": "https://dev-qiyu.iqiyi.com/",
             "releaseDate": "2021"
@@ -1927,6 +1966,7 @@
               "@type": "Brand",
               "name": "Konica Minolta"
             },
+            "image": "https://thearea1dev.thearea.org/wp-content/uploads/2018/10/konica-minolta-aire_lens-web.jpg",
             "url": "https://ar-directory.huskynarr.de/modelle/konicaminoltaairelens.html",
             "sameAs": "https://thearea.org/ar-news/konica-minolta-develops-ar-glasses-for-industrial-environments/",
             "releaseDate": "2019"
@@ -1943,6 +1983,7 @@
               "@type": "Brand",
               "name": "Kopin / Solos"
             },
+            "image": "https://solosglasses.com/cdn/shop/articles/IMG-0137.jpg?crop=center&height=1200&v=1705987190&width=1200",
             "url": "https://ar-directory.huskynarr.de/modelle/kopinsolos.html",
             "sameAs": "https://solosglasses.com/blogs/news/kopin-starts-selling-500-solos-smart-glasses-for-joggers-and-cyclists",
             "releaseDate": "2018",
@@ -1965,6 +2006,7 @@
               "@type": "Brand",
               "name": "LAWK"
             },
+            "image": "https://thegadgetflow.com/wp-content/uploads/2023/10/LAWK-ONE-Outdoor-Adventure-HD-and-AI-AR-Glasses-01.jpg",
             "url": "https://ar-directory.huskynarr.de/modelle/lawkone.html",
             "sameAs": "https://global.lawaken.com/products/lawk-one-ar-glasses",
             "releaseDate": "2023-12",
@@ -1987,6 +2029,7 @@
               "@type": "Brand",
               "name": "LLVision"
             },
+            "image": "https://leion.glass/cdn/shop/files/0524_2952_ade800ca-3c63-412b-a32d-a32ea37bff3a.jpg?v=1763715553",
             "url": "https://ar-directory.huskynarr.de/modelle/leionhey.html",
             "sameAs": "https://leion.glass/",
             "releaseDate": "2023-04-26",
@@ -2009,6 +2052,7 @@
               "@type": "Brand",
               "name": "LLVision"
             },
+            "image": "https://mma.prnewswire.com/media/2855549/real_time_subtitles_display1.jpg?p=facebook",
             "url": "https://ar-directory.huskynarr.de/modelle/leionhey2.html",
             "sameAs": "https://www.llvision.com/en/leion-pro.html",
             "releaseDate": "2025-06-24",
@@ -2031,6 +2075,7 @@
               "@type": "Brand",
               "name": "Lenovo"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/lenovoexplorer.png",
             "url": "https://ar-directory.huskynarr.de/modelle/lenovoexplorer.html",
             "sameAs": "https://www.lenovo.com/",
             "releaseDate": "2017-10-01",
@@ -2070,6 +2115,7 @@
               "@type": "Brand",
               "name": "Lenovo"
             },
+            "image": "https://i0.wp.com/innogyan.in/wp-content/uploads/2025/07/wp-17523344334713680566122904630682.jpg?fit=2000%2C1125&ssl=1",
             "url": "https://ar-directory.huskynarr.de/modelle/lenovolegionarsmartglasses.html",
             "sameAs": "https://www.lenovo.com/",
             "releaseDate": "2025-07",
@@ -2092,6 +2138,7 @@
               "@type": "Brand",
               "name": "Lenovo"
             },
+            "image": "https://thegadgetflow.com/wp-content/uploads/2023/09/Lenovo-Legion-Glasses-for-Gaming-01.jpg",
             "url": "https://ar-directory.huskynarr.de/modelle/lenovolegionglasses.html",
             "sameAs": "https://www.lenovo.com/us/en/p/accessories-and-software/vr-headsets/vr-headsets_smart-glasses/gy21m72722",
             "releaseDate": "2023-10",
@@ -2175,6 +2222,7 @@
               "@type": "Brand",
               "name": "Lenovo"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/lenovothinkrealityvrx.png",
             "url": "https://ar-directory.huskynarr.de/modelle/lenovothinkrealityvrx.html",
             "sameAs": "https://www.lenovo.com/us/en/p/smart-devices/virtual-reality/thinkreality-vrx/len101r0001",
             "releaseDate": "2023-06",
@@ -2357,6 +2405,7 @@
               "@type": "Brand",
               "name": "Meizu"
             },
+            "image": "https://www.gizmochina.com/wp-content/uploads/2023/12/meizu-MYVU-Discovery-AR-glasses.png",
             "url": "https://ar-directory.huskynarr.de/modelle/meizumyvudiscovery.html",
             "sameAs": "https://www.meizu.com/",
             "releaseDate": "2023-12",
@@ -2379,6 +2428,7 @@
               "@type": "Brand",
               "name": "Meizu"
             },
+            "image": "https://fms.res.meizu.com/dms/2025/01/15/b043ec6d-44cf-4a22-a6f3-3c3d9c502f50.png",
             "url": "https://ar-directory.huskynarr.de/modelle/meizustarvair2.html",
             "sameAs": "https://www.meizu.com/global/product/starv-air2",
             "releaseDate": "2024-10-08",
@@ -2401,6 +2451,7 @@
               "@type": "Brand",
               "name": "Meizu"
             },
+            "image": "https://fms.res.meizu.com/dms/2025/02/21/15febc88-10fc-4a1f-bef2-05c48166c04b.png",
             "url": "https://ar-directory.huskynarr.de/modelle/meizustarvview.html",
             "sameAs": "https://www.meizu.com/",
             "releaseDate": "2024-10",
@@ -2423,6 +2474,7 @@
               "@type": "Brand",
               "name": "Mentra"
             },
+            "image": "https://mentraglass.com/assets/og_graph_image.png",
             "url": "https://ar-directory.huskynarr.de/modelle/mentramach1.html",
             "sameAs": "https://shop.mentra.glass/products/mach1-devkit-display-glasses",
             "releaseDate": "2025-05",
@@ -2468,6 +2520,7 @@
               "@type": "Brand",
               "name": "Meta"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/oculusquest2.png",
             "url": "https://ar-directory.huskynarr.de/modelle/metaquest2.html",
             "sameAs": "https://www.meta.com/quest/",
             "releaseDate": "2020-10-13",
@@ -2628,6 +2681,7 @@
               "@type": "Brand",
               "name": "Microsoft"
             },
+            "image": "https://news.microsoft.com/source/wp-content/uploads/2021/06/US-Army-HoloLens.jpg",
             "url": "https://ar-directory.huskynarr.de/modelle/microsoftivas.html",
             "sameAs": "https://en.wikipedia.org/wiki/Integrated_Visual_Augmentation_System",
             "releaseDate": "2023"
@@ -2666,6 +2720,7 @@
               "@type": "Brand",
               "name": "Nolo"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/nolosonic.png",
             "url": "https://ar-directory.huskynarr.de/modelle/nolosonic.html",
             "sameAs": "https://www.nolovr.com/",
             "releaseDate": "2021-06",
@@ -2796,6 +2851,7 @@
               "@type": "Brand",
               "name": "Meta"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/oculusgo.png",
             "url": "https://ar-directory.huskynarr.de/modelle/oculusgo.html",
             "sameAs": "https://www.meta.com/",
             "releaseDate": "2018-05-01",
@@ -2818,6 +2874,7 @@
               "@type": "Brand",
               "name": "Meta"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/oculusquest.png",
             "url": "https://ar-directory.huskynarr.de/modelle/oculusquest.html",
             "sameAs": "https://www.meta.com/quest/",
             "releaseDate": "2019-05-21",
@@ -2840,6 +2897,7 @@
               "@type": "Brand",
               "name": "Meta"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/oculusrift.png",
             "url": "https://ar-directory.huskynarr.de/modelle/oculusriftcv1.html",
             "sameAs": "https://www.meta.com/",
             "releaseDate": "2016-03-28",
@@ -2862,6 +2920,7 @@
               "@type": "Brand",
               "name": "Meta"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/oculusriftdk2.png",
             "url": "https://ar-directory.huskynarr.de/modelle/oculusriftdk2.html",
             "sameAs": "https://www.meta.com/",
             "releaseDate": "2014-07-01",
@@ -2884,6 +2943,7 @@
               "@type": "Brand",
               "name": "Meta"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/oculusrifts.png",
             "url": "https://ar-directory.huskynarr.de/modelle/oculusrifts.html",
             "sameAs": "https://www.meta.com/",
             "releaseDate": "2019-05-21",
@@ -2906,6 +2966,7 @@
               "@type": "Brand",
               "name": "Osterhout Design Group"
             },
+            "image": "https://vrarwiki.com/images/4/4f/R-7_smart_glasses1.png",
             "url": "https://ar-directory.huskynarr.de/modelle/odgr7.html",
             "sameAs": "https://vrarwiki.com/wiki/R-7_Smartglasses",
             "releaseDate": "2016",
@@ -2988,6 +3049,7 @@
               "@type": "Brand",
               "name": "Pico"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/pico4.png",
             "url": "https://ar-directory.huskynarr.de/modelle/pico4.html",
             "sameAs": "https://www.picoxr.com/",
             "releaseDate": "2022-10-18",
@@ -3010,6 +3072,7 @@
               "@type": "Brand",
               "name": "Pico"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/pico4ultra.png",
             "url": "https://ar-directory.huskynarr.de/modelle/pico4ultra.html",
             "sameAs": "https://www.picoxr.com/global/products/pico4-ultra",
             "releaseDate": "2024-09-02",
@@ -3032,6 +3095,7 @@
               "@type": "Brand",
               "name": "Pico"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/picog24k.png",
             "url": "https://ar-directory.huskynarr.de/modelle/picog24k.html",
             "sameAs": "https://www.picoxr.com/",
             "releaseDate": "2019-03-30",
@@ -3054,6 +3118,7 @@
               "@type": "Brand",
               "name": "Pico"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/picog3.png",
             "url": "https://ar-directory.huskynarr.de/modelle/picog3.html",
             "sameAs": "https://www.picoxr.com/global/products/g3",
             "releaseDate": "2023",
@@ -3076,6 +3141,7 @@
               "@type": "Brand",
               "name": "Pico"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/piconeo2.png",
             "url": "https://ar-directory.huskynarr.de/modelle/piconeo2.html",
             "sameAs": "https://www.picoxr.com/",
             "releaseDate": "2020-05-27",
@@ -3098,6 +3164,7 @@
               "@type": "Brand",
               "name": "Pico"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/piconeo3.png",
             "url": "https://ar-directory.huskynarr.de/modelle/piconeo3.html",
             "sameAs": "https://www.picoxr.com/",
             "releaseDate": "2021-05",
@@ -3120,6 +3187,7 @@
               "@type": "Brand",
               "name": "Pico"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/piconeo3link.png",
             "url": "https://ar-directory.huskynarr.de/modelle/piconeo3link.html",
             "sameAs": "https://www.picoxr.com/global/products/neo3-link/specs",
             "releaseDate": "2022-05",
@@ -3234,6 +3302,7 @@
               "@type": "Brand",
               "name": "Pimax"
             },
+            "image": "https://pimax.com/cdn/shop/articles/dream_se_fcaca184-7b7e-4609-95e5-ca25f4facf81.jpg?v=1778767315&width=1500",
             "url": "https://ar-directory.huskynarr.de/modelle/pimaxdreamairse.html",
             "sameAs": "https://pimax.com/blogs/blogs/pimax-dream-air-se-shipping-now",
             "releaseDate": "2026-05-14",
@@ -3279,6 +3348,7 @@
               "@type": "Brand",
               "name": "Sony Interactive Entertainment"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/playstationvr.png",
             "url": "https://ar-directory.huskynarr.de/modelle/playstationvr.html",
             "sameAs": "https://www.playstation.com/",
             "releaseDate": "2016-10-13",
@@ -3346,6 +3416,7 @@
               "@type": "Brand",
               "name": "TCL"
             },
+            "image": "https://www.rayneo.com/cdn/shop/files/A2_b5ae514b-9ca5-45e9-9546-a8c04d32fbf3.png?v=1754545207",
             "url": "https://ar-directory.huskynarr.de/modelle/rayneoair2.html",
             "sameAs": "https://www.rayneo.com/products/rayneo-air-2-xr-glasses",
             "releaseDate": "2023",
@@ -3368,6 +3439,7 @@
               "@type": "Brand",
               "name": "TCL"
             },
+            "image": "https://www.rayneo.com/cdn/shop/files/A2S.png?v=1754545207",
             "url": "https://ar-directory.huskynarr.de/modelle/rayneoair2s.html",
             "sameAs": "https://www.rayneo.com/products/rayneo-air_2s",
             "releaseDate": "2024-08-15",
@@ -3457,6 +3529,7 @@
               "@type": "Brand",
               "name": "TCL"
             },
+            "image": "https://www.rayneo.com/cdn/shop/files/Air4_pro.png?v=1772188087",
             "url": "https://ar-directory.huskynarr.de/modelle/rayneoair4pro.html",
             "sameAs": "https://www.rayneo.com/products/rayneo-air-4-pro-ar-glasses",
             "releaseDate": "2026-01-25",
@@ -3524,6 +3597,7 @@
               "@type": "Brand",
               "name": "Razer"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/razerosvrhdk2.png",
             "url": "https://ar-directory.huskynarr.de/modelle/razerosvrhdk2.html",
             "sameAs": "http://www.osvr.org/hdk2.html",
             "releaseDate": "2016-07-01",
@@ -4030,6 +4104,7 @@
               "@type": "Brand",
               "name": "Samsung"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/samsungodyssey.png",
             "url": "https://ar-directory.huskynarr.de/modelle/samsunghmdodyssey.html",
             "sameAs": "https://www.samsung.com/us/computing/hmd/windows-mixed-reality/hmd-odyssey-mixed-reality-headset-xe800zaa-hc1us/",
             "releaseDate": "2017-11-07",
@@ -4052,6 +4127,7 @@
               "@type": "Brand",
               "name": "Samsung"
             },
+            "image": "https://api.samsungmobilepress.com/api/v1/file/CC890F7F3AB514A52D971D4E97400C9B735657038D212B2DB735DEBA88139A0C7C6BC2CC5A6613C23596B4BC87541D673D73906658A7C453C27011D54DC2D24ED772563886AF2FFC58667025DC019117C6B52AA3A1A09FAC393B40A90DC362FE",
             "url": "https://ar-directory.huskynarr.de/modelle/samsunghmdodyssey-2.html",
             "sameAs": "https://www.samsungmobilepress.com/media-assets/samsung_hmd_odyssey_plus",
             "releaseDate": "2018-10-22",
@@ -4143,6 +4219,7 @@
               "@type": "Brand",
               "name": "Shiftall"
             },
+            "image": "https://cdn.prod.website-files.com/615ff9cd5c0185a6354c51b8/69b0db7ec5341d7f7a259b4e_MeganeX-8K-Mark-II_01.png",
             "url": "https://ar-directory.huskynarr.de/modelle/shiftallmeganex8kmarkii.html",
             "sameAs": "https://en.shiftall.net/products/meganex8kmk2",
             "releaseDate": "2025-12",
@@ -4188,6 +4265,7 @@
               "@type": "Brand",
               "name": "Skyworth"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/skyworthpancake1.png",
             "url": "https://ar-directory.huskynarr.de/modelle/skyworthpancake1.html",
             "sameAs": "https://www.skyworthxr.com/",
             "releaseDate": "2022-09",
@@ -4226,6 +4304,7 @@
               "@type": "Brand",
               "name": "Snap Inc"
             },
+            "image": "https://images.ctfassets.net/cbjigzuhgs28/5SsiASSQXGFSZzFe3mOjYb/63fd0f630941cf0c7053225d0d2bf0e4/image__2_.png?q=40&h=512",
             "url": "https://ar-directory.huskynarr.de/modelle/snapspecs.html",
             "sameAs": "https://www.spectacles.com/",
             "releaseDate": "2026",
@@ -4281,6 +4360,7 @@
               "@type": "Brand",
               "name": "Sol"
             },
+            "image": "https://cdn.sanity.io/images/2ydnq366/production/f4cbf0a26a4ce65a7f4994fd2a1315715e6433b3-1200x630.jpg?w=1200&h=630",
             "url": "https://ar-directory.huskynarr.de/modelle/solreader.html",
             "sameAs": "https://solreader.com/",
             "releaseDate": "2024",
@@ -4394,6 +4474,7 @@
               "@type": "Brand",
               "name": "Sony"
             },
+            "image": "https://xyn.sony.net/hubfs/XYN_OGP.png",
             "url": "https://ar-directory.huskynarr.de/modelle/sonysrhs1xynheadset.html",
             "sameAs": "https://www.sony.com/",
             "releaseDate": "2025-02",
@@ -4442,6 +4523,7 @@
             "image": "https://cdn.prod.website-files.com/67d3f3c8636ba1042f4dbe5f/6808bc768a78ba8c43ec64a6_Graph%20image_Spacetop1.min.jpg",
             "url": "https://ar-directory.huskynarr.de/modelle/spacetopg1.html",
             "sameAs": "https://www.sightful.com/",
+            "releaseDate": "2024-10",
             "offers": {
               "@type": "Offer",
               "priceCurrency": "USD",
@@ -4461,6 +4543,7 @@
               "@type": "Brand",
               "name": "StarVR"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/starvrone.png",
             "url": "https://ar-directory.huskynarr.de/modelle/starvrone.html",
             "sameAs": "https://www.starvr.com/",
             "releaseDate": "2018-08-14",
@@ -4743,6 +4826,7 @@
               "@type": "Brand",
               "name": "Valve"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/valveindex.png",
             "url": "https://ar-directory.huskynarr.de/modelle/valveindex.html",
             "sameAs": "https://store.steampowered.com/valveindex",
             "releaseDate": "2019-06-28",
@@ -4765,6 +4849,7 @@
               "@type": "Brand",
               "name": "Valve"
             },
+            "image": "https://storage.ghost.io/c/2a/2f/2a2f38f0-4b71-407a-9c7e-18a9e2541980/content/images/size/w1024/format/webp/2025/11/Steam-Frame-headsetControllers_front_b.jpg",
             "url": "https://ar-directory.huskynarr.de/modelle/valvesteamframe.html",
             "sameAs": "https://store.steampowered.com/sale/steamframe",
             "releaseDate": "2026"
@@ -4781,6 +4866,7 @@
               "@type": "Brand",
               "name": "Varjo"
             },
+            "image": "https://varjo.com/hs-fs/hubfs/Varjo%20Aero/Varjo-Aero-header-min.png?width=1920&height=1080&name=Varjo-Aero-header-min.png",
             "url": "https://ar-directory.huskynarr.de/modelle/varjoaero.html",
             "sameAs": "https://varjo.com/products/aero",
             "releaseDate": "2022-01-20",
@@ -4803,6 +4889,7 @@
               "@type": "Brand",
               "name": "Varjo"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/varjovr-1.png",
             "url": "https://ar-directory.huskynarr.de/modelle/varjovr1.html",
             "sameAs": "https://varjo.com/",
             "releaseDate": "2019-02-19",
@@ -4825,6 +4912,7 @@
               "@type": "Brand",
               "name": "Varjo"
             },
+            "image": "https://varjo.com/hs-fs/hubfs/Varjo%20XR-3/S8A1574-3-e1619119251919.jpg?width=2500&height=1667&name=S8A1574-3-e1619119251919.jpg",
             "url": "https://ar-directory.huskynarr.de/modelle/varjovr3.html",
             "sameAs": "https://varjo.com/products/varjo-vr-3",
             "releaseDate": "2021-02-01",
@@ -4847,6 +4935,7 @@
               "@type": "Brand",
               "name": "Varjo"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/varjoxr-1.png",
             "url": "https://ar-directory.huskynarr.de/modelle/varjoxr1.html",
             "sameAs": "https://varjo.com/",
             "releaseDate": "2019-12-01",
@@ -4869,6 +4958,7 @@
               "@type": "Brand",
               "name": "Varjo"
             },
+            "image": "https://varjo.com/hs-fs/hubfs/Varjo%20XR-3/XR-3-1250x800.png?width=1250&height=800&name=XR-3-1250x800.png",
             "url": "https://ar-directory.huskynarr.de/modelle/varjoxr3.html",
             "sameAs": "https://varjo.com/products/varjo-xr-3",
             "releaseDate": "2021-01",
@@ -5097,6 +5187,7 @@
               "@type": "Brand",
               "name": "VRgineers"
             },
+            "image": "https://vrgineers.com/data/files/xtal3-headset-view.jpg",
             "url": "https://ar-directory.huskynarr.de/modelle/vrgineersxtal3.html",
             "sameAs": "https://vrgineers.com/xtal-3-vr-virtual-reality-headset/",
             "releaseDate": "2022-04-01",
@@ -5235,7 +5326,13 @@
             },
             "url": "https://ar-directory.huskynarr.de/modelle/vuzixm300xl.html",
             "sameAs": "https://www.vuzix.com/Products/m300xl-smart-glasses",
-            "releaseDate": "2017"
+            "releaseDate": "2017",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "1499",
+              "availability": "https://schema.org/Discontinued"
+            }
           }
         },
         {
@@ -5341,6 +5438,7 @@
               "@type": "Brand",
               "name": "Vuzix"
             },
+            "image": "https://www.vuzix.com/cdn/shop/files/Z100-Untinted-Press_Release_2db8c889-f67b-4a62-b760-ce9f24699517.png?v=1723567040",
             "url": "https://ar-directory.huskynarr.de/modelle/vuzixz100.html",
             "sameAs": "https://www.vuzix.com/products/z100-smart-glasses",
             "releaseDate": "2024-11",
@@ -5610,7 +5708,8 @@
             },
             "image": "https://resource.xreal.com/www-xreal-com/images/home/home_herosection_1S_Desktop.webp",
             "url": "https://ar-directory.huskynarr.de/modelle/xrealprojectaura.html",
-            "sameAs": "https://www.xreal.com/us/aura"
+            "sameAs": "https://www.xreal.com/us/aura",
+            "releaseDate": "2026"
           }
         },
         {
@@ -5641,6 +5740,7 @@
               "@type": "Brand",
               "name": "YVR"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/yvr1.png",
             "url": "https://ar-directory.huskynarr.de/modelle/yvr1.html",
             "sameAs": "https://www.yvr.cn/",
             "releaseDate": "2022"
@@ -5657,6 +5757,7 @@
               "@type": "Brand",
               "name": "YVR"
             },
+            "image": "https://vr-compare.com/img/headsets/preview/yvr2.png",
             "url": "https://ar-directory.huskynarr.de/modelle/yvr2.html",
             "sameAs": "https://www.yvr.cn/",
             "releaseDate": "2022",

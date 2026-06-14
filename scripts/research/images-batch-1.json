@@ -1,0 +1,354 @@
+{
+ "images": [
+  {
+   "id": "Nn4SRTGIQ",
+   "name": "Acer AH101",
+   "imageUrl": "https://vr-compare.com/img/headsets/preview/acerah101.png",
+   "source": "https://vr-compare.com/headset/acerah101",
+   "confidence": "high"
+  },
+  {
+   "id": "Mpz7ENfNA",
+   "name": "ARknovv A1",
+   "imageUrl": "https://www.gizmochina.com/wp-content/uploads/2023/07/ARknovv-A1.webp",
+   "source": "https://www.gizmochina.com/2023/07/26/arknovv-a1-ar-glass-wearable/",
+   "confidence": "high"
+  },
+  {
+   "id": "lYyGNGICW",
+   "name": "arpara Tethered 5K",
+   "imageUrl": "https://www.notebookcheck.com/fileadmin/Notebooks/News/_nc3/arpara.jpg",
+   "source": "https://www.notebookcheck.com/Arpara-Diese-VR-Headsets-mit-Micro-OLED-und-5K-Aufloesung-startet-zum-kleinen-Preis.616821.0.html",
+   "confidence": "medium"
+  },
+  {
+   "id": "TV7CiCh26",
+   "name": "Atheer AiR Glasses",
+   "imageUrl": "https://displaydaily.com/wp-content/uploads/2015/02/1-JPG.webp",
+   "source": "https://displaydaily.com/introducing-the-atheer-augmented-reality-glasses/",
+   "confidence": "medium"
+  },
+  {
+   "id": "iA6f0pVBg",
+   "name": "Augmedics xvision Spine System",
+   "imageUrl": "https://augmedics.com/wp-content/uploads/2025/11/X2-600x500-3.png",
+   "source": "https://augmedics.com/xvision/",
+   "confidence": "high"
+  },
+  {
+   "id": "brzlBaebm",
+   "name": "Bigscreen Beyond",
+   "imageUrl": "https://store.bigscreenvr.com/cdn/shop/products/hmdkey_5d33f8ae-de43-4fc8-b7f4-ec1245b0e67a.webp?v=1676266590",
+   "source": "https://store.bigscreenvr.com/products/bigscreen-beyond",
+   "confidence": "high"
+  },
+  {
+   "id": "BLXT2V2lq",
+   "name": "Captify Pro",
+   "imageUrl": "https://captify.glass/cdn/shop/files/captify_pro_model_1.jpg?v=1776238198",
+   "source": "https://captify.glass/products/captify-pro",
+   "confidence": "high"
+  },
+  {
+   "id": "ymrfmSxZE",
+   "name": "DAQRI Smart Glasses",
+   "imageUrl": "https://img.newequipment.com/files/base/ebm/newequipment/image/2019/03/newequipment_5464_daqri_smartglasses_promo.png?auto=format,compress&fit=fill&fill=blur&w=1200&h=630",
+   "source": "https://www.newequipment.com/research-and-development/article/22059690/daqri-smart-glasses-ready-for-prime-time",
+   "confidence": "high"
+  },
+  {
+   "id": "PqpuQHG3T",
+   "name": "Dell Visor",
+   "imageUrl": "https://vr-compare.com/img/headsets/preview/dellvisor.png",
+   "source": "https://vr-compare.com/headset/dellvisor",
+   "confidence": "high"
+  },
+  {
+   "id": "Jleru7hdi",
+   "name": "DPVR E4",
+   "imageUrl": "https://www.dpvr.com/wp-content/uploads/2022/10/DPVR-E4-03-1.png",
+   "source": "https://www.dpvr.com/en/product/dpvr-e4-pc-virtual-reality-headset/",
+   "confidence": "high"
+  },
+  {
+   "id": "b1AgJZABS",
+   "name": "Epson Moverio BT-45C",
+   "imageUrl": "https://mediaserver.goepson.com/adaptivemedia/rendition?id=fc3fedb2e17c1ef9d6643d16ebdef8e0e36c1537&vid=fc3fedb2e17c1ef9d6643d16ebdef8e0e36c1537&prid=300Wx300H&clid=SAPDAM&prclid=productpictures&assetDescr=BT-45C_headon_headset_690x460",
+   "source": "https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-45C-AR-Smart-Glasses/p/V11H970020",
+   "confidence": "high"
+  },
+  {
+   "id": "U36ZvMkGN",
+   "name": "Everysight Maverick AI Pro",
+   "imageUrl": "https://gizmodo.com/app/uploads/2026/03/maverick-ai-smart-glasses-1200x675.jpg",
+   "source": "https://letsdatascience.com/news/everysight-debuts-maverick-ai-pro-smart-glasses-889a917d",
+   "confidence": "medium"
+  },
+  {
+   "id": "K8QDUQxOu",
+   "name": "Form Smart Swim 2",
+   "imageUrl": "https://www.formswim.com/cdn/shop/files/SS2.jpg?v=1712014561",
+   "source": "https://www.formswim.com/products/smart-swim-2-goggles",
+   "confidence": "high"
+  },
+  {
+   "id": "aLXkJNTX8",
+   "name": "FOVE 0",
+   "imageUrl": "https://i0.wp.com/roadtovr.com/wp-content/uploads/2016/09/fove-0-vr-headset-1.jpg?fit=1920%2C1080&ssl=1",
+   "source": "https://www.roadtovr.com/fove-0-eye-tracking-vr-headset-final-specs-pre-order-date/",
+   "confidence": "high"
+  },
+  {
+   "id": "Zn3buICy4",
+   "name": "Goolton Star1",
+   "imageUrl": "https://static.wixstatic.com/media/4e320a_4351dee62f9b460fbbba9010c425d12c~mv2.jpg/v1/fill/w_1000,h_635,al_c,q_85,usm_0.66_1.00_0.01/4e320a_4351dee62f9b460fbbba9010c425d12c~mv2.jpg",
+   "source": "https://www.xrom.in/post/goolton-unveils-star1-and-star1s-ai-ar-glasses",
+   "confidence": "medium"
+  },
+  {
+   "id": "CBjkOUetd",
+   "name": "Goolton Star1S",
+   "imageUrl": "https://static.wixstatic.com/media/4e320a_4351dee62f9b460fbbba9010c425d12c~mv2.jpg/v1/fill/w_1000,h_635,al_c,q_85,usm_0.66_1.00_0.01/4e320a_4351dee62f9b460fbbba9010c425d12c~mv2.jpg",
+   "source": "https://www.xrom.in/post/goolton-unveils-star1-and-star1s-ai-ar-glasses",
+   "confidence": "medium"
+  },
+  {
+   "id": "hZlysEI3L",
+   "name": "GOOVIS Art (A1)",
+   "imageUrl": "https://www.goovis.com/cdn/shop/files/1-1_1.jpg?v=1778323346",
+   "source": "https://www.goovis.com/products/art",
+   "confidence": "high"
+  },
+  {
+   "id": "4owq2fcrf",
+   "name": "GOOVIS G3 Max",
+   "imageUrl": "https://www.goovis.com/cdn/shop/files/G3-Max_92a25c71-4167-456e-a81a-fa233ad010bb.jpg?v=1755509325",
+   "source": "https://www.goovis.com/products/goovis-g3max",
+   "confidence": "high"
+  },
+  {
+   "id": "stQj142Dq",
+   "name": "Honor Vision Glass",
+   "imageUrl": "https://www.gizmochina.com/wp-content/uploads/2023/03/Honor-viewing-glasses.png",
+   "source": "https://www.gizmochina.com/2023/03/06/honor-movie-glasses-up-to-500-nits-brightness-lightweight-design-released/",
+   "confidence": "high"
+  },
+  {
+   "id": "HZfEHuVOB",
+   "name": "HP Reverb G2",
+   "imageUrl": "https://vr-compare.com/img/headsets/preview/hpreverbg2.png",
+   "source": "https://vr-compare.com/headset/hpreverbg2",
+   "confidence": "high"
+  },
+  {
+   "id": "2zF79J1mn",
+   "name": "HTC Vive",
+   "imageUrl": "https://vr-compare.com/img/headsets/preview/htcvive.png",
+   "source": "https://vr-compare.com/headset/htcvive",
+   "confidence": "high"
+  },
+  {
+   "id": "95D3X6CjE",
+   "name": "HTC Vive Cosmos",
+   "imageUrl": "https://vr-compare.com/img/headsets/preview/htcvivecosmos.png",
+   "source": "https://vr-compare.com/headset/htcvivecosmos",
+   "confidence": "high"
+  },
+  {
+   "id": "DwNDxwEXq",
+   "name": "HTC Vive Flow",
+   "imageUrl": "https://www.vive.com/media/filer_public/fed-assets/hubble/images/vive-flow-meta.png",
+   "source": "https://www.vive.com/us/product/vive-flow/overview/",
+   "confidence": "high"
+  },
+  {
+   "id": "RKSpNuMY0",
+   "name": "HTC Vive Focus 3",
+   "imageUrl": "https://www.vive.com/media/filer_public/fed-assets/sunrise/images/focus3-meta.png",
+   "source": "https://www.vive.com/us/product/vive-focus3/overview/",
+   "confidence": "high"
+  },
+  {
+   "id": "qGCzW5DOo",
+   "name": "HTC Vive Pro",
+   "imageUrl": "https://vr-compare.com/img/headsets/preview/htcvivepro.png",
+   "source": "https://vr-compare.com/headset/htcvivepro",
+   "confidence": "high"
+  },
+  {
+   "id": "XB6FPwK6G",
+   "name": "HTC Vive Pro 2",
+   "imageUrl": "https://www.vive.com/media/filer_public/fed-assets/vivepro2/images/pro2-meta.jpg",
+   "source": "https://www.vive.com/us/product/vive-pro2/overview/",
+   "confidence": "high"
+  },
+  {
+   "id": "SnuFhVAg3",
+   "name": "INAIR 2 Pro",
+   "imageUrl": "https://inairspace.com/cdn/shop/files/Frame-2090054748.jpg?v=1768209003",
+   "source": "https://inairspace.com/products/inair-2-pro-ar-glass",
+   "confidence": "high"
+  },
+  {
+   "id": "enBOnFSmq",
+   "name": "INAIR Glasses",
+   "imageUrl": "https://inairspace.com/cdn/shop/files/Frame-2090054748.jpg?v=1768209003",
+   "source": "https://inairspace.com/",
+   "confidence": "medium"
+  },
+  {
+   "id": "0lR0V2Y30",
+   "name": "INMO Air3",
+   "imageUrl": "https://www.inmoxr.com/cdn/shop/files/AIR3-main-1.jpg?v=1766728843",
+   "source": "https://www.inmoxr.com/products/inmo-air3-ar-glasses-all-in-one-full-color-waveguide",
+   "confidence": "high"
+  },
+  {
+   "id": "Q6Sz4MiCo",
+   "name": "INMO GO3",
+   "imageUrl": "https://mma.prnewswire.com/media/2946710/1.jpg?p=facebook",
+   "source": "https://www.prnewswire.com/news-releases/inmo-unveils-go3-next-generation-everyday-ai-smart-glasses-launching-on-kickstarter-302730972.html",
+   "confidence": "high"
+  },
+  {
+   "id": "qIft0kA6s",
+   "name": "iQIYI Qiyu 3",
+   "imageUrl": "https://vr-compare.com/img/headsets/preview/iqiyiqiyu3.png",
+   "source": "https://vr-compare.com/headset/iqiyiqiyu3",
+   "confidence": "high"
+  },
+  {
+   "id": "WeyR55HY1",
+   "name": "iQIYI Qiyu Dream",
+   "imageUrl": "https://vr-compare.com/img/headsets/preview/iqiyiqiyudream.png",
+   "source": "https://vr-compare.com/headset/iqiyiqiyudream",
+   "confidence": "high"
+  },
+  {
+   "id": "mqo53rFnv",
+   "name": "Konica Minolta AIRe Lens",
+   "imageUrl": "https://thearea1dev.thearea.org/wp-content/uploads/2018/10/konica-minolta-aire_lens-web.jpg",
+   "source": "https://thearea.org/ar-news/konica-minolta-develops-ar-glasses-for-industrial-environments/",
+   "confidence": "high"
+  },
+  {
+   "id": "lfp5m7Rfs",
+   "name": "Kopin Solos",
+   "imageUrl": "https://solosglasses.com/cdn/shop/articles/IMG-0137.jpg?crop=center&height=1200&v=1705987190&width=1200",
+   "source": "https://solosglasses.com/blogs/news/kopin-starts-selling-500-solos-smart-glasses-for-joggers-and-cyclists",
+   "confidence": "high"
+  },
+  {
+   "id": "odFxunHTf",
+   "name": "LAWK ONE",
+   "imageUrl": "https://thegadgetflow.com/wp-content/uploads/2023/10/LAWK-ONE-Outdoor-Adventure-HD-and-AI-AR-Glasses-01.jpg",
+   "source": "https://thegadgetflow.com/product/lawk-one-adventure-ar-glasses/",
+   "confidence": "high"
+  },
+  {
+   "id": "PH9qawOBH",
+   "name": "Leion Hey",
+   "imageUrl": "https://leion.glass/cdn/shop/files/0524_2952_ade800ca-3c63-412b-a32d-a32ea37bff3a.jpg?v=1763715553",
+   "source": "https://leion.glass/",
+   "confidence": "high"
+  },
+  {
+   "id": "Te5iB4fwf",
+   "name": "Leion Hey2",
+   "imageUrl": "https://mma.prnewswire.com/media/2855549/real_time_subtitles_display1.jpg?p=facebook",
+   "source": "https://www.prnewswire.com/news-releases/llvision-introduces-leion-hey2-the-worlds-first-professional-ar-translation-glasses-launching-in-the-united-states-at-ces-2026-302654009.html",
+   "confidence": "high"
+  },
+  {
+   "id": "LU3PGDM40",
+   "name": "Lenovo Explorer",
+   "imageUrl": "https://vr-compare.com/img/headsets/preview/lenovoexplorer.png",
+   "source": "https://vr-compare.com/headset/lenovoexplorer",
+   "confidence": "high"
+  },
+  {
+   "id": "Kwh8l4piN",
+   "name": "Lenovo Legion AR Smart Glasses",
+   "imageUrl": "https://i0.wp.com/innogyan.in/wp-content/uploads/2025/07/wp-17523344334713680566122904630682.jpg?fit=2000%2C1125&ssl=1",
+   "source": "https://innogyan.in/2025/07/12/legion-ar-smart-glasses-debut-with-stunning-visuals-and-3d-gaming-support/",
+   "confidence": "high"
+  },
+  {
+   "id": "cQJtgHGeO",
+   "name": "Lenovo Legion Glasses",
+   "imageUrl": "https://thegadgetflow.com/wp-content/uploads/2023/09/Lenovo-Legion-Glasses-for-Gaming-01.jpg",
+   "source": "https://thegadgetflow.com/product/lenovo-legion-glasses/",
+   "confidence": "high"
+  },
+  {
+   "id": "rfwT9GHfQ",
+   "name": "Lenovo Legion Glasses Gen 2",
+   "imageUrl": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc4/Lenovo-Legion-Glasses-2-rear-view.jpg",
+   "source": "https://www.notebookcheck.net/Lenovo-s-Legion-Glasses-2-are-stylish-lighter-and-better-all-round.943293.0.html",
+   "confidence": "high"
+  },
+  {
+   "id": "kKQIRlqM6",
+   "name": "Lenovo ThinkReality VRX",
+   "imageUrl": "https://vr-compare.com/img/headsets/preview/lenovothinkrealityvrx.png",
+   "source": "https://vr-compare.com/headset/lenovothinkrealityvrx",
+   "confidence": "high"
+  },
+  {
+   "id": "DXHyJcE9A",
+   "name": "Meizu MYVU",
+   "imageUrl": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc4/Meizu_MYVU_Smart_Ring_Glasses.jpg",
+   "source": "https://www.notebookcheck.net/Meizu-unveils-MYVU-Smart-Ring-and-flagship-alternative-to-Google-Glass.776598.0.html",
+   "confidence": "high"
+  },
+  {
+   "id": "cEsHUSt3q",
+   "name": "Meizu MYVU Discovery",
+   "imageUrl": "https://www.gizmochina.com/wp-content/uploads/2023/12/meizu-MYVU-Discovery-AR-glasses.png",
+   "source": "https://www.gizmochina.com/2023/12/04/meizu-myvu-discovery-ar-glasses-impressive-precision-unveiled-china/",
+   "confidence": "high"
+  },
+  {
+   "id": "bYDUHLwEV",
+   "name": "Meizu StarV Air2",
+   "imageUrl": "https://fms.res.meizu.com/dms/2025/01/15/b043ec6d-44cf-4a22-a6f3-3c3d9c502f50.png",
+   "source": "https://www.meizu.com/global/product/starv-air2",
+   "confidence": "high"
+  },
+  {
+   "id": "LQ5o9LAg5",
+   "name": "Meizu StarV View",
+   "imageUrl": "https://fms.res.meizu.com/dms/2025/02/21/15febc88-10fc-4a1f-bef2-05c48166c04b.png",
+   "source": "https://www.meizu.com/global/product/starv-view",
+   "confidence": "high"
+  },
+  {
+   "id": "LHMPSIx5Q",
+   "name": "Mentra Mach1",
+   "imageUrl": "https://mentraglass.com/assets/og_graph_image.png",
+   "source": "https://mentraglass.com/",
+   "confidence": "medium"
+  },
+  {
+   "id": "sW1D3BWLl",
+   "name": "Meta Quest 2",
+   "imageUrl": "https://vr-compare.com/img/headsets/preview/oculusquest2.png",
+   "source": "https://vr-compare.com/headset/oculusquest2",
+   "confidence": "high"
+  },
+  {
+   "id": "smKbDn8oo",
+   "name": "Microsoft IVAS",
+   "imageUrl": "https://news.microsoft.com/source/wp-content/uploads/2021/06/US-Army-HoloLens.jpg",
+   "source": "https://news.microsoft.com/source/features/digital-transformation/u-s-army-to-use-hololens-technology-in-high-tech-headsets-for-soldiers/",
+   "confidence": "high"
+  },
+  {
+   "id": "epY189CtX",
+   "name": "Nolo Sonic",
+   "imageUrl": "https://vr-compare.com/img/headsets/preview/nolosonic.png",
+   "source": "https://vr-compare.com/headset/nolosonic",
+   "confidence": "high"
+  }
+ ]
+}

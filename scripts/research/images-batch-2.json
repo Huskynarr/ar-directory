@@ -1,0 +1,270 @@
+{
+  "images": [
+    {
+      "id": "kEtY5VQot",
+      "name": "Oculus Go",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/oculusgo.png",
+      "source": "https://vr-compare.com/headset/oculusgo",
+      "confidence": "high"
+    },
+    {
+      "id": "X6EAYuLgx",
+      "name": "Oculus Quest",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/oculusquest.png",
+      "source": "https://vr-compare.com/headset/oculusquest",
+      "confidence": "high"
+    },
+    {
+      "id": "usnhaeS7Z",
+      "name": "Oculus Rift (CV1)",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/oculusrift.png",
+      "source": "https://vr-compare.com/headset/oculusrift",
+      "confidence": "high"
+    },
+    {
+      "id": "rZp7Tqu2W",
+      "name": "Oculus Rift DK2",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/oculusriftdk2.png",
+      "source": "https://vr-compare.com/headset/oculusriftdk2",
+      "confidence": "high"
+    },
+    {
+      "id": "ZnvBY4AB8",
+      "name": "Oculus Rift S",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/oculusrifts.png",
+      "source": "https://vr-compare.com/headset/oculusrifts",
+      "confidence": "high"
+    },
+    {
+      "id": "mdPBAoL4U",
+      "name": "ODG R-7",
+      "imageUrl": "https://vrarwiki.com/images/4/4f/R-7_smart_glasses1.png",
+      "source": "https://vrarwiki.com/wiki/R-7_Smartglasses",
+      "confidence": "medium"
+    },
+    {
+      "id": "rFFKRgeF6",
+      "name": "Pico 4",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/pico4.png",
+      "source": "https://vr-compare.com/headset/pico4",
+      "confidence": "high"
+    },
+    {
+      "id": "QTpNhJ3tM",
+      "name": "Pico 4 Ultra",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/pico4ultra.png",
+      "source": "https://vr-compare.com/headset/pico4ultra",
+      "confidence": "high"
+    },
+    {
+      "id": "zmbo0i1g4",
+      "name": "Pico G2 4K",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/picog24k.png",
+      "source": "https://vr-compare.com/headset/picog24k",
+      "confidence": "high"
+    },
+    {
+      "id": "yFK5BJeLD",
+      "name": "Pico G3",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/picog3.png",
+      "source": "https://vr-compare.com/headset/picog3",
+      "confidence": "high"
+    },
+    {
+      "id": "QvtLKzZ2s",
+      "name": "Pico Neo 2",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/piconeo2.png",
+      "source": "https://vr-compare.com/headset/piconeo2",
+      "confidence": "high"
+    },
+    {
+      "id": "Kmnh8mcV9",
+      "name": "Pico Neo 3",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/piconeo3.png",
+      "source": "https://vr-compare.com/headset/piconeo3",
+      "confidence": "high"
+    },
+    {
+      "id": "LT3iRRzsa",
+      "name": "Pico Neo 3 Link",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/piconeo3link.png",
+      "source": "https://vr-compare.com/headset/piconeo3link",
+      "confidence": "high"
+    },
+    {
+      "id": "efoG2ry52",
+      "name": "Pimax Dream Air SE",
+      "imageUrl": "https://pimax.com/cdn/shop/articles/dream_se_fcaca184-7b7e-4609-95e5-ca25f4facf81.jpg?v=1778767315&width=1500",
+      "source": "https://pimax.com/blogs/blogs/pimax-dream-air-se-shipping-now",
+      "confidence": "high"
+    },
+    {
+      "id": "oE29W8yJ0",
+      "name": "PlayStation VR",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/playstationvr.png",
+      "source": "https://vr-compare.com/headset/playstationvr",
+      "confidence": "high"
+    },
+    {
+      "id": "Eu0pBpN3c",
+      "name": "RayNeo Air 2",
+      "imageUrl": "https://www.rayneo.com/cdn/shop/files/A2_b5ae514b-9ca5-45e9-9546-a8c04d32fbf3.png?v=1754545207",
+      "source": "https://www.rayneo.com/products/rayneo-air-2-xr-glasses",
+      "confidence": "high"
+    },
+    {
+      "id": "JACFSYkEs",
+      "name": "RayNeo Air 2s",
+      "imageUrl": "https://www.rayneo.com/cdn/shop/files/A2S.png?v=1754545207",
+      "source": "https://www.rayneo.com/products/rayneo-air_2s",
+      "confidence": "high"
+    },
+    {
+      "id": "kI4EYTiv0",
+      "name": "RayNeo Air 4 Pro",
+      "imageUrl": "https://www.rayneo.com/cdn/shop/files/Air4_pro.png?v=1772188087",
+      "source": "https://www.rayneo.com/products/rayneo-air-4-pro-ar-glasses",
+      "confidence": "high"
+    },
+    {
+      "id": "XxfrQXJ8j",
+      "name": "Razer OSVR HDK 2",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/razerosvrhdk2.png",
+      "source": "https://vr-compare.com/headset/razerosvrhdk2",
+      "confidence": "high"
+    },
+    {
+      "id": "i55EocmJE",
+      "name": "Samsung HMD Odyssey",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/samsungodyssey.png",
+      "source": "https://vr-compare.com/headset/samsungodyssey",
+      "confidence": "high"
+    },
+    {
+      "id": "k4jvLzPHu",
+      "name": "Samsung HMD Odyssey+",
+      "imageUrl": "https://api.samsungmobilepress.com/api/v1/file/CC890F7F3AB514A52D971D4E97400C9B735657038D212B2DB735DEBA88139A0C7C6BC2CC5A6613C23596B4BC87541D673D73906658A7C453C27011D54DC2D24ED772563886AF2FFC58667025DC019117C6B52AA3A1A09FAC393B40A90DC362FE",
+      "source": "https://www.samsungmobilepress.com/media-assets/samsung_hmd_odyssey_plus",
+      "confidence": "high"
+    },
+    {
+      "id": "Mj9oszKGi",
+      "name": "Shiftall MeganeX 8K Mark II",
+      "imageUrl": "https://cdn.prod.website-files.com/615ff9cd5c0185a6354c51b8/69b0db7ec5341d7f7a259b4e_MeganeX-8K-Mark-II_01.png",
+      "source": "https://en.shiftall.net/products/meganex8kmk2",
+      "confidence": "high"
+    },
+    {
+      "id": "R0viSMCTs",
+      "name": "Skyworth Pancake 1",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/skyworthpancake1.png",
+      "source": "https://vr-compare.com/headset/skyworthpancake1",
+      "confidence": "high"
+    },
+    {
+      "id": "9zs1bepSY",
+      "name": "Snap Specs",
+      "imageUrl": "https://images.ctfassets.net/cbjigzuhgs28/5SsiASSQXGFSZzFe3mOjYb/63fd0f630941cf0c7053225d0d2bf0e4/image__2_.png?q=40&h=512",
+      "source": "https://www.spectacles.com/",
+      "confidence": "medium"
+    },
+    {
+      "id": "XEgII6hGl",
+      "name": "Sol Reader",
+      "imageUrl": "https://cdn.sanity.io/images/2ydnq366/production/f4cbf0a26a4ce65a7f4994fd2a1315715e6433b3-1200x630.jpg?w=1200&h=630",
+      "source": "https://solreader.com/",
+      "confidence": "high"
+    },
+    {
+      "id": "znJry7pKl",
+      "name": "Sony SRH-S1 (XYN Headset)",
+      "imageUrl": "https://xyn.sony.net/hubfs/XYN_OGP.png",
+      "source": "https://xyn.sony.net/en/products/srh-s1/",
+      "confidence": "high"
+    },
+    {
+      "id": "OFRrBDscs",
+      "name": "StarVR One",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/starvrone.png",
+      "source": "https://vr-compare.com/headset/starvrone",
+      "confidence": "high"
+    },
+    {
+      "id": "KpeOzmgAg",
+      "name": "Valve Index",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/valveindex.png",
+      "source": "https://vr-compare.com/headset/valveindex",
+      "confidence": "high"
+    },
+    {
+      "id": "oDCIYsoJ3",
+      "name": "Valve Steam Frame",
+      "imageUrl": "https://storage.ghost.io/c/2a/2f/2a2f38f0-4b71-407a-9c7e-18a9e2541980/content/images/size/w1024/format/webp/2025/11/Steam-Frame-headsetControllers_front_b.jpg",
+      "source": "https://www.uploadvr.com/valve-steam-frame-official-announcement-features-details/",
+      "confidence": "medium"
+    },
+    {
+      "id": "2bTI4ivJI",
+      "name": "Varjo Aero",
+      "imageUrl": "https://varjo.com/hs-fs/hubfs/Varjo%20Aero/Varjo-Aero-header-min.png?width=1920&height=1080&name=Varjo-Aero-header-min.png",
+      "source": "https://varjo.com/products/aero",
+      "confidence": "high"
+    },
+    {
+      "id": "5XGUDVfRh",
+      "name": "Varjo VR-1",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/varjovr-1.png",
+      "source": "https://vr-compare.com/headset/varjovr-1",
+      "confidence": "high"
+    },
+    {
+      "id": "yPnSpo6KA",
+      "name": "Varjo VR-3",
+      "imageUrl": "https://varjo.com/hs-fs/hubfs/Varjo%20XR-3/S8A1574-3-e1619119251919.jpg?width=2500&height=1667&name=S8A1574-3-e1619119251919.jpg",
+      "source": "https://varjo.com/products/varjo-vr-3",
+      "confidence": "medium"
+    },
+    {
+      "id": "EnXGQFwSt",
+      "name": "Varjo XR-1",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/varjoxr-1.png",
+      "source": "https://vr-compare.com/headset/varjoxr-1",
+      "confidence": "high"
+    },
+    {
+      "id": "nyBAUkY9t",
+      "name": "Varjo XR-3",
+      "imageUrl": "https://varjo.com/hs-fs/hubfs/Varjo%20XR-3/XR-3-1250x800.png?width=1250&height=800&name=XR-3-1250x800.png",
+      "source": "https://varjo.com/products/varjo-xr-3",
+      "confidence": "high"
+    },
+    {
+      "id": "74ZoZuHEa",
+      "name": "VRgineers XTAL 3",
+      "imageUrl": "https://vrgineers.com/data/files/xtal3-headset-view.jpg",
+      "source": "https://vrgineers.com/xtal-3-vr-virtual-reality-headset/",
+      "confidence": "high"
+    },
+    {
+      "id": "OBQXxPRQP",
+      "name": "Vuzix Z100",
+      "imageUrl": "https://www.vuzix.com/cdn/shop/files/Z100-Untinted-Press_Release_2db8c889-f67b-4a62-b760-ce9f24699517.png?v=1723567040",
+      "source": "https://www.vuzix.com/products/z100-smart-glasses",
+      "confidence": "high"
+    },
+    {
+      "id": "YVEMCxt0s",
+      "name": "YVR 1",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/yvr1.png",
+      "source": "https://vr-compare.com/headset/yvr1",
+      "confidence": "high"
+    },
+    {
+      "id": "GdG76cFEW",
+      "name": "YVR 2",
+      "imageUrl": "https://vr-compare.com/img/headsets/preview/yvr2.png",
+      "source": "https://vr-compare.com/headset/yvr2",
+      "confidence": "high"
+    }
+  ]
+}
