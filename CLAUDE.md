@@ -70,7 +70,7 @@ npm run images:enrich    # Fetch/cache manufacturer product images
 
 ## CSV Dataset
 
-40 fields per record in `public/data/ar_glasses.csv` (208 records). Deeper spec columns (`chipset`, `brightness_nits`, `connectivity`, `audio`, `battery`, `ipd_mm`, `prescription_support`, `camera`) are surfaced on the static per-device pages. Key fields: `id`, `name`, `manufacturer`, `xr_category` (AR/XR), `price_usd`, `fov_*_deg`, `resolution_per_eye`, `refresh_hz`, `display_type`, `optics`, `tracking`, `release_date`, `eol_status`, `active_distribution`.
+40 fields per record in `public/data/ar_glasses.csv` (258 records). Deeper spec columns (`chipset`, `brightness_nits`, `connectivity`, `audio`, `battery`, `ipd_mm`, `prescription_support`, `camera`) are surfaced on the static per-device pages. Key fields: `id`, `name`, `manufacturer`, `xr_category` (AR/XR), `price_usd`, `fov_*_deg`, `resolution_per_eye`, `refresh_hz`, `display_type`, `optics`, `tracking`, `release_date`, `eol_status`, `active_distribution`.
 
 Metadata in `public/data/ar_glasses.metadata.json`.
 
