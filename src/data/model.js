@@ -57,8 +57,37 @@ export const isEol = (row) => {
 export const isLikelyActive = (row) => normalizeText(row.active_distribution).includes('ja');
 
 export const getHorizontalFov = (row) => toNumber(row.fov_horizontal_deg);
+
+// Best available field of view for sorting/filtering. Most AR glasses publish
+// only a diagonal FOV, so fall back horizontal -> diagonal -> vertical instead
+// of treating those devices as "no FOV" (which hid ~70% of them from the filter).
+export const getNormalizedFov = (row) =>
+  toNumber(row.fov_horizontal_deg) ?? toNumber(row.fov_diagonal_deg) ?? toNumber(row.fov_vertical_deg);
+
+// Same fallback, but also reports which axis the value came from so the UI can
+// label it (e.g. "52° (diag.)").
+export const getFovDisplay = (row) => {
+  const horizontal = toNumber(row.fov_horizontal_deg);
+  if (horizontal !== null) return { value: horizontal, axis: 'h' };
+  const diagonal = toNumber(row.fov_diagonal_deg);
+  if (diagonal !== null) return { value: diagonal, axis: 'd' };
+  const vertical = toNumber(row.fov_vertical_deg);
+  if (vertical !== null) return { value: vertical, axis: 'v' };
+  return null;
+};
+
 export const isXrRow = (row) => normalizeText(row.xr_category) === 'xr';
 export const isArRow = (row) => !isXrRow(row);
+
+// "Neu" = released within the last ~13 months (and not in the future). Announced-
+// but-unreleased devices have a future date and are intentionally excluded.
+export const isRecentRelease = (row, now = Date.now()) => {
+  const dateText = row.release_date || row.announced_date;
+  const released = dateText ? new Date(dateText).getTime() : Number.NaN;
+  if (!Number.isFinite(released)) return false;
+  const age = now - released;
+  return age >= 0 && age <= 400 * 24 * 60 * 60 * 1000;
+};
 
 export const getTrackingScore = (row) => {
   const tracking = normalizeText(row.tracking);

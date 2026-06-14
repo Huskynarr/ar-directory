@@ -1,7 +1,7 @@
 import { escapeHtml, safeExternalUrl } from '../utils.js';
 import { state } from '../state.js';
 import { t, compactValue, formatPrice, formatDate, formatLifecycleNotes, maybeHiddenText } from '../i18n.js';
-import { getShopInfo } from '../data/model.js';
+import { getShopInfo, isRecentRelease } from '../data/model.js';
 import { AFFILIATE_REL, buildBuyLinks, getAffiliateOverrides } from '../affiliate.js';
 import { getModelImageUrl } from './image.js';
 import { categoryTone, lifecycleTone, selectionLabelTemplate, buildCardFacts } from './shared.js';
@@ -36,7 +36,7 @@ export const cardTemplate = (row) => {
         ${
           image
             ? `<img src="${escapeHtml(image)}" alt="${name}" loading="lazy" class="h-full w-full object-contain p-4 transition duration-300 ease-out group-hover:scale-[1.03] group-hover:brightness-105" />`
-            : `<div class="grid h-full place-items-center text-sm text-[#a8a29e]">${t('Kein Bild verfuegbar', 'No image available')}</div>`
+            : `<div class="grid h-full place-items-center text-sm text-[#a8a29e]">${t('Kein Bild verfügbar', 'No image available')}</div>`
         }
         <div class="absolute left-3 top-3 flex items-center gap-1.5" onclick="event.stopPropagation()">${selectionLabelTemplate(
           row.__rowId,
@@ -51,6 +51,11 @@ export const cardTemplate = (row) => {
         >${isFavorite ? '&#9733;' : '&#9734;'}</button>
         </div>
         <span class="absolute right-3 top-3 rounded-full border px-2.5 py-1 text-xs font-bold ${categoryTone(row.xr_category)}">${category}</span>
+        ${
+          isRecentRelease(row)
+            ? `<span class="absolute bottom-3 left-3 rounded-full border border-lime-400/50 bg-lime-400/15 px-2 py-0.5 text-[11px] font-bold uppercase tracking-[0.08em] text-lime-200">${t('Neu', 'New')}</span>`
+            : ''
+        }
       </div>
       <div class="space-y-5 p-5">
         <div class="space-y-1.5">

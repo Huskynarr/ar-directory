@@ -199,12 +199,12 @@ const render = () => {
           </div>
         </div>
         <h1 class="mt-2 text-2xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-lime-600 sm:text-4xl">${t(
-          'Vergleich fuer AR-Brillen und XR-Glasses',
+          'Vergleich für AR-Brillen und XR-Glasses',
           'Comparison for AR Glasses and XR Glasses',
         )}</h1>
         <p class="mt-2.5 max-w-3xl text-sm leading-relaxed text-[#a8a29e] sm:mt-3 sm:text-base">
           ${t(
-            'Vergleichsseite fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Lifecycle, EOL und Shop-Links. Legacy-Modelle sind fuer einen vollstaendigeren Datenbestand enthalten.',
+            'Vergleichsseite für AR- und XR-Brillen mit Spezifikationen, Preisen, Lifecycle, EOL und Shop-Links. Legacy-Modelle sind für einen vollständigeren Datenbestand enthalten.',
             'Comparison page for AR and XR glasses with specifications, pricing, lifecycle, EOL and shop links. Legacy models are included for a fuller dataset.',
           )}
         </p>
@@ -219,7 +219,7 @@ const render = () => {
             <h2 class="text-lg font-semibold text-[#f5f5f4]">${t('Filter', 'Filters')}</h2>
             <p class="mt-1 text-xs text-[#a8a29e]">${state.focusMode
               ? t('Fokusansicht: nur Kernfilter sichtbar.', 'Focus view: only core filters visible.')
-              : t('Schnellfilter fuer Suche, Kategorie und Sortierung.', 'Quick filters for search, category and sorting.')}</p>
+              : t('Schnellfilter für Suche, Kategorie und Sortierung.', 'Quick filters for search, category and sorting.')}</p>
           </div>
           <div class="-mx-1 flex flex-wrap items-center gap-2 px-1 lg:justify-end">
             <button id="view-cards" type="button" aria-pressed="${state.viewMode === 'cards' ? 'true' : 'false'}" class="chip-btn ${
@@ -245,7 +245,7 @@ const render = () => {
                 : `border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524] ${state.favorites.length ? '' : 'cursor-not-allowed opacity-50'}`
             }">${state.onlyFavorites ? '&#9733;' : '&#9734;'} ${t('Favoriten', 'Favorites')} (${state.favorites.length})</button>
             <button id="clear-filters" type="button" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(
-              'Filter zuruecksetzen',
+              'Filter zurücksetzen',
               'Reset filters',
             )}</button>
             ${
@@ -426,7 +426,7 @@ const render = () => {
             </label>
 
             <label class="space-y-1.5">
-              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Min. Aufloesung (px Breite)', 'Min. resolution (px width)')}</span>
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Min. Auflösung (px Breite)', 'Min. resolution (px width)')}</span>
               <input id="resolution-filter" type="number" min="0" step="1" class="field" value="${escapeHtml(state.minResolutionWidth)}" placeholder="${t('z. B. 1440', 'e.g. 1440')}" />
             </label>
           </div>
@@ -506,7 +506,7 @@ const render = () => {
                             'Mark models with the star to collect them here.',
                           )
                         : t(
-                            'Fuer die gewaehlten Filter gibt es keine Modelle. Passe die Filter an oder setze sie zurueck.',
+                            'Für die gewählten Filter gibt es keine Modelle. Passe die Filter an oder setze sie zurück.',
                             'No models match the selected filters. Adjust them or reset.',
                           )
                     }</p>
@@ -514,7 +514,7 @@ const render = () => {
                   ${
                     state.onlyFavorites
                       ? `<button id="empty-favorites-off" type="button" class="chip-btn border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]">${t('Alle Modelle anzeigen', 'Show all models')}</button>`
-                      : `<button id="empty-reset" type="button" class="chip-btn border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]">${t('Filter zuruecksetzen', 'Reset filters')}</button>`
+                      : `<button id="empty-reset" type="button" class="chip-btn border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]">${t('Filter zurücksetzen', 'Reset filters')}</button>`
                   }
                 </div>`
               : state.viewMode === 'cards'
@@ -536,7 +536,7 @@ const render = () => {
               )}</h2>
               <p class="mt-2 text-sm text-[#a8a29e]">
                 ${t(
-                  'Diese Vergleichsseite fokussiert AR- und XR-Brillen mit Shop-Links, Preisstatus, FOV, Refresh, Tracking, Software sowie Updates/EOL. Legacy-Modelle sind zur Vervollstaendigung des Datenbestands enthalten.',
+                  'Diese Vergleichsseite fokussiert AR- und XR-Brillen mit Shop-Links, Preisstatus, FOV, Refresh, Tracking, Software sowie Updates/EOL. Legacy-Modelle sind zur Vervollständigung des Datenbestands enthalten.',
                   'This comparison page focuses on AR and XR glasses with shop links, pricing status, FOV, refresh, tracking, software and updates/EOL. Legacy models are included to complete the dataset.',
                 )}
               </p>
@@ -545,7 +545,7 @@ const render = () => {
                   <h3 class="text-sm font-semibold text-[#f5f5f4]">${t('Welche Modelle sind enthalten?', 'Which models are included?')}</h3>
                   <p class="mt-1 text-sm text-[#a8a29e]">
                     ${t(
-                      'Moderne AR/XR-Modelle plus Legacy-Geraete wie HoloLens 1, Epson Moverio, Sony SmartEyeglass und weitere.',
+                      'Moderne AR/XR-Modelle plus Legacy-Geräte wie HoloLens 1, Epson Moverio, Sony SmartEyeglass und weitere.',
                       'Modern AR/XR models plus legacy devices such as HoloLens 1, Epson Moverio, Sony SmartEyeglass and others.',
                     )}
                   </p>
@@ -572,7 +572,7 @@ const render = () => {
                   <h3 class="text-sm font-semibold text-[#f5f5f4]">${t('Wie aktuell sind die Infos?', 'How current is the information?')}</h3>
                   <p class="mt-1 text-sm text-[#a8a29e]">
                     ${t(
-                      'Quelle sind kuratierte Datensaetze plus manuelle Legacy-Ergaenzungen. Zu jedem Modell gibt es Lifecycle-/EOL-Kontext und Datenquellen-Links.',
+                      'Quelle sind kuratierte Datensätze plus manuelle Legacy-Ergänzungen. Zu jedem Modell gibt es Lifecycle-/EOL-Kontext und Datenquellen-Links.',
                       'Sources are curated datasets plus manual legacy additions. Each model includes lifecycle/EOL context and source links.',
                     )}
                   </p>
@@ -622,7 +622,7 @@ const render = () => {
             ${BUILD_TIME ? `<span class="text-xs text-[#78716c]">${t('Build', 'Build')}: ${escapeHtml(BUILD_TIME)}</span>` : ''}
           </div>
           <div class="flex items-center gap-3">
-            <span class="text-xs">${t('Tastenkuerzel', 'Shortcuts')}: <kbd class="rounded border border-[#44403c] px-1.5 py-0.5 text-[10px]">/</kbd> ${t('Suche', 'Search')} &middot; <kbd class="rounded border border-[#44403c] px-1.5 py-0.5 text-[10px]">Esc</kbd> ${t('Leeren', 'Clear')}</span>
+            <span class="text-xs">${t('Tastenkürzel', 'Shortcuts')}: <kbd class="rounded border border-[#44403c] px-1.5 py-0.5 text-[10px]">/</kbd> ${t('Suche', 'Search')} &middot; <kbd class="rounded border border-[#44403c] px-1.5 py-0.5 text-[10px]">Esc</kbd> ${t('Leeren', 'Clear')}</span>
             <span class="rounded-full border border-[#44403c] bg-[#1c1917] px-2 py-0.5 text-[10px] font-semibold">v${APP_VERSION}</span>
           </div>
         </div>

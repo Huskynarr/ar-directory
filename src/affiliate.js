@@ -18,7 +18,7 @@ export const AFFILIATE = {
   enabled: true,
 
   // Mandatory disclosure (Amazon PartnerNet requires wording like this in DE).
-  disclosureShort: 'Affiliate-Links: Als Partner verdienen wir an qualifizierten Kaeufen. Fuer dich aendert sich der Preis nicht.',
+  disclosureShort: 'Affiliate-Links: Als Partner verdienen wir an qualifizierten Käufen. Für dich ändert sich der Preis nicht.',
 
   programs: {
     // Amazon.de tag is live. Only the `tag` param matters for commission — clean

@@ -45,7 +45,7 @@ const getCompareFields = () => [
     dir: 'high',
     getValue: (row) => toNumber(row.refresh_hz),
   }),
-  compareField(t('Aufloesung', 'Resolution'), (row) => row.resolution_per_eye, undefined, undefined, {
+  compareField(t('Auflösung', 'Resolution'), (row) => row.resolution_per_eye, undefined, undefined, {
     dir: 'high',
     getValue: (row) => parseResolutionWidth(row.resolution_per_eye),
   }),
@@ -209,7 +209,7 @@ const compareRadarTemplate = (selectedRows) => {
       </div>
       <div class="mt-4 overflow-x-auto">
         <svg viewBox="0 0 ${size} ${size}" role="img" aria-label="${t(
-          'Radarvergleich der ausgewaehlten Modelle',
+          'Radarvergleich der ausgewählten Modelle',
           'Radar comparison of selected models',
         )}" class="mx-auto block h-auto w-full max-w-[560px] min-w-[300px]">
           ${gridPolygons}
@@ -246,7 +246,7 @@ export const compareModeTemplate = (selectedRows) => {
         <span class="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#44403c] bg-[#171412] text-2xl text-[#84cc16]">&#9783;</span>
         <h2 class="text-lg font-semibold text-[#f5f5f4]">${t('Noch nichts zu vergleichen', 'Nothing to compare yet')}</h2>
         <p class="max-w-md text-sm text-[#a8a29e]">${t(
-          `Keine Modelle ausgewaehlt. Waehle bis zu ${COMPARE_LIMIT} Modelle fuer den Direktvergleich.`,
+          `Keine Modelle ausgewählt. Wähle bis zu ${COMPARE_LIMIT} Modelle für den Direktvergleich.`,
           `No models selected. Choose up to ${COMPARE_LIMIT} models for direct comparison.`,
         )}</p>
       </div>`;
@@ -264,7 +264,7 @@ export const compareModeTemplate = (selectedRows) => {
           <div>
             <h2 class="text-2xl font-semibold text-[#f5f5f4]">${t('Direktvergleich', 'Direct comparison')}</h2>
             <p class="mt-1 text-sm text-[#a8a29e]">${t(
-              `${selectedRows.length} ausgewaehlte Modelle, max. ${COMPARE_LIMIT} gleichzeitig.`,
+              `${selectedRows.length} ausgewählte Modelle, max. ${COMPARE_LIMIT} gleichzeitig.`,
               `${selectedRows.length} selected models, max ${COMPARE_LIMIT} at once.`,
             )}</p>
           </div>
@@ -277,7 +277,7 @@ export const compareModeTemplate = (selectedRows) => {
       <div class="overflow-x-auto">
         <table class="min-w-[760px] border-collapse text-sm" aria-describedby="results-status">
           <caption class="visually-hidden">${t(
-            'Direkter Modellvergleich der aktuell ausgewaehlten Brillen.',
+            'Direkter Modellvergleich der aktuell ausgewählten Brillen.',
             'Direct model comparison of the currently selected glasses.',
           )}</caption>
           <thead class="bg-[#1c1917] text-left text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">
@@ -386,7 +386,7 @@ export const compareBarTemplate = (selectedRows) => {
                 )
                 .join('')
             : `<p class="text-sm text-[#a8a29e]">${t(
-                'Noch nichts ausgewaehlt. Nutze "Compare" in Card oder Tabelle.',
+                'Noch nichts ausgewählt. Nutze "Compare" in Card oder Tabelle.',
                 'Nothing selected yet. Use "Compare" in cards or table.',
               )}</p>`
         }

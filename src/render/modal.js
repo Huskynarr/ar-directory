@@ -14,7 +14,7 @@ const groupFacts = (facts) => {
   const groupDefs = [
     {
       title: t('Display & Optik', 'Display & optics'),
-      labels: ['Display', t('Optik', 'Optics'), t('Aufloesung', 'Resolution'), 'FOV H', 'FOV V', t('Refresh', 'Refresh')],
+      labels: ['Display', t('Optik', 'Optics'), t('Auflösung', 'Resolution'), 'FOV', t('Refresh', 'Refresh')],
     },
     {
       title: t('Tracking', 'Tracking'),
@@ -84,7 +84,7 @@ const detailModalTemplate = (row) => {
             ${
               image
                 ? `<img src="${escapeHtml(image)}" alt="${name}" class="max-h-64 w-auto rounded-xl object-contain drop-shadow-[0_8px_24px_rgba(0,0,0,0.5)]" />`
-                : `<div class="grid h-40 w-full place-items-center rounded-xl border border-dashed border-[#44403c] text-sm text-[#a8a29e]">${t('Kein Bild verfuegbar', 'No image available')}</div>`
+                : `<div class="grid h-40 w-full place-items-center rounded-xl border border-dashed border-[#44403c] text-sm text-[#a8a29e]">${t('Kein Bild verfügbar', 'No image available')}</div>`
             }
           </div>
           <div class="space-y-5 p-5">
@@ -98,7 +98,7 @@ const detailModalTemplate = (row) => {
               Array.isArray(editorial.highlights) && editorial.highlights.length
                 ? `<div class="rounded-2xl border border-[#292524] bg-[#1c1917] p-3"><p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#a3e635]">${t('Highlights', 'Highlights')}</p><ul class="mt-1 list-disc space-y-0.5 pl-5 text-sm text-[#f5f5f4]">${editorial.highlights
                     .map((h) => `<li>${escapeHtml(h)}</li>`)
-                    .join('')}</ul>${editorial.audience ? `<p class="mt-2 text-xs text-[#a8a29e]">${t('Geeignet fuer', 'Best for')}: ${escapeHtml(editorial.audience)}</p>` : ''}</div>`
+                    .join('')}</ul>${editorial.audience ? `<p class="mt-2 text-xs text-[#a8a29e]">${t('Geeignet für', 'Best for')}: ${escapeHtml(editorial.audience)}</p>` : ''}</div>`
                 : ''
             }
             ${
@@ -138,7 +138,7 @@ const detailModalTemplate = (row) => {
                 ${slug ? `<a href="/modelle/${escapeHtml(slug)}.html" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t('Detailseite', 'Details page')}</a>` : ''}
                 <button id="detail-share" type="button" data-share-title="${escapeHtml(shareTitle)}" data-share-path="${slug ? `/modelle/${escapeHtml(slug)}.html` : '/'}" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]"><span aria-hidden="true">&#128279;</span> ${t('Teilen', 'Share')}</button>
               </div>
-              ${buyLinks.length ? `<p class="text-[11px] text-[#a8a29e]">* ${escapeHtml(t('Affiliate-Links – wir koennen eine Provision erhalten, fuer dich ohne Mehrkosten.', 'Affiliate links – we may earn a commission at no extra cost to you.'))}</p>` : ''}
+              ${buyLinks.length ? `<p class="text-[11px] text-[#a8a29e]">* ${escapeHtml(t('Affiliate-Links – wir können eine Provision erhalten, für dich ohne Mehrkosten.', 'Affiliate links – we may earn a commission at no extra cost to you.'))}</p>` : ''}
             </div>
           </div>
         </div>

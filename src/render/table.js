@@ -3,14 +3,14 @@ import { state } from '../state.js';
 import { t, compactValue, formatPrice, formatNumber, formatLifecycleNotes, maybeHiddenText } from '../i18n.js';
 import { getShopInfo } from '../data/model.js';
 import { AFFILIATE_REL, buildBuyLinks, getAffiliateOverrides } from '../affiliate.js';
-import { categoryTone, selectionLabelTemplate } from './shared.js';
+import { categoryTone, selectionLabelTemplate, buildFovFact } from './shared.js';
 
 const na = () => t('k. A.', 'n/a');
 
 export const tableTemplate = (rows) => {
   if (!rows.length) {
     return `<p class="panel p-8 text-center text-sm text-[#a8a29e]">${t(
-      'Keine Ergebnisse fuer diese Filter.',
+      'Keine Ergebnisse für diese Filter.',
       'No results for these filters.',
     )}</p>`;
   }
@@ -20,9 +20,9 @@ export const tableTemplate = (rows) => {
     t('Preis', 'Price'),
     'Display',
     t('Optik', 'Optics'),
-    'FOV H',
+    'FOV',
     t('Refresh', 'Refresh'),
-    t('Aufloesung', 'Resolution'),
+    t('Auflösung', 'Resolution'),
     t('Gewicht', 'Weight'),
     t('Tracking', 'Tracking'),
     'Eye',
@@ -79,7 +79,7 @@ export const tableTemplate = (rows) => {
                     <td class="whitespace-nowrap px-3 py-2.5 font-semibold">${escapeHtml(formatPrice(row.price_usd))}</td>
                     <td class="px-3 py-2.5">${escapeHtml(maybeHiddenText(row.display_type) || na())}</td>
                     <td class="px-3 py-2.5">${escapeHtml(maybeHiddenText(row.optics) || na())}</td>
-                    <td class="whitespace-nowrap px-3 py-2.5">${escapeHtml(formatNumber(row.fov_horizontal_deg, ' deg'))}</td>
+                    <td class="whitespace-nowrap px-3 py-2.5">${escapeHtml(buildFovFact(row).value)}</td>
                     <td class="whitespace-nowrap px-3 py-2.5">${escapeHtml(formatNumber(row.refresh_hz, ' Hz'))}</td>
                     <td class="whitespace-nowrap px-3 py-2.5">${escapeHtml(compactValue(row.resolution_per_eye, na()))}</td>
                     <td class="whitespace-nowrap px-3 py-2.5">${escapeHtml(formatNumber(row.weight_g, ' g'))}</td>

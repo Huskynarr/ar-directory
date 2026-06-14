@@ -1,7 +1,7 @@
 import { escapeHtml, normalizeText, isUnknownValue } from '../utils.js';
 import { state } from '../state.js';
 import { t, compactValue, formatNumber } from '../i18n.js';
-import { isEol } from '../data/model.js';
+import { isEol, getFovDisplay } from '../data/model.js';
 
 export const optionList = (values, selectedValue, allLabel = t('Alle', 'All')) => {
   const head = `<option value="all"${selectedValue === 'all' ? ' selected' : ''}>${escapeHtml(allLabel)}</option>`;
@@ -23,7 +23,7 @@ export const lifecycleTone = (row) => {
   if (isEol(row)) {
     return 'border-red-500/25 bg-red-500/5 text-red-300';
   }
-  if (normalizeText(row.eol_status).includes('angekuendigt')) {
+  if (normalizeText(row.eol_status).includes('angekündigt')) {
     return 'border-amber-500/25 bg-amber-500/5 text-amber-300';
   }
   return 'border-lime-500/20 bg-lime-500/5 text-lime-300';
@@ -45,21 +45,30 @@ export const selectionLabelTemplate = (rowId, selected, rowName = '') => `
   </label>
 `;
 
+export const buildFovFact = (row) => {
+  const fov = getFovDisplay(row);
+  if (!fov) {
+    return { label: 'FOV', raw: '', value: formatNumber('', ' deg') };
+  }
+  const axisSuffix = fov.axis === 'd' ? t('° (diag.)', '° (diag.)') : fov.axis === 'v' ? t('° (vert.)', '° (vert.)') : '°';
+  return { label: 'FOV', raw: String(fov.value), value: `${formatNumber(fov.value)}${axisSuffix}` };
+};
+
 export const buildCardFacts = (row) => {
+  const fovFact = buildFovFact(row);
   const entries = [
     { label: t('Display', 'Display'), raw: row.display_type, value: compactValue(row.display_type) },
     { label: t('Optik', 'Optics'), raw: row.optics, value: compactValue(row.optics) },
+    { label: fovFact.label, raw: fovFact.raw, value: fovFact.value },
+    { label: t('Auflösung', 'Resolution'), raw: row.resolution_per_eye, value: compactValue(row.resolution_per_eye) },
     { label: t('Tracking', 'Tracking'), raw: row.tracking, value: compactValue(row.tracking) },
+    { label: t('Passthrough', 'Passthrough'), raw: row.passthrough, value: compactValue(row.passthrough) },
+    { label: t('Refresh', 'Refresh'), raw: row.refresh_hz, value: formatNumber(row.refresh_hz, ' Hz') },
+    { label: t('Gewicht', 'Weight'), raw: row.weight_g, value: formatNumber(row.weight_g, ' g') },
     { label: t('Eye Tracking', 'Eye Tracking'), raw: row.eye_tracking, value: compactValue(row.eye_tracking) },
     { label: t('Hand Tracking', 'Hand Tracking'), raw: row.hand_tracking, value: compactValue(row.hand_tracking) },
-    { label: t('Passthrough', 'Passthrough'), raw: row.passthrough, value: compactValue(row.passthrough) },
-    { label: 'FOV H', raw: row.fov_horizontal_deg, value: formatNumber(row.fov_horizontal_deg, ' deg') },
-    { label: t('Refresh', 'Refresh'), raw: row.refresh_hz, value: formatNumber(row.refresh_hz, ' Hz') },
     { label: t('Software', 'Software'), raw: row.software, value: compactValue(row.software) },
-    { label: t('Aufloesung', 'Resolution'), raw: row.resolution_per_eye, value: compactValue(row.resolution_per_eye) },
     { label: t('Compute', 'Compute'), raw: row.compute_unit, value: compactValue(row.compute_unit) },
-    { label: t('Gewicht', 'Weight'), raw: row.weight_g, value: formatNumber(row.weight_g, ' g') },
-    { label: 'FOV V', raw: row.fov_vertical_deg, value: formatNumber(row.fov_vertical_deg, ' deg') },
   ];
 
   if (!state.hideUnknown) {

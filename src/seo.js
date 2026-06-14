@@ -16,11 +16,11 @@ export const updateDocumentSeoSignals = (visibleCount) => {
 
   const description = queryLabel
     ? t(
-        `Filter- und Suchergebnis fuer "${queryLabel}" im AR/XR Brillen Vergleich mit Spezifikationen, Preisen, Lifecycle und Shop-Links.`,
+        `Filter- und Suchergebnis für "${queryLabel}" im AR/XR Brillen Vergleich mit Spezifikationen, Preisen, Lifecycle und Shop-Links.`,
         `Filtered search result for "${queryLabel}" in the AR/XR glasses comparison with specs, pricing, lifecycle and shop links.`,
       )
     : t(
-        'Vergleichsseite fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Shop-Links, aktivem Vertrieb, Software, Updates und EOL-Status.',
+        'Vergleichsseite für AR- und XR-Brillen mit Spezifikationen, Preisen, Shop-Links, aktivem Vertrieb, Software, Updates und EOL-Status.',
         'Comparison page for AR and XR glasses with specifications, pricing, shop links, active distribution, software, updates and EOL status.',
       );
 

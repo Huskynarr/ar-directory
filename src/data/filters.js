@@ -12,7 +12,7 @@ import {
   getShopInfo,
   isEol,
   isLikelyActive,
-  getHorizontalFov,
+  getNormalizedFov,
   isXrRow,
   isArRow,
 } from './model.js';
@@ -93,7 +93,7 @@ export const sortRows = (rows) => {
       );
       return sorted;
     case 'fov_desc':
-      sorted.sort((left, right) => compareNumbers(getHorizontalFov(right), getHorizontalFov(left)));
+      sorted.sort((left, right) => compareNumbers(getNormalizedFov(right), getNormalizedFov(left)));
       return sorted;
     case 'weight_asc':
       sorted.sort((left, right) => compareNumbers(toNumber(left.weight_g), toNumber(right.weight_g)));
@@ -205,7 +205,7 @@ export const matchesFilters = (row) => {
 
   const minFov = toNumber(state.minFov);
   if (minFov !== null) {
-    const fov = getHorizontalFov(row);
+    const fov = getNormalizedFov(row);
     if (fov === null || fov < minFov) {
       return false;
     }
