@@ -1,0 +1,222 @@
+{
+  "newDevices": [
+    {
+      "name": "BIEL Smartgaze",
+      "manufacturer": "Biel Glasses",
+      "official_url": "https://bielglasses.com/product",
+      "announced_date": "2023-01",
+      "release_date": "Unklar",
+      "price_usd": "5300",
+      "xr_category": "XR",
+      "active_distribution": "Ja",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "eol_date": "",
+      "lifecycle_notes": "Mixed-Reality-Sehhilfe fuer Menschen mit Sehbehinderung; CE-zertifiziertes Medizinprodukt Klasse 1, Listenpreis ca. 4.900 EUR.",
+      "lifecycle_source": "https://news.panasonic.com/global/topics/13707",
+      "software": "Biel Glasses Low-Vision-Software (Hinderniserkennung, Zoom, Kontrast/Lichtanpassung)",
+      "compute_unit": "Standalone",
+      "display_type": "Micro-OLED",
+      "optics": "Unklar",
+      "fov_horizontal_deg": "Unklar",
+      "fov_vertical_deg": "",
+      "fov_diagonal_deg": "Unklar",
+      "resolution_per_eye": "Unklar",
+      "refresh_hz": "Unklar",
+      "weight_g": "Unklar",
+      "tracking": "Inside-out",
+      "eye_tracking": "Unklar",
+      "hand_tracking": "Nein",
+      "passthrough": "Ja, kamerabasiertes Video-Passthrough mit MR-Overlays zur Hindernismarkierung",
+      "chipset": "Unklar",
+      "brightness_nits": "Unklar",
+      "connectivity": "Unklar",
+      "audio": "Akustische Hinweise (Lautsprecher)",
+      "battery": "Unklar",
+      "ipd_mm": "Unklar",
+      "prescription_support": "Unklar",
+      "camera": "Ja, 3D-Stereokameras zur Tiefen-/Hinderniserkennung",
+      "sources": [
+        "https://bielglasses.com/product",
+        "https://news.panasonic.com/global/topics/13707",
+        "https://cordis.europa.eu/project/id/854824"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Longan Vision Fusion Vision System (FVS)",
+      "manufacturer": "Longan Vision Corp",
+      "official_url": "https://www.longanvision.com/products",
+      "announced_date": "2020",
+      "release_date": "Unklar",
+      "price_usd": "Unklar",
+      "xr_category": "AR",
+      "active_distribution": "Ja",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "eol_date": "",
+      "lifecycle_notes": "Helmmontiertes AR-Display fuer Feuerwehrleute, das Waermebildvideo ins Sichtfeld einblendet; kompatibel mit gaengiger SCBA-Schutzausruestung.",
+      "lifecycle_source": "https://www.longanvision.com/products",
+      "software": "FVS Modi (Graustufen, RGB, Fusion, Edge Detection, Hotspot, Digitalzoom)",
+      "compute_unit": "Standalone",
+      "display_type": "LCD",
+      "optics": "Unklar",
+      "fov_horizontal_deg": "Unklar",
+      "fov_vertical_deg": "",
+      "fov_diagonal_deg": "Unklar",
+      "resolution_per_eye": "640x1280",
+      "refresh_hz": "Unklar",
+      "weight_g": "Unklar",
+      "tracking": "None",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "Optisch durchsichtiges Visier mit ueberlagertem Live-Waermebild",
+      "chipset": "Unklar",
+      "brightness_nits": "Unklar",
+      "connectivity": "Wi-Fi, Bluetooth",
+      "audio": "Unklar",
+      "battery": "Unklar",
+      "ipd_mm": "Unklar",
+      "prescription_support": "Nein",
+      "camera": "Thermalsensor 320x256 / 384x288",
+      "sources": [
+        "https://www.longanvision.com/products",
+        "https://spectrum.ieee.org/startups-thermal-imaging-and-ar-system-for-firefighters-joins-the-covid19-fight",
+        "https://kguttag.com/2023/02/28/ar-logan-vision-ar-for-first-responders-ces-ar-vr-mr-2023-pt-5/"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "LusoVU EyeSpeak",
+      "manufacturer": "LusoVU",
+      "official_url": "https://lusovu.com/products/eyespeak/",
+      "announced_date": "2014",
+      "release_date": "2016-03",
+      "price_usd": "Unklar",
+      "xr_category": "AR",
+      "active_distribution": "Unklar",
+      "eol_status": "Unklar",
+      "eol_date": "",
+      "lifecycle_notes": "AR-Brille fuer Menschen mit ALS und schweren Kommunikationseinschraenkungen; per Blicksteuerung wird eine eingeblendete Tastatur bedient und Text per Sprachsynthese ausgegeben.",
+      "lifecycle_source": "https://lusovu.com/products/eyespeak/",
+      "software": "EyeSpeak Eye-Typing / Text-to-Speech-Kommunikationssoftware",
+      "compute_unit": "Standalone",
+      "display_type": "LCD",
+      "optics": "Waveguide",
+      "fov_horizontal_deg": "23",
+      "fov_vertical_deg": "",
+      "fov_diagonal_deg": "23",
+      "resolution_per_eye": "960x540",
+      "refresh_hz": "Unklar",
+      "weight_g": "88",
+      "tracking": "3DoF",
+      "eye_tracking": "Ja",
+      "hand_tracking": "Nein",
+      "passthrough": "Nein, optisch durchsichtige binokulare Anzeige",
+      "chipset": "Unklar",
+      "brightness_nits": "Unklar",
+      "connectivity": "Wi-Fi, Bluetooth",
+      "audio": "Integrierter Lautsprecher und Mikrofon",
+      "battery": "Unklar",
+      "ipd_mm": "Unklar",
+      "prescription_support": "Unklar",
+      "camera": "Ja, integrierte Mikrokamera zur Augenverfolgung",
+      "sources": [
+        "https://lusovu.com/products/eyespeak/",
+        "https://www.medicaldesignandoutsourcing.com/glasses-allow-users-to-talk-via-their-eyes/",
+        "https://www.esa.int/About_Us/ESAC/Astronaut_study_gives_voice_to_people_with_disabilities"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Youbiquo Leonardo",
+      "manufacturer": "Youbiquo",
+      "official_url": "https://www.youbiquo.eu/landing-pages/leonardo/",
+      "announced_date": "2021",
+      "release_date": "Unklar",
+      "price_usd": "Unklar",
+      "xr_category": "AR",
+      "active_distribution": "Ja",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "eol_date": "",
+      "lifecycle_notes": "Binokulare, durchsichtige AR-Smartglass fuer Industrie 4.0 / Smart Manufacturing mit Objekterkennung und AR-gefuehrter Montageunterstuetzung.",
+      "lifecycle_source": "https://www.youbiquo.eu/landing-pages/leonardo/",
+      "software": "Youbiquo AR-Plattform (Objekterkennung, HandyTrack-Gestensteuerung), Android 10",
+      "compute_unit": "Standalone",
+      "display_type": "Unklar",
+      "optics": "Unklar",
+      "fov_horizontal_deg": "50",
+      "fov_vertical_deg": "",
+      "fov_diagonal_deg": "",
+      "resolution_per_eye": "1920x1080",
+      "refresh_hz": "Unklar",
+      "weight_g": "Unklar",
+      "tracking": "3DoF",
+      "eye_tracking": "Unklar",
+      "hand_tracking": "Ja",
+      "passthrough": "Nein, optisch durchsichtige binokulare Anzeige",
+      "chipset": "Qualcomm Snapdragon 845",
+      "brightness_nits": "3000",
+      "connectivity": "LTE/5G, USB-C",
+      "audio": "Stereo-Lautsprecher und Mikrofon",
+      "battery": "Unklar",
+      "ipd_mm": "Unklar",
+      "prescription_support": "Unklar",
+      "camera": "5 MP RGB USB-Kamera plus Intel RealSense D450 Tiefenmodul",
+      "sources": [
+        "https://www.youbiquo.eu/landing-pages/leonardo/",
+        "https://iot-now.com/2021/01/22/107332-youbiquo-supported-by-lantronix-advanced-iot-tech-in-development-of-augmented-reality-smart-glasses/",
+        "https://www.lantronix.com/resources/case-studies/youbiquo/"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "skipped": [
+    {
+      "name": "EmdoorVR",
+      "reason": "Reiner ODM/Auftragsfertiger fuer White-Label-/Referenz-XR-Geraete ohne eigene Endkundenmarke."
+    },
+    {
+      "name": "Goertek Electronics",
+      "reason": "Komponenten-/ODM-Zulieferer und Auftragsfertiger ohne eigenes markeneigenes Anzeigegeraet."
+    },
+    {
+      "name": "Viewpointsystem (VPS 19)",
+      "reason": "Eye-Tracking- und Aufzeichnungsbrille ohne AR-Display in der Linse; In-Lens-MR-Overlays sind nur als Zukunftsfunktion angekuendigt."
+    },
+    {
+      "name": "Wave Company",
+      "reason": "Looktech-Produkt ist eine AI-Kamera-/Audiobrille ohne Display im Sichtfeld."
+    },
+    {
+      "name": "AESIR",
+      "reason": "Kein verifizierbares markeneigenes Wearable mit Display auffindbar."
+    },
+    {
+      "name": "Optaric",
+      "reason": "Kein verifizierbares fertiges Markenprodukt mit Display auffindbar."
+    },
+    {
+      "name": "PXR Labs",
+      "reason": "Kein verifizierbares fertiges Markenprodukt mit Display auffindbar."
+    },
+    {
+      "name": "REGION Glasses",
+      "reason": "Kein verifizierbares markeneigenes Anzeigegeraet auffindbar (nur generische Captioning-Treffer anderer Hersteller)."
+    },
+    {
+      "name": "RaxVerse",
+      "reason": "Kein verifizierbares fertiges Markenprodukt mit Display auffindbar."
+    },
+    {
+      "name": "TEKVLLE",
+      "reason": "Kein verifizierbares fertiges Markenprodukt mit Display auffindbar."
+    },
+    {
+      "name": "YG Tech Corp.",
+      "reason": "Kein verifizierbares markeneigenes Wearable mit Display auffindbar."
+    },
+    {
+      "name": "Transparent Computer Co.",
+      "reason": "Kein verifizierbares fertiges Markenprodukt mit Display auffindbar."
+    }
+  ]
+}

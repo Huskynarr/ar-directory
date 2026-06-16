@@ -2,7 +2,9 @@
 3Glasses Blubur S2 | 3Glasses
 3Glasses D2 | 3Glasses
 3Glasses X1 | 3Glasses
+ARknovv A1 | Gyges Labs
 ASUS ROG XREAL R1 | Asus
+Acer AH101 | Acer
 Acer AR Vision GR0 | Acer
 Acer GI0 AI Glasses | Acer
 AjnaLens AjnaX | AjnaLens
@@ -11,6 +13,9 @@ Almer Arc 2 | Almer
 Apple Vision Pro (M5) | Apple
 Apple Vision Pro | Apple
 Asus AirVision M1 | Asus
+Atheer AiR Glasses | Atheer
+Augmedics xvision Spine System | Augmedics
+Beyeonics One | Beyeonics Vision (Elbit Systems)
 Bigscreen Beyond 2 | Bigscreen
 Bigscreen Beyond 2e | Bigscreen
 Bigscreen Beyond | Bigscreen
@@ -18,8 +23,11 @@ Brilliant Labs Frame | Brilliant Labs
 Brilliant Labs Halo | Brilliant Labs
 Brilliant Monocle | Brilliant Labs
 Campfire Headset | Campfire
+Captify Pro | Captify
 Cosmo Vision | Cosmo Connected
+DAQRI Smart Glasses | DAQRI
 DPVR E4 | DPVR
+Dell Visor | Dell
 DigiLens Argo | DigiLens
 Dream Glass 4K Plus | DreamWorld
 Dream Glass 4K | DreamWorld
@@ -35,13 +43,18 @@ Epson Moverio BT-40S | Epson
 Epson Moverio BT-45C | Epson
 Even Realities G1 | Even Realities
 Even Realities G2 | Even Realities
+Everysight Maverick AI Pro | Everysight
 Everysight Raptor | Everysight
+FOVE 0 | FOVE
 Focals by North | North (ehem. Thalmic Labs)
 Form Smart Swim 2 | FORM
+Fujitsu Ubiquitousware Head Mounted Display | Fujitsu
 GOOVIS Art (A1) | GOOVIS
 GOOVIS G3 Max | GOOVIS
 Google Glass Enterprise Edition 2 | Google
 Google Glass Explorer Edition | Google
+Goolton Star1 | Goolton
+Goolton Star1S | Goolton
 Guangli Holoswim 2 | Guangli
 Guangli Holoswim | Guangli
 HP Reverb G2 | HP
@@ -58,6 +71,8 @@ Honor Vision Glass | Honor
 Huawei VR Glass 6DoF | Huawei
 Huawei VR Glass | Huawei
 Huawei Vision Glass | Huawei
+INAIR 2 Pro | INAIR
+INAIR Glasses | INAIR
 INMO Air | INMO
 INMO Air2 | INMO
 INMO Air3 | INMO
@@ -66,11 +81,18 @@ INMO GO3 | INMO
 Iristick G2 | Iristick
 Iristick G3 | Iristick
 Julbo EVAD-1 | Julbo
+Konica Minolta AIRe Lens | Konica Minolta
+Kopin Solos | Kopin / Solos
 LAWK ONE | LAWK
+Leion Hey | LLVision
+Leion Hey2 | LLVision
+Lenovo Explorer | Lenovo
 Lenovo Glasses T1 | Lenovo
+Lenovo Legion AR Smart Glasses | Lenovo
 Lenovo Legion Glasses Gen 2 | Lenovo
 Lenovo Legion Glasses | Lenovo
 Lenovo ThinkReality A3 | Lenovo
+Lenovo ThinkReality A6 | Lenovo
 Lenovo ThinkReality VRX | Lenovo
 Lynx R-1 | Lynx
 MAD Gaze Glow Plus | MAD Gaze
@@ -91,6 +113,7 @@ Meta Quest Pro | Meta
 Meta Ray-Ban Display | Meta
 Microsoft HoloLens 1 | Microsoft
 Microsoft HoloLens 2 | Microsoft
+Microsoft IVAS | Microsoft
 Nimo | Nimo Planet
 Nolo Sonic | Nolo
 Nolo VR Glass | Nolo
@@ -98,15 +121,20 @@ Nreal Air | Nreal
 Nreal Light | Nreal
 NuEyes Pro 3e | NuEyes
 Nubia Neovision Glass | Nubia
+ODG R-7 | Osterhout Design Group
+ODG R-9 | Osterhout Design Group
 Oculus Go | Meta
 Oculus Quest | Meta
 Oculus Rift (CV1) | Meta
+Oculus Rift DK2 | Meta
 Oculus Rift S | Meta
 Oppo Air Glass | Oppo
 P&C Solution METALENSE | P&C Solution
 Pico 4 Ultra | Pico
 Pico 4 | Pico
+Pico G2 4K | Pico
 Pico G3 | Pico
+Pico Neo 2 | Pico
 Pico Neo 3 Link | Pico
 Pico Neo 3 | Pico
 Pimax Crystal Light | Pimax
@@ -117,13 +145,16 @@ Pimax Dream Air | Pimax
 Play For Dream MR | Play For Dream
 PlayStation VR | Sony Interactive Entertainment
 PlayStation VR2 | Sony Interactive Entertainment
+RayNeo Air 1S | TCL
 RayNeo Air 2 | TCL
 RayNeo Air 2s | TCL
 RayNeo Air 3 | TCL
 RayNeo Air 3s | TCL
 RayNeo Air 4 Pro | TCL
 RayNeo Air 4 | TCL
+RayNeo GT Max | TCL
 RayNeo X3 Pro | TCL
+Razer OSVR HDK 2 | Razer
 RealWear HMT-1 | RealWear
 RealWear HMT-1Z1 | RealWear
 RealWear Navigator 500 | RealWear
@@ -131,6 +162,7 @@ RealWear Navigator 520 | RealWear
 RealWear Navigator Z1 | RealWear
 Realmax Qian | Realmax
 Recon Jet | Recon Instruments
+Red 6 ATARS | Red 6
 Rokid AI Glasses Style | Rokid
 Rokid AR Lite | Rokid
 Rokid AR Spatial | Rokid
@@ -144,19 +176,28 @@ Rokid Max | Rokid
 Rokid Vision 2 | Rokid
 Rokid X-Craft | Rokid
 Samsung Galaxy XR | Samsung
+Samsung Gear VR (2017) | Samsung
+Samsung HMD Odyssey | Samsung
+Samsung HMD Odyssey+ | Samsung
 Shadow Creator Action One | Shadow Creator
 Shadow Creator Halomini | Shadow Creator
 Sharge Loomos | Sharge
+Shiftall MeganeX 8K Mark II | Shiftall
 Shiftall MeganeX superlight 8K | Shiftall
+Skyworth PANCAKE 2 | Skyworth
 Skyworth Pancake 1 | Skyworth
+Snap Specs | Snap Inc
 Snap Spectacles (2021) | Snap Inc
 Snap Spectacles 5 | Snap Inc
+Sol Reader | Sol
 Solos AirGo Vision | Solos
 Somnium VR1 | Somnium Space
+Sony HMZ-T1 | Sony
 Sony SRH-S1 (XYN Headset) | Sony
 Sony SmartEyeglass (SED-E1) | Sony
 Spacetop G1 | Sightful
 Spacetop | Sightful
+StarVR One | StarVR
 TCL NXTWEAR G | TCL
 TCL NXTWEAR S | TCL
 TCL NXTWEAR V | TCL
@@ -168,9 +209,14 @@ ThirdEye X2 | ThirdEye
 Thunderbird Air Plus | Thunderbird
 Thunderbird V3 | Thunderbird
 Tilt Five | Tilt Five
+Toshiba dynaEdge AR100 Viewer | Toshiba (Dynabook)
+VRgineers XTAL 3 | VRgineers
 Valve Index | Valve
 Valve Steam Frame | Valve
 Varjo Aero | Varjo
+Varjo VR-1 | Varjo
+Varjo VR-3 | Varjo
+Varjo XR-1 | Varjo
 Varjo XR-3 | Varjo
 Varjo XR-4 | Varjo
 Viture Beast | Viture
@@ -180,15 +226,19 @@ Viture Luma | Viture
 Viture One Lite | Viture
 Viture One | Viture
 Viture Pro | Viture
+Vivo Vision Discovery Edition | Vivo
 Vuzix Blade 2 | Vuzix
 Vuzix Blade Upgraded | Vuzix
 Vuzix LX1 | Vuzix
 Vuzix M100 | Vuzix
+Vuzix M300 | Vuzix
+Vuzix M300XL | Vuzix
 Vuzix M400 | Vuzix
 Vuzix M4000 | Vuzix
 Vuzix M400C | Vuzix
 Vuzix Shield | Vuzix
 Vuzix Z100 | Vuzix
+X by Xreal a01 | Xreal
 XYZ Atom | XYZ Reality
 Xiaomi Mijia | Xiaomi
 Xiaomi Smart Glasses | Xiaomi

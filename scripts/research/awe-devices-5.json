@@ -1,0 +1,22 @@
+{
+  "newDevices": [],
+  "hardwareMakersUnclear": [
+    {
+      "name": "PXR Labs",
+      "note": "Name suggests XR hardware, aber kein verifizierbares fertiges Wearable-Display-Geraet auffindbar. Keine Webpraesenz/Produktseite. Status unklar."
+    },
+    {
+      "name": "REGION Glasses",
+      "note": "'Glasses' im Namen, aber keine verifizierbare Produkt- oder Herstellerseite zu einer AR/Display-Brille gefunden. Moeglich Mode-/Eyewear- oder Software-Anbieter. Unklar."
+    },
+    {
+      "name": "RaxVerse",
+      "note": "Kein verifizierbares Geraet auffindbar; vermutlich Software/Content-Verse-Plattform. Unklar."
+    },
+    {
+      "name": "TEKVLLE",
+      "note": "Markenname klingt nach AR-Eyewear, aber keine verifizierbaren Spezifikationen oder Produktseite gefunden. Unklar."
+    }
+  ],
+  "keptButAlreadyInDataset": []
+}

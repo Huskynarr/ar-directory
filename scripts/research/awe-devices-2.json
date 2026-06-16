@@ -1,0 +1,62 @@
+{
+  "newDevices": [
+    {
+      "name": "Firefly Dimension",
+      "manufacturer": "Firefly Dimension",
+      "official_url": "https://fireflydimension.com/",
+      "announced_date": "",
+      "release_date": "",
+      "price_usd": "",
+      "xr_category": "AR",
+      "active_distribution": "Unklar",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "eol_date": "",
+      "lifecycle_notes": "Professionelle, robuste AR-Brille mit ultraweitem Sichtfeld fuer Industrie-/Enterprise-Einsatz; detaillierte Spezifikationen sind vom Hersteller bisher kaum veroeffentlicht.",
+      "lifecycle_source": "https://fireflydimension.com/",
+      "software": "Unklar",
+      "compute_unit": "Standalone",
+      "display_type": "Unklar",
+      "optics": "Unklar",
+      "fov_horizontal_deg": "",
+      "fov_vertical_deg": "",
+      "fov_diagonal_deg": "",
+      "resolution_per_eye": "Unklar",
+      "refresh_hz": "",
+      "weight_g": "",
+      "tracking": "6DoF",
+      "eye_tracking": "Unklar",
+      "hand_tracking": "Unklar",
+      "passthrough": "Unklar",
+      "chipset": "Unklar",
+      "brightness_nits": "",
+      "connectivity": "Unklar",
+      "audio": "Unklar",
+      "battery": "Integriert, hot-swappable Akku",
+      "ipd_mm": "Unklar",
+      "prescription_support": "Unklar",
+      "camera": "Unklar",
+      "sources": [
+        "https://fireflydimension.com/"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "hardwareMakersUnclear": [
+    {
+      "name": "EmdoorVR",
+      "reason": "ODM/OEM-Auftragsfertiger aus Shenzhen. Vermarktet ein 'Vision SE' MR-Headset (4K FastLCD, Snapdragon MR, VST-Passthrough), positioniert es aber ausdruecklich als 'One-stop MR Hardware customization solution' mit 'exclusive logo customization' - also White-Label-Referenzplattform, kein klar verifizierbares eigenmarkiges Endkundengeraet mit belastbaren Specs/Preis.",
+      "sources": [
+        "https://vr.emdoor.com/vision-se-2/",
+        "https://www.scmp.com/tech/big-tech/article/3251935/chinese-start-emdoorvr-counts-apple-vision-pro-lookalike-break-consumer-headset-market"
+      ]
+    },
+    {
+      "name": "Goertek Electronics",
+      "reason": "Weltweit groesster XR-ODM/Auftragsfertiger (baut Headsets fuer Meta, Sony, Lenovo u.a.) und Optik-/Komponentenlieferant; keine eigene Endkunden-Marke fuer ein fertiges Headset. SKIP-Kandidat.",
+      "sources": [
+        "https://www.roadtovr.com/chinese-odm-goertek-aims-produce-3-million-vr-ar-headsets-annually/"
+      ]
+    }
+  ],
+  "keptButAlreadyInDataset": []
+}

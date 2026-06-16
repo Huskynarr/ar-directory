@@ -1,0 +1,74 @@
+{
+  "newDevices": [
+    {
+      "name": "XRAI AR2",
+      "manufacturer": "XRAI Glass",
+      "official_url": "https://xrai.glass/ar2/",
+      "announced_date": "2025",
+      "release_date": "2025",
+      "price_usd": "699",
+      "xr_category": "AR",
+      "active_distribution": "Ja",
+      "eol_status": "Aktiv oder ohne EOL-Angabe",
+      "eol_date": "",
+      "lifecycle_notes": "Aktiv vertriebene Untertitelungs- und Uebersetzungsbrille (Captioning) mit eigenem Display, fokussiert auf Barrierefreiheit.",
+      "lifecycle_source": "https://xrai.glass/ar2/",
+      "software": "XRAI Glass App (Live-Untertitel/Uebersetzung, 300+ Sprachen)",
+      "compute_unit": "Smartphone",
+      "display_type": "Unklar",
+      "optics": "Unklar",
+      "fov_horizontal_deg": "",
+      "fov_vertical_deg": "",
+      "fov_diagonal_deg": "",
+      "resolution_per_eye": "Unklar",
+      "refresh_hz": "Unklar",
+      "weight_g": "49",
+      "tracking": "None",
+      "eye_tracking": "Nein",
+      "hand_tracking": "Nein",
+      "passthrough": "Nein",
+      "chipset": "Unklar",
+      "brightness_nits": "2500",
+      "connectivity": "Bluetooth (Pairing mit iOS/Android)",
+      "audio": "Keine integrierten Lautsprecher; 3 Mikrofone (360 Grad Sprachaufnahme)",
+      "battery": "Integriert, 8h+; Ladecase fuer bis zu 96h",
+      "ipd_mm": "Unklar",
+      "prescription_support": "Ja (Einsaetze)",
+      "camera": "Keine",
+      "sources": [
+        "https://xrai.glass/ar2/",
+        "https://vrx.vr-expert.com/xrai-ar2-smart-glasses-review/",
+        "https://www.earpros.com/blog/closed-captioning-xrai-ar2-glasses"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "hardwareMakersUnclear": [
+    {
+      "name": "Youbiquo",
+      "note": "Italienischer AR-Smartglasses-Entwickler (Talens monokular, Industry AR Glass binokular). Ueberwiegend Prototypen/Enterprise-Pilot; keine oeffentlich verifizierbaren Spezifikationen eines kommerziell vertriebenen Endprodukts gefunden.",
+      "sources": ["https://www.youbiquo.eu/en/about-us/", "https://iot-now.com/2021/01/22/107332-youbiquo-supported-by-lantronix-advanced-iot-tech-in-development-of-augmented-reality-smart-glasses/"]
+    },
+    {
+      "name": "Viewpointsystem (VPS 19)",
+      "note": "Eye-Tracking-Smartglasses; das Display befindet sich primaer auf der separaten Smart Unit, MR-Overlays in der Brille sind als zukuenftig beschrieben. Grenzfall: primaer Eye-Tracking-Geraet, kein klassisches Wearable-Display.",
+      "sources": ["https://viewpointsystem.com/en/products-new/vps-19/", "https://imotions.com/products/hardware/vps-19/"]
+    },
+    {
+      "name": "Transparent Computer Co.",
+      "note": "Name deutet auf AR-Geraet hin, aber kein verifizierbares Endprodukt mit Specs auffindbar.",
+      "sources": []
+    },
+    {
+      "name": "YG Tech Corp.",
+      "note": "Kein verifizierbares AR/VR-Display-Geraet auffindbar.",
+      "sources": []
+    },
+    {
+      "name": "Wave Company",
+      "note": "Kein verifizierbares finished AR/XR-Display-Geraet (Verwechslungsgefahr mit WaveOptics, einem Waveguide-Komponentenlieferanten).",
+      "sources": []
+    }
+  ],
+  "keptButAlreadyInDataset": []
+}

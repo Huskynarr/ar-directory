@@ -1,7 +1,7 @@
 # AR/XR Brillen Vergleich – Vollindex
 
 Maschinenlesbarer Volldatensatz aller gelisteten AR/XR-Brillen. Sprache: de-DE. Quelle: https://ar-directory.huskynarr.de/
-Stand: 2026-06-14 | 258 Modelle (174 AR, 84 XR) | 104 Hersteller
+Stand: 2026-06-16 | 268 Modelle (183 AR, 85 XR) | 114 Hersteller
 
 Felder pro Modell: Hersteller, Kategorie, Release/Ankuendigung, Preis (USD), Display, Optik, FOV (H/V/D in Grad),
 Aufloesung pro Auge, Refresh (Hz), Gewicht (g), Tracking, Eye-/Hand-Tracking, Passthrough, Software, Recheneinheit,
@@ -253,6 +253,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: Beyeonics Plattform | Recheneinheit: Tethered
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Kopfgetragenes chirurgisches Visualisierungssystem (digitales Exoskop) für Ophthalmologie; 2022 CE-Mark erhalten.
 - Offizielle Seite: https://www.elbitsystems.com/commercial/medical/beyeonics-onetm
+
+## BIEL Smartgaze (Biel Glasses)
+- Kategorie: XR
+- Angekuendigt: 2023-01 | Release: Unklar
+- Preis: 5300 USD
+- Display: Micro-OLED | Optik: Unklar
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: Unklar | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: Inside-out | Eye-Tracking: Unklar | Hand-Tracking: Nein | Passthrough: Ja, kamerabasiertes Video-Passthrough mit MR-Overlays zur Hindernismarkierung
+- Software: Biel Glasses Low-Vision-Software (Hinderniserkennung, Zoom, Kontrast/Lichtanpassung) | Recheneinheit: Standalone
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Mixed-Reality-Sehhilfe fuer Menschen mit Sehbehinderung; CE-zertifiziertes Medizinprodukt Klasse 1, Listenpreis ca. 4.900 EUR.
+- Offizielle Seite: https://bielglasses.com/product
 
 ## Bigscreen Beyond (Bigscreen)
 - Kategorie: XR
@@ -631,6 +644,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Durch Maverick AR-Brille (Kickstarter Q4 2026) ersetzt; Raptor nicht mehr beworben.
 - Offizielle Seite: https://everysight.com/about-raptor/
 
+## Firefly Dimension (Firefly Dimension)
+- Kategorie: AR
+- Angekuendigt: k. A. | Release: k. A.
+- Preis: k. A.
+- Display: Unklar | Optik: Unklar
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: Unklar | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: 6DoF | Eye-Tracking: Unklar | Hand-Tracking: Unklar | Passthrough: Unklar
+- Software: Unklar | Recheneinheit: Standalone
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – Professionelle, robuste AR-Brille mit ultraweitem Sichtfeld fuer Industrie-/Enterprise-Einsatz; detaillierte Spezifikationen sind vom Hersteller bisher kaum veroeffentlicht.
+- Offizielle Seite: https://fireflydimension.com/
+
 ## Focals by North (North (ehem. Thalmic Labs))
 - Kategorie: AR
 - Angekuendigt: 2018-10 | Release: 2018
@@ -800,6 +826,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – CES 2025 debut, invisible MicroLED display in frame. Kickstarter success.
 - Offizielle Seite: https://hallidayglobal.com/
 
+## HoloKit X (HoloKit)
+- Kategorie: AR
+- Angekuendigt: 2022-10 | Release: 2022-12
+- Preis: 129 USD
+- Display: Unklar | Optik: Optical see-through (Combiner-Linsen)
+- FOV (H/V/D Grad): – / – / 60
+- Aufloesung pro Auge: Unklar | Refresh: k. A.
+- Gewicht: 215 g
+- Tracking: 6DoF | Eye-Tracking: Nein | Hand-Tracking: Ja | Passthrough: Optical see-through (direkte Sicht durch Combiner)
+- Software: HoloKit App (ARKit / Apple Vision Framework) | Recheneinheit: Smartphone
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Optisches Stereo-AR-Headset, das ein iPhone als Recheneinheit und Display nutzt; seit Dezember 2022 fuer 129 USD erhaeltlich.
+- Offizielle Seite: https://holokit.io/products/holokit-x
+
 ## Honor Vision Glass (Honor)
 - Kategorie: AR
 - Angekuendigt: 2023-03-06 | Release: 2023-03-24
@@ -968,6 +1007,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: SteamVR | Recheneinheit: Phone
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Keine eindeutige EOL-Angabe in den Quelldaten.
 - Offizielle Seite: https://consumer.huawei.com/cn/wearables/vr-glass-6dof-gaming-kit/
+
+## iGlass iAR-Glass (iGlass USA)
+- Kategorie: AR
+- Angekuendigt: k. A. | Release: k. A.
+- Preis: k. A.
+- Display: Unklar | Optik: Optical see-through (Laser-Projektion, kein Waveguide)
+- FOV (H/V/D Grad): – / – / 80
+- Aufloesung pro Auge: 3200x1600 | Refresh: k. A.
+- Gewicht: 160 g
+- Tracking: Unklar | Eye-Tracking: Unklar | Hand-Tracking: Unklar | Passthrough: Optical see-through (direkte Sicht)
+- Software: Unklar | Recheneinheit: Smartphone
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – Optical-See-Through-AR-/TV-Brille eines Silicon-Valley-Startups, die einen virtuellen 300-Zoll-Bildschirm projiziert; offizieller Preis und Verkaufsstart unklar.
+- Offizielle Seite: https://www.iglassar.com/
 
 ## INAIR 2 Pro (INAIR)
 - Kategorie: AR
@@ -1294,6 +1346,32 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Standalone-Enterprise-Headset mit Farb-Passthrough für Training und Kollaboration.
 - Offizielle Seite: https://www.lenovo.com/us/en/p/smart-devices/virtual-reality/thinkreality-vrx/len101r0001
 
+## Longan Vision Fusion Vision System (FVS) (Longan Vision Corp)
+- Kategorie: AR
+- Angekuendigt: 2020 | Release: Unklar
+- Preis: k. A.
+- Display: LCD | Optik: Unklar
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: 640x1280 | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisch durchsichtiges Visier mit ueberlagertem Live-Waermebild
+- Software: FVS Modi (Graustufen, RGB, Fusion, Edge Detection, Hotspot, Digitalzoom) | Recheneinheit: Standalone
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Helmmontiertes AR-Display fuer Feuerwehrleute, das Waermebildvideo ins Sichtfeld einblendet; kompatibel mit gaengiger SCBA-Schutzausruestung.
+- Offizielle Seite: https://www.longanvision.com/products
+
+## LusoVU EyeSpeak (LusoVU)
+- Kategorie: AR
+- Angekuendigt: 2014 | Release: 2016-03
+- Preis: k. A.
+- Display: LCD | Optik: Waveguide
+- FOV (H/V/D Grad): 23 / – / 23
+- Aufloesung pro Auge: 960x540 | Refresh: k. A.
+- Gewicht: 88 g
+- Tracking: 3DoF | Eye-Tracking: Ja | Hand-Tracking: Nein | Passthrough: Nein, optisch durchsichtige binokulare Anzeige
+- Software: EyeSpeak Eye-Typing / Text-to-Speech-Kommunikationssoftware | Recheneinheit: Standalone
+- Lifecycle: Unklar | Aktiver Vertrieb: Unklar – AR-Brille fuer Menschen mit ALS und schweren Kommunikationseinschraenkungen; per Blicksteuerung wird eine eingeblendete Tastatur bedient und Text per Sprachsynthese ausgegeben.
+- Offizielle Seite: https://lusovu.com/products/eyespeak/
+
 ## Lynx R-1 (Lynx)
 - Kategorie: XR
 - Angekuendigt: 2020-10-06 | Release: 2023
@@ -1593,6 +1671,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Als discontinued markiert.
 - Offizielle Seite: https://www.nolovr.com/
 
+## Norm Glasses (Human Capable)
+- Kategorie: AR
+- Angekuendigt: 2019-07-30 | Release: 2020
+- Preis: 369 USD
+- Display: Unklar | Optik: Unklar
+- FOV (H/V/D Grad): 20 / – / –
+- Aufloesung pro Auge: Unklar | Refresh: k. A.
+- Gewicht: 36 g
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
+- Software: Android-basiertes OS | Recheneinheit: Standalone
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – Per Kickstarter 2019 finanzierte, sehr leichte AR-Brille mit monokularem Head-up-Display; Verfuegbarkeit/Auslieferungsstatus unklar.
+- Offizielle Seite: https://normglasses.com/
+
 ## Nreal Air (Nreal)
 - Kategorie: AR
 - Angekuendigt: 2021-09-30 | Release: 2022-03-04
@@ -1748,6 +1839,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: k. A. | Recheneinheit: Standalone
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Keine eindeutige EOL-Angabe in den Quelldaten.
 - Offizielle Seite: https://www.oppo.com/en/newsroom/press/oppo-air-glass/
+
+## Ostloong LYRA (Ostloong Innovations)
+- Kategorie: AR
+- Angekuendigt: 2023-03 | Release: 2023-11
+- Preis: k. A.
+- Display: Unklar | Optik: Waveguide
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: 640x480 | Refresh: k. A.
+- Gewicht: 58 g
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
+- Software: Android 9.0 | Recheneinheit: Standalone
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – Schweizer Startup-AR-Brille mit monokularem Wellenleiter-Display und KI-Funktionen; Auslieferung laut Hersteller ab November 2023.
+- Offizielle Seite: https://ostloong.com/lyra/
 
 ## P&C Solution METALENSE (P&C Solution)
 - Kategorie: AR
@@ -3218,6 +3322,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Keine eindeutige EOL-Angabe in den Quelldaten.
 - Offizielle Seite: https://www.ximmerse.com/RhinoXPro
 
+## XRAI AR2 (XRAI Glass)
+- Kategorie: AR
+- Angekuendigt: 2025 | Release: 2025
+- Preis: 699 USD
+- Display: Unklar | Optik: Unklar
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: Unklar | Refresh: k. A.
+- Gewicht: 49 g
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
+- Software: XRAI Glass App (Live-Untertitel/Uebersetzung, 300+ Sprachen) | Recheneinheit: Smartphone
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Aktiv vertriebene Untertitelungs- und Uebersetzungsbrille (Captioning) mit eigenem Display, fokussiert auf Barrierefreiheit.
+- Offizielle Seite: https://xrai.glass/ar2/
+
 ## Xreal 1S (Xreal)
 - Kategorie: AR
 - Angekuendigt: 2026-01-04 | Release: 2026-01-04
@@ -3334,6 +3451,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: HoloSite | Recheneinheit: Standalone
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Enterprise AR Headset für Bauwesen, weiterhin aktiv 2026
 - Offizielle Seite: https://www.xyzreality.com/
+
+## Youbiquo Leonardo (Youbiquo)
+- Kategorie: AR
+- Angekuendigt: 2021 | Release: Unklar
+- Preis: k. A.
+- Display: Unklar | Optik: Unklar
+- FOV (H/V/D Grad): 50 / – / –
+- Aufloesung pro Auge: 1920x1080 | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: 3DoF | Eye-Tracking: Unklar | Hand-Tracking: Ja | Passthrough: Nein, optisch durchsichtige binokulare Anzeige
+- Software: Youbiquo AR-Plattform (Objekterkennung, HandyTrack-Gestensteuerung), Android 10 | Recheneinheit: Standalone
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Binokulare, durchsichtige AR-Smartglass fuer Industrie 4.0 / Smart Manufacturing mit Objekterkennung und AR-gefuehrter Montageunterstuetzung.
+- Offizielle Seite: https://www.youbiquo.eu/landing-pages/leonardo/
 
 ## YVR 1 (YVR)
 - Kategorie: XR
