@@ -2,6 +2,7 @@ import {
   normalizeText,
   parseBooleanParam,
 } from './utils.js';
+import { COMPARE_SEPARATOR } from './data/paths.js';
 
 export const COMPARE_LIMIT = 6;
 export const CARDS_PER_PAGE = 12;
@@ -363,9 +364,18 @@ export const syncUrlWithState = () => {
   setText('viewMode', state.viewMode, 'cards');
   setText('lang', state.language, 'de');
   setText('theme', state.theme, 'dark');
-  setBoolean('compareMode', state.compareMode, false);
-  if (state.selectedIds.length) {
-    params.set('selectedIds', state.selectedIds.join(','));
+  // Compare view gets a pretty path (/compare/<a>-vs-<b>); otherwise selections
+  // ride along as query params so they survive on the root view.
+  const compareFlats =
+    state.compareMode && state.selectedIds.length
+      ? state.selectedIds.map((id) => state.rows.find((row) => row.__rowId === id)?.__flat).filter(Boolean)
+      : [];
+  const comparePath = compareFlats.length ? `/compare/${compareFlats.join(COMPARE_SEPARATOR)}` : '';
+  if (!comparePath) {
+    setBoolean('compareMode', state.compareMode, false);
+    if (state.selectedIds.length) {
+      params.set('selectedIds', state.selectedIds.join(','));
+    }
   }
 
   setSelect('category', state.category);
@@ -404,7 +414,8 @@ export const syncUrlWithState = () => {
   }
 
   const nextSearch = params.toString();
-  const nextUrl = `${window.location.pathname}${nextSearch ? `?${nextSearch}` : ''}${window.location.hash}`;
+  const nextPath = comparePath || '/';
+  const nextUrl = `${nextPath}${nextSearch ? `?${nextSearch}` : ''}${window.location.hash}`;
   const currentUrl = `${window.location.pathname}${window.location.search}${window.location.hash}`;
   if (nextUrl !== currentUrl) {
     history.replaceState(null, '', nextUrl);

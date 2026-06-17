@@ -50,7 +50,9 @@ npm run images:enrich    # Fetch/cache manufacturer product images
 - Performance: debounced search (150ms) and numeric inputs (200ms)
 
 **Data pipeline** (`scripts/`):
-- `generate-ar-csv.mjs` — normalizes/validates the CSV and generates ALL derived artifacts from it (single source of truth): `ar_glasses.metadata.json`, `structured-data.json` (JSON-LD), `sitemap.xml`, `llms.txt`, `llms-full.txt`, `ai-search.json`, plus static crawlable pages (`public/modelle/<slug>.html` per device, `public/modelle/index.html`, `public/glossar.html`) via `scripts/lib/render-pages.mjs`. Tolerates recoverable CSV quote/CRLF warnings.
+- `generate-ar-csv.mjs` — normalizes/validates the CSV and generates ALL derived artifacts from it (single source of truth): `ar_glasses.metadata.json`, `structured-data.json` (JSON-LD), `sitemap.xml`, `llms.txt`, `llms-full.txt`, `ai-search.json`, plus static crawlable pages (`public/<brand>/<model>/index.html` per device, `public/modelle/index.html` catalog, `public/glossar.html`) via `scripts/lib/render-pages.mjs`. It also writes legacy redirect stubs at `public/modelle/<slug>.html` (canonical + meta-refresh → new URL) since GitHub Pages can't issue real 301s. Tolerates recoverable CSV quote/CRLF warnings.
+
+**URL scheme**: device pages live at `/<brand>/<model>/` (e.g. `/xreal/one-pro/`); compare is a client route `/compare/<brand-model>-vs-<brand-model>`. Path derivation lives in `src/data/paths.js` (`assignDevicePaths`) and is imported by BOTH the build (generate-ar-csv, render-pages, vite.config) and the SPA so static pages and client links always agree. The SPA keeps the in-page modal for quick detail viewing and links its "Detailseite" button to the real subpage.
 - `apply-enrichment.mjs` — applies a research payload (`enrichment-2026.json`: per-field changes keyed by id + new device rows with sources) to the CSV; identity/image/provenance columns are immutable. Run `data:generate` afterwards.
 - `enrich-manufacturer-images.mjs` — fetches official product images with per-model URL overrides, caches under `public/images/manufacturers/`
 
@@ -82,4 +84,4 @@ Two stages on `node:20-alpine`:
 
 ## Deployment
 
-Plesk via rsync. Build with `npm ci && npm run build`, deploy `dist/` to docroot. Node version managed by nodenv (see `.node-version`: Node 24).
+GitHub Pages at custom domain `ar-directory.huskynarr.de` (subdomain root, so Vite `base` stays `/`). Build with `npm ci && npm run build`, publish `dist/`. Build emits `dist/404.html` (copy of `index.html`) so client routes like `/compare/...` boot the SPA, plus `CNAME` and `.nojekyll` (shipped from `public/`). Device pages are real files served directly; only unknown paths fall through to `404.html`. Node version managed by nodenv (see `.node-version`: Node 24).

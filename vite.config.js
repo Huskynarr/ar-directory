@@ -1,8 +1,8 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 import Papa from 'papaparse';
-import { assignSlugs } from './scripts/lib/render-pages.mjs';
+import { assignDevicePaths } from './src/data/paths.js';
 
 const DATA_DIR = 'public/data';
 
@@ -26,20 +26,20 @@ const fact = (label, value, suffix = '') =>
     ? `<dt>${label}</dt><dd>${escapeHtml(value)}${suffix}</dd>`
     : '';
 
-const buildCatalogHtml = (rows, slugs) => {
+const buildCatalogHtml = (rows, paths) => {
   const items = rows
     .map((row) => {
       const fov = [row.fov_horizontal_deg, row.fov_vertical_deg, row.fov_diagonal_deg]
         .map((value) => (String(value || '').trim() ? value : '–'))
         .join(' / ');
-      const slug = slugs.get(row.id);
-      const link = slug
-        ? ` <a href="/modelle/${slug}.html">Details &amp; Vergleich</a>`
+      const path = paths.get(row.id)?.path;
+      const link = path
+        ? ` <a href="/${path}/">Details &amp; Vergleich</a>`
         : row.official_url
           ? ` <a href="${escapeHtml(row.official_url)}" rel="nofollow noopener">Produktseite</a>`
           : '';
       return `<article>
-  <h3>${slug ? `<a href="/modelle/${slug}.html">${escapeHtml(row.name)}</a>` : escapeHtml(row.name)}</h3>
+  <h3>${path ? `<a href="/${path}/">${escapeHtml(row.name)}</a>` : escapeHtml(row.name)}</h3>
   <dl>
     ${fact('Hersteller', row.manufacturer)}
     ${fact('Kategorie', row.xr_category)}
@@ -100,12 +100,25 @@ const seoInjectPlugin = () => ({
         : '';
       out = out.replace('<!-- @structured-data -->', ldScript);
 
-      const slugs = assignSlugs(rows);
-      const catalog = rows.length ? buildCatalogHtml(rows, slugs) : '';
+      const paths = assignDevicePaths(rows);
+      const catalog = rows.length ? buildCatalogHtml(rows, paths) : '';
       out = out.replace('<!-- @catalog -->', catalog);
 
       return out;
     },
+  },
+});
+
+// GitHub Pages serves 404.html for any path without a matching file. Copying the
+// built index.html there lets client-side routes like /compare/<a>-vs-<b> boot
+// the SPA (which then reads location.pathname). Device pages are real files and
+// are served directly, so they never hit this fallback.
+const spaFallbackPlugin = () => ({
+  name: 'ar-directory-spa-404',
+  closeBundle() {
+    try {
+      writeFileSync('dist/404.html', readFileSync('dist/index.html', 'utf8'));
+    } catch {}
   },
 });
 
@@ -124,5 +137,5 @@ export default defineConfig({
   define: {
     __BUILD_TIME__: JSON.stringify(buildStamp),
   },
-  plugins: [tailwindcss(), seoInjectPlugin()],
+  plugins: [tailwindcss(), seoInjectPlugin(), spaFallbackPlugin()],
 });

@@ -21,6 +21,7 @@ import {
 } from './state.js';
 import { t, formatCurrency, formatDate, formatRateHint, compactValue } from './i18n.js';
 import { getRowId, getShopInfo, isEol, isLikelyActive, isArRow, isXrRow } from './data/model.js';
+import { assignDevicePaths, COMPARE_SEPARATOR } from './data/paths.js';
 import { getFilterOptions, matchesFilters, sortRows, getSelectedRows } from './data/filters.js';
 import { parseCsv, fetchUsdToEurRate } from './data/dataset.js';
 import { AFFILIATE, setAffiliateOverrides } from './affiliate.js';
@@ -887,6 +888,20 @@ const render = () => {
 // Allow decoupled modules (detail modal) to trigger a re-render.
 setRenderFn(render);
 
+// Resolve a /compare/<a>-vs-<b> deep link (served via 404.html on GitHub Pages)
+// into compare state. Must run after state.rows + __flat are populated.
+const applyComparePathFromUrl = () => {
+  const match = window.location.pathname.match(/^\/compare\/(.+?)\/?$/);
+  if (!match) return;
+  const flats = decodeURIComponent(match[1]).split(COMPARE_SEPARATOR).map((s) => s.trim()).filter(Boolean);
+  const byFlat = new Map(state.rows.map((row) => [row.__flat, row.__rowId]));
+  const ids = flats.map((flat) => byFlat.get(flat)).filter(Boolean).slice(0, COMPARE_LIMIT);
+  if (ids.length) {
+    state.selectedIds = ids;
+    state.compareMode = true;
+  }
+};
+
 const init = async () => {
   state.language = readLanguageFromStorage();
   state.theme = readThemeFromStorage();
@@ -957,7 +972,14 @@ const init = async () => {
     const csv = await response.text();
     const { data, fields } = await parseCsv(csv);
     state.rows = data.map((row, index) => ({ ...row, __rowId: getRowId(row, index) }));
+    const devicePaths = assignDevicePaths(state.rows);
+    state.rows.forEach((row) => {
+      const derived = devicePaths.get(row.id);
+      row.__path = derived ? derived.path : '';
+      row.__flat = derived ? derived.flat : '';
+    });
     state.csvFields = fields.filter((field) => !field.startsWith('__'));
+    applyComparePathFromUrl();
     pruneSelectedIdsToKnownRows();
     state.compareNotice = '';
     render();

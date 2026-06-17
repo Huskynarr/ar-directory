@@ -7,7 +7,9 @@ import {
   buildGlossary,
   buildImpressum,
   buildModelIndex,
+  buildRedirectStub,
 } from './lib/render-pages.mjs';
+import { assignDevicePaths } from '../src/data/paths.js';
 
 const INPUT_CSV_PATH = 'public/data/ar_glasses.csv';
 const OUTPUT_CSV_PATH = 'public/data/ar_glasses.csv';
@@ -203,7 +205,7 @@ const buildMetadata = (rows, retrievedAt) => {
   };
 };
 
-const buildStructuredData = (rows, retrievedAt, slugs = new Map()) => {
+const buildStructuredData = (rows, retrievedAt, paths = new Map()) => {
   const itemListElement = rows.map((row, index) => {
     const offers = Number(row.price_usd) > 0
       ? {
@@ -223,7 +225,7 @@ const buildStructuredData = (rows, retrievedAt, slugs = new Map()) => {
       brand: { '@type': 'Brand', name: row.manufacturer },
     };
     if (hasValue(row.image_url)) product.image = row.image_url;
-    if (slugs.get(row.id)) product.url = `${BASE_URL}modelle/${slugs.get(row.id)}.html`;
+    if (paths.get(row.id)) product.url = `${BASE_URL}${paths.get(row.id).path}/`;
     if (hasValue(row.official_url)) product.sameAs = row.official_url;
     if (hasValue(row.release_date)) product.releaseDate = row.release_date;
     if (offers) product.offers = offers;
@@ -286,7 +288,7 @@ const buildStructuredData = (rows, retrievedAt, slugs = new Map()) => {
   ];
 };
 
-const buildSitemap = (lastmod, rows = [], slugs = new Map()) => {
+const buildSitemap = (lastmod, rows = [], paths = new Map()) => {
   const urls = [
     { loc: BASE_URL, changefreq: 'daily', priority: '1.0' },
     { loc: `${BASE_URL}modelle/`, changefreq: 'weekly', priority: '0.9' },
@@ -297,7 +299,7 @@ const buildSitemap = (lastmod, rows = [], slugs = new Map()) => {
     { loc: `${BASE_URL}data/ar_glasses.metadata.json`, changefreq: 'daily', priority: '0.7' },
     { loc: `${BASE_URL}llms.txt`, changefreq: 'weekly', priority: '0.7' },
     { loc: `${BASE_URL}llms-full.txt`, changefreq: 'weekly', priority: '0.6' },
-    ...rows.map((row) => ({ loc: `${BASE_URL}modelle/${slugs.get(row.id)}.html`, changefreq: 'weekly', priority: '0.7' })),
+    ...rows.map((row) => ({ loc: `${BASE_URL}${paths.get(row.id).path}/`, changefreq: 'weekly', priority: '0.7' })),
   ];
   const body = urls
     .map(
@@ -477,6 +479,8 @@ const main = async () => {
   normalizedRows.forEach((row) => {
     row.slug = slugs.get(row.id);
   });
+  // Hierarchical /brand/model/ paths for the public URLs (shared with the SPA).
+  const paths = assignDevicePaths(normalizedRows);
 
   const csv = Papa.unparse(normalizedRows, { columns: OUTPUT_FIELDS });
 
@@ -489,10 +493,10 @@ const main = async () => {
   // Derived SEO + LLM artifacts so the CSV stays the single source of truth.
   const structuredData = {
     '@context': 'https://schema.org',
-    '@graph': buildStructuredData(normalizedRows, retrievedAt, slugs),
+    '@graph': buildStructuredData(normalizedRows, retrievedAt, paths),
   };
   await writeFile(OUTPUT_STRUCTURED_DATA_PATH, `${JSON.stringify(structuredData, null, 2)}\n`, 'utf8');
-  await writeFile(OUTPUT_SITEMAP_PATH, buildSitemap(lastmod, normalizedRows, slugs), 'utf8');
+  await writeFile(OUTPUT_SITEMAP_PATH, buildSitemap(lastmod, normalizedRows, paths), 'utf8');
   await writeFile(OUTPUT_LLMS_PATH, buildLlms(metadata, lastmod), 'utf8');
   await writeFile(OUTPUT_LLMS_FULL_PATH, buildLlmsFull(normalizedRows, metadata, lastmod), 'utf8');
   await writeFile(OUTPUT_AI_SEARCH_PATH, `${JSON.stringify(buildAiSearch(metadata, lastmod), null, 2)}\n`, 'utf8');
@@ -513,18 +517,26 @@ const main = async () => {
     descriptions = {};
   }
 
-  // Static, crawlable pages: one per device + model hub + glossary/FAQ + legal.
+  // Static, crawlable pages: one per device at /<brand>/<model>/index.html, plus
+  // a legacy redirect stub at /modelle/<slug>.html for any already-indexed URLs.
   await mkdir('public/modelle', { recursive: true });
   await Promise.all(
-    normalizedRows.map((row) =>
-      writeFile(
-        `public/modelle/${slugs.get(row.id)}.html`,
-        buildDevicePage(row, normalizedRows, slugs, BASE_URL, affiliateOverrides, descriptions),
+    normalizedRows.map(async (row) => {
+      const path = paths.get(row.id).path;
+      await mkdir(`public/${path}`, { recursive: true });
+      await writeFile(
+        `public/${path}/index.html`,
+        buildDevicePage(row, normalizedRows, slugs, paths, BASE_URL, affiliateOverrides, descriptions),
         'utf8',
-      ),
-    ),
+      );
+      await writeFile(
+        `public/modelle/${slugs.get(row.id)}.html`,
+        buildRedirectStub(`${BASE_URL}${path}/`, row.name),
+        'utf8',
+      );
+    }),
   );
-  await writeFile('public/modelle/index.html', buildModelIndex(normalizedRows, slugs, metadata, BASE_URL), 'utf8');
+  await writeFile('public/modelle/index.html', buildModelIndex(normalizedRows, slugs, paths, metadata, BASE_URL), 'utf8');
   await writeFile('public/glossar.html', buildGlossary(metadata, BASE_URL), 'utf8');
   await writeFile('public/impressum.html', buildImpressum(metadata, BASE_URL), 'utf8');
   await writeFile('public/datenschutz.html', buildDatenschutz(metadata, BASE_URL), 'utf8');

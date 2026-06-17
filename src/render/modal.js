@@ -135,8 +135,8 @@ const detailModalTemplate = (row) => {
               <div class="flex flex-wrap gap-2">
                 ${shop.url ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" class="chip-btn ${shop.official ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]' : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'}">${escapeHtml(shop.label)}</a>` : ''}
                 ${infoUrl ? `<a href="${escapeHtml(infoUrl)}" target="_blank" rel="noreferrer" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t('Datenquelle', 'Data source')}</a>` : ''}
-                ${slug ? `<a href="/modelle/${escapeHtml(slug)}.html" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t('Detailseite', 'Details page')}</a>` : ''}
-                <button id="detail-share" type="button" data-share-title="${escapeHtml(shareTitle)}" data-share-path="${slug ? `/modelle/${escapeHtml(slug)}.html` : '/'}" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]"><span aria-hidden="true">&#128279;</span> ${t('Teilen', 'Share')}</button>
+                ${row.__path ? `<a href="/${escapeHtml(row.__path)}/" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t('Detailseite', 'Details page')}</a>` : ''}
+                <button id="detail-share" type="button" data-share-title="${escapeHtml(shareTitle)}" data-share-path="${row.__path ? `/${escapeHtml(row.__path)}/` : '/'}" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]"><span aria-hidden="true">&#128279;</span> ${t('Teilen', 'Share')}</button>
               </div>
               ${buyLinks.length ? `<p class="text-[11px] text-[#a8a29e]">* ${escapeHtml(t('Affiliate-Links – wir können eine Provision erhalten, für dich ohne Mehrkosten.', 'Affiliate links – we may earn a commission at no extra cost to you.'))}</p>` : ''}
             </div>

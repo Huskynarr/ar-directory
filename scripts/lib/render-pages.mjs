@@ -159,8 +159,9 @@ const shareButtons = (title, url) => {
     .join('')}</div></div>`;
 };
 
-export const buildDevicePage = (row, rows, slugs, baseUrl, overrides = {}, descriptions = {}) => {
+export const buildDevicePage = (row, rows, slugs, paths, baseUrl, overrides = {}, descriptions = {}) => {
   const slug = slugs.get(row.id);
+  const pagePath = paths.get(row.id).path;
   const editorial = descriptions[row.id] || {};
   const highlightsHtml = Array.isArray(editorial.highlights) && editorial.highlights.length
     ? `<div class="hl"><h2>Highlights</h2><ul>${editorial.highlights.map((h) => `<li>${esc(h)}</li>`).join('')}</ul>${editorial.audience ? `<p class="aud"><strong>Geeignet für:</strong> ${esc(editorial.audience)}</p>` : ''}</div>`
@@ -171,7 +172,7 @@ export const buildDevicePage = (row, rows, slugs, baseUrl, overrides = {}, descr
         .map((l) => `<a class="cta buy" href="${esc(l.url)}" rel="${AFFILIATE_REL}" target="_blank">${esc(l.label)} ↗</a>`)
         .join('')}</div><p class="affnote">* ${esc(AFFILIATE.disclosureShort)} <a href="/datenschutz.html">Mehr</a></p></section>`
     : '';
-  const canonical = `${baseUrl}modelle/${slug}.html`;
+  const canonical = `${baseUrl}${pagePath}/`;
   const cat = CATEGORY_LABEL(row.xr_category);
   const isXr = String(row.xr_category).toUpperCase() === 'XR';
   const priceText = hasValue(row.price_usd) ? `ca. ${row.price_usd} USD` : 'Preis k. A.';
@@ -206,12 +207,12 @@ export const buildDevicePage = (row, rows, slugs, baseUrl, overrides = {}, descr
   const related = rows
     .filter((r) => r.id !== row.id && r.manufacturer === row.manufacturer)
     .slice(0, 8)
-    .map((r) => `<li><a href="/modelle/${slugs.get(r.id)}.html">${esc(r.name)}</a></li>`)
+    .map((r) => `<li><a href="/${paths.get(r.id).path}/">${esc(r.name)}</a></li>`)
     .join('');
   const sameCat = rows
     .filter((r) => r.id !== row.id && r.xr_category === row.xr_category && r.manufacturer !== row.manufacturer)
     .slice(0, 8)
-    .map((r) => `<li><a href="/modelle/${slugs.get(r.id)}.html">${esc(r.name)}</a></li>`)
+    .map((r) => `<li><a href="/${paths.get(r.id).path}/">${esc(r.name)}</a></li>`)
     .join('');
 
   const image = hasValue(row.image_url) ? row.image_url : '';
@@ -313,7 +314,21 @@ Angaben ohne Gewähr; Spezifikationen und Preise können je nach Region/Revision
 `;
 };
 
-export const buildModelIndex = (rows, slugs, meta, baseUrl) => {
+// Lightweight redirect stub for the legacy /modelle/<slug>.html URLs. GitHub
+// Pages can't issue real 301s, so we keep these tiny pages with a canonical to
+// the new /brand/model/ URL plus an instant meta-refresh + JS fallback. Google
+// treats an instant meta-refresh as a redirect and follows the canonical.
+export const buildRedirectStub = (target, name = '') => `<!doctype html>
+<html lang="de"><head><meta charset="utf-8" />
+<title>${esc(name)} – verschoben</title>
+<link rel="canonical" href="${esc(target)}" />
+<meta name="robots" content="noindex,follow" />
+<meta http-equiv="refresh" content="0; url=${esc(target)}" />
+<script>location.replace(${JSON.stringify(target)});</script>
+</head><body>Diese Seite ist umgezogen: <a href="${esc(target)}">${esc(target)}</a></body></html>
+`;
+
+export const buildModelIndex = (rows, slugs, paths, meta, baseUrl) => {
   const canonical = `${baseUrl}modelle/`;
   const byMfr = new Map();
   for (const row of rows) {
@@ -326,7 +341,7 @@ export const buildModelIndex = (rows, slugs, meta, baseUrl) => {
       const items = byMfr
         .get(mfr)
         .sort((a, b) => a.name.localeCompare(b.name, 'de'))
-        .map((r) => `<li><a href="/modelle/${slugs.get(r.id)}.html">${esc(r.name)}</a>${hasValue(r.price_usd) ? ` <span style="color:#78716c">· $${esc(r.price_usd)}</span>` : ''}</li>`)
+        .map((r) => `<li><a href="/${paths.get(r.id).path}/">${esc(r.name)}</a>${hasValue(r.price_usd) ? ` <span style="color:#78716c">· $${esc(r.price_usd)}</span>` : ''}</li>`)
         .join('');
       return `<section><h2>${esc(mfr)}</h2><ul class="rel">${items}</ul></section>`;
     })

@@ -1,7 +1,7 @@
 # AR/XR Brillen Vergleich – Vollindex
 
 Maschinenlesbarer Volldatensatz aller gelisteten AR/XR-Brillen. Sprache: de-DE. Quelle: https://ar-directory.huskynarr.de/
-Stand: 2026-06-16 | 268 Modelle (183 AR, 85 XR) | 114 Hersteller
+Stand: 2026-06-17 | 268 Modelle (183 AR, 85 XR) | 114 Hersteller
 
 Felder pro Modell: Hersteller, Kategorie, Release/Ankuendigung, Preis (USD), Display, Optik, FOV (H/V/D in Grad),
 Aufloesung pro Auge, Refresh (Hz), Gewicht (g), Tracking, Eye-/Hand-Tracking, Passthrough, Software, Recheneinheit,
