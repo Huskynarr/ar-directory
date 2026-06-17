@@ -10,11 +10,15 @@ Acer GI0 AI Glasses | Acer
 AjnaLens AjnaX | AjnaLens
 Alibaba Quark AI Glasses S1 | Alibaba
 Almer Arc 2 | Almer
+Anduril EagleEye | Anduril Industries
+AntVR Mix | AntVR
 Apple Vision Pro (M5) | Apple
 Apple Vision Pro | Apple
 Asus AirVision M1 | Asus
 Atheer AiR Glasses | Atheer
 Augmedics xvision Spine System | Augmedics
+Avegant Glyph | Avegant
+BAE Systems Striker II | BAE Systems
 BIEL Smartgaze | Biel Glasses
 Beyeonics One | Beyeonics Vision (Elbit Systems)
 Bigscreen Beyond 2 | Bigscreen
@@ -23,48 +27,68 @@ Bigscreen Beyond | Bigscreen
 Brilliant Labs Frame | Brilliant Labs
 Brilliant Labs Halo | Brilliant Labs
 Brilliant Monocle | Brilliant Labs
+Brother AiRScouter WD-200B | Brother
+Brother AiRScouter WD-300C | Brother
 Campfire Headset | Campfire
+Canon MREAL Display MD-20 | Canon
+Canon MREAL MD-10 | Canon
+Canon MREAL S1 | Canon
 Captify Pro | Captify
+Carl Zeiss Cinemizer OLED | Carl Zeiss
+Cinera (Gen 1) | Cinera
+Cinera Edge | Cinera
 Cosmo Vision | Cosmo Connected
 DAQRI Smart Glasses | DAQRI
 DPVR E4 | DPVR
 Dell Visor | Dell
 DigiLens Argo | DigiLens
+Dlodlo Glass V1 | Dlodlo
 Dream Glass 4K Plus | DreamWorld
 Dream Glass 4K | DreamWorld
 Dream Glass Flow | DreamWorld
 Dream Glass Lead Plus | DreamWorld
 Dream Glass Lead Pro | DreamWorld
 Dream Glass | DreamWorld
+Elbit IronVision | Elbit Systems
 Engo 2 | Engo Eyewear
 Engo Eyewear | Engo Eyewear
 Epson Moverio BT-200 | Epson
+Epson Moverio BT-300 | Epson
+Epson Moverio BT-30C | Epson
+Epson Moverio BT-35E | Epson
 Epson Moverio BT-40 | Epson
 Epson Moverio BT-40S | Epson
 Epson Moverio BT-45C | Epson
+Epson Moverio BT-45CS | Epson
 Even Realities G1 | Even Realities
 Even Realities G2 | Even Realities
 Everysight Maverick AI Pro | Everysight
 Everysight Raptor | Everysight
+F-35 Gen III HMDS | Collins Elbit Vision Systems
 FOVE 0 | FOVE
 Firefly Dimension | Firefly Dimension
 Focals by North | North (ehem. Thalmic Labs)
 Form Smart Swim 2 | FORM
 Fujitsu Ubiquitousware Head Mounted Display | Fujitsu
 GOOVIS Art (A1) | GOOVIS
+GOOVIS G2 | GOOVIS
 GOOVIS G3 Max | GOOVIS
+GOOVIS Young (T2) | GOOVIS
 Google Glass Enterprise Edition 2 | Google
 Google Glass Explorer Edition | Google
 Goolton Star1 | Goolton
 Goolton Star1S | Goolton
+Grawoow G530 | Grawoow
 Guangli Holoswim 2 | Guangli
 Guangli Holoswim | Guangli
 HP Reverb G2 | HP
+HTC Vive Cosmos Elite | HTC
 HTC Vive Cosmos | HTC
 HTC Vive Flow | HTC
 HTC Vive Focus 3 | HTC
 HTC Vive Focus Vision | HTC
 HTC Vive Pro 2 | HTC
+HTC Vive Pro Eye | HTC
 HTC Vive Pro | HTC
 HTC Vive XR Elite | HTC
 HTC Vive | HTC
@@ -81,12 +105,18 @@ INMO Air2 | INMO
 INMO Air3 | INMO
 INMO GO2 | INMO
 INMO GO3 | INMO
+Intel Vaunt | Intel
 Iristick G2 | Iristick
 Iristick G3 | Iristick
+Jorjin J-Reality J7EF Plus | Jorjin Technologies
+Jorjin J-Reality J7EF | Jorjin Technologies
 Julbo EVAD-1 | Julbo
 Konica Minolta AIRe Lens | Konica Minolta
+Kopin Golden-i Infinity | Kopin
 Kopin Solos | Kopin / Solos
 LAWK ONE | LAWK
+LG 360 VR | LG
+LUCI immers | LUCI
 Leion Hey | LLVision
 Leion Hey2 | LLVision
 Lenovo Explorer | Lenovo
@@ -103,8 +133,10 @@ Lynx R-1 | Lynx
 MAD Gaze Glow Plus | MAD Gaze
 MAD Gaze Vader | MAD Gaze
 MAD Gaze Wave | MAD Gaze
+MAXST AR Glasses | MAXST
 Magic Leap 1 | Magic Leap
 Magic Leap 2 | Magic Leap
+MediThinQ Scopeye | MediThinQ
 Meizu MYVU Discovery | Meizu
 Meizu MYVU | Meizu
 Meizu StarV Air2 | Meizu
@@ -116,9 +148,11 @@ Meta Quest 3 | Meta
 Meta Quest 3S | Meta
 Meta Quest Pro | Meta
 Meta Ray-Ban Display | Meta
+MicroOptical SV-6 | MicroOptical
 Microsoft HoloLens 1 | Microsoft
 Microsoft HoloLens 2 | Microsoft
 Microsoft IVAS | Microsoft
+Mira Prism | Mira
 Nimo | Nimo Planet
 Nolo Sonic | Nolo
 Nolo VR Glass | Nolo
@@ -127,14 +161,18 @@ Nreal Air | Nreal
 Nreal Light | Nreal
 NuEyes Pro 3e | NuEyes
 Nubia Neovision Glass | Nubia
+ODG R-6 | Osterhout Design Group
 ODG R-7 | Osterhout Design Group
+ODG R-8 | Osterhout Design Group
 ODG R-9 | Osterhout Design Group
 Oculus Go | Meta
 Oculus Quest | Meta
 Oculus Rift (CV1) | Meta
 Oculus Rift DK2 | Meta
 Oculus Rift S | Meta
+Olympus Eye-Trek FMD-250W | Olympus
 Oppo Air Glass | Oppo
+Optinvent ORA-2 | Optinvent
 Ostloong LYRA | Ostloong Innovations
 P&C Solution METALENSE | P&C Solution
 Pico 4 Ultra | Pico
@@ -144,7 +182,9 @@ Pico G3 | Pico
 Pico Neo 2 | Pico
 Pico Neo 3 Link | Pico
 Pico Neo 3 | Pico
+Pico Project Swan | Pico
 Pimax Crystal Light | Pimax
+Pimax Crystal Super Micro-OLED | Pimax
 Pimax Crystal Super | Pimax
 Pimax Crystal | Pimax
 Pimax Dream Air SE | Pimax
@@ -152,6 +192,7 @@ Pimax Dream Air | Pimax
 Play For Dream MR | Play For Dream
 PlayStation VR | Sony Interactive Entertainment
 PlayStation VR2 | Sony Interactive Entertainment
+QD Laser RETISSA Display II | QD Laser
 RayNeo Air 1S | TCL
 RayNeo Air 2 | TCL
 RayNeo Air 2s | TCL
@@ -191,6 +232,7 @@ Shadow Creator Halomini | Shadow Creator
 Sharge Loomos | Sharge
 Shiftall MeganeX 8K Mark II | Shiftall
 Shiftall MeganeX superlight 8K | Shiftall
+Six15 ST1 | Six15 Technologies
 Skyworth PANCAKE 2 | Skyworth
 Skyworth Pancake 1 | Skyworth
 Snap Specs | Snap Inc
@@ -199,7 +241,11 @@ Snap Spectacles 5 | Snap Inc
 Sol Reader | Sol
 Solos AirGo Vision | Solos
 Somnium VR1 | Somnium Space
+Sony Glasstron PLM-S700 | Sony
 Sony HMZ-T1 | Sony
+Sony HMZ-T2 | Sony
+Sony HMZ-T3 | Sony
+Sony HMZ-T3W | Sony
 Sony SRH-S1 (XYN Headset) | Sony
 Sony SmartEyeglass (SED-E1) | Sony
 Spacetop G1 | Sightful
@@ -211,6 +257,8 @@ TCL NXTWEAR V | TCL
 TCL RayNeo X2 Lite | TCL
 TCL RayNeo X2 | TCL
 TQSKY T1 | TQSKY
+Thales Scorpion | Thales
+Thales TopOwl | Thales
 ThirdEye Razor MR Glasses | ThirdEye
 ThirdEye X2 | ThirdEye
 Thunderbird Air Plus | Thunderbird
@@ -234,6 +282,7 @@ Viture One Lite | Viture
 Viture One | Viture
 Viture Pro | Viture
 Vivo Vision Discovery Edition | Vivo
+Vufine+ | Vufine
 Vuzix Blade 2 | Vuzix
 Vuzix Blade Upgraded | Vuzix
 Vuzix LX1 | Vuzix
@@ -245,6 +294,7 @@ Vuzix M4000 | Vuzix
 Vuzix M400C | Vuzix
 Vuzix Shield | Vuzix
 Vuzix Z100 | Vuzix
+Westunitis InfoLinker3 | WESTUNITIS
 X by Xreal a01 | Xreal
 XRAI AR2 | XRAI Glass
 XYZ Atom | XYZ Reality
@@ -262,7 +312,10 @@ Xreal Project Aura | Xreal
 YVR 1 | YVR
 YVR 2 | YVR
 Youbiquo Leonardo | Youbiquo
+Zebra HD4000 | Zebra Technologies
 arpara Tethered 5K | arpara
+castAR | Technical Illusions
 iGlass iAR-Glass | iGlass USA
 iQIYI Qiyu 3 | iQIYI
 iQIYI Qiyu Dream | iQIYI
+tooz ESSNZ Berlin | tooz technologies

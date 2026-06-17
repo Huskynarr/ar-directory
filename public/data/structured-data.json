@@ -23,17 +23,17 @@
         "Smart Glasses",
         "Headsets"
       ],
-      "dateModified": "2026-06-17T10:53:45.631Z"
+      "dateModified": "2026-06-17T11:08:26.508Z"
     },
     {
       "@type": "Dataset",
       "@id": "https://ar-directory.huskynarr.de/data/ar_glasses.csv#dataset",
       "name": "AR/XR Glasses Directory Dataset",
       "url": "https://ar-directory.huskynarr.de/data/ar_glasses.csv",
-      "description": "Kuratierter Datensatz mit 321 AR/XR-Brillen inkl. Spezifikationen, Preisen und Lifecycle-Status.",
+      "description": "Kuratierter Datensatz mit 347 AR/XR-Brillen inkl. Spezifikationen, Preisen und Lifecycle-Status.",
       "isAccessibleForFree": true,
       "inLanguage": "de-DE",
-      "dateModified": "2026-06-17T10:53:45.631Z",
+      "dateModified": "2026-06-17T11:08:26.508Z",
       "distribution": [
         {
           "@type": "DataDownload",
@@ -51,11 +51,42 @@
       "@type": "ItemList",
       "@id": "https://ar-directory.huskynarr.de/#modelliste",
       "name": "AR/XR Brillen Modelle",
-      "numberOfItems": 321,
+      "numberOfItems": 347,
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
+          "item": {
+            "@type": "Product",
+            "name": "0glasses RealX",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "0glasses"
+            },
+            "url": "https://ar-directory.huskynarr.de/0glasses/realx/",
+            "releaseDate": "2020"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Product",
+            "name": "0glasses RealX Pro",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "0glasses"
+            },
+            "url": "https://ar-directory.huskynarr.de/0glasses/realx-pro/",
+            "sameAs": "https://www.sohu.com/a/398500985_159067",
+            "releaseDate": "2020"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
           "item": {
             "@type": "Product",
             "name": "3Glasses Blubur S1",
@@ -78,7 +109,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 2,
+          "position": 4,
           "item": {
             "@type": "Product",
             "name": "3Glasses Blubur S2",
@@ -101,7 +132,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 3,
+          "position": 5,
           "item": {
             "@type": "Product",
             "name": "3Glasses D2",
@@ -124,7 +155,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 4,
+          "position": 6,
           "item": {
             "@type": "Product",
             "name": "3Glasses X1",
@@ -147,7 +178,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 5,
+          "position": 7,
           "item": {
             "@type": "Product",
             "name": "Acer AH101",
@@ -170,7 +201,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 6,
+          "position": 8,
           "item": {
             "@type": "Product",
             "name": "Acer AR Vision GR0",
@@ -193,7 +224,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 7,
+          "position": 9,
           "item": {
             "@type": "Product",
             "name": "Acer GI0 AI Glasses",
@@ -216,7 +247,29 @@
         },
         {
           "@type": "ListItem",
-          "position": 8,
+          "position": 10,
+          "item": {
+            "@type": "Product",
+            "name": "Acer OJO 500",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Acer"
+            },
+            "url": "https://ar-directory.huskynarr.de/acer/ojo-500/",
+            "sameAs": "https://www.acer.com/",
+            "releaseDate": "2018-11",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "399",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
           "item": {
             "@type": "Product",
             "name": "AjnaLens AjnaX",
@@ -233,7 +286,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 9,
+          "position": 12,
           "item": {
             "@type": "Product",
             "name": "Alibaba Quark AI Glasses S1",
@@ -256,7 +309,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 10,
+          "position": 13,
           "item": {
             "@type": "Product",
             "name": "Almer Arc 2",
@@ -279,7 +332,22 @@
         },
         {
           "@type": "ListItem",
-          "position": 11,
+          "position": 14,
+          "item": {
+            "@type": "Product",
+            "name": "Amazfit Helio Glasses",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Amazfit (Zepp Health)"
+            },
+            "url": "https://ar-directory.huskynarr.de/amazfit/helio-glasses/",
+            "sameAs": "https://www.zepp.com/press-release/amazfit-introduces-the-future-of-sports-technology-at-ces-2026"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
           "item": {
             "@type": "Product",
             "name": "Anduril EagleEye",
@@ -294,7 +362,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 12,
+          "position": 16,
           "item": {
             "@type": "Product",
             "name": "AntVR Mix",
@@ -316,7 +384,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 13,
+          "position": 17,
           "item": {
             "@type": "Product",
             "name": "Apple Vision Pro",
@@ -339,7 +407,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 14,
+          "position": 18,
           "item": {
             "@type": "Product",
             "name": "Apple Vision Pro (M5)",
@@ -362,7 +430,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 15,
+          "position": 19,
           "item": {
             "@type": "Product",
             "name": "ARknovv A1",
@@ -385,7 +453,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 16,
+          "position": 20,
           "item": {
             "@type": "Product",
             "name": "arpara Tethered 5K",
@@ -408,7 +476,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 17,
+          "position": 21,
           "item": {
             "@type": "Product",
             "name": "Asus AirVision M1",
@@ -431,7 +499,29 @@
         },
         {
           "@type": "ListItem",
-          "position": 18,
+          "position": 22,
+          "item": {
+            "@type": "Product",
+            "name": "Asus HC102",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Asus"
+            },
+            "url": "https://ar-directory.huskynarr.de/asus/hc102/",
+            "sameAs": "https://www.asus.com/",
+            "releaseDate": "2018",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "429",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
           "item": {
             "@type": "Product",
             "name": "ASUS ROG XREAL R1",
@@ -454,7 +544,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 19,
+          "position": 24,
           "item": {
             "@type": "Product",
             "name": "Atheer AiR Glasses",
@@ -471,7 +561,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 20,
+          "position": 25,
           "item": {
             "@type": "Product",
             "name": "Augmedics xvision Spine System",
@@ -488,7 +578,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 21,
+          "position": 26,
           "item": {
             "@type": "Product",
             "name": "Avegant Glyph",
@@ -510,7 +600,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 22,
+          "position": 27,
           "item": {
             "@type": "Product",
             "name": "BAE Systems Striker II",
@@ -525,7 +615,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 23,
+          "position": 28,
           "item": {
             "@type": "Product",
             "name": "Beyeonics One",
@@ -541,7 +631,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 24,
+          "position": 29,
           "item": {
             "@type": "Product",
             "name": "BIEL Smartgaze",
@@ -563,7 +653,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 25,
+          "position": 30,
           "item": {
             "@type": "Product",
             "name": "Bigscreen Beyond",
@@ -586,7 +676,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 26,
+          "position": 31,
           "item": {
             "@type": "Product",
             "name": "Bigscreen Beyond 2",
@@ -609,7 +699,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 27,
+          "position": 32,
           "item": {
             "@type": "Product",
             "name": "Bigscreen Beyond 2e",
@@ -632,7 +722,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 28,
+          "position": 33,
           "item": {
             "@type": "Product",
             "name": "Brilliant Labs Frame",
@@ -655,7 +745,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 29,
+          "position": 34,
           "item": {
             "@type": "Product",
             "name": "Brilliant Labs Halo",
@@ -678,7 +768,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 30,
+          "position": 35,
           "item": {
             "@type": "Product",
             "name": "Brilliant Monocle",
@@ -701,7 +791,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 31,
+          "position": 36,
           "item": {
             "@type": "Product",
             "name": "Brother AiRScouter WD-200B",
@@ -717,7 +807,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 32,
+          "position": 37,
           "item": {
             "@type": "Product",
             "name": "Brother AiRScouter WD-300C",
@@ -739,7 +829,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 33,
+          "position": 38,
           "item": {
             "@type": "Product",
             "name": "Campfire Headset",
@@ -762,7 +852,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 34,
+          "position": 39,
           "item": {
             "@type": "Product",
             "name": "Canon MREAL Display MD-20",
@@ -777,7 +867,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 35,
+          "position": 40,
           "item": {
             "@type": "Product",
             "name": "Canon MREAL MD-10",
@@ -798,7 +888,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 36,
+          "position": 41,
           "item": {
             "@type": "Product",
             "name": "Canon MREAL S1",
@@ -819,7 +909,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 37,
+          "position": 42,
           "item": {
             "@type": "Product",
             "name": "Captify Pro",
@@ -842,7 +932,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 38,
+          "position": 43,
           "item": {
             "@type": "Product",
             "name": "Carl Zeiss Cinemizer OLED",
@@ -864,7 +954,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 39,
+          "position": 44,
           "item": {
             "@type": "Product",
             "name": "castAR",
@@ -885,7 +975,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 40,
+          "position": 45,
           "item": {
             "@type": "Product",
             "name": "Cinera (Gen 1)",
@@ -907,7 +997,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 41,
+          "position": 46,
           "item": {
             "@type": "Product",
             "name": "Cinera Edge",
@@ -929,7 +1019,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 42,
+          "position": 47,
           "item": {
             "@type": "Product",
             "name": "Cosmo Vision",
@@ -952,7 +1042,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 43,
+          "position": 48,
           "item": {
             "@type": "Product",
             "name": "DAQRI Smart Glasses",
@@ -975,7 +1065,28 @@
         },
         {
           "@type": "ListItem",
-          "position": 44,
+          "position": 49,
+          "item": {
+            "@type": "Product",
+            "name": "DAQRI Smart Helmet",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "DAQRI"
+            },
+            "url": "https://ar-directory.huskynarr.de/daqri/smart-helmet/",
+            "releaseDate": "2016",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "15000",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 50,
           "item": {
             "@type": "Product",
             "name": "Dell Visor",
@@ -998,7 +1109,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 45,
+          "position": 51,
           "item": {
             "@type": "Product",
             "name": "DigiLens Argo",
@@ -1015,7 +1126,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 46,
+          "position": 52,
           "item": {
             "@type": "Product",
             "name": "Dlodlo Glass V1",
@@ -1031,7 +1142,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 47,
+          "position": 53,
           "item": {
             "@type": "Product",
             "name": "DPVR E4",
@@ -1054,7 +1165,51 @@
         },
         {
           "@type": "ListItem",
-          "position": 48,
+          "position": 54,
+          "item": {
+            "@type": "Product",
+            "name": "DPVR P1 Pro 4K",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "DPVR"
+            },
+            "url": "https://ar-directory.huskynarr.de/dpvr/p1-pro-4k/",
+            "sameAs": "https://item.jd.com/100002863627.html",
+            "releaseDate": "2019-08-15",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "350",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 55,
+          "item": {
+            "@type": "Product",
+            "name": "DPVR P2 Vision",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "DPVR"
+            },
+            "url": "https://ar-directory.huskynarr.de/dpvr/p2-vision/",
+            "sameAs": "https://www.dpvr.com/en/product/dpvr-p2-vision-vr-headset-p-series-all-in-one-vr-headset/",
+            "releaseDate": "2025-02-07",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "949",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 56,
           "item": {
             "@type": "Product",
             "name": "Dream Glass",
@@ -1077,7 +1232,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 49,
+          "position": 57,
           "item": {
             "@type": "Product",
             "name": "Dream Glass 4K",
@@ -1100,7 +1255,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 50,
+          "position": 58,
           "item": {
             "@type": "Product",
             "name": "Dream Glass 4K Plus",
@@ -1123,7 +1278,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 51,
+          "position": 59,
           "item": {
             "@type": "Product",
             "name": "Dream Glass Flow",
@@ -1146,7 +1301,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 52,
+          "position": 60,
           "item": {
             "@type": "Product",
             "name": "Dream Glass Lead Plus",
@@ -1169,7 +1324,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 53,
+          "position": 61,
           "item": {
             "@type": "Product",
             "name": "Dream Glass Lead Pro",
@@ -1192,7 +1347,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 54,
+          "position": 62,
           "item": {
             "@type": "Product",
             "name": "Elbit IronVision",
@@ -1207,7 +1362,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 55,
+          "position": 63,
           "item": {
             "@type": "Product",
             "name": "Engo 2",
@@ -1230,7 +1385,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 56,
+          "position": 64,
           "item": {
             "@type": "Product",
             "name": "Engo Eyewear",
@@ -1253,7 +1408,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 57,
+          "position": 65,
           "item": {
             "@type": "Product",
             "name": "Epson Moverio BT-200",
@@ -1276,7 +1431,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 58,
+          "position": 66,
           "item": {
             "@type": "Product",
             "name": "Epson Moverio BT-300",
@@ -1298,7 +1453,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 59,
+          "position": 67,
           "item": {
             "@type": "Product",
             "name": "Epson Moverio BT-30C",
@@ -1320,7 +1475,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 60,
+          "position": 68,
           "item": {
             "@type": "Product",
             "name": "Epson Moverio BT-35E",
@@ -1342,7 +1497,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 61,
+          "position": 69,
           "item": {
             "@type": "Product",
             "name": "Epson Moverio BT-40",
@@ -1365,7 +1520,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 62,
+          "position": 70,
           "item": {
             "@type": "Product",
             "name": "Epson Moverio BT-40S",
@@ -1388,7 +1543,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 63,
+          "position": 71,
           "item": {
             "@type": "Product",
             "name": "Epson Moverio BT-45C",
@@ -1405,7 +1560,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 64,
+          "position": 72,
           "item": {
             "@type": "Product",
             "name": "Epson Moverio BT-45CS",
@@ -1427,7 +1582,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 65,
+          "position": 73,
           "item": {
             "@type": "Product",
             "name": "Even Realities G1",
@@ -1450,7 +1605,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 66,
+          "position": 74,
           "item": {
             "@type": "Product",
             "name": "Even Realities G2",
@@ -1473,7 +1628,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 67,
+          "position": 75,
           "item": {
             "@type": "Product",
             "name": "Everysight Maverick AI Pro",
@@ -1496,7 +1651,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 68,
+          "position": 76,
           "item": {
             "@type": "Product",
             "name": "Everysight Raptor",
@@ -1519,7 +1674,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 69,
+          "position": 77,
           "item": {
             "@type": "Product",
             "name": "F-35 Gen III HMDS",
@@ -1540,7 +1695,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 70,
+          "position": 78,
           "item": {
             "@type": "Product",
             "name": "Firefly Dimension",
@@ -1555,7 +1710,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 71,
+          "position": 79,
           "item": {
             "@type": "Product",
             "name": "Focals by North",
@@ -1577,7 +1732,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 72,
+          "position": 80,
           "item": {
             "@type": "Product",
             "name": "Form Smart Swim 2",
@@ -1600,7 +1755,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 73,
+          "position": 81,
           "item": {
             "@type": "Product",
             "name": "FOVE 0",
@@ -1623,7 +1778,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 74,
+          "position": 82,
           "item": {
             "@type": "Product",
             "name": "Fujitsu Ubiquitousware Head Mounted Display",
@@ -1639,7 +1794,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 75,
+          "position": 83,
           "item": {
             "@type": "Product",
             "name": "Google Glass Enterprise Edition 2",
@@ -1662,7 +1817,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 76,
+          "position": 84,
           "item": {
             "@type": "Product",
             "name": "Google Glass Explorer Edition",
@@ -1685,7 +1840,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 77,
+          "position": 85,
           "item": {
             "@type": "Product",
             "name": "Goolton Star1",
@@ -1702,7 +1857,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 78,
+          "position": 86,
           "item": {
             "@type": "Product",
             "name": "Goolton Star1S",
@@ -1719,7 +1874,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 79,
+          "position": 87,
           "item": {
             "@type": "Product",
             "name": "GOOVIS Art (A1)",
@@ -1742,7 +1897,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 80,
+          "position": 88,
           "item": {
             "@type": "Product",
             "name": "GOOVIS G2",
@@ -1764,7 +1919,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 81,
+          "position": 89,
           "item": {
             "@type": "Product",
             "name": "GOOVIS G3 Max",
@@ -1787,7 +1942,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 82,
+          "position": 90,
           "item": {
             "@type": "Product",
             "name": "GOOVIS Young (T2)",
@@ -1809,7 +1964,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 83,
+          "position": 91,
           "item": {
             "@type": "Product",
             "name": "Grawoow G530",
@@ -1825,7 +1980,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 84,
+          "position": 92,
           "item": {
             "@type": "Product",
             "name": "Guangli Holoswim",
@@ -1848,7 +2003,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 85,
+          "position": 93,
           "item": {
             "@type": "Product",
             "name": "Guangli Holoswim 2",
@@ -1871,7 +2026,23 @@
         },
         {
           "@type": "ListItem",
-          "position": 86,
+          "position": 94,
+          "item": {
+            "@type": "Product",
+            "name": "Gudong H4000",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Gudong Technology (Goodong)"
+            },
+            "url": "https://ar-directory.huskynarr.de/gudong-technology/h4000/",
+            "sameAs": "https://vr.ofweek.com/news/2024-11/ART-81500-8500-30652168.html",
+            "releaseDate": "2024-03-30"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 95,
           "item": {
             "@type": "Product",
             "name": "Halliday",
@@ -1894,7 +2065,39 @@
         },
         {
           "@type": "ListItem",
-          "position": 87,
+          "position": 96,
+          "item": {
+            "@type": "Product",
+            "name": "HiAR G200",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Hiscene (Liangfengtai)"
+            },
+            "url": "https://ar-directory.huskynarr.de/hiscene/hiar-g200/",
+            "sameAs": "https://www.hiscene.com/product/g200",
+            "releaseDate": "2019"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 97,
+          "item": {
+            "@type": "Product",
+            "name": "HiAR H100",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Hiscene (Liangfengtai)"
+            },
+            "url": "https://ar-directory.huskynarr.de/hiscene/hiar-h100/",
+            "sameAs": "https://www.hiar.com/faq/?content=G100",
+            "releaseDate": "Unklar"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 98,
           "item": {
             "@type": "Product",
             "name": "HoloKit X",
@@ -1916,7 +2119,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 88,
+          "position": 99,
           "item": {
             "@type": "Product",
             "name": "Honor Vision Glass",
@@ -1939,7 +2142,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 89,
+          "position": 100,
           "item": {
             "@type": "Product",
             "name": "HP Reverb G2",
@@ -1962,7 +2165,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 90,
+          "position": 101,
           "item": {
             "@type": "Product",
             "name": "HTC Vive",
@@ -1985,7 +2188,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 91,
+          "position": 102,
           "item": {
             "@type": "Product",
             "name": "HTC Vive Cosmos",
@@ -2008,7 +2211,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 92,
+          "position": 103,
           "item": {
             "@type": "Product",
             "name": "HTC Vive Cosmos Elite",
@@ -2030,7 +2233,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 93,
+          "position": 104,
           "item": {
             "@type": "Product",
             "name": "HTC Vive Flow",
@@ -2053,7 +2256,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 94,
+          "position": 105,
           "item": {
             "@type": "Product",
             "name": "HTC Vive Focus 3",
@@ -2076,7 +2279,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 95,
+          "position": 106,
           "item": {
             "@type": "Product",
             "name": "HTC Vive Focus Vision",
@@ -2099,7 +2302,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 96,
+          "position": 107,
           "item": {
             "@type": "Product",
             "name": "HTC Vive Pro",
@@ -2122,7 +2325,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 97,
+          "position": 108,
           "item": {
             "@type": "Product",
             "name": "HTC Vive Pro 2",
@@ -2145,7 +2348,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 98,
+          "position": 109,
           "item": {
             "@type": "Product",
             "name": "HTC Vive Pro Eye",
@@ -2167,7 +2370,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 99,
+          "position": 110,
           "item": {
             "@type": "Product",
             "name": "HTC Vive XR Elite",
@@ -2190,7 +2393,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 100,
+          "position": 111,
           "item": {
             "@type": "Product",
             "name": "Huawei Vision Glass",
@@ -2213,7 +2416,23 @@
         },
         {
           "@type": "ListItem",
-          "position": 101,
+          "position": 112,
+          "item": {
+            "@type": "Product",
+            "name": "Huawei Vision Glass 2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Huawei"
+            },
+            "url": "https://ar-directory.huskynarr.de/huawei/vision-glass-2/",
+            "sameAs": "https://consumer.huawei.com/cn/wearables/vision-glass/",
+            "releaseDate": "2026-04-11"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 113,
           "item": {
             "@type": "Product",
             "name": "Huawei VR Glass",
@@ -2236,7 +2455,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 102,
+          "position": 114,
           "item": {
             "@type": "Product",
             "name": "Huawei VR Glass 6DoF",
@@ -2259,7 +2478,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 103,
+          "position": 115,
           "item": {
             "@type": "Product",
             "name": "iGlass iAR-Glass",
@@ -2274,7 +2493,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 104,
+          "position": 116,
           "item": {
             "@type": "Product",
             "name": "INAIR 2 Pro",
@@ -2291,7 +2510,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 105,
+          "position": 117,
           "item": {
             "@type": "Product",
             "name": "INAIR Glasses",
@@ -2314,7 +2533,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 106,
+          "position": 118,
           "item": {
             "@type": "Product",
             "name": "INMO Air",
@@ -2337,7 +2556,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 107,
+          "position": 119,
           "item": {
             "@type": "Product",
             "name": "INMO Air2",
@@ -2360,7 +2579,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 108,
+          "position": 120,
           "item": {
             "@type": "Product",
             "name": "INMO Air3",
@@ -2383,7 +2602,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 109,
+          "position": 121,
           "item": {
             "@type": "Product",
             "name": "INMO GO2",
@@ -2406,7 +2625,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 110,
+          "position": 122,
           "item": {
             "@type": "Product",
             "name": "INMO GO3",
@@ -2429,7 +2648,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 111,
+          "position": 123,
           "item": {
             "@type": "Product",
             "name": "Intel Vaunt",
@@ -2443,7 +2662,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 112,
+          "position": 124,
           "item": {
             "@type": "Product",
             "name": "iQIYI Qiyu 3",
@@ -2460,7 +2679,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 113,
+          "position": 125,
           "item": {
             "@type": "Product",
             "name": "iQIYI Qiyu Dream",
@@ -2477,7 +2696,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 114,
+          "position": 126,
           "item": {
             "@type": "Product",
             "name": "Iristick G2",
@@ -2500,7 +2719,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 115,
+          "position": 127,
           "item": {
             "@type": "Product",
             "name": "Iristick G3",
@@ -2522,7 +2741,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 116,
+          "position": 128,
           "item": {
             "@type": "Product",
             "name": "Jorjin J-Reality J7EF",
@@ -2538,7 +2757,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 117,
+          "position": 129,
           "item": {
             "@type": "Product",
             "name": "Jorjin J-Reality J7EF Plus",
@@ -2554,7 +2773,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 118,
+          "position": 130,
           "item": {
             "@type": "Product",
             "name": "Julbo EVAD-1",
@@ -2577,7 +2796,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 119,
+          "position": 131,
           "item": {
             "@type": "Product",
             "name": "Konica Minolta AIRe Lens",
@@ -2594,7 +2813,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 120,
+          "position": 132,
           "item": {
             "@type": "Product",
             "name": "Kopin Golden-i Infinity",
@@ -2616,7 +2835,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 121,
+          "position": 133,
           "item": {
             "@type": "Product",
             "name": "Kopin Solos",
@@ -2639,7 +2858,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 122,
+          "position": 134,
           "item": {
             "@type": "Product",
             "name": "LAWK ONE",
@@ -2662,7 +2881,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 123,
+          "position": 135,
           "item": {
             "@type": "Product",
             "name": "Leion Hey",
@@ -2685,7 +2904,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 124,
+          "position": 136,
           "item": {
             "@type": "Product",
             "name": "Leion Hey2",
@@ -2708,7 +2927,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 125,
+          "position": 137,
           "item": {
             "@type": "Product",
             "name": "Lenovo Explorer",
@@ -2731,7 +2950,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 126,
+          "position": 138,
           "item": {
             "@type": "Product",
             "name": "Lenovo Glasses T1",
@@ -2748,7 +2967,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 127,
+          "position": 139,
           "item": {
             "@type": "Product",
             "name": "Lenovo Legion AR Smart Glasses",
@@ -2771,7 +2990,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 128,
+          "position": 140,
           "item": {
             "@type": "Product",
             "name": "Lenovo Legion Glasses",
@@ -2794,7 +3013,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 129,
+          "position": 141,
           "item": {
             "@type": "Product",
             "name": "Lenovo Legion Glasses Gen 2",
@@ -2816,7 +3035,29 @@
         },
         {
           "@type": "ListItem",
-          "position": 130,
+          "position": 142,
+          "item": {
+            "@type": "Product",
+            "name": "Lenovo Mirage Solo",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Lenovo"
+            },
+            "url": "https://ar-directory.huskynarr.de/lenovo/mirage-solo/",
+            "sameAs": "https://www.lenovo.com/",
+            "releaseDate": "2018-05-11",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "399",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 143,
           "item": {
             "@type": "Product",
             "name": "Lenovo ThinkReality A3",
@@ -2839,7 +3080,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 131,
+          "position": 144,
           "item": {
             "@type": "Product",
             "name": "Lenovo ThinkReality A6",
@@ -2855,7 +3096,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 132,
+          "position": 145,
           "item": {
             "@type": "Product",
             "name": "Lenovo ThinkReality VRX",
@@ -2878,7 +3119,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 133,
+          "position": 146,
           "item": {
             "@type": "Product",
             "name": "LG 360 VR",
@@ -2900,7 +3141,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 134,
+          "position": 147,
           "item": {
             "@type": "Product",
             "name": "Longan Vision Fusion Vision System (FVS)",
@@ -2916,7 +3157,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 135,
+          "position": 148,
           "item": {
             "@type": "Product",
             "name": "LUCI immers",
@@ -2938,7 +3179,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 136,
+          "position": 149,
           "item": {
             "@type": "Product",
             "name": "LusoVU EyeSpeak",
@@ -2954,7 +3195,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 137,
+          "position": 150,
           "item": {
             "@type": "Product",
             "name": "Lynx R-1",
@@ -2977,7 +3218,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 138,
+          "position": 151,
           "item": {
             "@type": "Product",
             "name": "MAD Gaze Glow Plus",
@@ -3000,7 +3241,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 139,
+          "position": 152,
           "item": {
             "@type": "Product",
             "name": "MAD Gaze Vader",
@@ -3023,7 +3264,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 140,
+          "position": 153,
           "item": {
             "@type": "Product",
             "name": "MAD Gaze Wave",
@@ -3046,7 +3287,29 @@
         },
         {
           "@type": "ListItem",
-          "position": 141,
+          "position": 154,
+          "item": {
+            "@type": "Product",
+            "name": "MAD Gaze X5",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "MAD Gaze"
+            },
+            "url": "https://ar-directory.huskynarr.de/mad-gaze/x5/",
+            "sameAs": "https://www.madgaze.com/x5/specs",
+            "releaseDate": "2018",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "699",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 155,
           "item": {
             "@type": "Product",
             "name": "Magic Leap 1",
@@ -3069,7 +3332,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 142,
+          "position": 156,
           "item": {
             "@type": "Product",
             "name": "Magic Leap 2",
@@ -3092,7 +3355,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 143,
+          "position": 157,
           "item": {
             "@type": "Product",
             "name": "MAXST AR Glasses",
@@ -3108,7 +3371,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 144,
+          "position": 158,
           "item": {
             "@type": "Product",
             "name": "MediThinQ Scopeye",
@@ -3124,7 +3387,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 145,
+          "position": 159,
           "item": {
             "@type": "Product",
             "name": "Meizu MYVU",
@@ -3146,7 +3409,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 146,
+          "position": 160,
           "item": {
             "@type": "Product",
             "name": "Meizu MYVU Discovery",
@@ -3169,7 +3432,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 147,
+          "position": 161,
           "item": {
             "@type": "Product",
             "name": "Meizu StarV Air2",
@@ -3192,7 +3455,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 148,
+          "position": 162,
           "item": {
             "@type": "Product",
             "name": "Meizu StarV View",
@@ -3215,7 +3478,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 149,
+          "position": 163,
           "item": {
             "@type": "Product",
             "name": "Mentra Mach1",
@@ -3238,7 +3501,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 150,
+          "position": 164,
           "item": {
             "@type": "Product",
             "name": "Meta 2",
@@ -3261,7 +3524,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 151,
+          "position": 165,
           "item": {
             "@type": "Product",
             "name": "Meta Quest 2",
@@ -3284,7 +3547,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 152,
+          "position": 166,
           "item": {
             "@type": "Product",
             "name": "Meta Quest 3",
@@ -3307,7 +3570,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 153,
+          "position": 167,
           "item": {
             "@type": "Product",
             "name": "Meta Quest 3S",
@@ -3330,7 +3593,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 154,
+          "position": 168,
           "item": {
             "@type": "Product",
             "name": "Meta Quest Pro",
@@ -3353,7 +3616,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 155,
+          "position": 169,
           "item": {
             "@type": "Product",
             "name": "Meta Ray-Ban Display",
@@ -3376,7 +3639,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 156,
+          "position": 170,
           "item": {
             "@type": "Product",
             "name": "MicroOptical SV-6",
@@ -3397,7 +3660,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 157,
+          "position": 171,
           "item": {
             "@type": "Product",
             "name": "Microsoft HoloLens 1",
@@ -3420,7 +3683,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 158,
+          "position": 172,
           "item": {
             "@type": "Product",
             "name": "Microsoft HoloLens 2",
@@ -3443,7 +3706,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 159,
+          "position": 173,
           "item": {
             "@type": "Product",
             "name": "Microsoft IVAS",
@@ -3460,7 +3723,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 160,
+          "position": 174,
           "item": {
             "@type": "Product",
             "name": "Mira Prism",
@@ -3482,7 +3745,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 161,
+          "position": 175,
           "item": {
             "@type": "Product",
             "name": "Nimo",
@@ -3504,7 +3767,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 162,
+          "position": 176,
           "item": {
             "@type": "Product",
             "name": "Nolo Sonic",
@@ -3527,7 +3790,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 163,
+          "position": 177,
           "item": {
             "@type": "Product",
             "name": "Nolo VR Glass",
@@ -3543,7 +3806,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 164,
+          "position": 178,
           "item": {
             "@type": "Product",
             "name": "Norm Glasses",
@@ -3565,7 +3828,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 165,
+          "position": 179,
           "item": {
             "@type": "Product",
             "name": "Nreal Air",
@@ -3588,7 +3851,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 166,
+          "position": 180,
           "item": {
             "@type": "Product",
             "name": "Nreal Light",
@@ -3611,7 +3874,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 167,
+          "position": 181,
           "item": {
             "@type": "Product",
             "name": "Nubia Neovision Glass",
@@ -3634,7 +3897,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 168,
+          "position": 182,
           "item": {
             "@type": "Product",
             "name": "NuEyes Pro 3e",
@@ -3657,7 +3920,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 169,
+          "position": 183,
           "item": {
             "@type": "Product",
             "name": "Oculus Go",
@@ -3680,7 +3943,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 170,
+          "position": 184,
           "item": {
             "@type": "Product",
             "name": "Oculus Quest",
@@ -3703,7 +3966,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 171,
+          "position": 185,
           "item": {
             "@type": "Product",
             "name": "Oculus Rift (CV1)",
@@ -3726,7 +3989,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 172,
+          "position": 186,
           "item": {
             "@type": "Product",
             "name": "Oculus Rift DK2",
@@ -3749,7 +4012,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 173,
+          "position": 187,
           "item": {
             "@type": "Product",
             "name": "Oculus Rift S",
@@ -3772,7 +4035,23 @@
         },
         {
           "@type": "ListItem",
-          "position": 174,
+          "position": 188,
+          "item": {
+            "@type": "Product",
+            "name": "Ocutrx OcuLenz",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Ocutrx Technologies"
+            },
+            "url": "https://ar-directory.huskynarr.de/ocutrx-technologies/oculenz/",
+            "sameAs": "https://www.ocutrxtech.com/",
+            "releaseDate": "2024"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 189,
           "item": {
             "@type": "Product",
             "name": "ODG R-6",
@@ -3793,7 +4072,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 175,
+          "position": 190,
           "item": {
             "@type": "Product",
             "name": "ODG R-7",
@@ -3816,7 +4095,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 176,
+          "position": 191,
           "item": {
             "@type": "Product",
             "name": "ODG R-8",
@@ -3837,7 +4116,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 177,
+          "position": 192,
           "item": {
             "@type": "Product",
             "name": "ODG R-9",
@@ -3859,7 +4138,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 178,
+          "position": 193,
           "item": {
             "@type": "Product",
             "name": "Olympus Eye-Trek FMD-250W",
@@ -3875,7 +4154,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 179,
+          "position": 194,
           "item": {
             "@type": "Product",
             "name": "Oppo Air Glass",
@@ -3898,7 +4177,29 @@
         },
         {
           "@type": "ListItem",
-          "position": 180,
+          "position": 195,
+          "item": {
+            "@type": "Product",
+            "name": "Optinvent ORA-1",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Optinvent"
+            },
+            "url": "https://ar-directory.huskynarr.de/optinvent/ora-1/",
+            "sameAs": "https://www.optinvent.com/",
+            "releaseDate": "2014-04",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "699",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 196,
           "item": {
             "@type": "Product",
             "name": "Optinvent ORA-2",
@@ -3920,7 +4221,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 181,
+          "position": 197,
           "item": {
             "@type": "Product",
             "name": "Ostloong LYRA",
@@ -3936,7 +4237,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 182,
+          "position": 198,
           "item": {
             "@type": "Product",
             "name": "P&C Solution METALENSE",
@@ -3951,7 +4252,23 @@
         },
         {
           "@type": "ListItem",
-          "position": 183,
+          "position": 199,
+          "item": {
+            "@type": "Product",
+            "name": "P&C Solution METALENSE 2",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "P&C Solution"
+            },
+            "url": "https://ar-directory.huskynarr.de/p-c-solution/metalense-2/",
+            "sameAs": "https://www.pncsolution.co.kr/",
+            "releaseDate": "Unklar"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 200,
           "item": {
             "@type": "Product",
             "name": "Pico 4",
@@ -3974,7 +4291,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 184,
+          "position": 201,
           "item": {
             "@type": "Product",
             "name": "Pico 4 Ultra",
@@ -3997,7 +4314,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 185,
+          "position": 202,
           "item": {
             "@type": "Product",
             "name": "Pico G2 4K",
@@ -4020,7 +4337,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 186,
+          "position": 203,
           "item": {
             "@type": "Product",
             "name": "Pico G3",
@@ -4043,7 +4360,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 187,
+          "position": 204,
           "item": {
             "@type": "Product",
             "name": "Pico Neo 2",
@@ -4066,7 +4383,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 188,
+          "position": 205,
           "item": {
             "@type": "Product",
             "name": "Pico Neo 3",
@@ -4089,7 +4406,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 189,
+          "position": 206,
           "item": {
             "@type": "Product",
             "name": "Pico Neo 3 Link",
@@ -4112,7 +4429,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 190,
+          "position": 207,
           "item": {
             "@type": "Product",
             "name": "Pico Project Swan",
@@ -4128,7 +4445,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 191,
+          "position": 208,
           "item": {
             "@type": "Product",
             "name": "Pimax Crystal",
@@ -4151,7 +4468,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 192,
+          "position": 209,
           "item": {
             "@type": "Product",
             "name": "Pimax Crystal Light",
@@ -4174,7 +4491,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 193,
+          "position": 210,
           "item": {
             "@type": "Product",
             "name": "Pimax Crystal Super",
@@ -4197,7 +4514,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 194,
+          "position": 211,
           "item": {
             "@type": "Product",
             "name": "Pimax Crystal Super Micro-OLED",
@@ -4213,7 +4530,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 195,
+          "position": 212,
           "item": {
             "@type": "Product",
             "name": "Pimax Dream Air",
@@ -4236,7 +4553,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 196,
+          "position": 213,
           "item": {
             "@type": "Product",
             "name": "Pimax Dream Air SE",
@@ -4259,7 +4576,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 197,
+          "position": 214,
           "item": {
             "@type": "Product",
             "name": "Play For Dream MR",
@@ -4282,7 +4599,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 198,
+          "position": 215,
           "item": {
             "@type": "Product",
             "name": "PlayStation VR",
@@ -4305,7 +4622,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 199,
+          "position": 216,
           "item": {
             "@type": "Product",
             "name": "PlayStation VR2",
@@ -4328,7 +4645,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 200,
+          "position": 217,
           "item": {
             "@type": "Product",
             "name": "QD Laser RETISSA Display II",
@@ -4344,7 +4661,45 @@
         },
         {
           "@type": "ListItem",
-          "position": 201,
+          "position": 218,
+          "item": {
+            "@type": "Product",
+            "name": "QIDI ONE",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Singularity Near (Qidi Linjin)"
+            },
+            "url": "https://ar-directory.huskynarr.de/singularity-near/qidi-one/",
+            "sameAs": "https://www.shenzhenware.com/articles/16242",
+            "releaseDate": "2023-11"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 219,
+          "item": {
+            "@type": "Product",
+            "name": "QIDI Vida",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Singularity Near (Qidi Linjin)"
+            },
+            "url": "https://ar-directory.huskynarr.de/singularity-near/qidi-vida/",
+            "sameAs": "https://www.ithome.com/0/792/464.htm",
+            "releaseDate": "2024-08-31",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "490",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 220,
           "item": {
             "@type": "Product",
             "name": "RayNeo Air 1S",
@@ -4366,7 +4721,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 202,
+          "position": 221,
           "item": {
             "@type": "Product",
             "name": "RayNeo Air 2",
@@ -4389,7 +4744,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 203,
+          "position": 222,
           "item": {
             "@type": "Product",
             "name": "RayNeo Air 2s",
@@ -4412,7 +4767,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 204,
+          "position": 223,
           "item": {
             "@type": "Product",
             "name": "RayNeo Air 3",
@@ -4434,7 +4789,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 205,
+          "position": 224,
           "item": {
             "@type": "Product",
             "name": "RayNeo Air 3s",
@@ -4457,7 +4812,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 206,
+          "position": 225,
           "item": {
             "@type": "Product",
             "name": "RayNeo Air 4",
@@ -4479,7 +4834,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 207,
+          "position": 226,
           "item": {
             "@type": "Product",
             "name": "RayNeo Air 4 Pro",
@@ -4502,7 +4857,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 208,
+          "position": 227,
           "item": {
             "@type": "Product",
             "name": "RayNeo GT Max",
@@ -4524,7 +4879,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 209,
+          "position": 228,
           "item": {
             "@type": "Product",
             "name": "RayNeo X3 Pro",
@@ -4547,7 +4902,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 210,
+          "position": 229,
           "item": {
             "@type": "Product",
             "name": "Razer OSVR HDK 2",
@@ -4570,7 +4925,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 211,
+          "position": 230,
           "item": {
             "@type": "Product",
             "name": "Realmax Qian",
@@ -4593,7 +4948,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 212,
+          "position": 231,
           "item": {
             "@type": "Product",
             "name": "RealWear HMT-1",
@@ -4616,7 +4971,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 213,
+          "position": 232,
           "item": {
             "@type": "Product",
             "name": "RealWear HMT-1Z1",
@@ -4639,7 +4994,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 214,
+          "position": 233,
           "item": {
             "@type": "Product",
             "name": "RealWear Navigator 500",
@@ -4662,7 +5017,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 215,
+          "position": 234,
           "item": {
             "@type": "Product",
             "name": "RealWear Navigator 520",
@@ -4685,7 +5040,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 216,
+          "position": 235,
           "item": {
             "@type": "Product",
             "name": "RealWear Navigator Z1",
@@ -4708,7 +5063,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 217,
+          "position": 236,
           "item": {
             "@type": "Product",
             "name": "Recon Jet",
@@ -4731,7 +5086,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 218,
+          "position": 237,
           "item": {
             "@type": "Product",
             "name": "Red 6 ATARS",
@@ -4747,7 +5102,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 219,
+          "position": 238,
           "item": {
             "@type": "Product",
             "name": "Rokid AI Glasses Style",
@@ -4770,7 +5125,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 220,
+          "position": 239,
           "item": {
             "@type": "Product",
             "name": "Rokid Air",
@@ -4793,7 +5148,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 221,
+          "position": 240,
           "item": {
             "@type": "Product",
             "name": "Rokid Air Pro",
@@ -4816,7 +5171,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 222,
+          "position": 241,
           "item": {
             "@type": "Product",
             "name": "Rokid AR Lite",
@@ -4839,7 +5194,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 223,
+          "position": 242,
           "item": {
             "@type": "Product",
             "name": "Rokid AR Spatial",
@@ -4862,7 +5217,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 224,
+          "position": 243,
           "item": {
             "@type": "Product",
             "name": "Rokid Glass 2",
@@ -4885,7 +5240,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 225,
+          "position": 244,
           "item": {
             "@type": "Product",
             "name": "Rokid Glasses",
@@ -4908,7 +5263,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 226,
+          "position": 245,
           "item": {
             "@type": "Product",
             "name": "Rokid Max",
@@ -4931,7 +5286,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 227,
+          "position": 246,
           "item": {
             "@type": "Product",
             "name": "Rokid Max 2",
@@ -4954,7 +5309,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 228,
+          "position": 247,
           "item": {
             "@type": "Product",
             "name": "Rokid Max Pro",
@@ -4977,7 +5332,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 229,
+          "position": 248,
           "item": {
             "@type": "Product",
             "name": "Rokid Vision 2",
@@ -4992,7 +5347,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 230,
+          "position": 249,
           "item": {
             "@type": "Product",
             "name": "Rokid X-Craft",
@@ -5009,7 +5364,29 @@
         },
         {
           "@type": "ListItem",
-          "position": 231,
+          "position": 250,
+          "item": {
+            "@type": "Product",
+            "name": "Royole Moon",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Royole"
+            },
+            "url": "https://ar-directory.huskynarr.de/royole/moon/",
+            "sameAs": "https://www.royole.com/",
+            "releaseDate": "2017",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "799",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 251,
           "item": {
             "@type": "Product",
             "name": "Samsung Galaxy XR",
@@ -5032,7 +5409,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 232,
+          "position": 252,
           "item": {
             "@type": "Product",
             "name": "Samsung Gear VR (2017)",
@@ -5054,7 +5431,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 233,
+          "position": 253,
           "item": {
             "@type": "Product",
             "name": "Samsung HMD Odyssey",
@@ -5077,7 +5454,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 234,
+          "position": 254,
           "item": {
             "@type": "Product",
             "name": "Samsung HMD Odyssey+",
@@ -5100,7 +5477,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 235,
+          "position": 255,
           "item": {
             "@type": "Product",
             "name": "Shadow Creator Action One",
@@ -5123,7 +5500,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 236,
+          "position": 256,
           "item": {
             "@type": "Product",
             "name": "Shadow Creator Halomini",
@@ -5146,7 +5523,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 237,
+          "position": 257,
           "item": {
             "@type": "Product",
             "name": "Sharge Loomos",
@@ -5169,7 +5546,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 238,
+          "position": 258,
           "item": {
             "@type": "Product",
             "name": "Shiftall MeganeX 8K Mark II",
@@ -5192,7 +5569,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 239,
+          "position": 259,
           "item": {
             "@type": "Product",
             "name": "Shiftall MeganeX superlight 8K",
@@ -5215,7 +5592,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 240,
+          "position": 260,
           "item": {
             "@type": "Product",
             "name": "Six15 ST1",
@@ -5231,7 +5608,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 241,
+          "position": 261,
           "item": {
             "@type": "Product",
             "name": "Skyworth Pancake 1",
@@ -5254,7 +5631,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 242,
+          "position": 262,
           "item": {
             "@type": "Product",
             "name": "Skyworth PANCAKE 2",
@@ -5270,7 +5647,23 @@
         },
         {
           "@type": "ListItem",
-          "position": 243,
+          "position": 263,
+          "item": {
+            "@type": "Product",
+            "name": "Skyworth S802 4K",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Skyworth"
+            },
+            "url": "https://ar-directory.huskynarr.de/skyworth/s802-4k/",
+            "sameAs": "https://www.vrtuoluo.cn/524702.html",
+            "releaseDate": "2021"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 264,
           "item": {
             "@type": "Product",
             "name": "Snap Specs",
@@ -5293,7 +5686,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 244,
+          "position": 265,
           "item": {
             "@type": "Product",
             "name": "Snap Spectacles (2021)",
@@ -5310,7 +5703,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 245,
+          "position": 266,
           "item": {
             "@type": "Product",
             "name": "Snap Spectacles 5",
@@ -5326,7 +5719,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 246,
+          "position": 267,
           "item": {
             "@type": "Product",
             "name": "Sol Reader",
@@ -5349,7 +5742,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 247,
+          "position": 268,
           "item": {
             "@type": "Product",
             "name": "Solos AirGo Vision",
@@ -5372,7 +5765,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 248,
+          "position": 269,
           "item": {
             "@type": "Product",
             "name": "Somnium VR1",
@@ -5395,7 +5788,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 249,
+          "position": 270,
           "item": {
             "@type": "Product",
             "name": "Sony Glasstron PLM-S700",
@@ -5411,7 +5804,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 250,
+          "position": 271,
           "item": {
             "@type": "Product",
             "name": "Sony HMZ-T1",
@@ -5433,7 +5826,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 251,
+          "position": 272,
           "item": {
             "@type": "Product",
             "name": "Sony HMZ-T2",
@@ -5455,7 +5848,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 252,
+          "position": 273,
           "item": {
             "@type": "Product",
             "name": "Sony HMZ-T3",
@@ -5476,7 +5869,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 253,
+          "position": 274,
           "item": {
             "@type": "Product",
             "name": "Sony HMZ-T3W",
@@ -5498,7 +5891,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 254,
+          "position": 275,
           "item": {
             "@type": "Product",
             "name": "Sony SmartEyeglass (SED-E1)",
@@ -5521,7 +5914,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 255,
+          "position": 276,
           "item": {
             "@type": "Product",
             "name": "Sony SRH-S1 (XYN Headset)",
@@ -5544,7 +5937,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 256,
+          "position": 277,
           "item": {
             "@type": "Product",
             "name": "Spacetop",
@@ -5567,7 +5960,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 257,
+          "position": 278,
           "item": {
             "@type": "Product",
             "name": "Spacetop G1",
@@ -5590,7 +5983,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 258,
+          "position": 279,
           "item": {
             "@type": "Product",
             "name": "StarVR One",
@@ -5613,7 +6006,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 259,
+          "position": 280,
           "item": {
             "@type": "Product",
             "name": "TCL NXTWEAR G",
@@ -5636,7 +6029,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 260,
+          "position": 281,
           "item": {
             "@type": "Product",
             "name": "TCL NXTWEAR S",
@@ -5659,7 +6052,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 261,
+          "position": 282,
           "item": {
             "@type": "Product",
             "name": "TCL NXTWEAR V",
@@ -5675,7 +6068,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 262,
+          "position": 283,
           "item": {
             "@type": "Product",
             "name": "TCL RayNeo X2",
@@ -5698,7 +6091,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 263,
+          "position": 284,
           "item": {
             "@type": "Product",
             "name": "TCL RayNeo X2 Lite",
@@ -5721,7 +6114,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 264,
+          "position": 285,
           "item": {
             "@type": "Product",
             "name": "Thales Scorpion",
@@ -5736,7 +6129,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 265,
+          "position": 286,
           "item": {
             "@type": "Product",
             "name": "Thales TopOwl",
@@ -5751,7 +6144,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 266,
+          "position": 287,
           "item": {
             "@type": "Product",
             "name": "ThirdEye Razor MR Glasses",
@@ -5774,7 +6167,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 267,
+          "position": 288,
           "item": {
             "@type": "Product",
             "name": "ThirdEye X2",
@@ -5797,7 +6190,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 268,
+          "position": 289,
           "item": {
             "@type": "Product",
             "name": "Thunderbird Air Plus",
@@ -5818,7 +6211,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 269,
+          "position": 290,
           "item": {
             "@type": "Product",
             "name": "Thunderbird V3",
@@ -5841,7 +6234,29 @@
         },
         {
           "@type": "ListItem",
-          "position": 270,
+          "position": 291,
+          "item": {
+            "@type": "Product",
+            "name": "ThunderRobot Aura (AR Lite)",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "ThunderRobot (Leishen)"
+            },
+            "url": "https://ar-directory.huskynarr.de/thunderrobot/aura-ar-lite/",
+            "sameAs": "https://www.ithome.com/0/822/963.htm",
+            "releaseDate": "2025-01",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "150",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 292,
           "item": {
             "@type": "Product",
             "name": "Tilt Five",
@@ -5864,7 +6279,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 271,
+          "position": 293,
           "item": {
             "@type": "Product",
             "name": "tooz ESSNZ Berlin",
@@ -5880,7 +6295,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 272,
+          "position": 294,
           "item": {
             "@type": "Product",
             "name": "Toshiba dynaEdge AR100 Viewer",
@@ -5896,7 +6311,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 273,
+          "position": 295,
           "item": {
             "@type": "Product",
             "name": "TQSKY T1",
@@ -5919,7 +6334,29 @@
         },
         {
           "@type": "ListItem",
-          "position": 274,
+          "position": 296,
+          "item": {
+            "@type": "Product",
+            "name": "Trimble XR10 with HoloLens 2",
+            "category": "XR-Headset",
+            "brand": {
+              "@type": "Brand",
+              "name": "Trimble"
+            },
+            "url": "https://ar-directory.huskynarr.de/trimble/xr10-with-hololens-2/",
+            "sameAs": "https://fieldtech.trimble.com/en/products/mixed-reality/trimble-xr10-with-hololens-2",
+            "releaseDate": "2020",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "4750",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 297,
           "item": {
             "@type": "Product",
             "name": "Valve Index",
@@ -5942,7 +6379,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 275,
+          "position": 298,
           "item": {
             "@type": "Product",
             "name": "Valve Steam Frame",
@@ -5959,7 +6396,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 276,
+          "position": 299,
           "item": {
             "@type": "Product",
             "name": "Varjo Aero",
@@ -5982,7 +6419,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 277,
+          "position": 300,
           "item": {
             "@type": "Product",
             "name": "Varjo VR-1",
@@ -6005,7 +6442,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 278,
+          "position": 301,
           "item": {
             "@type": "Product",
             "name": "Varjo VR-3",
@@ -6028,7 +6465,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 279,
+          "position": 302,
           "item": {
             "@type": "Product",
             "name": "Varjo XR-1",
@@ -6051,7 +6488,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 280,
+          "position": 303,
           "item": {
             "@type": "Product",
             "name": "Varjo XR-3",
@@ -6074,7 +6511,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 281,
+          "position": 304,
           "item": {
             "@type": "Product",
             "name": "Varjo XR-4",
@@ -6097,7 +6534,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 282,
+          "position": 305,
           "item": {
             "@type": "Product",
             "name": "Viture Beast",
@@ -6120,7 +6557,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 283,
+          "position": 306,
           "item": {
             "@type": "Product",
             "name": "Viture Luma",
@@ -6143,7 +6580,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 284,
+          "position": 307,
           "item": {
             "@type": "Product",
             "name": "Viture Luma Pro",
@@ -6166,7 +6603,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 285,
+          "position": 308,
           "item": {
             "@type": "Product",
             "name": "Viture Luma Ultra",
@@ -6189,7 +6626,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 286,
+          "position": 309,
           "item": {
             "@type": "Product",
             "name": "Viture One",
@@ -6212,7 +6649,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 287,
+          "position": 310,
           "item": {
             "@type": "Product",
             "name": "Viture One Lite",
@@ -6235,7 +6672,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 288,
+          "position": 311,
           "item": {
             "@type": "Product",
             "name": "Viture Pro",
@@ -6258,7 +6695,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 289,
+          "position": 312,
           "item": {
             "@type": "Product",
             "name": "Vivo Vision Discovery Edition",
@@ -6280,7 +6717,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 290,
+          "position": 313,
           "item": {
             "@type": "Product",
             "name": "VRgineers XTAL 3",
@@ -6303,7 +6740,29 @@
         },
         {
           "@type": "ListItem",
-          "position": 291,
+          "position": 314,
+          "item": {
+            "@type": "Product",
+            "name": "Vufine Wearable Display",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Vufine"
+            },
+            "url": "https://ar-directory.huskynarr.de/vufine/wearable-display/",
+            "sameAs": "https://www.vufine.com/",
+            "releaseDate": "2016-03",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "149",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 315,
           "item": {
             "@type": "Product",
             "name": "Vufine+",
@@ -6325,7 +6784,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 292,
+          "position": 316,
           "item": {
             "@type": "Product",
             "name": "Vuzix Blade 2",
@@ -6348,7 +6807,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 293,
+          "position": 317,
           "item": {
             "@type": "Product",
             "name": "Vuzix Blade Upgraded",
@@ -6371,7 +6830,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 294,
+          "position": 318,
           "item": {
             "@type": "Product",
             "name": "Vuzix LX1",
@@ -6394,7 +6853,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 295,
+          "position": 319,
           "item": {
             "@type": "Product",
             "name": "Vuzix M100",
@@ -6417,7 +6876,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 296,
+          "position": 320,
           "item": {
             "@type": "Product",
             "name": "Vuzix M300",
@@ -6439,7 +6898,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 297,
+          "position": 321,
           "item": {
             "@type": "Product",
             "name": "Vuzix M300XL",
@@ -6461,7 +6920,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 298,
+          "position": 322,
           "item": {
             "@type": "Product",
             "name": "Vuzix M400",
@@ -6484,7 +6943,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 299,
+          "position": 323,
           "item": {
             "@type": "Product",
             "name": "Vuzix M4000",
@@ -6507,7 +6966,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 300,
+          "position": 324,
           "item": {
             "@type": "Product",
             "name": "Vuzix M400C",
@@ -6530,7 +6989,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 301,
+          "position": 325,
           "item": {
             "@type": "Product",
             "name": "Vuzix Shield",
@@ -6553,7 +7012,22 @@
         },
         {
           "@type": "ListItem",
-          "position": 302,
+          "position": 326,
+          "item": {
+            "@type": "Product",
+            "name": "Vuzix Ultralite Pro",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "Vuzix"
+            },
+            "url": "https://ar-directory.huskynarr.de/vuzix/ultralite-pro/",
+            "sameAs": "https://www.vuzix.com/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 327,
           "item": {
             "@type": "Product",
             "name": "Vuzix Z100",
@@ -6576,7 +7050,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 303,
+          "position": 328,
           "item": {
             "@type": "Product",
             "name": "Westunitis InfoLinker3",
@@ -6592,7 +7066,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 304,
+          "position": 329,
           "item": {
             "@type": "Product",
             "name": "X by Xreal a01",
@@ -6614,7 +7088,29 @@
         },
         {
           "@type": "ListItem",
-          "position": 305,
+          "position": 330,
+          "item": {
+            "@type": "Product",
+            "name": "XGIMI MemoMind Memo One",
+            "category": "AR-Brille",
+            "brand": {
+              "@type": "Brand",
+              "name": "XGIMI"
+            },
+            "url": "https://ar-directory.huskynarr.de/xgimi/memomind-memo-one/",
+            "sameAs": "https://us.xgimi.com/blogs/news/xgimi-ces-2026-with-memomind-ai-glasses",
+            "releaseDate": "2026",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "599",
+              "availability": "https://schema.org/Discontinued"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 331,
           "item": {
             "@type": "Product",
             "name": "Xiaomi Mijia",
@@ -6636,7 +7132,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 306,
+          "position": 332,
           "item": {
             "@type": "Product",
             "name": "Xiaomi Smart Glasses",
@@ -6653,7 +7149,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 307,
+          "position": 333,
           "item": {
             "@type": "Product",
             "name": "Ximmerse Rhino X Pro",
@@ -6676,7 +7172,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 308,
+          "position": 334,
           "item": {
             "@type": "Product",
             "name": "XRAI AR2",
@@ -6698,7 +7194,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 309,
+          "position": 335,
           "item": {
             "@type": "Product",
             "name": "Xreal 1S",
@@ -6721,7 +7217,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 310,
+          "position": 336,
           "item": {
             "@type": "Product",
             "name": "Xreal Air 2",
@@ -6744,7 +7240,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 311,
+          "position": 337,
           "item": {
             "@type": "Product",
             "name": "Xreal Air 2 Pro",
@@ -6767,7 +7263,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 312,
+          "position": 338,
           "item": {
             "@type": "Product",
             "name": "Xreal Air 2 Ultra",
@@ -6790,7 +7286,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 313,
+          "position": 339,
           "item": {
             "@type": "Product",
             "name": "Xreal Eye",
@@ -6813,7 +7309,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 314,
+          "position": 340,
           "item": {
             "@type": "Product",
             "name": "Xreal One",
@@ -6836,7 +7332,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 315,
+          "position": 341,
           "item": {
             "@type": "Product",
             "name": "Xreal One Pro",
@@ -6859,7 +7355,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 316,
+          "position": 342,
           "item": {
             "@type": "Product",
             "name": "Xreal Project Aura",
@@ -6876,7 +7372,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 317,
+          "position": 343,
           "item": {
             "@type": "Product",
             "name": "XYZ Atom",
@@ -6893,7 +7389,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 318,
+          "position": 344,
           "item": {
             "@type": "Product",
             "name": "Youbiquo Leonardo",
@@ -6909,7 +7405,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 319,
+          "position": 345,
           "item": {
             "@type": "Product",
             "name": "YVR 1",
@@ -6926,7 +7422,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 320,
+          "position": 346,
           "item": {
             "@type": "Product",
             "name": "YVR 2",
@@ -6949,7 +7445,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 321,
+          "position": 347,
           "item": {
             "@type": "Product",
             "name": "Zebra HD4000",
