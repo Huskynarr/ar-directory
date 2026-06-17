@@ -78,7 +78,7 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
 
 ## Datenquelle
 
-Die Datengrundlage ist ein kuratierter lokaler Datensatz (aktuell **268 Modelle**, inkl. globaler und chinesischer Markt bis Juni 2026):
+Die Datengrundlage ist ein kuratierter lokaler Datensatz (aktuell **321 Modelle**, inkl. globaler und chinesischer Markt bis Juni 2026):
 - Generator: `scripts/generate-ar-csv.mjs` — normalisiert die CSV und erzeugt daraus **alle** abgeleiteten Artefakte (Metadaten, JSON-LD-Strukturdaten, Sitemap, llms.txt, llms-full.txt, ai-search.json). Die CSV ist damit die einzige Quelle der Wahrheit.
 - Recherche-Enrichment: `scripts/apply-enrichment.mjs` — spielt einen Recherche-Payload (`scripts/enrichment-2026.json`: Feld-Aenderungen + neue Geraete inkl. Quellenangaben) in die CSV ein; danach `npm run data:generate` ausfuehren.
 - Herstellerbild-Enrichment: `scripts/enrich-manufacturer-images.mjs`
@@ -101,7 +101,7 @@ Fuer bessere Auffindbarkeit in Suchmaschinen und LLM-basierten Suchsystemen sind
   - OpenGraph (mit absoluter Bild-URL, Groesse, `site_name`, `locale:alternate`) + Twitter Cards
   - JSON-LD (`WebSite`, `CollectionPage`, `Dataset`, **`ItemList` mit allen Produkten als `Product`**)
 - **Statische Einzelseiten** (aus der CSV generiert, `scripts/lib/render-pages.mjs`):
-  - `public/modelle/<slug>.html` — eine eigenstaendige, crawlbare Detailseite pro Modell mit allen Specs, Lifecycle, JSON-LD `Product` + `BreadcrumbList`, interner Verlinkung (Hersteller/Kategorie) und Deep-Links in die Vergleichs-App
+  - `public/<brand>/<model>/index.html` — eine eigenstaendige, crawlbare Detailseite pro Modell unter sprechender URL (z. B. `/xreal/one-pro/`) mit allen Specs, Lifecycle, JSON-LD `Product` + `BreadcrumbList`, interner Verlinkung (Hersteller/Kategorie) und Deep-Links in die Vergleichs-App. Alte `public/modelle/<slug>.html` bleiben als Redirect-Stubs (canonical + Meta-Refresh) erhalten.
   - `public/modelle/index.html` — A–Z-Modell-Hub gruppiert nach Hersteller
   - `public/glossar.html` — Glossar + FAQ mit JSON-LD `FAQPage` + `DefinedTermSet`
 - Build-Time-Injektion via Vite-Plugin (`vite.config.js`):

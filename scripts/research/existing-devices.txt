@@ -15,6 +15,7 @@ Apple Vision Pro | Apple
 Asus AirVision M1 | Asus
 Atheer AiR Glasses | Atheer
 Augmedics xvision Spine System | Augmedics
+BIEL Smartgaze | Biel Glasses
 Beyeonics One | Beyeonics Vision (Elbit Systems)
 Bigscreen Beyond 2 | Bigscreen
 Bigscreen Beyond 2e | Bigscreen
@@ -46,6 +47,7 @@ Even Realities G2 | Even Realities
 Everysight Maverick AI Pro | Everysight
 Everysight Raptor | Everysight
 FOVE 0 | FOVE
+Firefly Dimension | Firefly Dimension
 Focals by North | North (ehem. Thalmic Labs)
 Form Smart Swim 2 | FORM
 Fujitsu Ubiquitousware Head Mounted Display | Fujitsu
@@ -67,6 +69,7 @@ HTC Vive Pro | HTC
 HTC Vive XR Elite | HTC
 HTC Vive | HTC
 Halliday | Halliday
+HoloKit X | HoloKit
 Honor Vision Glass | Honor
 Huawei VR Glass 6DoF | Huawei
 Huawei VR Glass | Huawei
@@ -94,6 +97,8 @@ Lenovo Legion Glasses | Lenovo
 Lenovo ThinkReality A3 | Lenovo
 Lenovo ThinkReality A6 | Lenovo
 Lenovo ThinkReality VRX | Lenovo
+Longan Vision Fusion Vision System (FVS) | Longan Vision Corp
+LusoVU EyeSpeak | LusoVU
 Lynx R-1 | Lynx
 MAD Gaze Glow Plus | MAD Gaze
 MAD Gaze Vader | MAD Gaze
@@ -117,6 +122,7 @@ Microsoft IVAS | Microsoft
 Nimo | Nimo Planet
 Nolo Sonic | Nolo
 Nolo VR Glass | Nolo
+Norm Glasses | Human Capable
 Nreal Air | Nreal
 Nreal Light | Nreal
 NuEyes Pro 3e | NuEyes
@@ -129,6 +135,7 @@ Oculus Rift (CV1) | Meta
 Oculus Rift DK2 | Meta
 Oculus Rift S | Meta
 Oppo Air Glass | Oppo
+Ostloong LYRA | Ostloong Innovations
 P&C Solution METALENSE | P&C Solution
 Pico 4 Ultra | Pico
 Pico 4 | Pico
@@ -239,6 +246,7 @@ Vuzix M400C | Vuzix
 Vuzix Shield | Vuzix
 Vuzix Z100 | Vuzix
 X by Xreal a01 | Xreal
+XRAI AR2 | XRAI Glass
 XYZ Atom | XYZ Reality
 Xiaomi Mijia | Xiaomi
 Xiaomi Smart Glasses | Xiaomi
@@ -253,6 +261,8 @@ Xreal One | Xreal
 Xreal Project Aura | Xreal
 YVR 1 | YVR
 YVR 2 | YVR
+Youbiquo Leonardo | Youbiquo
 arpara Tethered 5K | arpara
+iGlass iAR-Glass | iGlass USA
 iQIYI Qiyu 3 | iQIYI
 iQIYI Qiyu Dream | iQIYI

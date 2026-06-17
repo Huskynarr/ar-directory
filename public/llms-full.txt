@@ -1,7 +1,7 @@
 # AR/XR Brillen Vergleich – Vollindex
 
 Maschinenlesbarer Volldatensatz aller gelisteten AR/XR-Brillen. Sprache: de-DE. Quelle: https://ar-directory.huskynarr.de/
-Stand: 2026-06-17 | 268 Modelle (183 AR, 85 XR) | 114 Hersteller
+Stand: 2026-06-17 | 321 Modelle (225 AR, 96 XR) | 145 Hersteller
 
 Felder pro Modell: Hersteller, Kategorie, Release/Ankuendigung, Preis (USD), Display, Optik, FOV (H/V/D in Grad),
 Aufloesung pro Auge, Refresh (Hz), Gewicht (g), Tracking, Eye-/Hand-Tracking, Passthrough, Software, Recheneinheit,
@@ -137,6 +137,32 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Verfügbar seit Januar 2024; monatliches Abonnement-Modell mit Hardware, Software und Support.
 - Offizielle Seite: https://almer.com/almer-arc2/
 
+## Anduril EagleEye (Anduril Industries)
+- Kategorie: AR
+- Angekuendigt: 2025-10-13 | Release: k. A.
+- Preis: k. A.
+- Display: Unklar | Optik: Optisch transparentes Panel (Tag) + digitales Nachtsicht-Fusion (Nacht)
+- FOV (H/V/D Grad): 200 / 100 / –
+- Aufloesung pro Auge: Unklar | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: Inside-out | Eye-Tracking: Unklar | Hand-Tracking: Unklar | Passthrough: Optisches See-through (Tag) und digitale Nachtsicht (IR-Fusion)
+- Software: Lattice (SBMC-Architecture) | Recheneinheit: Standalone
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Nein – Modulares KI-gestuetztes Soldaten-MR-Headset (Nachfolger des Microsoft-IVAS-Programms / Soldier Borne Mission Command); erste Auslieferung an die US-Army fuer 2026 geplant, noch nicht im freien Vertrieb.
+- Offizielle Seite: https://www.anduril.com/eagleeye
+
+## AntVR Mix (AntVR)
+- Kategorie: AR
+- Angekuendigt: 2018-05-15 | Release: 2018
+- Preis: 500 USD
+- Display: LCD | Optik: Dual-Channel Mixed Optics (Freeform)
+- FOV (H/V/D Grad): 82.9 / – / 96.1
+- Aufloesung pro Auge: 1200x1200 | Refresh: 90 Hz
+- Gewicht: 130 g
+- Tracking: 6DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisches See-through (AR-Visier), abnehmbares VR-Visier
+- Software: SteamVR-kompatibel | Recheneinheit: Tethered
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Per Kickstarter (2018) finanzierte kompakte AR-Brille mit grossem 96-Grad-FOV und abnehmbarem VR-Visier, nicht mehr vertrieben.
+- Offizielle Seite: https://www.antvr.com/
+
 ## Apple Vision Pro (Apple)
 - Kategorie: XR
 - Angekuendigt: 2023-06-05 | Release: 2024-02-02
@@ -240,6 +266,32 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: xvision Spine Navigation | Recheneinheit: Tethered
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – FDA-zugelassenes chirurgisches AR-Headset für Wirbelsäulenchirurgie; Nachfolger X2 erhielt 2025 FDA-Freigabe.
 - Offizielle Seite: https://augmedics.com/xvision/
+
+## Avegant Glyph (Avegant)
+- Kategorie: AR
+- Angekuendigt: 2014-01-06 | Release: 2016
+- Preis: 499 USD
+- Display: DLP (Virtual Retinal Display) | Optik: Retinal Imaging (Mikrospiegel-Array)
+- FOV (H/V/D Grad): 40 / – / –
+- Aufloesung pro Auge: 1280x720 | Refresh: 60 Hz
+- Gewicht: k. A.
+- Tracking: 3DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
+- Software: Eigenes Media-Playback (HDMI-Eingang) | Recheneinheit: Tethered
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Per Kickstarter (2014) finanziertes Medien-Headset mit Retinal-Projektion, 2016 ausgeliefert, inzwischen eingestellt.
+- Offizielle Seite: https://www.avegant.com/
+
+## BAE Systems Striker II (BAE Systems)
+- Kategorie: AR
+- Angekuendigt: 2016 | Release: k. A.
+- Preis: k. A.
+- Display: Vollfarb-Display | Optik: Visor-projiziert (binokular)
+- FOV (H/V/D Grad): – / – / 40
+- Aufloesung pro Auge: Unklar | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: Head-Tracking (Magnetic/Optical) | Eye-Tracking: Unklar | Hand-Tracking: Nein | Passthrough: Optischer Visor + digitale Nachtsicht (ISIE-11 EBAPS-Sensor), Distributed-Aperture-Durchsicht
+- Software: Proprietaer (Avionik) | Recheneinheit: Tethered
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Digitales Helm-Display fuer Kampfjets (u.a. Eurofighter Typhoon) mit Vollfarb-Tageslichtanzeige und integrierter Nachtsicht; Produktionsauftrag 2024 erteilt.
+- Offizielle Seite: https://www.baesystems.com/en-us/product/striker-ii-digital-helmet-mounted-display
 
 ## Beyeonics One (Beyeonics Vision (Elbit Systems))
 - Kategorie: AR
@@ -345,6 +397,32 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Keine eindeutige EOL-Angabe in den Quelldaten.
 - Offizielle Seite: https://www.brilliantmonocle.com/monocle
 
+## Brother AiRScouter WD-200B (Brother)
+- Kategorie: AR
+- Angekuendigt: 2016 | Release: 2016
+- Preis: k. A.
+- Display: LCD | Optik: Unklar
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: 1280x720 | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Monokular, ein Auge frei (See-around)
+- Software: Via Host-Geraet (Video-In) | Recheneinheit: PC
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Monokulares 720p-Head-Mounted-Display mit HDMI-Eingang, virtuelle Bildgroesse ca. 13-Zoll-Monitor; Vorgaenger des WD-300C.
+- Offizielle Seite: https://www.brother-usa.com/products/wd200b
+
+## Brother AiRScouter WD-300C (Brother)
+- Kategorie: AR
+- Angekuendigt: 2017 | Release: 2017-11
+- Preis: 599 USD
+- Display: LCD | Optik: Unklar
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: 1280x720 | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Monokular, ein Auge frei (See-around)
+- Software: Via Host-Geraet (Video-In) | Recheneinheit: PC
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – 2017 erschienenes monokulares Head-Mounted-Display mit 720p-LCD und HDMI-Eingang, u.a. fuer Drohnen- und Gimbal-Monitoring.
+- Offizielle Seite: https://www.brother-usa.com/products/wd300c
+
 ## Campfire Headset (Campfire)
 - Kategorie: AR
 - Angekuendigt: 2021-04-27 | Release: 2023-05-16
@@ -358,6 +436,45 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Keine eindeutige EOL-Angabe in den Quelldaten.
 - Offizielle Seite: https://www.campfire3d.com/
 
+## Canon MREAL Display MD-20 (Canon)
+- Kategorie: XR
+- Angekuendigt: 2020-02 | Release: 2020
+- Preis: k. A.
+- Display: Unklar | Optik: Unklar
+- FOV (H/V/D Grad): 70 / 40 / –
+- Aufloesung pro Auge: 2560x1600 | Refresh: k. A.
+- Gewicht: 640 g
+- Tracking: 6DoF | Eye-Tracking: Unklar | Hand-Tracking: Unklar | Passthrough: Video-See-through (Stereokameras)
+- Software: MREAL Platform | Recheneinheit: PC
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – 2020 vorgestelltes Mixed-Reality-Headset mit Video-See-through, 70 Grad horizontalem FOV und nur 640 g; Nachfolger des MD-10.
+- Offizielle Seite: k. A.
+
+## Canon MREAL MD-10 (Canon)
+- Kategorie: XR
+- Angekuendigt: 2016 | Release: 2016
+- Preis: 82300 USD
+- Display: Unklar | Optik: Unklar
+- FOV (H/V/D Grad): 60 / 40 / –
+- Aufloesung pro Auge: 1920x1200 | Refresh: 54 Hz
+- Gewicht: 1040 g
+- Tracking: 6DoF | Eye-Tracking: Unklar | Hand-Tracking: Unklar | Passthrough: Video-See-through (Stereokameras)
+- Software: MREAL Platform | Recheneinheit: PC
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – 2016 eingefuehrtes Mixed-Reality-Headset von Canon mit Video-See-through; durch das leichtere MD-20 abgeloest.
+- Offizielle Seite: k. A.
+
+## Canon MREAL S1 (Canon)
+- Kategorie: XR
+- Angekuendigt: 2021-01 | Release: 2021
+- Preis: 38400 USD
+- Display: Unklar | Optik: Unklar
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: Unklar | Refresh: k. A.
+- Gewicht: 137 g
+- Tracking: 6DoF | Eye-Tracking: Unklar | Hand-Tracking: Unklar | Passthrough: Video-See-through (Stereokameras)
+- Software: MREAL Platform | Recheneinheit: PC
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – 2021 vorgestelltes, mit 137 g bisher leichtestes Canon-MR-Headset; Video-See-through-MR fuer mobile Workstations, ca. 38.400 USD inkl. Software.
+- Offizielle Seite: k. A.
+
 ## Captify Pro (Captify)
 - Kategorie: AR
 - Angekuendigt: 2025-01 | Release: 2025
@@ -370,6 +487,58 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: Captify Glass App (iOS/Android) | Recheneinheit: Smartphone
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Untertitel-Brille für Hörgeschädigte mit binokularem Display und Echtzeit-Transkription in 40+ Sprachen.
 - Offizielle Seite: https://captify.glass/products/captify-pro
+
+## Carl Zeiss Cinemizer OLED (Carl Zeiss)
+- Kategorie: AR
+- Angekuendigt: 2011 | Release: 2012
+- Preis: 749 USD
+- Display: OLED | Optik: Linsenoptik (Sichtbrille)
+- FOV (H/V/D Grad): 30 / – / –
+- Aufloesung pro Auge: 870x500 | Refresh: 60 Hz
+- Gewicht: 120 g
+- Tracking: 3DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
+- Software: Media-Playback (HDMI/analog Video) | Recheneinheit: Tethered
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Video-Brille von 2012, beliebt fuer FPV-Drohnen, laengst eingestellt.
+- Offizielle Seite: https://www.zeiss.com/
+
+## castAR (Technical Illusions)
+- Kategorie: AR
+- Angekuendigt: 2013 | Release: 2016
+- Preis: 400 USD
+- Display: DLP (Mikroprojektor) | Optik: Projektion auf retroreflektierende Oberflaeche
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: 1280x720 | Refresh: 120 Hz
+- Gewicht: 100 g
+- Tracking: 6DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisches See-through (Projektionsbrille)
+- Software: Eigene Plattform (PC) | Recheneinheit: Tethered
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Per Kickstarter (2013) finanzierte AR-Projektionsbrille mit retroreflektierender Matte; Vorserien an Backer geliefert, Firma 2017 geschlossen.
+- Offizielle Seite: k. A.
+
+## Cinera (Gen 1) (Cinera)
+- Kategorie: AR
+- Angekuendigt: 2017 | Release: 2017
+- Preis: 599 USD
+- Display: LCD | Optik: Linsenoptik (Personal Cinema)
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: 2560x1440 | Refresh: 60 Hz
+- Gewicht: k. A.
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
+- Software: Media-Playback (HDMI-Eingang) | Recheneinheit: Tethered
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Erste per Kickstarter (>300k USD) finanzierte Cinera-Personal-Cinema-Brille mit zwei 2,5K-Displays, 2017 ausgeliefert.
+- Offizielle Seite: https://www.cinera.tv/
+
+## Cinera Edge (Cinera)
+- Kategorie: AR
+- Angekuendigt: 2020-06-30 | Release: 2021
+- Preis: 599 USD
+- Display: Micro-OLED | Optik: Linsenoptik (Personal Cinema)
+- FOV (H/V/D Grad): 66 / – / –
+- Aufloesung pro Auge: 2560x1440 | Refresh: 60 Hz
+- Gewicht: k. A.
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
+- Software: Media-Playback (HDMI-Eingang) | Recheneinheit: Tethered
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Per Kickstarter (1,3 Mio. USD) finanziertes Personal-Cinema-HMD mit Dolby-Digital-5.1, ab 2021 an Backer ausgeliefert.
+- Offizielle Seite: https://www.cinera.tv/
 
 ## Cosmo Vision (Cosmo Connected)
 - Kategorie: AR
@@ -422,6 +591,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: Qualcomm Snapdragon XR2 OS | Recheneinheit: Standalone
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Enterprise AR headset; actively sold 2026 with Google Cloud partnership
 - Offizielle Seite: https://www.digilens.com/argo/
+
+## Dlodlo Glass V1 (Dlodlo)
+- Kategorie: XR
+- Angekuendigt: 2016-08-08 | Release: 2017
+- Preis: k. A.
+- Display: OLED | Optik: Pancake-aehnliche Kompaktoptik
+- FOV (H/V/D Grad): 105 / – / –
+- Aufloesung pro Auge: 1200x1200 | Refresh: 90 Hz
+- Gewicht: 88 g
+- Tracking: 3DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
+- Software: Eigene Plattform (mit D1-Recheneinheit) | Recheneinheit: Tethered
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Als weltweit erste brillenfoermige Consumer-VR-Brille beworben (88 g), kaum verbreitet und laengst eingestellt.
+- Offizielle Seite: https://dlodlo.com/en
 
 ## DPVR E4 (DPVR)
 - Kategorie: XR
@@ -514,6 +696,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Keine eindeutige EOL-Angabe in den Quelldaten.
 - Offizielle Seite: https://www.dreamworldvision.com/lead-lead-pro
 
+## Elbit IronVision (Elbit Systems)
+- Kategorie: AR
+- Angekuendigt: 2016-06 | Release: k. A.
+- Preis: k. A.
+- Display: Vollfarb-Display | Optik: Visor-projiziert (biokular)
+- FOV (H/V/D Grad): 360 / – / –
+- Aufloesung pro Auge: Unklar | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: Head-Tracking | Eye-Tracking: Unklar | Hand-Tracking: Nein | Passthrough: Video-Durchsicht (Zero-Latency HD, 360 Grad konform)
+- Software: Proprietaer (mit ARTIST AR-Training) | Recheneinheit: Tethered
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Helm-Display fuer gepanzerte Fahrzeuge, das mit Zero-Latency-Video ein 'Durchsehen' durch die Panzerung in HD-Vollfarbe ermoeglicht; aktiv vermarktet.
+- Offizielle Seite: https://www.elbitsystems.com/air-space/aircraft-systems/helmet-mounted-display/ironvision
+
 ## Engo 2 (Engo Eyewear)
 - Kategorie: AR
 - Angekuendigt: 2022-08-04 | Release: 2022-09-01
@@ -553,6 +748,45 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Juni 2019 eingestellt. Nur noch Refurbished-Versionen verfügbar.
 - Offizielle Seite: https://epson.com/For-Work/Wearables/Smart-Glasses/c/w420
 
+## Epson Moverio BT-300 (Epson)
+- Kategorie: AR
+- Angekuendigt: 2016-02-22 | Release: 2016
+- Preis: 699 USD
+- Display: Si-OLED | Optik: Waveguide
+- FOV (H/V/D Grad): – / – / 23
+- Aufloesung pro Auge: 1280x720 | Refresh: k. A.
+- Gewicht: 69 g
+- Tracking: 3DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisch durchsichtig (See-through)
+- Software: Moverio OS (Android-basiert) | Recheneinheit: Standalone
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – 2016 auf dem MWC vorgestellte binokulare See-through-Brille; erstes Moverio-Modell mit Si-OLED, inzwischen durch BT-40/BT-45 abgeloest.
+- Offizielle Seite: https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-300-Smart-Glasses-(AR-Developer-Edition)-/p/V11H756020
+
+## Epson Moverio BT-30C (Epson)
+- Kategorie: AR
+- Angekuendigt: 2019 | Release: 2019
+- Preis: 499 USD
+- Display: Si-OLED | Optik: Waveguide
+- FOV (H/V/D Grad): – / – / 23
+- Aufloesung pro Auge: 1280x720 | Refresh: k. A.
+- Gewicht: 95 g
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisch durchsichtig (See-through)
+- Software: Via Host-Geraet (Android) | Recheneinheit: Smartphone
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – 2019 erschienene See-through-Brille als reines USB-C-Display fuer Android-Geraete ohne eigenen Controller.
+- Offizielle Seite: https://tech.moverio.epson.com/en/
+
+## Epson Moverio BT-35E (Epson)
+- Kategorie: AR
+- Angekuendigt: 2018-08-08 | Release: 2018
+- Preis: 899 USD
+- Display: Si-OLED | Optik: Waveguide
+- FOV (H/V/D Grad): – / – / 23
+- Aufloesung pro Auge: 1280x720 | Refresh: 30 Hz
+- Gewicht: 69 g
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisch durchsichtig (See-through)
+- Software: Via Host-Geraet | Recheneinheit: PC
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – 2018 vorgestellte Enterprise-See-through-Brille mit HDMI- und USB-C-Eingang als externes Si-OLED-Display.
+- Offizielle Seite: https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-35E-Smart-Glasses/p/V11H935020
+
 ## Epson Moverio BT-40 (Epson)
 - Kategorie: AR
 - Angekuendigt: 2020-12-07 | Release: 2021-03-03
@@ -591,6 +825,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: USB-C-Anbindung an Host-Geraete | Recheneinheit: Tethered
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Enterprise-See-Through-Brille für Remote-Assistance, bei Händlern inzwischen als EOL gelistet.
 - Offizielle Seite: https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-45C-AR-Smart-Glasses/p/V11H970020
+
+## Epson Moverio BT-45CS (Epson)
+- Kategorie: AR
+- Angekuendigt: 2022 | Release: 2022
+- Preis: 999 USD
+- Display: Si-OLED | Optik: Waveguide
+- FOV (H/V/D Grad): – / – / 34
+- Aufloesung pro Auge: 1920x1080 | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisch durchsichtig (See-through)
+- Software: Via Host-Geraet (Android) | Recheneinheit: Smartphone
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – 2022 eingefuehrte binokulare Enterprise-See-through-Brille mit Full-HD-Si-OLED und 34 Grad FOV fuer Wartung und Schulung.
+- Offizielle Seite: https://epson.com/For-Work/Wearables/Smart-Glasses/Moverio-BT-45CS-AR-Smart-Glasses/p/V11H970120
 
 ## Even Realities G1 (Even Realities)
 - Kategorie: AR
@@ -643,6 +890,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: Android 5.1.1 | Recheneinheit: Standalone
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Durch Maverick AR-Brille (Kickstarter Q4 2026) ersetzt; Raptor nicht mehr beworben.
 - Offizielle Seite: https://everysight.com/about-raptor/
+
+## F-35 Gen III HMDS (Collins Elbit Vision Systems)
+- Kategorie: AR
+- Angekuendigt: k. A. | Release: k. A.
+- Preis: 400000 USD
+- Display: Vollfarb-Display | Optik: Visor-projiziert (biokular)
+- FOV (H/V/D Grad): 40 / 30 / –
+- Aufloesung pro Auge: Unklar | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: Head-Tracking | Eye-Tracking: Unklar | Hand-Tracking: Nein | Passthrough: Distributed-Aperture-System ('Durchsehen' durch das Flugzeug, 360 Grad), integrierte digitale Nachtsicht
+- Software: Proprietaer (Avionik) | Recheneinheit: Tethered
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Helm-Display-System fuer den Kampfjet F-35; ueber 3.000 Einheiten ausgeliefert, weiterhin in Produktion. Stueckpreis ca. 400.000 USD laut oeffentlichen Berichten.
+- Offizielle Seite: https://www.elbitamerica.com/helmet-systems
 
 ## Firefly Dimension (Firefly Dimension)
 - Kategorie: AR
@@ -774,6 +1034,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Leichte Open-View-Videobrille mit 110-Zoll-Virtualbild für Multitasking.
 - Offizielle Seite: https://www.goovis.com/products/art
 
+## GOOVIS G2 (GOOVIS)
+- Kategorie: AR
+- Angekuendigt: 2019 | Release: 2019
+- Preis: 899 USD
+- Display: Micro-OLED | Optik: Linsenoptik (Personal Cinema)
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: 1920x1080 | Refresh: 60 Hz
+- Gewicht: 200 g
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
+- Software: Media-Playback (HDMI/USB-C-Eingang) | Recheneinheit: Tethered
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Personal-Cinema-HMD mit zwei Sony-Full-HD-Micro-OLED-Displays, durch G3-Generation abgeloest.
+- Offizielle Seite: https://www.goovis.com/
+
 ## GOOVIS G3 Max (GOOVIS)
 - Kategorie: XR
 - Angekuendigt: 2023 | Release: 2023-06-27
@@ -786,6 +1059,32 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: Plug-and-Play (HDMI/USB-C-Zuspieler) | Recheneinheit: Phone
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Persönliches Kino-HMD des Shenzhener Herstellers GOOVIS, Launch Juni 2023 für 799 USD (später 1299 USD UVP).
 - Offizielle Seite: https://www.goovis.com/products/goovis-g3max
+
+## GOOVIS Young (T2) (GOOVIS)
+- Kategorie: AR
+- Angekuendigt: 2021 | Release: 2021
+- Preis: 499 USD
+- Display: Micro-OLED | Optik: Linsenoptik (Personal Cinema)
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: 1920x1080 | Refresh: 60 Hz
+- Gewicht: k. A.
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
+- Software: Media-Playback (HDMI/USB-C-Eingang) | Recheneinheit: Tethered
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Personal-Cinema-HMD mit zwei Sony-Micro-OLED-Displays, als Einsteigermodell der GOOVIS-Reihe vertrieben.
+- Offizielle Seite: https://goovis.net/products/t2black
+
+## Grawoow G530 (Grawoow)
+- Kategorie: AR
+- Angekuendigt: 2023 | Release: 2023
+- Preis: k. A.
+- Display: Micro-OLED | Optik: Birdbath
+- FOV (H/V/D Grad): – / – / 46
+- Aufloesung pro Auge: Unklar | Refresh: k. A.
+- Gewicht: 90 g
+- Tracking: 6DoF | Eye-Tracking: Nein | Hand-Tracking: Unklar | Passthrough: Optisches See-through
+- Software: Android-basiert | Recheneinheit: Standalone
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Leichte (90 g) AR-Brille mit Micro-OLED-Display und 6DoF-/Objekttracking, iF-Design-ausgezeichnet.
+- Offizielle Seite: https://www.grawoow.com/
 
 ## Guangli Holoswim (Guangli)
 - Kategorie: AR
@@ -891,6 +1190,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Modulares PC-VR-Headset mit Inside-out-Tracking, inzwischen eingestellt.
 - Offizielle Seite: https://www.vive.com/
 
+## HTC Vive Cosmos Elite (HTC)
+- Kategorie: XR
+- Angekuendigt: 2020-02 | Release: 2020-03
+- Preis: 899 USD
+- Display: LCD | Optik: Fresnel
+- FOV (H/V/D Grad): – / – / 110
+- Aufloesung pro Auge: 1440x1700 | Refresh: 90 Hz
+- Gewicht: k. A.
+- Tracking: 6DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Frontkameras
+- Software: SteamVR / Viveport | Recheneinheit: PC
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – 2020 erschienene Cosmos-Variante mit externer Tracking-Faceplate und SteamVR-Basisstationen statt Inside-out-Tracking.
+- Offizielle Seite: https://www.vive.com/sea/product/vive-cosmos-elite/specs/
+
 ## HTC Vive Flow (HTC)
 - Kategorie: XR
 - Angekuendigt: 2021-10-14 | Release: 2021-11
@@ -955,6 +1267,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: SteamVR | Recheneinheit: PC
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – PC-VR-Headset mit 5K-Auflösung; Full Kit mit Basisstationen kostete 1399 USD.
 - Offizielle Seite: https://www.vive.com/us/product/vive-pro2/overview/
+
+## HTC Vive Pro Eye (HTC)
+- Kategorie: XR
+- Angekuendigt: 2019-01 | Release: 2019-06-06
+- Preis: 1599 USD
+- Display: OLED | Optik: Fresnel
+- FOV (H/V/D Grad): – / – / 98
+- Aufloesung pro Auge: 1440x1600 | Refresh: 90 Hz
+- Gewicht: k. A.
+- Tracking: 6DoF | Eye-Tracking: Ja | Hand-Tracking: Nein | Passthrough: Frontkamera (graustufig)
+- Software: SteamVR / Viveport | Recheneinheit: PC
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – 2019 erschienene Enterprise-VR-Variante der Vive Pro mit integriertem Tobii-Eye-Tracking; benoetigt externe Basisstationen.
+- Offizielle Seite: https://www.htc.com/us/newsroom/2019-06-06/
 
 ## HTC Vive XR Elite (HTC)
 - Kategorie: XR
@@ -1112,6 +1437,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Launch Oktober 2025 in China für 2999 CNY (~420 USD umgerechnet), binokulares Display mit Wechselakku-System.
 - Offizielle Seite: https://www.inmoxr.com/pages/inmo-go3-ai-glasses
 
+## Intel Vaunt (Intel)
+- Kategorie: AR
+- Angekuendigt: 2018-02-05 | Release: k. A.
+- Preis: k. A.
+- Display: VCSEL-Laser (Retinalprojektion) | Optik: Holographischer Reflektor (Retinalprojektion)
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: 400x150 | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisches See-through (Brille)
+- Software: Smartphone-Begleit-App (Prototyp) | Recheneinheit: Smartphone
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Prototyp einer unauffaelligen Datenbrille mit VCSEL-Retinalprojektion; Intel stellte das Projekt im April 2018 ein.
+- Offizielle Seite: k. A.
+
 ## iQIYI Qiyu 3 (iQIYI)
 - Kategorie: XR
 - Angekuendigt: 2021-08 | Release: 2021-09-03
@@ -1164,6 +1502,32 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Verfügbar; nächste Generation Safety-zertifizierten Smart Glasses mit USB-C Tethering.
 - Offizielle Seite: https://shop.iristick.com/products/iristick-g3
 
+## Jorjin J-Reality J7EF (Jorjin Technologies)
+- Kategorie: AR
+- Angekuendigt: 2020-10 | Release: 2020-12
+- Preis: k. A.
+- Display: Si-OLED | Optik: Waveguide
+- FOV (H/V/D Grad): 34 / – / –
+- Aufloesung pro Auge: 1920x1080 | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: 3DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisch durchsichtig (See-through)
+- Software: Android | Recheneinheit: Smartphone
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – 2020 vorgestellte binokulare AR-Brille; laut Jorjin weltweit erstes Produkt mit Epsons neuer Hochleistungs-Optik, Snapdragon-XR1-Controller.
+- Offizielle Seite: https://www.jorjin.com/
+
+## Jorjin J-Reality J7EF Plus (Jorjin Technologies)
+- Kategorie: AR
+- Angekuendigt: 2021 | Release: 2021
+- Preis: k. A.
+- Display: Si-OLED | Optik: Waveguide
+- FOV (H/V/D Grad): 34 / – / –
+- Aufloesung pro Auge: 1920x1080 | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: 3DoF | Eye-Tracking: Nein | Hand-Tracking: Ja (Gestensteuerung, 6 Richtungen) | Passthrough: Optisch durchsichtig (See-through)
+- Software: Android | Recheneinheit: Smartphone
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Erweiterte Variante des J7EF mit Gestensteuerung in sechs Richtungen und optionalem ToF-Sensor; Full-HD-See-through-AR.
+- Offizielle Seite: https://www.jorjin.com/products/ar-vr-glasses/j-reality/j7ef-plus/
+
 ## Julbo EVAD-1 (Julbo)
 - Kategorie: AR
 - Angekuendigt: 2020-09-21 | Release: 2020-09-21
@@ -1189,6 +1553,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: AIRe Workflow | Recheneinheit: Standalone
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Industrie-AR-Brille mit transparentem Display und hot-swap 7h-Akku; zunächst in DE/AT/CZ eingeführt.
 - Offizielle Seite: https://thearea.org/ar-news/konica-minolta-develops-ar-glasses-for-industrial-environments/
+
+## Kopin Golden-i Infinity (Kopin)
+- Kategorie: AR
+- Angekuendigt: 2018-05 | Release: 2018
+- Preis: 899 USD
+- Display: Microdisplay | Optik: Monokular
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: 854x480 | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: 9-Achsen Head-tracking | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein (monokulares Display)
+- Software: Android/Windows Host (Voice UI) | Recheneinheit: Tethered
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Sprachgesteuertes monokulares Wearable-Display fuer Smartphones/Tablets; nicht mehr aktiv vertrieben, Kopin fokussiert auf Komponenten.
+- Offizielle Seite: https://www.kopin.com/
 
 ## Kopin Solos (Kopin / Solos)
 - Kategorie: AR
@@ -1346,6 +1723,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Standalone-Enterprise-Headset mit Farb-Passthrough für Training und Kollaboration.
 - Offizielle Seite: https://www.lenovo.com/us/en/p/smart-devices/virtual-reality/thinkreality-vrx/len101r0001
 
+## LG 360 VR (LG)
+- Kategorie: XR
+- Angekuendigt: 2016-02 | Release: 2016
+- Preis: 200 USD
+- Display: OLED | Optik: Unklar
+- FOV (H/V/D Grad): 80 / – / –
+- Aufloesung pro Auge: 920x720 | Refresh: 60 Hz
+- Gewicht: 116 g
+- Tracking: 3DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
+- Software: Via LG G5 (Android) | Recheneinheit: Smartphone
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – 2016 erschienenes kompaktes, per USB-C an das LG G5 angebundenes VR-Headset mit zwei 1080p-OLED-Panels; nur 116 g.
+- Offizielle Seite: https://www.lg.com/us/mobile-accessories/lg-lgr100avrzts-360-vr
+
 ## Longan Vision Fusion Vision System (FVS) (Longan Vision Corp)
 - Kategorie: AR
 - Angekuendigt: 2020 | Release: Unklar
@@ -1358,6 +1748,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: FVS Modi (Graustufen, RGB, Fusion, Edge Detection, Hotspot, Digitalzoom) | Recheneinheit: Standalone
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Helmmontiertes AR-Display fuer Feuerwehrleute, das Waermebildvideo ins Sichtfeld einblendet; kompatibel mit gaengiger SCBA-Schutzausruestung.
 - Offizielle Seite: https://www.longanvision.com/products
+
+## LUCI immers (LUCI)
+- Kategorie: AR
+- Angekuendigt: 2019-03 | Release: 2019
+- Preis: 649 USD
+- Display: Micro-OLED | Optik: Linsenoptik (Personal Cinema)
+- FOV (H/V/D Grad): 70 / – / –
+- Aufloesung pro Auge: 1920x1080 | Refresh: 60 Hz
+- Gewicht: 180 g
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
+- Software: Media-Playback (USB-C/HDMI-Eingang) | Recheneinheit: Tethered
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Per Indiegogo finanzierte Personal-Cinema-Brille mit zwei Sony-Micro-OLED-Displays, nicht mehr aktiv vertrieben.
+- Offizielle Seite: https://www.lucidisplay.com/
 
 ## LusoVU EyeSpeak (LusoVU)
 - Kategorie: AR
@@ -1449,6 +1852,32 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: k. A. | Recheneinheit: Standalone
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Keine eindeutige EOL-Angabe in den Quelldaten.
 - Offizielle Seite: https://www.magicleap.com/en-us/magic-leap-2
+
+## MAXST AR Glasses (MAXST)
+- Kategorie: AR
+- Angekuendigt: 2022-12-27 | Release: Unklar
+- Preis: k. A.
+- Display: Unklar | Optik: Unklar
+- FOV (H/V/D Grad): 40 / – / –
+- Aufloesung pro Auge: Unklar | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: 6DoF | Eye-Tracking: Unklar | Hand-Tracking: Unklar | Passthrough: Optisch durchsichtig (See-through)
+- Software: MAXVERSE / MAXST AR SDK | Recheneinheit: Tethered
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Unklar – Auf der CES 2023 gezeigte tethered AR-Brille des koreanischen Anbieters MAXST mit unter 100 g, 40 Grad FOV und integriertem Sensor-Fusion-SLAM.
+- Offizielle Seite: https://www.maxst.com/
+
+## MediThinQ Scopeye (MediThinQ)
+- Kategorie: XR
+- Angekuendigt: 2024-02 | Release: 2024
+- Preis: k. A.
+- Display: Unklar | Optik: See-through (Glas direkt vor den Augen)
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: 1920x1080 | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: Unklar | Eye-Tracking: Unklar | Hand-Tracking: Unklar | Passthrough: See-through mit 3D- und Flip-View-Funktion
+- Software: Proprietaer (3D Scopeye Solution) | Recheneinheit: Tethered
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Chirurgisches Head-Mounted-Display, das mit Medtronic global vermarktet wird und 3D-Bildgebung direkt vor die Augen des Operateurs projiziert.
+- Offizielle Seite: https://medithinq.com/scopeye/
 
 ## Meizu MYVU (Meizu)
 - Kategorie: AR
@@ -1593,6 +2022,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Keine eindeutige EOL-Angabe in den Quelldaten.
 - Offizielle Seite: https://www.meta.com/ai-glasses/meta-ray-ban-display/
 
+## MicroOptical SV-6 (MicroOptical)
+- Kategorie: AR
+- Angekuendigt: 2003-06-16 | Release: 2003
+- Preis: 1995 USD
+- Display: LCD-Microdisplay | Optik: Monokulares See-through-Display
+- FOV (H/V/D Grad): 20 / – / –
+- Aufloesung pro Auge: 640x480 | Refresh: k. A.
+- Gewicht: 35 g
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisches See-through (Brille)
+- Software: VGA-Zweitmonitor (Windows) | Recheneinheit: Tethered
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Eines der ersten brillenmontierten Displays fuer mobile PCs (2003), laengst eingestellt.
+- Offizielle Seite: k. A.
+
 ## Microsoft HoloLens 1 (Microsoft)
 - Kategorie: AR
 - Angekuendigt: 2015-01-21 | Release: 2016-03-30
@@ -1631,6 +2073,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: IVAS (Windows/HoloLens-basiert) | Recheneinheit: Standalone
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Militärisches HoloLens-basiertes AR-System der US Army; Variante 1.2 mit 60-Grad-FOV ab 2023 ausgeliefert.
 - Offizielle Seite: https://en.wikipedia.org/wiki/Integrated_Visual_Augmentation_System
+
+## Mira Prism (Mira)
+- Kategorie: AR
+- Angekuendigt: 2017-07-18 | Release: 2017
+- Preis: 99 USD
+- Display: Reflektiert vom Smartphone-Display | Optik: Reflektor/Combiner (Spiegel)
+- FOV (H/V/D Grad): 60 / – / –
+- Aufloesung pro Auge: 667x750 | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: 3DoF (Smartphone-Sensoren / Marker) | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisch durchsichtiger Combiner (Smartphone-Bild eingespiegelt)
+- Software: iOS/Android App (Smartphone) | Recheneinheit: Smartphone
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Smartphone-basiertes AR-Headset (iPhone als Display), spaeter Enterprise-/Militaer-Variante Prism Pro; Mira wurde 2023 von Apple uebernommen, Vertrieb eingestellt.
+- Offizielle Seite: https://www.sizescreens.com/mira-prism-specifications/
 
 ## Nimo (Nimo Planet)
 - Kategorie: AR
@@ -1801,6 +2256,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Letztes PC-VR-Headset von Oculus, im April 2021 eingestellt.
 - Offizielle Seite: https://www.meta.com/
 
+## ODG R-6 (Osterhout Design Group)
+- Kategorie: AR
+- Angekuendigt: 2014 | Release: 2014
+- Preis: 4946 USD
+- Display: OLED-Microdisplay | Optik: See-through (Freeform/Beamsplitter)
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: 1280x720 | Refresh: k. A.
+- Gewicht: 125 g
+- Tracking: 3DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisches See-through
+- Software: ReticleOS (Android-basiert) | Recheneinheit: Standalone
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Fruehe binokulare See-through-AR-Brille von ODG (2014), Vorlaeufer der R-7, laengst eingestellt.
+- Offizielle Seite: k. A.
+
 ## ODG R-7 (Osterhout Design Group)
 - Kategorie: AR
 - Angekuendigt: 2015 | Release: 2016
@@ -1813,6 +2281,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: ReticleOS (Android-basiert) | Recheneinheit: Standalone
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Enterprise-AR-Brille; ODG stellte 2019 nach Verkauf der Patente an Magic Leap den Betrieb ein.
 - Offizielle Seite: https://vrarwiki.com/wiki/R-7_Smartglasses
+
+## ODG R-8 (Osterhout Design Group)
+- Kategorie: AR
+- Angekuendigt: 2017-01-03 | Release: 2017
+- Preis: 1000 USD
+- Display: OLED-Microdisplay | Optik: See-through (Freeform/Beamsplitter)
+- FOV (H/V/D Grad): 40 / – / –
+- Aufloesung pro Auge: 1280x720 | Refresh: k. A.
+- Gewicht: 125 g
+- Tracking: 6DoF | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisches See-through
+- Software: ReticleOS (Android 7.0) | Recheneinheit: Standalone
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Auf CES 2017 vorgestellte Consumer-AR-Brille mit Snapdragon 835 und 40-Grad-FOV; ODG stellte 2019 den Betrieb ein.
+- Offizielle Seite: k. A.
 
 ## ODG R-9 (Osterhout Design Group)
 - Kategorie: AR
@@ -1827,6 +2308,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Auf der CES 2017 vorgestellt; ODG stellte 2019 den Geschäftsbetrieb ein.
 - Offizielle Seite: https://vrarwiki.com/wiki/R-9_Smartglasses
 
+## Olympus Eye-Trek FMD-250W (Olympus)
+- Kategorie: AR
+- Angekuendigt: 2000-08-31 | Release: 2000
+- Preis: k. A.
+- Display: LCD | Optik: See-around-Linsenoptik
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: Unklar | Refresh: 60 Hz
+- Gewicht: k. A.
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: See-around-Design (peripheres Sehen erhalten)
+- Software: Reines Video-Display | Recheneinheit: Tethered
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Olympus-Eye-Trek-Videobrille von 2000 im 16:9-Format mit See-around-Design, laengst eingestellt.
+- Offizielle Seite: https://www.olympus-global.com/
+
 ## Oppo Air Glass (Oppo)
 - Kategorie: AR
 - Angekuendigt: 2021-12-14 | Release: 2022-03-03
@@ -1839,6 +2333,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: k. A. | Recheneinheit: Standalone
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Keine eindeutige EOL-Angabe in den Quelldaten.
 - Offizielle Seite: https://www.oppo.com/en/newsroom/press/oppo-air-glass/
+
+## Optinvent ORA-2 (Optinvent)
+- Kategorie: AR
+- Angekuendigt: 2016-03-23 | Release: 2016
+- Preis: 699 USD
+- Display: Unklar | Optik: Waveguide (ORA-Lens, Flip-Vu)
+- FOV (H/V/D Grad): – / – / 24
+- Aufloesung pro Auge: 640x480 | Refresh: k. A.
+- Gewicht: 80 g
+- Tracking: 3DoF (Inertialsensoren) | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein (optische See-through-Anzeige)
+- Software: Android (Standalone) | Recheneinheit: Standalone
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Monokulare Android-Smartglasses mit Flip-Vu-Waveguide; Optinvent vertreibt heute nur noch Optik-Komponenten, Geraet ausgelaufen. Entwickler-Kit lag bei ca. 699 USD.
+- Offizielle Seite: https://www.optinvent.com/our_products/ora-2/
 
 ## Ostloong LYRA (Ostloong Innovations)
 - Kategorie: AR
@@ -1957,6 +2464,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Launchpreis 449 EUR in Europa; Standalone-Headset mit DisplayPort-PC-Anbindung, vom Pico 4 abgelöst.
 - Offizielle Seite: https://www.picoxr.com/global/products/neo3-link/specs
 
+## Pico Project Swan (Pico)
+- Kategorie: XR
+- Angekuendigt: 2026-03-02 | Release: 2026
+- Preis: k. A.
+- Display: Micro-OLED | Optik: Pancake
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: Unklar (ca. 4000 PPI, 40-45 PPD) | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: 6DoF | Eye-Tracking: Ja | Hand-Tracking: Ja | Passthrough: Farb-Passthrough (dedizierter Co-Chip, ca. 12 ms Latenz)
+- Software: Pico OS 6 | Recheneinheit: Standalone
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Nein – Angekuendigt: High-End-MR-Flaggschiff von ByteDance/Pico mit 4000-PPI-Micro-OLED, globaler Marktstart fuer spaeter 2026 vorgesehen.
+- Offizielle Seite: https://www.uploadvr.com/pico-project-swan-official-display-compute-specs-announcement/
+
 ## Pimax Crystal (Pimax)
 - Kategorie: XR
 - Angekuendigt: 2022-11-02 | Release: 2023-05-31
@@ -1995,6 +2515,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: SteamVR | Recheneinheit: PC
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – High-end PC VR mit 130° FOV, 3840x3840 pro Auge, Versand seit April 2025
 - Offizielle Seite: https://pimax.com/products/pimax-crystal-super
+
+## Pimax Crystal Super Micro-OLED (Pimax)
+- Kategorie: XR
+- Angekuendigt: 2026-01-08 | Release: 2026
+- Preis: k. A.
+- Display: Micro-OLED | Optik: Pancake (ConcaveView)
+- FOV (H/V/D Grad): 116 / – / –
+- Aufloesung pro Auge: 3840x3840 | Refresh: 90 Hz
+- Gewicht: k. A.
+- Tracking: Inside-out | Eye-Tracking: Ja | Hand-Tracking: Unklar | Passthrough: Unklar
+- Software: Pimax Play (SteamVR/PCVR) | Recheneinheit: PC
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Nein – Angekuendigt auf der CES 2026: Micro-OLED-Variante des Crystal Super mit Sony-4K-Panels pro Auge; Vorbestellung gestartet, Preis noch offen.
+- Offizielle Seite: https://pimax.com/products/pimax-crystal-super-sony-8k-micro-oled
 
 ## Pimax Dream Air (Pimax)
 - Kategorie: XR
@@ -2060,6 +2593,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: PlayStation VR2 OS | Recheneinheit: PS5 / PC (adapter)
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Keine eindeutige EOL-Angabe in den Quelldaten.
 - Offizielle Seite: https://www.playstation.com/en-us/ps-vr2/
+
+## QD Laser RETISSA Display II (QD Laser)
+- Kategorie: AR
+- Angekuendigt: 2019 | Release: 2019
+- Preis: k. A.
+- Display: Laser-Retinal-Projektion (VRD) | Optik: Retinal Scanning (MEMS)
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: 1280x720 | Refresh: 60 Hz
+- Gewicht: k. A.
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisch durchsichtig (See-through), monokular
+- Software: Via Host-Geraet (Video-In) | Recheneinheit: PC
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – 2019 erschienene Laser-Retinal-Projektionsbrille (VISIRIUM/VRD), die Bilder direkt auf die Netzhaut projiziert; auch fuer Sehbehinderte.
+- Offizielle Seite: https://www.qdlaser.com/en/news/790/
 
 ## RayNeo Air 1S (TCL)
 - Kategorie: AR
@@ -2568,6 +3114,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Ultra-leicht 179g, 4K pro Auge, OLED, Februar-März 2025 Versand
 - Offizielle Seite: https://en.shiftall.net/products/meganex8k
 
+## Six15 ST1 (Six15 Technologies)
+- Kategorie: AR
+- Angekuendigt: 2019-11 | Release: 2019
+- Preis: k. A.
+- Display: Unklar | Optik: See-through
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: 640x400 | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: 9-DOF Head-tracking | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein (optische See-through-Anzeige)
+- Software: Android/Windows Host (ST1 SDK) | Recheneinheit: Tethered
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Industrielles Head-Up-Display, das per USB an Android- oder Windows-Geraete angeschlossen wird und weiterhin vertrieben wird.
+- Offizielle Seite: https://www.six-15.com/
+
 ## Skyworth Pancake 1 (Skyworth)
 - Kategorie: XR
 - Angekuendigt: 2022-07-25 | Release: 2022-09
@@ -2672,6 +3231,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – High-end modular PC VR mit QLED mini-LED, 2880x2880 pro Auge, Open-Source Design
 - Offizielle Seite: https://vrgineers.com/somnium-vr1-vr/
 
+## Sony Glasstron PLM-S700 (Sony)
+- Kategorie: AR
+- Angekuendigt: 1998 | Release: 1998
+- Preis: k. A.
+- Display: LCD | Optik: Linsenoptik, variabel abdunkelbares See-through-Visier
+- FOV (H/V/D Grad): 30 / 22.5 / –
+- Aufloesung pro Auge: 800x600 | Refresh: 60 Hz
+- Gewicht: 120 g
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisches See-through-Visier (abdunkelbar)
+- Software: Reines Video-Display | Recheneinheit: Tethered
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Sony-Glasstron Head-Mounted-Display der spaeten 1990er mit abdunkelbarem Durchsicht-Visier, laengst eingestellt.
+- Offizielle Seite: https://www.sony.com/
+
 ## Sony HMZ-T1 (Sony)
 - Kategorie: XR
 - Angekuendigt: 2011-08-31 | Release: 2011-11-11
@@ -2684,6 +3256,45 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: Keine (HDMI-Bildschirm) | Recheneinheit: Tethered
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Sonys 'Personal 3D Viewer' mit zwei 720p-OLED-Panels, kein Tracking; historischer HMD-Vorläufer, längst eingestellt.
 - Offizielle Seite: https://www.sony.com/
+
+## Sony HMZ-T2 (Sony)
+- Kategorie: AR
+- Angekuendigt: 2012 | Release: 2012
+- Preis: 999 USD
+- Display: OLED | Optik: Linsenoptik (Personal Cinema)
+- FOV (H/V/D Grad): 45 / – / 45
+- Aufloesung pro Auge: 1280x720 | Refresh: 60 Hz
+- Gewicht: 330 g
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
+- Software: Media-Playback (HDMI-Eingang) | Recheneinheit: Tethered
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Zweite Generation des Sony Personal-3D-Viewers mit zwei 0,7-Zoll-OLED-Panels, laengst eingestellt.
+- Offizielle Seite: https://www.sony.com/
+
+## Sony HMZ-T3 (Sony)
+- Kategorie: XR
+- Angekuendigt: 2013-09 | Release: 2013-11
+- Preis: 1300 USD
+- Display: OLED | Optik: Unklar
+- FOV (H/V/D Grad): – / – / 45
+- Aufloesung pro Auge: 1280x720 | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
+- Software: Proprietaer (Media-Player) | Recheneinheit: Tethered
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – 2013 zur IFA vorgestellter Personal-3D-Viewer; drittes und letztes HMZ-Modell mit WirelessHD und Akku (HMZ-T3W).
+- Offizielle Seite: k. A.
+
+## Sony HMZ-T3W (Sony)
+- Kategorie: AR
+- Angekuendigt: 2013 | Release: 2013-11
+- Preis: 1000 USD
+- Display: OLED | Optik: Linsenoptik (Personal Cinema)
+- FOV (H/V/D Grad): 45 / – / –
+- Aufloesung pro Auge: 1280x720 | Refresh: 60 Hz
+- Gewicht: 320 g
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
+- Software: Media-Playback (HDMI/WirelessHD) | Recheneinheit: Tethered
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Letzte Generation des Sony Personal-3D-Viewers mit WirelessHD-Streaming, laengst eingestellt.
+- Offizielle Seite: https://www.sony-asia.com/electronics/support/televisions-projectors-personal-3d-viewer/hmz-t3w/specifications
 
 ## Sony SmartEyeglass (SED-E1) (Sony)
 - Kategorie: AR
@@ -2815,6 +3426,32 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Keine eindeutige EOL-Angabe in den Quelldaten.
 - Offizielle Seite: https://www.rayneo.com/
 
+## Thales Scorpion (Thales)
+- Kategorie: AR
+- Angekuendigt: k. A. | Release: k. A.
+- Preis: k. A.
+- Display: Vollfarb-Display | Optik: Visor-projiziert (monokular)
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: Unklar | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: Hybrid inertial-optisches Head-Tracking | Eye-Tracking: Unklar | Hand-Tracking: Nein | Passthrough: Optisch durchsichtiger Visor (Echtzeit-Sichtverstaerkung)
+- Software: Proprietaer (Avionik) | Recheneinheit: Tethered
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Monokulares Vollfarb-Helm-Display mit AR fuer Starr- und Drehfluegler; im aktiven Vertrieb fuer militaerische Plattformen.
+- Offizielle Seite: https://www.thalesgroup.com/en/markets/aerospace/flight-deck-avionics-equipment-functions/helmet-mounted-display-helicopter
+
+## Thales TopOwl (Thales)
+- Kategorie: AR
+- Angekuendigt: k. A. | Release: k. A.
+- Preis: k. A.
+- Display: Visor-projiziert | Optik: Binokular, Visor-projiziert
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: Unklar | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: Head-Tracking | Eye-Tracking: Unklar | Hand-Tracking: Nein | Passthrough: Optisch durchsichtiger Visor mit ueberlagerter Bildverstaerker-Nachtsicht (beidseitig)
+- Software: Proprietaer (Avionik) | Recheneinheit: Tethered
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Binokulares Helm-Display- und Nachtsichtsystem fuer Kampfhubschrauber (u.a. Tiger, NH90); im aktiven Einsatz und Vertrieb.
+- Offizielle Seite: https://www.thalesgroup.com/en/markets/aerospace/flight-deck-avionics-equipment-functions/helmet-mounted-display/TopOwl
+
 ## ThirdEye Razor MR Glasses (ThirdEye)
 - Kategorie: AR
 - Angekuendigt: 2022-01-03 | Release: 2022-12-31
@@ -2879,6 +3516,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: Steam | Recheneinheit: PC
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja/Unklar – Keine eindeutige EOL-Angabe in den Quelldaten.
 - Offizielle Seite: https://www.tiltfive.com/
+
+## tooz ESSNZ Berlin (tooz technologies)
+- Kategorie: AR
+- Angekuendigt: 2022-05 | Release: 2022
+- Preis: k. A.
+- Display: Micro LED (monochrom) | Optik: Gekruemmter Wellenleiter (Curved Waveguide)
+- FOV (H/V/D Grad): 20 / – / –
+- Aufloesung pro Auge: Unklar | Refresh: k. A.
+- Gewicht: k. A.
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Optisches See-through (Korrekturbrille)
+- Software: Smartphone-Begleit-App | Recheneinheit: Smartphone
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Korrekturfaehige Datenbrille von tooz (Zeiss/Telekom) mit gekruemmtem Wellenleiter und monochromem Display.
+- Offizielle Seite: https://www.tooz.com/
 
 ## Toshiba dynaEdge AR100 Viewer (Toshiba (Dynabook))
 - Kategorie: AR
@@ -3127,6 +3777,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Enterprise-/Simulations-VR-Headset mit 4K-pro-Auge, 180-Grad-FoV und Eye-Tracking; MR-Variante kostet 11.500 USD.
 - Offizielle Seite: https://vrgineers.com/xtal-3-vr-virtual-reality-headset/
 
+## Vufine+ (Vufine)
+- Kategorie: AR
+- Angekuendigt: 2016 | Release: 2017
+- Preis: 199 USD
+- Display: LCOS | Optik: Monokulares Aufsteck-Display
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: 960x540 | Refresh: k. A.
+- Gewicht: 30 g
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein
+- Software: Reines Display (HDMI-Eingang) | Recheneinheit: Tethered
+- Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Per Kickstarter finanziertes monokulares HDMI-Wearable-Display (Nachfolger des Vufine von 2015), nicht mehr aktiv vertrieben.
+- Offizielle Seite: https://vufine.com/
+
 ## Vuzix Blade 2 (Vuzix)
 - Kategorie: AR
 - Angekuendigt: 2022-08-24 | Release: 2022-09-30
@@ -3269,6 +3932,19 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: Companion-App (Android/iOS) | Recheneinheit: Smartphone
 - Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Leichte Alltags-Smart-Glasses, seit November 2024 allgemein verfügbar (Developer Edition ab Januar 2024).
 - Offizielle Seite: https://www.vuzix.com/products/z100-smart-glasses
+
+## Westunitis InfoLinker3 (WESTUNITIS)
+- Kategorie: AR
+- Angekuendigt: 2021 | Release: 2021
+- Preis: k. A.
+- Display: OLED (Full Color) | Optik: Unklar
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: 640x400 | Refresh: k. A.
+- Gewicht: 380 g
+- Tracking: None | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Monokular, ein Auge frei (See-around)
+- Software: Android 10 | Recheneinheit: Standalone
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Monokulare Industrie-Smart-Glass mit LTE-Modul und wechselbarem Akku fuer Remote-Support und Aussendieneinsatz; Android 10.
+- Offizielle Seite: https://www.westunitis.com/infolinker3/
 
 ## X by Xreal a01 (Xreal)
 - Kategorie: AR
@@ -3490,3 +4166,16 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 - Software: YVR OS (Android-basiert) | Recheneinheit: Standalone
 - Lifecycle: EOL / Discontinued | Aktiver Vertrieb: Nein – Erstes Massenmarkt-Pancake-Standalone aus China, Launch 2022 für 4999 CNY (~700 USD umgerechnet); YVR firmiert heute als Play For Dream.
 - Offizielle Seite: https://www.yvr.cn/
+
+## Zebra HD4000 (Zebra Technologies)
+- Kategorie: AR
+- Angekuendigt: 2019 | Release: 2019
+- Preis: k. A.
+- Display: OLED | Optik: See-through
+- FOV (H/V/D Grad): – / – / –
+- Aufloesung pro Auge: Unklar | Refresh: k. A.
+- Gewicht: 30 g
+- Tracking: 9-Achsen Head-tracker | Eye-Tracking: Nein | Hand-Tracking: Nein | Passthrough: Nein (monokulare See-through-Anzeige)
+- Software: Via Zebra Android-Mobilcomputer | Recheneinheit: Tethered
+- Lifecycle: Aktiv oder ohne EOL-Angabe | Aktiver Vertrieb: Ja – Monokulares See-through-HMD als USB-Zubehoer fuer Zebra-Mobilcomputer (WT6000, TC5X, TC7X), weiterhin gelistet.
+- Offizielle Seite: https://www.zebra.com/us/en/products/mobile-computers/wearable-computers/hd4000.html
