@@ -291,6 +291,7 @@ const buildStructuredData = (rows, retrievedAt, paths = new Map()) => {
 const buildSitemap = (lastmod, rows = [], paths = new Map()) => {
   const urls = [
     { loc: BASE_URL, changefreq: 'daily', priority: '1.0' },
+    { loc: `${BASE_URL}finder/`, changefreq: 'monthly', priority: '0.8' },
     { loc: `${BASE_URL}modelle/`, changefreq: 'weekly', priority: '0.9' },
     { loc: `${BASE_URL}glossar.html`, changefreq: 'monthly', priority: '0.6' },
     { loc: `${BASE_URL}impressum.html`, changefreq: 'yearly', priority: '0.3' },

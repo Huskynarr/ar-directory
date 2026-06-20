@@ -30,6 +30,7 @@ import { cardTemplate } from './render/cards.js';
 import { tableTemplate } from './render/table.js';
 import { compareModeTemplate, compareBarTemplate } from './render/compare.js';
 import { openDetailModal } from './render/modal.js';
+import { isFinderRoute, renderFinder } from './render/finder.js';
 import { setRenderFn } from './render/registry.js';
 import { buildStatsChartSvg } from './render/stats.js';
 import { exportFilteredCsv, copyShareUrl } from './actions.js';
@@ -209,6 +210,15 @@ const render = () => {
             'Comparison page for AR and XR glasses with specifications, pricing, lifecycle, EOL and shop links. Legacy models are included for a fuller dataset.',
           )}
         </p>
+        <div class="mt-4 flex flex-wrap items-center gap-3">
+          <a href="/finder/" data-nav class="inline-flex items-center gap-2 rounded-xl border border-[#84cc16] bg-[#84cc16] px-4 py-2.5 text-sm font-semibold text-[#0c0a09] transition hover:bg-[#65a30d]">
+            <span aria-hidden="true">🧭</span> ${t('Finde meine Brille', 'Find my glasses')}
+          </a>
+          <span class="text-sm text-[#a8a29e]">${t(
+            'Unsicher? Lass dich in 6 Fragen zum passenden Modell führen.',
+            'Unsure? Let 6 questions guide you to the right model.',
+          )}</span>
+        </div>
       </header>
       <p id="results-status" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true">${escapeHtml(resultsStatusLabel)}</p>
 
@@ -616,7 +626,8 @@ const render = () => {
       <footer class="mt-4">
         <div class="panel flex flex-wrap items-center justify-between gap-3 p-4 text-sm text-[#a8a29e]">
           <div class="flex flex-wrap items-center gap-3">
-            <a href="/modelle/" class="font-semibold text-[#84cc16] hover:underline">${t('Alle Modelle', 'All models')}</a>
+            <a href="/finder/" data-nav class="font-semibold text-[#84cc16] hover:underline">${t('Brillen-Finder', 'Glasses finder')}</a>
+            <a href="/modelle/" class="hover:underline">${t('Alle Modelle', 'All models')}</a>
             <a href="/glossar.html" class="hover:underline">${t('Glossar & FAQ', 'Glossary & FAQ')}</a>
             <a href="/impressum.html" class="hover:underline">${t('Impressum', 'Legal Notice')}</a>
             <a href="/datenschutz.html" class="hover:underline">${t('Datenschutz', 'Privacy')}</a>
@@ -888,6 +899,44 @@ const render = () => {
 // Allow decoupled modules (detail modal) to trigger a re-render.
 setRenderFn(render);
 
+// Pick the view for the current URL: the guided finder at /finder/, otherwise
+// the directory. Used on first paint, on history navigation and on in-app links.
+const routeRender = () => {
+  if (isFinderRoute()) {
+    renderFinder();
+  } else {
+    render();
+  }
+};
+
+// Lightweight SPA navigation for internal links flagged with data-nav (finder
+// <-> directory). Device pages and external links stay normal full-page loads.
+document.addEventListener('click', (event) => {
+  const link = event.target.closest('a[data-nav]');
+  if (!link) return;
+  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+  const href = link.getAttribute('href');
+  if (!href) return;
+  event.preventDefault();
+  if (href !== `${window.location.pathname}${window.location.search}`) {
+    history.pushState(null, '', href);
+  }
+  routeRender();
+  window.scrollTo({ top: 0 });
+});
+
+// The finder applies coarse filters then asks to hand off to the directory.
+window.addEventListener('ar-navigate', (event) => {
+  const path = event.detail?.path || '/';
+  history.pushState(null, '', path);
+  routeRender();
+  window.scrollTo({ top: 0 });
+});
+
+window.addEventListener('popstate', () => {
+  routeRender();
+});
+
 // Resolve a /compare/<a>-vs-<b> deep link (served via 404.html on GitHub Pages)
 // into compare state. Must run after state.rows + __flat are populated.
 const applyComparePathFromUrl = () => {
@@ -951,7 +1000,7 @@ const init = async () => {
     .then((data) => {
       setAffiliateOverrides(data);
       if (state.rows.length) {
-        render();
+        routeRender();
       }
     })
     .catch(() => {});
@@ -982,10 +1031,10 @@ const init = async () => {
     applyComparePathFromUrl();
     pruneSelectedIdsToKnownRows();
     state.compareNotice = '';
-    render();
+    routeRender();
     ratePromise.then(() => {
       if (state.rows.length) {
-        render();
+        routeRender();
       }
     });
   } catch (error) {
