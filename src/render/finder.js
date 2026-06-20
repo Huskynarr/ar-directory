@@ -9,6 +9,7 @@ import { state } from '../state.js';
 import { getModelImageUrl } from './image.js';
 import { categoryTone } from './shared.js';
 import { isEol, isLikelyActive, isXrRow, getNormalizedFov } from '../data/model.js';
+import { FINDER_QUESTIONS } from '../data/finder-questions.js';
 
 export const isFinderRoute = () => /^\/finder\/?$/.test(window.location.pathname);
 
@@ -22,72 +23,15 @@ export const resetFinder = () => {
   finder.showResults = false;
 };
 
-const QUESTIONS = [
-  {
-    id: 'usecase',
-    header: t('Einsatz', 'Use case'),
-    question: t('Wofür willst du die Brille hauptsächlich nutzen?', 'What will you mainly use the glasses for?'),
-    options: [
-      { value: 'media', icon: '🎬', label: t('Filme & Medien unterwegs', 'Movies & media on the go'), desc: t('Großes Bild im Zug, Flugzeug oder auf dem Sofa.', 'A big screen on the train, plane or couch.') },
-      { value: 'gaming', icon: '🎮', label: t('Gaming & Immersion', 'Gaming & immersion'), desc: t('Immersive Spiele, hohe Bildrate, 6DoF.', 'Immersive games, high refresh, 6DoF.') },
-      { value: 'work', icon: '🖥️', label: t('Arbeit & virtuelle Monitore', 'Work & virtual monitors'), desc: t('Mehrere scharfe Displays ersetzen den Schreibtisch.', 'Several sharp screens replacing your desk.') },
-      { value: 'everyday', icon: '🕶️', label: t('Alltag & AI-Assistent', 'Everyday & AI assistant'), desc: t('Leichte Smart-/AI-Brille mit Kamera & Audio.', 'Lightweight smart/AI glasses with camera & audio.') },
-      { value: 'enterprise', icon: '🏭', label: t('Enterprise & Industrie', 'Enterprise & industry'), desc: t('Training, Wartung, Field Service, robust.', 'Training, maintenance, field service, rugged.') },
-      { value: 'dev', icon: '🧪', label: t('Entwicklung & Experimente', 'Development & tinkering'), desc: t('Viele Sensoren, offene Plattform, SDKs.', 'Lots of sensors, open platform, SDKs.') },
-    ],
-  },
-  {
-    id: 'category',
-    header: t('Bauart', 'Form'),
-    question: t('Welche Bauart schwebt dir vor?', 'Which kind of device do you have in mind?'),
-    options: [
-      { value: 'ar', icon: '👓', label: t('Leichte AR-/Display-Brille', 'Lightweight AR/display glasses'), desc: t('Sieht aus wie eine Brille, durchsichtig.', 'Looks like glasses, see-through.') },
-      { value: 'xr', icon: '🥽', label: t('Immersives XR-Headset', 'Immersive XR headset'), desc: t('Volle Immersion, Passthrough, VR/MR.', 'Full immersion, passthrough, VR/MR.') },
-      { value: 'any', icon: '🤷', label: t('Egal / unsicher', 'No preference / unsure'), desc: t('Zeig mir einfach die besten Treffer.', 'Just show me the best matches.') },
-    ],
-  },
-  {
-    id: 'budget',
-    header: t('Budget', 'Budget'),
-    question: t('Wie viel möchtest du ungefähr ausgeben?', 'Roughly how much do you want to spend?'),
-    options: [
-      { value: 'low', icon: '💶', label: t('Bis ca. 300 €', 'Up to ~€300'), desc: t('Einsteiger & Schnäppchen.', 'Entry level & bargains.') },
-      { value: 'mid', icon: '💶', label: t('300 – 600 €', '€300 – 600'), desc: t('Solide Mittelklasse.', 'Solid mid-range.') },
-      { value: 'high', icon: '💶', label: t('600 – 1500 €', '€600 – 1500'), desc: t('Gehobene Modelle.', 'Premium models.') },
-      { value: 'premium', icon: '💎', label: t('Über 1500 €', 'Over €1500'), desc: t('High-End, Preis egal.', 'High-end, price no object.') },
-      { value: 'any', icon: '🤷', label: t('Budget egal', "Budget doesn't matter"), desc: t('Preis nicht entscheidend.', 'Price is not decisive.') },
-    ],
-  },
-  {
-    id: 'formfactor',
-    header: t('Gewicht', 'Weight'),
-    question: t('Wie wichtig ist dir geringes Gewicht?', 'How important is low weight to you?'),
-    options: [
-      { value: 'light', icon: '🪶', label: t('So leicht wie möglich', 'As light as possible'), desc: t('Brillen-Formfaktor, lange tragbar.', 'Glasses form factor, wear for hours.') },
-      { value: 'balanced', icon: '⚖️', label: t('Ausgewogen', 'Balanced'), desc: t('Etwas mehr Gewicht für mehr Leistung okay.', 'A bit more weight for more power is fine.') },
-      { value: 'any', icon: '💪', label: t('Egal, Hauptsache Leistung', "Don't care, performance first"), desc: t('Auch ein Headset ist in Ordnung.', 'A full headset is fine too.') },
-    ],
-  },
-  {
-    id: 'connection',
-    header: t('Anschluss', 'Connection'),
-    question: t('Standalone oder angeschlossen?', 'Standalone or tethered?'),
-    options: [
-      { value: 'standalone', icon: '🔋', label: t('Standalone', 'Standalone'), desc: t('Eigener Akku & Chip, kein Kabel nötig.', 'Own battery & chip, no cable needed.') },
-      { value: 'tethered', icon: '🔌', label: t('An Handy/PC angeschlossen', 'Tethered to phone/PC'), desc: t('Leichter, braucht aber eine Quelle.', 'Lighter, but needs a host device.') },
-      { value: 'any', icon: '🤷', label: t('Egal', 'No preference'), desc: t('Beides ist in Ordnung.', 'Either is fine.') },
-    ],
-  },
-  {
-    id: 'availability',
-    header: t('Verfügbarkeit', 'Availability'),
-    question: t('Sollen nur aktuell erhältliche Geräte erscheinen?', 'Should only currently available devices appear?'),
-    options: [
-      { value: 'current', icon: '🛒', label: t('Nur aktuell kaufbar', 'Currently buyable only'), desc: t('Keine eingestellten/EOL-Modelle.', 'No discontinued/EOL models.') },
-      { value: 'any', icon: '🗄️', label: t('Auch Legacy & Sammler', 'Include legacy & collectibles'), desc: t('Ältere Modelle dürfen dabei sein.', 'Older models are welcome too.') },
-    ],
-  },
-];
+// Localize the shared question data to the active UI language.
+const loc = (entry) => (state.language === 'en' ? entry.en : entry.de);
+const getQuestions = () =>
+  FINDER_QUESTIONS.map((q) => ({
+    id: q.id,
+    header: loc(q.header),
+    question: loc(q.question),
+    options: q.options.map((o) => ({ value: o.value, icon: o.icon, label: loc(o.label), desc: loc(o.desc) })),
+  }));
 
 // --- Scoring helpers -------------------------------------------------------
 
@@ -377,7 +321,8 @@ const shellTemplate = (inner) => `
   </main>`;
 
 const questionTemplate = () => {
-  const q = QUESTIONS[finder.step];
+  const questions = getQuestions();
+  const q = questions[finder.step];
   const selected = finder.answers[q.id];
   const options = q.options
     .map((opt) => {
@@ -402,7 +347,7 @@ const questionTemplate = () => {
       <div class="flex items-center gap-2">
         <span class="rounded-full border border-[#44403c] bg-[#1c1917] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-lime-300">${escapeHtml(q.header)}</span>
       </div>
-      ${progressBar(finder.step + 1, QUESTIONS.length)}
+      ${progressBar(finder.step + 1, questions.length)}
       <h2 class="mt-4 text-xl font-semibold text-[#f5f5f4] sm:text-2xl">${escapeHtml(q.question)}</h2>
       <div class="mt-4 grid gap-3 sm:grid-cols-2">${options}</div>
       <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
@@ -416,7 +361,7 @@ const questionTemplate = () => {
               : ''
           }
           <button type="button" data-finder-next class="chip-btn border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]">${
-            finder.step === QUESTIONS.length - 1 ? t('Ergebnisse', 'Results') : t('Weiter', 'Next')
+            finder.step === questions.length - 1 ? t('Ergebnisse', 'Results') : t('Weiter', 'Next')
           } →</button>
         </div>
       </div>
@@ -424,7 +369,8 @@ const questionTemplate = () => {
 };
 
 const summaryChips = () =>
-  QUESTIONS.filter((q) => finder.answers[q.id])
+  getQuestions()
+    .filter((q) => finder.answers[q.id])
     .map((q) => {
       const opt = q.options.find((o) => o.value === finder.answers[q.id]);
       return opt && opt.value !== 'any'
@@ -502,9 +448,9 @@ export const renderFinder = () => {
     return;
   }
 
-  const q = QUESTIONS[finder.step];
+  const q = getQuestions()[finder.step];
   const goNext = () => {
-    if (finder.step < QUESTIONS.length - 1) {
+    if (finder.step < FINDER_QUESTIONS.length - 1) {
       finder.step += 1;
       renderFinder();
     } else {
