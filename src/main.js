@@ -2,6 +2,8 @@ import { escapeHtml, normalizeText, parsePrice, debounce } from './utils.js';
 import {
   state,
   COMPARE_LIMIT,
+  CARDS_PER_PAGE,
+  MOBILE_CARDS_PER_PAGE,
   APP_VERSION,
   normalizeLanguage,
   normalizeTheme,
@@ -1023,6 +1025,7 @@ const init = async () => {
   applyStateFromUrl();
   state.language = normalizeLanguage(state.language, 'de');
   state.theme = normalizeTheme(state.theme, 'auto');
+  state.cardsPageSize = window.matchMedia('(max-width: 640px)').matches ? MOBILE_CARDS_PER_PAGE : CARDS_PER_PAGE;
   writeLanguageToStorage(state.language);
   writeThemeToStorage(state.theme);
   applyLanguageToDocument();

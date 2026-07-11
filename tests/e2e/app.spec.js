@@ -1,8 +1,8 @@
 import { expect, test } from '@playwright/test';
 
-const expectedPageSize = 12;
+const expectedPageSize = (testInfo) => (testInfo.project.name.includes('mobile') ? 6 : 12);
 
-test.beforeEach(async ({ page }) => {
+test.beforeEach(async ({ page }, testInfo) => {
   await page.route('https://api.frankfurter.dev/**', (route) =>
     route.fulfill({
       contentType: 'application/json',
@@ -12,7 +12,7 @@ test.beforeEach(async ({ page }) => {
   // External product images are not part of app correctness and would make CI flaky.
   await page.route(/^https?:\/\/(?!127\.0\.0\.1:5173).+\.(?:png|jpe?g|webp|svg)(?:\?.*)?$/i, (route) => route.abort());
   await page.goto('/');
-  await expect(page.locator('[data-model-card]')).toHaveCount(expectedPageSize);
+  await expect(page.locator('[data-model-card]')).toHaveCount(expectedPageSize(testInfo));
 });
 
 test('loads the catalog without runtime errors and exposes its core content', async ({ page }) => {
@@ -36,14 +36,14 @@ test('mobile prioritizes search and reveals secondary filters on demand', async 
   await expect(page.locator('#sort-filter')).toBeVisible();
 });
 
-test('search, reset and manufacturer-link filter change the actual result set', async ({ page }) => {
+test('search, reset and manufacturer-link filter change the actual result set', async ({ page }, testInfo) => {
   const search = page.getByRole('searchbox');
   await search.fill('Meta Glasses');
   await expect(page.locator('[data-model-card]')).toHaveCount(3);
   await expect(page.getByRole('heading', { name: 'Meta Glasses', exact: true })).toBeVisible();
 
   await page.getByRole('button', { name: /Filter zurücksetzen/ }).click();
-  await expect(page.locator('[data-model-card]')).toHaveCount(expectedPageSize);
+  await expect(page.locator('[data-model-card]')).toHaveCount(expectedPageSize(testInfo));
   await page.getByRole('button', { name: /Alle Filter|Mehr Filter/ }).click();
   await page.getByLabel(/Nur mit Herstellerlink/).check();
   await expect(page.getByText(/Sichtbar:\s*333/)).toBeVisible();
