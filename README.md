@@ -1,4 +1,4 @@
-# AR/XR Brillen Vergleich
+# AR Directory
 
 Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
 - Kartenansicht und tabellarische Ansicht
@@ -13,8 +13,8 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
 
 ## Features
 
-- Startseite zeigt alle verfuegbaren Brillen als Cards
-- Umschaltbar zwischen `Cards` und `Tabelle`
+- Inhaltsorientierte Startseite mit kompakter Kartenansicht und eigenstaendigen Informationsseiten
+- Umschaltbar zwischen `Karten` und `Liste`, jeweils in kompakter oder ausfuehrlicher Dichte
 - Volltextsuche (Modell, Hersteller, Software, Tracking, Display, Lifecycle-Notizen)
 - Filter:
   - Kategorie (`AR` / `XR`)
@@ -26,8 +26,7 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
   - Hand Tracking
   - Passthrough
   - aktiver Vertrieb
-  - Preset `Nur aktiv im Vertrieb` fuer schnellen Fokus auf verfuegbare Modelle
-  - explizite `AR-Flag` und `XR-Flag` Toggle
+  - nur aktuell erhaeltliche Modelle
   - EOL/Update-Status
   - minimaler horizontaler Winkel (FOV)
   - minimale Refresh-Rate
@@ -43,20 +42,24 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
   - URL-sharebar (Filter, Sortierung und Compare-Auswahl koennen direkt geteilt werden)
 - Vergleich:
   - Multi-Select mit bis zu 6 Modellen
-  - Compare-Modus mit direkter Merkmalsmatrix
+  - deutscher Direktvergleich mit Merkmalsmatrix
   - Radar-Chart fuer schnellen visuellen Modellvergleich
 - Ansichtsoptionen:
   - `EUR-Zusatz` nutzt einen Live-EUR-Kurs zur USD-Umrechnung
   - `Unbekannte Werte ausblenden` reduziert Rauschen in Listen und Compare-Ansicht
-  - `Hellmodus`/`Dunkelmodus` (huskynarr-inspiriert), persistent per LocalStorage und URL-Parameter `theme`
+  - automatischer Hell-/Dunkelmodus nach Systemeinstellung sowie manuelle Auswahl, persistent per LocalStorage und URL-Parameter `theme`
 - Kartenansicht:
-  - initial 12 Cards und `Mehr laden` Pagination
+  - 12 Karten auf Desktop, 4 auf Mobilgeraeten und stabile Seitennavigation
 - Karten enthalten:
   - Bild, Name, Hersteller, Kategorie
   - Preis, Vertrieb, Lifecycle/EOL
   - Display, Optik, FOV, Refresh, Aufloesung
   - Software, Compute Unit, Tracking, Eye/Hand/Passthrough
   - Herstellerlink + Datenquelle
+- Gefuehrter AR-/XR-Finder unter `/finder/`
+- Eigenstaendige FAQ-, Glossar- und Datenqualitaetsseiten
+- Kompakte Build-Version aus `package.json` und Git-Revision statt manueller Doppelpflege
+- Barrierefreiheit wird in Hell und Dunkel mit Axe gegen WCAG 2.2 AA getestet
 
 ## Datenabdeckung
 
@@ -103,7 +106,9 @@ Fuer bessere Auffindbarkeit in Suchmaschinen und LLM-basierten Suchsystemen sind
 - **Statische Einzelseiten** (aus der CSV generiert, `scripts/lib/render-pages.mjs`):
   - `public/<brand>/<model>/index.html` — eine eigenstaendige, crawlbare Detailseite pro Modell unter sprechender URL (z. B. `/xreal/one-pro/`) mit allen Specs, Lifecycle, JSON-LD `Product` + `BreadcrumbList`, interner Verlinkung (Hersteller/Kategorie) und Deep-Links in die Vergleichs-App. Alte `public/modelle/<slug>.html` bleiben als Redirect-Stubs (canonical + Meta-Refresh) erhalten.
   - `public/modelle/index.html` — A–Z-Modell-Hub gruppiert nach Hersteller
-  - `public/glossar.html` — Glossar + FAQ mit JSON-LD `FAQPage` + `DefinedTermSet`
+  - `public/faq.html` — native FAQ-Accordions mit JSON-LD `FAQPage`
+  - `public/glossar.html` — technisches Glossar mit JSON-LD `DefinedTermSet`
+  - `public/data.html` — Datenumfang, Aktualitaet, Feldabdeckung, Methodik und Downloads
 - Build-Time-Injektion via Vite-Plugin (`vite.config.js`):
   - injiziert die generierten JSON-LD-Strukturdaten in das HTML
   - rendert einen **statischen, crawlbaren Katalog** aller Modelle in `#app` (zur Laufzeit von der SPA ersetzt, verlinkt auf die Einzelseiten) — so sehen Suchmaschinen und JS-lose AI-Crawler den vollen Datenbestand
@@ -112,8 +117,9 @@ Fuer bessere Auffindbarkeit in Suchmaschinen und LLM-basierten Suchsystemen sind
   - `public/sitemap.xml`, `public/llms.txt`, `public/llms-full.txt`, `public/ai-search.json`, `public/data/structured-data.json`
 - PWA:
   - `public/manifest.json` (mit Icons, Screenshots, Kategorien) und gebrandetes `public/icon.svg`
-- OpenGraph-Bild:
-  - `public/og/startseite.png`
+- OpenGraph-Bilder (jeweils 1200 × 630):
+  - `public/og/startseite.png`, `public/og/faq.png`, `public/og/data.png`
+  - modellbezogene Karten unter `public/og/models/`
 
 Die produktive Basis-URL ist `https://ar-directory.huskynarr.de/` und wird zentral in `scripts/generate-ar-csv.mjs`
 (`BASE_URL`) gepflegt; alle generierten Artefakte (sitemap, llms, ai-search, structured-data, Einzelseiten) sowie
@@ -123,8 +129,8 @@ bleibt als Autoren-/Markenangabe davon unberuehrt.)
 
 ## Affiliate / Monetarisierung
 
-Affiliate-Scaffolding ist vorhanden, aber **standardmaessig deaktiviert** (`AFFILIATE.enabled = false`
-in `src/affiliate.js`) — es werden erst Kauf-Buttons + Disclosure ausgespielt, wenn alles konfiguriert ist.
+Affiliate-Unterstuetzung ist fuer Amazon.de aktiviert; weitere Programme bleiben deaktiviert, bis gueltige
+Partnerdaten hinterlegt sind. Kauf-Buttons werden neutral in das Design integriert und stets mit Disclosure ausgespielt.
 
 Unterstuetzt: **Amazon.de, Amazon.com, eBay, Otto, idealo** (Otto/idealo via AWIN). Pro Geraet wird ein
 getaggter **Such-Link** automatisch erzeugt; kuratierte **Produkt-Deeplinks** koennen in
@@ -142,7 +148,7 @@ Karten, Detail-Modal und auf den statischen Detailseiten.
 ## Lokale Entwicklung
 
 Voraussetzungen:
-- Node.js 20+
+- Node.js 24
 - npm
 
 Installation:
@@ -163,7 +169,7 @@ Produktions-Build:
 npm run build
 ```
 
-Komplette Verifikation mit Unit-Tests, Desktop-/Mobile-E2E-Tests und Produktions-Build:
+Komplette Verifikation mit Unit-Tests, Desktop-/Mobile-E2E- und WCAG-Tests sowie Produktions-Build:
 
 ```bash
 npm run verify
@@ -210,7 +216,9 @@ npm run images:enrich
 │  │  ├─ ar_glasses.metadata.json  # generiert
 │  │  └─ structured-data.json      # generiert (JSON-LD)
 │  ├─ modelle/                     # generiert: <slug>.html pro Modell + index.html
-│  ├─ glossar.html                 # generiert (Glossar + FAQ)
+│  ├─ faq.html · glossar.html      # generierte Wissensseiten
+│  ├─ data.html                    # generierte Datenqualitaetsseite
+│  ├─ og/                          # 1200×630 Social Cards
 │  ├─ images/manufacturers/
 │  ├─ icon.svg                     # PWA/Favicon
 │  ├─ manifest.json · sw.js · robots.txt
@@ -226,7 +234,7 @@ npm run images:enrich
 │  ├─ main.js                      # Orchestrator (render-Loop, Events, init)
 │  ├─ state.js · i18n.js · seo.js · actions.js
 │  ├─ data/   (dataset.js, model.js, filters.js)
-│  ├─ render/ (cards, table, compare, modal, image, shared, stats, registry)
+│  ├─ render/ (cards, table, compare, modal, finder, image, shared, registry)
 │  ├─ utils.js
 │  └─ style.css
 ├─ docs/
@@ -240,11 +248,15 @@ npm run images:enrich
 └─ README.md
 ```
 
-## CI / GitLab Pipeline
+## CI
 
-Die `.gitlab-ci.yml` enthaelt zwei Jobs:
-- `verify:data`: prueft, ob Daten generiert werden koennen und die Exportdateien existieren
-- `build:app`: baut die App mit Vite und speichert `dist/` als Artefakt
+GitHub Actions prueft mit Node.js 24 Unit-Tests, Desktop-/Mobile-E2E, WCAG 2.2 AA, den reproduzierbaren
+Datengenerator, den Produktions-Build und einen Lighthouse-100-Gate. Die Workflow-Actions verwenden die
+aktuellen Majors `actions/checkout@v7`, `actions/setup-node@v6` und `actions/upload-artifact@v7`.
+
+## GitLab Pipeline
+
+Die `.gitlab-ci.yml` enthaelt Daten-, Unit- und Playwright-Verifikation sowie einen Build-Job.
 
 Damit sind Datenvalidierung und Build in CI abgedeckt.
 

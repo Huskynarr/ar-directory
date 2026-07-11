@@ -21,8 +21,8 @@ test('loads the catalog without runtime errors and exposes its core content', as
 
   await expect(page).toHaveTitle(/348 Modelle/);
   await expect(page.getByRole('heading', { level: 1 })).toContainText(/AR-Brillen.*XR-Glasses/i);
-  await expect(page.getByText(/Datenbestand:\s*348/)).toBeVisible();
-  await expect(page.getByRole('link', { name: /Brille finden/ }).first()).toBeVisible();
+  await expect(page.locator('.result-count')).toContainText('348 Modelle');
+  await expect(page.getByRole('link', { name: /AR-\/XR-Brille finden/ }).first()).toBeVisible();
   await expect(page.locator('[data-model-card]').first()).toHaveAttribute('data-card-density', 'compact');
   expect(runtimeErrors).toEqual([]);
 });
@@ -53,7 +53,7 @@ test('search, reset and manufacturer-link filter change the actual result set', 
     await advancedFilters.locator('summary').click();
   }
   await page.getByLabel(/Mit Herstellerseite/).check();
-  await expect(page.getByText(/Sichtbar:\s*333/)).toBeVisible();
+  await expect(page.locator('.result-count')).toContainText('333 Modelle von 348');
 });
 
 test('view and utility controls remain stationary while switching layouts', async ({ page }) => {
@@ -109,7 +109,7 @@ test('table, detail modal and comparison flow are interactive', async ({ page })
 
   await firstCard.locator('[data-compare-toggle]').check();
   await expect(page.locator('[data-compare-toggle]:checked')).toHaveCount(1);
-  await page.getByRole('button', { name: /Compare-Modus/ }).click();
+  await page.getByRole('button', { name: /Vergleich öffnen/ }).click();
   await expect(page.getByText(/Direktvergleich/).first()).toBeVisible();
 });
 
@@ -136,6 +136,43 @@ test('automatic theme follows the operating-system preference', async ({ page })
   await expect(page.locator('body')).toHaveClass(/theme-light/);
 });
 
+test('initial shell is complete and styled before application hydration', async ({ page }) => {
+  await page.evaluate(async () => {
+    const registrations = await navigator.serviceWorker?.getRegistrations?.();
+    await Promise.all((registrations || []).map((registration) => registration.unregister()));
+  });
+  await page.route('**/src/bootstrap.js', (route) => route.abort());
+  await page.goto('/?boot-shell-test=1', { waitUntil: 'domcontentloaded' });
+
+  expect(await page.evaluate(() => window.__AR_DIRECTORY_READY__)).not.toBe(true);
+  await expect(page.getByRole('status')).toContainText('Brillendaten werden geladen');
+  await expect(page.locator('#app')).toBeVisible();
+  await expect(page.locator('#static-catalog')).toBeHidden();
+  const geometry = await page.locator('.brand-mark svg').evaluate((element) => {
+    const box = element.getBoundingClientRect();
+    return { width: box.width, height: box.height };
+  });
+  expect(geometry.width).toBeGreaterThan(20);
+  expect(geometry.width).toBeLessThan(24);
+  expect(geometry.height).toBeGreaterThan(20);
+  expect(await page.locator('.hero-title').evaluate((element) => getComputedStyle(element).fontSize)).not.toBe('16px');
+});
+
+test('native select arrows keep a usable inset from the right edge', async ({ page }, testInfo) => {
+  if (testInfo.project.name.includes('mobile')) await page.locator('#toggle-advanced-filters').click();
+  const styles = await page.locator('#category-filter').evaluate((element) => {
+    const computed = getComputedStyle(element);
+    return {
+      appearance: computed.appearance,
+      backgroundPosition: computed.backgroundPosition,
+      paddingRight: Number.parseFloat(computed.paddingRight),
+    };
+  });
+  expect(styles.appearance).toBe('none');
+  expect(styles.backgroundPosition).toContain('calc(100% - 14.4px)');
+  expect(styles.paddingRight).toBeGreaterThanOrEqual(44);
+});
+
 test('finder completes all questions and returns recommendations', async ({ page }) => {
   await page.getByRole('link', { name: /Brille finden/ }).first().click();
   await expect(page).toHaveURL(/\/finder\/$/);
@@ -152,12 +189,54 @@ test('finder completes all questions and returns recommendations', async ({ page
   await expect(page.locator('article').first()).toBeVisible();
 });
 
-test('generated legal, asset and device pages are reachable', async ({ request }) => {
-  for (const path of ['/impressum.html', '/datenschutz.html', '/asset-notices.html', '/meta/glasses/']) {
+test('finder reuses the catalog width, header, footer and surface language', async ({ page }) => {
+  const catalogWidth = await page.locator('#main-content').evaluate((element) => element.getBoundingClientRect().width);
+  await page.getByRole('link', { name: /Brille finden/ }).first().click();
+  await expect(page).toHaveURL(/\/finder\/$/);
+
+  const finderWidth = await page.locator('#finder-main').evaluate((element) => element.getBoundingClientRect().width);
+  expect(Math.abs(finderWidth - catalogWidth)).toBeLessThanOrEqual(1);
+  await expect(page.locator('header.app-hero .brand-lockup')).toBeVisible();
+  await expect(page.locator('header.app-hero #toggle-language')).toBeVisible();
+  await expect(page.locator('header.app-hero #theme-toggle')).toBeVisible();
+  await expect(page.locator('footer.site-footer')).toBeVisible();
+  expect(await page.locator('.finder-workspace').evaluate((element) => getComputedStyle(element).backgroundImage)).toContain('gradient');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBe(true);
+});
+
+test('footer keeps a clear visual pause after pagination', async ({ page }) => {
+  const pagination = page.getByRole('navigation', { name: 'Seitennavigation' });
+  const footer = page.locator('footer.site-footer');
+  const [paginationBox, footerBox] = await Promise.all([pagination.boundingBox(), footer.boundingBox()]);
+  expect(paginationBox).not.toBeNull();
+  expect(footerBox).not.toBeNull();
+  expect(footerBox.y - (paginationBox.y + paginationBox.height)).toBeGreaterThanOrEqual(32);
+});
+
+test('generated information, legal and device pages are reachable', async ({ request }) => {
+  for (const path of ['/faq.html', '/data.html', '/glossar.html', '/impressum.html', '/datenschutz.html', '/asset-notices.html', '/meta/glasses/']) {
     const response = await request.get(path);
     expect(response.status(), path).toBe(200);
     expect(await response.text(), path).toContain('<!doctype html>');
   }
+});
+
+test('FAQ uses accessible accordions and dataset statistics have their own page', async ({ page }) => {
+  await page.goto('/faq.html');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Häufige Fragen');
+  const firstQuestion = page.locator('details.faq').first();
+  await expect(firstQuestion).toHaveAttribute('open', '');
+  await firstQuestion.locator('summary').click();
+  await expect(firstQuestion).not.toHaveAttribute('open', '');
+
+  await page.goto('/data.html');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Datenübersicht');
+  await expect(page.locator('.metrics')).toContainText('348');
+});
+
+test('footer exposes one compact, build-derived version', async ({ page }) => {
+  await expect(page.locator('.build-version')).toHaveCount(1);
+  await expect(page.locator('.build-version')).toHaveText(/^v\d+\.\d+\.\d+ · (?:[0-9a-f]{7}|local)$/);
 });
 
 test('viewport has no horizontal overflow and controls have accessible names', async ({ page }) => {

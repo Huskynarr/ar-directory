@@ -14,9 +14,9 @@ Danke fuer deinen Beitrag.
    ```bash
    node scripts/generate-ar-csv.mjs
    ```
-5. Build pruefen:
+5. Unit-, E2E-, WCAG- und Build-Pruefungen ausfuehren:
    ```bash
-   npm run build
+   npm run verify
    ```
 6. Merge Request erstellen.
 
@@ -30,6 +30,7 @@ Danke fuer deinen Beitrag.
 ## Merge Request Checklist
 
 - [ ] Build laeuft lokal
+- [ ] Unit-, E2E- und WCAG-Tests laufen lokal
 - [ ] CSV/Metadata aktualisiert (falls relevant)
 - [ ] README/Docs aktualisiert (falls relevant)
 - [ ] Aenderungen sind im MR kurz erklaert

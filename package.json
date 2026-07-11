@@ -1,7 +1,7 @@
 {
   "name": "ar-directory",
   "private": true,
-  "version": "0.7.0",
+  "version": "0.8.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -19,6 +19,7 @@
     "verify": "npm test && npm run test:e2e && npm run build"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
     "@playwright/test": "^1.61.1",
     "@tailwindcss/vite": "^4.3.2",
     "tailwindcss": "^4.3.2",

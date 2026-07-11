@@ -5,11 +5,18 @@
 // never touches the directory's render()/syncUrlWithState() path.
 import { escapeHtml, normalizeText, toNumber, parsePrice, parseResolutionWidth, isUnknownValue, safeExternalUrl } from '../utils.js';
 import { t, formatPrice, formatNumber } from '../i18n.js';
-import { state } from '../state.js';
+import {
+  state,
+  writeLanguageToStorage,
+  writeThemeToStorage,
+  applyLanguageToDocument,
+  applyThemeToDocument,
+} from '../state.js';
 import { getModelImageUrl } from './image.js';
-import { categoryTone } from './shared.js';
+import { brandLockupTemplate, categoryTone, headerControlsTemplate, siteFooterTemplate } from './shared.js';
 import { isEol, isLikelyActive, isXrRow, getNormalizedFov } from '../data/model.js';
 import { FINDER_QUESTIONS } from '../data/finder-questions.js';
+import { AFFILIATE } from '../affiliate.js';
 
 export const isFinderRoute = () => /^\/finder\/?$/.test(window.location.pathname);
 
@@ -225,10 +232,10 @@ const rankDevices = (answers, limit = 9) =>
 const answeredCount = () => Object.values(finder.answers).filter(Boolean).length;
 
 const matchToneClass = (percent) => {
-  if (percent == null) return 'border-[#44403c] bg-[#1c1917] text-[#a8a29e]';
-  if (percent >= 80) return 'border-lime-400/50 bg-lime-400/15 text-lime-200';
-  if (percent >= 55) return 'border-[var(--line-strong)] bg-[var(--surface-2)] text-[var(--text)]';
-  return 'border-[#44403c] bg-[#1c1917] text-[#a8a29e]';
+  if (percent == null) return 'border-[var(--line-strong)] bg-[var(--bg-raised)] text-[var(--muted)]';
+  if (percent >= 80) return 'border-[var(--line-strong)] bg-[var(--bg-raised)] text-[var(--text)]';
+  if (percent >= 55) return 'border-[var(--line)] bg-[var(--bg-raised)] text-[var(--text)]';
+  return 'border-[var(--line)] bg-[var(--bg-raised)] text-[var(--muted)]';
 };
 
 const resultCardTemplate = ({ row, percent, reasons }) => {
@@ -246,24 +253,24 @@ const resultCardTemplate = ({ row, percent, reasons }) => {
   ].filter(Boolean);
 
   return `
-    <article class="panel group flex flex-col overflow-hidden transition duration-200 ease-out hover:-translate-y-0.5 hover:border-[#84cc16]/50 hover:ring-1 hover:ring-[#84cc16]/30">
-      <div class="relative h-40 overflow-hidden border-b border-[#44403c]/60 bg-[#131b26]">
+    <article class="finder-result-card panel group flex flex-col overflow-hidden transition duration-200 ease-out hover:-translate-y-0.5">
+      <div class="finder-result-media relative h-40 overflow-hidden border-b border-[var(--line)]">
         <img src="${escapeHtml(image)}" alt="${name}" loading="lazy" decoding="async" referrerpolicy="no-referrer" class="h-full w-full object-contain p-4" />
         <span class="absolute right-3 top-3 rounded-full border px-2.5 py-1 text-xs font-bold ${categoryTone(row.xr_category)}">${category}</span>
         <span class="absolute left-3 top-3 rounded-full border px-2.5 py-1 text-xs font-bold ${matchToneClass(percent)}">${
-          percent == null ? t('Vorschlag', 'Suggestion') : t(`${percent}% Match`, `${percent}% match`)
+          percent == null ? t('Vorschlag', 'Suggestion') : t(`${percent}% passend`, `${percent}% match`)
         }</span>
       </div>
       <div class="flex flex-1 flex-col gap-3 p-4">
         <div>
-          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#a8a29e]">${manufacturer}</p>
-          <h3 class="text-lg font-semibold leading-tight text-[#f5f5f4]">${name}</h3>
+          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">${manufacturer}</p>
+          <h3 class="text-lg font-semibold leading-tight text-[var(--text)]">${name}</h3>
         </div>
         ${
           chips.length
             ? `<dl class="grid grid-cols-2 gap-2 text-sm">${chips
                 .map(
-                  (c) => `<div class="soft-panel p-2"><dt class="text-[11px] uppercase tracking-[0.1em] text-[#a8a29e]">${escapeHtml(c.label)}</dt><dd class="mt-0.5 font-semibold text-[#f5f5f4]">${escapeHtml(c.value)}</dd></div>`,
+                  (c) => `<div class="soft-panel p-2"><dt class="text-[11px] uppercase tracking-[0.1em] text-[var(--muted)]">${escapeHtml(c.label)}</dt><dd class="mt-0.5 font-semibold text-[var(--text)]">${escapeHtml(c.value)}</dd></div>`,
                 )
                 .join('')}</dl>`
             : ''
@@ -271,11 +278,11 @@ const resultCardTemplate = ({ row, percent, reasons }) => {
         ${
           reasons.length
             ? `<ul class="flex flex-wrap gap-1.5">${reasons
-                .map((r) => `<li class="rounded-full border border-lime-500/30 bg-lime-500/10 px-2 py-0.5 text-[11px] font-medium text-lime-200">✓ ${escapeHtml(r)}</li>`)
+                .map((r) => `<li class="rounded-full border border-[var(--line)] bg-[var(--surface-2)] px-2 py-0.5 text-[11px] font-medium text-[var(--muted)]"><span aria-hidden="true">✓</span> ${escapeHtml(r)}</li>`)
                 .join('')}</ul>`
             : ''
         }
-        <a href="${escapeHtml(detailHref)}" class="mt-auto inline-flex items-center justify-center gap-1.5 rounded-lg border border-[#84cc16] bg-[#84cc16] px-3 py-2 text-sm font-semibold text-[#0c0a09] transition hover:bg-[#65a30d]">${t('Details ansehen', 'View details')} →</a>
+        <a href="${escapeHtml(detailHref)}" class="chip-btn card-action mt-auto">${t('Details ansehen', 'View details')}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6"/></svg></a>
       </div>
     </article>`;
 };
@@ -283,41 +290,37 @@ const resultCardTemplate = ({ row, percent, reasons }) => {
 const progressBar = (current, total) => {
   const pct = Math.round((current / total) * 100);
   return `
-    <div class="mt-1 flex items-center gap-3">
-      <div class="h-1.5 flex-1 overflow-hidden rounded-full bg-[#1c1917]">
-        <div class="h-full rounded-full bg-gradient-to-r from-lime-400 to-lime-600 transition-all duration-300" style="width:${pct}%"></div>
+    <div class="finder-progress mt-1 flex items-center gap-3">
+      <div class="finder-progress-track h-1.5 flex-1 overflow-hidden rounded-full">
+        <div class="finder-progress-value h-full rounded-full transition-all duration-300" style="width:${pct}%"></div>
       </div>
-      <span class="shrink-0 text-xs font-semibold text-[#a8a29e]">${current} / ${total}</span>
+      <span class="shrink-0 text-xs font-semibold text-[var(--muted)]">${current} / ${total}</span>
     </div>`;
 };
 
 const shellTemplate = (inner) => `
   <a href="#finder-main" class="skip-link">${t('Zum Inhalt springen', 'Skip to content')}</a>
-  <main id="finder-main" tabindex="-1" class="mx-auto w-full max-w-[1100px] px-4 py-6 sm:px-6 lg:px-8">
-    <header class="panel relative overflow-hidden p-5 sm:p-6">
+  <main id="finder-main" tabindex="-1" class="mx-auto w-full max-w-[1320px] px-4 py-6 sm:px-6 lg:px-8">
+    <header class="app-hero panel relative overflow-hidden p-4 sm:p-5">
       <div class="theme-hero-surface absolute inset-0 -z-10"></div>
       <div class="flex items-start justify-between gap-3">
-        <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-lime-500 sm:text-xs">${t('AR / XR FINDER', 'AR / XR FINDER')}</p>
-        <a href="/" data-nav class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">← ${t('Zum Verzeichnis', 'To the directory')}</a>
+        ${brandLockupTemplate()}
+        ${headerControlsTemplate()}
       </div>
-      <h1 class="mt-2 text-2xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-lime-600 sm:text-4xl">${t(
+      <h1 class="hero-title mt-3 text-3xl font-bold leading-tight sm:text-4xl">${t(
         'Welche AR-/XR-Brille passt zu mir?',
         'Which AR/XR glasses fit me?',
       )}</h1>
-      <p class="mt-2.5 max-w-2xl text-sm leading-relaxed text-[#a8a29e] sm:text-base">${t(
-        'Beantworte ein paar kurze Fragen und der Finder durchsucht alle Modelle nach den besten Treffern für dich.',
-        'Answer a few short questions and the finder searches all models for your best matches.',
-      )}</p>
+      <div class="hero-summary mt-3">
+        <p class="max-w-3xl text-sm leading-relaxed text-[var(--muted)]">${t(
+          'Sechs kurze Fragen führen zu passenden Modellen aus dem vollständigen AR-/XR-Verzeichnis.',
+          'Six short questions lead to matching models from the complete AR/XR directory.',
+        )}</p>
+        <a href="/" data-nav class="directory-cta"><span aria-hidden="true">←</span> ${t('Zum Vergleich', 'Back to comparison')}</a>
+      </div>
     </header>
     ${inner}
-    <footer class="mt-4">
-      <div class="panel flex flex-wrap items-center gap-3 p-4 text-sm text-[#a8a29e]">
-        <a href="/" data-nav class="font-semibold text-[#84cc16] hover:underline">${t('Alle Modelle', 'All models')}</a>
-        <a href="/glossar.html" class="hover:underline">${t('Glossar & FAQ', 'Glossary & FAQ')}</a>
-        <a href="/impressum.html" class="hover:underline">${t('Impressum', 'Legal Notice')}</a>
-        <a href="/datenschutz.html" class="hover:underline">${t('Datenschutz', 'Privacy')}</a>
-      </div>
-    </footer>
+    ${siteFooterTemplate({ disclosure: AFFILIATE.enabled ? AFFILIATE.disclosureShort : '' })}
   </main>`;
 
 const questionTemplate = () => {
@@ -328,39 +331,35 @@ const questionTemplate = () => {
     .map((opt) => {
       const isSel = selected === opt.value;
       return `
-        <button type="button" data-finder-option="${escapeHtml(opt.value)}" aria-pressed="${isSel ? 'true' : 'false'}" class="group/opt flex items-start gap-3 rounded-xl border p-4 text-left transition ${
-          isSel
-            ? 'border-[#84cc16] bg-[#84cc16]/10 ring-1 ring-[#84cc16]/40'
-            : 'border-[#44403c] bg-[#1c1917] hover:border-[#84cc16]/50 hover:bg-[#292524]'
-        }">
-          <span class="text-2xl leading-none" aria-hidden="true">${opt.icon}</span>
+        <button type="button" data-finder-option="${escapeHtml(opt.value)}" aria-pressed="${isSel ? 'true' : 'false'}" class="finder-option ${isSel ? 'is-selected' : ''}">
+          <span class="finder-option-icon text-2xl leading-none" aria-hidden="true">${opt.icon}</span>
           <span class="min-w-0">
-            <span class="block font-semibold text-[#f5f5f4]">${escapeHtml(opt.label)}</span>
-            <span class="mt-0.5 block text-sm text-[#a8a29e]">${escapeHtml(opt.desc)}</span>
+            <span class="block font-semibold text-[var(--text)]">${escapeHtml(opt.label)}</span>
+            <span class="mt-0.5 block text-sm text-[var(--muted)]">${escapeHtml(opt.desc)}</span>
           </span>
         </button>`;
     })
     .join('');
 
   return shellTemplate(`
-    <section class="panel mt-4 p-5 sm:p-6">
+    <section class="finder-workspace panel mt-4 p-5 sm:p-6">
       <div class="flex items-center gap-2">
-        <span class="rounded-full border border-[#44403c] bg-[#1c1917] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-lime-300">${escapeHtml(q.header)}</span>
+        <span class="finder-step-label">${escapeHtml(q.header)}</span>
       </div>
       ${progressBar(finder.step + 1, questions.length)}
-      <h2 class="mt-4 text-xl font-semibold text-[#f5f5f4] sm:text-2xl">${escapeHtml(q.question)}</h2>
+      <h2 data-finder-question tabindex="-1" class="mt-4 text-xl font-semibold text-[var(--text)] sm:text-2xl">${escapeHtml(q.question)}</h2>
       <div class="mt-4 grid gap-3 sm:grid-cols-2">${options}</div>
       <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
-        <button type="button" data-finder-back ${finder.step === 0 ? 'disabled' : ''} class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524] ${
+        <button type="button" data-finder-back ${finder.step === 0 ? 'disabled' : ''} class="chip-btn secondary-action ${
           finder.step === 0 ? 'cursor-not-allowed opacity-50' : ''
         }">← ${t('Zurück', 'Back')}</button>
         <div class="flex items-center gap-2">
           ${
             answeredCount() > 0
-              ? `<button type="button" data-finder-results class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t('Ergebnisse zeigen', 'Show results')}</button>`
+              ? `<button type="button" data-finder-results class="chip-btn secondary-action">${t('Ergebnisse zeigen', 'Show results')}</button>`
               : ''
           }
-          <button type="button" data-finder-next class="chip-btn border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]">${
+          <button type="button" data-finder-next class="chip-btn primary-action">${
             finder.step === questions.length - 1 ? t('Ergebnisse', 'Results') : t('Weiter', 'Next')
           } →</button>
         </div>
@@ -374,7 +373,7 @@ const summaryChips = () =>
     .map((q) => {
       const opt = q.options.find((o) => o.value === finder.answers[q.id]);
       return opt && opt.value !== 'any'
-        ? `<li class="rounded-full border border-[#44403c] bg-[#1c1917] px-3 py-1 text-xs font-medium text-[#f5f5f4]">${escapeHtml(q.header)}: ${escapeHtml(opt.label)}</li>`
+        ? `<li class="rounded-full border border-[var(--line-strong)] bg-[var(--surface-2)] px-3 py-1 text-xs font-medium text-[var(--text)]">${escapeHtml(q.header)}: ${escapeHtml(opt.label)}</li>`
         : '';
     })
     .filter(Boolean)
@@ -384,19 +383,19 @@ const resultsTemplate = () => {
   const ranked = rankDevices(finder.answers);
   const chips = summaryChips();
   return shellTemplate(`
-    <section class="panel mt-4 p-5 sm:p-6">
+    <section class="finder-workspace panel mt-4 p-5 sm:p-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <h2 class="text-xl font-semibold text-[#f5f5f4] sm:text-2xl">${t('Deine besten Treffer', 'Your best matches')}</h2>
-          <p class="mt-1 text-sm text-[#a8a29e]">${t(
+          <h2 class="text-xl font-semibold text-[var(--text)] sm:text-2xl">${t('Deine besten Treffer', 'Your best matches')}</h2>
+          <p class="mt-1 text-sm text-[var(--muted)]">${t(
             'Basierend auf deinen Antworten – sortiert nach Passgenauigkeit.',
             'Based on your answers – sorted by fit.',
           )}</p>
         </div>
         <div class="flex flex-wrap gap-2">
-          <button type="button" data-finder-edit class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t('Antworten ändern', 'Edit answers')}</button>
-          <button type="button" data-finder-restart class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t('Neu starten', 'Start over')}</button>
-          <button type="button" data-finder-apply class="chip-btn border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]">${t('Im Verzeichnis öffnen', 'Open in directory')}</button>
+          <button type="button" data-finder-edit class="chip-btn secondary-action">${t('Antworten ändern', 'Edit answers')}</button>
+          <button type="button" data-finder-restart class="chip-btn secondary-action">${t('Neu starten', 'Start over')}</button>
+          <button type="button" data-finder-apply class="chip-btn primary-action">${t('Im Vergleich öffnen', 'Open in comparison')}</button>
         </div>
       </div>
       ${chips ? `<ul class="mt-4 flex flex-wrap gap-2">${chips}</ul>` : ''}
@@ -434,15 +433,37 @@ export const renderFinder = () => {
   const app = document.querySelector('#app');
   if (!app) return;
   app.innerHTML = finder.showResults ? resultsTemplate() : questionTemplate();
+  window.__AR_DIRECTORY_READY__ = true;
+  const rerenderAtWorkspace = () => {
+    renderFinder();
+    requestAnimationFrame(() => {
+      const workspace = document.querySelector('.finder-workspace');
+      workspace?.scrollIntoView({ behavior: 'auto', block: 'start' });
+      workspace?.querySelector('[data-finder-question]')?.focus({ preventScroll: true });
+    });
+  };
+
+  app.querySelector('#toggle-language')?.addEventListener('click', () => {
+    state.language = state.language === 'de' ? 'en' : 'de';
+    writeLanguageToStorage(state.language);
+    applyLanguageToDocument();
+    renderFinder();
+  });
+  app.querySelector('#theme-toggle')?.addEventListener('click', () => {
+    state.theme = state.theme === 'auto' ? 'light' : state.theme === 'light' ? 'dark' : 'auto';
+    writeThemeToStorage(state.theme);
+    applyThemeToDocument();
+    renderFinder();
+  });
 
   if (finder.showResults) {
     app.querySelector('[data-finder-edit]')?.addEventListener('click', () => {
       finder.showResults = false;
-      renderFinder();
+      rerenderAtWorkspace();
     });
     app.querySelector('[data-finder-restart]')?.addEventListener('click', () => {
       resetFinder();
-      renderFinder();
+      rerenderAtWorkspace();
     });
     app.querySelector('[data-finder-apply]')?.addEventListener('click', applyAnswersToDirectory);
     return;
@@ -452,10 +473,10 @@ export const renderFinder = () => {
   const goNext = () => {
     if (finder.step < FINDER_QUESTIONS.length - 1) {
       finder.step += 1;
-      renderFinder();
+      rerenderAtWorkspace();
     } else {
       finder.showResults = true;
-      renderFinder();
+      rerenderAtWorkspace();
     }
   };
 
@@ -470,11 +491,11 @@ export const renderFinder = () => {
   app.querySelector('[data-finder-back]')?.addEventListener('click', () => {
     if (finder.step > 0) {
       finder.step -= 1;
-      renderFinder();
+      rerenderAtWorkspace();
     }
   });
   app.querySelector('[data-finder-results]')?.addEventListener('click', () => {
     finder.showResults = true;
-    renderFinder();
+    rerenderAtWorkspace();
   });
 };

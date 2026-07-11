@@ -61,7 +61,7 @@ const detailModalTemplate = (row) => {
   const buyLinks = buildBuyLinks(row, getAffiliateOverrides());
   const editorial = (state.descriptions || {})[row.id] || {};
   const slug = compactValue(row.slug, '');
-  const shareTitle = `${compactValue(row.name, t('AR/XR Brille', 'AR/XR glasses'))} – AR/XR Brillen Vergleich`;
+  const shareTitle = `${compactValue(row.name, t('AR/XR Brille', 'AR/XR glasses'))} – AR Directory`;
   const isFavorite = state.favorites.includes(row.__rowId);
   // The modal is a quick preview. The canonical multipage detail view carries
   // the complete specification table and remains the primary destination.
@@ -96,10 +96,10 @@ const detailModalTemplate = (row) => {
               <div class="soft-panel p-3"><p class="text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">${t('Release', 'Release')}</p><p class="mt-1 font-semibold text-[#f5f5f4]">${escapeHtml(formatDate(row.release_date || row.announced_date))}</p></div>
               <div class="soft-panel p-3"><p class="text-[11px] uppercase tracking-[0.12em] text-[#a8a29e]">${t('Kategorie', 'Category')}</p><p class="mt-1 font-semibold text-[#f5f5f4]">${category}</p></div>
             </div>
-            ${editorial.description ? `<p class="text-sm leading-relaxed text-[#d6d3d1]">${escapeHtml(editorial.description)}</p>` : ''}
+            ${editorial.description ? `<p class="text-sm leading-relaxed text-[var(--muted)]">${escapeHtml(editorial.description)}</p>` : ''}
             ${
               Array.isArray(editorial.highlights) && editorial.highlights.length
-                ? `<div class="rounded-2xl border border-[#292524] bg-[#1c1917] p-3"><p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#a3e635]">${t('Highlights', 'Highlights')}</p><ul class="mt-1 list-disc space-y-0.5 pl-5 text-sm text-[#f5f5f4]">${editorial.highlights
+                ? `<div class="rounded-2xl border border-[#292524] bg-[#1c1917] p-3"><p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--text)]">${t('Highlights', 'Highlights')}</p><ul class="mt-1 list-disc space-y-0.5 pl-5 text-sm text-[#f5f5f4]">${editorial.highlights
                     .map((h) => `<li>${escapeHtml(h)}</li>`)
                     .join('')}</ul>${editorial.audience ? `<p class="mt-2 text-xs text-[#a8a29e]">${t('Geeignet für', 'Best for')}: ${escapeHtml(editorial.audience)}</p>` : ''}</div>`
                 : ''
@@ -136,7 +136,7 @@ const detailModalTemplate = (row) => {
                   : ''
               }
               <div class="flex flex-wrap gap-2">
-                ${shop.url ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" class="chip-btn ${shop.official ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]' : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'}">${escapeHtml(shop.label)}</a>` : ''}
+                ${shop.url ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" class="chip-btn card-action">${escapeHtml(shop.label)}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M11 3h6v6M17 3l-8 8M8 5H4v11h11v-4"/></svg></a>` : ''}
                 ${infoUrl ? `<a href="${escapeHtml(infoUrl)}" target="_blank" rel="noreferrer" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t('Datenquelle', 'Data source')}</a>` : ''}
                 ${row.__path ? `<a href="/${escapeHtml(row.__path)}/" class="chip-btn border-[var(--brand)] bg-[var(--brand)] text-[var(--brand-ink)]">${t('Alle Details öffnen', 'Open full details')} →</a>` : ''}
                 <button id="detail-share" type="button" data-share-title="${escapeHtml(shareTitle)}" data-share-path="${row.__path ? `/${escapeHtml(row.__path)}/` : '/'}" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]"><span aria-hidden="true">&#128279;</span> ${t('Teilen', 'Share')}</button>

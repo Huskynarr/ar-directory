@@ -3,7 +3,7 @@ stages:
   - build
 
 default:
-  image: node:20-alpine
+  image: node:24-alpine
   cache:
     key:
       files:

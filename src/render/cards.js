@@ -1,9 +1,8 @@
-import { escapeHtml, safeExternalUrl } from '../utils.js';
+import { escapeHtml, safeExternalUrl, toInitials } from '../utils.js';
 import { state } from '../state.js';
 import { t, compactValue, formatPrice, formatDate, formatLifecycleNotes, maybeHiddenText } from '../i18n.js';
 import { getShopInfo, isRecentRelease } from '../data/model.js';
 import { AFFILIATE_REL, buildBuyLinks, getAffiliateOverrides } from '../affiliate.js';
-import { getModelImageUrl } from './image.js';
 import { categoryTone, lifecycleTone, selectionLabelTemplate, buildCardFacts } from './shared.js';
 
 export const cardTemplate = (row) => {
@@ -11,12 +10,11 @@ export const cardTemplate = (row) => {
   const name = escapeHtml(compactValue(row.name, t('Unbekanntes Modell', 'Unknown model')));
   const manufacturer = escapeHtml(compactValue(row.manufacturer, t('Unbekannt', 'Unknown')));
   const category = escapeHtml(compactValue(row.xr_category, 'AR'));
-  const image = safeExternalUrl(row.image_url) || getModelImageUrl(row);
+  const image = safeExternalUrl(row.image_url);
+  const placeholderInitials = escapeHtml(toInitials(row.manufacturer));
   const shop = getShopInfo(row);
   const buyLinks = buildBuyLinks(row, getAffiliateOverrides());
-  const shopButtonClasses = shop.official
-    ? 'chip-btn border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
-    : 'chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]';
+  const shopButtonClasses = 'chip-btn card-action border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]';
   const lifecycleClasses = lifecycleTone(row);
   const eolDate = row.eol_date ? formatDate(row.eol_date) : t('k. A.', 'n/a');
   const releaseDate = formatDate(row.release_date || row.announced_date);
@@ -37,24 +35,29 @@ export const cardTemplate = (row) => {
         ${
           image
             ? `<img src="${escapeHtml(image)}" alt="${name}" loading="lazy" decoding="async" referrerpolicy="no-referrer" class="h-full w-full object-contain p-4 transition duration-300 ease-out group-hover:scale-[1.03] group-hover:brightness-105" />`
-            : `<div class="grid h-full place-items-center text-sm text-[#a8a29e]">${t('Kein Bild verfügbar', 'No image available')}</div>`
+            : `<div class="model-image-placeholder" role="img" aria-label="${escapeHtml(
+                t(`Schematische Darstellung: ${compactValue(row.name)}`, `Schematic illustration: ${compactValue(row.name)}`),
+              )}">
+                <span class="model-placeholder-icon" aria-hidden="true"><i></i><i></i></span>
+                <strong aria-hidden="true">${placeholderInitials}</strong>
+                <small aria-hidden="true">${manufacturer}</small>
+              </div>`
         }
-        <div class="absolute left-3 top-3 flex items-center gap-1.5" onclick="event.stopPropagation()">${selectionLabelTemplate(
+        <div class="absolute left-3 top-3" onclick="event.stopPropagation()">${selectionLabelTemplate(
           row.__rowId,
           isSelected,
           compactValue(row.name, t('Unbekannt', 'Unknown')),
-        )}
+        )}</div>
         <button
           data-favorite-toggle="${escapeHtml(row.__rowId)}"
           type="button"
-          class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-[#44403c] bg-[#1c1917] text-lg transition hover:border-[var(--brand)] ${isFavorite ? 'text-[var(--brand)]' : 'text-[#a8a29e]'}"
+          class="absolute bottom-3 right-3 z-[2] inline-flex h-8 w-8 items-center justify-center rounded-full border border-[#44403c] bg-[#1c1917] text-lg shadow-md transition hover:border-[var(--brand)] ${isFavorite ? 'text-[var(--brand)]' : 'text-[#a8a29e]'}"
           aria-label="${escapeHtml(isFavorite ? t('Favorit entfernen', 'Remove favorite') : t('Als Favorit merken', 'Add to favorites'))}"
         >${isFavorite ? '&#9733;' : '&#9734;'}</button>
-        </div>
         <span class="absolute right-3 top-3 rounded-full border px-2.5 py-1 text-xs font-bold ${categoryTone(row.xr_category)}">${category}</span>
         ${
           isRecentRelease(row)
-            ? `<span class="absolute bottom-3 left-3 rounded-full border border-lime-400/50 bg-lime-400/15 px-2 py-0.5 text-[11px] font-bold uppercase tracking-[0.08em] text-lime-200">${t('Neu', 'New')}</span>`
+            ? `<span class="release-status absolute bottom-3 left-3">${t('Neu', 'New')}</span>`
             : ''
         }
       </div>
@@ -62,7 +65,7 @@ export const cardTemplate = (row) => {
         <div class="space-y-1.5">
           <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#a8a29e]">${manufacturer}</p>
           <h2 class="font-semibold text-2xl leading-tight text-[#f5f5f4]"><button type="button" data-detail-open="${escapeHtml(row.__rowId)}" class="text-left underline-offset-4 transition-colors hover:text-[#84cc16] hover:underline focus-visible:text-[#84cc16] focus-visible:underline">${name}</button></h2>
-          <p class="text-sm text-[#a8a29e]">${t('Release', 'Release')}: ${escapeHtml(releaseDate)}</p>
+          <p class="text-sm text-[#a8a29e]">${t('Erschienen', 'Released')}: ${escapeHtml(releaseDate)}</p>
         </div>
 
         <div class="grid grid-cols-2 gap-2 text-sm">
@@ -121,7 +124,7 @@ export const cardTemplate = (row) => {
         ${
           compact
             ? `<div class="compact-card-status ${lifecycleClasses}">
-                <span>${t('Lifecycle', 'Lifecycle')}</span>
+                <span>${t('Status', 'Status')}</span>
                 <strong>${escapeHtml(compactValue(row.eol_status))}</strong>
               </div>`
             : `<div class="rounded-lg border-l-[3px] py-2 pl-3.5 pr-2 text-sm ${lifecycleClasses}">
@@ -140,7 +143,7 @@ export const cardTemplate = (row) => {
         <div class="flex flex-wrap gap-2">
           ${
             shop.url
-              ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" class="${shopButtonClasses}">${escapeHtml(shop.label)}</a>`
+              ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" class="${shopButtonClasses}">${escapeHtml(shop.label)}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M11 3h6v6M17 3l-8 8M8 5H4v11h11v-4"/></svg></a>`
               : !compact
                 ? `<span class="chip-btn cursor-not-allowed border-[#44403c] bg-[#292524] text-[#a8a29e]">${t(
                     'Herstellerlink fehlt',
@@ -148,10 +151,10 @@ export const cardTemplate = (row) => {
                   )}</span>`
                 : ''
           }
-          <button type="button" data-detail-open="${escapeHtml(row.__rowId)}" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(
+          <button type="button" data-detail-open="${escapeHtml(row.__rowId)}" class="chip-btn card-action border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(
             'Details',
             'Details',
-          )}<span aria-hidden="true">→</span></button>
+          )}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6"/></svg></button>
           ${
             !compact && infoUrl
               ? `<a href="${escapeHtml(infoUrl)}" target="_blank" rel="noreferrer" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(

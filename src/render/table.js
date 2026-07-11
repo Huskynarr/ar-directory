@@ -98,7 +98,7 @@ export const tableTemplate = (rows) => {
                       <div class="flex flex-col gap-1.5 whitespace-nowrap">
                         ${
                           shop.url
-                            ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(`${shop.label}: ${modelName}`)}" class="text-xs font-semibold text-[#84cc16] hover:underline">${escapeHtml(shop.label)}</a>`
+                            ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(`${shop.label}: ${modelName}`)}" class="text-xs font-semibold text-[var(--text)] hover:text-[var(--brand)] hover:underline">${escapeHtml(shop.label)}</a>`
                             : `<span class="text-xs text-[#a8a29e]">${t('Kein Herstellerlink', 'No manufacturer link')}</span>`
                         }
                         ${

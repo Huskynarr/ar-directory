@@ -1,12 +1,11 @@
-import { escapeHtml, normalizeText, toInitials } from '../utils.js';
+import { escapeHtml, toInitials } from '../utils.js';
 import { t } from '../i18n.js';
 
 export const createModelImageDataUrl = (row) => {
-  const isXr = normalizeText(row.xr_category) === 'xr';
   // Quiet placeholder: calm dark surface with a minimal glasses pictogram and a
-  // muted manufacturer monogram. The category tints only the thin pictogram
-  // stroke — no saturated full-bleed fill that would dominate the card grid.
-  const accent = isXr ? '#5b9bd6' : '#9bd64a';
+  // muted manufacturer monogram. A single brand stroke keeps AR and XR
+  // placeholders visually consistent without saturated category colors.
+  const accent = '#9bd64a';
   const label = String(row.name ?? 'AR/XR Glasses').trim().slice(0, 30) || 'AR/XR Glasses';
   const manufacturer = String(row.manufacturer ?? t('Unbekannt', 'Unknown')).trim().slice(0, 24) || t('Unbekannt', 'Unknown');
   const initials = toInitials(manufacturer);

@@ -26,7 +26,8 @@ export const THEME_MODES = new Set(['auto', 'dark', 'light']);
 export const THEME_STORAGE_KEY = 'ar_directory_theme';
 export const LANGUAGE_STORAGE_KEY = 'ar_directory_language';
 export const FAVORITES_STORAGE_KEY = 'ar_directory_favorites';
-export const APP_VERSION = '0.7.0';
+export const APP_VERSION = __APP_VERSION__;
+export const APP_BUILD = __BUILD_REVISION__;
 export const RADAR_COLORS = ['#84cc16', '#2f6fb5', '#2d8f60', '#9b3db6', '#b1731f', '#a73452'];
 
 export const LIFECYCLE_NOTE_SUPPRESS_MARKERS = ['keine eindeutige eol-angabe', 'no clear eol', 'no explicit eol'];
@@ -173,6 +174,8 @@ export const applyThemeToDocument = () => {
   const theme = normalizeTheme(state.theme, 'auto');
   const effectiveTheme = theme === 'auto' ? getSystemThemePreference() : theme;
   state.theme = theme;
+  document.documentElement.classList.toggle('theme-dark', effectiveTheme === 'dark');
+  document.documentElement.classList.toggle('theme-light', effectiveTheme === 'light');
   document.body.classList.toggle('theme-dark', effectiveTheme === 'dark');
   document.body.classList.toggle('theme-light', effectiveTheme === 'light');
   document.documentElement.style.colorScheme = effectiveTheme;

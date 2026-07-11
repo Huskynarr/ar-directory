@@ -1,5 +1,16 @@
 import './style.css';
 
+// In development the stylesheet import is evaluated before this line. The
+// production build marks readiness from the async stylesheet's load event.
+if (import.meta.env.DEV) {
+  document.documentElement.classList.add('app-styled');
+}
+
+const waitForAppStyles = () => {
+  if (document.documentElement.classList.contains('app-styled')) return Promise.resolve();
+  return new Promise((resolveStyles) => window.addEventListener('ar-styles-ready', resolveStyles, { once: true }));
+};
+
 const yieldToBrowser = () => new Promise((resolveYield) => setTimeout(resolveYield, 0));
 
 const startApp = async () => {
@@ -9,7 +20,6 @@ const startApp = async () => {
     import('./state.js'),
     import('./data/filters.js'),
     import('./render/cards.js'),
-    import('./render/stats.js'),
     import('./data/dataset.js'),
     import('./actions.js'),
     import('./seo.js'),
@@ -19,12 +29,13 @@ const startApp = async () => {
     await yieldToBrowser();
   }
   const { start } = await import('./main.js');
+  await waitForAppStyles();
   await yieldToBrowser();
   start();
 };
 
-// The static app shell is complete and useful on its own. Load interaction and
-// catalog parsing after its first paint so content rendering never waits on JS.
+// Give the complete critical shell one uncontended paint before module and
+// dataset work begins. The visible state is already useful and fully styled.
 requestAnimationFrame(() => {
   window.setTimeout(() => {
     void startApp();

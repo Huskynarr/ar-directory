@@ -1,4 +1,5 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 import Papa from 'papaparse';
@@ -29,7 +30,7 @@ const fact = (label, value, suffix = '') =>
     : '';
 
 const buildCatalogHtml = (rows, paths) => {
-  const featuredRows = rows.slice(0, 12);
+  const featuredRows = rows.slice(0, 8);
   const items = featuredRows
     .map((row) => {
       const fov = [row.fov_horizontal_deg, row.fov_vertical_deg, row.fov_diagonal_deg]
@@ -104,7 +105,7 @@ const seoInjectPlugin = () => ({
             ...structured,
             '@graph': (structured['@graph'] || []).map((node) =>
               node['@type'] === 'ItemList'
-                ? { ...node, itemListElement: (node.itemListElement || []).slice(0, 12) }
+                ? { ...node, itemListElement: (node.itemListElement || []).slice(0, 8) }
                 : node,
             ),
           }
@@ -325,10 +326,11 @@ const finderPagePlugin = () => ({
   },
 });
 
-// The generated app stylesheet is small enough to inline in SPA entry pages,
-// removing a render-blocking request. Static pages keep their cached app.css.
-const inlineAppCssPlugin = () => ({
-  name: 'ar-directory-inline-app-css',
+// Production inlines only the small above-the-fold stylesheet and removes the
+// development-only critical duplicate. Deferred catalog/finder/footer styles
+// remain cacheable CSS attached to the lazy main chunk.
+const styledAppShellPlugin = () => ({
+  name: 'ar-directory-styled-app-shell',
   enforce: 'post',
   closeBundle() {
     for (const htmlPath of ['dist/index.html', 'dist/404.html', 'dist/finder/index.html']) {
@@ -337,28 +339,36 @@ const inlineAppCssPlugin = () => ({
         const match = html.match(/<link rel="stylesheet" crossorigin href="([^"]+\.css)">/);
         if (!match) continue;
         const css = readFileSync(`dist${match[1]}`, 'utf8').replace(/<\/style/gi, '<\\/style');
-        writeFileSync(htmlPath, html.replace(match[0], `<style data-app-css>${css}</style>`));
+        const withoutDevelopmentCritical = html.replace(/\s*<style data-boot-style>[\s\S]*?<\/style>/, '');
+        writeFileSync(
+          htmlPath,
+          withoutDevelopmentCritical.replace(
+            match[0],
+            `<style data-app-css>${css}</style><script>document.documentElement.classList.add('app-styled');window.dispatchEvent(new Event('ar-styles-ready'))</script>`,
+          ),
+        );
       } catch (error) {
-        console.warn('[inline-app-css] skipped:', error?.message || error);
+        console.warn('[styled-app-shell] skipped:', error?.message || error);
       }
     }
   },
 });
 
-const buildStamp = new Date()
-  .toLocaleString('de-DE', {
-    timeZone: 'Europe/Berlin',
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-  })
-  .replace(', ', ' - ');
+const packageVersion = readJson('package.json')?.version || '0.0.0';
+const buildRevision = (() => {
+  const ciRevision = process.env.GITHUB_SHA || process.env.CF_PAGES_COMMIT_SHA || process.env.VERCEL_GIT_COMMIT_SHA;
+  if (ciRevision) return ciRevision.slice(0, 7);
+  try {
+    return execFileSync('git', ['rev-parse', '--short=7', 'HEAD'], { encoding: 'utf8' }).trim();
+  } catch {
+    return 'local';
+  }
+})();
 
 export default defineConfig({
   define: {
-    __BUILD_TIME__: JSON.stringify(buildStamp),
+    __APP_VERSION__: JSON.stringify(packageVersion),
+    __BUILD_REVISION__: JSON.stringify(buildRevision),
   },
-  plugins: [tailwindcss(), seoInjectPlugin(), spaFallbackPlugin(), finderPagePlugin(), inlineAppCssPlugin()],
+  plugins: [tailwindcss(), seoInjectPlugin(), spaFallbackPlugin(), finderPagePlugin(), styledAppShellPlugin()],
 });

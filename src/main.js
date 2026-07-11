@@ -1,10 +1,10 @@
-import { escapeHtml, normalizeText, parsePrice, debounce } from './utils.js';
+import deferredStyles from './deferred.css?inline';
+import { escapeHtml, debounce } from './utils.js';
 import {
   state,
   COMPARE_LIMIT,
   CARDS_PER_PAGE,
   MOBILE_CARDS_PER_PAGE,
-  APP_VERSION,
   normalizeLanguage,
   normalizeTheme,
   readThemeFromStorage,
@@ -14,27 +14,29 @@ import {
   readFavoritesFromStorage,
   toggleFavorite,
   applyThemeToDocument,
-  getSystemThemePreference,
   applyLanguageToDocument,
   setFallbackUsdRate,
   pruneSelectedIdsToKnownRows,
   applyStateFromUrl,
   syncUrlWithState,
 } from './state.js';
-import { t, formatCurrency, formatDate, formatRateHint, compactValue } from './i18n.js';
-import { getRowId, getShopInfo, isEol, isLikelyActive, isArRow, isXrRow } from './data/model.js';
+import { t, formatRateHint, compactValue } from './i18n.js';
+import { getRowId } from './data/model.js';
 import { assignDevicePaths, COMPARE_SEPARATOR } from './data/paths.js';
 import { getFilterOptions, matchesFilters, sortRows, getSelectedRows } from './data/filters.js';
 import { parseCsv, fetchUsdToEurRate } from './data/dataset.js';
 import { AFFILIATE, setAffiliateOverrides } from './affiliate.js';
-import { optionList } from './render/shared.js';
+import { optionList, brandLockupTemplate, headerControlsTemplate, siteFooterTemplate } from './render/shared.js';
 import { cardTemplate } from './render/cards.js';
 import { setRenderFn } from './render/registry.js';
-import { buildStatsChartSvg } from './render/stats.js';
 import { exportFilteredCsv, copyShareUrl } from './actions.js';
 import { updateDocumentSeoSignals, captureQueryFocusState, restoreQueryFocusState } from './seo.js';
 
 const app = document.querySelector('#app');
+const deferredStyle = document.querySelector('style[data-deferred-app-css]') || document.createElement('style');
+deferredStyle.dataset.deferredAppCss = '';
+deferredStyle.textContent = deferredStyles;
+if (!deferredStyle.isConnected) document.head.append(deferredStyle);
 const isFinderRoute = () => /^\/finder\/?$/.test(window.location.pathname);
 const yieldToMainThread = () => new Promise((resolveYield) => setTimeout(resolveYield, 0));
 
@@ -180,32 +182,42 @@ const applyCatalogMarkup = async (markup, { cooperative = false } = {}) => {
   if (cooperative) await yieldToMainThread();
 
   syncAttributes(currentMain, nextMain);
-  syncAttributes(currentHeader, nextHeader);
-  currentTitle.textContent = nextTitle.textContent;
+  const preserveInitialHero =
+    currentHeader.dataset.initialShell === 'true' &&
+    state.language === 'de' &&
+    state.theme === 'auto' &&
+    currentTitle.textContent === nextTitle.textContent &&
+    currentHeader.querySelector('#toggle-language') &&
+    currentHeader.querySelector('#theme-toggle');
 
-  // Refresh the hero chrome while never disconnecting its H1.
-  for (const node of [...currentHeader.childNodes]) {
-    if (node !== currentTitle) node.remove();
-  }
-  let afterTitle = false;
-  for (const node of [...nextHeader.childNodes]) {
-    if (node === nextTitle) {
-      afterTitle = true;
-    } else if (afterTitle) {
-      currentHeader.append(node);
-    } else {
-      currentHeader.insertBefore(node, currentTitle);
+  if (!preserveInitialHero) {
+    syncAttributes(currentHeader, nextHeader);
+    if (currentTitle.textContent !== nextTitle.textContent) {
+      currentTitle.textContent = nextTitle.textContent;
+    }
+
+    // Refresh the hero chrome while never disconnecting its H1.
+    for (const node of [...currentHeader.childNodes]) {
+      if (node !== currentTitle) node.remove();
+    }
+    let afterTitle = false;
+    for (const node of [...nextHeader.childNodes]) {
+      if (node === nextTitle) {
+        afterTitle = true;
+      } else if (afterTitle) {
+        currentHeader.append(node);
+      } else {
+        currentHeader.insertBefore(node, currentTitle);
+      }
     }
   }
 
   for (const node of [...currentMain.childNodes]) {
     if (node !== currentHeader) node.remove();
   }
-  if (cooperative) await yieldToMainThread();
   for (const node of [...nextMain.childNodes]) {
     if (node !== nextHeader) {
       currentMain.append(node);
-      if (cooperative && node.nodeType === Node.ELEMENT_NODE) await yieldToMainThread();
     }
   }
 
@@ -218,19 +230,6 @@ const applyCatalogMarkup = async (markup, { cooperative = false } = {}) => {
   if (nextBackToTop) app.append(nextBackToTop);
 };
 
-const appendCardsCooperatively = async (rows) => {
-  const grid = document.querySelector('[data-card-grid]');
-  if (!grid) return;
-  for (const row of rows) {
-    const template = document.createElement('template');
-    template.innerHTML = cardTemplate(row).trim();
-    const placeholder = grid.querySelector('[data-card-placeholder]');
-    if (placeholder) placeholder.replaceWith(...template.content.childNodes);
-    else grid.append(...template.content.childNodes);
-    await yieldToMainThread();
-  }
-};
-
 const render = async ({ cooperative = false } = {}) => {
   const queryFocusState = captureQueryFocusState();
   const isMobileViewport = window.matchMedia('(max-width: 640px)').matches;
@@ -239,80 +238,6 @@ const render = async ({ cooperative = false } = {}) => {
   // option lists before the user opens filters adds needless startup work.
   const filterOptions = showCoreFilters ? getFilterOptions() : {};
   const filtered = sortRows(state.rows.filter(matchesFilters));
-  let withPrice = 0;
-  let withShop = 0;
-  let activeCount = 0;
-  let eolCount = 0;
-  let arCount = 0;
-  let xrCount = 0;
-  let priceTotal = 0;
-  const manufacturers = new Set();
-  for (const row of filtered) {
-    const price = parsePrice(row.price_usd);
-    if (price) {
-      withPrice += 1;
-      priceTotal += price;
-    }
-    if (getShopInfo(row).url) withShop += 1;
-    if (isLikelyActive(row)) activeCount += 1;
-    if (isEol(row)) eolCount += 1;
-    if (isArRow(row)) arCount += 1;
-    if (isXrRow(row)) xrCount += 1;
-    const manufacturer = normalizeText(row.manufacturer);
-    if (manufacturer) manufacturers.add(manufacturer);
-  }
-  const avgPrice = withPrice > 0 ? Math.round(priceTotal / withPrice) : 0;
-  const manufacturerCount = manufacturers.size;
-  const retrievedAt = compactValue(filtered[0]?.dataset_retrieved_at || state.rows[0]?.dataset_retrieved_at, '');
-  const languageToggleLabel =
-    state.language === 'de'
-      ? t('Sprache wechseln: Englisch', 'Switch language: English')
-      : t('Sprache wechseln: Deutsch', 'Switch language: German');
-  const languageToggleIcon =
-    state.language === 'de'
-      ? `<svg class="flag-icon" viewBox="0 0 24 16" fill="none" aria-hidden="true">
-          <rect x="0.75" y="0.75" width="22.5" height="14.5" rx="2.5" fill="#111827" stroke="rgba(255,255,255,0.35)" />
-          <rect x="2.2" y="2.2" width="19.6" height="3.9" fill="#1f1f1f" />
-          <rect x="2.2" y="6.1" width="19.6" height="3.9" fill="#c81e1e" />
-          <rect x="2.2" y="10" width="19.6" height="3.9" fill="#facc15" />
-        </svg>`
-      : `<svg class="flag-icon" viewBox="0 0 24 16" fill="none" aria-hidden="true">
-          <rect x="0.75" y="0.75" width="22.5" height="14.5" rx="2.5" fill="#ffffff" stroke="rgba(255,255,255,0.35)" />
-          <rect x="2.2" y="2.2" width="19.6" height="1.45" fill="#be123c" />
-          <rect x="2.2" y="4.35" width="19.6" height="1.45" fill="#be123c" />
-          <rect x="2.2" y="6.5" width="19.6" height="1.45" fill="#be123c" />
-          <rect x="2.2" y="8.65" width="19.6" height="1.45" fill="#be123c" />
-          <rect x="2.2" y="10.8" width="19.6" height="1.45" fill="#be123c" />
-          <rect x="2.2" y="12.95" width="19.6" height="0.95" fill="#be123c" />
-          <rect x="2.2" y="2.2" width="8.8" height="6.85" fill="#1d4ed8" />
-        </svg>`;
-  const effectiveTheme = state.theme === 'auto' ? getSystemThemePreference() : state.theme;
-  const themeToggleLabel = state.theme === 'auto'
-    ? t(`Darstellung: Automatisch (${effectiveTheme === 'light' ? 'Hell' : 'Dunkel'}). Zu Hell wechseln`, `Theme: Auto (${effectiveTheme}). Switch to light`)
-    : state.theme === 'light'
-      ? t('Darstellung: Hell. Zu Dunkel wechseln', 'Theme: Light. Switch to dark')
-      : t('Darstellung: Dunkel. Zu Automatisch wechseln', 'Theme: Dark. Switch to auto');
-  const themeToggleIcon =
-    state.theme === 'auto'
-      ? `<svg class="theme-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2" stroke="currentColor"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-linecap="round"/></svg>`
-      : state.theme === 'light'
-      ? `<svg class="theme-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path
-            d="M21 12.79A9 9 0 1 1 11.21 3c0 .29 0 .57.01.86A7.5 7.5 0 0 0 18.75 11.36c.29 0 .57 0 .86-.01"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>`
-      : `<svg class="theme-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <circle cx="12" cy="12" r="4" stroke="currentColor" />
-          <path
-            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>`;
   const selectedRows = getSelectedRows();
   applyLanguageToDocument();
   applyThemeToDocument();
@@ -367,31 +292,8 @@ const render = async ({ cooperative = false } = {}) => {
       <header class="app-hero panel relative overflow-hidden p-4 sm:p-5">
         <div class="theme-hero-surface absolute inset-0 -z-10"></div>
         <div class="flex items-start justify-between gap-3">
-          <div class="brand-lockup">
-            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none"><path d="M3.5 14h5.2m10.6 0h5.2M8.7 10.5h4.2c1.1 0 2 .9 2 2v3c0 1.1-.9 2-2 2H8.7a2 2 0 0 1-2-2v-3c0-1.1.9-2 2-2Zm10.6 0h-4.2c-1.1 0-2 .9-2 2v3c0 1.1.9 2 2 2h4.2a2 2 0 0 0 2-2v-3c0-1.1-.9-2-2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-            <span><strong>AR DIRECTORY</strong><small>by Huskynarr</small></span>
-          </div>
-          <div class="flex shrink-0 items-center gap-2">
-            <button
-              id="toggle-language"
-              type="button"
-              class="theme-icon-btn"
-              aria-label="${escapeHtml(languageToggleLabel)}"
-              title="${escapeHtml(languageToggleLabel)}"
-            >
-              ${languageToggleIcon}
-            </button>
-            <button
-              id="theme-toggle"
-              type="button"
-              class="theme-icon-btn"
-              data-theme-mode="${state.theme}"
-              aria-label="${escapeHtml(themeToggleLabel)}"
-              title="${escapeHtml(themeToggleLabel)}"
-            >
-              ${themeToggleIcon}
-            </button>
-          </div>
+          ${brandLockupTemplate()}
+          ${headerControlsTemplate()}
         </div>
         <h1 class="hero-title mt-3 text-3xl font-bold leading-tight sm:text-4xl">${t(
           'Vergleich für AR-Brillen und XR-Glasses',
@@ -407,7 +309,7 @@ const render = async ({ cooperative = false } = {}) => {
           <div class="flex shrink-0 flex-wrap items-center gap-3">
             <a href="/finder/" data-nav class="finder-cta">
               <svg viewBox="0 0 24 24" width="17" height="17" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/><path d="m14.8 9.2-1.6 4-4 1.6 1.6-4 4-1.6Z" fill="currentColor"/></svg>
-              ${t('Brille finden', 'Find glasses')}
+              ${t('AR-/XR-Brille finden', 'Find AR/XR glasses')}
             </a>
           </div>
         </div>
@@ -416,7 +318,7 @@ const render = async ({ cooperative = false } = {}) => {
 
       ${selectedRows.length && compareModule ? compareModule.compareBarTemplate(selectedRows) : ''}
 
-      <section class="panel mt-3 p-4" data-filters-open="${state.showAdvancedFilters ? 'true' : 'false'}">
+      <section class="panel catalog-filter-panel mt-3 p-4" data-filters-open="${state.showAdvancedFilters ? 'true' : 'false'}">
         <div class="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
           <div class="min-w-0">
             <h2 class="text-lg font-semibold text-[#f5f5f4]">${t('Modelle finden', 'Find models')}</h2>
@@ -655,8 +557,13 @@ const render = async ({ cooperative = false } = {}) => {
       </section>
 
       <section class="results-tools mt-3">
-        <p><strong>${filtered.length}</strong> ${t('Modelle', 'models')}</p>
+        <p class="result-count"><strong>${filtered.length}</strong> <span>${t('Modelle', 'models')}</span>${
+          filtered.length !== state.rows.length
+            ? ` <small>${t(`von ${state.rows.length}`, `of ${state.rows.length}`)}</small>`
+            : ''
+        }</p>
         <div class="flex items-center gap-1">
+          <a href="/data.html" class="icon-text-btn" title="${t('Datenübersicht und Datenqualität', 'Dataset overview and quality')}"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 16V9m5 7V4m5 12v-5m4 5H2"/></svg><span>${t('Daten', 'Data')}</span></a>
           <button id="export-csv" type="button" class="icon-text-btn" ${filtered.length === 0 ? 'disabled' : ''} title="${t('Ergebnisse als CSV exportieren', 'Export results as CSV')}"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2v10m0 0 4-4m-4 4L6 8M3 15v2h14v-2"/></svg><span>CSV</span></button>
           <button id="share-url" type="button" class="icon-text-btn" title="${t('Ansicht teilen', 'Share view')}"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 12.5l5-5M6 8H5a3 3 0 0 0 0 6h3a3 3 0 0 0 2.1-.9M14 12h1a3 3 0 0 0 0-6h-3a3 3 0 0 0-2.1.9"/></svg><span>${t('Teilen', 'Share')}</span></button>
         </div>
@@ -697,11 +604,7 @@ const render = async ({ cooperative = false } = {}) => {
                 </div>`
               : state.viewMode === 'cards'
                 ? `
-                    <div data-card-grid class="grid gap-4 md:grid-cols-2 ${state.focusMode ? 'xl:grid-cols-4' : 'xl:grid-cols-3 xl:gap-5'}">${
-                      cooperative
-                        ? visibleCards.map(() => '<div data-card-placeholder class="catalog-card-placeholder panel" aria-hidden="true"></div>').join('')
-                        : visibleCards.map(cardTemplate).join('')
-                    }</div>
+                    <div data-card-grid class="grid gap-4 md:grid-cols-2 ${state.focusMode ? 'xl:grid-cols-4' : 'xl:grid-cols-3 xl:gap-5'}">${visibleCards.map(cardTemplate).join('')}</div>
                     ${paginationTemplate(state.cardsPage, maxPage, visibleCards.length, filtered.length)}
                   `
                 : tableModule
@@ -710,109 +613,7 @@ const render = async ({ cooperative = false } = {}) => {
         }
       </section>
 
-      ${
-        state.focusMode
-          ? ''
-          : `<section class="panel mt-4 p-4 sm:p-5">
-              <h2 class="text-lg font-semibold text-[#f5f5f4] sm:text-xl">${t(
-                'AR/XR Brillen FAQ und Suchkontext',
-                'AR/XR Glasses FAQ and search context',
-              )}</h2>
-              <p class="mt-2 text-sm text-[#a8a29e]">
-                ${t(
-                  'Diese Vergleichsseite fokussiert AR- und XR-Brillen mit Herstellerlinks, Preisstatus, FOV, Refresh, Tracking, Software sowie Updates/EOL. Legacy-Modelle sind zur Vervollständigung des Datenbestands enthalten.',
-                  'This comparison page focuses on AR and XR glasses with manufacturer links, pricing status, FOV, refresh, tracking, software and updates/EOL. Legacy models are included to complete the dataset.',
-                )}
-              </p>
-              <div class="mt-4 grid gap-3 md:grid-cols-2">
-                <article class="soft-panel p-3">
-                  <h3 class="text-sm font-semibold text-[#f5f5f4]">${t('Welche Modelle sind enthalten?', 'Which models are included?')}</h3>
-                  <p class="mt-1 text-sm text-[#a8a29e]">
-                    ${t(
-                      'Moderne AR/XR-Modelle plus Legacy-Geräte wie HoloLens 1, Epson Moverio, Sony SmartEyeglass und weitere.',
-                      'Modern AR/XR models plus legacy devices such as HoloLens 1, Epson Moverio, Sony SmartEyeglass and others.',
-                    )}
-                  </p>
-                </article>
-                <article class="soft-panel p-3">
-                  <h3 class="text-sm font-semibold text-[#f5f5f4]">${t('Welche Daten kann ich filtern?', 'Which data can I filter?')}</h3>
-                  <p class="mt-1 text-sm text-[#a8a29e]">
-                    ${t(
-                      'Kategorie (AR/XR), Hersteller, Display, Optik, Tracking, Eye/Hand, Passthrough, FOV, Refresh, Preis, Vertriebsstatus und EOL.',
-                      'Category (AR/XR), manufacturer, display, optics, tracking, eye/hand, passthrough, FOV, refresh, price, distribution status and EOL.',
-                    )}
-                  </p>
-                </article>
-                <article class="soft-panel p-3">
-                  <h3 class="text-sm font-semibold text-[#f5f5f4]">${t('Gibt es exportierbare Daten?', 'Is data export available?')}</h3>
-                  <p class="mt-1 text-sm text-[#a8a29e]">
-                    ${t(
-                      'Ja, die gefilterten Ergebnisse lassen sich direkt als CSV exportieren. Der komplette Datensatz ist auch unter',
-                      'Yes, filtered results can be exported directly as CSV. The full dataset is also available at',
-                    )} <code>/data/ar_glasses.csv</code>.
-                  </p>
-                </article>
-                <article class="soft-panel p-3">
-                  <h3 class="text-sm font-semibold text-[#f5f5f4]">${t('Wie aktuell sind die Infos?', 'How current is the information?')}</h3>
-                  <p class="mt-1 text-sm text-[#a8a29e]">
-                    ${t(
-                      'Quelle sind kuratierte Datensätze plus manuelle Legacy-Ergänzungen. Zu jedem Modell gibt es Lifecycle-/EOL-Kontext und Datenquellen-Links.',
-                      'Sources are curated datasets plus manual legacy additions. Each model includes lifecycle/EOL context and source links.',
-                    )}
-                  </p>
-                </article>
-              </div>
-            </section>`
-      }
-
-      <section class="mt-4">
-        <div class="panel p-4 sm:p-5">
-          <div class="flex items-center justify-between">
-            <h2 class="text-sm font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Statistik', 'Statistics')}</h2>
-            <div class="flex items-center gap-2">${buildStatsChartSvg(arCount, xrCount)}</div>
-          </div>
-          <div class="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-            <p class="soft-panel p-3 text-sm text-[#a8a29e]">
-              ${t('Datenbestand', 'Dataset size')}: <strong class="text-[#f5f5f4]">${state.rows.length}</strong>
-              &middot; ${t('Sichtbar', 'Visible')}: <strong class="text-[#f5f5f4]">${filtered.length}</strong>
-            </p>
-            <p class="soft-panel p-3 text-sm text-[#a8a29e]">
-              AR: <strong class="text-[#f5f5f4]">${arCount}</strong> &middot;
-              XR: <strong class="text-[#f5f5f4]">${xrCount}</strong> &middot;
-              ${t('Hersteller', 'Manufacturers')}: <strong class="text-[#f5f5f4]">${manufacturerCount}</strong>
-            </p>
-            <p class="soft-panel p-3 text-sm text-[#a8a29e]">
-              ${t('Aktiv', 'Active')}: <strong class="text-[#f5f5f4]">${activeCount}</strong> &middot;
-              EOL: <strong class="text-[#f5f5f4]">${eolCount}</strong> &middot;
-              ${t('Herstellerlinks', 'Manufacturer links')}: <strong class="text-[#f5f5f4]">${withShop}</strong>
-            </p>
-            <p class="soft-panel p-3 text-sm text-[#a8a29e]">
-              ${withPrice > 0 ? `${t('Durchschnittspreis', 'Avg. price')}: <strong class="text-[#f5f5f4]">${formatCurrency(avgPrice, 'USD')}</strong> &middot; ` : ''}
-              ${t('Datenstand', 'Data updated')}: <strong class="text-[#f5f5f4]">${escapeHtml(
-                retrievedAt ? formatDate(retrievedAt) : t('k. A.', 'n/a'),
-              )}</strong>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <footer class="mt-4">
-        <div class="flex flex-wrap items-center justify-between gap-3 border-t border-[var(--line)] px-1 py-5 text-xs text-[#a8a29e]">
-          <p>AR Directory <span aria-hidden="true">·</span> v${APP_VERSION}</p>
-          <nav class="flex flex-wrap items-center gap-x-4 gap-y-2" aria-label="${t('Rechtliches und Hilfe', 'Legal and help')}">
-            <a href="/modelle/" class="hover:text-[var(--text)]">${t('Modelle', 'Models')}</a>
-            <a href="/glossar.html" class="hover:text-[var(--text)]">${t('Hilfe', 'Help')}</a>
-            <a href="/impressum.html" class="hover:text-[var(--text)]">${t('Impressum', 'Legal')}</a>
-            <a href="/datenschutz.html" class="hover:text-[var(--text)]">${t('Datenschutz', 'Privacy')}</a>
-            <a href="/asset-notices.html" class="hover:text-[var(--text)]">${t('Bildnachweise', 'Credits')}</a>
-          </nav>
-        </div>
-        ${
-          AFFILIATE.enabled
-            ? `<p class="mt-2 px-1 text-[11px] text-[#78716c]">* ${escapeHtml(AFFILIATE.disclosureShort)}</p>`
-            : ''
-        }
-      </footer>
+      ${siteFooterTemplate({ disclosure: AFFILIATE.enabled ? AFFILIATE.disclosureShort : '' })}
     </main>
     <button
       id="back-to-top"
@@ -825,12 +626,8 @@ const render = async ({ cooperative = false } = {}) => {
   if (cooperative) await yieldToMainThread();
   if (cooperative) await applyCatalogMarkup(catalogMarkup, { cooperative: true });
   else void applyCatalogMarkup(catalogMarkup);
-  if (cooperative && !state.compareMode && state.viewMode === 'cards') {
-    await appendCardsCooperatively(visibleCards);
-  }
   if (state.viewMode === 'table') requestTableModule();
   if (selectedRows.length) requestCompareModule();
-  if (cooperative) await yieldToMainThread();
 
   const setAndRender = (key, value, options = {}) => {
     const { resetCardsPage = true } = options;
@@ -1066,6 +863,7 @@ const render = async ({ cooperative = false } = {}) => {
     render();
   });
 
+  window.__AR_DIRECTORY_READY__ = true;
   restoreQueryFocusState(queryFocusState);
 };
 

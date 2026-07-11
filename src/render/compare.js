@@ -354,7 +354,7 @@ export const compareBarTemplate = (selectedRows) => {
           class="${compareToggleClasses}"
           ${count === 0 ? 'disabled' : ''}
         >${
-          state.compareMode ? t('Liste anzeigen', 'Show list') : t('Compare-Modus', 'Compare mode')
+          state.compareMode ? t('Modelle anzeigen', 'Show models') : t('Vergleich öffnen', 'Open comparison')
         }</button>
         <button id="clear-compare" type="button" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]" ${
           count === 0 ? 'disabled' : ''
@@ -386,8 +386,8 @@ export const compareBarTemplate = (selectedRows) => {
                 )
                 .join('')
             : `<p class="text-sm text-[#a8a29e]">${t(
-                'Noch nichts ausgewählt. Nutze "Compare" in Card oder Tabelle.',
-                'Nothing selected yet. Use "Compare" in cards or table.',
+                'Noch nichts ausgewählt. Wähle auf einer Karte oder in der Liste „Vergleich“ aus.',
+                'Nothing selected yet. Select “Compare” on a card or in the list.',
               )}</p>`
         }
       </div>

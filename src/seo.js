@@ -8,10 +8,10 @@ export const updateDocumentSeoSignals = (visibleCount) => {
   const countLabel = Number.isFinite(visibleCount) ? `${visibleCount} ${t('Modelle', 'models')}` : t('AR/XR Modelle', 'AR/XR models');
   const queryLabel = String(state.query ?? '').trim();
   document.title = queryLabel
-    ? `${queryLabel} | ${t('AR/XR Brillen Vergleich', 'AR/XR Glasses Comparison')} (${countLabel})`
+    ? `${queryLabel} | AR Directory (${countLabel})`
     : t(
-        `AR/XR Brillen Vergleich 2026: ${countLabel}, Preise, Herstellerlinks, EOL`,
-        `AR/XR Glasses Comparison 2026: ${countLabel}, pricing, manufacturer links, EOL`,
+        `AR Directory 2026: ${countLabel}, Preise, Herstellerlinks, EOL`,
+        `AR Directory 2026: ${countLabel}, pricing, manufacturer links, EOL`,
       );
 
   const description = queryLabel
@@ -41,7 +41,7 @@ export const updateDocumentSeoSignals = (visibleCount) => {
 
   const keywordsTag = document.querySelector('meta[name="keywords"]');
   if (keywordsTag) {
-    const baseKeywords = 'AR Brillen Vergleich, XR Brillen Vergleich, Smart Glasses, FOV, Refresh Rate, Preisvergleich, EOL, Shop Links';
+    const baseKeywords = 'AR Brillen Vergleich, XR Brillen Vergleich, Smart Glasses, FOV, Refresh Rate, Preisvergleich, EOL, Herstellerlinks';
     const queryExtra = queryLabel ? `, ${queryLabel}` : '';
     keywordsTag.setAttribute('content', `${baseKeywords}${queryExtra}`);
   }
