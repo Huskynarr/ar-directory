@@ -29,11 +29,14 @@ test('loads the catalog without runtime errors and exposes its core content', as
 
 test('mobile prioritizes search and reveals secondary filters on demand', async ({ page }, testInfo) => {
   test.skip(!testInfo.project.name.includes('mobile'), 'mobile-only information hierarchy');
+  expect((await page.locator('.filter-toolbar').boundingBox()).height).toBeLessThan(50);
   await expect(page.getByLabel('Kategorie')).toBeHidden();
-  await page.getByRole('button', { name: /Alle Filter/ }).click();
+  await page.locator('#toggle-advanced-filters').click();
   await expect(page.getByLabel('Kategorie')).toBeVisible();
   await expect(page.locator('#manufacturer-filter')).toBeVisible();
   await expect(page.locator('#sort-filter')).toBeVisible();
+  await expect(page.locator('.advanced-filter-details > summary')).toBeVisible();
+  await expect(page.locator('.advanced-filter-details')).not.toHaveAttribute('open', '');
 });
 
 test('search, reset and manufacturer-link filter change the actual result set', async ({ page }, testInfo) => {
@@ -44,9 +47,49 @@ test('search, reset and manufacturer-link filter change the actual result set', 
 
   await page.getByRole('button', { name: /Filter zurücksetzen/ }).click();
   await expect(page.locator('[data-model-card]')).toHaveCount(expectedPageSize(testInfo));
-  await page.getByRole('button', { name: /Alle Filter|Mehr Filter/ }).click();
-  await page.getByLabel(/Nur mit Herstellerlink/).check();
+  await page.locator('#toggle-advanced-filters').click();
+  const advancedFilters = page.locator('.advanced-filter-details');
+  if (!(await advancedFilters.evaluate((element) => element.open))) {
+    await advancedFilters.locator('summary').click();
+  }
+  await page.getByLabel(/Mit Herstellerseite/).check();
   await expect(page.getByText(/Sichtbar:\s*333/)).toBeVisible();
+});
+
+test('view and utility controls remain stationary while switching layouts', async ({ page }) => {
+  const positions = async () =>
+    Object.fromEntries(
+      await Promise.all(
+        ['.view-switch', '#toggle-focus-mode', '#clear-filters', '#toggle-advanced-filters'].map(async (selector) => {
+          const box = await page.locator(selector).boundingBox();
+          return [selector, box];
+        }),
+      ),
+    );
+
+  const cardsPositions = await positions();
+  await page.locator('#view-table').click();
+  await expect(page.locator('tbody tr')).toHaveCount(348);
+  const tablePositions = await positions();
+
+  for (const selector of Object.keys(cardsPositions)) {
+    expect(Math.abs(tablePositions[selector].x - cardsPositions[selector].x), `${selector} horizontal position`).toBeLessThan(0.5);
+    expect(Math.abs(tablePositions[selector].y - cardsPositions[selector].y), `${selector} vertical position`).toBeLessThan(0.5);
+  }
+
+  await page.locator('#toggle-focus-mode').click();
+  await expect(page.locator('.ui-table')).toHaveAttribute('data-table-density', 'comfortable');
+});
+
+test('legacy AR/XR links migrate to a visible category filter', async ({ page }, testInfo) => {
+  await page.goto('/?flagAr=1');
+  await expect(page.locator('[data-model-card]')).toHaveCount(expectedPageSize(testInfo));
+  if (testInfo.project.name.includes('mobile')) {
+    await page.locator('#toggle-advanced-filters').click();
+  }
+  await expect(page.getByLabel('Kategorie')).toHaveValue('AR');
+  await expect(page).toHaveURL(/category=AR/);
+  expect(page.url()).not.toContain('flagAr');
 });
 
 test('table, detail modal and comparison flow are interactive', async ({ page }) => {

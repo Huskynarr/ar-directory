@@ -119,6 +119,38 @@ const paginationTemplate = (current, total, shownCount, totalCount) => {
     </nav>`;
 };
 
+const countActiveAdvancedFilters = () => {
+  const selectFilters = [
+    state.displayType,
+    state.optics,
+    state.tracking,
+    state.eyeTracking,
+    state.handTracking,
+    state.passthrough,
+    state.active,
+    state.eol,
+    state.software,
+    state.computeUnit,
+  ];
+  const rangeFilters = [state.minFov, state.minRefresh, state.maxPrice, state.maxWeight, state.minResolutionWidth];
+  const toggleFilters = [
+    state.onlyPrice,
+    state.onlyShop,
+    state.onlyAvailable,
+    state.onlyWithImage,
+    state.onlyFavorites,
+  ];
+  return (
+    selectFilters.filter((value) => value && value !== 'all').length +
+    rangeFilters.filter((value) => String(value ?? '').trim()).length +
+    toggleFilters.filter(Boolean).length
+  );
+};
+
+const countActiveFilters = () =>
+  [state.category, state.manufacturer].filter((value) => value && value !== 'all').length +
+  countActiveAdvancedFilters();
+
 const syncAttributes = (target, source) => {
   for (const attribute of [...target.attributes]) {
     if (!source.hasAttribute(attribute.name)) target.removeAttribute(attribute.name);
@@ -201,7 +233,8 @@ const appendCardsCooperatively = async (rows) => {
 
 const render = async ({ cooperative = false } = {}) => {
   const queryFocusState = captureQueryFocusState();
-  const showCoreFilters = !window.matchMedia('(max-width: 640px)').matches || state.showAdvancedFilters;
+  const isMobileViewport = window.matchMedia('(max-width: 640px)').matches;
+  const showCoreFilters = !isMobileViewport || state.showAdvancedFilters;
   // The mobile first view only contains search. Building and sorting eleven
   // option lists before the user opens filters adds needless startup work.
   const filterOptions = showCoreFilters ? getFilterOptions() : {};
@@ -302,6 +335,31 @@ const render = async ({ cooperative = false } = {}) => {
     `${filtered.length} Modelle nach den aktuellen Filtern sichtbar. Ansicht: ${state.compareMode ? 'Direktvergleich' : state.viewMode === 'cards' ? 'Karten' : 'Tabelle'}.`,
     `${filtered.length} models visible with current filters. View: ${state.compareMode ? 'direct comparison' : state.viewMode === 'cards' ? 'cards' : 'table'}.`,
   );
+  const activeFilterCount = countActiveFilters();
+  const hasActiveAdvancedSettings = Boolean(countActiveAdvancedFilters() || state.showEur || state.hideUnknown);
+  const hasResettableState = Boolean(
+    state.query.trim() ||
+      activeFilterCount ||
+      state.sort !== 'priority_default' ||
+      state.showEur ||
+      state.hideUnknown,
+  );
+  const densityToggleLabel = state.focusMode
+    ? state.viewMode === 'cards'
+      ? t('Ausführliche Karten anzeigen', 'Show detailed cards')
+      : t('Liste mit mehr Abstand anzeigen', 'Show a more spacious list')
+    : state.viewMode === 'cards'
+      ? t('Kompakte Karten anzeigen', 'Show compact cards')
+      : t('Liste kompakter anzeigen', 'Show a more compact list');
+  const filterToggleLabel = state.showAdvancedFilters
+    ? t(
+        `Filter schließen${activeFilterCount ? `, ${activeFilterCount} aktiv` : ''}`,
+        `Close filters${activeFilterCount ? `, ${activeFilterCount} active` : ''}`,
+      )
+    : t(
+        `Filter öffnen${activeFilterCount ? `, ${activeFilterCount} aktiv` : ''}`,
+        `Open filters${activeFilterCount ? `, ${activeFilterCount} active` : ''}`,
+      );
 
   const catalogMarkup = `
     <a href="#main-content" class="skip-link">${t('Zum Inhalt springen', 'Skip to content')}</a>
@@ -361,25 +419,21 @@ const render = async ({ cooperative = false } = {}) => {
       <section class="panel mt-3 p-4" data-filters-open="${state.showAdvancedFilters ? 'true' : 'false'}">
         <div class="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
           <div class="min-w-0">
-            <h2 class="text-lg font-semibold text-[#f5f5f4]">${t('Modelle durchsuchen', 'Browse models')}</h2>
-            <p class="mt-1 text-xs text-[#a8a29e]">${filtered.length} ${t('Treffer · Suche und Kernfilter', 'results · search and core filters')}</p>
+            <h2 class="text-lg font-semibold text-[#f5f5f4]">${t('Modelle finden', 'Find models')}</h2>
+            <p class="mt-1 text-xs text-[#a8a29e]">${t('Suchen, eingrenzen und vergleichen', 'Search, refine and compare')}</p>
           </div>
           <div class="filter-toolbar">
-            <div class="view-switch" aria-label="${t('Darstellung', 'View')}">
-            <button id="view-cards" type="button" aria-pressed="${state.viewMode === 'cards' ? 'true' : 'false'}" class="view-switch-btn ${
-              state.viewMode === 'cards'
-                ? 'is-active'
-                : ''
-            }"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="2" width="7" height="7" rx="1"/><rect x="11" y="2" width="7" height="7" rx="1"/><rect x="2" y="11" width="7" height="7" rx="1"/><rect x="11" y="11" width="7" height="7" rx="1"/></svg>${t('Karten', 'Cards')}</button>
-            <button id="view-table" type="button" aria-pressed="${state.viewMode === 'table' ? 'true' : 'false'}" class="view-switch-btn ${
-              state.viewMode === 'table'
-                ? 'is-active'
-                : ''
-            }"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4h14M3 10h14M3 16h14"/></svg>${t('Liste', 'List')}</button>
+            <div class="view-switch" role="group" aria-label="${t('Ergebnisansicht', 'Result view')}">
+              <button id="view-cards" type="button" aria-pressed="${state.viewMode === 'cards' ? 'true' : 'false'}" class="view-switch-btn ${
+                state.viewMode === 'cards' ? 'is-active' : ''
+              }"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="2" width="7" height="7" rx="1"/><rect x="11" y="2" width="7" height="7" rx="1"/><rect x="2" y="11" width="7" height="7" rx="1"/><rect x="11" y="11" width="7" height="7" rx="1"/></svg>${t('Karten', 'Cards')}</button>
+              <button id="view-table" type="button" aria-pressed="${state.viewMode === 'table' ? 'true' : 'false'}" class="view-switch-btn ${
+                state.viewMode === 'table' ? 'is-active' : ''
+              }"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4h14M3 10h14M3 16h14"/></svg>${t('Liste', 'List')}</button>
             </div>
-            ${state.viewMode === 'cards' ? `<button id="toggle-focus-mode" type="button" class="icon-text-btn" aria-label="${state.focusMode ? t('Ausführliche Karten anzeigen', 'Show detailed cards') : t('Kompakte Karten anzeigen', 'Show compact cards')}" title="${state.focusMode ? t('Ausführliche Karten', 'Detailed cards') : t('Kompakte Karten', 'Compact cards')}"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4h14M3 10h9M3 16h6"/></svg><span>${state.focusMode ? t('Mehr Details', 'More details') : t('Kompakter', 'More compact')}</span></button>` : ''}
-            <button id="clear-filters" type="button" class="icon-btn" aria-label="${t('Filter zurücksetzen', 'Reset filters')}" title="${t('Filter zurücksetzen', 'Reset filters')}"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 6.5A6 6 0 1 1 4 13M4.5 6.5V2.8M4.5 6.5H8"/></svg></button>
-            <button id="toggle-advanced-filters" type="button" aria-pressed="${state.showAdvancedFilters ? 'true' : 'false'}" aria-expanded="${state.showAdvancedFilters ? 'true' : 'false'}" aria-controls="advanced-filters-region" class="filter-toggle ${state.showAdvancedFilters ? 'is-active' : ''}"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14M5 10h10M8 15h4"/></svg>${state.showAdvancedFilters ? t('Filter schließen', 'Close filters') : t('Alle Filter', 'All filters')}</button>
+            <button id="toggle-focus-mode" type="button" class="icon-btn density-toggle" aria-pressed="${state.focusMode ? 'false' : 'true'}" aria-label="${escapeHtml(densityToggleLabel)}" title="${escapeHtml(densityToggleLabel)}"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4h14M3 10h${state.focusMode ? '9' : '14'}M3 16h${state.focusMode ? '6' : '14'}"/></svg></button>
+            <button id="clear-filters" type="button" class="icon-btn" ${hasResettableState ? '' : 'disabled'} aria-label="${t('Suche und Filter zurücksetzen', 'Reset search and filters')}" title="${t('Suche und Filter zurücksetzen', 'Reset search and filters')}"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 6.5A6 6 0 1 1 4 13M4.5 6.5V2.8M4.5 6.5H8"/></svg></button>
+            <button id="toggle-advanced-filters" type="button" aria-pressed="${state.showAdvancedFilters ? 'true' : 'false'}" aria-expanded="${state.showAdvancedFilters ? 'true' : 'false'}" aria-controls="advanced-filters-region" aria-label="${escapeHtml(filterToggleLabel)}" title="${escapeHtml(filterToggleLabel)}" class="filter-toggle ${state.showAdvancedFilters ? 'is-active' : ''}"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14M5 10h10M8 15h4"/></svg><span class="filter-label">${t('Filter', 'Filters')}</span><span class="filter-count ${activeFilterCount ? '' : 'is-empty'}" aria-hidden="true">${activeFilterCount || 0}</span></button>
           </div>
         </div>
 
@@ -387,8 +441,8 @@ const render = async ({ cooperative = false } = {}) => {
           <label class="space-y-1.5 md:col-span-2 xl:col-span-2">
             <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Suche', 'Search')}</span>
             <input id="query-input" type="search" class="field" placeholder="${t(
-              'Modell, Hersteller, Software, Tracking, Lifecycle',
-              'Model, manufacturer, software, tracking, lifecycle',
+              'Modell, Hersteller oder Merkmal',
+              'Model, manufacturer or feature',
             )}" value="${escapeHtml(state.query)}" />
           </label>
 
@@ -415,7 +469,7 @@ const render = async ({ cooperative = false } = {}) => {
             <select id="sort-filter" class="field">
               <option value="priority_default"${
                 state.sort === 'priority_default' ? ' selected' : ''
-              }>${t('Priorität (Neueste, EOL unten)', 'Priority (newest first, EOL last)')}</option>
+              }>${t('Empfohlen', 'Recommended')}</option>
               <option value="name_asc"${state.sort === 'name_asc' ? ' selected' : ''}>${t('Name A-Z', 'Name A-Z')}</option>
               <option value="manufacturer_asc"${state.sort === 'manufacturer_asc' ? ' selected' : ''}>${t(
                 'Hersteller A-Z',
@@ -453,7 +507,16 @@ const render = async ({ cooperative = false } = {}) => {
           ${
             state.showAdvancedFilters
               ? `
-          <p class="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#a8a29e]">${t('Erweiterte Filter', 'Advanced filters')}</p>
+          <details class="advanced-filter-details"${!isMobileViewport || hasActiveAdvancedSettings ? ' open' : ''}>
+            <summary>
+              <span>
+                <strong>${t('Weitere Filter', 'More filters')}</strong>
+                <small>${t('Display, Tracking, Maße und Optionen', 'Display, tracking, dimensions and options')}</small>
+              </span>
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5"/></svg>
+            </summary>
+            <div class="advanced-filter-content space-y-4">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#a8a29e]">${t('Technische Merkmale', 'Technical features')}</p>
           <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
             <label class="space-y-1.5">
               <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Display-Typ', 'Display type')}</span>
@@ -551,31 +614,23 @@ const render = async ({ cooperative = false } = {}) => {
             </label>
           </div>
 
-          <p class="mt-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#a8a29e]">${t('Schnellumschalter', 'Quick toggles')}</p>
+          <p class="mt-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#a8a29e]">${t('Optionen', 'Options')}</p>
           <div class="flex flex-wrap items-center gap-2">
             <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
               <input id="only-price" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyPrice ? 'checked' : ''} />
-              ${t('Nur mit Preis', 'Only with price')}
+              ${t('Mit Preis', 'With price')}
             </label>
             <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
               <input id="only-shop" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyShop ? 'checked' : ''} />
-              ${t('Nur mit Herstellerlink', 'Only with manufacturer link')}
+              ${t('Mit Herstellerseite', 'With manufacturer page')}
             </label>
             <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
               <input id="only-available" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyAvailable ? 'checked' : ''} />
-              ${t('Nur aktiv im Vertrieb', 'Only actively distributed')}
-            </label>
-            <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
-              <input id="flag-ar" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.flagAr ? 'checked' : ''} />
-              AR-Flag
-            </label>
-            <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
-              <input id="flag-xr" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.flagXr ? 'checked' : ''} />
-              XR-Flag
+              ${t('Aktuell im Vertrieb', 'Currently distributed')}
             </label>
             <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
               <input id="show-eur" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.showEur ? 'checked' : ''} />
-              ${t('EUR-Zusatz', 'EUR addition')}
+              ${t('Preise auch in EUR', 'Also show EUR prices')}
             </label>
             <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
               <input id="hide-unknown" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.hideUnknown ? 'checked' : ''} />
@@ -583,13 +638,15 @@ const render = async ({ cooperative = false } = {}) => {
             </label>
             <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
               <input id="only-image" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyWithImage ? 'checked' : ''} />
-              ${t('Nur mit Bild', 'Only with image')}
+              ${t('Mit Bild', 'With image')}
             </label>
             <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524] ${state.favorites.length ? '' : 'opacity-50'}">
               <input id="only-favorites" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyFavorites ? 'checked' : ''} ${state.favorites.length ? '' : 'disabled'} />
-              ${t('Nur Favoriten', 'Only favorites')} (${state.favorites.length})
+              ${t('Favoriten', 'Favorites')} (${state.favorites.length})
             </label>
           </div>
+            </div>
+          </details>
               `
               : ''
           }
@@ -829,8 +886,6 @@ const render = async ({ cooperative = false } = {}) => {
   document
     .querySelector('#only-available')
     ?.addEventListener('change', (event) => setAndRender('onlyAvailable', event.target.checked));
-  document.querySelector('#flag-ar')?.addEventListener('change', (event) => setAndRender('flagAr', event.target.checked));
-  document.querySelector('#flag-xr')?.addEventListener('change', (event) => setAndRender('flagXr', event.target.checked));
   document
     .querySelector('#show-eur')
     ?.addEventListener('change', (event) => setAndRender('showEur', event.target.checked, { resetCardsPage: false }));
@@ -994,8 +1049,6 @@ const render = async ({ cooperative = false } = {}) => {
     state.onlyAvailable = false;
     state.onlyWithImage = false;
     state.onlyFavorites = false;
-    state.flagAr = false;
-    state.flagXr = false;
     state.showEur = false;
     state.hideUnknown = false;
     state.showAdvancedFilters = false;

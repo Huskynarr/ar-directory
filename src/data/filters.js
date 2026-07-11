@@ -13,8 +13,6 @@ import {
   isEol,
   isLikelyActive,
   getNormalizedFov,
-  isXrRow,
-  isArRow,
 } from './model.js';
 
 export const getFilterOptions = () => ({
@@ -195,14 +193,6 @@ export const matchesFilters = (row) => {
   if (state.onlyFavorites && !state.favorites.includes(row.__rowId)) {
     return false;
   }
-  if (state.flagAr && state.flagXr) {
-    // both selected means no additional category restriction
-  } else if (state.flagAr && !isArRow(row)) {
-    return false;
-  } else if (state.flagXr && !isXrRow(row)) {
-    return false;
-  }
-
   const minFov = toNumber(state.minFov);
   if (minFov !== null) {
     const fov = getNormalizedFov(row);

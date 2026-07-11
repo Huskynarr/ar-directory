@@ -38,7 +38,7 @@ export const tableTemplate = (rows) => {
   return `
     <div class="panel overflow-hidden">
       <div class="overflow-x-auto">
-        <table class="ui-table min-w-[1700px] w-full border-collapse text-sm" aria-describedby="results-status">
+        <table class="ui-table min-w-[1700px] w-full border-collapse text-sm" data-table-density="${state.focusMode ? 'compact' : 'comfortable'}" aria-describedby="results-status">
           <caption class="visually-hidden">${t(
             'Tabellarische Ansicht aller gefilterten AR- und XR-Modelle.',
             'Table view of all filtered AR and XR models.',

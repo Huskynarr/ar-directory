@@ -64,8 +64,6 @@ export const state = {
   onlyWithImage: false,
   onlyFavorites: false,
   favorites: [],
-  flagAr: false,
-  flagXr: false,
   showEur: false,
   hideUnknown: false,
   showAdvancedFilters: false,
@@ -328,8 +326,13 @@ export const applyStateFromUrl = () => {
   state.onlyAvailable = parseBooleanParam(params.get('onlyAvailable'), false);
   state.onlyWithImage = parseBooleanParam(params.get('onlyImage'), false);
   state.onlyFavorites = parseBooleanParam(params.get('onlyFav'), false);
-  state.flagAr = parseBooleanParam(params.get('flagAr'), false);
-  state.flagXr = parseBooleanParam(params.get('flagXr'), false);
+  // Migrate legacy shared URLs from the former AR/XR flag toggles to the
+  // visible category filter so no active filter can be hidden from the UI.
+  const legacyFlagAr = parseBooleanParam(params.get('flagAr'), false);
+  const legacyFlagXr = parseBooleanParam(params.get('flagXr'), false);
+  if (state.category === 'all' && legacyFlagAr !== legacyFlagXr) {
+    state.category = legacyFlagAr ? 'AR' : 'XR';
+  }
   state.showEur = parseBooleanParam(params.get('showEur'), false);
   state.hideUnknown = parseBooleanParam(params.get('hideUnknown'), false);
   state.showAdvancedFilters = parseBooleanParam(params.get('advanced'), false);
@@ -406,8 +409,6 @@ export const syncUrlWithState = () => {
   setBoolean('onlyAvailable', state.onlyAvailable, false);
   setBoolean('onlyImage', state.onlyWithImage, false);
   setBoolean('onlyFav', state.onlyFavorites, false);
-  setBoolean('flagAr', state.flagAr, false);
-  setBoolean('flagXr', state.flagXr, false);
   setBoolean('showEur', state.showEur, false);
   setBoolean('hideUnknown', state.hideUnknown, false);
   setBoolean('advanced', state.showAdvancedFilters, false);
