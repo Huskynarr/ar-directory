@@ -405,6 +405,9 @@ const render = () => {
           aria-hidden="${state.showAdvancedFilters ? 'false' : 'true'}"
           class="mt-4 space-y-4 border-t border-[#44403c]/70 pt-4 ${state.showAdvancedFilters ? '' : 'hidden'}"
         >
+          ${
+            state.showAdvancedFilters
+              ? `
           <p class="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#a8a29e]">${t('Erweiterte Filter', 'Advanced filters')}</p>
           <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
             <label class="space-y-1.5">
@@ -542,6 +545,9 @@ const render = () => {
               ${t('Nur Favoriten', 'Only favorites')} (${state.favorites.length})
             </label>
           </div>
+              `
+              : ''
+          }
         </div>
         ${state.showEur ? `<p class="mt-2 text-xs text-[#a8a29e]">${escapeHtml(formatRateHint())}</p>` : ''}
       </section>

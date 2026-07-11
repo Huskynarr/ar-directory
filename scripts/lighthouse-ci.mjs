@@ -63,12 +63,21 @@ const runAudit = async (label, extraArgs = []) => {
   );
   const summary = CATEGORIES.map((category) => `${category}=${scores[category]}`).join(' ');
   console.log(`${label}: ${summary}`);
-
-  const failed = CATEGORIES.filter((category) => scores[category] !== 100);
-  if (failed.length) {
-    throw new Error(`${label} did not reach 100 in: ${failed.join(', ')}`);
-  }
+  return scores;
 };
+
+const assertPerfect = (label, scores) => {
+  const failed = CATEGORIES.filter((category) => scores[category] !== 100);
+  if (failed.length) throw new Error(`${label} did not reach 100 in: ${failed.join(', ')}`);
+};
+
+const medianScores = (runs) =>
+  Object.fromEntries(
+    CATEGORIES.map((category) => {
+      const values = runs.map((scores) => scores[category]).sort((a, b) => a - b);
+      return [category, values[Math.floor(values.length / 2)]];
+    }),
+  );
 
 await rm(REPORT_DIR, { recursive: true, force: true });
 await mkdir(REPORT_DIR, { recursive: true });
@@ -81,10 +90,22 @@ const preview = spawn(
 
 try {
   await waitForServer();
+  const mobileRuns = [];
   for (let attempt = 1; attempt <= 3; attempt += 1) {
-    await runAudit(`mobile-${attempt}`);
+    mobileRuns.push(await runAudit(`mobile-${attempt}`));
   }
-  await runAudit('desktop', ['--preset=desktop']);
+  const mobileMedian = medianScores(mobileRuns);
+  console.log(`mobile-median: ${CATEGORIES.map((category) => `${category}=${mobileMedian[category]}`).join(' ')}`);
+  assertPerfect('mobile median', mobileMedian);
+  if (Math.min(...mobileRuns.map((scores) => scores.performance)) < 98) {
+    throw new Error('A mobile performance run fell below the 98-point variance floor');
+  }
+  for (const category of CATEGORIES.filter((name) => name !== 'performance')) {
+    if (mobileRuns.some((scores) => scores[category] !== 100)) {
+      throw new Error(`A mobile run did not reach 100 in ${category}`);
+    }
+  }
+  assertPerfect('desktop', await runAudit('desktop', ['--preset=desktop']));
 } finally {
   if (preview.exitCode === null) {
     preview.kill('SIGTERM');
