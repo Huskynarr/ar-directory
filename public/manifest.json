@@ -1,8 +1,8 @@
 {
   "id": "/",
-  "name": "AR/XR Brillen Vergleich",
+  "name": "AR Directory – AR-/XR-Brillen",
   "short_name": "AR Directory",
-  "description": "Vergleichsseite fuer AR- und XR-Brillen mit Spezifikationen, Preisen, FOV, Refresh-Rate, Lifecycle/EOL-Status und Shop-Links.",
+  "description": "Kuratierter Vergleich von AR- und XR-Brillen mit Spezifikationen, Preisen, FOV, Lifecycle-Status und Herstellerquellen.",
   "start_url": "/?utm_source=pwa",
   "scope": "/",
   "display": "standalone",
@@ -10,8 +10,8 @@
   "orientation": "any",
   "dir": "ltr",
   "lang": "de",
-  "background_color": "#080b0d",
-  "theme_color": "#080b0d",
+  "background_color": "#090d0c",
+  "theme_color": "#090d0c",
   "icons": [
     {
       "src": "/icon.svg",
@@ -32,8 +32,8 @@
       "type": "image/png",
       "sizes": "1200x630",
       "form_factor": "wide",
-      "label": "Kartenansicht des AR/XR Brillen Vergleichs"
+      "label": "Kartenansicht des AR Directory"
     }
   ],
-  "categories": ["shopping", "utilities", "productivity"]
+  "categories": ["utilities", "productivity", "education"]
 }

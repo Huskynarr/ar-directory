@@ -5,7 +5,7 @@
       "@type": "WebSite",
       "@id": "https://ar-directory.huskynarr.de/#website",
       "url": "https://ar-directory.huskynarr.de/",
-      "name": "AR/XR Brillen Vergleich",
+      "name": "AR Directory",
       "inLanguage": "de-DE",
       "description": "Vergleichsseite fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Herstellerlinks und Lifecycle-Status."
     },
@@ -23,7 +23,7 @@
         "Smart Glasses",
         "Headsets"
       ],
-      "dateModified": "2026-07-11T09:05:27.374Z"
+      "dateModified": "2026-07-11T11:46:02.734Z"
     },
     {
       "@type": "Dataset",
@@ -33,7 +33,7 @@
       "description": "Kuratierter Datensatz mit 348 AR/XR-Brillen inkl. Spezifikationen, Preisen und Lifecycle-Status.",
       "isAccessibleForFree": true,
       "inLanguage": "de-DE",
-      "dateModified": "2026-07-11T09:05:27.374Z",
+      "dateModified": "2026-07-11T11:46:02.734Z",
       "distribution": [
         {
           "@type": "DataDownload",

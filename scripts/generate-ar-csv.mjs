@@ -4,7 +4,9 @@ import {
   assignSlugs,
   buildAssetNotices,
   buildDatenschutz,
+  buildDataOverview,
   buildDevicePage,
+  buildFaq,
   buildGlossary,
   buildImpressum,
   buildModelIndex,
@@ -252,7 +254,7 @@ const buildStructuredData = (rows, retrievedAt, paths = new Map()) => {
       '@type': 'WebSite',
       '@id': `${BASE_URL}#website`,
       url: BASE_URL,
-      name: 'AR/XR Brillen Vergleich',
+      name: 'AR Directory',
       inLanguage: 'de-DE',
       description:
         'Vergleichsseite fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Herstellerlinks und Lifecycle-Status.',
@@ -303,7 +305,9 @@ const buildSitemap = (lastmod, rows = [], paths = new Map()) => {
     { loc: BASE_URL, changefreq: 'daily', priority: '1.0' },
     { loc: `${BASE_URL}finder/`, changefreq: 'monthly', priority: '0.8' },
     { loc: `${BASE_URL}modelle/`, changefreq: 'weekly', priority: '0.9' },
+    { loc: `${BASE_URL}faq.html`, changefreq: 'monthly', priority: '0.7' },
     { loc: `${BASE_URL}glossar.html`, changefreq: 'monthly', priority: '0.6' },
+    { loc: `${BASE_URL}data.html`, changefreq: 'weekly', priority: '0.7' },
     { loc: `${BASE_URL}impressum.html`, changefreq: 'yearly', priority: '0.3' },
     { loc: `${BASE_URL}datenschutz.html`, changefreq: 'yearly', priority: '0.3' },
     { loc: `${BASE_URL}asset-notices.html`, changefreq: 'monthly', priority: '0.3' },
@@ -323,7 +327,7 @@ const buildSitemap = (lastmod, rows = [], paths = new Map()) => {
 };
 
 const buildLlms = (metadata, lastmod) =>
-  `# AR/XR Brillen Vergleich
+  `# AR Directory
 
 Kurzer Maschinenindex fuer LLMs und Suchsysteme.
 
@@ -342,6 +346,9 @@ Kurzer Maschinenindex fuer LLMs und Suchsysteme.
 
 ## Strukturierte Datenquellen
 
+- FAQ: ${BASE_URL}faq.html
+- Glossar: ${BASE_URL}glossar.html
+- Datenübersicht: ${BASE_URL}data.html
 - CSV: ${BASE_URL}data/ar_glasses.csv
 - Metadata JSON: ${BASE_URL}data/ar_glasses.metadata.json
 - JSON-LD Strukturdaten: ${BASE_URL}data/structured-data.json
@@ -364,7 +371,7 @@ Letzte Datengenerierung: ${lastmod}.
 const fmt = (value, suffix = '') => (hasValue(value) ? `${value}${suffix}` : 'k. A.');
 
 const buildLlmsFull = (rows, metadata, lastmod) => {
-  const header = `# AR/XR Brillen Vergleich – Vollindex
+  const header = `# AR Directory – Vollindex
 
 Maschinenlesbarer Volldatensatz aller gelisteten AR/XR-Brillen. Sprache: de-DE. Quelle: ${BASE_URL}
 Stand: ${lastmod} | ${metadata.records} Modelle (${metadata.ar_records} AR, ${metadata.xr_records} XR) | ${metadata.manufacturers} Hersteller
@@ -399,7 +406,7 @@ Lifecycle/Vertriebsstatus und offizielle Produktseite.
 };
 
 const buildAiSearch = (metadata, lastmod) => ({
-  name: 'AR/XR Brillen Vergleich',
+  name: 'AR Directory',
   version: '1.1',
   language: 'de-DE',
   primary_url: BASE_URL,
@@ -413,7 +420,10 @@ const buildAiSearch = (metadata, lastmod) => ({
     newest_release: metadata.newest_release,
   },
   resources: [
-    { type: 'web', url: BASE_URL, title: 'AR/XR Brillen Vergleich Startseite' },
+    { type: 'web', url: BASE_URL, title: 'AR Directory Startseite' },
+    { type: 'faq', url: `${BASE_URL}faq.html`, title: 'Häufige Fragen zu AR- und XR-Brillen' },
+    { type: 'glossary', url: `${BASE_URL}glossar.html`, title: 'AR/XR Glossar' },
+    { type: 'dataset_overview', url: `${BASE_URL}data.html`, title: 'Datenübersicht und Datenqualität' },
     { type: 'dataset', format: 'csv', url: `${BASE_URL}data/ar_glasses.csv`, title: 'AR/XR Dataset CSV' },
     {
       type: 'dataset_metadata',
@@ -549,7 +559,9 @@ const main = async () => {
     }),
   );
   await writeFile('public/modelle/index.html', buildModelIndex(normalizedRows, slugs, paths, metadata, BASE_URL), 'utf8');
+  await writeFile('public/faq.html', buildFaq(metadata, BASE_URL), 'utf8');
   await writeFile('public/glossar.html', buildGlossary(metadata, BASE_URL), 'utf8');
+  await writeFile('public/data.html', buildDataOverview(metadata, BASE_URL), 'utf8');
   await writeFile('public/impressum.html', buildImpressum(metadata, BASE_URL), 'utf8');
   await writeFile('public/datenschutz.html', buildDatenschutz(metadata, BASE_URL), 'utf8');
   await writeFile('public/asset-notices.html', buildAssetNotices(normalizedRows, BASE_URL), 'utf8');
@@ -557,7 +569,7 @@ const main = async () => {
   console.log(
     `Generated ${normalizedRows.length} curated AR/XR records at ${retrievedAt}\n` +
       `  -> CSV, metadata, structured-data.json, sitemap.xml, llms.txt, llms-full.txt, ai-search.json\n` +
-      `  -> ${normalizedRows.length} device pages + modelle/index.html + glossar.html + impressum.html + datenschutz.html`,
+      `  -> ${normalizedRows.length} device pages + modelle/index.html + faq.html + glossar.html + data.html + legal pages`,
   );
 };
 

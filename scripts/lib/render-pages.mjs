@@ -83,12 +83,14 @@ const head = ({ title, description, canonical, image, imageAlt = '', ogType = 'w
 <link rel="icon" type="image/svg+xml" href="/icon.svg" />
 <meta name="theme-color" content="#0c0a09" />
 <meta property="og:type" content="${esc(ogType)}" />
-<meta property="og:site_name" content="AR/XR Brillen Vergleich" />
+<meta property="og:site_name" content="AR Directory" />
 <meta property="og:locale" content="de_DE" />
 <meta property="og:title" content="${esc(title)}" />
 <meta property="og:description" content="${esc(description)}" />
 <meta property="og:url" content="${esc(canonical)}" />
 <meta property="og:image" content="${esc(ogImage)}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="${esc(imageAlt || title)}" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="${esc(title)}" />
@@ -111,9 +113,10 @@ h1{font-size:clamp(32px,5vw,52px);letter-spacing:-.04em;line-height:1.08;margin:
 .badge.cat,.badge.xr{border-color:#44403c;color:#e7e5e4;background:#12181c}
 .hero{display:grid;grid-template-columns:minmax(220px,320px) 1fr;gap:28px;align-items:start;margin:22px 0 12px}
 .hero img{max-width:280px;width:100%;border-radius:12px;background:#1c1917;border:1px solid #292524}
-.ph{width:280px;height:160px;border-radius:12px;border:1px solid #292524;display:flex;align-items:center;justify-content:center;font-size:42px;font-weight:700;background:linear-gradient(135deg,#1c1917,#0c0a09);color:#3f3f46}
+.ph{width:280px;height:160px;border-radius:12px;border:1px solid #292524;display:flex;align-items:center;justify-content:center;font-size:42px;font-weight:700;background:linear-gradient(135deg,#1c1917,#0c0a09);color:#9aa9a3}
 .price{font-size:24px;font-weight:700;color:#fafaf9;margin:6px 0}
 .lead{color:#d6d3d1;margin:4px 0 20px}
+.lead a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 table{width:100%;border-collapse:collapse;margin:8px 0 24px}
 th,td{text-align:left;padding:9px 12px;border-bottom:1px solid #292524;vertical-align:top}
 th{color:#a8a29e;font-weight:500;width:42%}
@@ -123,12 +126,12 @@ th{color:#a8a29e;font-weight:500;width:42%}
 h2{font-size:20px;margin:28px 0 8px}
 ul.rel{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 ul.rel a{display:inline-block;padding:6px 12px;border:1px solid #292524;border-radius:999px}
-footer{margin-top:40px;padding-top:20px;border-top:1px solid #292524;color:#78716c;font-size:14px}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid #292524;color:#9aa9a3;font-size:14px}
 .buy{margin:8px 0 20px}.buy h2{margin:0 0 8px}
 .buyrow{display:flex;flex-wrap:wrap;gap:8px}
 .cta.buy{background:transparent;border-color:#44403c;color:#f5f5f4}
 .cta.buy:hover{background:#1c1917;border-color:#84cc16;color:#bef264;text-decoration:none}
-.affnote{font-size:12px;color:#78716c;margin:8px 0 0}
+.affnote{font-size:12px;color:#9aa9a3;margin:8px 0 0}
 .hl{background:#1c1917;border:1px solid #292524;border-radius:14px;padding:14px 18px;margin:4px 0 20px}
 .hl h2{margin:0 0 8px;font-size:16px;color:#bef264}
 .hl ul{margin:0;padding-left:18px}.hl li{margin:3px 0}
@@ -136,16 +139,32 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid #292524;color:#7871
 .share{margin:24px 0 8px}.share h2{margin:0 0 8px}
 .sharerow{display:flex;flex-wrap:wrap;gap:8px}
 .cta.share{padding:7px 13px;font-size:14px}
+.faq-list{display:grid;gap:10px;margin:22px 0 34px}
+.faq{border:1px solid #29363b;border-radius:14px;background:#12181c;overflow:hidden}
+.faq summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 18px;color:#f4f7f5;font-weight:700;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:'+';flex:0 0 auto;color:#9aa9a3;font-size:22px;font-weight:400;line-height:1}
+.faq[open] summary:after{content:'–'}
+.faq p{margin:0;padding:0 18px 18px;color:#b6c1bc}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:24px 0}
+.metric{border:1px solid #29363b;border-radius:14px;background:#12181c;padding:16px}
+.metric strong{display:block;color:#f4f7f5;font-size:30px;letter-spacing:-.04em;line-height:1.1}
+.metric span{display:block;margin-top:5px;color:#9aa9a3;font-size:13px}
+.data-actions{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 28px}
 @media(max-width:680px){.wrap{padding:20px 16px 48px}.hero{grid-template-columns:1fr}.hero img,.ph{max-width:100%;width:100%}}
 @media(prefers-color-scheme:light){
   body{background:#f2f4ef;color:#17201b}
   a{color:#3f6212}nav.bc,nav.bc a,th,.affnote,.aud{color:#526159}
   .badge,.badge.cat,.badge.xr,.cta{border-color:#d3dbd2;color:#17201b;background:#f1f4ed}
   .hero img,.ph,.note,.hl{background:#fbfcf8;border-color:#d3dbd2;color:#526159}
-  .price{color:#17201b}th,td,footer{border-color:#d3dbd2}.lead{color:#526159}
+  .price{color:#17201b}th,td,footer{border-color:#d3dbd2}.lead,footer{color:#526159}
   .cta.primary{background:#3f6212;border-color:#3f6212;color:#fff}
   .cta.buy{border-color:#adb9ae;color:#17201b}.cta.buy:hover{background:#e8ede4;border-color:#4d7c0f;color:#3f6212}
+  .hl h2{color:#3f6212}
+  .faq,.metric{background:#fbfcf8;border-color:#d3dbd2}
+  .faq summary,.metric strong{color:#17201b}.faq p,.metric span{color:#526159}
 }
+@media(max-width:760px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 ${jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, '\\u003c')}</script>` : ''}
 </head>`;
@@ -271,12 +290,11 @@ export const buildDevicePage = (row, rows, slugs, paths, baseUrl, overrides = {}
     ],
   };
 
-  const pageTitle = `${row.name} – Specs, Preis & Vergleich | AR/XR Brillen Vergleich`;
-  const shareTitle = `${row.name} (${row.manufacturer}) – AR/XR Brillen Vergleich`;
+  const pageTitle = `${row.name} – Specs, Preis & Vergleich | AR Directory`;
+  const shareTitle = `${row.name} (${row.manufacturer}) – AR Directory`;
   const imageAlt = `${row.name} – ${cat} von ${row.manufacturer}`;
   const inStock = String(row.active_distribution).toLowerCase().startsWith('ja');
   const extraMeta = [
-    `<meta property="og:image:width" content="1200" />\n<meta property="og:image:height" content="630" />`,
     `<meta property="product:brand" content="${esc(row.manufacturer)}" />`,
     hasValue(row.price_usd)
       ? `<meta property="product:price:amount" content="${esc(row.price_usd)}" />\n<meta property="product:price:currency" content="USD" />\n<meta property="product:availability" content="${inStock ? 'in stock' : 'discontinued'}" />`
@@ -316,7 +334,7 @@ ${related ? `<h2>Weitere Modelle von ${esc(row.manufacturer)}</h2><ul class="rel
 ${sameCat ? `<h2>Aehnliche ${esc(cat)}-Modelle</h2><ul class="rel">${sameCat}</ul>` : ''}
 ${shareButtons(shareTitle, canonical)}
 <footer>
-Teil des <a href="/">AR/XR Brillen Vergleichs</a> · <a href="/modelle/">Alle Modelle</a> · <a href="/glossar.html">Glossar &amp; FAQ</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a><br>
+<a href="/">AR Directory</a> · <a href="/modelle/">Modelle</a> · <a href="/faq.html">FAQ</a> · <a href="/glossar.html">Glossar</a> · <a href="/data.html">Daten</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a><br>
 Angaben ohne Gewähr; Spezifikationen und Preise können je nach Region/Revision/Zeitpunkt abweichen.
 </footer>
 </div>
@@ -363,11 +381,11 @@ export const buildModelIndex = (rows, slugs, paths, meta, baseUrl) => {
     '@type': 'CollectionPage',
     name: 'Alle AR/XR Brillen Modelle',
     url: canonical,
-    isPartOf: { '@type': 'WebSite', url: baseUrl, name: 'AR/XR Brillen Vergleich' },
+    isPartOf: { '@type': 'WebSite', url: baseUrl, name: 'AR Directory' },
   };
 
   return `${head({
-    title: `Alle ${meta.records} AR/XR Brillen Modelle (A–Z) | AR/XR Brillen Vergleich`,
+    title: `Alle ${meta.records} AR/XR Brillen Modelle (A–Z) | AR Directory`,
     description: `Vollständige Liste aller ${meta.records} AR- und XR-Brillen (${meta.ar_records} AR, ${meta.xr_records} XR) von ${meta.manufacturers} Herstellern mit Einzelseiten, Specs und Preisen.`,
     canonical,
     jsonLd,
@@ -378,9 +396,9 @@ export const buildModelIndex = (rows, slugs, paths, meta, baseUrl) => {
 <nav class="bc"><a href="/">Start</a> › Modelle</nav>
 <h1>Alle ${meta.records} AR/XR Brillen Modelle</h1>
 <p class="lead">${meta.ar_records} AR-Brillen und ${meta.xr_records} XR-Headsets von ${meta.manufacturers} Herstellern. Jede Brille hat eine eigene Detailseite mit allen Spezifikationen.</p>
-<p><a class="cta primary" href="/">Interaktiv vergleichen &amp; filtern</a> <a class="cta" href="/glossar.html">Glossar &amp; FAQ</a></p>
+<p><a class="cta primary" href="/">Interaktiv vergleichen &amp; filtern</a> <a class="cta" href="/faq.html">FAQ</a> <a class="cta" href="/glossar.html">Glossar</a></p>
 ${sections}
-<footer>Teil des <a href="/">AR/XR Brillen Vergleichs</a> · <a href="/glossar.html">Glossar &amp; FAQ</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></footer>
+<footer><a href="/">AR Directory</a> · <a href="/faq.html">FAQ</a> · <a href="/glossar.html">Glossar</a> · <a href="/data.html">Daten</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></footer>
 </div>
 </body>
 </html>
@@ -409,19 +427,120 @@ const GLOSSARY = [
   ['EOL (End of Life)', 'Produktende: kein Verkauf und/oder keine Software-Updates mehr.'],
 ];
 
+const formatGeneratedDate = (value) => {
+  const date = new Date(value);
+  return Number.isNaN(date.getTime())
+    ? 'nicht angegeben'
+    : new Intl.DateTimeFormat('de-DE', { day: '2-digit', month: 'long', year: 'numeric' }).format(date);
+};
+
+export const buildFaq = (meta, baseUrl) => {
+  const canonical = `${baseUrl}faq.html`;
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQ.map(([q, a]) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  };
+  return `${head({
+    title: 'Häufige Fragen zu AR- und XR-Brillen | AR Directory',
+    description: 'Klare Antworten zu AR- und XR-Brillen: Unterschiede, FOV, Optik, EOL, Anschlussarten, Preise und Datenqualität.',
+    canonical,
+    image: `${baseUrl}og/faq.png`,
+    imageAlt: 'Häufige Fragen zu AR- und XR-Brillen – AR Directory',
+    jsonLd,
+    baseUrl,
+  })}
+<body>
+<div class="wrap">
+<nav class="bc"><a href="/">Start</a> › FAQ</nav>
+<h1>Häufige Fragen zu AR- und XR-Brillen</h1>
+<p class="lead">Kompakte, nachvollziehbare Antworten zum Vergleich von ${meta.records} Modellen. Technische Begriffe findest du separat im <a href="/glossar.html">Glossar</a>.</p>
+<div class="faq-list">
+${FAQ.map(([q, a], index) => `<details class="faq"${index === 0 ? ' open' : ''}><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('\n')}
+</div>
+<p><a class="cta primary" href="/">Modelle vergleichen</a> <a class="cta" href="/data.html">Datenübersicht</a></p>
+<footer><a href="/">AR Directory</a> · <a href="/modelle/">Modelle</a> · <a href="/glossar.html">Glossar</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></footer>
+</div>
+</body>
+</html>
+`;
+};
+
+export const buildDataOverview = (meta, baseUrl) => {
+  const canonical = `${baseUrl}data.html`;
+  const coverage = meta.field_coverage || {};
+  const coverageRows = [
+    ['official_url', 'Herstellerseite'],
+    ['release_date', 'Erscheinungsdatum'],
+    ['price_usd', 'Preis'],
+    ['display_type', 'Display'],
+    ['optics', 'Optik'],
+    ['tracking', 'Tracking'],
+    ['lifecycle_source', 'Lifecycle-Quelle'],
+    ['image_url', 'Produktbild'],
+  ];
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: 'AR Directory – AR/XR-Brillen-Datensatz',
+    description: `Kuratierter Datensatz mit ${meta.records} AR- und XR-Brillen, Spezifikationen, Preisen, Quellen und Lifecycle-Status.`,
+    url: canonical,
+    dateModified: meta.generated_at,
+    isAccessibleForFree: true,
+    inLanguage: 'de-DE',
+    distribution: [
+      { '@type': 'DataDownload', encodingFormat: 'text/csv', contentUrl: `${baseUrl}data/ar_glasses.csv` },
+      { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: `${baseUrl}data/ar_glasses.metadata.json` },
+    ],
+  };
+  const metrics = [
+    [meta.records, 'Modelle'],
+    [meta.manufacturers, 'Hersteller'],
+    [meta.ar_records, 'AR-Modelle'],
+    [meta.xr_records, 'XR-Modelle'],
+    [meta.active_models, 'aktuell im Vertrieb'],
+    [meta.official_product_links, 'Herstellerseiten'],
+    [`${coverage.price_usd?.percent ?? 0}%`, 'mit Preisangabe'],
+    [`${coverage.image_url?.percent ?? 0}%`, 'mit Produktbild'],
+  ];
+  return `${head({
+    title: 'Datenübersicht und Datenqualität | AR Directory',
+    description: `Transparente Datenübersicht für ${meta.records} AR-/XR-Brillen: Umfang, Abdeckung, Aktualität, Quellen und Downloads.`,
+    canonical,
+    image: `${baseUrl}og/data.png`,
+    imageAlt: 'Datenübersicht und Datenqualität des AR Directory',
+    jsonLd,
+    baseUrl,
+  })}
+<body>
+<div class="wrap">
+<nav class="bc"><a href="/">Start</a> › Datenübersicht</nav>
+<h1>Datenübersicht</h1>
+<p class="lead">Umfang, Aktualität und Feldabdeckung des kuratierten AR-/XR-Datensatzes. Datenstand: ${esc(formatGeneratedDate(meta.generated_at))}.</p>
+<div class="metrics">${metrics.map(([value, label]) => `<div class="metric"><strong>${esc(value)}</strong><span>${esc(label)}</span></div>`).join('')}</div>
+<div class="data-actions"><a class="cta primary" href="/data/ar_glasses.csv">CSV herunterladen</a><a class="cta" href="/data/ar_glasses.metadata.json">Metadaten (JSON)</a><a class="cta" href="/asset-notices.html">Bild- und Quellenhinweise</a></div>
+<h2>Feldabdeckung</h2>
+<table><thead><tr><th>Feld</th><th>Ausgefüllt</th><th>Abdeckung</th></tr></thead><tbody>
+${coverageRows.map(([key, label]) => `<tr><th>${esc(label)}</th><td>${esc(coverage[key]?.filled ?? 0)} / ${esc(meta.records)}</td><td>${esc(coverage[key]?.percent ?? 0)}%</td></tr>`).join('\n')}
+</tbody></table>
+<h2>Methodik</h2>
+<p>Der Datenbestand wird aus kuratierten Quellen erzeugt. Hersteller-, Produkt-, Lifecycle- und Bildquellen werden je Datensatz geführt. Fehlende Angaben werden nicht erfunden, sondern als unbekannt gekennzeichnet. Historische Modelle bleiben für Vergleich und Einordnung enthalten.</p>
+<footer><a href="/">AR Directory</a> · <a href="/modelle/">Modelle</a> · <a href="/faq.html">FAQ</a> · <a href="/glossar.html">Glossar</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></footer>
+</div>
+</body>
+</html>
+`;
+};
+
 export const buildGlossary = (meta, baseUrl) => {
   const canonical = `${baseUrl}glossar.html`;
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'FAQPage',
-        mainEntity: FAQ.map(([q, a]) => ({
-          '@type': 'Question',
-          name: q,
-          acceptedAnswer: { '@type': 'Answer', text: a },
-        })),
-      },
       {
         '@type': 'DefinedTermSet',
         name: 'AR/XR Glossar',
@@ -430,24 +549,22 @@ export const buildGlossary = (meta, baseUrl) => {
     ],
   };
   return `${head({
-    title: 'AR/XR Glossar & FAQ: FOV, Waveguide, Birdbath, Passthrough erklärt | AR/XR Brillen Vergleich',
-    description: 'Glossar und häufige Fragen rund um AR- und XR-Brillen: FOV, Waveguide vs. Birdbath, Passthrough, IPD, Nits, Tracking, EOL und mehr – einfach erklärt.',
+    title: 'AR/XR Glossar: FOV, Waveguide, Birdbath und EOL erklärt | AR Directory',
+    description: 'Technisches Glossar zu AR- und XR-Brillen: FOV, Waveguide, Birdbath, Passthrough, IPD, Nits, Tracking, EOL und weitere Begriffe.',
     canonical,
     jsonLd,
     baseUrl,
   })}
 <body>
 <div class="wrap">
-<nav class="bc"><a href="/">Start</a> › Glossar &amp; FAQ</nav>
-<h1>AR/XR Glossar &amp; FAQ</h1>
-<p class="lead">Die wichtigsten Begriffe und Fragen rund um AR- und XR-Brillen – einfach erklärt. Begleitend zum Vergleich von ${meta.records} Modellen.</p>
-<h2>Häufige Fragen</h2>
-${FAQ.map(([q, a]) => `<section><h3>${esc(q)}</h3><p>${esc(a)}</p></section>`).join('\n')}
+<nav class="bc"><a href="/">Start</a> › Glossar</nav>
+<h1>AR/XR Glossar</h1>
+<p class="lead">Die wichtigsten technischen Begriffe rund um AR- und XR-Brillen – einfach erklärt. Antworten auf typische Kauf- und Verständnisfragen stehen in der <a href="/faq.html">FAQ</a>.</p>
 <h2>Glossar</h2>
 <table><tbody>
 ${GLOSSARY.map(([t, d]) => `<tr><th>${esc(t)}</th><td>${esc(d)}</td></tr>`).join('\n')}
 </tbody></table>
-<footer>Teil des <a href="/">AR/XR Brillen Vergleichs</a> · <a href="/modelle/">Alle Modelle</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></footer>
+<footer><a href="/">AR Directory</a> · <a href="/modelle/">Modelle</a> · <a href="/faq.html">FAQ</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></footer>
 </div>
 </body>
 </html>
@@ -459,7 +576,7 @@ const legalPage = (title, description, canonical, baseUrl, bodyHtml) => `${head(
 <div class="wrap">
 <nav class="bc"><a href="/">Start</a> › ${esc(title.split('|')[0].trim())}</nav>
 ${bodyHtml}
-<footer>Teil des <a href="/">AR/XR Brillen Vergleichs</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></footer>
+<footer>Teil des <a href="/">AR Directory</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></footer>
 </div>
 </body>
 </html>
@@ -467,7 +584,7 @@ ${bodyHtml}
 
 export const buildImpressum = (meta, baseUrl) =>
   legalPage(
-    'Impressum | AR/XR Brillen Vergleich',
+    'Impressum | AR Directory',
     'Impressum und Anbieterkennzeichnung des AR/XR Brillen Vergleichs.',
     `${baseUrl}impressum.html`,
     baseUrl,
@@ -488,7 +605,7 @@ export const buildImpressum = (meta, baseUrl) =>
 
 export const buildDatenschutz = (meta, baseUrl) =>
   legalPage(
-    'Datenschutzerklärung | AR/XR Brillen Vergleich',
+    'Datenschutzerklärung | AR Directory',
     'Datenschutzerklärung des AR/XR Brillen Vergleichs: Hosting, Logfiles, lokale Speicherung, externe Dienste und Affiliate-Programme.',
     `${baseUrl}datenschutz.html`,
     baseUrl,
@@ -520,7 +637,7 @@ export const buildAssetNotices = (rows, baseUrl) => {
     .join('');
 
   return legalPage(
-    'Bildnachweise | AR/XR Brillen Vergleich',
+    'Bildnachweise | AR Directory',
     'Quellen- und Rechtehinweise für Produktbilder im AR/XR Brillen Vergleich.',
     `${baseUrl}asset-notices.html`,
     baseUrl,

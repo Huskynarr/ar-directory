@@ -1,5 +1,5 @@
 {
-  "name": "AR/XR Brillen Vergleich",
+  "name": "AR Directory",
   "version": "1.1",
   "language": "de-DE",
   "primary_url": "https://ar-directory.huskynarr.de/",
@@ -15,7 +15,22 @@
     {
       "type": "web",
       "url": "https://ar-directory.huskynarr.de/",
-      "title": "AR/XR Brillen Vergleich Startseite"
+      "title": "AR Directory Startseite"
+    },
+    {
+      "type": "faq",
+      "url": "https://ar-directory.huskynarr.de/faq.html",
+      "title": "Häufige Fragen zu AR- und XR-Brillen"
+    },
+    {
+      "type": "glossary",
+      "url": "https://ar-directory.huskynarr.de/glossar.html",
+      "title": "AR/XR Glossar"
+    },
+    {
+      "type": "dataset_overview",
+      "url": "https://ar-directory.huskynarr.de/data.html",
+      "title": "Datenübersicht und Datenqualität"
     },
     {
       "type": "dataset",

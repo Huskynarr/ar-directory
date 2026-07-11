@@ -1,4 +1,4 @@
-# AR/XR Brillen Vergleich
+# AR Directory
 
 Kurzer Maschinenindex fuer LLMs und Suchsysteme.
 
@@ -17,6 +17,9 @@ Kurzer Maschinenindex fuer LLMs und Suchsysteme.
 
 ## Strukturierte Datenquellen
 
+- FAQ: https://ar-directory.huskynarr.de/faq.html
+- Glossar: https://ar-directory.huskynarr.de/glossar.html
+- Datenübersicht: https://ar-directory.huskynarr.de/data.html
 - CSV: https://ar-directory.huskynarr.de/data/ar_glasses.csv
 - Metadata JSON: https://ar-directory.huskynarr.de/data/ar_glasses.metadata.json
 - JSON-LD Strukturdaten: https://ar-directory.huskynarr.de/data/structured-data.json

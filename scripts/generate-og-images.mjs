@@ -1,6 +1,5 @@
-// Generates branded 1200x630 OpenGraph share cards (one PNG per device) into
-// public/og/models/<slug>.png. Run locally and COMMIT the PNGs — they are static
-// assets, so the production host needs no build dependency.
+// Generates branded 1200x630 OpenGraph cards for core pages and every device.
+// Run locally and commit the PNGs — production needs no image build dependency.
 //
 // Usage: npm run og:generate
 
@@ -9,6 +8,7 @@ import Papa from 'papaparse';
 import sharp from 'sharp';
 
 const CSV_PATH = 'public/data/ar_glasses.csv';
+const ROOT_OUT_DIR = 'public/og';
 const OUT_DIR = 'public/og/models';
 const W = 1200;
 const H = 630;
@@ -56,9 +56,37 @@ const chip = (x, y, label) => {
   </g>`;
 };
 
+const buildPageSvg = ({ eyebrow, title, description, meta }) => {
+  const titleLines = wrap(title, 25, 2);
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
+  <defs>
+    <radialGradient id="page-bg" cx="12%" cy="0%" r="95%">
+      <stop offset="0" stop-color="#1b271b"/><stop offset="0.48" stop-color="#10171a"/><stop offset="1" stop-color="#080b0d"/>
+    </radialGradient>
+    <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#000" flood-opacity=".34"/>
+    </filter>
+  </defs>
+  <rect width="${W}" height="${H}" fill="url(#page-bg)"/>
+  <circle cx="1080" cy="30" r="260" fill="#a3e635" opacity=".055"/>
+  <rect x="54" y="48" width="1092" height="534" rx="32" fill="#12181c" stroke="#334148" filter="url(#soft-shadow)"/>
+  <g transform="translate(92 84)" fill="none" stroke="#a3e635" stroke-width="4" stroke-linecap="round">
+    <rect x="0" y="0" width="35" height="27" rx="8"/><rect x="43" y="0" width="35" height="27" rx="8"/><path d="M35 12c3-3 5-3 8 0"/>
+  </g>
+  <text x="190" y="106" font-family="${FONT}" font-size="20" font-weight="700" letter-spacing="4" fill="#dce5df">AR DIRECTORY</text>
+  <text x="1108" y="106" text-anchor="end" font-family="${FONT}" font-size="19" fill="#829189">by Huskynarr</text>
+  <text x="92" y="178" font-family="${FONT}" font-size="20" font-weight="700" letter-spacing="3" fill="#a3e635">${esc(eyebrow)}</text>
+  ${titleLines.map((line, index) => `<text x="92" y="${272 + index * 76}" font-family="${FONT}" font-size="68" font-weight="750" letter-spacing="-2" fill="#f4f7f5">${esc(line)}</text>`).join('')}
+  <text x="92" y="${titleLines.length > 1 ? 446 : 386}" font-family="${FONT}" font-size="25" fill="#9aa9a3">${esc(description)}</text>
+  <line x1="92" y1="510" x2="1108" y2="510" stroke="#29363b"/>
+  <text x="92" y="552" font-family="${FONT}" font-size="20" font-weight="700" fill="#dce5df">${esc(meta)}</text>
+  <text x="1108" y="552" text-anchor="end" font-family="${FONT}" font-size="20" fill="#829189">ar-directory.huskynarr.de</text>
+</svg>`;
+};
+
 const buildSvg = (row) => {
   const isXr = String(row.xr_category).toUpperCase() === 'XR';
-  const accent = isXr ? '#22d3ee' : '#a3e635';
+  const accent = '#a3e635';
   const catLabel = isXr ? 'XR-HEADSET' : 'AR-BRILLE';
   const nameLines = wrap(row.name, 24, 2);
   const nameFontSize = nameLines.length > 1 || row.name.length > 16 ? 72 : 88;
@@ -86,7 +114,7 @@ const buildSvg = (row) => {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <defs>
     <linearGradient id="acc" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#a3e635"/><stop offset="1" stop-color="#22d3ee"/>
+      <stop offset="0" stop-color="#bef264"/><stop offset="1" stop-color="#65a30d"/>
     </linearGradient>
     <radialGradient id="bg" cx="18%" cy="12%" r="80%">
       <stop offset="0" stop-color="#141b14"/><stop offset="1" stop-color="#0a0f16"/>
@@ -100,7 +128,7 @@ const buildSvg = (row) => {
     <rect x="150" y="70" width="58" height="44" rx="14"/>
     <path d="M138 90c5-5 7-5 12 0"/>
   </g>
-  <text x="232" y="101" font-family="${FONT}" font-size="28" font-weight="700" letter-spacing="3" fill="#a8a29e">AR/XR BRILLEN VERGLEICH</text>
+  <text x="232" y="101" font-family="${FONT}" font-size="28" font-weight="700" letter-spacing="3" fill="#a8a29e">AR DIRECTORY</text>
   <text x="${W - 80}" y="101" text-anchor="end" font-family="${FONT}" font-size="24" fill="#57534e">ar-directory.huskynarr.de</text>
 
   <!-- category + manufacturer -->
@@ -120,7 +148,7 @@ const buildSvg = (row) => {
   ${chipsSvg}
 
   <!-- price + tagline -->
-  <text x="80" y="566" font-family="${FONT}" font-size="64" font-weight="700" fill="${accent}">${esc(price)}</text>
+  <text x="80" y="566" font-family="${FONT}" font-size="64" font-weight="700" fill="#f4f7f5">${esc(price)}</text>
   <text x="${W - 80}" y="566" text-anchor="end" font-family="${FONT}" font-size="26" fill="#78716c">Specs · Preis · Vergleich</text>
 </svg>`;
 };
@@ -128,7 +156,36 @@ const buildSvg = (row) => {
 const main = async () => {
   const parsed = Papa.parse(await readFile(CSV_PATH, 'utf8'), { header: true, skipEmptyLines: true });
   const rows = (parsed.data || []).filter((r) => r.name && r.slug);
+  await mkdir(ROOT_OUT_DIR, { recursive: true });
   await mkdir(OUT_DIR, { recursive: true });
+
+  const pageCards = [
+    {
+      file: 'startseite.png',
+      eyebrow: `${rows.length} KURATIERTE MODELLE`,
+      title: 'AR- & XR-Brillen fundiert vergleichen',
+      description: 'Spezifikationen, Preise, Lifecycle und Herstellerquellen.',
+      meta: 'Vergleich · Filter · Detaildaten',
+    },
+    {
+      file: 'faq.png',
+      eyebrow: 'FRAGEN & ANTWORTEN',
+      title: 'AR/XR verständlich erklärt',
+      description: 'Klare Antworten zu Technik, Auswahl, Preisen und Datenqualität.',
+      meta: 'FAQ · unabhängig · kompakt',
+    },
+    {
+      file: 'data.png',
+      eyebrow: 'OFFENER DATENBESTAND',
+      title: 'Datenqualität transparent gemacht',
+      description: `${rows.length} Modelle mit Quellen, Feldabdeckung und Methodik.`,
+      meta: 'CSV · JSON-LD · Metadaten',
+    },
+  ];
+  for (const page of pageCards) {
+    const png = await sharp(Buffer.from(buildPageSvg(page))).png({ compressionLevel: 9 }).toBuffer();
+    await writeFile(`${ROOT_OUT_DIR}/${page.file}`, png);
+  }
 
   let ok = 0;
   for (const row of rows) {
@@ -137,7 +194,7 @@ const main = async () => {
     await writeFile(`${OUT_DIR}/${row.slug}.png`, png);
     ok += 1;
   }
-  console.log(`Generated ${ok} OG share cards -> ${OUT_DIR}/<slug>.png`);
+  console.log(`Generated ${pageCards.length} page cards and ${ok} model cards in ${ROOT_OUT_DIR}`);
 };
 
 main().catch((error) => {

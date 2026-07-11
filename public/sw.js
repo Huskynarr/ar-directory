@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ar-directory-v4';
+const CACHE_NAME = 'ar-directory-v5';
 const STATIC_ASSETS = ['/', '/icon.svg', '/manifest.json'];
 
 self.addEventListener('install', (event) => {
@@ -87,6 +87,12 @@ self.addEventListener('fetch', (event) => {
   try {
     url = new URL(request.url);
   } catch {
+    return;
+  }
+
+  // A navigation must not flash an outdated cached shell after a deployment.
+  if (request.mode === 'navigate') {
+    event.respondWith(networkFirst(request));
     return;
   }
 
