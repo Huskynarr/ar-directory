@@ -1,9 +1,15 @@
-import Papa from 'papaparse';
 import { toNumber } from '../utils.js';
 import { state, RATE_SOURCE_URL, setFallbackUsdRate } from '../state.js';
 
-export const parseCsv = (text) =>
-  new Promise((resolve, reject) => {
+let papaPromise;
+const loadPapa = () => {
+  papaPromise ||= import('papaparse').then((module) => module.default);
+  return papaPromise;
+};
+
+export const parseCsv = async (text) => {
+  const Papa = await loadPapa();
+  return new Promise((resolve, reject) => {
     Papa.parse(text, {
       header: true,
       skipEmptyLines: true,
@@ -14,6 +20,7 @@ export const parseCsv = (text) =>
       error: reject,
     });
   });
+};
 
 export const fetchUsdToEurRate = async () => {
   try {

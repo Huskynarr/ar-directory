@@ -302,6 +302,7 @@ body.theme-light .text-cyan-200 { color: #0e7490; }
 }
 [data-model-card] > div:first-child { background: #0b1115; }
 body.theme-light [data-model-card] > div:first-child { background: #e9eee8; }
+[data-model-card] { content-visibility:auto; contain-intrinsic-block-size:500px; }
 [data-model-card] h2 { letter-spacing: -.025em; }
 [data-model-card] .chip-btn { min-height: 2.25rem; padding: .45rem .7rem; font-size: .75rem; }
 [data-card-density='compact'] h2 { font-size:1.2rem; }

@@ -27,16 +27,43 @@ import { parseCsv, fetchUsdToEurRate } from './data/dataset.js';
 import { AFFILIATE, setAffiliateOverrides } from './affiliate.js';
 import { optionList } from './render/shared.js';
 import { cardTemplate } from './render/cards.js';
-import { tableTemplate } from './render/table.js';
-import { compareModeTemplate, compareBarTemplate } from './render/compare.js';
-import { openDetailModal } from './render/modal.js';
-import { isFinderRoute, renderFinder } from './render/finder.js';
 import { setRenderFn } from './render/registry.js';
 import { buildStatsChartSvg } from './render/stats.js';
 import { exportFilteredCsv, copyShareUrl } from './actions.js';
 import { updateDocumentSeoSignals, captureQueryFocusState, restoreQueryFocusState } from './seo.js';
 
 const app = document.querySelector('#app');
+const isFinderRoute = () => /^\/finder\/?$/.test(window.location.pathname);
+const yieldToMainThread = () => new Promise((resolveYield) => setTimeout(resolveYield, 0));
+
+let tableModule;
+let tableModulePromise;
+let compareModule;
+let compareModulePromise;
+let finderModulePromise;
+
+const requestTableModule = () => {
+  if (tableModule || tableModulePromise) return;
+  tableModulePromise = import('./render/table.js').then((module) => {
+    tableModule = module;
+    if (!isFinderRoute() && state.viewMode === 'table') render();
+  });
+};
+
+const requestCompareModule = () => {
+  if (compareModule || compareModulePromise) return;
+  compareModulePromise = import('./render/compare.js').then((module) => {
+    compareModule = module;
+    if (!isFinderRoute() && state.selectedIds.length) render();
+  });
+};
+
+const renderFinderRoute = () => {
+  finderModulePromise ||= import('./render/finder.js');
+  void finderModulePromise.then((module) => {
+    if (isFinderRoute()) module.renderFinder();
+  });
+};
 
 // Windowed page list with ellipsis, e.g. [1, '…', 4, 5, 6, '…', 18].
 const buildPageList = (current, total) => {
@@ -289,7 +316,7 @@ const render = () => {
       </header>
       <p id="results-status" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true">${escapeHtml(resultsStatusLabel)}</p>
 
-      ${selectedRows.length ? compareBarTemplate(selectedRows) : ''}
+      ${selectedRows.length && compareModule ? compareModule.compareBarTemplate(selectedRows) : ''}
 
       <section class="panel mt-3 p-4" data-filters-open="${state.showAdvancedFilters ? 'true' : 'false'}">
         <div class="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
@@ -530,7 +557,9 @@ const render = () => {
       <section id="results" class="mt-2 scroll-mt-4">
         ${
           state.compareMode
-            ? compareModeTemplate(selectedRows)
+            ? compareModule
+              ? compareModule.compareModeTemplate(selectedRows)
+              : `<section class="panel p-6 text-sm text-[#a8a29e]" role="status">${t('Vergleich wird geladen...', 'Loading comparison...')}</section>`
             : filtered.length === 0
               ? `<div class="panel flex flex-col items-center gap-4 p-10 text-center sm:p-14">
                   <div class="grid h-16 w-16 place-items-center rounded-2xl border border-[#44403c] bg-[#1c1917] text-3xl text-[var(--brand)]">${
@@ -563,7 +592,9 @@ const render = () => {
                     <div class="grid gap-4 md:grid-cols-2 ${state.focusMode ? 'xl:grid-cols-4' : 'xl:grid-cols-3 xl:gap-5'}">${visibleCards.map(cardTemplate).join('')}</div>
                     ${paginationTemplate(state.cardsPage, maxPage, visibleCards.length, filtered.length)}
                   `
-                : tableTemplate(filtered)
+                : tableModule
+                  ? tableModule.tableTemplate(filtered)
+                  : `<section class="panel p-6 text-sm text-[#a8a29e]" role="status">${t('Liste wird geladen...', 'Loading list...')}</section>`
         }
       </section>
 
@@ -680,6 +711,8 @@ const render = () => {
     >&#8593;</button>
   `;
   applyCatalogMarkup(catalogMarkup);
+  if (state.viewMode === 'table') requestTableModule();
+  if (selectedRows.length) requestCompareModule();
 
   const setAndRender = (key, value, options = {}) => {
     const { resetCardsPage = true } = options;
@@ -761,7 +794,10 @@ const render = () => {
 
   // Detail modal on card image click
   document.querySelectorAll('[data-detail-open]').forEach((el) => {
-    el.addEventListener('click', () => openDetailModal(el.getAttribute('data-detail-open')));
+    el.addEventListener('click', () => {
+      const rowId = el.getAttribute('data-detail-open');
+      void import('./render/modal.js').then((module) => module.openDetailModal(rowId));
+    });
   });
 
   document.querySelector('#export-csv')?.addEventListener('click', () => exportFilteredCsv(filtered));
@@ -926,7 +962,7 @@ setRenderFn(render);
 // the directory. Used on first paint, on history navigation and on in-app links.
 const routeRender = () => {
   if (isFinderRoute()) {
-    renderFinder();
+    renderFinderRoute();
   } else {
     render();
   }
@@ -1037,6 +1073,7 @@ const init = async () => {
     }
     const csv = await response.text();
     const { data, fields } = await parseCsv(csv);
+    await yieldToMainThread();
     state.rows = data.map((row, index) => ({ ...row, __rowId: getRowId(row, index) }));
     const devicePaths = assignDevicePaths(state.rows);
     state.rows.forEach((row) => {
@@ -1048,6 +1085,7 @@ const init = async () => {
     applyComparePathFromUrl();
     pruneSelectedIdsToKnownRows();
     state.compareNotice = '';
+    await yieldToMainThread();
     routeRender();
     // Currency enrichment is useful but not render-critical. Delaying it keeps
     // the first interaction and LCP free from a second full catalog render.
