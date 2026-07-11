@@ -217,7 +217,7 @@ export const buildDevicePage = (row, rows, slugs, paths, baseUrl, overrides = {}
 
   const image = hasValue(row.image_url) ? row.image_url : '';
   const heroMedia = image
-    ? `<img src="${esc(image)}" alt="${esc(row.name)}" loading="lazy" width="280" height="160" />`
+    ? `<img src="${esc(image)}" alt="${esc(row.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" width="280" height="160" />`
     : `<div class="ph">${esc((row.name || '?').slice(0, 2).toUpperCase())}</div>`;
 
   const jsonLd = {
@@ -454,8 +454,6 @@ ${bodyHtml}
 </html>
 `;
 
-// NOTE: legal templates with [PLATZHALTER] fields. Fill in and have them reviewed
-// (this is scaffolding, not legal advice).
 export const buildImpressum = (meta, baseUrl) =>
   legalPage(
     'Impressum | AR/XR Brillen Vergleich',
@@ -463,19 +461,18 @@ export const buildImpressum = (meta, baseUrl) =>
     `${baseUrl}impressum.html`,
     baseUrl,
     `<h1>Impressum</h1>
-<p class="note">Vorlage – bitte [PLATZHALTER] ausfüllen und rechtlich prüfen lassen.</p>
-<h2>Angaben gemäß § 5 DDG (ehem. TMG)</h2>
-<p>Selinger Consulting<br>Sebastian Selinger<br>[Strasse + Hausnummer]<br>[PLZ] Freiburg<br>Deutschland</p>
+<h2>Angaben gemäß § 5 DDG</h2>
+<p>Huskynarr<br>Eichstetter Straße 11<br>79106 Freiburg<br>Deutschland</p>
 <h2>Kontakt</h2>
-<p>E-Mail: [E-Mail-Adresse]<br>Telefon: [optional]</p>
+<p>Telefon: +49 761 45891814<br>E-Mail und weitere Kontaktmöglichkeiten: <a href="https://huskynarr.de/impressum/" rel="noopener">zentrales Impressum von Huskynarr</a></p>
 <h2>Verantwortlich i.S.d. § 18 Abs. 2 MStV</h2>
-<p>Sebastian Selinger (Anschrift wie oben)</p>
+<p>Huskynarr (Anschrift wie oben)</p>
 <h2>Haftung für Inhalte &amp; Links</h2>
 <p>Die Inhalte dieser Seiten wurden mit Sorgfalt erstellt, jedoch ohne Gewähr für Aktualität, Vollständigkeit und Richtigkeit der Geräte-Spezifikationen und Preise. Für Inhalte verlinkter externer Seiten sind deren Betreiber verantwortlich.</p>
 <h2>Affiliate-Hinweis</h2>
-<p>Diese Website nutzt Affiliate-Links (u. a. Amazon, eBay, Otto, idealo). Klickst du auf einen solchen Link und kaufst, können wir eine Provision erhalten. Für dich entstehen keine Mehrkosten. Als Amazon-Partner verdienen wir an qualifizierten Verkäufen.</p>
-<h2>EU-Streitschlichtung</h2>
-<p>Plattform der EU-Kommission zur Online-Streitbeilegung: <a href="https://ec.europa.eu/consumers/odr/" rel="nofollow noopener">https://ec.europa.eu/consumers/odr/</a>. Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>`,
+<p>Affiliate-Links sind derzeit deaktiviert. Eine künftige Aktivierung wird auf der Website und an den Links eindeutig kenntlich gemacht.</p>
+<h2>Verbraucherstreitbeilegung</h2>
+<p>Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen. Die frühere EU-OS-Plattform wurde 2025 eingestellt.</p>`,
   );
 
 export const buildDatenschutz = (meta, baseUrl) =>
@@ -485,17 +482,41 @@ export const buildDatenschutz = (meta, baseUrl) =>
     `${baseUrl}datenschutz.html`,
     baseUrl,
     `<h1>Datenschutzerklärung</h1>
-<p class="note">Vorlage – bitte [PLATZHALTER] ausfüllen und rechtlich prüfen lassen (keine Rechtsberatung).</p>
 <h2>1. Verantwortlicher</h2>
-<p>Selinger Consulting, Sebastian Selinger, [Strasse + Hausnummer], [PLZ] Freiburg, [E-Mail]. Siehe auch <a href="/impressum.html">Impressum</a>.</p>
+<p>Huskynarr, Eichstetter Straße 11, 79106 Freiburg. Kontakt siehe <a href="/impressum.html">Impressum</a>.</p>
 <h2>2. Hosting &amp; Server-Logfiles</h2>
-<p>Die Seite wird bei [Hoster, z. B. Plesk-Server / Provider] gehostet. Beim Aufruf werden technisch notwendige Server-Logfiles verarbeitet (IP-Adresse, Datum/Uhrzeit, abgerufene URL, User-Agent) zur Auslieferung und Sicherheit (Art. 6 Abs. 1 lit. f DSGVO).</p>
+<p>Beim Aufruf verarbeitet der technische Hostinganbieter notwendige Server-Logfiles (IP-Adresse, Datum/Uhrzeit, abgerufene URL und User-Agent) zur sicheren Auslieferung der Website. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.</p>
 <h2>3. Lokale Speicherung (kein Tracking)</h2>
 <p>Die App speichert Einstellungen (Theme, Sprache, Favoriten, Filter) ausschliesslich lokal in deinem Browser (localStorage). Es werden keine Cookies zu Analyse-/Werbezwecken gesetzt und keine personenbezogenen Daten an uns übertragen.</p>
 <h2>4. Externe Inhalte</h2>
-<p>Zur USD-/EUR-Umrechnung wird bei Bedarf die API <code>api.frankfurter.app</code> abgerufen; dabei wird deine IP-Adresse an diesen Dienst übertragen. Produktbilder werden teils direkt von Hersteller-/Shop-Servern geladen. Ein Service Worker (PWA) cached statische Inhalte lokal.</p>
+<p>Zur USD-/EUR-Umrechnung wird bei Bedarf die API <code>api.frankfurter.dev</code> abgerufen; dabei wird deine IP-Adresse an diesen Dienst übertragen. Produktbilder werden teils direkt von den jeweils im <a href="/asset-notices.html">Bildnachweis</a> genannten externen Servern geladen. Der Browser übermittelt dabei technisch die IP-Adresse, jedoch durch <code>referrerpolicy=no-referrer</code> nicht die besuchte Unterseite. Ein Service Worker (PWA) speichert statische Inhalte lokal.</p>
 <h2>5. Affiliate-Programme</h2>
-<p>Wir nehmen an Partnerprogrammen teil (u. a. Amazon PartnerNet, eBay Partner Network sowie via AWIN für Otto und idealo). Beim Klick auf einen Affiliate-Link wirst du zum jeweiligen Shop/Netzwerk weitergeleitet, das eigene Cookies setzen und Daten (u. a. IP, Referrer) verarbeiten kann, um Käufe der Provision zuzuordnen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (wirtschaftliches Interesse). Details in den Datenschutzhinweisen der jeweiligen Anbieter.</p>
+<p>Affiliate-Funktionen sind derzeit deaktiviert. Die Website gibt daher keine Affiliate-Links oder entsprechenden Trackingparameter aus.</p>
 <h2>6. Deine Rechte</h2>
 <p>Du hast Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch sowie ein Beschwerderecht bei einer Aufsichtsbehörde.</p>`,
   );
+
+export const buildAssetNotices = (rows, baseUrl) => {
+  const entries = rows
+    .filter((row) => hasValue(row.image_url))
+    .map((row) => {
+      const local = String(row.image_url).startsWith('/');
+      const source = local
+        ? `<code>${esc(row.image_url)}</code>`
+        : `<a href="${esc(row.image_url)}" rel="nofollow noopener noreferrer">Originalquelle</a>`;
+      return `<li><strong>${esc(row.name)}</strong> — ${esc(row.manufacturer)} · ${source} · Rechte: jeweiliger Hersteller bzw. dort genannter Rechteinhaber; keine freie Lizenz behauptet.</li>`;
+    })
+    .join('');
+
+  return legalPage(
+    'Bildnachweise | AR/XR Brillen Vergleich',
+    'Quellen- und Rechtehinweise für Produktbilder im AR/XR Brillen Vergleich.',
+    `${baseUrl}asset-notices.html`,
+    baseUrl,
+    `<h1>Bildnachweise</h1>
+<p>Produktnamen und Marken gehören den jeweiligen Rechteinhabern. Externe Produktabbildungen dienen ausschließlich der redaktionellen Identifikation im Geräteverzeichnis. Sie werden nicht als frei lizenziert ausgewiesen und bleiben Eigentum der jeweils genannten Hersteller oder ursprünglichen Rechteinhaber.</p>
+<p>Die lokal erzeugten schematischen Brillen-Platzhalter sowie Website-Icon und Open-Graph-Grafiken sind Projektgrafiken. Bei einem fehlerhaften Nachweis oder einem Löschwunsch nutze bitte die Kontaktmöglichkeit im <a href="/impressum.html">Impressum</a>.</p>
+<h2>Verwendete Produktabbildungen (${entries ? rows.filter((row) => hasValue(row.image_url)).length : 0})</h2>
+<ul>${entries}</ul>`,
+  );
+};

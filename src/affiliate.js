@@ -5,11 +5,11 @@
 // │ ACTIVATION CHECKLIST (do all before flipping AFFILIATE.enabled to true):  │
 // │  1. Enter your real partner IDs below (replace every "CHANGEME-*").        │
 // │  2. Publish Impressum + Datenschutz (templates: public/impressum.html,     │
-// │     public/datenschutz.html — fill the [PLATZHALTER] fields).              │
+// │     public/datenschutz.html and public/asset-notices.html).                │
 // │  3. Be an approved partner of each enabled program (Amazon PartnerNet,     │
 // │     eBay Partner Network, AWIN for Otto/idealo).                           │
 // │  4. Set AFFILIATE.enabled = true and run `npm run data:generate`+build.    │
-// │ Until then the site shows only the neutral official shop link (no change). │
+// │ Until then the site shows only the neutral manufacturer/product link.      │
 // └──────────────────────────────────────────────────────────────────────────┘
 
 export const AFFILIATE = {

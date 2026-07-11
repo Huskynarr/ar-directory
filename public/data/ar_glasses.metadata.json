@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-06-20T09:50:56.958Z",
+  "generated_at": "2026-07-11T08:26:27.695Z",
   "source_dataset": "curated_ar_xr_directory_v2",
   "source_page": "https://huskynarr.de/",
-  "records": 347,
-  "ar_records": 244,
+  "records": 348,
+  "ar_records": 245,
   "xr_records": 103,
-  "manufacturers": 155,
-  "official_shop_links": 332,
-  "image_links": 236,
-  "active_models": 189,
+  "manufacturers": 156,
+  "official_product_links": 333,
+  "image_links": 234,
+  "active_models": 190,
   "discontinued_models": 132,
-  "newest_release": "Unklar",
+  "newest_release": "2026-06-23",
   "oldest_release": "1998",
   "price_range_usd": {
     "min": 99,
@@ -18,51 +18,51 @@
   },
   "field_coverage": {
     "id": {
-      "filled": 347,
+      "filled": 348,
       "percent": 100
     },
     "short_name": {
-      "filled": 347,
+      "filled": 348,
       "percent": 100
     },
     "name": {
-      "filled": 347,
+      "filled": 348,
       "percent": 100
     },
     "manufacturer": {
-      "filled": 347,
+      "filled": 348,
       "percent": 100
     },
     "image_url": {
-      "filled": 236,
-      "percent": 68
+      "filled": 234,
+      "percent": 67.2
     },
     "official_url": {
-      "filled": 332,
+      "filled": 333,
       "percent": 95.7
     },
     "announced_date": {
-      "filled": 340,
+      "filled": 341,
       "percent": 98
     },
     "release_date": {
-      "filled": 330,
+      "filled": 331,
       "percent": 95.1
     },
     "price_usd": {
-      "filled": 275,
+      "filled": 276,
       "percent": 79.3
     },
     "xr_category": {
-      "filled": 347,
+      "filled": 348,
       "percent": 100
     },
     "active_distribution": {
-      "filled": 347,
+      "filled": 348,
       "percent": 100
     },
     "eol_status": {
-      "filled": 347,
+      "filled": 348,
       "percent": 100
     },
     "eol_date": {
@@ -70,32 +70,32 @@
       "percent": 7.2
     },
     "lifecycle_notes": {
-      "filled": 347,
+      "filled": 348,
       "percent": 100
     },
     "lifecycle_source": {
-      "filled": 269,
-      "percent": 77.5
+      "filled": 270,
+      "percent": 77.6
     },
     "software": {
-      "filled": 312,
+      "filled": 313,
       "percent": 89.9
     },
     "compute_unit": {
-      "filled": 346,
+      "filled": 347,
       "percent": 99.7
     },
     "display_type": {
-      "filled": 335,
-      "percent": 96.5
+      "filled": 336,
+      "percent": 96.6
     },
     "optics": {
-      "filled": 324,
+      "filled": 325,
       "percent": 93.4
     },
     "fov_horizontal_deg": {
       "filled": 124,
-      "percent": 35.7
+      "percent": 35.6
     },
     "fov_vertical_deg": {
       "filled": 35,
@@ -103,84 +103,84 @@
     },
     "fov_diagonal_deg": {
       "filled": 201,
-      "percent": 57.9
+      "percent": 57.8
     },
     "resolution_per_eye": {
       "filled": 329,
-      "percent": 94.8
+      "percent": 94.5
     },
     "refresh_hz": {
       "filled": 196,
-      "percent": 56.5
+      "percent": 56.3
     },
     "weight_g": {
       "filled": 266,
-      "percent": 76.7
+      "percent": 76.4
     },
     "tracking": {
-      "filled": 329,
+      "filled": 330,
       "percent": 94.8
     },
     "eye_tracking": {
-      "filled": 344,
+      "filled": 345,
       "percent": 99.1
     },
     "hand_tracking": {
-      "filled": 344,
+      "filled": 345,
       "percent": 99.1
     },
     "passthrough": {
-      "filled": 324,
+      "filled": 325,
       "percent": 93.4
     },
     "chipset": {
       "filled": 288,
-      "percent": 83
+      "percent": 82.8
     },
     "brightness_nits": {
       "filled": 115,
-      "percent": 33.1
+      "percent": 33
     },
     "connectivity": {
-      "filled": 334,
+      "filled": 335,
       "percent": 96.3
     },
     "audio": {
-      "filled": 329,
+      "filled": 330,
       "percent": 94.8
     },
     "battery": {
-      "filled": 333,
+      "filled": 334,
       "percent": 96
     },
     "ipd_mm": {
       "filled": 215,
-      "percent": 62
+      "percent": 61.8
     },
     "prescription_support": {
-      "filled": 248,
-      "percent": 71.5
+      "filled": 249,
+      "percent": 71.6
     },
     "camera": {
-      "filled": 301,
-      "percent": 86.7
+      "filled": 302,
+      "percent": 86.8
     },
     "slug": {
-      "filled": 347,
+      "filled": 348,
       "percent": 100
     },
     "source_dataset": {
-      "filled": 347,
+      "filled": 348,
       "percent": 100
     },
     "source_page": {
-      "filled": 347,
+      "filled": 348,
       "percent": 100
     },
     "dataset_retrieved_at": {
-      "filled": 347,
+      "filled": 348,
       "percent": 100
     }
   },
-  "note": "Curated local dataset without external comparison-provider links; image_url can be enriched from official manufacturer pages."
+  "note": "Curated local dataset. Official/product, lifecycle and image sources are stored per record; image rights and origins are documented in asset-notices.html."
 }

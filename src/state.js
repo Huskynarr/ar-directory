@@ -7,7 +7,7 @@ import { COMPARE_SEPARATOR } from './data/paths.js';
 export const COMPARE_LIMIT = 6;
 export const CARDS_PER_PAGE = 12;
 export const USD_TO_EUR_FALLBACK = 0.92;
-export const RATE_SOURCE_URL = 'https://api.frankfurter.app/latest?from=USD&to=EUR';
+export const RATE_SOURCE_URL = 'https://api.frankfurter.dev/v2/rate/USD/EUR';
 export const VIEW_MODES = new Set(['cards', 'table']);
 export const LANGUAGE_MODES = new Set(['de', 'en']);
 export const SORT_MODES = new Set([
@@ -25,7 +25,7 @@ export const THEME_MODES = new Set(['dark', 'light']);
 export const THEME_STORAGE_KEY = 'ar_directory_theme';
 export const LANGUAGE_STORAGE_KEY = 'ar_directory_language';
 export const FAVORITES_STORAGE_KEY = 'ar_directory_favorites';
-export const APP_VERSION = '0.5.0';
+export const APP_VERSION = '0.7.0';
 export const RADAR_COLORS = ['#84cc16', '#2f6fb5', '#2d8f60', '#9b3db6', '#b1731f', '#a73452'];
 
 export const LIFECYCLE_NOTE_SUPPRESS_MARKERS = ['keine eindeutige eol-angabe', 'no clear eol', 'no explicit eol'];

@@ -10,18 +10,18 @@ export const updateDocumentSeoSignals = (visibleCount) => {
   document.title = queryLabel
     ? `${queryLabel} | ${t('AR/XR Brillen Vergleich', 'AR/XR Glasses Comparison')} (${countLabel})`
     : t(
-        `AR/XR Brillen Vergleich 2026: ${countLabel}, Preise, Shop-Links, EOL`,
-        `AR/XR Glasses Comparison 2026: ${countLabel}, pricing, shop links, EOL`,
+        `AR/XR Brillen Vergleich 2026: ${countLabel}, Preise, Herstellerlinks, EOL`,
+        `AR/XR Glasses Comparison 2026: ${countLabel}, pricing, manufacturer links, EOL`,
       );
 
   const description = queryLabel
     ? t(
-        `Filter- und Suchergebnis für "${queryLabel}" im AR/XR Brillen Vergleich mit Spezifikationen, Preisen, Lifecycle und Shop-Links.`,
-        `Filtered search result for "${queryLabel}" in the AR/XR glasses comparison with specs, pricing, lifecycle and shop links.`,
+        `Filter- und Suchergebnis für "${queryLabel}" im AR/XR Brillen Vergleich mit Spezifikationen, Preisen, Lifecycle und Herstellerlinks.`,
+        `Filtered search result for "${queryLabel}" in the AR/XR glasses comparison with specs, pricing, lifecycle and manufacturer links.`,
       )
     : t(
-        'Vergleichsseite für AR- und XR-Brillen mit Spezifikationen, Preisen, Shop-Links, aktivem Vertrieb, Software, Updates und EOL-Status.',
-        'Comparison page for AR and XR glasses with specifications, pricing, shop links, active distribution, software, updates and EOL status.',
+        'Vergleichsseite für AR- und XR-Brillen mit Spezifikationen, Preisen, Herstellerlinks, aktivem Vertrieb, Software, Updates und EOL-Status.',
+        'Comparison page for AR and XR glasses with specifications, pricing, manufacturer links, active distribution, software, updates and EOL status.',
       );
 
   const descriptionTag = document.querySelector('meta[name="description"]');

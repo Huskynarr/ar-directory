@@ -83,7 +83,7 @@ const detailModalTemplate = (row) => {
           <div class="flex items-center justify-center border-b border-[#44403c] bg-gradient-to-br from-[#171412] to-[#0c0a09] p-6">
             ${
               image
-                ? `<img src="${escapeHtml(image)}" alt="${name}" class="max-h-64 w-auto rounded-xl object-contain drop-shadow-[0_8px_24px_rgba(0,0,0,0.5)]" />`
+                ? `<img src="${escapeHtml(image)}" alt="${name}" decoding="async" referrerpolicy="no-referrer" class="max-h-64 w-auto rounded-xl object-contain drop-shadow-[0_8px_24px_rgba(0,0,0,0.5)]" />`
                 : `<div class="grid h-40 w-full place-items-center rounded-xl border border-dashed border-[#44403c] text-sm text-[#a8a29e]">${t('Kein Bild verfügbar', 'No image available')}</div>`
             }
           </div>

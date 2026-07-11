@@ -248,7 +248,7 @@ const resultCardTemplate = ({ row, percent, reasons }) => {
   return `
     <article class="panel group flex flex-col overflow-hidden transition duration-200 ease-out hover:-translate-y-0.5 hover:border-[#84cc16]/50 hover:ring-1 hover:ring-[#84cc16]/30">
       <div class="relative h-40 overflow-hidden border-b border-[#44403c]/60 bg-[#131b26]">
-        <img src="${escapeHtml(image)}" alt="${name}" loading="lazy" class="h-full w-full object-contain p-4" />
+        <img src="${escapeHtml(image)}" alt="${name}" loading="lazy" decoding="async" referrerpolicy="no-referrer" class="h-full w-full object-contain p-4" />
         <span class="absolute right-3 top-3 rounded-full border px-2.5 py-1 text-xs font-bold ${categoryTone(row.xr_category)}">${category}</span>
         <span class="absolute left-3 top-3 rounded-full border px-2.5 py-1 text-xs font-bold ${matchToneClass(percent)}">${
           percent == null ? t('Vorschlag', 'Suggestion') : t(`${percent}% Match`, `${percent}% match`)

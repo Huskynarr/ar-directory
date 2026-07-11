@@ -2,7 +2,7 @@
 
 Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
 - Kartenansicht und tabellarische Ansicht
-- Shop-Link pro Modell
+- Hersteller-/Produktlink pro Modell
 - Preisstatus pro Modell
 - Spezifikationen (Display, FOV, Refresh, Tracking, Compute, Software)
 - Lifecycle-Infos (aktiver Vertrieb, EOL-Status, Hinweise)
@@ -33,7 +33,7 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
   - minimale Refresh-Rate
   - maximaler Preis (USD)
   - nur mit Preis
-  - nur mit Shop-Link
+  - nur mit Herstellerlink
 - Sortierung:
   - Name, Hersteller, Neueste, Preis, FOV
 - Sprache:
@@ -56,7 +56,7 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
   - Preis, Vertrieb, Lifecycle/EOL
   - Display, Optik, FOV, Refresh, Aufloesung
   - Software, Compute Unit, Tracking, Eye/Hand/Passthrough
-  - Shop-Link + Datenquelle
+  - Herstellerlink + Datenquelle
 
 ## Datenabdeckung
 
@@ -78,7 +78,7 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
 
 ## Datenquelle
 
-Die Datengrundlage ist ein kuratierter lokaler Datensatz (aktuell **347 Modelle**, inkl. globaler und chinesischer Markt bis Juni 2026):
+Die Datengrundlage ist ein kuratierter lokaler Datensatz (aktuell **348 Modelle**, inkl. globaler und chinesischer Markt bis Juli 2026):
 - Generator: `scripts/generate-ar-csv.mjs` — normalisiert die CSV und erzeugt daraus **alle** abgeleiteten Artefakte (Metadaten, JSON-LD-Strukturdaten, Sitemap, llms.txt, llms-full.txt, ai-search.json). Die CSV ist damit die einzige Quelle der Wahrheit.
 - Recherche-Enrichment: `scripts/apply-enrichment.mjs` — spielt einen Recherche-Payload (`scripts/enrichment-2026.json`: Feld-Aenderungen + neue Geraete inkl. Quellenangaben) in die CSV ein; danach `npm run data:generate` ausfuehren.
 - Herstellerbild-Enrichment: `scripts/enrich-manufacturer-images.mjs`
@@ -115,7 +115,7 @@ Fuer bessere Auffindbarkeit in Suchmaschinen und LLM-basierten Suchsystemen sind
 - OpenGraph-Bild:
   - `public/og/startseite.png`
 
-Die produktive Basis-URL ist `https://ardirectory.huskynarr.de/` und wird zentral in `scripts/generate-ar-csv.mjs`
+Die produktive Basis-URL ist `https://ar-directory.huskynarr.de/` und wird zentral in `scripts/generate-ar-csv.mjs`
 (`BASE_URL`) gepflegt; alle generierten Artefakte (sitemap, llms, ai-search, structured-data, Einzelseiten) sowie
 `index.html` und `public/robots.txt` nutzen sie. Bei einem Domainwechsel `BASE_URL` anpassen, `npm run data:generate`
 ausfuehren und die absoluten URLs in `index.html`/`robots.txt` ersetzen. (`source_page` = `https://huskynarr.de/`
@@ -135,8 +135,7 @@ Karten, Detail-Modal und auf den statischen Detailseiten.
 **Aktivierung:**
 1. In `src/affiliate.js` die `CHANGEME-*`-Partner-IDs durch echte ersetzen (Amazon-Tags, eBay `campid`,
    AWIN `awinMid`/`awinAffid`).
-2. `public/impressum.html` und `public/datenschutz.html` (generierte Vorlagen) — `[PLATZHALTER]` ausfuellen
-   und rechtlich pruefen lassen.
+2. `public/impressum.html`, `public/datenschutz.html` und den generierten Bildnachweis vor einer Aktivierung erneut rechtlich pruefen lassen.
 3. Partner der jeweiligen Programme sein (Amazon PartnerNet, eBay Partner Network, AWIN).
 4. `AFFILIATE.enabled = true` setzen, `npm run data:generate` + `npm run build`.
 

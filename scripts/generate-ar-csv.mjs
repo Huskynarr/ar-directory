@@ -2,6 +2,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import Papa from 'papaparse';
 import {
   assignSlugs,
+  buildAssetNotices,
   buildDatenschutz,
   buildDevicePage,
   buildGlossary,
@@ -25,6 +26,10 @@ const BASE_URL = 'https://ar-directory.huskynarr.de/';
 const SOURCE_PAGE = 'https://huskynarr.de/';
 
 const CONTROL_CHAR_REGEX = /[\u0000-\u001F\u007F]+/g;
+const KNOWN_BROKEN_IMAGE_URLS = new Set([
+  'https://www.ajnalens.com/_next/static/media/Rec3467860.81d5d5c9.svg',
+  'https://mentraglass.com/assets/og_graph_image.png',
+]);
 
 const sanitize = (value) => {
   if (value === null || value === undefined) {
@@ -37,7 +42,7 @@ const sanitize = (value) => {
 };
 
 const safeHttpUrl = (value) => {
-  const input = sanitize(value);
+  const input = sanitize(value).replace(/&amp;/gi, '&');
   if (!input) {
     return '';
   }
@@ -63,7 +68,9 @@ const safeImageUrl = (value) => {
   if (input.startsWith('/')) {
     return input;
   }
-  return safeHttpUrl(input);
+  const secureInput = input.startsWith('http://') ? `https://${input.slice(7)}` : input;
+  const url = safeHttpUrl(secureInput);
+  return KNOWN_BROKEN_IMAGE_URLS.has(url) ? '' : url;
 };
 
 const normalizeCategory = (value) => {
@@ -178,7 +185,10 @@ const buildMetadata = (rows, retrievedAt) => {
     };
   }
 
-  const releaseDates = rows.map((row) => row.release_date).filter(hasValue).sort();
+  const releaseDates = rows
+    .map((row) => sanitize(row.release_date))
+    .filter((value) => /^\d{4}(?:-\d{2})?(?:-\d{2})?$/.test(value))
+    .sort();
   const prices = rows.map((row) => Number(row.price_usd)).filter((value) => Number.isFinite(value) && value > 0);
 
   return {
@@ -189,7 +199,7 @@ const buildMetadata = (rows, retrievedAt) => {
     ar_records: arRecords,
     xr_records: xrRecords,
     manufacturers: manufacturers.length,
-    official_shop_links: rows.filter((row) => row.official_url).length,
+    official_product_links: rows.filter((row) => row.official_url).length,
     image_links: rows.filter((row) => hasValue(row.image_url)).length,
     active_models: rows.filter((row) => sanitize(row.active_distribution).toLowerCase().startsWith('ja')).length,
     discontinued_models: rows.filter((row) => {
@@ -201,7 +211,7 @@ const buildMetadata = (rows, retrievedAt) => {
     oldest_release: releaseDates[0] || '',
     price_range_usd: prices.length ? { min: Math.min(...prices), max: Math.max(...prices) } : null,
     field_coverage: coverage,
-    note: 'Curated local dataset without external comparison-provider links; image_url can be enriched from official manufacturer pages.',
+    note: 'Curated local dataset. Official/product, lifecycle and image sources are stored per record; image rights and origins are documented in asset-notices.html.',
   };
 };
 
@@ -245,7 +255,7 @@ const buildStructuredData = (rows, retrievedAt, paths = new Map()) => {
       name: 'AR/XR Brillen Vergleich',
       inLanguage: 'de-DE',
       description:
-        'Vergleichsseite fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Shop-Links und Lifecycle-Status.',
+        'Vergleichsseite fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Herstellerlinks und Lifecycle-Status.',
     },
     {
       '@type': 'CollectionPage',
@@ -296,6 +306,7 @@ const buildSitemap = (lastmod, rows = [], paths = new Map()) => {
     { loc: `${BASE_URL}glossar.html`, changefreq: 'monthly', priority: '0.6' },
     { loc: `${BASE_URL}impressum.html`, changefreq: 'yearly', priority: '0.3' },
     { loc: `${BASE_URL}datenschutz.html`, changefreq: 'yearly', priority: '0.3' },
+    { loc: `${BASE_URL}asset-notices.html`, changefreq: 'monthly', priority: '0.3' },
     { loc: `${BASE_URL}data/ar_glasses.csv`, changefreq: 'daily', priority: '0.8' },
     { loc: `${BASE_URL}data/ar_glasses.metadata.json`, changefreq: 'daily', priority: '0.7' },
     { loc: `${BASE_URL}llms.txt`, changefreq: 'weekly', priority: '0.7' },
@@ -325,7 +336,7 @@ Kurzer Maschinenindex fuer LLMs und Suchsysteme.
 
 - Karten- und Tabellenansicht fuer AR/XR Brillen
 - Filter fuer Display, Optik, Tracking, FOV, Refresh, Preis, Lifecycle
-- Shop-Links, Preise, aktiver Vertrieb, Software und EOL-Status
+- Herstellerlinks, Preise, aktiver Vertrieb, Software und EOL-Status
 - Direktvergleich von bis zu sechs Modellen inkl. Radar-Chart
 - Legacy-Modelle inkl. HoloLens 1 und weitere historische Brillen
 
@@ -393,7 +404,7 @@ const buildAiSearch = (metadata, lastmod) => ({
   language: 'de-DE',
   primary_url: BASE_URL,
   description:
-    'Vergleich fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Shop-Links, Lifecycle und EOL-Status.',
+    'Vergleich fuer AR- und XR-Brillen mit Spezifikationen, Preisen, Herstellerlinks, Lifecycle und EOL-Status.',
   dataset_summary: {
     records: metadata.records,
     ar_records: metadata.ar_records,
@@ -483,7 +494,7 @@ const main = async () => {
   // Hierarchical /brand/model/ paths for the public URLs (shared with the SPA).
   const paths = assignDevicePaths(normalizedRows);
 
-  const csv = Papa.unparse(normalizedRows, { columns: OUTPUT_FIELDS });
+  const csv = Papa.unparse(normalizedRows, { columns: OUTPUT_FIELDS, newline: '\n' });
 
   await mkdir('public/data', { recursive: true });
   await writeFile(OUTPUT_CSV_PATH, `${csv}\n`, 'utf8');
@@ -541,6 +552,7 @@ const main = async () => {
   await writeFile('public/glossar.html', buildGlossary(metadata, BASE_URL), 'utf8');
   await writeFile('public/impressum.html', buildImpressum(metadata, BASE_URL), 'utf8');
   await writeFile('public/datenschutz.html', buildDatenschutz(metadata, BASE_URL), 'utf8');
+  await writeFile('public/asset-notices.html', buildAssetNotices(normalizedRows, BASE_URL), 'utf8');
 
   console.log(
     `Generated ${normalizedRows.length} curated AR/XR records at ${retrievedAt}\n` +

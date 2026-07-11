@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ar-directory-v3';
+const CACHE_NAME = 'ar-directory-v4';
 const STATIC_ASSETS = ['/', '/icon.svg', '/manifest.json'];
 
 self.addEventListener('install', (event) => {

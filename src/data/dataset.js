@@ -22,7 +22,7 @@ export const fetchUsdToEurRate = async () => {
       throw new Error(`FX request failed with status ${response.status}`);
     }
     const payload = await response.json();
-    const rate = toNumber(payload?.rates?.EUR);
+    const rate = toNumber(payload?.rate ?? payload?.rates?.EUR);
     if (!rate || rate <= 0) {
       throw new Error('FX payload missing EUR rate');
     }

@@ -206,8 +206,8 @@ const render = () => {
         )}</h1>
         <p class="mt-2.5 max-w-3xl text-sm leading-relaxed text-[#a8a29e] sm:mt-3 sm:text-base">
           ${t(
-            'Vergleichsseite für AR- und XR-Brillen mit Spezifikationen, Preisen, Lifecycle, EOL und Shop-Links. Legacy-Modelle sind für einen vollständigeren Datenbestand enthalten.',
-            'Comparison page for AR and XR glasses with specifications, pricing, lifecycle, EOL and shop links. Legacy models are included for a fuller dataset.',
+            'Vergleichsseite für AR- und XR-Brillen mit Spezifikationen, Preisen, Lifecycle, EOL und Herstellerlinks. Legacy-Modelle sind für einen vollständigeren Datenbestand enthalten.',
+            'Comparison page for AR and XR glasses with specifications, pricing, lifecycle, EOL and manufacturer links. Legacy models are included for a fuller dataset.',
           )}
         </p>
         <div class="mt-4 flex flex-wrap items-center gap-3">
@@ -450,7 +450,7 @@ const render = () => {
             </label>
             <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
               <input id="only-shop" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyShop ? 'checked' : ''} />
-              ${t('Nur mit Shop-Link', 'Only with shop link')}
+              ${t('Nur mit Herstellerlink', 'Only with manufacturer link')}
             </label>
             <label class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">
               <input id="only-available" type="checkbox" class="mr-2 size-4 accent-[#84cc16]" ${state.onlyAvailable ? 'checked' : ''} />
@@ -547,8 +547,8 @@ const render = () => {
               )}</h2>
               <p class="mt-2 text-sm text-[#a8a29e]">
                 ${t(
-                  'Diese Vergleichsseite fokussiert AR- und XR-Brillen mit Shop-Links, Preisstatus, FOV, Refresh, Tracking, Software sowie Updates/EOL. Legacy-Modelle sind zur Vervollständigung des Datenbestands enthalten.',
-                  'This comparison page focuses on AR and XR glasses with shop links, pricing status, FOV, refresh, tracking, software and updates/EOL. Legacy models are included to complete the dataset.',
+                  'Diese Vergleichsseite fokussiert AR- und XR-Brillen mit Herstellerlinks, Preisstatus, FOV, Refresh, Tracking, Software sowie Updates/EOL. Legacy-Modelle sind zur Vervollständigung des Datenbestands enthalten.',
+                  'This comparison page focuses on AR and XR glasses with manufacturer links, pricing status, FOV, refresh, tracking, software and updates/EOL. Legacy models are included to complete the dataset.',
                 )}
               </p>
               <div class="mt-4 grid gap-3 md:grid-cols-2">
@@ -611,7 +611,7 @@ const render = () => {
             <p class="soft-panel p-3 text-sm text-[#a8a29e]">
               ${t('Aktiv', 'Active')}: <strong class="text-[#f5f5f4]">${activeCount}</strong> &middot;
               EOL: <strong class="text-[#f5f5f4]">${eolCount}</strong> &middot;
-              ${t('Shop-Links', 'Shop links')}: <strong class="text-[#f5f5f4]">${withShop}</strong>
+              ${t('Herstellerlinks', 'Manufacturer links')}: <strong class="text-[#f5f5f4]">${withShop}</strong>
             </p>
             <p class="soft-panel p-3 text-sm text-[#a8a29e]">
               ${withPrice > 0 ? `${t('Durchschnittspreis', 'Avg. price')}: <strong class="text-[#f5f5f4]">${formatCurrency(avgPrice, 'USD')}</strong> &middot; ` : ''}
@@ -631,6 +631,7 @@ const render = () => {
             <a href="/glossar.html" class="hover:underline">${t('Glossar & FAQ', 'Glossary & FAQ')}</a>
             <a href="/impressum.html" class="hover:underline">${t('Impressum', 'Legal Notice')}</a>
             <a href="/datenschutz.html" class="hover:underline">${t('Datenschutz', 'Privacy')}</a>
+            <a href="/asset-notices.html" class="hover:underline">${t('Bildnachweise', 'Image credits')}</a>
             ${BUILD_TIME ? `<span class="text-xs text-[#78716c]">${t('Build', 'Build')}: ${escapeHtml(BUILD_TIME)}</span>` : ''}
           </div>
           <div class="flex items-center gap-3">

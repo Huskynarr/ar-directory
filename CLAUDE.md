@@ -56,7 +56,7 @@ npm run images:enrich    # Fetch/cache manufacturer product images
 - `apply-enrichment.mjs` — applies a research payload (`enrichment-2026.json`: per-field changes keyed by id + new device rows with sources) to the CSV; identity/image/provenance columns are immutable. Run `data:generate` afterwards.
 - `enrich-manufacturer-images.mjs` — fetches official product images with per-model URL overrides, caches under `public/images/manufacturers/`
 
-**Affiliate** (`src/affiliate.js`, imported by app + page generator): scaffolding for Amazon.de/.com, eBay, Otto, idealo (Otto/idealo via AWIN). `AFFILIATE.enabled` is false by default — no buy buttons/disclosure ship until partner IDs + legal pages are set. `buildBuyLinks(row, overrides)` prefers curated deeplinks from `public/data/affiliate-overrides.json` (keyed by CSV id), else builds tagged search links; all get `rel="sponsored nofollow noopener"`. Legal templates `public/impressum.html` + `public/datenschutz.html` are generated (fill `[PLATZHALTER]`).
+**Affiliate** (`src/affiliate.js`, imported by app + page generator): scaffolding for Amazon.de/.com, eBay, Otto, idealo (Otto/idealo via AWIN). `AFFILIATE.enabled` is false by default — no buy buttons/disclosure ship until partner IDs + legal pages are set. `buildBuyLinks(row, overrides)` prefers curated deeplinks from `public/data/affiliate-overrides.json` (keyed by CSV id), else builds tagged search links; all get `rel="sponsored nofollow noopener"`. `public/impressum.html`, `public/datenschutz.html` and `public/asset-notices.html` are generated.
 
 **Branded OG cards**: `scripts/generate-og-images.mjs` (`npm run og:generate`) renders a 1200x630 PNG share card per device (name, manufacturer, category, key spec chips, price) via `sharp` into `public/og/models/<slug>.png`. Device pages set `og:image`/`twitter:image` to these cards. Run locally and COMMIT the PNGs — they are static assets, so the deploy host needs no image build step. `sharp` is an `optionalDependency` so `npm ci` on the host won't fail if it can't build it.
 
@@ -72,7 +72,7 @@ npm run images:enrich    # Fetch/cache manufacturer product images
 
 ## CSV Dataset
 
-40 fields per record in `public/data/ar_glasses.csv` (347 records). Deeper spec columns (`chipset`, `brightness_nits`, `connectivity`, `audio`, `battery`, `ipd_mm`, `prescription_support`, `camera`) are surfaced on the static per-device pages. Key fields: `id`, `name`, `manufacturer`, `xr_category` (AR/XR), `price_usd`, `fov_*_deg`, `resolution_per_eye`, `refresh_hz`, `display_type`, `optics`, `tracking`, `release_date`, `eol_status`, `active_distribution`.
+41 fields per record in `public/data/ar_glasses.csv` (348 records). Deeper spec columns (`chipset`, `brightness_nits`, `connectivity`, `audio`, `battery`, `ipd_mm`, `prescription_support`, `camera`) are surfaced on the static per-device pages. Key fields: `id`, `name`, `manufacturer`, `xr_category` (AR/XR), `price_usd`, `fov_*_deg`, `resolution_per_eye`, `refresh_hz`, `display_type`, `optics`, `tracking`, `release_date`, `eol_status`, `active_distribution`.
 
 Metadata in `public/data/ar_glasses.metadata.json`.
 

@@ -35,7 +35,7 @@ export const cardTemplate = (row) => {
       <div class="relative h-44 cursor-pointer overflow-hidden border-b border-[#44403c]/60 bg-[#131b26]" data-detail-open="${escapeHtml(row.__rowId)}">
         ${
           image
-            ? `<img src="${escapeHtml(image)}" alt="${name}" loading="lazy" class="h-full w-full object-contain p-4 transition duration-300 ease-out group-hover:scale-[1.03] group-hover:brightness-105" />`
+            ? `<img src="${escapeHtml(image)}" alt="${name}" loading="lazy" decoding="async" referrerpolicy="no-referrer" class="h-full w-full object-contain p-4 transition duration-300 ease-out group-hover:scale-[1.03] group-hover:brightness-105" />`
             : `<div class="grid h-full place-items-center text-sm text-[#a8a29e]">${t('Kein Bild verfügbar', 'No image available')}</div>`
         }
         <div class="absolute left-3 top-3 flex items-center gap-1.5" onclick="event.stopPropagation()">${selectionLabelTemplate(
@@ -134,8 +134,8 @@ export const cardTemplate = (row) => {
             shop.url
               ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" class="${shopButtonClasses}">${escapeHtml(shop.label)}</a>`
               : `<span class="chip-btn cursor-not-allowed border-[#44403c] bg-[#292524] text-[#a8a29e]">${t(
-                  'Shop-Link fehlt',
-                  'No shop link',
+                  'Herstellerlink fehlt',
+                  'No manufacturer link',
                 )}</span>`
           }
           ${

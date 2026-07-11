@@ -118,7 +118,7 @@ const main = async () => {
     added.push(device.name);
   }
 
-  const csv = Papa.unparse(rows, { columns: OUTPUT_FIELDS });
+  const csv = Papa.unparse(rows, { columns: OUTPUT_FIELDS, newline: '\n' });
   await writeFile(CSV_PATH, `${csv}\n`, 'utf8');
 
   console.log(`Enrichment applied:`);

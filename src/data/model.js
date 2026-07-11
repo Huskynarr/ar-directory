@@ -1,40 +1,20 @@
 import { safeExternalUrl, toNumber, normalizeText } from '../utils.js';
 import { t } from '../i18n.js';
 
-const buildShopSearchUrl = (row) => {
-  const query = [row.name, row.manufacturer, 'official shop']
-    .map((entry) => String(entry ?? '').trim())
-    .filter(Boolean)
-    .join(' ');
-  if (!query) {
-    return '';
-  }
-  return `https://duckduckgo.com/?q=${encodeURIComponent(query)}`;
-};
-
 export const getShopInfo = (row) => {
   const officialUrl = safeExternalUrl(row.official_url);
   if (officialUrl) {
     return {
       url: officialUrl,
-      label: t('Zum Shop', 'Shop'),
-      source: t('Offizieller Shop-Link', 'Official shop link'),
+      label: t('Herstellerseite', 'Manufacturer page'),
+      source: t('Offizielle Hersteller-/Produktseite', 'Official manufacturer/product page'),
       official: true,
-    };
-  }
-  const searchUrl = safeExternalUrl(buildShopSearchUrl(row));
-  if (searchUrl) {
-    return {
-      url: searchUrl,
-      label: t('Websuche', 'Web search'),
-      source: t('Kein offizieller Shop-Link (Fallback Websuche)', 'No official shop link (web search fallback)'),
-      official: false,
     };
   }
   return {
     url: '',
     label: t('Kein Link', 'No link'),
-    source: t('Kein Shop-Link', 'No shop link'),
+    source: t('Keine offizielle Herstellerseite hinterlegt', 'No official manufacturer page listed'),
     official: false,
   };
 };

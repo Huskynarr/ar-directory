@@ -10,8 +10,8 @@
   "orientation": "any",
   "dir": "ltr",
   "lang": "de",
-  "background_color": "#0c0a09",
-  "theme_color": "#0c0a09",
+  "background_color": "#080b0d",
+  "theme_color": "#080b0d",
   "icons": [
     {
       "src": "/icon.svg",

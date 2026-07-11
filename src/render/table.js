@@ -99,7 +99,7 @@ export const tableTemplate = (rows) => {
                         ${
                           shop.url
                             ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(`${shop.label}: ${modelName}`)}" class="text-xs font-semibold text-[#84cc16] hover:underline">${escapeHtml(shop.label)}</a>`
-                            : `<span class="text-xs text-[#a8a29e]">${t('Kein Shop-Link', 'No shop link')}</span>`
+                            : `<span class="text-xs text-[#a8a29e]">${t('Kein Herstellerlink', 'No manufacturer link')}</span>`
                         }
                         ${
                           buyLinks.length
