@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-const expectedPageSize = (testInfo) => (testInfo.project.name.includes('mobile') ? 6 : 12);
+const expectedPageSize = (testInfo) => (testInfo.project.name.includes('mobile') ? 4 : 12);
 
 test.beforeEach(async ({ page }, testInfo) => {
   await page.route('https://api.frankfurter.dev/**', (route) =>

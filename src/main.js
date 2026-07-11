@@ -130,7 +130,7 @@ const syncAttributes = (target, source) => {
 
 // Patch the catalog around the server-rendered hero instead of replacing the
 // whole app. The connected H1 remains the same DOM node from first paint on.
-const applyCatalogMarkup = (markup) => {
+const applyCatalogMarkup = async (markup, { cooperative = false } = {}) => {
   const template = document.createElement('template');
   template.innerHTML = markup.trim();
   const nextMain = template.content.querySelector('#main-content');
@@ -144,6 +144,8 @@ const applyCatalogMarkup = (markup) => {
     app.replaceChildren(...template.content.childNodes);
     return;
   }
+
+  if (cooperative) await yieldToMainThread();
 
   syncAttributes(currentMain, nextMain);
   syncAttributes(currentHeader, nextHeader);
@@ -167,8 +169,12 @@ const applyCatalogMarkup = (markup) => {
   for (const node of [...currentMain.childNodes]) {
     if (node !== currentHeader) node.remove();
   }
+  if (cooperative) await yieldToMainThread();
   for (const node of [...nextMain.childNodes]) {
-    if (node !== nextHeader) currentMain.append(node);
+    if (node !== nextHeader) {
+      currentMain.append(node);
+      if (cooperative && node.nodeType === Node.ELEMENT_NODE) await yieldToMainThread();
+    }
   }
 
   for (const node of [...app.childNodes]) {
@@ -180,9 +186,23 @@ const applyCatalogMarkup = (markup) => {
   if (nextBackToTop) app.append(nextBackToTop);
 };
 
-const render = () => {
+const appendCardsCooperatively = async (rows) => {
+  const grid = document.querySelector('[data-card-grid]');
+  if (!grid) return;
+  for (const row of rows) {
+    const template = document.createElement('template');
+    template.innerHTML = cardTemplate(row).trim();
+    const placeholder = grid.querySelector('[data-card-placeholder]');
+    if (placeholder) placeholder.replaceWith(...template.content.childNodes);
+    else grid.append(...template.content.childNodes);
+    await yieldToMainThread();
+  }
+};
+
+const render = async ({ cooperative = false } = {}) => {
   const queryFocusState = captureQueryFocusState();
   const filterOptions = getFilterOptions();
+  const showCoreFilters = !window.matchMedia('(max-width: 640px)').matches || state.showAdvancedFilters;
   const filtered = sortRows(state.rows.filter(matchesFilters));
   const withPrice = filtered.filter((row) => parsePrice(row.price_usd)).length;
   const withShop = filtered.filter((row) => getShopInfo(row).url).length;
@@ -354,7 +374,9 @@ const render = () => {
             )}" value="${escapeHtml(state.query)}" />
           </label>
 
-          <label class="core-secondary space-y-1.5">
+          ${
+            showCoreFilters
+              ? `<label class="core-secondary space-y-1.5">
             <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Kategorie', 'Category')}</span>
             <select id="category-filter" class="field">
               <option value="all"${state.category === 'all' ? ' selected' : ''}>${t('Alle Kategorien', 'All categories')}</option>
@@ -398,6 +420,9 @@ const render = () => {
               )}</option>
             </select>
           </label>
+              `
+              : ''
+          }
         </div>
 
         <div
@@ -597,7 +622,11 @@ const render = () => {
                 </div>`
               : state.viewMode === 'cards'
                 ? `
-                    <div class="grid gap-4 md:grid-cols-2 ${state.focusMode ? 'xl:grid-cols-4' : 'xl:grid-cols-3 xl:gap-5'}">${visibleCards.map(cardTemplate).join('')}</div>
+                    <div data-card-grid class="grid gap-4 md:grid-cols-2 ${state.focusMode ? 'xl:grid-cols-4' : 'xl:grid-cols-3 xl:gap-5'}">${
+                      cooperative
+                        ? visibleCards.map(() => '<div data-card-placeholder class="catalog-card-placeholder panel" aria-hidden="true"></div>').join('')
+                        : visibleCards.map(cardTemplate).join('')
+                    }</div>
                     ${paginationTemplate(state.cardsPage, maxPage, visibleCards.length, filtered.length)}
                   `
                 : tableModule
@@ -718,9 +747,15 @@ const render = () => {
       title="${t('Nach oben', 'Back to top')}"
     >&#8593;</button>
   `;
-  applyCatalogMarkup(catalogMarkup);
+  if (cooperative) await yieldToMainThread();
+  if (cooperative) await applyCatalogMarkup(catalogMarkup, { cooperative: true });
+  else void applyCatalogMarkup(catalogMarkup);
+  if (cooperative && !state.compareMode && state.viewMode === 'cards') {
+    await appendCardsCooperatively(visibleCards);
+  }
   if (state.viewMode === 'table') requestTableModule();
   if (selectedRows.length) requestCompareModule();
+  if (cooperative) await yieldToMainThread();
 
   const setAndRender = (key, value, options = {}) => {
     const { resetCardsPage = true } = options;
@@ -968,11 +1003,11 @@ setRenderFn(render);
 
 // Pick the view for the current URL: the guided finder at /finder/, otherwise
 // the directory. Used on first paint, on history navigation and on in-app links.
-const routeRender = () => {
+const routeRender = (options) => {
   if (isFinderRoute()) {
     renderFinderRoute();
   } else {
-    render();
+    void render(options);
   }
 };
 
@@ -1095,7 +1130,7 @@ const init = async () => {
     pruneSelectedIdsToKnownRows();
     state.compareNotice = '';
     await yieldToMainThread();
-    routeRender();
+    routeRender({ cooperative: true });
     // Currency enrichment is useful but not render-critical. Delaying it keeps
     // the first interaction and LCP free from a second full catalog render.
     window.setTimeout(() => {
@@ -1118,4 +1153,6 @@ const init = async () => {
   }
 };
 
-void init();
+export const start = () => {
+  void init();
+};

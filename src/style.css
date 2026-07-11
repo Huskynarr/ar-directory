@@ -303,6 +303,15 @@ body.theme-light .text-cyan-200 { color: #0e7490; }
 [data-model-card] > div:first-child { background: #0b1115; }
 body.theme-light [data-model-card] > div:first-child { background: #e9eee8; }
 [data-model-card] { content-visibility:auto; contain-intrinsic-block-size:500px; }
+.catalog-card-placeholder {
+  min-height: 481px;
+  box-shadow: none;
+  background:
+    linear-gradient(100deg, transparent 30%, color-mix(in srgb, var(--surface-3) 72%, transparent) 50%, transparent 70%),
+    var(--surface);
+  background-size: 220% 100%;
+  animation: placeholder-sheen 1.2s ease-in-out infinite;
+}
 [data-model-card] h2 { letter-spacing: -.025em; }
 [data-model-card] .chip-btn { min-height: 2.25rem; padding: .45rem .7rem; font-size: .75rem; }
 [data-card-density='compact'] h2 { font-size:1.2rem; }
@@ -365,6 +374,10 @@ input[type='checkbox']:focus-visible {
 @keyframes modal-fade-in { from { opacity: 0; } }
 @keyframes modal-slide-up { from { opacity: 0; transform: translateY(14px); } }
 @keyframes card-enter { from { opacity:0; transform:translateY(7px); } }
+@keyframes placeholder-sheen {
+  from { background-position: 100% 0; }
+  to { background-position: -100% 0; }
+}
 
 .back-to-top {
   position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 40;
