@@ -181,7 +181,7 @@ const render = () => {
   app.innerHTML = `
     <a href="#main-content" class="skip-link">${t('Zum Inhalt springen', 'Skip to content')}</a>
     <main id="main-content" tabindex="-1" class="mx-auto w-full max-w-[1320px] px-4 py-6 sm:px-6 lg:px-8">
-      <header class="panel relative overflow-hidden p-5 sm:p-6">
+      <header class="app-hero panel relative overflow-hidden p-4 sm:p-5">
         <div class="theme-hero-surface absolute inset-0 -z-10"></div>
         <div class="flex items-start justify-between gap-3">
           <div class="brand-lockup">
@@ -210,38 +210,34 @@ const render = () => {
             </button>
           </div>
         </div>
-        <h1 class="hero-title mt-5 text-3xl font-bold leading-tight sm:text-5xl">${t(
+        <h1 class="hero-title mt-3 text-3xl font-bold leading-tight sm:text-4xl">${t(
           'Vergleich für AR-Brillen und XR-Glasses',
           'Comparison for AR Glasses and XR Glasses',
         )}</h1>
-        <p class="mt-2.5 max-w-3xl text-sm leading-relaxed text-[#a8a29e] sm:mt-3 sm:text-base">
-          ${t(
-            'Vergleichsseite für AR- und XR-Brillen mit Spezifikationen, Preisen, Lifecycle, EOL und Herstellerlinks. Legacy-Modelle sind für einen vollständigeren Datenbestand enthalten.',
-            'Comparison page for AR and XR glasses with specifications, pricing, lifecycle, EOL and manufacturer links. Legacy models are included for a fuller dataset.',
-          )}
-        </p>
-        <div class="mt-4 flex flex-wrap items-center gap-3">
-          <a href="/finder/" data-nav class="finder-cta">
-            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/><path d="m14.8 9.2-1.6 4-4 1.6 1.6-4 4-1.6Z" fill="currentColor"/></svg>
-            ${t('Finde meine Brille', 'Find my glasses')}
-          </a>
-          <span class="text-sm text-[#a8a29e]">${t(
-            'Unsicher? Lass dich in 6 Fragen zum passenden Modell führen.',
-            'Unsure? Let 6 questions guide you to the right model.',
-          )}</span>
+        <div class="hero-summary mt-3">
+          <p class="max-w-3xl text-sm leading-relaxed text-[#a8a29e]">
+            ${t(
+              '348 Modelle mit Specs, Preisen, Lifecycle und Herstellerlinks – inklusive historischer Geräte.',
+              '348 models with specs, pricing, lifecycle and manufacturer links – including legacy devices.',
+            )}
+          </p>
+          <div class="flex shrink-0 flex-wrap items-center gap-3">
+            <a href="/finder/" data-nav class="finder-cta">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/><path d="m14.8 9.2-1.6 4-4 1.6 1.6-4 4-1.6Z" fill="currentColor"/></svg>
+              ${t('Brille finden', 'Find glasses')}
+            </a>
+          </div>
         </div>
       </header>
       <p id="results-status" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true">${escapeHtml(resultsStatusLabel)}</p>
 
-      ${!state.focusMode || selectedRows.length ? compareBarTemplate(selectedRows) : ''}
+      ${selectedRows.length ? compareBarTemplate(selectedRows) : ''}
 
-      <section class="panel mt-4 p-4 sm:p-5">
+      <section class="panel mt-3 p-4">
         <div class="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
           <div class="min-w-0">
-            <h2 class="text-lg font-semibold text-[#f5f5f4]">${t('Filter', 'Filters')}</h2>
-            <p class="mt-1 text-xs text-[#a8a29e]">${state.focusMode
-              ? t('Fokusansicht: nur Kernfilter sichtbar.', 'Focus view: only core filters visible.')
-              : t('Schnellfilter für Suche, Kategorie und Sortierung.', 'Quick filters for search, category and sorting.')}</p>
+            <h2 class="text-lg font-semibold text-[#f5f5f4]">${t('Modelle durchsuchen', 'Browse models')}</h2>
+            <p class="mt-1 text-xs text-[#a8a29e]">${filtered.length} ${t('Treffer · Suche und Kernfilter', 'results · search and core filters')}</p>
           </div>
           <div class="-mx-1 flex flex-wrap items-center gap-2 px-1 lg:justify-end">
             <button id="view-cards" type="button" aria-pressed="${state.viewMode === 'cards' ? 'true' : 'false'}" class="chip-btn ${
@@ -255,10 +251,10 @@ const render = () => {
                 : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
             }">${t('Tabelle', 'Table')}</button>
             <button id="toggle-focus-mode" type="button" aria-pressed="${state.focusMode ? 'true' : 'false'}" class="chip-btn ${
-              state.focusMode
+              false
                 ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]'
                 : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'
-            }">${state.focusMode ? t('Standardansicht', 'Standard view') : t('Fokusansicht', 'Focus view')}</button>
+            }">${state.focusMode ? t('Ausführliche Karten', 'Detailed cards') : t('Kompakte Karten', 'Compact cards')}</button>
             <button id="toggle-favorites-view" type="button" aria-pressed="${state.onlyFavorites ? 'true' : 'false'}" ${
               state.favorites.length ? '' : 'disabled'
             } aria-label="${escapeHtml(t('Nur Favoriten anzeigen', 'Show only favorites'))}" class="chip-btn ${
@@ -289,7 +285,7 @@ const render = () => {
           </div>
         </div>
 
-        <div class="mt-4 grid gap-3 sm:gap-3 md:grid-cols-2 ${state.focusMode ? 'xl:grid-cols-4' : 'xl:grid-cols-5'}">
+        <div class="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
           <label class="space-y-1.5 md:col-span-2 xl:col-span-2">
             <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Suche', 'Search')}</span>
             <input id="query-input" type="search" class="field" placeholder="${t(
@@ -308,7 +304,7 @@ const render = () => {
           </label>
 
           ${
-            state.focusMode
+            false
               ? ''
               : `<label class="space-y-1.5">
                   <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">${t('Hersteller', 'Manufacturer')}</span>
@@ -352,8 +348,8 @@ const render = () => {
           id="advanced-filters-region"
           role="region"
           aria-label="${t('Erweiterte Filter', 'Advanced filters')}"
-          aria-hidden="${state.showAdvancedFilters && !state.focusMode ? 'false' : 'true'}"
-          class="mt-4 space-y-4 border-t border-[#44403c]/70 pt-4 ${state.showAdvancedFilters && !state.focusMode ? '' : 'hidden'}"
+          aria-hidden="${state.showAdvancedFilters ? 'false' : 'true'}"
+          class="mt-4 space-y-4 border-t border-[#44403c]/70 pt-4 ${state.showAdvancedFilters ? '' : 'hidden'}"
         >
           <p class="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#a8a29e]">${t('Erweiterte Filter', 'Advanced filters')}</p>
           <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
@@ -541,7 +537,7 @@ const render = () => {
                 </div>`
               : state.viewMode === 'cards'
                 ? `
-                    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3 xl:gap-6">${visibleCards.map(cardTemplate).join('')}</div>
+                    <div class="grid gap-4 md:grid-cols-2 ${state.focusMode ? 'xl:grid-cols-4' : 'xl:grid-cols-3 xl:gap-5'}">${visibleCards.map(cardTemplate).join('')}</div>
                     ${paginationTemplate(state.cardsPage, maxPage, visibleCards.length, filtered.length)}
                   `
                 : tableTemplate(filtered)
@@ -635,20 +631,15 @@ const render = () => {
       </section>
 
       <footer class="mt-4">
-        <div class="panel flex flex-wrap items-center justify-between gap-3 p-4 text-sm text-[#a8a29e]">
-          <div class="flex flex-wrap items-center gap-3">
-            <a href="/finder/" data-nav class="font-semibold text-[#84cc16] hover:underline">${t('Brillen-Finder', 'Glasses finder')}</a>
-            <a href="/modelle/" class="hover:underline">${t('Alle Modelle', 'All models')}</a>
-            <a href="/glossar.html" class="hover:underline">${t('Glossar & FAQ', 'Glossary & FAQ')}</a>
-            <a href="/impressum.html" class="hover:underline">${t('Impressum', 'Legal Notice')}</a>
-            <a href="/datenschutz.html" class="hover:underline">${t('Datenschutz', 'Privacy')}</a>
-            <a href="/asset-notices.html" class="hover:underline">${t('Bildnachweise', 'Image credits')}</a>
-            ${BUILD_TIME ? `<span class="text-xs text-[#78716c]">${t('Build', 'Build')}: ${escapeHtml(BUILD_TIME)}</span>` : ''}
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="text-xs">${t('Tastenkürzel', 'Shortcuts')}: <kbd class="rounded border border-[#44403c] px-1.5 py-0.5 text-[10px]">/</kbd> ${t('Suche', 'Search')} &middot; <kbd class="rounded border border-[#44403c] px-1.5 py-0.5 text-[10px]">Esc</kbd> ${t('Leeren', 'Clear')}</span>
-            <span class="rounded-full border border-[#44403c] bg-[#1c1917] px-2 py-0.5 text-[10px] font-semibold">v${APP_VERSION}</span>
-          </div>
+        <div class="flex flex-wrap items-center justify-between gap-3 border-t border-[var(--line)] px-1 py-5 text-xs text-[#a8a29e]">
+          <p>AR Directory <span aria-hidden="true">·</span> v${APP_VERSION}</p>
+          <nav class="flex flex-wrap items-center gap-x-4 gap-y-2" aria-label="${t('Rechtliches und Hilfe', 'Legal and help')}">
+            <a href="/modelle/" class="hover:text-[var(--text)]">${t('Modelle', 'Models')}</a>
+            <a href="/glossar.html" class="hover:text-[var(--text)]">${t('Hilfe', 'Help')}</a>
+            <a href="/impressum.html" class="hover:text-[var(--text)]">${t('Impressum', 'Legal')}</a>
+            <a href="/datenschutz.html" class="hover:text-[var(--text)]">${t('Datenschutz', 'Privacy')}</a>
+            <a href="/asset-notices.html" class="hover:text-[var(--text)]">${t('Bildnachweise', 'Credits')}</a>
+          </nav>
         </div>
         ${
           AFFILIATE.enabled
@@ -776,9 +767,6 @@ const render = () => {
   });
   document.querySelector('#toggle-focus-mode')?.addEventListener('click', () => {
     state.focusMode = !state.focusMode;
-    if (state.focusMode) {
-      state.showAdvancedFilters = false;
-    }
     render();
   });
   document

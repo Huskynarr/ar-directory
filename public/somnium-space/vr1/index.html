@@ -34,18 +34,19 @@
 <meta name="twitter:label2" content="Kategorie" />
 <meta name="twitter:data2" content="XR-Headset" />
 <style>
-:root{color-scheme:dark}
+:root{color-scheme:dark light}
 *{box-sizing:border-box}
-body{margin:0;background:#0c0a09;color:#e7e5e4;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+body{margin:0;background:#080b0d;color:#f4f7f5;font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+a,button{cursor:pointer}
 a{color:#a3e635;text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:880px;margin:0 auto;padding:24px 20px 64px}
+.wrap{max-width:1040px;margin:0 auto;padding:28px 24px 64px}
 nav.bc{font-size:14px;color:#a8a29e;margin-bottom:24px}
 nav.bc a{color:#a8a29e}
-h1{font-size:30px;line-height:1.2;margin:8px 0 4px}
+h1{font-size:clamp(32px,5vw,52px);letter-spacing:-.04em;line-height:1.08;margin:8px 0 6px;text-wrap:balance}
 .badges{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
 .badge{font-size:13px;padding:3px 10px;border-radius:999px;border:1px solid #44403c;color:#d6d3d1}
-.badge.cat{border-color:#65a30d;color:#bef264}.badge.xr{border-color:#0891b2;color:#67e8f9}
-.hero{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start;margin:16px 0 8px}
+.badge.cat,.badge.xr{border-color:#44403c;color:#e7e5e4;background:#12181c}
+.hero{display:grid;grid-template-columns:minmax(220px,320px) 1fr;gap:28px;align-items:start;margin:22px 0 12px}
 .hero img{max-width:280px;width:100%;border-radius:12px;background:#1c1917;border:1px solid #292524}
 .ph{width:280px;height:160px;border-radius:12px;border:1px solid #292524;display:flex;align-items:center;justify-content:center;font-size:42px;font-weight:700;background:linear-gradient(135deg,#1c1917,#0c0a09);color:#3f3f46}
 .price{font-size:24px;font-weight:700;color:#fafaf9;margin:6px 0}
@@ -72,6 +73,16 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid #292524;color:#7871
 .share{margin:24px 0 8px}.share h2{margin:0 0 8px}
 .sharerow{display:flex;flex-wrap:wrap;gap:8px}
 .cta.share{padding:7px 13px;font-size:14px}
+@media(max-width:680px){.wrap{padding:20px 16px 48px}.hero{grid-template-columns:1fr}.hero img,.ph{max-width:100%;width:100%}}
+@media(prefers-color-scheme:light){
+  body{background:#f2f4ef;color:#17201b}
+  a{color:#3f6212}nav.bc,nav.bc a,th,.affnote,.aud{color:#526159}
+  .badge,.badge.cat,.badge.xr,.cta{border-color:#d3dbd2;color:#17201b;background:#f1f4ed}
+  .hero img,.ph,.note,.hl{background:#fbfcf8;border-color:#d3dbd2;color:#526159}
+  .price{color:#17201b}th,td,footer{border-color:#d3dbd2}.lead{color:#526159}
+  .cta.primary{background:#3f6212;border-color:#3f6212;color:#fff}
+  .cta.buy{border-color:#adb9ae;color:#17201b}.cta.buy:hover{background:#e8ede4;border-color:#4d7c0f;color:#3f6212}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://ar-directory.huskynarr.de/"},{"@type":"ListItem","position":2,"name":"Modelle","item":"https://ar-directory.huskynarr.de/modelle/"},{"@type":"ListItem","position":3,"name":"Somnium VR1","item":"https://ar-directory.huskynarr.de/somnium-space/vr1/"}]},{"@type":"Product","name":"Somnium VR1","category":"XR-Headset","brand":{"@type":"Brand","name":"Somnium Space"},"image":"https://vrgineers.com/data/files/page/somnium-vr1-vr/SomniumVR1-VR-left-angle-strap.jpg","releaseDate":"2024-07-12","description":"Das Somnium VR1 ist ein modulares, hochauflösendes PC-VR-Headset mit QLED-Mini-LED-Technologie und asphärischen Linsen (2880x2880 pro Auge, 120Hz). Mit 6DoF-Inside-out-Tracking, Eye- und Hand-Tracking sowie optionalem Passthrough bietet es professionelle VR-Erfahrung. Das Open-Source-Design und die ","additionalProperty":[{"@type":"PropertyValue","name":"Hersteller","value":"Somnium Space"},{"@type":"PropertyValue","name":"Kategorie","value":"XR"},{"@type":"PropertyValue","name":"Angekündigt","value":"2024-06-01"},{"@type":"PropertyValue","name":"Release","value":"2024-07-12"},{"@type":"PropertyValue","name":"Display","value":"QLED"},{"@type":"PropertyValue","name":"Optik","value":"Aspheric lenses"},{"@type":"PropertyValue","name":"Sichtfeld (FOV, H/V/D)","value":"130° / 105° / –"},{"@type":"PropertyValue","name":"Auflösung pro Auge","value":"2880x2880"},{"@type":"PropertyValue","name":"Bildwiederholrate","value":"120"},{"@type":"PropertyValue","name":"Helligkeit","value":"210"},{"@type":"PropertyValue","name":"Chipsatz","value":"none / tethered (PC-powered)"},{"@type":"PropertyValue","name":"Recheneinheit","value":"PC"},{"@type":"PropertyValue","name":"Software","value":"SteamVR"},{"@type":"PropertyValue","name":"Tracking","value":"6DoF inside-out"},{"@type":"PropertyValue","name":"Eye-Tracking","value":"Ja"},{"@type":"PropertyValue","name":"Hand-Tracking","value":"Ja"},{"@type":"PropertyValue","name":"Passthrough","value":"Optional native passthrough"},{"@type":"PropertyValue","name":"Kamera","value":"No camera passthrough"},{"@type":"PropertyValue","name":"Konnektivität","value":"USB-C DisplayPort, USB 3 Gen 2, 3.5mm jack"},{"@type":"PropertyValue","name":"Audio","value":"3.5mm headphone jack (no built-in speakers), quality microphones"},{"@type":"PropertyValue","name":"Akku","value":"Tethered (no battery)"},{"@type":"PropertyValue","name":"IPD","value":"58-76 mm mechanical"},{"@type":"PropertyValue","name":"Sehstärke","value":"Dioptric compensation lens option"}],"offers":{"@type":"Offer","priceCurrency":"USD","price":"2600","availability":"https://schema.org/InStock","url":"https://vrgineers.com/somnium-vr1-vr/"}}]}</script>
 </head>

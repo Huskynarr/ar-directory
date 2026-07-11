@@ -25,18 +25,19 @@
 <meta name="twitter:image:alt" content="AR/XR Glossar &amp; FAQ: FOV, Waveguide, Birdbath, Passthrough erklärt | AR/XR Brillen Vergleich" />
 
 <style>
-:root{color-scheme:dark}
+:root{color-scheme:dark light}
 *{box-sizing:border-box}
-body{margin:0;background:#0c0a09;color:#e7e5e4;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+body{margin:0;background:#080b0d;color:#f4f7f5;font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+a,button{cursor:pointer}
 a{color:#a3e635;text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:880px;margin:0 auto;padding:24px 20px 64px}
+.wrap{max-width:1040px;margin:0 auto;padding:28px 24px 64px}
 nav.bc{font-size:14px;color:#a8a29e;margin-bottom:24px}
 nav.bc a{color:#a8a29e}
-h1{font-size:30px;line-height:1.2;margin:8px 0 4px}
+h1{font-size:clamp(32px,5vw,52px);letter-spacing:-.04em;line-height:1.08;margin:8px 0 6px;text-wrap:balance}
 .badges{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
 .badge{font-size:13px;padding:3px 10px;border-radius:999px;border:1px solid #44403c;color:#d6d3d1}
-.badge.cat{border-color:#65a30d;color:#bef264}.badge.xr{border-color:#0891b2;color:#67e8f9}
-.hero{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start;margin:16px 0 8px}
+.badge.cat,.badge.xr{border-color:#44403c;color:#e7e5e4;background:#12181c}
+.hero{display:grid;grid-template-columns:minmax(220px,320px) 1fr;gap:28px;align-items:start;margin:22px 0 12px}
 .hero img{max-width:280px;width:100%;border-radius:12px;background:#1c1917;border:1px solid #292524}
 .ph{width:280px;height:160px;border-radius:12px;border:1px solid #292524;display:flex;align-items:center;justify-content:center;font-size:42px;font-weight:700;background:linear-gradient(135deg,#1c1917,#0c0a09);color:#3f3f46}
 .price{font-size:24px;font-weight:700;color:#fafaf9;margin:6px 0}
@@ -63,6 +64,16 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid #292524;color:#7871
 .share{margin:24px 0 8px}.share h2{margin:0 0 8px}
 .sharerow{display:flex;flex-wrap:wrap;gap:8px}
 .cta.share{padding:7px 13px;font-size:14px}
+@media(max-width:680px){.wrap{padding:20px 16px 48px}.hero{grid-template-columns:1fr}.hero img,.ph{max-width:100%;width:100%}}
+@media(prefers-color-scheme:light){
+  body{background:#f2f4ef;color:#17201b}
+  a{color:#3f6212}nav.bc,nav.bc a,th,.affnote,.aud{color:#526159}
+  .badge,.badge.cat,.badge.xr,.cta{border-color:#d3dbd2;color:#17201b;background:#f1f4ed}
+  .hero img,.ph,.note,.hl{background:#fbfcf8;border-color:#d3dbd2;color:#526159}
+  .price{color:#17201b}th,td,footer{border-color:#d3dbd2}.lead{color:#526159}
+  .cta.primary{background:#3f6212;border-color:#3f6212;color:#fff}
+  .cta.buy{border-color:#adb9ae;color:#17201b}.cta.buy:hover{background:#e8ede4;border-color:#4d7c0f;color:#3f6212}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Was ist der Unterschied zwischen AR- und XR-Brillen?","acceptedAnswer":{"@type":"Answer","text":"AR-Brillen (Augmented Reality) blenden digitale Inhalte in die reale Umgebung ein, meist über transparente Optiken wie Waveguides oder Birdbath-Linsen. XR ist der Oberbegriff (Extended Reality) und umfasst hier vor allem VR-/MR-Headsets mit Kamera-Passthrough, die die Umgebung digital darstellen."}},{"@type":"Question","name":"Welche AR-Brille hat das größte Sichtfeld (FOV)?","acceptedAnswer":{"@type":"Answer","text":"Das Sichtfeld (FOV) unterscheidet sich stark: viele Display-/Birdbath-Brillen liegen bei 40–52° diagonal, Waveguide-Brillen oft darunter, während MR-Headsets deutlich größere Sichtfelder erreichen. Im Vergleich lässt sich nach minimalem FOV filtern und sortieren."}},{"@type":"Question","name":"Was bedeutet \"EOL\" bzw. Support-Ende?","acceptedAnswer":{"@type":"Answer","text":"EOL (End of Life) bedeutet, dass ein Gerät nicht mehr verkauft und/oder nicht mehr mit Software-Updates versorgt wird. Im Datensatz ist pro Modell vermerkt, ob es noch aktiv im Vertrieb ist und ob ein Support-Ende angekündigt wurde."}},{"@type":"Question","name":"Was ist Birdbath- vs. Waveguide-Optik?","acceptedAnswer":{"@type":"Answer","text":"Birdbath-Optiken nutzen einen halbtransparenten Spiegel und liefern helle, kontrastreiche Bilder bei kompakter Bauform – typisch für Display-Brillen am Smartphone/PC. Waveguides leiten Licht durch dünne Glassubstrate und ermöglichen schlankere, brillenähnliche Designs, meist mit kleinerem FOV."}},{"@type":"Question","name":"Standalone, Phone oder PC – was heisst das?","acceptedAnswer":{"@type":"Answer","text":"Die Recheneinheit zeigt, wie eine Brille betrieben wird: \"Standalone\" hat eigenen Prozessor/Akku, \"Phone\" wird per USB-C an ein Smartphone angeschlossen, \"PC\" benötigt einen Rechner. Das beeinflusst Mobilität, Leistung und Preis."}},{"@type":"Question","name":"Sind die Preise aktuell?","acceptedAnswer":{"@type":"Answer","text":"Die Preise sind kuratierte USD-Richtwerte (UVP zum Launch oder aktueller Marktpreis) und dienen der Orientierung. Auf der Startseite kann optional ein Live-EUR-Kurs zur Umrechnung eingeblendet werden."}}]},{"@type":"DefinedTermSet","name":"AR/XR Glossar","hasDefinedTerm":[{"@type":"DefinedTerm","name":"FOV (Field of View)","description":"Sichtfeld der Anzeige in Grad, angegeben horizontal/vertikal/diagonal. Größer = immersiver."},{"@type":"DefinedTerm","name":"Waveguide","description":"Optik, die Licht durch ein dünnes Glassubstrat ins Auge leitet; ermöglicht schlanke AR-Brillen."},{"@type":"DefinedTerm","name":"Birdbath","description":"Optik mit halbtransparentem Spiegel; helle, kontrastreiche Bilder bei kompakter Bauform."},{"@type":"DefinedTerm","name":"Passthrough","description":"Kamera-Durchsicht: bei MR-Headsets wird die Umgebung digital ins Display übertragen."},{"@type":"DefinedTerm","name":"IPD","description":"Pupillendistanz; verstellbar (mechanisch/Software) oder fix – wichtig für scharfes, komfortables Bild."},{"@type":"DefinedTerm","name":"Nits","description":"Einheit der Display-Helligkeit; höhere Werte verbessern die Sichtbarkeit, besonders im Hellen."},{"@type":"DefinedTerm","name":"Refresh-Rate (Hz)","description":"Bildwiederholrate; höhere Werte sorgen für flüssigere Darstellung und weniger Uebelkeit."},{"@type":"DefinedTerm","name":"Inside-out Tracking","description":"Positionsbestimmung über Kameras im Gerät selbst, ohne externe Basisstationen."},{"@type":"DefinedTerm","name":"Micro-OLED","description":"Sehr kleine, hochauflösende OLED-Panels; verbreitet in modernen Display-/AR-Brillen."},{"@type":"DefinedTerm","name":"EOL (End of Life)","description":"Produktende: kein Verkauf und/oder keine Software-Updates mehr."}]}]}</script>
 </head>

@@ -7,6 +7,7 @@ import { getModelImageUrl } from './image.js';
 import { categoryTone, lifecycleTone, selectionLabelTemplate, buildCardFacts } from './shared.js';
 
 export const cardTemplate = (row) => {
+  const compact = state.focusMode;
   const name = escapeHtml(compactValue(row.name, t('Unbekanntes Modell', 'Unknown model')));
   const manufacturer = escapeHtml(compactValue(row.manufacturer, t('Unbekannt', 'Unknown')));
   const category = escapeHtml(compactValue(row.xr_category, 'AR'));
@@ -24,15 +25,15 @@ export const cardTemplate = (row) => {
   const isSelected = state.selectedIds.includes(row.__rowId);
   const isFavorite = state.favorites.includes(row.__rowId);
   const facts = buildCardFacts(row);
-  const primaryFacts = facts.slice(0, 6);
-  const secondaryFacts = facts.slice(6);
+  const primaryFacts = facts.slice(0, compact ? 4 : 6);
+  const secondaryFacts = compact ? [] : facts.slice(6);
   const lifecycleNotes = formatLifecycleNotes(row.lifecycle_notes, t('Keine Angaben.', 'No details.'));
   const lifecycleSource = maybeHiddenText(row.lifecycle_source, '');
   const showLifecycleSourceInInfo = Boolean(lifecycleSource && !lifecycleSourceUrl);
 
   return `
     <article class="panel group overflow-hidden transition duration-200 ease-out hover:-translate-y-0.5 hover:border-[#84cc16]/50 hover:ring-1 hover:ring-[#84cc16]/30 hover:shadow-lg hover:shadow-black/30" data-model-card="${escapeHtml(row.__rowId)}">
-      <div class="relative h-44 cursor-pointer overflow-hidden border-b border-[#44403c]/60 bg-[#131b26]" data-detail-open="${escapeHtml(row.__rowId)}">
+      <div class="relative ${compact ? 'h-36' : 'h-44'} cursor-pointer overflow-hidden border-b border-[#44403c]/60 bg-[#131b26]" data-detail-open="${escapeHtml(row.__rowId)}">
         ${
           image
             ? `<img src="${escapeHtml(image)}" alt="${name}" loading="lazy" decoding="async" referrerpolicy="no-referrer" class="h-full w-full object-contain p-4 transition duration-300 ease-out group-hover:scale-[1.03] group-hover:brightness-105" />`
@@ -57,7 +58,7 @@ export const cardTemplate = (row) => {
             : ''
         }
       </div>
-      <div class="space-y-5 p-5">
+      <div class="${compact ? 'space-y-3 p-4' : 'space-y-5 p-5'}">
         <div class="space-y-1.5">
           <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#a8a29e]">${manufacturer}</p>
           <h2 class="font-semibold text-2xl leading-tight text-[#f5f5f4]"><button type="button" data-detail-open="${escapeHtml(row.__rowId)}" class="text-left underline-offset-4 transition-colors hover:text-[#84cc16] hover:underline focus-visible:text-[#84cc16] focus-visible:underline">${name}</button></h2>
@@ -121,7 +122,7 @@ export const cardTemplate = (row) => {
           <p class="text-[11px] font-semibold uppercase tracking-[0.12em]">${t('Updates / EOL', 'Updates / EOL')}</p>
           <p class="mt-1 font-semibold">${escapeHtml(compactValue(row.eol_status))}</p>
           ${row.eol_date ? `<p class="mt-1 text-xs">${t('EOL-Datum', 'EOL date')}: ${escapeHtml(eolDate)}</p>` : ''}
-          ${lifecycleNotes ? `<p class="mt-2 text-xs leading-relaxed">${escapeHtml(lifecycleNotes)}</p>` : ''}
+          ${!compact && lifecycleNotes ? `<p class="mt-2 text-xs leading-relaxed">${escapeHtml(lifecycleNotes)}</p>` : ''}
           ${
             showLifecycleSourceInInfo
               ? `<p class="mt-2 text-[11px] leading-relaxed">${t('Quelle', 'Source')}: ${escapeHtml(lifecycleSource)}</p>`

@@ -34,18 +34,19 @@
 <meta name="twitter:label2" content="Kategorie" />
 <meta name="twitter:data2" content="AR-Brille" />
 <style>
-:root{color-scheme:dark}
+:root{color-scheme:dark light}
 *{box-sizing:border-box}
-body{margin:0;background:#0c0a09;color:#e7e5e4;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+body{margin:0;background:#080b0d;color:#f4f7f5;font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+a,button{cursor:pointer}
 a{color:#a3e635;text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:880px;margin:0 auto;padding:24px 20px 64px}
+.wrap{max-width:1040px;margin:0 auto;padding:28px 24px 64px}
 nav.bc{font-size:14px;color:#a8a29e;margin-bottom:24px}
 nav.bc a{color:#a8a29e}
-h1{font-size:30px;line-height:1.2;margin:8px 0 4px}
+h1{font-size:clamp(32px,5vw,52px);letter-spacing:-.04em;line-height:1.08;margin:8px 0 6px;text-wrap:balance}
 .badges{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
 .badge{font-size:13px;padding:3px 10px;border-radius:999px;border:1px solid #44403c;color:#d6d3d1}
-.badge.cat{border-color:#65a30d;color:#bef264}.badge.xr{border-color:#0891b2;color:#67e8f9}
-.hero{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start;margin:16px 0 8px}
+.badge.cat,.badge.xr{border-color:#44403c;color:#e7e5e4;background:#12181c}
+.hero{display:grid;grid-template-columns:minmax(220px,320px) 1fr;gap:28px;align-items:start;margin:22px 0 12px}
 .hero img{max-width:280px;width:100%;border-radius:12px;background:#1c1917;border:1px solid #292524}
 .ph{width:280px;height:160px;border-radius:12px;border:1px solid #292524;display:flex;align-items:center;justify-content:center;font-size:42px;font-weight:700;background:linear-gradient(135deg,#1c1917,#0c0a09);color:#3f3f46}
 .price{font-size:24px;font-weight:700;color:#fafaf9;margin:6px 0}
@@ -72,6 +73,16 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid #292524;color:#7871
 .share{margin:24px 0 8px}.share h2{margin:0 0 8px}
 .sharerow{display:flex;flex-wrap:wrap;gap:8px}
 .cta.share{padding:7px 13px;font-size:14px}
+@media(max-width:680px){.wrap{padding:20px 16px 48px}.hero{grid-template-columns:1fr}.hero img,.ph{max-width:100%;width:100%}}
+@media(prefers-color-scheme:light){
+  body{background:#f2f4ef;color:#17201b}
+  a{color:#3f6212}nav.bc,nav.bc a,th,.affnote,.aud{color:#526159}
+  .badge,.badge.cat,.badge.xr,.cta{border-color:#d3dbd2;color:#17201b;background:#f1f4ed}
+  .hero img,.ph,.note,.hl{background:#fbfcf8;border-color:#d3dbd2;color:#526159}
+  .price{color:#17201b}th,td,footer{border-color:#d3dbd2}.lead{color:#526159}
+  .cta.primary{background:#3f6212;border-color:#3f6212;color:#fff}
+  .cta.buy{border-color:#adb9ae;color:#17201b}.cta.buy:hover{background:#e8ede4;border-color:#4d7c0f;color:#3f6212}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://ar-directory.huskynarr.de/"},{"@type":"ListItem","position":2,"name":"Modelle","item":"https://ar-directory.huskynarr.de/modelle/"},{"@type":"ListItem","position":3,"name":"TQSKY T1","item":"https://ar-directory.huskynarr.de/tqsky/t1/"}]},{"@type":"Product","name":"TQSKY T1","category":"AR-Brille","brand":{"@type":"Brand","name":"TQSKY"},"image":"https://store.tqsky.com/cdn/shop/files/795f1d6f37fc8fa00e9fc4991014c2d5.png?v=1746525616","releaseDate":"2022-12-08","description":"Die TQSKY T1 ist eine Smartphone-gebundene AR-Brille mit OLED-Birdbath-Optik, 1920x1080 Auflösung und 60 Hz Bildwiederholfrequenz. Mit 79 g Gewicht, 5000-mAh-Batterie (interne T-Box, ca. 3h Laufzeit) und einstellbarer Myopie-Anpassung (0 bis -6.0D) richtet sie sich an Smartphone-User. Die Helligkeit","additionalProperty":[{"@type":"PropertyValue","name":"Hersteller","value":"TQSKY"},{"@type":"PropertyValue","name":"Kategorie","value":"AR"},{"@type":"PropertyValue","name":"Angekündigt","value":"2022-07-07"},{"@type":"PropertyValue","name":"Release","value":"2022-12-08"},{"@type":"PropertyValue","name":"Display","value":"OLED"},{"@type":"PropertyValue","name":"Optik","value":"Birdbath optics"},{"@type":"PropertyValue","name":"Sichtfeld (FOV, H/V/D)","value":"– / – / 43°"},{"@type":"PropertyValue","name":"Auflösung pro Auge","value":"1920x1080"},{"@type":"PropertyValue","name":"Bildwiederholrate","value":"60"},{"@type":"PropertyValue","name":"Helligkeit","value":"1800"},{"@type":"PropertyValue","name":"Gewicht","value":"79"},{"@type":"PropertyValue","name":"Chipsatz","value":"ARM Cortex-A7 Dual-Core 1.2GHz (T-Box)"},{"@type":"PropertyValue","name":"Recheneinheit","value":"Phone"},{"@type":"PropertyValue","name":"Tracking","value":"Non-positional"},{"@type":"PropertyValue","name":"Eye-Tracking","value":"Nein"},{"@type":"PropertyValue","name":"Hand-Tracking","value":"Nein"},{"@type":"PropertyValue","name":"Passthrough","value":"Native passthrough"},{"@type":"PropertyValue","name":"Konnektivität","value":"Type-C, USB 2.0, HDMI, Wi-Fi 5, Bluetooth"},{"@type":"PropertyValue","name":"Audio","value":"Stereo full-range speakers, frequency response 20-20,000 Hz"},{"@type":"PropertyValue","name":"Akku","value":"5000 mAh (T-Box) / ~3h"},{"@type":"PropertyValue","name":"IPD","value":"Fixed (monocular display)"},{"@type":"PropertyValue","name":"Sehstärke","value":"Software (0 to -6.0D myopia adjustment)"}],"offers":{"@type":"Offer","priceCurrency":"USD","price":"699","availability":"https://schema.org/InStock","url":"https://store.tqsky.com/products/tqsky-t1"}}]}</script>
 </head>

@@ -22,7 +22,7 @@ test('loads the catalog without runtime errors and exposes its core content', as
   await expect(page).toHaveTitle(/348 Modelle/);
   await expect(page.getByRole('heading', { level: 1 })).toContainText(/AR-Brillen.*XR-Glasses/i);
   await expect(page.getByText(/Datenbestand:\s*348/)).toBeVisible();
-  await expect(page.getByRole('link', { name: /Brillen-Finder/ }).first()).toBeVisible();
+  await expect(page.getByRole('link', { name: /Brille finden/ }).first()).toBeVisible();
   expect(runtimeErrors).toEqual([]);
 });
 
@@ -80,7 +80,7 @@ test('automatic theme follows the operating-system preference', async ({ page })
 });
 
 test('finder completes all questions and returns recommendations', async ({ page }) => {
-  await page.getByRole('link', { name: /Brillen-Finder/ }).first().click();
+  await page.getByRole('link', { name: /Brille finden/ }).first().click();
   await expect(page).toHaveURL(/\/finder\/$/);
 
   const restart = page.locator('[data-finder-restart]');

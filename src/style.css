@@ -197,7 +197,7 @@
 
   .hero-title {
     color: var(--text);
-    max-width: 19ch;
+    max-width: none;
   }
 
   .hero-title::after {
@@ -205,9 +205,16 @@
     display: block;
     width: 3.5rem;
     height: 3px;
-    margin-top: 1rem;
+    margin-top: .65rem;
     border-radius: 999px;
     background: var(--brand);
+  }
+
+  .hero-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
   }
 
   .finder-cta {
@@ -309,7 +316,7 @@ input[type='checkbox']:focus-visible {
   animation: modal-fade-in 160ms ease-out;
 }
 .detail-modal-content {
-  width: min(100%, 680px); max-height: calc(100vh - 2rem);
+  width: min(100%, 760px); max-height: calc(100vh - 2rem);
   animation: modal-slide-up 190ms ease-out;
 }
 @keyframes modal-fade-in { from { opacity: 0; } }
@@ -327,6 +334,8 @@ input[type='checkbox']:focus-visible {
   .soft-panel { border-radius: .625rem; }
   .chip-btn { min-height: 2.75rem; }
   [data-model-card] > div:nth-child(2) { padding: 1rem; }
+  .hero-summary { align-items: flex-start; flex-direction: column; gap: .8rem; }
+  .hero-title::after { margin-top: .5rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

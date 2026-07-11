@@ -63,7 +63,9 @@ const detailModalTemplate = (row) => {
   const slug = compactValue(row.slug, '');
   const shareTitle = `${compactValue(row.name, t('AR/XR Brille', 'AR/XR glasses'))} – AR/XR Brillen Vergleich`;
   const isFavorite = state.favorites.includes(row.__rowId);
-  const factGroups = groupFacts(buildCardFacts(row));
+  // The modal is a quick preview. The canonical multipage detail view carries
+  // the complete specification table and remains the primary destination.
+  const factGroups = groupFacts(buildCardFacts(row).slice(0, 6));
   const lifecycleNotes = formatLifecycleNotes(row.lifecycle_notes, t('Keine Angaben.', 'No details.'));
   const infoUrl = safeExternalUrl(row.lifecycle_source) || safeExternalUrl(row.source_page);
   return `
@@ -80,7 +82,7 @@ const detailModalTemplate = (row) => {
           </div>
         </div>
         <div class="max-h-[75vh] overflow-y-auto">
-          <div class="flex items-center justify-center border-b border-[#44403c] bg-gradient-to-br from-[#171412] to-[#0c0a09] p-6">
+          <div class="flex items-center justify-center border-b border-[#44403c] bg-[var(--surface-2)] p-5">
             ${
               image
                 ? `<img src="${escapeHtml(image)}" alt="${name}" decoding="async" referrerpolicy="no-referrer" class="max-h-64 w-auto rounded-xl object-contain drop-shadow-[0_8px_24px_rgba(0,0,0,0.5)]" />`
@@ -135,7 +137,7 @@ const detailModalTemplate = (row) => {
               <div class="flex flex-wrap gap-2">
                 ${shop.url ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" class="chip-btn ${shop.official ? 'border-[#84cc16] bg-[#84cc16] text-[#0c0a09] hover:bg-[#65a30d]' : 'border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]'}">${escapeHtml(shop.label)}</a>` : ''}
                 ${infoUrl ? `<a href="${escapeHtml(infoUrl)}" target="_blank" rel="noreferrer" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t('Datenquelle', 'Data source')}</a>` : ''}
-                ${row.__path ? `<a href="/${escapeHtml(row.__path)}/" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t('Detailseite', 'Details page')}</a>` : ''}
+                ${row.__path ? `<a href="/${escapeHtml(row.__path)}/" class="chip-btn border-[var(--brand)] bg-[var(--brand)] text-[var(--brand-ink)]">${t('Alle Details öffnen', 'Open full details')} →</a>` : ''}
                 <button id="detail-share" type="button" data-share-title="${escapeHtml(shareTitle)}" data-share-path="${row.__path ? `/${escapeHtml(row.__path)}/` : '/'}" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]"><span aria-hidden="true">&#128279;</span> ${t('Teilen', 'Share')}</button>
               </div>
               ${buyLinks.length ? `<p class="text-[11px] text-[#a8a29e]">* ${escapeHtml(t('Affiliate-Links – wir können eine Provision erhalten, für dich ohne Mehrkosten.', 'Affiliate links – we may earn a commission at no extra cost to you.'))}</p>` : ''}
