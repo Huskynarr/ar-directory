@@ -29,7 +29,8 @@ const fact = (label, value, suffix = '') =>
     : '';
 
 const buildCatalogHtml = (rows, paths) => {
-  const items = rows
+  const featuredRows = rows.slice(0, 12);
+  const items = featuredRows
     .map((row) => {
       const fov = [row.fov_horizontal_deg, row.fov_vertical_deg, row.fov_diagonal_deg]
         .map((value) => (String(value || '').trim() ? value : '–'))
@@ -59,9 +60,10 @@ const buildCatalogHtml = (rows, paths) => {
 </article>`;
     })
     .join('\n');
-  return `<section id="static-catalog" aria-label="Vollstaendige Modelliste">
-  <h2>Alle ${rows.length} AR/XR Brillen im Ueberblick</h2>
+  return `<section id="static-catalog" aria-label="Aktuelle Modelle">
+  <h2>Aktuelle AR/XR Brillen im Ueberblick</h2>
   ${items}
+  <p><a href="/modelle/">Alle ${rows.length} Modelle in der crawlbaren Modellliste öffnen</a></p>
 </section>`;
 };
 
@@ -97,8 +99,18 @@ const seoInjectPlugin = () => ({
         out = out.replaceAll(token, value);
       }
 
-      const ldScript = structured
-        ? `<script type="application/ld+json">${JSON.stringify(structured).replace(/</g, '\\u003c')}</script>`
+      const homepageStructured = structured
+        ? {
+            ...structured,
+            '@graph': (structured['@graph'] || []).map((node) =>
+              node['@type'] === 'ItemList'
+                ? { ...node, itemListElement: (node.itemListElement || []).slice(0, 12) }
+                : node,
+            ),
+          }
+        : null;
+      const ldScript = homepageStructured
+        ? `<script type="application/ld+json">${JSON.stringify(homepageStructured).replace(/</g, '\\u003c')}</script>`
         : '';
       out = out.replace('<!-- @structured-data -->', ldScript);
 
@@ -313,6 +325,26 @@ const finderPagePlugin = () => ({
   },
 });
 
+// The generated app stylesheet is small enough to inline in SPA entry pages,
+// removing a render-blocking request. Static pages keep their cached app.css.
+const inlineAppCssPlugin = () => ({
+  name: 'ar-directory-inline-app-css',
+  enforce: 'post',
+  closeBundle() {
+    for (const htmlPath of ['dist/index.html', 'dist/404.html', 'dist/finder/index.html']) {
+      try {
+        const html = readFileSync(htmlPath, 'utf8');
+        const match = html.match(/<link rel="stylesheet" crossorigin href="([^"]+\.css)">/);
+        if (!match) continue;
+        const css = readFileSync(`dist${match[1]}`, 'utf8').replace(/<\/style/gi, '<\\/style');
+        writeFileSync(htmlPath, html.replace(match[0], `<style data-app-css>${css}</style>`));
+      } catch (error) {
+        console.warn('[inline-app-css] skipped:', error?.message || error);
+      }
+    }
+  },
+});
+
 const buildStamp = new Date()
   .toLocaleString('de-DE', {
     timeZone: 'Europe/Berlin',
@@ -328,5 +360,5 @@ export default defineConfig({
   define: {
     __BUILD_TIME__: JSON.stringify(buildStamp),
   },
-  plugins: [tailwindcss(), seoInjectPlugin(), spaFallbackPlugin(), finderPagePlugin()],
+  plugins: [tailwindcss(), seoInjectPlugin(), spaFallbackPlugin(), finderPagePlugin(), inlineAppCssPlugin()],
 });

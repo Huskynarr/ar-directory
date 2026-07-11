@@ -15,11 +15,12 @@
     "test:watch": "vitest src/__tests__",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
+    "test:lighthouse": "npm run build && node scripts/lighthouse-ci.mjs",
     "verify": "npm test && npm run test:e2e && npm run build"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.3.2",
     "@playwright/test": "^1.61.1",
+    "@tailwindcss/vite": "^4.3.2",
     "tailwindcss": "^4.3.2",
     "vite": "^8.1.4",
     "vitest": "^4.1.10"

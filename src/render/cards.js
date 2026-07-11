@@ -25,14 +25,14 @@ export const cardTemplate = (row) => {
   const isSelected = state.selectedIds.includes(row.__rowId);
   const isFavorite = state.favorites.includes(row.__rowId);
   const facts = buildCardFacts(row);
-  const primaryFacts = facts.slice(0, compact ? 4 : 6);
+  const primaryFacts = facts.slice(0, compact ? 2 : 6);
   const secondaryFacts = compact ? [] : facts.slice(6);
   const lifecycleNotes = formatLifecycleNotes(row.lifecycle_notes, t('Keine Angaben.', 'No details.'));
   const lifecycleSource = maybeHiddenText(row.lifecycle_source, '');
   const showLifecycleSourceInInfo = Boolean(lifecycleSource && !lifecycleSourceUrl);
 
   return `
-    <article class="panel group overflow-hidden transition duration-200 ease-out hover:-translate-y-0.5 hover:border-[#84cc16]/50 hover:ring-1 hover:ring-[#84cc16]/30 hover:shadow-lg hover:shadow-black/30" data-model-card="${escapeHtml(row.__rowId)}">
+    <article class="panel group overflow-hidden transition duration-200 ease-out hover:-translate-y-0.5 hover:border-[#84cc16]/50 hover:ring-1 hover:ring-[#84cc16]/30 hover:shadow-lg hover:shadow-black/30" data-model-card="${escapeHtml(row.__rowId)}" data-card-density="${compact ? 'compact' : 'detailed'}">
       <div class="relative ${compact ? 'h-36' : 'h-44'} cursor-pointer overflow-hidden border-b border-[#44403c]/60 bg-[#131b26]" data-detail-open="${escapeHtml(row.__rowId)}">
         ${
           image
@@ -118,47 +118,68 @@ export const cardTemplate = (row) => {
             : ''
         }
 
-        <div class="rounded-lg border-l-[3px] py-2 pl-3.5 pr-2 text-sm ${lifecycleClasses}">
-          <p class="text-[11px] font-semibold uppercase tracking-[0.12em]">${t('Updates / EOL', 'Updates / EOL')}</p>
-          <p class="mt-1 font-semibold">${escapeHtml(compactValue(row.eol_status))}</p>
-          ${row.eol_date ? `<p class="mt-1 text-xs">${t('EOL-Datum', 'EOL date')}: ${escapeHtml(eolDate)}</p>` : ''}
-          ${!compact && lifecycleNotes ? `<p class="mt-2 text-xs leading-relaxed">${escapeHtml(lifecycleNotes)}</p>` : ''}
-          ${
-            showLifecycleSourceInInfo
-              ? `<p class="mt-2 text-[11px] leading-relaxed">${t('Quelle', 'Source')}: ${escapeHtml(lifecycleSource)}</p>`
-              : ''
-          }
-        </div>
+        ${
+          compact
+            ? `<div class="compact-card-status ${lifecycleClasses}">
+                <span>${t('Lifecycle', 'Lifecycle')}</span>
+                <strong>${escapeHtml(compactValue(row.eol_status))}</strong>
+              </div>`
+            : `<div class="rounded-lg border-l-[3px] py-2 pl-3.5 pr-2 text-sm ${lifecycleClasses}">
+                <p class="text-[11px] font-semibold uppercase tracking-[0.12em]">${t('Updates / EOL', 'Updates / EOL')}</p>
+                <p class="mt-1 font-semibold">${escapeHtml(compactValue(row.eol_status))}</p>
+                ${row.eol_date ? `<p class="mt-1 text-xs">${t('EOL-Datum', 'EOL date')}: ${escapeHtml(eolDate)}</p>` : ''}
+                ${lifecycleNotes ? `<p class="mt-2 text-xs leading-relaxed">${escapeHtml(lifecycleNotes)}</p>` : ''}
+                ${
+                  showLifecycleSourceInInfo
+                    ? `<p class="mt-2 text-[11px] leading-relaxed">${t('Quelle', 'Source')}: ${escapeHtml(lifecycleSource)}</p>`
+                    : ''
+                }
+              </div>`
+        }
 
         <div class="flex flex-wrap gap-2">
           ${
             shop.url
               ? `<a href="${escapeHtml(shop.url)}" target="_blank" rel="noreferrer" class="${shopButtonClasses}">${escapeHtml(shop.label)}</a>`
-              : `<span class="chip-btn cursor-not-allowed border-[#44403c] bg-[#292524] text-[#a8a29e]">${t(
-                  'Herstellerlink fehlt',
-                  'No manufacturer link',
-                )}</span>`
+              : !compact
+                ? `<span class="chip-btn cursor-not-allowed border-[#44403c] bg-[#292524] text-[#a8a29e]">${t(
+                    'Herstellerlink fehlt',
+                    'No manufacturer link',
+                  )}</span>`
+                : ''
           }
+          <button type="button" data-detail-open="${escapeHtml(row.__rowId)}" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(
+            'Details',
+            'Details',
+          )}<span aria-hidden="true">→</span></button>
           ${
-            infoUrl
+            !compact && infoUrl
               ? `<a href="${escapeHtml(infoUrl)}" target="_blank" rel="noreferrer" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(
                   'Datenquelle',
                   'Data source',
                 )}</a>`
               : ''
           }
-          ${buyLinks
-            .map(
-              (l) =>
-                `<a href="${escapeHtml(l.url)}" target="_blank" rel="${AFFILIATE_REL}" class="chip-btn affiliate-link"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden="true"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L20 8H7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.2" fill="currentColor"/><circle cx="17" cy="20" r="1.2" fill="currentColor"/></svg>${escapeHtml(
-                  l.label,
-                )}</a>`,
-            )
-            .join('')}
+          ${
+            compact
+              ? ''
+              : buyLinks
+                  .map(
+                    (l) =>
+                      `<a href="${escapeHtml(l.url)}" target="_blank" rel="${AFFILIATE_REL}" class="chip-btn affiliate-link"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden="true"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L20 8H7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.2" fill="currentColor"/><circle cx="17" cy="20" r="1.2" fill="currentColor"/></svg>${escapeHtml(
+                        l.label,
+                      )}</a>`,
+                  )
+                  .join('')
+          }
         </div>
-        <p class="text-xs text-[#a8a29e]">${escapeHtml(shop.source)}${
-          buyLinks.length ? ` · <span title="Affiliate">*</span> ${escapeHtml(t('Affiliate-Links', 'Affiliate links'))}` : ''
-        }</p>
+        ${
+          compact
+            ? ''
+            : `<p class="text-xs text-[#a8a29e]">${escapeHtml(shop.source)}${
+                buyLinks.length ? ` · <span title="Affiliate">*</span> ${escapeHtml(t('Affiliate-Links', 'Affiliate links'))}` : ''
+              }</p>`
+        }
       </div>
     </article>
   `;

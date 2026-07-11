@@ -22,8 +22,7 @@
     <link rel="apple-touch-icon" href="/icon.svg" />
     <link rel="mask-icon" href="/icon.svg" color="#a3e635" />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="dns-prefetch" href="https://api.frankfurter.dev" />
-    <link rel="preconnect" href="https://api.frankfurter.dev" crossorigin />
+    <link rel="preload" href="/data/ar_glasses.csv" as="fetch" type="text/csv" crossorigin />
     <link rel="alternate" type="text/csv" href="/data/ar_glasses.csv" title="AR/XR Datensatz (CSV)" />
 
     <meta property="og:type" content="website" />
@@ -49,21 +48,38 @@
     />
     <meta name="twitter:image" content="https://ar-directory.huskynarr.de/og/startseite.png" />
 
-    <!-- @structured-data -->
   </head>
   <body>
     <div id="app">
-      <main id="main-content">
-        <header>
-          <h1>AR/XR Brillen Vergleich</h1>
-          <p>
-            Vergleichsseite für __COUNT__ AR- und XR-Brillen (__AR__ AR, __XR__ XR) von __MANUFACTURERS__ Herstellern:
-            Spezifikationen, Preise, FOV, Refresh-Rate, Display, Optik, Tracking, aktiver Vertrieb, Software, Updates und
-            EOL-Status. Legacy-Modelle sind für einen vollständigeren Datenbestand enthalten.
-          </p>
+      <main id="main-content" tabindex="-1" aria-busy="true" class="mx-auto w-full max-w-[1320px] px-4 py-6 sm:px-6 lg:px-8">
+        <header class="app-hero panel relative overflow-hidden p-4 sm:p-5">
+          <div class="theme-hero-surface absolute inset-0 -z-10"></div>
+          <div class="flex items-start justify-between gap-3">
+            <div class="brand-lockup">
+              <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none"><path d="M3.5 14h5.2m10.6 0h5.2M8.7 10.5h4.2c1.1 0 2 .9 2 2v3c0 1.1-.9 2-2 2H8.7a2 2 0 0 1-2-2v-3c0-1.1.9-2 2-2Zm10.6 0h-4.2c-1.1 0-2 .9-2 2v3c0 1.1.9 2 2 2h4.2a2 2 0 0 0 2-2v-3c0-1.1-.9-2-2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+              <span><strong>AR DIRECTORY</strong><small>by Huskynarr</small></span>
+            </div>
+            <span class="h-9 w-20" aria-hidden="true"></span>
+          </div>
+          <h1 class="hero-title mt-3 text-3xl font-bold leading-tight sm:text-4xl">Vergleich für AR-Brillen und XR-Glasses</h1>
+          <div class="hero-summary mt-3">
+            <p class="max-w-3xl text-sm leading-relaxed text-[#a8a29e]">
+              __COUNT__ Modelle mit Specs, Preisen, Lifecycle und Herstellerlinks – inklusive historischer Geräte.
+            </p>
+            <div class="flex shrink-0 flex-wrap items-center gap-3">
+              <a href="/finder/" class="finder-cta">
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/><path d="m14.8 9.2-1.6 4-4 1.6 1.6-4 4-1.6Z" fill="currentColor"/></svg>
+                Brille finden
+              </a>
+            </div>
+          </div>
         </header>
+        <section class="panel mt-3 flex items-center gap-3 p-4 text-sm text-[#a8a29e]" role="status">
+          <span class="inline-block h-4 w-4 animate-spin rounded-full border-2 border-[#44403c] border-t-[#84cc16]" aria-hidden="true"></span>
+          Lade Brillendaten...
+        </section>
         <!-- @catalog -->
-        <section>
+        <section class="mt-6">
           <h2>Direkte Datenzugriffe</h2>
           <ul>
             <li><a href="/data/ar_glasses.csv">Datensatz (CSV)</a></li>
@@ -81,11 +97,12 @@
       Datensatz ist auch ohne JavaScript über die Liste oben sowie als
       <a href="/data/ar_glasses.csv">CSV</a> und <a href="/llms-full.txt">Volltext-Index</a> verfügbar.
     </noscript>
+    <!-- @structured-data -->
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js').catch(() => {});
       }
     </script>
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/bootstrap.js"></script>
   </body>
 </html>

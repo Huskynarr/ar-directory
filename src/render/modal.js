@@ -77,6 +77,7 @@ const detailModalTemplate = (row) => {
             <h2 class="mt-1 truncate text-xl font-bold text-[#f5f5f4]">${name}</h2>
           </div>
           <div class="flex shrink-0 items-center gap-2">
+            ${row.__path ? `<a href="/${escapeHtml(row.__path)}/" class="icon-text-btn" title="${t('Vollständige Detailseite', 'Full details page')}"><span>${t('Vollansicht', 'Full view')}</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4h9v9M16 4l-9 9M4 7v9h9"/></svg></a>` : ''}
             <button data-favorite-toggle="${escapeHtml(row.__rowId)}" type="button" aria-pressed="${isFavorite ? 'true' : 'false'}" aria-label="${escapeHtml(isFavorite ? t('Favorit entfernen', 'Remove favorite') : t('Als Favorit merken', 'Add to favorites'))}" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#44403c] bg-[#1c1917] text-xl transition hover:border-[var(--brand)] ${isFavorite ? 'text-[var(--brand)]' : 'text-[#a8a29e]'}">${isFavorite ? '&#9733;' : '&#9734;'}</button>
             <button id="close-detail-modal" type="button" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#44403c] bg-[#1c1917] text-lg text-[#a8a29e] transition hover:border-[#57534e] hover:bg-[#292524] hover:text-[#f5f5f4]" aria-label="${t('Schliessen', 'Close')}">&#10005;</button>
           </div>

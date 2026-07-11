@@ -23,7 +23,17 @@ test('loads the catalog without runtime errors and exposes its core content', as
   await expect(page.getByRole('heading', { level: 1 })).toContainText(/AR-Brillen.*XR-Glasses/i);
   await expect(page.getByText(/Datenbestand:\s*348/)).toBeVisible();
   await expect(page.getByRole('link', { name: /Brille finden/ }).first()).toBeVisible();
+  await expect(page.locator('[data-model-card]').first()).toHaveAttribute('data-card-density', 'compact');
   expect(runtimeErrors).toEqual([]);
+});
+
+test('mobile prioritizes search and reveals secondary filters on demand', async ({ page }, testInfo) => {
+  test.skip(!testInfo.project.name.includes('mobile'), 'mobile-only information hierarchy');
+  await expect(page.getByLabel('Kategorie')).toBeHidden();
+  await page.getByRole('button', { name: /Alle Filter/ }).click();
+  await expect(page.getByLabel('Kategorie')).toBeVisible();
+  await expect(page.locator('#manufacturer-filter')).toBeVisible();
+  await expect(page.locator('#sort-filter')).toBeVisible();
 });
 
 test('search, reset and manufacturer-link filter change the actual result set', async ({ page }) => {
@@ -34,17 +44,21 @@ test('search, reset and manufacturer-link filter change the actual result set', 
 
   await page.getByRole('button', { name: /Filter zurücksetzen/ }).click();
   await expect(page.locator('[data-model-card]')).toHaveCount(expectedPageSize);
-  await page.getByRole('button', { name: /Mehr Filter/ }).click();
+  await page.getByRole('button', { name: /Alle Filter|Mehr Filter/ }).click();
   await page.getByLabel(/Nur mit Herstellerlink/).check();
   await expect(page.getByText(/Sichtbar:\s*333/)).toBeVisible();
 });
 
 test('table, detail modal and comparison flow are interactive', async ({ page }) => {
-  await page.getByRole('button', { name: 'Tabelle', exact: true }).click();
+  await page.getByRole('button', { name: /Liste|Tabelle/, exact: true }).click();
   await expect(page.locator('tbody tr')).toHaveCount(348);
 
   await page.getByRole('button', { name: 'Karten', exact: true }).click();
   const firstCard = page.locator('[data-model-card]').first();
+  await page.getByRole('button', { name: /Ausführliche Karten anzeigen/ }).click();
+  await expect(firstCard).toHaveAttribute('data-card-density', 'detailed');
+  await page.getByRole('button', { name: /Kompakte Karten anzeigen/ }).click();
+  await expect(firstCard).toHaveAttribute('data-card-density', 'compact');
   await firstCard.locator('[data-detail-open]').first().click();
   await expect(page.locator('.detail-modal-overlay')).toBeVisible();
   await page.keyboard.press('Escape');

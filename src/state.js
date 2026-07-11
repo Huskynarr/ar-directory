@@ -68,7 +68,7 @@ export const state = {
   showEur: false,
   hideUnknown: false,
   showAdvancedFilters: false,
-  focusMode: false,
+  focusMode: true,
   sort: 'priority_default',
   cardsPage: 1,
   cardsPageSize: CARDS_PER_PAGE,
@@ -332,7 +332,7 @@ export const applyStateFromUrl = () => {
   state.showEur = parseBooleanParam(params.get('showEur'), false);
   state.hideUnknown = parseBooleanParam(params.get('hideUnknown'), false);
   state.showAdvancedFilters = parseBooleanParam(params.get('advanced'), false);
-  state.focusMode = parseBooleanParam(params.get('focus'), false);
+  state.focusMode = parseBooleanParam(params.get('focus'), true);
 
   const sort = params.get('sort');
   if (sort && SORT_MODES.has(sort)) {
@@ -410,7 +410,7 @@ export const syncUrlWithState = () => {
   setBoolean('showEur', state.showEur, false);
   setBoolean('hideUnknown', state.hideUnknown, false);
   setBoolean('advanced', state.showAdvancedFilters, false);
-  setBoolean('focus', state.focusMode, false);
+  setBoolean('focus', state.focusMode, true);
   setText('sort', state.sort, 'priority_default');
   if (state.cardsPage > 1) {
     params.set('cardsPage', String(state.cardsPage));
