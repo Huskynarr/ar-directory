@@ -3,6 +3,17 @@
 @layer base {
   * { box-sizing: border-box; }
 
+  button,
+  [role='button'],
+  summary,
+  label:has(input),
+  select,
+  a[href] { cursor: pointer; }
+
+  button:disabled,
+  input:disabled,
+  select:disabled { cursor: not-allowed; }
+
   :root {
     color-scheme: dark;
     scroll-behavior: smooth;
@@ -67,6 +78,13 @@
 
   #app { position: relative; z-index: 1; }
   ::selection { color: var(--brand-ink); background: var(--brand); }
+
+  h1, h2, h3 {
+    letter-spacing: -.035em;
+    text-wrap: balance;
+  }
+
+  p { text-wrap: pretty; }
 }
 
 @layer components {
@@ -113,6 +131,19 @@
 
   .chip-btn:active:not(:disabled) { transform: translateY(1px); }
 
+  .affiliate-link {
+    gap: .45rem;
+    color: var(--text) !important;
+    border-color: var(--line-strong) !important;
+    background: transparent !important;
+  }
+
+  .affiliate-link:hover {
+    color: var(--brand) !important;
+    border-color: var(--brand) !important;
+    background: var(--surface-2) !important;
+  }
+
   .theme-icon-btn {
     @apply inline-flex h-10 w-10 items-center justify-center rounded-lg border outline-none transition;
     color: var(--text);
@@ -128,6 +159,78 @@
     background:
       linear-gradient(105deg, rgba(163, 230, 53, .1), transparent 42%),
       linear-gradient(160deg, var(--surface-2), var(--surface));
+  }
+
+  .brand-lockup {
+    display: inline-flex;
+    align-items: center;
+    gap: .65rem;
+    color: var(--text);
+  }
+
+  .brand-mark {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    color: var(--brand);
+    border: 1px solid var(--line-strong);
+    border-radius: .6rem;
+    background: var(--surface-2);
+  }
+
+  .brand-mark svg { width: 1.4rem; height: 1.4rem; }
+  .brand-lockup strong {
+    display: block;
+    font-size: .72rem;
+    line-height: 1;
+    letter-spacing: .16em;
+  }
+  .brand-lockup small {
+    display: block;
+    margin-top: .3rem;
+    color: var(--muted);
+    font-size: .65rem;
+    line-height: 1;
+    letter-spacing: .06em;
+  }
+
+  .hero-title {
+    color: var(--text);
+    max-width: 19ch;
+  }
+
+  .hero-title::after {
+    content: '';
+    display: block;
+    width: 3.5rem;
+    height: 3px;
+    margin-top: 1rem;
+    border-radius: 999px;
+    background: var(--brand);
+  }
+
+  .finder-cta {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    gap: .55rem;
+    padding: .65rem 1rem;
+    color: var(--brand-ink);
+    border: 1px solid var(--brand);
+    border-radius: .7rem;
+    background: var(--brand);
+    font-size: .875rem;
+    font-weight: 700;
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--brand) 18%, transparent);
+    transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease;
+  }
+
+  .finder-cta:hover {
+    color: var(--brand-ink);
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px color-mix(in srgb, var(--brand) 24%, transparent);
   }
 
   .compact-details {

@@ -11,12 +11,15 @@
     "data:enrich": "node scripts/apply-enrichment.mjs",
     "og:generate": "node scripts/generate-og-images.mjs",
     "images:enrich": "node scripts/enrich-manufacturer-images.mjs",
-    "test": "vitest run",
-    "test:watch": "vitest"
+    "test": "vitest run src/__tests__",
+    "test:watch": "vitest src/__tests__",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "verify": "npm test && npm run test:e2e && npm run build"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.2",
-    "playwright": "^1.61.1",
+    "@playwright/test": "^1.61.1",
     "tailwindcss": "^4.3.2",
     "vite": "^8.1.4",
     "vitest": "^4.1.10"

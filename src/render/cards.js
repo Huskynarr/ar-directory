@@ -46,7 +46,7 @@ export const cardTemplate = (row) => {
         <button
           data-favorite-toggle="${escapeHtml(row.__rowId)}"
           type="button"
-          class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-[#44403c] bg-[#1c1917] text-lg transition hover:border-amber-400/60 ${isFavorite ? 'text-amber-400' : 'text-[#a8a29e]'}"
+          class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-[#44403c] bg-[#1c1917] text-lg transition hover:border-[var(--brand)] ${isFavorite ? 'text-[var(--brand)]' : 'text-[#a8a29e]'}"
           aria-label="${escapeHtml(isFavorite ? t('Favorit entfernen', 'Remove favorite') : t('Als Favorit merken', 'Add to favorites'))}"
         >${isFavorite ? '&#9733;' : '&#9734;'}</button>
         </div>
@@ -149,7 +149,7 @@ export const cardTemplate = (row) => {
           ${buyLinks
             .map(
               (l) =>
-                `<a href="${escapeHtml(l.url)}" target="_blank" rel="${AFFILIATE_REL}" class="chip-btn border-amber-500/40 bg-amber-500/10 text-amber-200 hover:bg-amber-500/20">${escapeHtml(
+                `<a href="${escapeHtml(l.url)}" target="_blank" rel="${AFFILIATE_REL}" class="chip-btn affiliate-link"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden="true"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L20 8H7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.2" fill="currentColor"/><circle cx="17" cy="20" r="1.2" fill="currentColor"/></svg>${escapeHtml(
                   l.label,
                 )}</a>`,
             )

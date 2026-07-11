@@ -21,7 +21,7 @@ export const SORT_MODES = new Set([
   'weight_asc',
   'refresh_desc',
 ]);
-export const THEME_MODES = new Set(['dark', 'light']);
+export const THEME_MODES = new Set(['auto', 'dark', 'light']);
 export const THEME_STORAGE_KEY = 'ar_directory_theme';
 export const LANGUAGE_STORAGE_KEY = 'ar_directory_language';
 export const FAVORITES_STORAGE_KEY = 'ar_directory_favorites';
@@ -34,7 +34,7 @@ export const state = {
   rows: [],
   csvFields: [],
   language: 'de',
-  theme: 'dark',
+  theme: 'auto',
   query: '',
   viewMode: 'cards',
   compareMode: false,
@@ -77,7 +77,7 @@ export const state = {
   usdToEurSource: `fallback:${USD_TO_EUR_FALLBACK}`,
 };
 
-export const normalizeTheme = (value, fallback = 'dark') => {
+export const normalizeTheme = (value, fallback = 'auto') => {
   const normalized = normalizeText(value);
   return THEME_MODES.has(normalized) ? normalized : fallback;
 };
@@ -97,14 +97,14 @@ export const getSystemThemePreference = () => {
 
 export const readThemeFromStorage = () => {
   if (typeof window === 'undefined') {
-    return 'dark';
+    return 'auto';
   }
   try {
     const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
-    if (stored) return normalizeTheme(stored, 'dark');
-    return getSystemThemePreference();
+    if (stored) return normalizeTheme(stored, 'auto');
+    return 'auto';
   } catch {
-    return getSystemThemePreference();
+    return 'auto';
   }
 };
 
@@ -124,7 +124,7 @@ export const writeThemeToStorage = (theme) => {
     return;
   }
   try {
-    window.localStorage.setItem(THEME_STORAGE_KEY, normalizeTheme(theme, 'dark'));
+    window.localStorage.setItem(THEME_STORAGE_KEY, normalizeTheme(theme, 'auto'));
   } catch {
     // ignore storage failures (private mode / blocked storage)
   }
@@ -171,10 +171,13 @@ export const applyThemeToDocument = () => {
   if (typeof document === 'undefined' || !document.body) {
     return;
   }
-  const theme = normalizeTheme(state.theme, 'dark');
+  const theme = normalizeTheme(state.theme, 'auto');
+  const effectiveTheme = theme === 'auto' ? getSystemThemePreference() : theme;
   state.theme = theme;
-  document.body.classList.toggle('theme-dark', theme === 'dark');
-  document.body.classList.toggle('theme-light', theme === 'light');
+  document.body.classList.toggle('theme-dark', effectiveTheme === 'dark');
+  document.body.classList.toggle('theme-light', effectiveTheme === 'light');
+  document.documentElement.style.colorScheme = effectiveTheme;
+  document.body.dataset.themePreference = theme;
 };
 
 export const applyLanguageToDocument = () => {
@@ -363,7 +366,7 @@ export const syncUrlWithState = () => {
   setText('query', state.query, '');
   setText('viewMode', state.viewMode, 'cards');
   setText('lang', state.language, 'de');
-  setText('theme', state.theme, 'dark');
+  setText('theme', state.theme, 'auto');
   // Compare view gets a pretty path (/compare/<a>-vs-<b>); otherwise selections
   // ride along as query params so they survive on the root view.
   const compareFlats =

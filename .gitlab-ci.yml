@@ -20,6 +20,23 @@ verify:data:
     - test -s public/data/ar_glasses.csv
     - test -s public/data/ar_glasses.metadata.json
 
+verify:unit:
+  stage: verify
+  script:
+    - npm test
+
+verify:e2e:
+  stage: verify
+  image: mcr.microsoft.com/playwright:v1.61.1-noble
+  script:
+    - npm run test:e2e
+  artifacts:
+    when: on_failure
+    paths:
+      - playwright-report/
+      - test-results/
+    expire_in: 1 week
+
 build:app:
   stage: build
   script:

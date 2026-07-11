@@ -16,17 +16,17 @@ export const optionList = (values, selectedValue, allLabel = t('Alle', 'All')) =
 
 export const categoryTone = (value) =>
   normalizeText(value) === 'xr'
-    ? 'border-cyan-500/40 bg-cyan-500/15 text-cyan-200'
-    : 'border-lime-500/40 bg-lime-500/15 text-lime-200';
+    ? 'border-[var(--line-strong)] bg-[var(--surface-3)] text-[var(--text)]'
+    : 'border-[var(--line-strong)] bg-[var(--surface-2)] text-[var(--text)]';
 
 export const lifecycleTone = (row) => {
   if (isEol(row)) {
-    return 'border-red-500/25 bg-red-500/5 text-red-300';
+    return 'border-[var(--line-strong)] bg-[var(--surface-2)] text-[var(--muted)]';
   }
   if (normalizeText(row.eol_status).includes('angekündigt')) {
-    return 'border-amber-500/25 bg-amber-500/5 text-amber-300';
+    return 'border-[var(--line-strong)] bg-[var(--surface-2)] text-[var(--text)]';
   }
-  return 'border-lime-500/20 bg-lime-500/5 text-lime-300';
+  return 'border-[var(--line)] bg-[var(--surface-2)] text-[var(--text)]';
 };
 
 export const selectionLabelTemplate = (rowId, selected, rowName = '') => `

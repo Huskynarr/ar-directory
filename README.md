@@ -163,6 +163,18 @@ Produktions-Build:
 npm run build
 ```
 
+Komplette Verifikation mit Unit-Tests, Desktop-/Mobile-E2E-Tests und Produktions-Build:
+
+```bash
+npm run verify
+```
+
+Nur die interaktiven Playwright-Tests ausführen:
+
+```bash
+npm run test:e2e
+```
+
 Build lokal pruefen:
 
 ```bash

@@ -103,7 +103,7 @@ export const tableTemplate = (rows) => {
                         }
                         ${
                           buyLinks.length
-                            ? `<a href="${escapeHtml(buyLinks[0].url)}" target="_blank" rel="${AFFILIATE_REL}" aria-label="${escapeHtml(`${buyLinks[0].label}: ${modelName}`)}" class="text-xs font-semibold text-amber-300 hover:underline">${escapeHtml(buyLinks[0].label)} *</a>`
+                            ? `<a href="${escapeHtml(buyLinks[0].url)}" target="_blank" rel="${AFFILIATE_REL}" aria-label="${escapeHtml(`${buyLinks[0].label}: ${modelName}`)}" class="text-xs font-semibold text-[var(--text)] hover:text-[var(--brand)] hover:underline">${escapeHtml(buyLinks[0].label)} *</a>`
                             : ''
                         }
                         ${

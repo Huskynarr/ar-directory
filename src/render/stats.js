@@ -53,8 +53,8 @@ export const buildStatsChartSvg = (arCount, xrCount) => {
             <stop offset="100%" stop-color="#84cc16" />
           </linearGradient>
           <linearGradient id="stats-xr-grad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#67e8f9" />
-            <stop offset="100%" stop-color="#22d3ee" />
+            <stop offset="0%" stop-color="#a8b2ad" />
+            <stop offset="100%" stop-color="#6f7c77" />
           </linearGradient>
         </defs>
         <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke-width="${stroke}"
@@ -95,7 +95,7 @@ export const buildStatsChartSvg = (arCount, xrCount) => {
               xrVisible
                 ? `<rect x="${arBar}" y="0" width="${xrBar}" height="${barH}" fill="url(#stats-xr-grad)" />
                    <text x="${barW - 9}" y="${barH / 2 + 1}" text-anchor="end" dominant-baseline="central"
-                     font-size="10" font-weight="800" fill="#083344">XR ${xrPct}%</text>`
+                     font-size="10" font-weight="800" fill="#ffffff">XR ${xrPct}%</text>`
                 : ''
             }
           </g>
@@ -106,7 +106,7 @@ export const buildStatsChartSvg = (arCount, xrCount) => {
             <span class="text-[#f5f5f4]">${ar}</span> AR
           </span>
           <span class="inline-flex items-center gap-1.5">
-            <span class="inline-block h-2 w-2 rounded-full bg-[#22d3ee]"></span>
+            <span class="inline-block h-2 w-2 rounded-full bg-[#6f7c77]"></span>
             <span class="text-[#f5f5f4]">${xr}</span> XR
           </span>
         </div>

@@ -13,6 +13,7 @@ import {
   readFavoritesFromStorage,
   toggleFavorite,
   applyThemeToDocument,
+  getSystemThemePreference,
   applyLanguageToDocument,
   setFallbackUsdRate,
   pruneSelectedIdsToKnownRows,
@@ -127,10 +128,16 @@ const render = () => {
           <rect x="2.2" y="12.95" width="19.6" height="0.95" fill="#be123c" />
           <rect x="2.2" y="2.2" width="8.8" height="6.85" fill="#1d4ed8" />
         </svg>`;
-  const themeToggleLabel =
-    state.theme === 'light' ? t('Dunkelmodus aktivieren', 'Enable dark mode') : t('Hellmodus aktivieren', 'Enable light mode');
+  const effectiveTheme = state.theme === 'auto' ? getSystemThemePreference() : state.theme;
+  const themeToggleLabel = state.theme === 'auto'
+    ? t(`Darstellung: Automatisch (${effectiveTheme === 'light' ? 'Hell' : 'Dunkel'}). Zu Hell wechseln`, `Theme: Auto (${effectiveTheme}). Switch to light`)
+    : state.theme === 'light'
+      ? t('Darstellung: Hell. Zu Dunkel wechseln', 'Theme: Light. Switch to dark')
+      : t('Darstellung: Dunkel. Zu Automatisch wechseln', 'Theme: Dark. Switch to auto');
   const themeToggleIcon =
-    state.theme === 'light'
+    state.theme === 'auto'
+      ? `<svg class="theme-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2" stroke="currentColor"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-linecap="round"/></svg>`
+      : state.theme === 'light'
       ? `<svg class="theme-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path
             d="M21 12.79A9 9 0 1 1 11.21 3c0 .29 0 .57.01.86A7.5 7.5 0 0 0 18.75 11.36c.29 0 .57 0 .86-.01"
@@ -177,7 +184,10 @@ const render = () => {
       <header class="panel relative overflow-hidden p-5 sm:p-6">
         <div class="theme-hero-surface absolute inset-0 -z-10"></div>
         <div class="flex items-start justify-between gap-3">
-          <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-lime-500 sm:text-xs">AR / XR DIRECTORY</p>
+          <div class="brand-lockup">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none"><path d="M3.5 14h5.2m10.6 0h5.2M8.7 10.5h4.2c1.1 0 2 .9 2 2v3c0 1.1-.9 2-2 2H8.7a2 2 0 0 1-2-2v-3c0-1.1.9-2 2-2Zm10.6 0h-4.2c-1.1 0-2 .9-2 2v3c0 1.1.9 2 2 2h4.2a2 2 0 0 0 2-2v-3c0-1.1-.9-2-2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+            <span><strong>AR DIRECTORY</strong><small>by Huskynarr</small></span>
+          </div>
           <div class="flex shrink-0 items-center gap-2">
             <button
               id="toggle-language"
@@ -192,7 +202,7 @@ const render = () => {
               id="theme-toggle"
               type="button"
               class="theme-icon-btn"
-              aria-pressed="${state.theme === 'dark' ? 'true' : 'false'}"
+              data-theme-mode="${state.theme}"
               aria-label="${escapeHtml(themeToggleLabel)}"
               title="${escapeHtml(themeToggleLabel)}"
             >
@@ -200,7 +210,7 @@ const render = () => {
             </button>
           </div>
         </div>
-        <h1 class="mt-2 text-2xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-lime-600 sm:text-4xl">${t(
+        <h1 class="hero-title mt-5 text-3xl font-bold leading-tight sm:text-5xl">${t(
           'Vergleich für AR-Brillen und XR-Glasses',
           'Comparison for AR Glasses and XR Glasses',
         )}</h1>
@@ -211,8 +221,9 @@ const render = () => {
           )}
         </p>
         <div class="mt-4 flex flex-wrap items-center gap-3">
-          <a href="/finder/" data-nav class="inline-flex items-center gap-2 rounded-xl border border-[#84cc16] bg-[#84cc16] px-4 py-2.5 text-sm font-semibold text-[#0c0a09] transition hover:bg-[#65a30d]">
-            <span aria-hidden="true">🧭</span> ${t('Finde meine Brille', 'Find my glasses')}
+          <a href="/finder/" data-nav class="finder-cta">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/><path d="m14.8 9.2-1.6 4-4 1.6 1.6-4 4-1.6Z" fill="currentColor"/></svg>
+            ${t('Finde meine Brille', 'Find my glasses')}
           </a>
           <span class="text-sm text-[#a8a29e]">${t(
             'Unsicher? Lass dich in 6 Fragen zum passenden Modell führen.',
@@ -252,7 +263,7 @@ const render = () => {
               state.favorites.length ? '' : 'disabled'
             } aria-label="${escapeHtml(t('Nur Favoriten anzeigen', 'Show only favorites'))}" class="chip-btn ${
               state.onlyFavorites
-                ? 'border-amber-400 bg-amber-400 text-[#0c0a09] hover:bg-amber-300'
+                ? 'border-[var(--brand)] bg-[var(--brand)] text-[var(--brand-ink)]'
                 : `border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524] ${state.favorites.length ? '' : 'cursor-not-allowed opacity-50'}`
             }">${state.onlyFavorites ? '&#9733;' : '&#9734;'} ${t('Favoriten', 'Favorites')} (${state.favorites.length})</button>
             <button id="clear-filters" type="button" class="chip-btn border-[#44403c] bg-[#1c1917] text-[#f5f5f4] hover:bg-[#292524]">${t(
@@ -503,7 +514,7 @@ const render = () => {
             ? compareModeTemplate(selectedRows)
             : filtered.length === 0
               ? `<div class="panel flex flex-col items-center gap-4 p-10 text-center sm:p-14">
-                  <div class="grid h-16 w-16 place-items-center rounded-2xl border border-[#44403c] bg-[#1c1917] text-3xl text-amber-300">${
+                  <div class="grid h-16 w-16 place-items-center rounded-2xl border border-[#44403c] bg-[#1c1917] text-3xl text-[var(--brand)]">${
                     state.onlyFavorites ? '&#9734;' : '&#128269;'
                   }</div>
                   <div class="space-y-1">
@@ -759,7 +770,7 @@ const render = () => {
     render();
   });
   document.querySelector('#theme-toggle')?.addEventListener('click', () => {
-    state.theme = state.theme === 'light' ? 'dark' : 'light';
+    state.theme = state.theme === 'auto' ? 'light' : state.theme === 'light' ? 'dark' : 'auto';
     writeThemeToStorage(state.theme);
     render();
   });
@@ -958,12 +969,18 @@ const init = async () => {
   state.favorites = readFavoritesFromStorage();
   applyStateFromUrl();
   state.language = normalizeLanguage(state.language, 'de');
-  state.theme = normalizeTheme(state.theme, 'dark');
+  state.theme = normalizeTheme(state.theme, 'auto');
   writeLanguageToStorage(state.language);
   writeThemeToStorage(state.theme);
   applyLanguageToDocument();
   applyThemeToDocument();
   setFallbackUsdRate();
+
+  try {
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {
+      if (state.theme === 'auto') applyThemeToDocument();
+    });
+  } catch {}
 
   // Global keyboard shortcuts
   document.addEventListener('keydown', (e) => {

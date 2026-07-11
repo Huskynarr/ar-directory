@@ -75,7 +75,7 @@ const detailModalTemplate = (row) => {
             <h2 class="mt-1 truncate text-xl font-bold text-[#f5f5f4]">${name}</h2>
           </div>
           <div class="flex shrink-0 items-center gap-2">
-            <button data-favorite-toggle="${escapeHtml(row.__rowId)}" type="button" aria-pressed="${isFavorite ? 'true' : 'false'}" aria-label="${escapeHtml(isFavorite ? t('Favorit entfernen', 'Remove favorite') : t('Als Favorit merken', 'Add to favorites'))}" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#44403c] bg-[#1c1917] text-xl transition hover:border-amber-400/60 ${isFavorite ? 'text-amber-400' : 'text-[#a8a29e]'}">${isFavorite ? '&#9733;' : '&#9734;'}</button>
+            <button data-favorite-toggle="${escapeHtml(row.__rowId)}" type="button" aria-pressed="${isFavorite ? 'true' : 'false'}" aria-label="${escapeHtml(isFavorite ? t('Favorit entfernen', 'Remove favorite') : t('Als Favorit merken', 'Add to favorites'))}" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#44403c] bg-[#1c1917] text-xl transition hover:border-[var(--brand)] ${isFavorite ? 'text-[var(--brand)]' : 'text-[#a8a29e]'}">${isFavorite ? '&#9733;' : '&#9734;'}</button>
             <button id="close-detail-modal" type="button" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#44403c] bg-[#1c1917] text-lg text-[#a8a29e] transition hover:border-[#57534e] hover:bg-[#292524] hover:text-[#f5f5f4]" aria-label="${t('Schliessen', 'Close')}">&#10005;</button>
           </div>
         </div>
@@ -127,7 +127,7 @@ const detailModalTemplate = (row) => {
                   ? `<div class="flex flex-col gap-2 sm:flex-row sm:flex-wrap">${buyLinks
                       .map(
                         (l) =>
-                          `<a href="${escapeHtml(l.url)}" target="_blank" rel="${AFFILIATE_REL}" class="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-amber-400/60 bg-amber-500 px-4 py-2.5 text-sm font-semibold text-[#0c0a09] shadow-sm transition hover:bg-amber-400"><span aria-hidden="true">&#128722;</span>${escapeHtml(l.label)}</a>`,
+                          `<a href="${escapeHtml(l.url)}" target="_blank" rel="${AFFILIATE_REL}" class="chip-btn affiliate-link flex-1"><span aria-hidden="true">&#128722;</span>${escapeHtml(l.label)}</a>`,
                       )
                       .join('')}</div>`
                   : ''

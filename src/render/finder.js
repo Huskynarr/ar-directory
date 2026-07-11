@@ -227,7 +227,7 @@ const answeredCount = () => Object.values(finder.answers).filter(Boolean).length
 const matchToneClass = (percent) => {
   if (percent == null) return 'border-[#44403c] bg-[#1c1917] text-[#a8a29e]';
   if (percent >= 80) return 'border-lime-400/50 bg-lime-400/15 text-lime-200';
-  if (percent >= 55) return 'border-amber-400/40 bg-amber-400/10 text-amber-200';
+  if (percent >= 55) return 'border-[var(--line-strong)] bg-[var(--surface-2)] text-[var(--text)]';
   return 'border-[#44403c] bg-[#1c1917] text-[#a8a29e]';
 };
 

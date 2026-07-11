@@ -62,9 +62,10 @@ npm run images:enrich    # Fetch/cache manufacturer product images
 
 **Build-time SEO injection** (`vite.config.js`): a `transformIndexHtml` plugin replaces `__COUNT__/__AR__/__XR__/__MANUFACTURERS__` tokens from metadata, injects the generated JSON-LD into `<head>`, and renders a static crawlable `<section>` catalog of all models into `#app` (the SPA replaces it at runtime — so crawlers/JS-less AI agents see full content).
 
-**Testing** (`src/__tests__/`):
-- Vitest for unit tests on pure utility functions in `src/utils.js`
-- 105 tests covering escapeHtml, safeExternalUrl, toNumber, parsePrice, normalizeText, parseResolutionWidth, parseBooleanParam, isUnknownValue, toInitials, debounce, uniqueSorted
+**Testing**:
+- Vitest unit tests in `src/__tests__/` cover utilities, model helpers, lifecycle logic and the Frankfurter v2 response.
+- Playwright E2E tests in `tests/e2e/` run against desktop and mobile Chromium and cover catalog loading, search/filter/reset, table/modal/compare, finder, language/theme persistence, system-theme auto mode, generated pages, accessibility names and horizontal overflow.
+- `npm run verify` runs unit tests, E2E tests and the production build.
 
 **PWA**:
 - `public/manifest.json` — web app manifest for installation
