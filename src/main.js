@@ -201,17 +201,35 @@ const appendCardsCooperatively = async (rows) => {
 
 const render = async ({ cooperative = false } = {}) => {
   const queryFocusState = captureQueryFocusState();
-  const filterOptions = getFilterOptions();
   const showCoreFilters = !window.matchMedia('(max-width: 640px)').matches || state.showAdvancedFilters;
+  // The mobile first view only contains search. Building and sorting eleven
+  // option lists before the user opens filters adds needless startup work.
+  const filterOptions = showCoreFilters ? getFilterOptions() : {};
   const filtered = sortRows(state.rows.filter(matchesFilters));
-  const withPrice = filtered.filter((row) => parsePrice(row.price_usd)).length;
-  const withShop = filtered.filter((row) => getShopInfo(row).url).length;
-  const activeCount = filtered.filter((row) => isLikelyActive(row)).length;
-  const eolCount = filtered.filter((row) => isEol(row)).length;
-  const arCount = filtered.filter((row) => isArRow(row)).length;
-  const xrCount = filtered.filter((row) => isXrRow(row)).length;
-  const avgPrice = withPrice > 0 ? Math.round(filtered.reduce((sum, row) => sum + (parsePrice(row.price_usd) || 0), 0) / withPrice) : 0;
-  const manufacturerCount = new Set(filtered.map((row) => normalizeText(row.manufacturer)).filter(Boolean)).size;
+  let withPrice = 0;
+  let withShop = 0;
+  let activeCount = 0;
+  let eolCount = 0;
+  let arCount = 0;
+  let xrCount = 0;
+  let priceTotal = 0;
+  const manufacturers = new Set();
+  for (const row of filtered) {
+    const price = parsePrice(row.price_usd);
+    if (price) {
+      withPrice += 1;
+      priceTotal += price;
+    }
+    if (getShopInfo(row).url) withShop += 1;
+    if (isLikelyActive(row)) activeCount += 1;
+    if (isEol(row)) eolCount += 1;
+    if (isArRow(row)) arCount += 1;
+    if (isXrRow(row)) xrCount += 1;
+    const manufacturer = normalizeText(row.manufacturer);
+    if (manufacturer) manufacturers.add(manufacturer);
+  }
+  const avgPrice = withPrice > 0 ? Math.round(priceTotal / withPrice) : 0;
+  const manufacturerCount = manufacturers.size;
   const retrievedAt = compactValue(filtered[0]?.dataset_retrieved_at || state.rows[0]?.dataset_retrieved_at, '');
   const languageToggleLabel =
     state.language === 'de'
