@@ -34,7 +34,10 @@ export const headerControlsTemplate = () => {
   </div>`;
 };
 
-export const siteFooterTemplate = ({ disclosure = '' } = {}) => `
+export const siteFooterTemplate = ({ disclosure = '' } = {}) => {
+  const buildSuffix = APP_BUILD ? ` · ${escapeHtml(APP_BUILD)}` : '';
+  const buildTitle = APP_BUILD ? ` title="Build ${escapeHtml(APP_BUILD)}"` : '';
+  return `
   <footer class="site-footer">
     <div class="site-footer-primary">
       <div class="site-footer-brand">
@@ -65,9 +68,10 @@ export const siteFooterTemplate = ({ disclosure = '' } = {}) => `
         <a href="/impressum.html">${t('Impressum', 'Legal notice')}</a>
         <a href="/datenschutz.html">${t('Datenschutz', 'Privacy')}</a>
       </nav>
-      <span class="build-version" title="Build ${escapeHtml(APP_BUILD)}">v${escapeHtml(APP_VERSION)} · ${escapeHtml(APP_BUILD)}</span>
+      <span class="build-version"${buildTitle}>v${escapeHtml(APP_VERSION)}${buildSuffix}</span>
     </div>
   </footer>`;
+};
 
 export const optionList = (values, selectedValue, allLabel = t('Alle', 'All')) => {
   const head = `<option value="all"${selectedValue === 'all' ? ' selected' : ''}>${escapeHtml(allLabel)}</option>`;

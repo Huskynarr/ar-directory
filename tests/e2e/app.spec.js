@@ -236,7 +236,7 @@ test('FAQ uses accessible accordions and dataset statistics have their own page'
 
 test('footer exposes one compact, build-derived version', async ({ page }) => {
   await expect(page.locator('.build-version')).toHaveCount(1);
-  await expect(page.locator('.build-version')).toHaveText(/^v\d+\.\d+\.\d+ · (?:[0-9a-f]{7}|local)$/);
+  await expect(page.locator('.build-version')).toHaveText(/^v\d+\.\d+\.\d+(?: · [0-9a-f]{7})?$/);
 });
 
 test('viewport has no horizontal overflow and controls have accessible names', async ({ page }) => {

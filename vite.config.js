@@ -361,7 +361,7 @@ const buildRevision = (() => {
   try {
     return execFileSync('git', ['rev-parse', '--short=7', 'HEAD'], { encoding: 'utf8' }).trim();
   } catch {
-    return 'local';
+    return '';
   }
 })();
 

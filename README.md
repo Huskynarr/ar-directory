@@ -58,7 +58,7 @@ Webverzeichnis fuer AR- und XR-Brillen mit Fokus auf Vergleichbarkeit:
   - Herstellerlink + Datenquelle
 - Gefuehrter AR-/XR-Finder unter `/finder/`
 - Eigenstaendige FAQ-, Glossar- und Datenqualitaetsseiten
-- Kompakte Build-Version aus `package.json` und Git-Revision statt manueller Doppelpflege
+- Kompakte Build-Version aus `package.json` und – sofern im Build verfügbar – Git-Revision statt manueller Doppelpflege
 - Barrierefreiheit wird in Hell und Dunkel mit Axe gegen WCAG 2.2 AA getestet
 
 ## Datenabdeckung
